@@ -20,8 +20,8 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 **Website**: [tremblay/cursos/BIOL4458](https://raymondltremblay.github.io/Ecologia_de_Poblacion_UPRH/index.html)  
 
 ### Horario de la clase
-**Discussion**: L, W at 11am - 12:20 (1:20 mins) (NOTA: Traear su laptop!)   
-**Office hours**:    
+**Discussion**: L, W a las 11 am - 12:20 pm (1:20 mins) (NOTA: Traer su laptop!)   
+**Horario de Consulta**:    
 - Tremblay: xxxx  (Biología)    
 - Salón **NL204**    
    
