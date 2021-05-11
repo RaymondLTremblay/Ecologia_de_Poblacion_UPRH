@@ -1,7 +1,7 @@
-name: "NRES_470/670"
+name: "BIOL4458"
 output_dir: "."
 navbar:
-  title: "NRES 470/670"
+  title: "BIOL4458"
   left:
     - text: "Home"
       href: index.html
@@ -9,7 +9,7 @@ navbar:
       href: schedule.html
     - text: "Lectures"
       menu:
-        - text: "Introduction to NRES 470"
+        - text: "Introduction to BIOL4458"
           href: INTRO.html
         - text: "A whole-systems approach to population ecology"
           href: LECTURE1.html
