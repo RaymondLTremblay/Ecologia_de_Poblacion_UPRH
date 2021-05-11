@@ -5,11 +5,11 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Schedule"
+    - text: "Horario"
       href: schedule.html
-    - text: "Lectures"
+    - text: "Conferencias"
       menu:
-        - text: "Introduction to BIOL4458"
+        - text: "Introducción to BIOL4458"
           href: INTRO.html
         - text: "A whole-systems approach to population ecology"
           href: LECTURE1.html
