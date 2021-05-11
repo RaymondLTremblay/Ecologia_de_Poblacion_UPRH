@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="NRES 421/621" />
@@ -14,66 +14,55 @@
 
 <title>Guest lecture, PVA basics</title>
 
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
-</head>
 
-<body>
+
 
 <style type = "text/css">
 .main-container {
@@ -81,58 +70,68 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
 }
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 52px;
-  padding-bottom: 40px;
+.dropdown-submenu {
+  position: relative;
 }
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 57px;
-  margin-top: -57px;
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
 }
-
-.section h2 {
-  padding-top: 57px;
-  margin-top: -57px;
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
 }
-.section h3 {
-  padding-top: 57px;
-  margin-top: -57px;
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
 }
-.section h4 {
-  padding-top: 57px;
-  margin-top: -57px;
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
 }
-.section h5 {
-  padding-top: 57px;
-  margin-top: -57px;
+.dropdown-submenu.pull-left {
+  float: none;
 }
-.section h6 {
-  padding-top: 57px;
-  margin-top: -57px;
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -143,54 +142,85 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
-
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
-
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -204,6 +234,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -239,8 +275,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -250,8 +284,18 @@ div.tocify {
 
 </style>
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -270,7 +314,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">NRES 470/670</a>
+      <a class="navbar-brand" href="index.html">BIOL4458</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -288,7 +332,7 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="INTRO.html">Introduction to NRES 470</a>
+      <a href="INTRO.html">Introduction to BIOL4458</a>
     </li>
     <li>
       <a href="LECTURE1.html">A whole-systems approach to population ecology</a>
@@ -408,13 +452,13 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
 <h1 class="title toc-ignore">Guest lecture, PVA basics</h1>
-<h4 class="author"><em>NRES 421/621</em></h4>
-<h4 class="date"><em>Mar 27, 2017</em></h4>
+<h4 class="author">NRES 421/621</h4>
+<h4 class="date">Mar 27, 2017</h4>
 
 </div>
 
@@ -425,15 +469,9 @@ div.tocify {
 <p>PVA is essentially a set of practical approaches to problem-solving in conservation, and wildlife management via creative application of <em>demographic theory</em>, <em>simulation models</em> and <em>statistics</em>.</p>
 <p>As much as possible we will use hands-on activities to explore the fundamentals of PVA. We will use <a href="https://insightmaker.com/">InsightMaker- a free web-based systems modeling tool</a> for running simulation models.</p>
 <p>First we will build a PVA for the grizzly bears of Yellowstone National Park!</p>
-<div class="figure">
-<img src="grizzly1.jpg" />
-
-</div>
+<p><img src="grizzly1.jpg" /></p>
 <p>We will end this mini-course by building a PVA for the loggerhead turtle, <em>Caretta caretta</em>, which is based on a paper by <a href="Crowder1994.pdf">Crowder et al 1994</a>.</p>
-<div class="figure">
-<img src="caretta1.jpg" />
-
-</div>
+<p><img src="caretta1.jpg" /></p>
 <p><em>But even before any of that</em>, let’s review some basic population ecology theory and mathematics which are the foundation of PVA!</p>
 </div>
 <div id="what-is-a-population" class="section level2">
@@ -459,10 +497,7 @@ div.tocify {
 </div>
 <div id="exponential-growth-the-fundamental-principle-of-population-ecology" class="section level2">
 <h2>Exponential growth: the fundamental principle of population ecology</h2>
-<div class="figure">
-<img src="puffball1.png" />
-
-</div>
+<p><img src="Puffball1.png" /></p>
 <p>Giant puffballs produce 7 trillion offspring in one reproductive event.</p>
 <p>… If all of those individuals reached adulthood, the descendants from just <em>two parent puffballs</em> would weigh more than the entire planet in two generations!</p>
 <p>The reason? Populations grow <em>geometrically</em>, in a process called <strong>exponential growth</strong>. This is the foundational concept of population ecology, and this simple model has enormous resonance across all of ecology and evolution.</p>
@@ -473,10 +508,7 @@ div.tocify {
 - Charles Darwin</p>
 <p>“Like most mathematicians, he takes the hopeful biologist to the edge of the pond, points out that a good swim will help his work, and then pushes him in and leaves him to drown.”<br />
 - Charles Elton, in reference to a work by Alfred Lotka</p>
-<div class="figure">
-<img src="1976_Elton.jpg" />
-
-</div>
+<p><img src="1976_Elton.jpg" /></p>
 <p>“The importance of the method is this: if we know certain variables, mostly desired by ecologists and in some cases already determined by them, we can predict certain results which would not normally be predictable or even expected by ecologists. The stage of verification of these mathematical predictions has hardly begun; but their importance cannot be under-estimated.”<br />
 - Charles Elton</p>
 </div>
@@ -485,10 +517,7 @@ div.tocify {
 <p>First of all, we need a symbol to represent population size, or <em>abundance</em>. This is <span class="math inline">\(N\)</span>, for the <span class="math inline">\(N\)</span>umber of individuals!</p>
 <p><span class="math inline">\(\Delta N\)</span> represents the change in population size, <span class="math inline">\({N_{t+1}}-{N_t}\)</span></p>
 <p>The famous “BIDE” equation is a way to break down <span class="math inline">\(\Delta N\)</span> into components.</p>
-<div class="figure">
-<img src="IM12.jpg" />
-
-</div>
+<p><img src="IM12.jpg" /></p>
 <p><span class="math inline">\(\Delta N = B + I - D - E \qquad \text{(Eq. 1)}\)</span></p>
 <p>where <span class="math inline">\(B\)</span> represents the number of births, <span class="math inline">\(I\)</span> reprents the number of immigrants, <span class="math inline">\(D\)</span> represents the number of deaths, and <span class="math inline">\(E\)</span> represents the number of emigrants.</p>
 <p>If we ignore immigration and emigration, then the BIDE equation simplifies to:</p>
@@ -537,10 +566,7 @@ div.tocify {
 <p>A [Stock] represents a quantity of something. The [Stock] only changes over time ONLY via [Flows In] or [Flows Out].</p>
 <p>A [Stock] of stuff increases over time via what [Flows] in. Imagine our stock represents <em>Moose</em>! <em>Moose Births</em> would then be the input [Flow] to the population of <em>Moose</em> over time.</p>
 <p>A [Stock] of stuff decreases over time via what [Flows] out. For example, <em>Moose Deaths</em> could represent the [Flow] out of the population of <em>Moose</em>.</p>
-<div class="figure">
-<img src="IM13.jpg" />
-
-</div>
+<p><img src="IM13.jpg" /></p>
 <p>If the [Flow] in is larger than the [Flow] out then the [Stock] increases over time.</p>
 <p>If the [Flow] out is larger than the [Flow] in then the [Stock] decreases over time.</p>
 <p>If the [Flow] in equals the [Flow] out then the amount in the [Stock] will not change over time.</p>
@@ -571,10 +597,7 @@ div.tocify {
 <li><p>Now draw a [Link] from <em>birth rate</em> to the “Births” [Flow]. In InsightMaker, flow of information is represented by a [Link]. To create a [Link], click <strong>Link</strong> in the <strong>Connections</strong> part of the toolbar. When you mouse over the <em>birth rate</em> click on the right-arrow, drag to the [Flow] and release. You now have a [Link] on top of the [Flow]. Now hold the Shift Key and click in the middle of the [Link] and a little little green node will be created on the [Link]. You can select this node and drag it to make a visually pleasing curved line!</p></li>
 </ol>
 <p>Your model should look something like this:</p>
-<div class="figure">
-<img src="IM14.jpg" />
-
-</div>
+<p><img src="IM14.jpg" /></p>
 <ol start="11" style="list-style-type: decimal">
 <li>Open the <em>Equation editor window</em> for the [Flow] and set it to [Moose] times [birth rate]. To make sure you don’t make any spelling errors, it’s best to click on the variables you want in the right-hand panel of the equation editor. The equation in the equation editor window should look like this:</li>
 </ol>
@@ -594,15 +617,9 @@ div.tocify {
 <div id="uncertainty" class="section level3">
 <h3>Uncertainty!</h3>
 <p>Which one of these figures is most likely to be from a real wildlife population??</p>
-<div class="figure">
-<img src="fluct1.jpg" />
-
-</div>
+<p><img src="fluct1.jpg" /></p>
 <p>OR</p>
-<div class="figure">
-<img src="nofluct1.jpg" />
-
-</div>
+<p><img src="nofluct1.jpg" /></p>
 </div>
 <div id="wildlife-populations-fluctuate-over-time" class="section level3">
 <h3>Wildlife populations fluctuate over time!</h3>
@@ -625,10 +642,7 @@ div.tocify {
 <p>These are called <strong>stochastic models</strong>.</p>
 <p>When we use stochastic models, we often want to run lots of <strong>replicates</strong>. Each replicate represents a possible future.</p>
 <p>We can then interpret the <em>cloud of possible futures</em> rather than just the results from a single model run!</p>
-<div class="figure">
-<img src="IM15.jpg" />
-
-</div>
+<p><img src="IM15.jpg" /></p>
 <p>Here we see that the population went extinct in three replicates, out of a total of 50 replicates.</p>
 <p><strong>Q</strong>: What is the extinction risk for this population?</p>
 <div id="demographic-stochasticity" class="section level4">
@@ -642,10 +656,7 @@ div.tocify {
 <p>We usually can’t predict whether next year or the year after will be a good one or a bad one for a <em>population</em>- that is, we don’t know whether the per-capita vital rates (e.g., <span class="math inline">\(b\)</span>, or <span class="math inline">\(d\)</span>) will be more or less optimal year-to-year</p>
 <p>In other words, we can’t know whether a <em>population</em> will be “lucky” or “unlucky”, so to speak!</p>
 <p>In population ecology this is called <strong>environmental stochasticity</strong>.</p>
-<div class="figure">
-<img src="dice1.png" />
-
-</div>
+<p><img src="dice1.png" /></p>
 </div>
 </div>
 </div>
@@ -653,10 +664,7 @@ div.tocify {
 <h2>Random number generation</h2>
 <p>To ensure that each model run (replicate) – or each year of each model run – is different from one another, we can include at least one <strong>random number generator</strong> in our models!</p>
 <p>A random number generator is like a box of (potentially infinite) possible numbers – a lottery ball machine for example! Each time we want a new number we reach in and pull one out, record the number, put it back in and shake it up again.</p>
-<div class="figure">
-<img src="lottery1.png" />
-
-</div>
+<p><img src="lottery1.png" /></p>
 <p>Every random-number generator has a <strong>distribution</strong>. This is a way of defining what exactly is in the box. For example, the box might have 10 “ones”, 5 “twos”, and 2 “threes”. In this case the distribution looks like this (<em>probability</em> of each <em>possibility</em>):</p>
 <p><img src="PVA1_421_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>A probability distribution can be pretty much anything you want it to be. However, there are several key distributions that come up again and again in nature, and we should know them, because they end up being major building blocks of PVA!</p>
@@ -791,10 +799,7 @@ curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot
 </div>
 <div id="the-pva-process-recipe-for-pva" class="section level2">
 <h2>The PVA process (recipe for PVA!)</h2>
-<div class="figure">
-<img src="PVAschematic1.png" />
-
-</div>
+<p><img src="PVAschematic1.png" /></p>
 <p>NOTE: The process of building a PVA model is <strong>iterative</strong> and <strong>non-linear</strong>.</p>
 <p>For example – after running your model (step 4) you might realize that your results (step 5) are totally unrealistic. This might prompt you to go back and change your conceptual model of the life history (step 1), and re-parameterize your model (step 2).</p>
 <div id="step-1-life-history" class="section level3">
@@ -1059,7 +1064,7 @@ legend(&quot;topleft&quot;,col=cols,lwd=rep(2,3),legend=paste(&quot;Stage &quot;
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1068,12 +1073,55 @@ $(document).ready(function () {
 
 </script>
 
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
