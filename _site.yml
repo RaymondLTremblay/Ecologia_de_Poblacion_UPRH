@@ -13,17 +13,17 @@ navbar:
           href: INTRO.html
         - text: "A whole-systems approach to population ecology"
           href: LECTURE1.html
-        - text: "Introduction to population ecology"
+        - text: "Introducción a la Ecología de Poblaciones"
           href: LECTURE2.html
         - text: "Thomas Robert Malthus"
           href: LECTURE3.html
-        - text: "Population Regulation"
+        - text: "Regulación de Poblaciones"
           href: LECTURE4.html
         - text: "Passenger Pigeon"
           href: LECTURE5.html
-        - text: "Age-structured populations"
+        - text: "Población estructurada por Edad"
           href: LECTURE6.html
-        - text: "Matrix population models"
+        - text: "Modelos de población usando Matrices"
           href: LECTURE7.html
         - text: "Stochastic population models"
           href: LECTURE8.html
