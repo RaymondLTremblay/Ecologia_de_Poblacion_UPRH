@@ -1,6 +1,6 @@
 ---
 title: "Bienvenido a BIOL4458"
-author: "Applied Population Ecology"
+author: "Ecología de Población Aplicada"
 output:
   html_document: 
     theme: spacelab
@@ -15,19 +15,17 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 **Instructor:** RAymond L. Tremblay  
  
-**Website**: [https://kevintshoemaker.github.io/NRES-470/](https://kevintshoemaker.github.io/NRES-470/) 	
-**Email**: kevinshoemaker_at_unr_dot_edu
+**Website**: [https://github.com/RaymondLTremblay?tab=repositories](https://raymondltremblay.github.io/Ecologia_de_Poblacion_UPRH/) 	
+**Email**: raymondtremblay_at_upr.edu
  
 ### Course Meeting Times
-**Lecture & Discussion**: M, W at 10am (50 mins)     
-**Lab**: F at 1pm (2 hrs 45 mins)  
+**Lecture & Discussion**: L, W a las 11:00am hasta las 12:20 pm (120 mins)  in NL204.     
 
-- Lectures and Labs will be online (due to the ongoing pandemic)     
 
 **Office hours**:   
 
-- Shoemaker: Wednesdays at 11am (1 hour) (online)     
-- Goldman: TBD (online)    
+- Tremblay: TBD    
+ 
   
 
 ### Texts  
@@ -38,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ### Software   
 - [InsightMaker- free web-based systems modeling tool](https://insightmaker.com/)(no installation needed)        
 - [R- free statistical programming language](https://cran.r-project.org/)      
-- MS Excel (hopefully you already have this or equivalent spreadsheet software on your laptop!)
+- MS Excel 
 
 ### Prerequisites    
 - BIOL 314 or NRES 217 (Ecology)  
