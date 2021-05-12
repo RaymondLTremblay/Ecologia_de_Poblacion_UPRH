@@ -1,15 +1,15 @@
 name: "BIOL 4458"
 output_dir: "."
 navbar:
-  title: "NRES 470/670"
+  title: " BIOL4458"
   left:
     - text: "Home"
       href: index.html
-    - text: "Schedule"
+    - text: "Calendario"
       href: schedule.html
     - text: "Lectures"
       menu:
-        - text: "Introduction to NRES 470"
+        - text: "Introducción a BIOL4458"
           href: INTRO.html
         - text: "A whole-systems approach to population ecology"
           href: LECTURE1.html
@@ -25,25 +25,25 @@ navbar:
           href: LECTURE6.html
         - text: "Modelos de población usando Matrices"
           href: LECTURE7.html
-        - text: "Stochastic population models"
+        - text: "Modelos Estochasticos de poblaciones"
           href: LECTURE8.html
-        - text: "Small population paradigm"
+        - text: "El paradigma de pequeñas poblaciones"
           href: LECTURE9.html
-        - text: "Individual-based models"
+        - text: "Modelos individuales"
           href: LECTURE10.html
-        - text: "Declining population paradigm"
+        - text: "El paradigma de poblaciones en reducción"
           href: LECTURE11.html
-        - text: "Population Viability Analysis"
+        - text: "PVA = Population Viability Analysis"
           href: LECTURE12.html
         - text: "Metapopulations"
           href: LECTURE13.html
         - text: "PVA example: pdogs and ferrets"
           href: LECTURE14.html
-        - text: "Parameter estimation"
+        - text: "Estimados de parametros"
           href: LECTURE15.html
-        - text: "Species interactions: competition"
+        - text: "Interaciones entre especies: competencia"
           href: LECTURE16.html
-        - text: "Species interactions: prey-predator"
+        - text: "Interaciones entre especies: presa-depredador"
           href: LECTURE17.html
         - text: "Wrap-up"
           href: LECTURE18.html
