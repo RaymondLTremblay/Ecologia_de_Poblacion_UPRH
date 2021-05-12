@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-**Instructor:** RAymond L. Tremblay  
+**Instructor:** Raymond L. Tremblay  
  
 **Website**: [https://github.com/RaymondLTremblay?tab=repositories](https://raymondltremblay.github.io/Ecologia_de_Poblacion_UPRH/) 	
 **Email**: raymondtremblay_at_upr.edu
@@ -40,20 +40,20 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ### Prerequisites    
 - BIOL 314 or NRES 217 (Ecology)  
-- NRES 310 (Wildlife Ecology and Management)  
+
 
 ### Descripción de la cLase 
 Esta clase explorará cómo se pueden usar los conceptos de ecología de poblaciones para informar la conservación y el manejo de poblaciones naturales y ecosistemas. Enfatizaremos enfoques prácticos para la resolución de problemas en ecología, conservación y manejo de la vida silvestre a través de la aplicación creativa de la teoría de la ecología de poblaciones utilizando modelos de simulación y estadísticas. Los temas incluirán análisis de viabilidad de la población (PVA), modelos de sostenibilidad de hábitat, modelos de metapoblación, modelos de interacción de especies, amenazas a la viabilidad de la población, gestión de la población de vida silvestre y más. Los ejercicios de laboratorio proporcionarán a los estudiantes experiencia práctica con modelos ecológicos y sus aplicaciones prácticas en la conservación y gestión de poblaciones silvestres.
 
-### Learning outcomes
-Students will be able to:    
+### Objetivos de aprendizaje
+Los estudiantes podrán:
 
-1.	Identify the major classes of models used by ecologists (e.g., statistical vs mechanistic, quantitative vs heuristic, stochastic vs deterministic) and explain how and why ecologists use these models.    
-2.	Apply tools such as population viability analysis (PVA) and metapopulation models to address the conservation and management of natural populations.   
-3.	Perform basic statistics, data visualization, simulation modeling and model validation with Excel, the statistical computing language 'R', and the web-based software, InsightMaker.    
-4.	Critically evaluate the strength of inferences drawn from ecological simulation models using tools such as sensitivity analysis.    
-5.	Explain how species interactions can influence population dynamics (e.g., predictions of species range shifts).            
-6.	Communicate original research in applied population and community ecology via professional-style oral and written presentations.   
+1. Identificar las principales clases de modelos utilizados por los ecologistas (por ejemplo, estadísticos o mecanicistas, cuantitativos o heurísticos, estocásticos o deterministas) y explicar cómo y por qué los ecologistas utilizan estos modelos.
+2. Aplicar herramientas como el análisis de viabilidad poblacional (PVA) y modelos de metapoblación para abordar la conservación y manejo de poblaciones naturales.
+3. Realice estadísticas básicas, visualización de datos, modelado de simulación y validación de modelos con Excel, el lenguaje de cálculo estadístico 'R' y el software basado en web, InsightMaker.
+4. Evaluar críticamente la fuerza de las inferencias extraídas de los modelos de simulación ecológica utilizando herramientas como el análisis de sensibilidad.
+5. Explique cómo las interacciones entre especies pueden influir en la dinámica de la población (por ejemplo, predicciones de cambios en el rango de especies).
+6. Comunicar la investigación original en población aplicada y ecología comunitaria a través de presentaciones orales y escritas de estilo profesional.   
 
 ### Grading: 
 The course grade will be based on the following components:
