@@ -42,8 +42,8 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 - BIOL 314 or NRES 217 (Ecology)  
 - NRES 310 (Wildlife Ecology and Management)  
 
-### Class description  
-This class will explore how concepts of population ecology can be used to inform the conservation and management of natural populations and ecosystems. We will emphasize practical approaches to problem-solving in ecology, conservation, and wildlife management via creative application of population ecology theory using simulation models and statistics. Topics will include population viability analysis (PVA), habitat suitability models, metapopulation models, species interaction models, threats to population viability, wildlife population management and more. Laboratory exercises will provide students with hands-on experience with ecological models and their practical applications in the conservation and management of wild populations.
+### Descripción de la cLase 
+Esta clase explorará cómo se pueden usar los conceptos de ecología de poblaciones para informar la conservación y el manejo de poblaciones naturales y ecosistemas. Enfatizaremos enfoques prácticos para la resolución de problemas en ecología, conservación y manejo de la vida silvestre a través de la aplicación creativa de la teoría de la ecología de poblaciones utilizando modelos de simulación y estadísticas. Los temas incluirán análisis de viabilidad de la población (PVA), modelos de sostenibilidad de hábitat, modelos de metapoblación, modelos de interacción de especies, amenazas a la viabilidad de la población, gestión de la población de vida silvestre y más. Los ejercicios de laboratorio proporcionarán a los estudiantes experiencia práctica con modelos ecológicos y sus aplicaciones prácticas en la conservación y gestión de poblaciones silvestres.
 
 ### Learning outcomes
 Students will be able to:    
