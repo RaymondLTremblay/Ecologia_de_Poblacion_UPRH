@@ -1,5 +1,5 @@
 ---
-title: "Intro to NRES 470/670"
+title: "Intro a BIOL4458"
 output:
   html_document:
     theme: spacelab
@@ -14,49 +14,49 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-![](prairie_dogs2.jpg)    
+![](figures/prairie_dogs2.jpg)    
 
-## Summary
+## Resumen
 
-In this class we will explore how the concepts of *population ecology* can be applied to real-world systems to support and improve wildlife conservation and management. To take this course you should already have a basic grounding in the field of ecology (e.g., BIOL 314, NRES 217) and you should already have taken Dr. Stewart's class in wildlife ecology and management (NRES 310). NRES 470 is meant to be a bridge between NRES 310 and NRES 488 (Dynamics and Management of Wildlife Populations), which covers advanced population modeling and fitting these models to data in R in detail. This class is closely allied with NRES 421 (Conservation Biology), in that we learn and apply one of the most important tools used by conservation biologists and wildlife managers -- quantitative population models!    
+En esta clase exploraremos cómo los conceptos de * ecología de poblaciones * se pueden aplicar a sistemas del mundo real para apoyar y mejorar la conservación y el manejo de la vida silvestre. Para tomar este curso, ya debe tener una base básica en el campo de la ecología (por ejemplo, Ecología General). BIOL4458 está destinado a ser un puente entre Egologái General y el curso de Ecología de comunidades.  Esta clase está estrechamente relacionada con la Biología de la conservación, ya que aprendemos y aplicamos una de las herramientas más importantes utilizadas por los biólogos de la conservación y los administradores de la vida silvestre: ¡modelos cuantitativos de población!    
 
 ## Syllabus:
 First let's take a quick walk through the online syllabus:
 
-[Go to syllabus](index.html)   
-[Go to schedule](schedule.html)
+[Enlace al syllabus](index.html)   
+[Enlace al calendario](schedule.html)
 
-NOTE: you can download a printable PDF version of the syllabus [here](Syllabus.pdf)     
+    
 
 ## Textbook
-I have provided PDF copies of all chapters of the course textbook (A Primer of Ecology, by Nick Gotelli) on WebCampus. However, I encourage you to pick up a copy of the textbook- you can purchase the textbook new or used on [Amazon](https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182/ref=sr_1_1?s=books&ie=UTF8&qid=1484867155&sr=1-1&keywords=a+primer+of+ecology). Previous editions (especially 3rd edition) are acceptable as well. All other readings will be posted on [WebCampus](https://unr.instructure.com/).
+Te animo a que recojas una copia del libro de texto; puedes comprar el libro de texto nuevo o usado en [Amazon](https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182/ref=sr_1_1?s=books&ie=UTF8&qid=1484867155&sr=1-1&keywords=a+primer+of+ecology). Las ediciones previas (especialmente 3rd edition) son acptable. Todas las demás lecturas se publicarán en Edmodo. 
 
 ## Software
-Skills with specialized software and computer programming are critical in modern-day conservation biology and wildlife management. In this class, you will gain familiarity with using some specialized tools (e.g., [Program MARK](http://www.phidot.org/software/mark/)) and some computer programming (e.g., [InsightMaker](https://insightmaker.com/), [R](https://cran.r-project.org/)) and I hope by the end of this class you will understand how powerful and useful these tools can be -- and not just for population ecology!
+Las habilidades con software especializado y programación de computadoras son críticas en la biología de la conservación y el manejo de la vida silvestre de hoy en día. En esta clase, se familiarizará con el uso de algunas herramientas especializadas. (e.g., [Program MARK](http://www.phidot.org/software/mark/index.html)) y algo de programación informática (e.g., [InsightMaker](https://insightmaker.com/), [R](https://cran.r-project.org/)) y espero que al final de esta clase comprendan lo poderosas y útiles que pueden ser estas herramientas, ¡y no solo para la ecología de poblaciones!
 
-See the [links page](Links.html) for some useful references (I will post more links shortly, including some R tutorials!).
+Ver el [links page](Links.html) para obtener algunas referencias útiles (publicaré más enlaces en breve, ¡incluidos algunos tutoriales de R!).
 
-## In-class activities
-This semester I will provide lecture materials, videos and readings prior to our class meetings. Most class periods will be devoted to discussion and hands-on modeling exercises (mini-labs) to give everyone a chance to apply the population ecology concepts we talked about in lecture. Many class periods will also include short Top Hat questions (discussion questions, multiple choice, etc), mostly to give me feedback about what concepts might need more reinforcing. Your responses to these questions will also help inform your participation score. _NOTE: you will not be penalized for incorrect responses in TopHat_!   
+##Actividades en clase
+Este semestre proporcionaré materiales de conferencias, videos y lecturas antes de nuestras reuniones de clase. La mayoría de los períodos de clase se dedicarán a debates y ejercicios prácticos de modelado (mini laboratorios) para que todos tengan la oportunidad de aplicar los conceptos de ecología de poblaciones de los que hablamos en la conferencia. Muchos períodos de clase también incluirán preguntas breves (preguntas de discusión, opción múltiple, etc.), principalmente para darme retro alimentación sobre qué conceptos podrían necesitar más refuerzo. Sus respuestas a estas preguntas también ayudarán a informar su puntaje de participación.
 
-## Out-of-class activities
-To make the most of this course, you will need to devote significant time outside of class on:    
+## Actividades fuera de clase
+Para aprovechar al máximo este curso, deberá dedicar una cantidad significativa de tiempo fuera de clase a:
 
-1. Studying the assigned readings (see [the schedule](schedule.html)) and online lecture materials        
-2. Finishing any problems/exercises you didn't complete during class or lab        
-3. Working on your final group projects.      
+1. Estudiar las lecturas asignadas (consulte [the schedule](schedule.html)) y los materiales de las conferencias en línea.
+2. Terminar cualquier problema / ejercicio que no completó durante la clase o el laboratorio
+3. Trabajando en sus proyectos finales grupales.
 
-## Final projects
-It is never too early to start thinking about final project ideas and datasets. For the final projects, you will work in small groups to perform a population viability analysis (PVA) to assess conservation or management actions for a species of conservation concern (species of your choice!). I will compile a list of online databases that might be useful for your projects that I will post to the course website. In the meantime, start thinking about what species you might be interested in modeling, and what conservation and management strategies you might want to test!      
 
-## Making up classes and labs
-Lectures and laboratory exercises will be posted online in enough detail to complete and study on your own time. BUT, much of the benefit of this course will come from interactions with peers and the instructor during class and lab periods and I expect you to be a full participant in this class. Please let me know in advance if you need to miss class for any reason.    
+## Proyecto de PVA
+Nunca es demasiado pronto para empezar a pensar en las ideas y conjuntos de datos del proyecto final. Para los proyectos finales, trabajará en grupos pequeños para realizar un análisis de viabilidad de la población (PVA) para evaluar las acciones de conservación o manejo para una especie de interés de conservación (¡especie de su elección!). Recopilaré una lista de bases de datos en línea que podrían ser útiles para sus proyectos y la publicaré en el sitio web del curso. Mientras tanto, ¡comience a pensar en qué especies podría interesarle modelar y qué estrategias de conservación y manejo podría querer probar!    
 
-## Please help to make this class better!
-I need your frequent and honest feedback in order to make sure that the level and pace are appropriate! Please don't hesitate to provide constructive suggestions for improving this class!
+## Trabajo
 
-## Introductions
-Please take the time to introduce yourself in more detail on WebCampus -- I posted a question on the discussion board.  
+Las conferencias y los ejercicios se publicarán en línea con suficiente detalle para completar y estudiar en su propio tiempo. PERO, gran parte del beneficio de este curso vendrá de las interacciones con los compañeros y el instructor durante los períodos de clase y laboratorio, y espero que participe plenamente en esta clase. Por favor avíseme con anticipación si necesita faltar a clases por cualquier motivo.  
+
+## ¡Por favor ayude a mejorar esta clase!
+Necesito sus comentarios frecuentes y honestos para asegurarme de que el nivel y el ritmo sean los adecuados. ¡No dude en brindar sugerencias constructivas para mejorar esta clase!
+
 
 ## Any questions??
 
