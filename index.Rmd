@@ -18,28 +18,28 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 **Website**: [https://github.com/RaymondLTremblay?tab=repositories](https://raymondltremblay.github.io/Ecologia_de_Poblacion_UPRH/) 	
 **Email**: raymondtremblay_at_upr.edu
  
-### Course Meeting Times
-**Lecture & Discussion**: L, W a las 11:00am hasta las 12:20 pm (120 mins)  in NL204.     
+### Horario de la Clase
+**Lectures**: L, W a las 11:00am hasta las 12:20 pm (120 mins)  in NL204.     
 
 
-**Office hours**:   
+**Hora de Consulta**:   
 
 - Tremblay: TBD    
  
   
 
-### Texts  
+### Libros  
 - [Gotelli, N. J. A primer of ecology](https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182)      
 - [Beyond Connecting the Dots](http://beyondconnectingthedots.com/) (free download)   
-- Additional readings from the primary literature will be assigned for discussion periodically.    
+- Se asignarán lecturas adicionales de la literatura primaria para discusión periódicamente.    
 
 ### Software   
 - [InsightMaker- free web-based systems modeling tool](https://insightmaker.com/)(no installation needed)        
 - [R- free statistical programming language](https://cran.r-project.org/)      
 - MS Excel 
 
-### Prerequisites    
-- BIOL 314 or NRES 217 (Ecology)  
+### Prerequisitos    
+- BIOL 3115-3116 Ecología General 
 
 
 ### Descripción de la cLase 
@@ -55,49 +55,38 @@ Los estudiantes podrán:
 5. Explique cómo las interacciones entre especies pueden influir en la dinámica de la población (por ejemplo, predicciones de cambios en el rango de especies).
 6. Comunicar la investigación original en población aplicada y ecología comunitaria a través de presentaciones orales y escritas de estilo profesional.   
 
-### Grading: 
+### Puntación: 
 The course grade will be based on the following components:
 
-Lab exercises (7 total)	         20%  (70 points)     
-Quizzes and participation        10%  (40 points)     
-Group project                    25%  (100 points)      
-Midterm exam # 1 (date TBD)	     10%  (40 points)    
-Midterm exam # 2 (date TBD)   	 10%  (40 points)    
-Final exam (5/8/2020)   	       25%  (100 points)    
+Lab exercises Vea prontuartio correspondiente         33%   
 
-NOTE: Graduate students enrolled in NRES 670 will have an additional 50 pts used to calculate their grade (see below) of a total of 370 points.     
-Grading scale: A (100 to 93), A- (92 to 90), B+ (89 to 87), B (86 to 83), B- (82 to 80), C+ (79 to 77), C (76 to 73), C- (72 to 70), D+ (69 to 67), D (66 to 63), D- (62 to 60), F (below 60). 
+Cuestionarios y participación                         10% (40 puntos)
+Proyecto grupal de un tema                            25% (100 puntos)
+Examen parcial n.°1 (fecha por determinar)            10% (40 puntos)
+Trabajo de PVA (fecha por determinar)                 10% (40 puntos)
+Examen final (TBD)                                    25% (100 puntos)
 
-### Exams:
-There will be two midterm exams and a comprehensive (cumulative) final exam. These will consist of multiple-choice, short-answer questions, and essay questions requiring synthesis of ideas and critical thinking. The midterm and final exams will be cumulative, and based on all information presented up through the week prior to the exam.
+   
+### Examenes:
+Habrá un examen parcial y un examen final (acumulativo). Estos consistirán en preguntas de opción múltiple, de respuesta corta y preguntas de ensayo que requieren síntesis de ideas y pensamiento crítico. El exámen parcial y final serán acumulativos y se basarán en toda la información presentada durante la semanas anterior al examen.
 
 ### Lectures
-Lecture grades will be based primarily on participation and short Top Hat quizzes. Participation is essential to the learning process (and to our mutual enjoyment of this class). Learning is not a passive process; students are expected to engage with the material in class rather than simply listen and take notes. You should be prepared in class to ask questions, to answer questions posed by other students, and to engage in in-class problem-solving activities.   
+Las calificaciones de las conferencias se basarán principalmente en la participación y en las pruebas breves. La participación es esencial para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta clase). El aprendizaje no es un proceso pasivo; Se espera que los estudiantes se involucren con el material en clase en lugar de simplemente escuchar y tomar notas. Debe estar preparado en clase para hacer preguntas, responder preguntas de otros estudiantes y participar en actividades de resolución de problemas en clase.   
 
 ### Labs  
-Lab exercises will focus on applying concepts and methods introduced in lectures, and will involve real data and problems in wildlife conservation and management wherever possible. Graded lab assignments will involve figures, tables, InsightMaker models and R code (when applicable) and responses to questions in short-answer format. Laboratory write-ups will be due the following lab period, unless otherwise specified. 
+Vea el Prontuario
 
-### Final group project 
-Students will work in groups of ~4 to perform a population viability analysis (PVA) to rank conservation or management actions for a species of conservation concern (species of your choice!). Grading will be based on finished products (written and oral presentations) as well as participation and peer evaluations. 
+### Proyecto de PVA
+Los estudiantes trabajarán en grupos de ~ 2 para realizar un análisis de viabilidad de la población (PVA) para clasificar las acciones de conservación o manejo para una especie de interés de conservación (¡especie de su elección!). La calificación se basará en los productos terminados (presentaciones escritas y orales), así como en la participación y evaluaciones de pares.
 
-### Graduate credit (for students enrolled in NRES 670) 
-Graduate students will be subject to additional expectations in order to receive graduate credit for this course. In particular, graduate students will be expected to develop an original lecture and lead an original lab activity related to their lecture. Graduate students will also be expected to achieve a deeper understanding of the course material, and therefore will be assigned additional readings from the scientific literature and will be expected to participate as leaders in discussions and lab activities.
+### Proyecto de grupal de un tema
 
-### Make-up policy and late work:
-Missed exams and labs cannot be made up, except in the case of emergencies. If you miss a class meeting, it is your responsibility to talk to one of your classmates about what you missed. If you miss a lab meeting, you are still responsible for completing the lab activities and write-up on your own time. Whenever possible, please let me know in advance if you are going to miss class or lab.
 
-### Top Hat
-We will be using the [Top Hat](www.tophat.com) ([www.tophat.com](www.tophat.com)) classroom response system in class. You will be able to submit answers to in-class questions using Apple or Android smartphones and tablets, laptops, or through text message.  
 
-You can visit the Top Hat Overview (https://success.tophat.com/s/article/Student-Top-Hat-Overview-and-Getting-Started-Guide) within the Top Hat Success Center which outlines how you will register for a Top Hat account, as well as providing a brief overview to get you up and running on the system.
+### Política de recuperación y trabajo tardío:
+Los exámenes y laboratorios perdidos no se pueden recuperar, excepto en el caso de emergencias. Si se pierde una reunión de la clase, es su responsabilidad hablar con uno de sus compañeros de clase sobre lo que se perdió. Si se pierde una reunión de laboratorio, aún es responsable de completar las actividades de laboratorio y escribir en su propio tiempo. Siempre que sea posible, avíseme con anticipación si va a faltar a clases o al laboratorio.
 
-An invitation will be sent to you by email, but if don’t receive this email, you can register by simply visiting our course website: [https://app.tophat.com/e/648264](https://app.tophat.com/e/648264)       
 
-Note: our Course Join Code is 648264
-
-Top Hat may require a paid subscription, and a full breakdown of all subscription options available can be found here: [www.tophat.com/pricing](www.tophat.com/pricing). 
-
-Should you require assistance with Top Hat at any time, due to the fact that they require specific user information to troubleshoot these issues, please contact their Support Team directly by way of email ([support@tophat.com](support@tophat.com)), the in app support button, or by calling 1-888-663-5491.
 
 ### Students with Disabilities
 Any student with a disability needing academic adjustments or accommodations is requested to speak with the Disability Resource Center (Thompson Building, Suite 101) as soon as possible to arrange for appropriate accommodations.
