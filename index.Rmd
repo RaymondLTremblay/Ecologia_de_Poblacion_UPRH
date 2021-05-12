@@ -1,5 +1,5 @@
 ---
-title: "Welcome to NRES 470/670"
+title: "Bienvenido a BIOL4458"
 author: "Applied Population Ecology"
 output:
   html_document: 
@@ -13,8 +13,8 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-**Instructor:** Kevin Shoemaker   
-**Teaching Assistants** Mia Goldman (miagoldman_at_nevada_dot_unr_dot_edu) and Adriana Parra (adrianaparra_at_nevada_dot_unr_dot_edu)   
+**Instructor:** RAymond L. Tremblay  
+ 
 **Website**: [https://kevintshoemaker.github.io/NRES-470/](https://kevintshoemaker.github.io/NRES-470/) 	
 **Email**: kevinshoemaker_at_unr_dot_edu
  

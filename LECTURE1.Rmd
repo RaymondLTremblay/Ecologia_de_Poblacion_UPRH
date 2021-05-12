@@ -1,7 +1,7 @@
 ---
 title: "A whole-systems approach to population ecology"
-author: "NRES 470/670"
-date: "Spring 2021"
+author: "BIOL4458"
+date: "AGOSTO 2021"
 output: 
   html_document: 
     theme: spacelab
