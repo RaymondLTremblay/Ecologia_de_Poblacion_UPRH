@@ -11,7 +11,7 @@ navbar:
       menu:
         - text: "Introducción a BIOL4458"
           href: INTRO.html
-        - text: "A whole-systems approach to population ecology"
+        - text: "Un enfoque de sistemas holístico"
           href: LECTURE1.html
         - text: "Introducción a la Ecología de Poblaciones"
           href: LECTURE2.html
