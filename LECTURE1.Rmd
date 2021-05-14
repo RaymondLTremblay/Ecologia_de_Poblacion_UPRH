@@ -39,68 +39,71 @@ Y aquí hay un ejemplo más abstracto que ilustra algunas propiedades emergentes
 [Lorenz attractor](https://insightmaker.com/insight/1829/Lorenz-Attractor)
 [Vea Wikipedia para más información](https://es.wikipedia.org/wiki/Atractor_de_Lorenz)
 
-## *InsightMaker*: a modeling framework for systems thinking!
+## *InsightMaker*: un marco dpara modelar el pensamiento sistémico!
 
-[InsightMaker](insightmaker.com) is a flexible web-based software for defining interacting systems and for modeling the behavior of inter-connected systems. 
+[InsightMaker](insightmaker.com) es un software flexible basado en la web para definir sistemas que interactúan y para modelar el comportamiento de sistemas interconectados. 
 
-Both of the above examples were constructed in InsightMaker.
 
-We will make extensive use of InsightMaker, both during class and in lab- this will give you a chance to play around with complex and dynamic systems without needing a background in computer programming!
+Los dos ejemplos anteriores se crearon en InsightMaker.
 
-## Computer programming and systems thinking
+Haremos un uso extensivo de InsightMaker, tanto durante la clase como en el laboratorio, ¡esto le dará la oportunidad de jugar con sistemas complejos y dinámicos sin necesidad de tener experiencia en programación de computadoras!
 
-Modern computers have reduced or eliminated many of the barriers to understanding how complex systems behave, and as a result **specialized software and computer programming** are a critical component to modern whole-systems analysis, including **ecosystems** analyses. Armed with basic facility with computer programming, ecologists and natural resource professionals can formalize their understanding of the natural systems in which they work, accounting for complex biological realities that may have been ignored if these tools were not available. **In this course, we will learn to harness the power of computer simulations for understanding and managing natural populations**.  
+## Programación informática y pensamiento sistémico
 
-By the end of this course, students will have the ability to program their own *whole-systems models* in InsightMaker, and use specialized software for parameterizing these models (e.g., Program MARK, **R**)
+Las computadoras modernas han reducido o eliminado muchas de las barreras para comprender cómo se comportan los sistemas complejos y, cual es el resultado, con el ayuda de **los programados (software) especializado y la programación de computadoras** son un componente crítico para el análisis moderno de sistemas completos, incluidos los análisis de **ecosistemas**. Armados con una facilidad básica con la programación de computadoras, los ecólogos y los profesionales de los recursos naturales pueden formalizar su comprensión de los sistemas naturales en los que trabajan, teniendo en cuenta las complejas realidades biológicas que podrían haberse ignorado si estas herramientas no estuvieran disponibles. **En este curso, aprenderemos a aprovechar el poder de las simulaciones por computadora para comprender y administrar las poblaciones naturales**  
 
-A famous statistician ([George Box](https://en.wikipedia.org/wiki/George_E._P._Box)) once said ["All models are wrong but some are useful"](https://en.wikipedia.org/wiki/All_models_are_wrong). What he meant was that no model can perfectly describe any real-world system (e.g., population dynamics). However, some models can help us to undersand how the real-world works and how to manage natural systems.
+Al final de este curso, los estudiantes tendrán la capacidad de programar sus propios *modelos de sistemas completos * en InsightMaker y utilizar software especializado para parametrizar estos modelos (por ejemplo, Programa MARK, **R **)
 
-**This is especially true in ecology**: ecological systems are complex and messy, and it is clear that no mathematical model can perfectly describe and predict any ecological phenomena. But that does not mean that ecological models can't be *useful*!    
-In this class (and beyond), _don't be afraid to model messy systems_. And above all, **don't be afraid to be wrong** - that attitude is the enemy of successful computer programming, and of learning in general! When we build our own algorithms, we can be entering uncharted territory. And this can be difficult and dangerous, but ultimately rewarding! Keep trying, and stay positive! And don't forget that all models are wrong!
+Un estadístico famoso ([George Box](https://en.wikipedia.org/wiki/George_E._P._Box)) dijo una vez ["Todos los modelos son incorrectos pero algunos son útiles"](https: //en.wikipedia .org / wiki / All_models_are_wrong). Lo que quiso decir fue que ningún modelo puede describir perfectamente ningún sistema del mundo real (por ejemplo, la dinámica de la población). Sin embargo, algunos modelos pueden ayudarnos a comprender cómo funciona el mundo real y cómo gestionar los sistemas naturales.
 
-Of course, this means not just reading and listening to lectures, it means *learning by doing*! Instructor-led lectures will be kept short, and we will spend significant class time (and pretty much all of lab time) on our computers, working through problems.
+**Esto es especialmente cierto en ecología**: los sistemas ecológicos son complejos y desordenados, y está claro que ningún modelo matemático puede describir y predecir perfectamente ningún fenómeno ecológico. ¡Pero eso no significa que los modelos ecológicos no puedan ser *útiles*!
 
-## In-class Exercise: InsightMaker
+En esta clase (y más allá), _no tenga miedo de modelar sistemas desordenados_. Y, sobre todo, **no tengas miedo de equivocarte**: ¡esa actitud es enemiga de la programación informática exitosa y del aprendizaje en general! Cuando construimos nuestros propios algoritmos, podemos estar entrando en un territorio inexplorado. Y esto puede ser difícil y peligroso, ¡pero en última instancia gratificante! ¡Sigue intentándolo y mantén una actitud positiva! ¡Y no olvides que todos los modelos están erroneos!
 
-A [Stock] of stuff increases over time via what [Flows] in. Imagine our stock represents *Moose*! *Moose Births* would then be the input [Flow] to the population of *Moose* over time. 
+Por supuesto, esto significa no solo leer y escuchar conferencias, ¡significa *aprender haciendo*! Las conferencias dirigidas por un instructor serán breves y pasaremos una cantidad significativa de tiempo de clase (y casi todo el tiempo de laboratorio) en nuestras computadoras, resolviendo problemas.
 
-A [Stock] of stuff decreases over time via what [Flows] out. For example, *Moose Deaths* could represent the [Flow] out of the population of *Moose*.
+## Ejercicios en Clase: InsightMaker
 
-If the [Flow] in is larger than the [Flow] out then the [Stock] increases over time. 
+Un [stock] de cosas aumenta con el tiempo a través de lo que [fluye]. ¡Imagínese que nuestro stock representa * Moose *! * Moose Births * sería entonces la entrada [Flujo] de la población de * Moose * a lo largo del tiempo.
 
-If the [Flow] out is larger than the [Flow] in then the [Stock] decreases over time.
+Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, * Moose Deaths * podría representar el [Flujo] de la población de * Moose *.
 
-If the [Flow] in equals the [Flow] out then the amount in the [Stock] will not change over time.
+Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.
 
-The important takeaway is that a [Stock] represents a quantity of something. The [Stock] only changes over time via [Flows In] or [Flows Out]. A [Stock] doesn't change instantaneously. If there are no [Flows] then the [Stock] can not change.
+Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el [Stock] disminuye con el tiempo.
 
-Finally, a [Variable] is an object that stores an important piece of information for your model (e.g., birth rate could be a [Variable] that informs the total [Flow] of individuals into a [Stock] representing a wild population). [Variables] are generally connected to [Flows] with [Links] -- unlike [Flows], links do not represent any physical process. Instead, links simply represent *information*.   
+Si el [Flujo] de entrada es igual al [Flujo] de salida, la cantidad de [Stock] no cambiará con el tiempo.
 
-1. Open up [InsightMaker](https://insightmaker.com/). If you have never used it before you need to sign up first with a username and password. *InsightMaker is free!*
+La conclusión importante es que una [Acción] representa una cantidad de algo. El [Stock] solo cambia con el tiempo a través de [Flujos de entrada] o [Flujos de salida]. Un [Stock] no cambia instantáneamente. Si no hay [Flujos], el [Stock] no puede cambiar.
 
-2. Create a new "Insight" (the button to do this should be obvious!) and clear the demo model. 
 
-3. **Create a population of Moose!** Right click in the center of the screen and select **Create Stock** from the pop-up. Notice that the name is *New Stock* and is selected. Type in a name for what this [Stock] represents (Moose!). Note the **Configuration Panel** on the right is now for a [Stock]. In the configuration panel, set the *Initial Value* to 50. That is, there will be 50 moose at the start of the simulation! 
+Finalmente, una [Variable] es un objeto que almacena una pieza importante de información para su modelo (por ejemplo, la tasa de natalidad podría ser una [Variable] que informa el [Flujo] total de individuos en una [Población] que representa una población silvestre). [Variables] generalmente están conectadas a [Flujos] con [Enlaces] - a diferencia de [Flujos], los enlaces no representan ningún proceso físico. En cambio, los enlaces simplemente representan *información*. 
 
-- **OPTIONAL**: insert a picture of the animal you are modeling to your work canvas. The instructor will show you how in class!
+1. Abra [InsightMaker](https://insightmaker.com/). Si nunca lo ha usado antes, primero debe registrarse con un nombre de usuario y contraseña. *¡InsightMaker es gratis!*
 
-4. **Specify the births process** Select the [Flows/Transitions] button in the upper left corner of your screen. Now notice that when you place your cursor over the [Stock] a small right-arrow displays. Click on the right-arrow and drag a couple inches to the left of the [Stock] and release. Type in a name for what this arrow represents (Births). NOTE: you have actually just created a [Flow] *out* of a [Stock]. To create a [Flow] *into* a [Stock], click on the **Reverse** button in the top menu (looks like two opposing arrows). Please do that now. Also in the **Configuration Panel** set **Flow Rate** equal to 1.
+2. Cree un nuevo "Insight" (¡el botón para hacer esto debería ser obvio!) Y borre el modelo de demostración.
 
-5. Now click **Run Simulation** and you have just finished your first population simulation model.
+3. ** ¡Crea una población de alces! **Haz clic derecho en el centro de la pantalla y selecciona** Crear stock **en la ventana emergente**. Observe que el nombre es *Stock nuevo* y está seleccionado. Escriba un nombre para lo que representa este [Stock] (¡Alce!). Tenga en cuenta que el **Panel de configuración** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el *Valor inicial* en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!
 
-6. Can you figure out how to change the settings to run the model for 50 years? Try this and click **Run Simulation**.
+- **OPCIONAL**: inserta una imagen del animal que estás modelando en tu lienzo de trabajo. ¡El instructor te enseñará cómo hacerlo en clase!
 
-7. Use the same methods as *step 4* to create a [Flow Out], representing deaths. Re-run the model. Is the population increasing or declining? Why? 
+4. **Especifique el proceso de nacimiento** Seleccione el botón [Flujos / Transiciones] en la esquina superior izquierda de su pantalla. Ahora observe que cuando coloca el cursor sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Escriba un nombre para lo que representa esta flecha (Nacimientos). NOTA: en realidad, acaba de crear un [Flujo] *fuera*de un [Stock]. Para crear un [Flujo] en una [Acción], haga clic en el botón **Invertir** en el menú superior (parece dos flechas opuestas). Por favor hazlo ahora. También en el **Panel de configuración** establezca **Caudal** igual a 1.
 
-8. Change the **Configuration Panel** for the [Stock] and for the [Flow In] and [Flow Out] so that "Show Value Slider" is set to "Yes". You can change the model parameterization easily using these sliders. Try it a few times, re-running the simulation after each change. **Save your model** ("Save" button at the top menu) 
+5. Ahora haga clic en **Ejecutar simulación** y acaba de terminar su primer modelo de simulación de población.
 
-**Q**: Is this Moose model realistic? What are the first things you would like to change to make the model more realistic?
+6. ¿Puede averiguar cómo cambiar la configuración para ejecutar el modelo durante 50 años? Pruebe esto y haga clic en **Ejecutar simulación**.
+
+7. Utilice los mismos métodos que en el *paso 4* para crear un [Flujo de salida] que represente las muertes. Vuelva a ejecutar el modelo. ¿La población está aumentando o disminuyendo? ¿Por qué?
+
+8. Cambie el **Panel de configuración** para [Stock] y para [Flujo de entrada] y [Flujo de salida] de modo que "Mostrar control deslizante de valor" se establezca en "Sí". Puede cambiar la parametrización del modelo fácilmente usando estos controles deslizantes. Pruébelo varias veces y vuelva a ejecutar la simulación después de cada cambio. **Guarda tu modelo** (botón "Guardar" en el menú superior)
+
+**Q**: ¿Es este modelo de Moose realista? ¿Cuáles son las primeras cosas que le gustaría cambiar para hacer el modelo más realista?
 
 *Top Hat: take a few minutes to list the things you would like to change to make this model more realistic!*
 
-9. Finally, take a few minutes to check out "Insights" made by others using the "explore insights" link at the top of the webpage. You can search the database of Insights. Pick one or two of these insights and run them. How does the system behave? Does this make sense to you? We can (and will) add to this database as part of this class! 
+9. Por último, tómese unos minutos para consultar las "Estadísticas" realizadas por otros mediante el enlace "Explorar información" en la parte superior de la página web. Puede buscar en la base de datos de Insights. Elija uno o dos de estos conocimientos y ejecútelos. ¿Cómo se comporta el sistema? ¿Tiene sentido esto para ti? ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!
 
-Just for fun, here is a cool video of the Lorenz Attractor, which we saw earlier!
+¡Solo por diversión, aquí hay un video genial del Atractor de Lorenz, que vimos antes!
 
 [Lorenz attractor video!](https://www.youtube.com/watch?v=iu4RdmBVdps)
 
