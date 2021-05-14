@@ -85,7 +85,7 @@ Finalmente, una [Variable] es un objeto que almacena una pieza importante de inf
 
 3. ** ¡Crea una población de alces! **Haz clic derecho en el centro de la pantalla y selecciona** Crear stock **en la ventana emergente**. Observe que el nombre es *Stock nuevo* y está seleccionado. Escriba un nombre para lo que representa este [Stock] (¡Alce!). Tenga en cuenta que el **Panel de configuración** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el *Valor inicial* en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!
 
-- **OPCIONAL**: inserta una imagen del animal que estás modelando en tu lienzo de trabajo. ¡El instructor te enseñará cómo hacerlo en clase!
+- **OPCIONAL**: inserta una imagen del animal que estás modelando en tu lienzo de trabajo. 
 
 4. **Especifique el proceso de nacimiento** Seleccione el botón [Flujos / Transiciones] en la esquina superior izquierda de su pantalla. Ahora observe que cuando coloca el cursor sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Escriba un nombre para lo que representa esta flecha (Nacimientos). NOTA: en realidad, acaba de crear un [Flujo] *fuera*de un [Stock]. Para crear un [Flujo] en una [Acción], haga clic en el botón **Invertir** en el menú superior (parece dos flechas opuestas). Por favor hazlo ahora. También en el **Panel de configuración** establezca **Caudal** igual a 1.
 
