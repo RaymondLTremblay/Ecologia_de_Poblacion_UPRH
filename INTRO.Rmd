@@ -28,11 +28,11 @@ Revisamos el Syllabus y el calendario:
 
     
 
-## Textbook
-Te animo a que recojas una copia del libro de texto; puedes comprar el libro de texto nuevo o usado en [Amazon](https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182/ref=sr_1_1?s=books&ie=UTF8&qid=1484867155&sr=1-1&keywords=a+primer+of+ecology). Las ediciones previas (especialmente 3rd edition) son acptable. Todas las demás lecturas se publicarán en Edmodo. 
+## Libros
+Te animo a que recojas una copia del libro de texto; puedes comprar el libro de texto nuevo o usado en [Amazon](https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182/ref=sr_1_1?s=books&ie=UTF8&qid=1484867155&sr=1-1&keywords=a+primer+of+ecology). Las ediciones previas (especialmente 3rd edition) son aceptable. Todas las demás lecturas se publicarán en Edmodo. 
 
 ## Software
-Las habilidades con software especializado y programación de computadoras son críticas en la biología de la conservación y el manejo de la vida silvestre de hoy en día. En esta clase, se familiarizará con el uso de algunas herramientas especializadas. (e.g., [Program MARK](http://www.phidot.org/software/mark/index.html)) y algo de programación informática (e.g., [InsightMaker](https://insightmaker.com/), [R](https://cran.r-project.org/)) y espero que al final de esta clase comprendan lo poderosas y útiles que pueden ser estas herramientas, ¡y no solo para la ecología de poblaciones!
+Las habilidades con software especializado y programación de computadoras son críticas en la biología de la conservación y el manejo de la vida silvestre de hoy en día. En esta clase, se familiarizará con el uso de algunas herramientas especializadas. (e.g., [Program MARK](http://www.phidot.org/software/mark/index.html)) y algo de programación informática (e.g., [InsightMaker](https://insightmaker.com/), [R](https://cran.r-project.org/)) y espero que al final de esta clase comprendan lo poderoso y útiles que pueden ser estas herramientas, ¡y no solo para la ecología de poblaciones!
 
 Ver el [links page](Links.html) para obtener algunas referencias útiles (publicaré más enlaces en breve, ¡incluidos algunos tutoriales de R!).
 
@@ -62,6 +62,14 @@ Necesito sus comentarios frecuentes y honestos para asegurarme de que el nivel y
 
 
 [--go to next lecture--](LECTURE1.html)
+
+## NOTA IMPORTANTE: 
+La gran mayoria de la información de este website proviene de un curso preparado y organizado por Ken Shoemaker [https://github.com/kevintshoemaker/NRES-470](https://github.com/kevintshoemaker/NRES-470). El Dr. Shoemaker dio su aprobación que se podia utilizar y traducir su website al español. Hay cambio de información y de temas en diferentes paginas.  I appreciate that 
+
+## IMPORTANT NOTE:
+
+The majority of the information on this website is a translation of a site develelopped and organizaed by Dr. Kevin Shoemaker [https://github.com/kevintshoemaker/NRES-470](https://github.com/kevintshoemaker/NRES-470). Dr. Shoemaker generously agreed that i could translate his website and add perosnal touch as needed for students in that would be relevant to the Tropics and the Caribbean.  
+
 
 
 
