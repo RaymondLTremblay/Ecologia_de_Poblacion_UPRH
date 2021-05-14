@@ -39,7 +39,7 @@ Y aquí hay un ejemplo más abstracto que ilustra algunas propiedades emergentes
 [Lorenz attractor](https://insightmaker.com/insight/1829/Lorenz-Attractor)
 [Vea Wikipedia para más información](https://es.wikipedia.org/wiki/Atractor_de_Lorenz)
 
-## *InsightMaker*: un marco dpara modelar el pensamiento sistémico!
+## *InsightMaker*: un marco para modelar el pensamiento sistémico!
 
 [InsightMaker](insightmaker.com) es un software flexible basado en la web para definir sistemas que interactúan y para modelar el comportamiento de sistemas interconectados. 
 

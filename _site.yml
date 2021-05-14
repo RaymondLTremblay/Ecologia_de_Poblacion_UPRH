@@ -55,8 +55,8 @@ navbar:
           href: PVA3_421.html
     - text: "Labs"
       menu:
-  #      - text: "Lab 1: exponential growth"
-  #        href: LAB1.html
+        - text: "Lab 1: exponential growth"
+          href: LAB1.html
         - text: "Lab 2: logistic growth"
           href: LAB2.html
         - text: "Lab 3: age-structured population growth"
