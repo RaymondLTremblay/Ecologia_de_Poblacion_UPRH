@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 En esta clase exploraremos cómo los conceptos de * ecología de poblaciones * se pueden aplicar a sistemas del mundo real para apoyar y mejorar la conservación y el manejo de la vida silvestre. Para tomar este curso, ya debe tener una base básica en el campo de la ecología (por ejemplo, Ecología General). BIOL4458 está destinado a ser un puente entre Egologái General y el curso de Ecología de comunidades.  Esta clase está estrechamente relacionada con la Biología de la conservación, ya que aprendemos y aplicamos una de las herramientas más importantes utilizadas por los biólogos de la conservación y los administradores de la vida silvestre: ¡modelos cuantitativos de población!    
 
 ## Syllabus:
-First let's take a quick walk through the online syllabus:
+Revisamos el Syllabus y el calendario:
 
 [Enlace al syllabus](index.html)   
 [Enlace al calendario](schedule.html)
