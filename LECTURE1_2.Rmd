@@ -102,7 +102,7 @@ La conclusión importante es que una [Acción] representa una cantidad de algo. 
 
 9. Tómese unos minutos para consultar las "Estadísticas" realizadas por otros mediante el enlace "Explorar información" en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!
 
-
+**Q**  ¿Pudiese pensar en como adaptar este ejemplo a Coquis?
 
 Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!
 
