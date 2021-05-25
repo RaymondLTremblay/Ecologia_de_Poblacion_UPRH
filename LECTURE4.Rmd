@@ -26,67 +26,69 @@ La semana pasada pasamos por las matemáticas del crecimiento exponencial. Esta 
 
 Lo mismo ocurre con las poblaciones. En una población regulada, un aumento en la abundancia provocará una disminución en la tasa de crecimiento de la población y una disminución en la abundancia provocará un aumento en la tasa de crecimiento de la población. En ecología de poblaciones (y especialmente en ciencias pesqueras), esta última a menudo se denomina *crecimiento compensatorio*. No se puede tener una población regulada sin algún tipo de retroalimentación negativa.
 
-**thought Q**: What are some possible mechanisms of density-dependence? That is, why could vital rates become less favorable at higher densities?
+**Q**: ¿Cuáles son algunos posibles mecanismos de dependencia de la densidad? Es decir, ¿por qué las tasas vitales podrían volverse menos favorables a densidades más altas?
 
-**thought Q**: Are all wild populations regulated? Is density-dependent population regulation a "law of nature"?
+**Q**: ¿Están reguladas todas las poblaciones silvestres? ¿Es la regulación de la población dependiente de la densidad una "ley de la naturaleza"?
 
 ## Logistic growth
 
-Logistic growth can be described mathematically by the following equation: 
+El crecimiento logístico se puede describir matemáticamente mediante la siguiente ecuación:
 
 $\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K}  \right )$
 
-This is probably the *second most important equation of population ecology* (after basic exponential growth!). 
+Esta es probablemente la *segunda ecología más importante de la ecología de la población* (¡después del crecimiento exponencial básico!).
 
-We will go into more detail in lab, but Let's break this equation down a bit. 
+Entraremos en más detalles en el laboratorio, pero analicemos un poco esta ecuación.
 
-The first part of this equation looks familiar, right?
+La primera parte de esta ecuación parece familiar, ¿verdad?
 
 $\Delta N = r \cdot N_t$
 
-What about the second part,
+¿Qué pasa con la segunda parte?
 
 $\left ( 1 - \frac{N}{K}  \right )$
 
-You can think about $\frac{N}{K}$ as the *used portion of carrying capacity*
+Puede pensar en $\frac{N}{K}$ como la *porción utilizada de la capacidad de accereo*
 
-By the same token, you can think about $\left ( 1 - \frac{N}{K}  \right )$ as the *unused portion of carrying capacity*. 
+Del mismo modo, puedes pensar en $\left ( 1 - \frac{N}{K}  \right )$ como la *porción no utilizada de la capacidad de carga*
 
-When carrying capacity is mostly unused, _population growth resembles basic exponential growth_! 
+Cuando la capacidad de carga no se utiliza en su mayor parte, _el crecimiento de la población se parece al crecimiento exponencial básico_!
 
-When carrying capacity is mostly used up, _population growth resembles_, well..., _no growth at all_!
+Cuando la capacidad de carga se agota en su mayor parte, _el crecimiento de la población se parece_, bueno ..., _no hay crecimiento en absoluto_!
 
-**Thought Q:** Given the two above statements, can you figure out what population dynamics should look like under logistic growth, starting with a very small population?
+**Q:** Dadas las dos afirmaciones anteriores, ¿puede averiguar cómo debería ser la dinámica de la población con un crecimiento logístico, comenzando con una población muy pequeña?
 
-![](Kbucket.png)
+![](figures/Kbucket.png)
 
-## Carrying capacity is an equilibrium point!
+## La capacidad de carga es un punto de equilibrio.!
 
-A stock-flow system is at an **equilibrium** point when [Flows In] are equal to [Flows Out]. That is, if opposing forces cancel each other out.   
 
-As Gotelli shows, and we will go over in detail, you can derive the logistic growth equation by making *b* and *d* (from the standard population growth equation) both linearly dependent on density:
+Un sistema de stock-flujo está en un punto de **equilibrio** cuando [Flujos de entrada] son iguales a [Flujos de salida]. Es decir, si las fuerzas opuestas se anulan entre sí.   
+
+Como muestra Gotelli, y lo repasaremos en detalle, puede derivar la ecuación de crecimiento logístico haciendo que *b* y *d* (a partir de la ecuación estándar de crecimiento de la población) sean ambos linealmente dependientes de la densidad:
 
 $b=b_{max}-a*[Density]$
 
-where $b_{max}$ is the maximum, or ideal, per-capita birth rate and $a$ is the density dependence term.
+donde $b_{max}$ es la tasa de natalidad máxima o ideal per cápita y $a$ es el término de dependencia de la densidad.
 
-Similarly,
+Igualmente,
 
 $d=d_{min}+c*[Density]$
 
-where $d_{min}$ is the minimum, or ideal, per-capita death rate (1-maximum survival rate) and $c$ is the density dependence term.
 
-We can plot these equations out in R:
+donde $d_ {min}$ es la tasa de mortalidad per cápita mínima o ideal (1-tasa de supervivencia máxima) y $c$ es el término de dependencia de la densidad.
+
+Podemos trazar estas ecuaciones en R:
 
 ```{r}
-Density <- seq(0,500,1)  # create a sequence of numbers from 0 to 500, representing a range of population densities
+Density <- seq (0,500,1) # crea una secuencia de números del 0 al 500, que representa un rango de densidades de población
 
-## CONSTANTS
+## CONSTANTES
 
-b_max <- 0.8  # maximum reproduction (at low densities)
-d_min <- 0.3  # minimum mortality 
+b_max <- 0.8  # maximo de reprodución (a densidad baja)
+d_min <- 0.3  # minimo de mortalidad 
 
-a <- 0.001    # D-D terms
+a <- 0.001    # D-D terminos
 c <- 0.0005
 
 b <- b_max - a*Density
@@ -103,13 +105,13 @@ legend("bottomleft",col=c("green","red"),lty=c(1,1),legend=c("per-capita birth r
   
 ```
 
-**Thought Q**: What is the equilibrium point in this system? That is, what is the (non-zero) abundance/density at which population growth is equal to zero??
+**Q**: ¿Cuál es el punto de equilibrio en este sistema? Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que el crecimiento de la población es igual a cero?
 
-This equilibrium is known as **K**, or **carrying capacity**?
+Este equilibrio se conoce como **K** o **capacidad de carga**?
 
-![](gstab.png)
+![](figures/gstab.png)
 
-## Stable and non-stable equilibria
+## Equilibrios estables y no estables
 
 A **stable equilibrium**, when perturbed, returns to the equilibrium point
 

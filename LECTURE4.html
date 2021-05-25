@@ -466,44 +466,44 @@ div.tocify {
 <h2>Regulación!</h2>
 <p>En primer lugar, mencionamos en nuestra discusión sobre ecología de sistemas que las retroalimentaciones positivas no son sostenibles, porque los aumentos significan aumentos más rápidos, significan aumentos más rápidos, etc. (un círculo vicioso). La dependencia de la densidad es un tipo de retroalimentación, pero NO es una retroalimentación positiva. Así es, ¡es un <em>comentario negativo</em>! Lo que también se conoce como <em>retroalimentación estabilizadora</em>. Como discutimos antes, las retroalimentaciones negativas son esenciales para sistemas bien regulados. Recuerde el ejemplo de la homeostasis en la biología de los organismos. Si el nivel de azúcar en sangre sube, el cuerpo trabajará para reducirlo y viceversa.</p>
 <p>Lo mismo ocurre con las poblaciones. En una población regulada, un aumento en la abundancia provocará una disminución en la tasa de crecimiento de la población y una disminución en la abundancia provocará un aumento en la tasa de crecimiento de la población. En ecología de poblaciones (y especialmente en ciencias pesqueras), esta última a menudo se denomina <em>crecimiento compensatorio</em>. No se puede tener una población regulada sin algún tipo de retroalimentación negativa.</p>
-<p><strong>thought Q</strong>: What are some possible mechanisms of density-dependence? That is, why could vital rates become less favorable at higher densities?</p>
-<p><strong>thought Q</strong>: Are all wild populations regulated? Is density-dependent population regulation a “law of nature”?</p>
+<p><strong>Q</strong>: ¿Cuáles son algunos posibles mecanismos de dependencia de la densidad? Es decir, ¿por qué las tasas vitales podrían volverse menos favorables a densidades más altas?</p>
+<p><strong>Q</strong>: ¿Están reguladas todas las poblaciones silvestres? ¿Es la regulación de la población dependiente de la densidad una “ley de la naturaleza”?</p>
 </div>
 <div id="logistic-growth" class="section level2">
 <h2>Logistic growth</h2>
-<p>Logistic growth can be described mathematically by the following equation:</p>
+<p>El crecimiento logístico se puede describir matemáticamente mediante la siguiente ecuación:</p>
 <p><span class="math inline">\(\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K} \right )\)</span></p>
-<p>This is probably the <em>second most important equation of population ecology</em> (after basic exponential growth!).</p>
-<p>We will go into more detail in lab, but Let’s break this equation down a bit.</p>
-<p>The first part of this equation looks familiar, right?</p>
+<p>Esta es probablemente la <em>segunda ecología más importante de la ecología de la población</em> (¡después del crecimiento exponencial básico!).</p>
+<p>Entraremos en más detalles en el laboratorio, pero analicemos un poco esta ecuación.</p>
+<p>La primera parte de esta ecuación parece familiar, ¿verdad?</p>
 <p><span class="math inline">\(\Delta N = r \cdot N_t\)</span></p>
-<p>What about the second part,</p>
+<p>¿Qué pasa con la segunda parte?</p>
 <p><span class="math inline">\(\left ( 1 - \frac{N}{K} \right )\)</span></p>
-<p>You can think about <span class="math inline">\(\frac{N}{K}\)</span> as the <em>used portion of carrying capacity</em></p>
-<p>By the same token, you can think about <span class="math inline">\(\left ( 1 - \frac{N}{K} \right )\)</span> as the <em>unused portion of carrying capacity</em>.</p>
-<p>When carrying capacity is mostly unused, <em>population growth resembles basic exponential growth</em>!</p>
-<p>When carrying capacity is mostly used up, <em>population growth resembles</em>, well…, <em>no growth at all</em>!</p>
-<p><strong>Thought Q:</strong> Given the two above statements, can you figure out what population dynamics should look like under logistic growth, starting with a very small population?</p>
-<p><img src="Kbucket.png" /></p>
+<p>Puede pensar en <span class="math inline">\(\frac{N}{K}\)</span> como la <em>porción utilizada de la capacidad de accereo</em></p>
+<p>Del mismo modo, puedes pensar en <span class="math inline">\(\left ( 1 - \frac{N}{K} \right )\)</span> como la <em>porción no utilizada de la capacidad de carga</em></p>
+<p>Cuando la capacidad de carga no se utiliza en su mayor parte, <em>el crecimiento de la población se parece al crecimiento exponencial básico</em>!</p>
+<p>Cuando la capacidad de carga se agota en su mayor parte, <em>el crecimiento de la población se parece</em>, bueno …, <em>no hay crecimiento en absoluto</em>!</p>
+<p><strong>Q:</strong> Dadas las dos afirmaciones anteriores, ¿puede averiguar cómo debería ser la dinámica de la población con un crecimiento logístico, comenzando con una población muy pequeña?</p>
+<p><img src="figures/Kbucket.png" /></p>
 </div>
-<div id="carrying-capacity-is-an-equilibrium-point" class="section level2">
-<h2>Carrying capacity is an equilibrium point!</h2>
-<p>A stock-flow system is at an <strong>equilibrium</strong> point when [Flows In] are equal to [Flows Out]. That is, if opposing forces cancel each other out.</p>
-<p>As Gotelli shows, and we will go over in detail, you can derive the logistic growth equation by making <em>b</em> and <em>d</em> (from the standard population growth equation) both linearly dependent on density:</p>
+<div id="la-capacidad-de-carga-es-un-punto-de-equilibrio." class="section level2">
+<h2>La capacidad de carga es un punto de equilibrio.!</h2>
+<p>Un sistema de stock-flujo está en un punto de <strong>equilibrio</strong> cuando [Flujos de entrada] son iguales a [Flujos de salida]. Es decir, si las fuerzas opuestas se anulan entre sí.</p>
+<p>Como muestra Gotelli, y lo repasaremos en detalle, puede derivar la ecuación de crecimiento logístico haciendo que <em>b</em> y <em>d</em> (a partir de la ecuación estándar de crecimiento de la población) sean ambos linealmente dependientes de la densidad:</p>
 <p><span class="math inline">\(b=b_{max}-a*[Density]\)</span></p>
-<p>where <span class="math inline">\(b_{max}\)</span> is the maximum, or ideal, per-capita birth rate and <span class="math inline">\(a\)</span> is the density dependence term.</p>
-<p>Similarly,</p>
+<p>donde <span class="math inline">\(b_{max}\)</span> es la tasa de natalidad máxima o ideal per cápita y <span class="math inline">\(a\)</span> es el término de dependencia de la densidad.</p>
+<p>Igualmente,</p>
 <p><span class="math inline">\(d=d_{min}+c*[Density]\)</span></p>
-<p>where <span class="math inline">\(d_{min}\)</span> is the minimum, or ideal, per-capita death rate (1-maximum survival rate) and <span class="math inline">\(c\)</span> is the density dependence term.</p>
-<p>We can plot these equations out in R:</p>
-<pre class="r"><code>Density &lt;- seq(0,500,1)  # create a sequence of numbers from 0 to 500, representing a range of population densities
+<p>donde <span class="math inline">\(d_ {min}\)</span> es la tasa de mortalidad per cápita mínima o ideal (1-tasa de supervivencia máxima) y <span class="math inline">\(c\)</span> es el término de dependencia de la densidad.</p>
+<p>Podemos trazar estas ecuaciones en R:</p>
+<pre class="r"><code>Density &lt;- seq (0,500,1) # crea una secuencia de números del 0 al 500, que representa un rango de densidades de población
 
-## CONSTANTS
+## CONSTANTES
 
-b_max &lt;- 0.8  # maximum reproduction (at low densities)
-d_min &lt;- 0.3  # minimum mortality 
+b_max &lt;- 0.8  # maximo de reprodución (a densidad baja)
+d_min &lt;- 0.3  # minimo de mortalidad 
 
-a &lt;- 0.001    # D-D terms
+a &lt;- 0.001    # D-D terminos
 c &lt;- 0.0005
 
 b &lt;- b_max - a*Density
@@ -515,12 +515,12 @@ axis(4,at=seq(0,1,0.2))
 #mtext(&quot;d&quot;,4)
 legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1),legend=c(&quot;per-capita birth rate&quot;,&quot;per-capita mortality&quot;),bty=&quot;n&quot;)</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p><strong>Thought Q</strong>: What is the equilibrium point in this system? That is, what is the (non-zero) abundance/density at which population growth is equal to zero??</p>
-<p>This equilibrium is known as <strong>K</strong>, or <strong>carrying capacity</strong>?</p>
-<p><img src="gstab.png" /></p>
+<p><strong>Q</strong>: ¿Cuál es el punto de equilibrio en este sistema? Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que el crecimiento de la población es igual a cero?</p>
+<p>Este equilibrio se conoce como <strong>K</strong> o <strong>capacidad de carga</strong>?</p>
+<p><img src="figures/gstab.png" /></p>
 </div>
-<div id="stable-and-non-stable-equilibria" class="section level2">
-<h2>Stable and non-stable equilibria</h2>
+<div id="equilibrios-estables-y-no-estables" class="section level2">
+<h2>Equilibrios estables y no estables</h2>
 <p>A <strong>stable equilibrium</strong>, when perturbed, returns to the equilibrium point</p>
 <p>A <strong>non-stable equilibrium</strong>, when perturbed, does NOT return to the equilibrium point</p>
 <p>Is the image on the left a stable or a non-stable equilibrium??</p>
