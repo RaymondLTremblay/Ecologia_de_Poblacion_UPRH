@@ -14,9 +14,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-## What is density dependence (D-D)?
+## ¿Qué es la densidad denpendiente (D-D)?
 
-Last week we went through the mathematics of exponential growth. This week we will explore basic models of **density dependence**. Exponential growth, as you have seen, leads to craziness. It is not sustainable. As Malthus noted, resources are finite, and sooner or later exponentially growing populations will find their limits. 
+La semana pasada pasamos por las matemáticas del crecimiento exponencial. Esta semana exploraremos modelos básicos de **dependencia de la densidad**. El crecimiento exponencial, como ha visto, conduce a la locura. No es sostenible. Como señaló Malthus, los recursos son finitos y, tarde o temprano, las poblaciones en crecimiento exponencial encontrarán sus límites. 
 
 **Density**: In D-D, *density* basically refers to the number of conspecific individuals that you are competing with for food and other resources. The more you compete with others of your own species, the less favorable your **vital rates** (e.g., per-capita death rate, *d*, increases or per-capita birth rate, *b*, decreases)! As *N* goes up, vital rates take a turn for the worse. 
 
