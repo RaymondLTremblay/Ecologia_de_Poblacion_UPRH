@@ -1,5 +1,5 @@
 ---
-title: 'Intro to population ecology'
+title: 'Introducción a la Ecología de Población'
 author: 'NRES 470/670'
 date: 'Spring 2021'
 output: 
@@ -13,21 +13,21 @@ output:
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-![](Human_population_growth_from_1800_to_2000.png)
+![](figures/Human_population_growth_from_1800_to_2000.png)
 
-## Central Questions of Population Ecology
+## Preguntas central a la Ecología de Población
 
-### Ecological
-  - Why are some species more abundant than others?   
-  - What causes population densities to vary in space and time?   
-  - What causes populations to become extirpated? Recolonized?  
-  - What processes *regulate* population growth?   
-    - Extrinsic vs intrinsic factors (Nicholson vs Andrewartha debate)
-  - What prevents predator-prey relationships from collapsing?   
-  - What factors allow competitors to coexist?
-  - What factors allow metapopulations to be stable and self-sustaining?
+### Ecologicas
+ - ¿Por qué algunas especies son más abundantes que otras?
+  - ¿Qué hace que la densidad de población varíe en el espacio y el tiempo?
+  - ¿Qué provoca la extirpación de poblaciones? Recolonizado?
+  - ¿Qué procesos *regulan* el crecimiento de la población?
+  - Factores extrínsecos vs intrínsecos (debate Nicholson vs Andrewartha)
+  - ¿Qué evita que las relaciones depredador-presa colapsen?
+  - ¿Qué factores permiten que los competidores coexistan?
+  - ¿Qué factores permiten que las metapoblaciones sean estables y autosuficientes?
   
-![](White-tailed_deer.jpg)
+![](figures/White-tailed_deer.jpg)
 
 ### Conservation and Management
   - What is the conservation status of a focal species or population?
