@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="BIOL4458" />
+
+
+<title>Un enfoque de sistemas holistico para la ecología de poblaciones</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lectures
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">Passenger Pigeon</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Labs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="LAB1.html">Lab 1: exponential growth</a>
+    </li>
+    <li>
+      <a href="LAB2.html">Lab 2: logistic growth</a>
+    </li>
+    <li>
+      <a href="LAB3.html">Lab 3: age-structured population growth</a>
+    </li>
+    <li>
+      <a href="LAB4.html">Lab 4: matrix population models</a>
+    </li>
+    <li>
+      <a href="LAB5.html">Lab 5: stochasticity and uncertainty</a>
+    </li>
+    <li>
+      <a href="LAB6.html">Lab 6: metapopulations</a>
+    </li>
+    <li>
+      <a href="LAB7.html">Lab 7: capture-mark-recapture</a>
+    </li>
+    <li>
+      <a href="FINAL_PROJECTS.html">Final Projects!</a>
+    </li>
+    <li>
+      <a href="EXTRA_CREDIT.html">Extra Credit!</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Un enfoque de sistemas holistico para la ecología de poblaciones</h1>
+<h4 class="author">BIOL4458</h4>
+<h4 class="date">Agosto 2021</h4>
+
+</div>
+
+
+<p><img src="figures/FoodWeb1.jpg" /></p>
+<div id="ecología-de-sistemas-una-forma-de-pensar" class="section level2">
+<h2>Ecología de sistemas: una forma de pensar</h2>
+<p>La ecología es desordenada. Cuando trabajamos en entornos naturales, estamos tratando con sistemas intrínsecamente complejos. Todos los elementos de un sistema natural están conectados, llenos de interacciones dinámicas. Interacciones entre organismos, entre organismos y sus entornos: estos vínculos son los que hacen que la ecología sea complicada, pero también infinitamente fascinante.</p>
+<p>Podemos pensar en los humanos como un elemento más en estos complejos sistemas. Y la conservación y el manejo de la vida silvestre es la tarea de manipular estos vínculos para cumplir con los objetivos sociales de los sistemas naturales.</p>
+<p>¡Esta no es una clase de ecología de sistemas!</p>
+<p>PERO, el pensamiento sistémico proporciona un marco para comprender las poblaciones naturales y comprender cómo los vínculos (entornos abióticos y bióticos) podrían afectarlas y cómo gestionar las poblaciones naturales de manera eficaz.</p>
+</div>
+<div id="propiedades-emergentes" class="section level2">
+<h2>Propiedades emergentes</h2>
+<p>Esta es una de las ideas más poderosas en el pensamiento de sistemas completos: cuando se juntan muchas partes vinculadas e interactivas, los sistemas a menudo se comportan de maneras interesantes e inesperadas.</p>
+<p>Tome un sistema clásico de depredador-presa …</p>
+<p><a href="https://insightmaker.com/insight/68437/">Insightmaker Ejemplo Lynx-Conejo</a></p>
+<p>Este es un ejemplo clásico en ecología de poblaciones, que revisaremos más adelante en este curso, pero por ahora sirve como un ejemplo de un sistema de interacción que exhibe una <em>propiedad emergente</em> – oscilaciones regulares.</p>
+<p>Y aquí hay un ejemplo más abstracto que ilustra algunas propiedades emergentes realmente interesantes y complejas.</p>
+<p><a href="https://insightmaker.com/insight/1829/Lorenz-Attractor">Lorenz attractor</a></p>
+</div>
+<div id="insightmaker-a-modeling-framework-for-systems-thinking" class="section level2">
+<h2><em>InsightMaker</em>: a modeling framework for systems thinking!</h2>
+<p><a href="insightmaker.com">InsightMaker</a> es un software flexible basado en la web para definir sistemas que interactúan y para modelar el comportamiento de sistemas interconectados.</p>
+<p>Los dos ejemplos anteriores se crearon en InsightMaker.</p>
+<p>Haremos un uso extensivo de InsightMaker, tanto durante la clase como en el laboratorio, ¡esto le dará la oportunidad de jugar con sistemas complejos y dinámicos sin necesidad de tener experiencia en programación de computadoras!</p>
+</div>
+<div id="programación-informática-y-pensamiento-sistémico" class="section level2">
+<h2>Programación informática y pensamiento sistémico</h2>
+<p>Las computadoras modernas han reducido o eliminado muchas de las barreras para comprender cómo se comportan los sistemas complejos y, cual es el resultado, con el ayuda de <strong>los programados (software) especializado y la programación de computadoras</strong> son un componente crítico para el análisis moderno de sistemas completos, incluidos los análisis de ecosistemas. Armados con una facilidad básica con la programación de computadoras, los ecólogos y los profesionales de los recursos naturales pueden formalizar su comprensión de los sistemas naturales en los que trabajan, teniendo en cuenta las complejas realidades biológicas que podrían haberse ignorado si estas herramientas no estuvieran disponibles. <strong>En este curso, aprenderemos a aprovechar el poder de las simulaciones por computadora para comprender y administrar las poblaciones naturales</strong></p>
+<p>Al final de este curso, los estudiantes tendrán la capacidad de programar sus propios modelos de sistemas completos en InsightMaker y utilizar software especializado para parametrizar estos modelos (por ejemplo, Programa MARK, R )</p>
+<p><strong>El lema del curso</strong>: <em>¡GET MESSY</em>! Esto puede sonar divertido para una clase basada en computadora. Pero así como los sistemas ecológicos son complejos y desordenados, los modelos a veces se vuelven desordenados. No tenga miedo de modelar sistemas desordenados. Y, sobre todo, <strong>no tengas miedo de equivocarte</strong> (especialmente al principio): ¡esa actitud es enemiga de la programación informática exitosa y de la buena gestión de la vida silvestre! Cuando construimos nuestros propios algoritmos, podemos estar entrando en un territorio inexplorado. Y esto puede ser difícil y peligroso, ¡pero en última instancia gratificante! ¡Sigue intentándolo y mantén una actitud positiva!</p>
+<p>Por supuesto, “ensuciarse”getting messy" significa no solo leer y escuchar conferencias, ¡significa <em>aprender haciendo</em>! Las conferencias dirigidas por un instructor serán breves y pasaremos una cantidad significativa de tiempo de clase (y casi todo el tiempo de laboratorio) en nuestras computadoras, resolviendo problemas.</p>
+</div>
+<div id="ejercicio-en-clase-insightmaker" class="section level2">
+<h2>Ejercicio en clase: InsightMaker</h2>
+<p>Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa * Moose <em>! </em> Moose Births * sería la entrada [Flujo] de la población de * Moose * a lo largo del tiempo.</p>
+<p>Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, * Moose Deaths * podría representar el [Flujo] de la población de * Moose *.</p>
+<p>Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.</p>
+<p>Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el [Stock] disminuye con el tiempo.</p>
+<p>Si el [Flujo] de entrada es igual al [Flujo] de salida, la cantidad de [Stock] no cambiará con el tiempo.</p>
+<p>La conclusión importante es que una [Acción] representa una cantidad de algo. El [Stock] solo cambia con el tiempo a través de [Flujos de entrada] o [Flujos de salida]. Una [acción] no cambia instantáneamente, con agitar las manos, magia o humo y espejos.</p>
+<ol style="list-style-type: decimal">
+<li><p>Abra <a href="https://insightmaker.com/">InsightMaker</a>. Si nunca lo ha usado antes, primero debe registrarse con un nombre de usuario y contraseña. <em>¡InsightMaker es gratis!</em></p></li>
+<li><p>Cree un nuevo Insight (¡el botón para hacer esto debería ser obvio!) Y borre el modelo de demostración.</p></li>
+<li><p>Haga clic derecho en el centro de la pantalla y seleccione <strong>Crear stock</strong> en la ventana emergente. Observe que el nombre es * Stock nuevo * y está seleccionado. Escriba un nombre para lo que es una acumulación. Tenga en cuenta que el ** Panel de configuración ** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el <em>Valor inicial</em> en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!</p></li>
+<li><p>Seleccione [Flujo] en la esquina superior izquierda de su pantalla en [Conexiones]. Ahora observe que cuando pasa el mouse sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un [Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón <strong>Invertir</strong> en el menú <strong>Conexiones</strong>. Por favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el <strong>Panel de configuración</strong> configure <strong>Flow Rate</strong> = 1.</p></li>
+<li><p>Ahora haga clic en <strong>Ejecutar simulación</strong> y acaba de terminar su primer modelo de simulación.</p></li>
+<li><p>¿Puede averiguar cómo cambiar la configuración para ejecutar el modelo durante 50 años? Pruebe esto y haga clic en <strong>Ejecutar simulación</strong>.</p></li>
+<li><p>Utilice los mismos métodos que en el <em>paso 4</em> para crear un [Flujo de salida], que representa la muerte de los alces. Vuelva a ejecutar el modelo. ¿La población está aumentando o disminuyendo? ¿Por qué?</p></li>
+<li><p>Cambie el <strong>Panel de configuración</strong> para [Stock] y para [Flujo de entrada] y [Flujo de salida] de modo que “Mostrar control deslizante de valor” se establezca en “Sí”. Puede cambiar la parametrización del modelo fácilmente usando estos controles deslizantes. Pruébelo un par de veces y vuelva a ejecutar la simulación después de cada cambio.</p></li>
+</ol>
+<p><strong>Q</strong>: ¿Es este modelo de Moose realista? ¿Qué es lo primero que le gustaría cambiar para que el modelo sea más realista?</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Tómese unos minutos para consultar las “Estadísticas” realizadas por otros mediante el enlace “Explorar información” en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!</li>
+</ol>
+<p>Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!</p>
+<p><a href="https://www.youtube.com/watch?v=iu4RdmBVdps">Lorenz attractor video!</a></p>
+<p><a href="LECTURE2.html">–go to next lecture–</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

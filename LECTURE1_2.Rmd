@@ -1,0 +1,112 @@
+
+---
+title: "Un enfoque de sistemas holistico para la ecología de poblaciones"
+author: "BIOL4458"
+date: "Agosto 2021"
+output: 
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+```
+
+![](figures/FoodWeb1.jpg)
+
+## Ecología de sistemas: una forma de pensar  
+La ecología es desordenada. Cuando trabajamos en entornos naturales, estamos tratando con sistemas intrínsecamente complejos. Todos los elementos de un sistema natural están conectados, llenos de interacciones dinámicas. Interacciones entre organismos, entre organismos y sus entornos: estos vínculos son los que hacen que la ecología sea complicada, pero también infinitamente fascinante.
+
+Podemos pensar en los humanos como un elemento más en estos complejos sistemas. Y la conservación y el manejo de la vida silvestre es la tarea de manipular estos vínculos para cumplir con los objetivos sociales de los sistemas naturales.
+
+¡Esta no es una clase de ecología de sistemas!
+
+PERO, el pensamiento sistémico proporciona un marco para comprender las poblaciones naturales y comprender cómo los vínculos (entornos abióticos y bióticos) podrían afectarlas y cómo gestionar las poblaciones naturales de manera eficaz.
+
+
+## Propiedades emergentes
+Esta es una de las ideas más poderosas en el pensamiento de sistemas completos: cuando se juntan muchas partes vinculadas e interactivas, los sistemas a menudo se comportan de maneras interesantes e inesperadas.
+
+Tome un sistema clásico de depredador-presa …
+
+[Insightmaker Ejemplo Lynx-Conejo](https://insightmaker.com/insight/68437/)  
+
+Este es un ejemplo clásico en ecología de poblaciones, que revisaremos más adelante en este curso, pero por ahora sirve como un ejemplo de un sistema de interacción que exhibe una *propiedad emergente* -- oscilaciones regulares.
+
+Y aquí hay un ejemplo más abstracto que ilustra algunas propiedades emergentes realmente interesantes y complejas.
+
+[Lorenz attractor](https://insightmaker.com/insight/1829/Lorenz-Attractor)
+
+## *InsightMaker*: a modeling framework for systems thinking!
+
+[InsightMaker](insightmaker.com) es un software flexible basado en la web para definir sistemas que interactúan y para modelar el comportamiento de sistemas interconectados. 
+
+Los dos ejemplos anteriores se crearon en InsightMaker.
+
+Haremos un uso extensivo de InsightMaker, tanto durante la clase como en el laboratorio, ¡esto le dará la oportunidad de jugar con sistemas complejos y dinámicos sin necesidad de tener experiencia en programación de computadoras!
+
+## Programación informática y pensamiento sistémico
+
+Las computadoras modernas han reducido o eliminado muchas de las barreras para comprender cómo se comportan los sistemas complejos y, cual es el resultado, con el ayuda de **los programados (software) especializado y la programación de computadoras** son un componente crítico para el análisis moderno de sistemas completos, incluidos los análisis de ecosistemas. Armados con una facilidad básica con la programación de computadoras, los ecólogos y los profesionales de los recursos naturales pueden formalizar su comprensión de los sistemas naturales en los que trabajan, teniendo en cuenta las complejas realidades biológicas que podrían haberse ignorado si estas herramientas no estuvieran disponibles. **En este curso, aprenderemos a aprovechar el poder de las simulaciones por computadora para comprender y administrar las poblaciones naturales** 
+
+Al final de este curso, los estudiantes tendrán la capacidad de programar sus propios modelos de sistemas completos en InsightMaker y utilizar software especializado para parametrizar estos modelos (por ejemplo, Programa MARK, R )
+
+**El lema del curso**: *¡GET MESSY*! Esto puede sonar divertido para una clase basada en computadora. Pero así como los sistemas ecológicos son complejos y desordenados, los modelos a veces se vuelven desordenados.
+No tenga miedo de modelar sistemas desordenados. Y, sobre todo, **no tengas miedo de equivocarte** (especialmente al principio): ¡esa actitud es enemiga de la programación informática exitosa y de la buena gestión de la vida silvestre! Cuando construimos nuestros propios algoritmos, podemos estar entrando en un territorio inexplorado. Y esto puede ser difícil y peligroso, ¡pero en última instancia gratificante! ¡Sigue intentándolo y mantén una actitud positiva!
+
+Por supuesto, "ensuciarse "getting messy" significa no solo leer y escuchar conferencias, ¡significa *aprender haciendo*! Las conferencias dirigidas por un instructor serán breves y pasaremos una cantidad significativa de tiempo de clase (y casi todo el tiempo de laboratorio) en nuestras computadoras, resolviendo problemas.
+
+
+
+## Ejercicio en clase: InsightMaker
+
+
+Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa * Moose *! * Moose Births * sería la entrada [Flujo] de la población de * Moose * a lo largo del tiempo.
+
+Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, * Moose Deaths * podría representar el [Flujo] de la población de * Moose *.
+
+Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.
+
+Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el [Stock] disminuye con el tiempo.
+
+Si el [Flujo] de entrada es igual al [Flujo] de salida, la cantidad de [Stock] no cambiará con el tiempo.
+
+La conclusión importante es que una [Acción] representa una cantidad de algo. El [Stock] solo cambia con el tiempo a través de [Flujos de entrada] o [Flujos de salida]. Una [acción] no cambia instantáneamente, con agitar las manos, magia o humo y espejos.
+
+
+
+1. Abra [InsightMaker](https://insightmaker.com/). Si nunca lo ha usado antes, primero debe registrarse con un nombre de usuario y contraseña. *¡InsightMaker es gratis!*
+
+2. Cree un nuevo Insight (¡el botón para hacer esto debería ser obvio!) Y borre el modelo de demostración.
+
+
+3. Haga clic derecho en el centro de la pantalla y seleccione **Crear stock** en la ventana emergente. Observe que el nombre es * Stock nuevo * y está seleccionado. Escriba un nombre para lo que es una acumulación. Tenga en cuenta que el ** Panel de configuración ** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el *Valor inicial* en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!
+
+
+4. Seleccione [Flujo] en la esquina superior izquierda de su pantalla en [Conexiones]. Ahora observe que cuando pasa el mouse sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un [Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón **Invertir** en el menú **Conexiones**. Por favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el **Panel de configuración** configure **Flow Rate** = 1.
+
+
+
+5. Ahora haga clic en **Ejecutar simulación** y acaba de terminar su primer modelo de simulación.
+
+6. ¿Puede averiguar cómo cambiar la configuración para ejecutar el modelo durante 50 años? Pruebe esto y haga clic en **Ejecutar simulación**.
+
+
+7. Utilice los mismos métodos que en el *paso 4* para crear un [Flujo de salida], que representa la muerte de los alces. Vuelva a ejecutar el modelo. ¿La población está aumentando o disminuyendo? ¿Por qué?
+
+8. Cambie el **Panel de configuración** para [Stock] y para [Flujo de entrada] y [Flujo de salida] de modo que "Mostrar control deslizante de valor" se establezca en "Sí". Puede cambiar la parametrización del modelo fácilmente usando estos controles deslizantes. Pruébelo un par de veces y vuelva a ejecutar la simulación después de cada cambio.
+
+**Q**: ¿Es este modelo de Moose realista? ¿Qué es lo primero que le gustaría cambiar para que el modelo sea más realista?
+
+9. Tómese unos minutos para consultar las "Estadísticas" realizadas por otros mediante el enlace "Explorar información" en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!
+
+
+
+Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!
+
+[Lorenz attractor video!](https://www.youtube.com/watch?v=iu4RdmBVdps)
+
+
+[--go to next lecture--](LECTURE2.html)
