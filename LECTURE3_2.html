@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="BIOL4558" />
+
+
+<title>Malthus y el comienzo de Ecología de Poblaciones</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lectures
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1_2.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">Passenger Pigeon</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Labs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="LAB1.html">Lab 1: exponential growth</a>
+    </li>
+    <li>
+      <a href="LAB2.html">Lab 2: logistic growth</a>
+    </li>
+    <li>
+      <a href="LAB3.html">Lab 3: age-structured population growth</a>
+    </li>
+    <li>
+      <a href="LAB4.html">Lab 4: matrix population models</a>
+    </li>
+    <li>
+      <a href="LAB5.html">Lab 5: stochasticity and uncertainty</a>
+    </li>
+    <li>
+      <a href="LAB6.html">Lab 6: metapopulations</a>
+    </li>
+    <li>
+      <a href="LAB7.html">Lab 7: capture-mark-recapture</a>
+    </li>
+    <li>
+      <a href="FINAL_PROJECTS.html">Final Projects!</a>
+    </li>
+    <li>
+      <a href="EXTRA_CREDIT.html">Extra Credit!</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Malthus y el comienzo de Ecología de Poblaciones</h1>
+<h4 class="author">BIOL4558</h4>
+<h4 class="date">Agosto 2021</h4>
+
+</div>
+
+
+<p><a href="https://en.wikipedia.org/wiki/Thomas_Robert_Malthus">Thomas Robert Malthus (1766 – 1834)</a> fue un clérigo inglés que escribió uno de los ensayos más importantes e influyentes jamás escritos: <strong><em>Un ensayo sobre el principio de población</em></strong> <img src="figures/malthus1.jpg" /></p>
+<p>El punto principal de este ensayo se puede resumir en lo siguiente (una cita directa):</p>
+<blockquote>
+<p>“El poder de la población es indefinidamente mayor que el poder de la tierra para producir la subsistencia del hombre” - El Rev. Thomas Malthus</p>
+</blockquote>
+<blockquote>
+<p>“The power of population is indefinitely greater than the power in the earth to produce subsistence for man” - The Rev. Thomas Malthus</p>
+</blockquote>
+<p>O en una forma más detallada …</p>
+<blockquote>
+<p>“Creo que puedo hacer dos postulados. Primero, que la comida es necesaria para la existencia del hombre. En segundo lugar, que la pasión entre los sexos es necesaria y permanecerá casi en su estado actual … Asumiendo entonces mi postulado como concedido, el poder de la población es indefinidamente mayor que el poder de la tierra para producir la subsistencia del hombre. La población, cuando no se controla, aumenta en una <em>proporción geométrica</em>. La subsistencia aumenta sólo en una <em>proporción aritmética</em>. Un ligero conocimiento de Los números mostrarán la inmensidad del primer poder en comparación con el segundo. Según la ley de nuestra naturaleza que hace necesario el alimento para la vida del hombre, los efectos de estos dos poderes desiguales deben mantenerse iguales. controlar a la población por la dificultad de subsistencia. Esta dificultad debe caer en alguna parte y debe ser necesariamente sentida por una gran parte de la humanidad …”</p>
+</blockquote>
+<blockquote>
+<p>“I think I may make fairly two postulata. First, that food is necessary to the existence of man. Secondly, that the passion between the sexes is necessary and will remain nearly in its present state … Assuming then my postulata as granted, I say, that the power of population is indefinitely greater than the power in the earth to produce subsistence for man. Population, when unchecked, increases in a <em>geometrical ratio</em>. Subsistence increases only in an <em>arithmetical ratio</em>. A slight acquaintance with numbers will show the immensity of the first power in comparison of the second. By the law of our nature which makes food necessary to the life of man, the effects of these two unequal powers must be kept equal. This implies a strong and constantly operating check on population from the difficulty of subsistence. This difficulty must fall somewhere and must necessarily be severely felt by a large portion of mankind…”</p>
+</blockquote>
+<p>Finalmente, su argumento económico se puede resumir de la siguiente manera:</p>
+<ol style="list-style-type: decimal">
+<li>Siempre hay límites estrictos para el crecimiento de la población (humana), y estos límites tienen que ver con la disponibilidad de alimentos,</li>
+<li>Cuando haya más alimentos disponibles, los humanos tenderán a utilizarlos para la reproducción,</li>
+<li>Que solo prevendrá temporalmente una crisis cuando lleguemos inevitablemente a los límites del crecimiento, lo que conducirá a:</li>
+<li>Hambrunas, enfermedades, etc. generalizadas, especialmente entre las poblaciones pobres y desfavorecidas.</li>
+</ol>
+<p>¿Es este un mensaje optimista o un mensaje pesimista?</p>
+<blockquote>
+<p>“If they would rather die they had better do it, and decrease the surplus population” - Ebenezer Scrooge</p>
+</blockquote>
+<p><strong>Pregunta de discusión:</strong> ¿Malthus tenía razón? ¿Para humanos? ¿Por la vida salvaje? ¿Puedes pensar en algún ejemplo a favor o en contra?</p>
+<p><img src="figures/darwin1.jpg" /></p>
+<p>Curiosamente, en 1838 (cuatro años después de la muerte de Malthus), Charles Darwin, que acababa de regresar de su viaje en el HMS Beagle (1831-1836), buscaba posibles mecanismos para explicar el origen de las especies. Al leer el <em>Ensayo sobre el principio de población</em> de Malthus, se dio cuenta de una de las posibles implicaciones de los controles que controlaban el crecimiento de la población (es decir, que el poder del crecimiento exponencial significa que nacerán muchos individuos que no podrán sobrevivir hasta la edad adulta debido a limitaciones de recursos) y escribió:</p>
+<blockquote>
+<p>’… las variaciones favorables tenderían a conservarse y las desfavorables a destruirse … El resultado de esto sería la formación de una nueva especie. Aquí, entonces, por fin tenía una teoría con la que trabajar. - Charles Darwin</p>
+</blockquote>
+<blockquote>
+<p>‘…favourable variations would tend to be preserved, and unfavourable ones to be destroyed … The result of this would be the formation of a new species. Here, then, I had at last got a theory by which to work.’ - Charles Darwin</p>
+</blockquote>
+<p>Veintiún años después, Darwin publicó su libro * Sobre el origen de las especies mediante la selección natural *. Como el trabajo de Malthus, también generó una tormenta de controversia y protesta.</p>
+<p>¿Entonces, qué piensas? El * Ensayo * de Mathus fue extremadamente influyente, ¿verdad?</p>
+<div id="section" class="section level2">
+<h2></h2>
+<p>Ejercicio en clase: límites al crecimiento</p>
+<p>Malthus estaba convencido de que el crecimiento de la población humana <strong>sobrepasaría</strong> el límite, es decir, las poblaciones crecerán hasta que se agoten los alimentos. Cual es el resultado? ¡Hambre, sufrimiento, enfermedad! ¡Modelemos esto!</p>
+<p>Aquí está el escenario que modelaremos: si la población excede un cierto límite, entonces ocurre una hambruna y el 99% de la población muere.</p>
+<p>¿Cómo podemos hacer esto en InsightMaker? ¡Ya sabes cómo hacer una población en crecimiento exponencial! La nueva característica que aprenderemos hoy es una construcción de programación muy importante: la <strong>declaración condicional</strong>.</p>
+<p>Las declaraciones condicionales también se conocen como declaraciones SI-ENTONCES. En lenguaje sencillo: <em>SI alguna condición es verdadera, ENTONCES haz algo. DE LO CONTRARIO, si alguna otra condición es verdadera, ENTONCES haga otra cosa. ELSE si ninguna de las condiciones anteriores es verdadera, ENTONCES haga otra cosa.</em></p>
+<ul>
+<li>Conditional statements are also known as IF-THEN statements. In plain English: <em>IF some condition is true, THEN do something. ELSE if some other condition is true, THEN do something else. ELSE if none of the previous conditions are true, THEN do something else.</em></li>
+</ul>
+<p>En el ejercicio de hoy en clase, implementaremos la siguiente declaración condicional (la “condición de hambruna”): <em>SI la población humana está por debajo del límite de población, ENTONCES la tasa de mortalidad anual es 0.01. ELSE si la población excede el límite de población, surge una hambruna y la tasa de mortalidad salta a 0,99</em></p>
+<ul>
+<li>In today’s in-class exercise, we will implement the following conditional statement (the “famine condition”): <em>IF human population is below the population limit, THEN the annual death rate is 0.01. ELSE if the population exceeds the population limit, a famine arises and the mortality rate jumps to 0.99</em></li>
+</ul>
+<p>Para implementar esto en InsightMaker, necesitamos usar la siguiente <strong>sintaxis</strong>:</p>
+<p>To implement this in InsightMaker, we need to use the following <strong>syntax</strong>:</p>
+<pre><code>If [Humans]&lt;[Limit] Then
+  0.01
+Else
+  0.99
+End If</code></pre>
+<ol style="list-style-type: decimal">
+<li>Elabore un modelo básico de crecimiento exponencial para una nueva [población] llamada <em>Humanos</em> (o simplemente clone y modifique un modelo básico de crecimiento exponencial con tasa de natalidad y mortalidad). Este [Stock] debe tener dos [Flows], uno [Flujo de entrada] llamado <em>Nacimientos</em> y uno [Flujo de salida] llamado <em>Muertes</em>. Tanto <em>Nacimientos</em> como <em>Muertes</em> deben definirse como el producto de <em>Humanos</em> y las constantes de tasa per cápita, respectivamente llamadas <em>Tasa de natalidad</em> y <em>Tasa de mortalidad</em> (cada una definida en el lienzo como [Variables]). Este modelo es idéntico al que hiciste en el laboratorio la semana pasada.</li>
+</ol>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Put together a basic exponential-growth model for a new [Stock] named <em>Humans</em> (or just clone and modify a basic exponential growth model with birth and death rate). This [Stock] should have two [Flows], one [Flow In] named <em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both <em>Births</em> and <em>Deaths</em> should be defined as the product of <em>Humans</em> and per-capita rate constants, respectively called <em>Birth rate</em> and <em>Death rate</em> (each defined on the canvas as [Variables]). This model is identical to the one you made in lab last week.</li>
+</ol></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Inicialice la población de <em>Humanos</em> en 1000. Establezca la <em>Tasa de natalidad</em> en 0.1 (humanos producidos por humano por año). Establezca la <em>Tasa de muerte</em> en 0.01 (humanos perdidos por humano por año). Cambie la configuración para que la simulación se ejecute durante 100 años.</li>
+</ol>
+<ul>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Initialize the population of <em>Humans</em> to 1000. Set the <em>Birth rate</em> to 0.1 (humans produced per human per year). Set the <em>Death rate</em> to 0.01 (humans lost per human per year). Change the settings so that the simulation runs for 100 years.</li>
+</ol></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Ejecute este modelo, asegúrese de que se comporte como lo esperaría (¡produciendo un crecimiento exponencial!). ¿Cuántos humanos hay después de 100 años?</li>
+</ol>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Run this model, make sure it behaves like you would expect it to (yielding exponential growth!). How many humans are there after 100 years?</li>
+</ol></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Ahora cree un nuevo [Stock] llamado <em>Limit </em>, que represente el límite de población para <em>Humanos</em>. Esto podría, por ejemplo, representar el <em>número máximo de seres humanos que podrían mantenerse indefinidamente si toda la tierra cultivable se cultivara con el cultivo más rico en energía posible</em>. Inicialice el “Límite” a medio millón.</li>
+</ol>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Now make a new [Stock] called <em>Limit</em>, representing the population limit for <em>Humans</em>. This could, for instance, represent the <em>maximum number of humans that could be supported indefinitely if all arable land were cultivated with the most energy-rich crop possible</em>. Initialize the “Limit” to half a million.</li>
+</ol></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>En preparación para implementar la condición de “hambruna” (la tasa de mortalidad aumenta al 99% si <em>Humanos</em> excede el <em>Límite</em>), cree nuevos **Links* desde <em>Humanos</em> a <em>Tasa de mortalidad</em> y desde <em>Límite</em> a <em>Índice de mortalidad</em>. Su lienzo debe verse como la imagen a continuación:</li>
+</ol>
+<ul>
+<li><ol start="5" style="list-style-type: decimal">
+<li>In preparation for implementing the “famine” condition (death rate increases to 99% if <em>Humans</em> exceeds <em>Limit</em>), create new <strong>Links</strong> from <em>Humans</em> to <em>Death rate</em> and from <em>Limit</em> to <em>Death rate</em>. Your canvas should look something like the image below:</li>
+</ol></li>
+</ul>
+<p><img src="figures/IM4.jpg" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>¡Ahora podemos implementar la “condición de hambruna”! Abra la ventana del editor de ecuaciones para * Tasa de mortalidad * (haga clic en el signo igual) y escriba lo siguiente:</li>
+</ol>
+<ul>
+<li><ol start="6" style="list-style-type: decimal">
+<li>Now we can implement the “famine condition”! Open the equation editor window for <em>Death rate</em> (click on the equals sign) and type the following:</li>
+</ol></li>
+</ul>
+<pre><code>If [Humans]&lt;[Limit] Then
+  0.01
+Else
+  0.99
+End If</code></pre>
+<p>En realidad, no es necesario que escriba todo esto, simplemente haga clic en “Funciones de programación” en el editor de ecuaciones y seleccione “Si-Entonces-Else” de las opciones. Siempre es mejor usar los generadores de sintaxis integrados, ya que eso evita que cometa errores de sintaxis no intencionales (¡que pueden ser difíciles de eliminar!).</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Ejecute el modelo y describa lo que sucede.</li>
+</ol>
+<p><strong>Pregunta de debate</strong> ¿esta población <em>está regulada</em>?</p>
+<p><strong>RETO:</strong> Malthus dijo que “La población, cuando no se controla, aumenta en una <em>proporción geométrica</em>. La subsistencia aumenta solo en una <em>proporción aritmética</em>”. Con esto quiso decir que las poblaciones crecen exponencialmente, mientras que los límites de población (capacidad de producción de alimentos) crecen linealmente.</p>
+<p>¿Qué sucede si se permite que el límite aumente aritméticamente? Intente implementar esto en InsightMaker. Es decir, ¿puede cambiar el modelo para que el límite de población aumente linealmente, digamos, en 1000 por año? ¿Qué pasa entonces? SUGERENCIA: ¡puede agregar un [Flow] para representar un aumento en la producción agrícola!</p>
+<p><strong>Q</strong> ¿Puede ajustar los parámetros para que esta población humana simulada sea <strong>sostenible</strong>? ¿Por qué? ¿Por qué no? [Edmodo]</p>
+<p>Para diversión, aquí hay un <a href="https://www.youtube.com/watch?v=QAkW_i0bDpQ">Video</a> made by <a href="https://en.wikipedia.org/wiki/John_Green_(author)">John Green</a> sobre Malthus y el crecimiento poblacional!</p>
+<p>… Otro video <a href="https://www.youtube.com/watch?v=U7Z6h-U4CmI">video</a> sobre el influyente libro de 1972, “<a href="https://www.amazon.com/Limits-Growth-Donella-H-Meadows/dp/193149858X">Limits to Growth</a>”, lo que hizo el argumento de que el crecimiento no es sostenible: ¡la tierra tiene límites! ¿Te suena familiar este argumento? Curiosamente, el modelo Insightmaker “World3” que algunos de ustedes pueden haber sacado en nuestra primera semana de clase es la base de las terribles predicciones del libro “Limits to Growth”.</p>
+<p><a href="LECTURE4.html">–go to next lecture–</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
