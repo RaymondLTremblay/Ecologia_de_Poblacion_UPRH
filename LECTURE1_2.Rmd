@@ -1,7 +1,7 @@
 
 ---
 title: "Un enfoque de sistemas holistico para la ecología de poblaciones"
-author: "BIOL4458"
+author: "BIOL4558"
 date: "Agosto 2021"
 output: 
   html_document: 
