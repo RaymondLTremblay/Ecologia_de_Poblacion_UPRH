@@ -521,17 +521,17 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 </div>
 <div id="equilibrios-estables-y-no-estables" class="section level2">
 <h2>Equilibrios estables y no estables</h2>
-<p>A <strong>stable equilibrium</strong>, when perturbed, returns to the equilibrium point</p>
-<p>A <strong>non-stable equilibrium</strong>, when perturbed, does NOT return to the equilibrium point</p>
-<p>Is the image on the left a stable or a non-stable equilibrium??</p>
-<p>What about the image on the right?</p>
-<p>What about <strong>K</strong>, or <strong>carrying capacity</strong>?</p>
-<p>Let’s find out!</p>
+<p>Un <strong>Equilibrio estable</strong>, es cuando con perturbación la población regresa a su punto de equilibrio.</p>
+<p>Un <strong>Equilibrio no-estable</strong>, es cuando con perturbación la población <em>NO</em> regresa a su punto de equilibrio.</p>
+<p>¿Es la imagen de la izquierda un equilibrio estable o no estable?</p>
+<p>¿Qué pasa con la imagen de la derecha?</p>
+<p>¿Qué pasa con <strong>K</strong> o <strong>capacidad de carga</strong>?</p>
+<p>¡Vamos a averiguar!</p>
 </div>
-<div id="in-class-exercise-logistic-growth" class="section level2">
-<h2>In-class exercise: logistic growth</h2>
-<p>First of all, from now on try to start saving your working InsightMaker models, since we will often be building from previous models (so we don’t have to start from scratch every class!). To build off of a previous Insight, open a previous Insight (e.g., your basic exponential growth model– or clone <a href="https://insightmaker.com/insight/68236/Basic-population">this model</a>) and choose “Clone Insight” in the upper right corner to create a copy that you can edit.</p>
-<p>Here is the scenario we will model: both <em>b</em> and <em>d</em> are <strong>density-dependent</strong>. We will replicate the model from the R code and figure above- this time in InsightMaker!</p>
+<div id="ejercicio-en-clase-crecimiento-logístico" class="section level2">
+<h2>Ejercicio en clase: crecimiento logístico</h2>
+<p>En primer lugar, de ahora en adelante, intente comenzar a guardar sus modelos de InsightMaker que funcionan, ya que a menudo construiremos a partir de modelos anteriores (¡para que no tengamos que comenzar desde cero en todas las clases!). Para construir a partir de un Insight anterior, abra un Insight anterior (p. Ej., Su modelo de crecimiento exponencial básico, o clone [este modelo] (<a href="https://insightmaker.com/insight/68236/Basic-population" class="uri">https://insightmaker.com/insight/68236/Basic-population</a>)) y elija “Clonar Insight”en la esquina superior derecha para crear una copia que pueda editar.</p>
+<p>Este es el escenario que modelaremos: tanto <em>b</em> como <em>d</em> son <strong>dependientes de la densidad</strong>. Replicaremos el modelo del código R y la figura anterior, ¡esta vez en InsightMaker!</p>
 <pre><code>CONSTANTS
 - [Maximum per-capita birth rate] = 0.8 individuals per individual per year   
 - [Minimum per-capita death rate] = 0.3 individuals per individual per year    
@@ -540,36 +540,78 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 <pre><code>EQUATIONS
 - [Per-capita birth rate] = [Maximum per-capita birth rate] - [Density dependence on fecundity] * [Turtles] 
 - [Per-capita death rate] = [Minimum per-capita death rate] - [Density dependence on mortality] * [Turtles] </code></pre>
-<p>How can we do this in InsightMaker?</p>
+<div id="cómo-podemos-hacer-esto-en-insightmaker" class="section level3">
+<h3>¿Cómo podemos hacer esto en InsightMaker?</h3>
 <ol style="list-style-type: decimal">
-<li><p>Load a basic exponential-growth model. Rename the main [Stock] <em>Box Turtles</em>. This [Stock] should have two [Flows], one [Flow In] named <em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both <em>Births</em> and <em>Deaths</em> should be defined as the product of <em>turtles</em> and per-capita rates, respectively called <em>Births per capita</em> and <em>Deaths per capita</em> (each defined on the canvas as [Variables]). This model should be very familiar!!</p></li>
-<li><p>Initialize the population of <em>Turtles</em> to 5 (way below carrying capacity).</p></li>
-<li><p>Make four new [Variables] on the canvas, to represent the four constants in our model.</p></li>
-<li><p>Set the <em>Maximum per-capita birth rate</em> to 0.8 (turtles produced per turtle per year). Set the <em>Minimum per-capita Death rate</em> to 0.3. Set the <em>Density dependence on fecundity</em> to 0.001. Set the <em>Density dependence on mortality</em> to 0.0005.</p></li>
-<li><p>Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.</p></li>
-<li><p>Change the settings so that the simulation runs for 100 years.</p></li>
+<li>Cargue un modelo básico de crecimiento exponencial. Cambie el nombre de [Stock] <em>Box Turtles</em> principal. Este [Stock] debe tener dos [Flujos], uno [Flujo de entrada] llamado <em>Nacimientos</em> y uno [Flujo de salida] llamado <em>Muertes</em>. Tanto <em>Nacimientos</em> como <em>Defunciones</em> deben definirse como el producto de <em>tortugas</em> y tasas per cápita, respectivamente llamadas <em>Nacimientos per cápita </em> y <em>Defunciones per cápita</em> (cada una definida en el lienzo como [Variables]). ¡Este modelo debería ser muy familiar!</li>
 </ol>
-<p>Your model should look something like this! (if you don’t already have a model like this, clone <a href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">this model</a>)</p>
-<p><img src="IM5.jpg" /></p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Load a basic exponential-growth model. Rename the main [Stock] <em>Box Turtles</em>. This [Stock] should have two [Flows], one [Flow In] named <em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both <em>Births</em> and <em>Deaths</em> should be defined as the product of <em>turtles</em> and per-capita rates, respectively called <em>Births per capita</em> and <em>Deaths per capita</em> (each defined on the canvas as [Variables]). This model should be very familiar!!</li>
+</ol></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Inicialice la población de <em>Tortugas</em> a 5 (muy por debajo de la capacidad de carga).</li>
+</ol>
+<ul>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Initialize the population of <em>Turtles</em> to 5 (way below carrying capacity).</li>
+</ol></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Haga cuatro nuevas [Variables] en el lienzo, para representar las cuatro constantes en nuestro modelo.</li>
+</ol>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Make four new [Variables] on the canvas, to represent the four constants in our model.</li>
+</ol></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Establezca la <em>Tasa máxima de natalidad per cápita</em> en 0.8 (tortugas producidas por tortuga por año). Establezca la <em>Tasa mínima de mortalidad per cápita</em> en 0,3. Establezca la <em>Dependencia de la densidad de la fecundidad</em> en 0,001. Establezca la <em>Dependencia de la densidad de la mortalidad</em> en 0,0005.</li>
+</ol>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Set the <em>Maximum per-capita birth rate</em> to 0.8 (turtles produced per turtle per year). Set the <em>Minimum per-capita Death rate</em> to 0.3. Set the <em>Density dependence on fecundity</em> to 0.001. Set the <em>Density dependence on mortality</em> to 0.0005.</li>
+</ol></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Realice las conexiones adecuadas, como en la figura anterior, y use la ventana de ecuaciones para asegurarse de que las ecuaciones sean correctas.</li>
+</ol>
+<ul>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.</li>
+</ol></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Cambie la configuración para que la simulación se ejecute durante 100 años.</li>
+</ol>
+<ul>
+<li><ol start="6" style="list-style-type: decimal">
+<li>Change the settings so that the simulation runs for 100 years.</li>
+</ol></li>
+</ul>
+<p>¡Tu modelo debería verse así! (Si aún no tiene un modelo como este, clone <a href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">este modelo</a>)</p>
+<p><img src="figures/IM5.jpg" /></p>
 <ol start="7" style="list-style-type: decimal">
-<li>Run this model. Does the model behave as you would expect?</li>
+<li>Ejecute este modelo. ¿El modelo se comporta como cabría esperar?</li>
 </ol>
-<p><strong>Q:</strong> What happens if population size starts out <em>at</em> carrying capacity? [tophat]<br />
-<strong>Q:</strong> What happens if population size starts out <em>above</em> carrying capacity? [tophat]<br />
-<strong>Q:</strong> Is this a stable equilibrium? [tophat]<br />
-<strong>Q:</strong> Can a wild population ever be at a non-stable equilibrium? What about a stable equilibrium? Why is it important to know about non-stable equilibria?</p>
+<p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza <em>en</em> la capacidad de carga? [Edmodo]</p>
+<p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza <em>por encima</em> de la capacidad de carga? [Edmodo]<br />
+<strong>Q:</strong> ¿Es este un equilibrio estable? [Edmodo]<br />
+<strong>Q:</strong> ¿Puede una población silvestre estar alguna vez en un equilibrio no estable? ¿Qué pasa con un equilibrio estable? ¿Por qué es importante conocer los equilibrios no estables?</p>
 <ol start="8" style="list-style-type: decimal">
-<li>Consider the basic logistic growth equation:</li>
+<li>Considere la ecuación básica de crecimiento logístico:</li>
 </ol>
 <p><span class="math inline">\(\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K} \right )\)</span></p>
-<p>Pull up your InsightMaker model for basic logistic growth with an <span class="math inline">\(r_{max}\)</span> term (double-headed arrow). Or you can clone it from <a href="https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax">here</a>. It should look something like this:</p>
-<p><img src="IM6.jpg" /></p>
-<p>Make your initial population size very small compared to carrying capacity.</p>
-<p><strong>Q:</strong> What happens if <span class="math inline">\(r\)</span> is zero? What happens to carrying capacity?<br />
-<strong>Q:</strong> Which population is more likely to be found at or near K in nature? A population with very large <span class="math inline">\(r\)</span> or very small <span class="math inline">\(r\)</span>?<br />
-<strong>Q:</strong> How does this discussion relate to the concept of “r-selected” and “K-selected” species?</p>
-<p><strong>Q:</strong> Is a high value of <span class="math inline">\(r\)</span> good or bad for conservation?</p>
+<p>Abra su modelo InsightMaker para un crecimiento logístico básico con un término <span class="math inline">\(r_ {max}\)</span> (flecha de dos puntas). O puede clonarlo desde <a href="https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax">aquí</a>. Debería verse algo como esto:</p>
+<p><img src="figures/IM6.jpg" /></p>
+<p>Haga que el tamaño de su población inicial sea muy pequeño en comparación con la capacidad de carga.</p>
+<p><strong>Q:</strong> ¿Qué sucede si <span class="math inline">\(r\)</span> es cero? ¿Qué pasa con la capacidad de carga?<br />
+<strong>Q:</strong> ¿Qué población es más probable que se encuentre en la naturaleza o cerca de K? ¿Una población con <span class="math inline">\(r\)</span> muy grandes o <span class="math inline">\(r\)</span> muy pequeños?<br />
+<strong>Q:</strong> ¿Cómo se relaciona esta discusión con el concepto de especies “seleccionadas por r” y “seleccionadas por K”?</p>
+<p><strong>Q:</strong> ¿Un valor alto de <span class="math inline">\(r\)</span> es bueno o malo para la conservación?</p>
 <p><a href="LECTURE5.html">–go to next lecture–</a></p>
+</div>
 </div>
 
 

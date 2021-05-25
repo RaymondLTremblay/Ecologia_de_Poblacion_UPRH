@@ -113,23 +113,24 @@ Este equilibrio se conoce como **K** o **capacidad de carga**?
 
 ## Equilibrios estables y no estables
 
-A **stable equilibrium**, when perturbed, returns to the equilibrium point
+Un **Equilibrio estable**, es cuando con perturbación  la población regresa a su punto de equilibrio. 
 
-A **non-stable equilibrium**, when perturbed, does NOT return to the equilibrium point 
+Un **Equilibrio no-estable**, es cuando con perturbación  la población *NO* regresa a su punto de equilibrio. 
 
-Is the image on the left a stable or a non-stable equilibrium??
+¿Es la imagen de la izquierda un equilibrio estable o no estable?
 
-What about the image on the right?
+¿Qué pasa con la imagen de la derecha?
 
-What about **K**, or **carrying capacity**?
+¿Qué pasa con **K** o **capacidad de carga**?
 
-Let's find out!
+¡Vamos a averiguar!
 
-## In-class exercise: logistic growth
+## Ejercicio en clase: crecimiento logístico
 
-First of all, from now on try to start saving your working InsightMaker models, since we will often be building from previous models (so we don't have to start from scratch every class!). To build off of a previous Insight, open a previous Insight (e.g., your basic exponential growth model-- or clone [this model](https://insightmaker.com/insight/68236/Basic-population)) and choose "Clone Insight" in the upper right corner to create a copy that you can edit. 
+En primer lugar, de ahora en adelante, intente comenzar a guardar sus modelos de InsightMaker que funcionan, ya que a menudo construiremos a partir de modelos anteriores (¡para que no tengamos que comenzar desde cero en todas las clases!). Para construir a partir de un Insight anterior, abra un Insight anterior (p. Ej., Su modelo de crecimiento exponencial básico, o clone [este modelo] (https://insightmaker.com/insight/68236/Basic-population)) y elija "Clonar Insight "en la esquina superior derecha para crear una copia que pueda editar. 
 
-Here is the scenario we will model: both *b* and *d* are **density-dependent**. We will replicate the model from the R code and figure above- this time in InsightMaker! 
+
+Este es el escenario que modelaremos: tanto *b* como *d* son **dependientes de la densidad**. Replicaremos el modelo del código R y la figura anterior, ¡esta vez en InsightMaker! 
 
 ```
 CONSTANTS
@@ -145,48 +146,69 @@ EQUATIONS
 - [Per-capita death rate] = [Minimum per-capita death rate] - [Density dependence on mortality] * [Turtles] 
 ```
 
-How can we do this in InsightMaker? 
-
-1. Load a basic exponential-growth model. Rename the main [Stock] *Box Turtles*. This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *turtles* and per-capita rates, respectively called *Births per capita* and *Deaths per capita* (each defined on the canvas as [Variables]). This model should be very familiar!! 
-
-2. Initialize the population of *Turtles* to 5 (way below carrying capacity).   
-
-3. Make four new [Variables] on the canvas, to represent the four constants in our model.   
-
-4. Set the *Maximum per-capita birth rate* to 0.8 (turtles produced per turtle per year). Set the *Minimum per-capita Death rate* to 0.3. Set the *Density dependence on fecundity* to 0.001.  Set the *Density dependence on mortality* to 0.0005.  
-
-5. Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.   
-
-6. Change the settings so that the simulation runs for 100 years.   
-
-Your model should look something like this! (if you don't already have a model like this, clone [this model](https://insightmaker.com/insight/70353/Logistic-Growth-1#))
-
-![](IM5.jpg)
+### ¿Cómo podemos hacer esto en InsightMaker?
 
 
-7. Run this model. Does the model behave as you would expect?   
+1. Cargue un modelo básico de crecimiento exponencial. Cambie el nombre de [Stock] *Box Turtles* principal. Este [Stock] debe tener dos [Flujos], uno [Flujo de entrada] llamado *Nacimientos* y uno [Flujo de salida] llamado *Muertes*. Tanto *Nacimientos* como *Defunciones* deben definirse como el producto de *tortugas* y tasas per cápita, respectivamente llamadas *Nacimientos per cápita * y *Defunciones per cápita* (cada una definida en el lienzo como [Variables]). ¡Este modelo debería ser muy familiar!
 
-**Q:** What happens if population size starts out *at* carrying capacity?  [tophat]  
-**Q:** What happens if population size starts out *above* carrying capacity? [tophat]    
-**Q:** Is this a stable equilibrium? [tophat]    
-**Q:** Can a wild population ever be at a non-stable equilibrium? What about a stable equilibrium? Why is it important to know about non-stable equilibria?
 
-8. Consider the basic logistic growth equation:   
+- 1. Load a basic exponential-growth model. Rename the main [Stock] *Box Turtles*. This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *turtles* and per-capita rates, respectively called *Births per capita* and *Deaths per capita* (each defined on the canvas as [Variables]). This model should be very familiar!! 
+
+2. Inicialice la población de *Tortugas* a 5 (muy por debajo de la capacidad de carga). 
+
+ - 2. Initialize the population of *Turtles* to 5 (way below carrying capacity).
+ 
+3. Haga cuatro nuevas [Variables] en el lienzo, para representar las cuatro constantes en nuestro modelo.
+
+- 3. Make four new [Variables] on the canvas, to represent the four constants in our model.   
+
+4. Establezca la *Tasa máxima de natalidad per cápita* en 0.8 (tortugas producidas por tortuga por año). Establezca la *Tasa mínima de mortalidad per cápita* en 0,3. Establezca la *Dependencia de la densidad de la fecundidad* en 0,001. Establezca la *Dependencia de la densidad de la mortalidad* en 0,0005.
+
+- 4. Set the *Maximum per-capita birth rate* to 0.8 (turtles produced per turtle per year). Set the *Minimum per-capita Death rate* to 0.3. Set the *Density dependence on fecundity* to 0.001.  Set the *Density dependence on mortality* to 0.0005.  
+
+5. Realice las conexiones adecuadas, como en la figura anterior, y use la ventana de ecuaciones para asegurarse de que las ecuaciones sean correctas.
+
+- 5. Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.   
+
+
+6. Cambie la configuración para que la simulación se ejecute durante 100 años.
+
+- 6. Change the settings so that the simulation runs for 100 years.   
+
+
+ ¡Tu modelo debería verse así! (Si aún no tiene un modelo como este, clone [este modelo](https://insightmaker.com/insight/70353/Logistic-Growth-1#))
+
+
+![](figures/IM5.jpg)
+
+
+7. Ejecute este modelo. ¿El modelo se comporta como cabría esperar?  
+
+**Q:** ¿Qué sucede si el tamaño de la población comienza *en* la capacidad de carga? [Edmodo]  
+
+**Q:** ¿Qué sucede si el tamaño de la población comienza *por encima* de la capacidad de carga?
+[Edmodo]    
+**Q:** ¿Es este un equilibrio estable? [Edmodo]    
+**Q:** ¿Puede una población silvestre estar alguna vez en un equilibrio no estable? ¿Qué pasa con un equilibrio estable? ¿Por qué es importante conocer los equilibrios no estables?
+
+8. Considere la ecuación básica de crecimiento logístico:  
 
 $\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K}  \right )$
 
-Pull up your InsightMaker model for basic logistic growth with an $r_{max}$ term (double-headed arrow). Or you can clone it from [here](https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax). It should look something like this:
+Abra su modelo InsightMaker para un crecimiento logístico básico con un término $r_ {max}$ (flecha de dos puntas). O puede clonarlo desde [aquí](https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax). Debería verse algo como esto:
 
-![](IM6.jpg)
+![](figures/IM6.jpg)
 
-Make your initial population size very small compared to carrying capacity.     
 
-**Q:** What happens if $r$ is zero? What happens to carrying capacity?      
-**Q:** Which population is more likely to be found at or near K in nature? A population with very large $r$ or very small $r$?     
-**Q:** How does this discussion relate to the concept of "r-selected" and "K-selected" species?
+Haga que el tamaño de su población inicial sea muy pequeño en comparación con la capacidad de carga.
+
+
+**Q:** ¿Qué sucede si $r$ es cero? ¿Qué pasa con la capacidad de carga?     
+**Q:** ¿Qué población es más probable que se encuentre en la naturaleza o cerca de K? ¿Una población con $r$ muy grandes o $r$ muy pequeños?    
+**Q:** ¿Cómo se relaciona esta discusión con el concepto de especies "seleccionadas por r" y "seleccionadas por K"?
  
 
-**Q:** Is a high value of $r$ good or bad for conservation?
+**Q:** ¿Un valor alto de $r$ es bueno o malo para la conservación?
 
 
 
