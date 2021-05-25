@@ -165,9 +165,9 @@ Este modelo agrega una **retroalimentación** usando un [Link] del [Stock] de vu
 
 Debe notar que la población tiende a crecer lentamente al principio y luego muy rápidamente. Esto se conoce como *crecimiento exponencial*. Si ha leído el primer capítulo del libro de Gotelli, lo reconocerá como el _concepto fundamental de la ecología de poblaciones_.
 
-**Q** ¿Puedes modelar el ejemplo de la puffball mushroom mencionado antes en la conferencia? ¿Cuántos cangrejos gigantes hay en la población después de dos generaciones? [Sombrero de copa]
+**Q** ¿Puedes modelar el ejemplo de la *puffball mushroom* mencionado antes en la conferencia? ¿Cuántos cangrejos gigantes hay en la población después de dos generaciones? [Edmodo]
 
-**Q** ¿Puede (aproximadamente) replicar el gráfico de población humana al comienzo de esta conferencia? ¿Cuál es la tasa de crecimiento per cápita ($r$) de la población humana? [TopHat] (NOTA: esto es totalmente opcional, ¡pero podrías resolverlo analíticamente!)
+**Q** ¿Puede (aproximadamente) replicar el gráfico de población humana al comienzo de esta conferencia? ¿Cuál es la tasa de crecimiento per cápita ($r$) de la población humana? [Edmodo] (NOTA: esto es totalmente opcional, ¡pero podrías resolverlo analíticamente!)
 
 Y solo por diversión, aquí hay un [video](https://www.youtube.com/watch?v=Kas0tIxDvrghttps://www.youtube.com/watch?v=Kas0tIxDvrg) sobre el crecimiento exponencial, es posible que desee consultar.
 
