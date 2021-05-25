@@ -1,7 +1,8 @@
 ---
-title: "Population regulation"
-author: "NRES 470/670"
-date: "Spring 2021"
+title: "Regulación de Poblaciones"
+author: "BIOL4558"
+date: "Agosto 2021"
+
 output: 
   html_document: 
     theme: spacelab
