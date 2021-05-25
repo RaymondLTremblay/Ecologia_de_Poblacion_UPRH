@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ![](figures/FoodWeb1.jpg)
 
-## Ecología de sistemas: una forma de pensar  
+## Ecología de Sistemas: una forma de pensar  
 La ecología es desordenada. Cuando trabajamos en entornos naturales, estamos tratando con sistemas intrínsecamente complejos. Todos los elementos de un sistema natural están conectados, llenos de interacciones dinámicas. Interacciones entre organismos, entre organismos y sus entornos: estos vínculos son los que hacen que la ecología sea complicada, pero también infinitamente fascinante.
 
 Podemos pensar en los humanos como un elemento más en estos complejos sistemas. Y la conservación y el manejo de la vida silvestre es la tarea de manipular estos vínculos para cumplir con los objetivos sociales de los sistemas naturales.

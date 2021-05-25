@@ -12,7 +12,7 @@ navbar:
         - text: "Introducción a BIOL4458"
           href: INTRO.html
         - text: "Un enfoque de sistemas holístico"
-          href: LECTURE1.html
+          href: LECTURE1_2.html
         - text: "Introducción a la Ecología de Poblaciones"
           href: LECTURE2.html
         - text: "Thomas Robert Malthus"
