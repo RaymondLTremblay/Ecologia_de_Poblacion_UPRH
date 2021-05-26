@@ -74,8 +74,8 @@ En este ejercicio exploraremos las implicaciones de la **dependencia de densidad
 
 3. En cuanto a los demás parámetros, configúrelos de la siguiente manera:
 
- a. Abundancia inicial: 201 (justo por encima del umbral de Allee)
-b.  Dependencia de la densidad de la tasa de natalidad: 0,004
+a. Abundancia inicial: 201 (justo por encima del umbral de Allee)
+b. Dependencia de la densidad de la tasa de natalidad: 0,004
 c. Dependencia de la densidad de la mortalidad: 0,001
 d. Tasa de natalidad máxima: 0,8
 e. Mortalidad mínima: 0.3
