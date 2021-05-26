@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-## Allee Effect
+## El efecto Allee
 
 ![](figures/prairie_dogs3.jpg)
 
