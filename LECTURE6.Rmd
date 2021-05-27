@@ -1,7 +1,7 @@
 ---
-title: "Age-structured populations"
-author: "NRES 470/670"
-date: "Spring 2021"
+title: "Poblaciones estructurada por edad"
+author: "BIOL4558"
+date: "Agosto 2021"
 output: 
   html_document: 
     theme: spacelab
@@ -14,17 +14,18 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-## When $d$ and $b$ depend on more than just density...
+## W
+Cuando $d$ y $b$ dependen de algo más que la densidad ...
 
 
-![](elephant1.jpg)
+![](figures/elephant1.jpg)
 
-Take this Indian elephant for example. How does reproductive rate depend on age in this case?
+Tome este elefante de la india, por ejemplo. ¿Cómo depende la tasa de reproducción de la edad en este caso?
 
-We might imagine it looks something like this!
+¡Podríamos imaginar que se parece a esto!
 
 ```{r}
-Elephant_age <- seq(0,60,by=2)
+Elephant_age <- seq(0,60, by=2)
 
 Birth_rate <- c(rep(0,times=7),seq(0,0.3,length=4),rep(0.3,times=15),seq(0.3,0,length=5))
 
@@ -34,9 +35,11 @@ barplot(Birth_rate,xlab="Age",ylab="b, per-capita birth rate",col="blue",ylim=c(
 
 ```
 
-![](tortoise1.jpg)
+![](figures/tortoise1.jpg)
 
-What about per-capita death rates for a tortoise? We might imagine something that looks like this...
+
+¿Qué pasa con las tasas de mortalidad per cápita de una tortuga? Podríamos imaginar algo que se parece a esto ...
+
 
 ```{r}
 Tortoise_age <- seq(0,120,by=5)
@@ -49,25 +52,25 @@ barplot(Death_rate,xlab="Age",ylab="d, per-capita death rate",col="blue")
 
 ```
 
-So, for many species per-capita birth rate and death rate are fundamentally dependent on age!
+Entonces, para muchas especies, la tasa de natalidad per cápita y la tasa de mortalidad dependen fundamentalmente de la edad.
 
-![](spadefoot1.jpg)
+![](figures/spadefoot1.jpg)
 
-**Q:** Imagine you were trying to re-establish a population of spadefoot toads. You take 1000 tadpoles from a captive population and place them in a temporary wetland right after a rainstorm. What would population growth look like over the next few years, assuming the reintroduction strategy was successful? [tophat]
+**Q:** Imagina que estás intentando restablecer una población de sapos "pata de espada". Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa? [Edmodo]
 
-## Aside: sex-structured vital rates
+## Adicional: tasas vitales estructuradas por sexo
 
-**Q:** Can you think of some real-world examples where vital rates might differ between males and females? [tophat]
+**Q:** ¿Puede pensar en algunos ejemplos del mundo real en los que las tasas vitales pueden diferir entre hombres y mujeres? [Edmodo]
 
-**Q:** Is sex structure important to consider when modeling populations? Why or why not?
+**Q:** ¿Es importante considerar la estructura de sexos al modelar poblaciones? ¿Por qué o por qué no?
 
-![](tamarin1.jpg)
+![](figures/tamarin1.jpg)
 
-**Q:** Imagine a population of 100 golden-headed lion tamarins (*Leontopithecus chrysomelas*) that consists of all adult males and post-reproductive females. What is the conservation status of this population?  
+**Q:** Imagínese una población de 100 titíes león (Golden headed lion tamarins) de cabeza dorada (*Leontopithecus chrysomelas*) que consiste en todos los machos adultos y hembras post-reproductivas. ¿Cuál es el estado de conservación de esta población?  
 
 ## Life table!
 
-Age-structured populations are often represented by a table called a **life table**. A life table typically represents a single **cohort** (group of organisms of the same species that are born during the same year) that is tracked across time. Here's an example:
+Las poblaciones estructuradas por edad a menudo se representan mediante una tabla llamada **tabla de vida**. Una tabla de vida generalmente representa una única **cohorte** (grupo de organismos de la misma especie que nacen durante el mismo año) que se rastrea a lo largo del tiempo. He aquí un ejemplo:
 
 ```{r include=FALSE}
 lifetable <- read.csv("life_table.csv")
@@ -78,95 +81,114 @@ knitr::kable(lifetable,caption="",col.names = c("x","S(x)","b(x)","l(x)","g(x)")
 
 ```
 
-### Fecundity schedule
+### Calendario de fecundidad
 
-The fecundity component of the life table is called the "fedundity schedule"! The term $b(x)$ represents the per-capita birth rate for females of age x.  
+El componente de fecundidad de la tabla de vida se llama "programa de fecundidad". El término $b (x)$ representa la tasa de natalidad per cápita para las mujeres de edad x. 
 
-### Survivorship schedule
+### Calendario de supervivencia
 
-Fecundity is only half the story! The survival component of the life table is called the "survivorship schedule"! 
+¡La fecundidad es solo la mitad de la historia! El componente de supervivencia de la tabla de vida se llama "programa de supervivencia". 
 
-The term **cohort** represents a bunch of individuals that were all born at the same time. In the life table, the term S(x) refers to the number of individuals from a particular cohort that are _still alive at age x_. From this raw data, we compute two terms, called **survivorship** and **survival rate**
 
-The term $l(x)$ represents the _proportion of the cohort surviving from age 0 to age x_. This is called **survivorship**
+El término **cohorte ** representa un grupo de personas que nacieron al mismo tiempo. En la tabla de vida, el término S(x) se refiere al número de individuos de una cohorte particular que todavía están vivos a la edad x. A partir de estos datos sin procesar, calculamos dos términos, llamados **supervivencia** y **tasa de supervivencia**
 
-The term $g(x)$ represents the _proportion surviving from age x to age x+1_. This is called **survival rate** 
+El término $l (x) $ representa la _proporción de la cohorte que sobrevive desde la edad 0 hasta la edad x_. Esto se llama **supervivencia**
 
-### Types of survivorship curves...
+El término $g (x) $ representa la _proporción que sobrevive desde la edad x hasta la edad x + 1_. Esto se llama **tasa de supervivencia **
 
-There are three main types of survivorship curves (also called survivorship schedules), classified as **Type I**, **Type II**, and **Type III**. 
+### Tipos de curvas de supervivencia ...
 
-*Survivorship curves* describe how the logarithm of survivorship ($log(l(x))$) drops off with age. These three types of **life history** pattern can be illustrated with three real-world examples: humans, songbirds, and frogs.
+Hay tres tipos principales de curvas de supervivencia (también llamadas programas de supervivencia), clasificadas como ** Tipo I **, ** Tipo II ** y ** Tipo III **.
 
-**Q**: can survivorship increase with age? 
+*Las curvas de supervivencia * describen cómo el logaritmo de supervivencia ($ log (l (x)) $) disminuye con la edad. Estos tres tipos de patrones de **historia de vida ** se pueden ilustrar con tres ejemplos del mundo real: humanos, pájaros cantores y ranas.
 
-**Q**: why do we use the logarithm of survivorship in order to characterize survivorship curves?
+**Q**: ¿Puede la supervivencia aumentar con la edad?
 
+**Q**: ¿Por qué usamos el logaritmo de supervivencia para caracterizar las curvas de supervivencia?
 
 #### Type I
-![](human2.png)
+![](figures/human2.png)
 
 #### Type II
-![](songbird1.jpg)
+![](figures/songbird1.jpg)
 
 #### Type III
-![](frog1.jpg)
+![](figures/frog1.jpg)
 
-![](Survivorship_Curves.jpg)
+![](figures/Survivorship_Curves.jpg)
 
-(Note the logarithmic scale on the Y axis!)
+¡Tenga en cuenta la escala logarítmica en el eje Y!
 
-**Q:** Which survivorship curve is the most common in nature?? [tophat]
+**Q:** ¿Qué curva de supervivencia es la más común en la naturaleza? [Edmodo]
 
 
-## In-class exercise: age-structured population growth
+## Ejercicio en clase: crecimiento de la población estructurado por edad
 
 In this exercise we will explore some facets of **age-stuctured populations**. 
 
-1. Load up the life table from earlier in this lecture, by clicking [here](life_table.csv). Use this table to compute the **net reproductive rate, $R_0$**. This represents the mean (expected) number of female offspring produced per female over her entire lifetime. This is also known as *lifetime reproductive potential*! This can be computed as:
+1. Cargue la tabla de vida anterior en esta lección, haciendo clic [aquí] (life_table.csv). Utilice esta tabla para calcular la ** tasa de reproducción neta, $ R_0 $ **. Esto representa el número medio (esperado) de crías hembras producidas por hembra durante toda su vida. ¡Esto también se conoce como * potencial reproductivo de por vida *! Esto se puede calcular como:
+
+- 1. Load up the life table from earlier in this lecture, by clicking [here](life_table.csv). Use this table to compute the **net reproductive rate, $R_0$**. This represents the mean (expected) number of female offspring produced per female over her entire lifetime. This is also known as *lifetime reproductive potential*! This can be computed as:
 
 $R_0 = \sum_{x=0}^k l(x)\cdot b(x)$
 
-Where $k$ is the maximum age. 
 
-**Q:** Can you implement this formula in Excel? What's the answer?
+Donde $k$ es la edad máxima.
 
-2. If the net reproductive rate, $R_0$ is positive, then the population is above the **replacement rate** of 1, and therefore the population will grow. If $R_0$ is negative, then the population will decline. This sounds familiar, right? Just like the finite rate of growth, $\lambda$. 
+**Q:** ¿Puedes implementar esta fórmula en Excel? ¿Cuál es la respuesta?
 
-BUT, what is the time frame of $R_0$? What is the timeframe of $\lambda$? They are different right? The difference is that $R_0$ describes growth per **generation**!. 
+2. Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la **tasa de reemplazo ** de 1 y, por lo tanto, la población crecerá. Si $R_0$ es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, $\lambda$.
 
-What is a **generation**? The most common definition (for generation time) is the _Average age of the parents of all the offspring produced by a single cohort_. This can be computed from the life table as:
+- 2. If the net reproductive rate, $R_0$ is positive, then the population is above the **replacement rate** of 1, and therefore the population will grow. If $R_0$ is negative, then the population will decline. This sounds familiar, right? Just like the finite rate of growth, $\lambda$. 
+
+PERO, ¿cuál es el marco de tiempo de $ R_0 $? ¿Cuál es el período de tiempo de $ \ lambda $? Son diferentes, ¿verdad? ¡La diferencia es que $ R_0 $ describe el crecimiento por ** generación ** !.
+
+- BUT, what is the time frame of $R_0$? What is the timeframe of $\lambda$? They are different right? The difference is that $R_0$ describes growth per **generation**!. 
+
+¿Qué es una ** generación **? La definición más común (para el tiempo de generación) es la _Edad media de los padres de toda la descendencia producida por una sola cohorte_. Esto se puede calcular a partir de la tabla de vida como:
 
 $G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}$
 
-See if you can implement this in Excel (or whatever spreadsheet software you use!).
 
-**Q:** What is the *generation time* of the population in the table?
+Vea si puede implementar esto en Excel (¡o cualquier software de hoja de cálculo que use!).
 
-3. Now, can you compute the *intrinsic rate of growth* ($r$) for this age-structured population? 
+**Q:** ¿Cuál es el *tiempo de generación* de la población en la tabla?
 
-To a first-order approximation, you can use this equation:
+3. Ahora, ¿puede calcular la *tasa intrínseca de crecimiento* ($r$) para esta población estructurada por edad?
 
-$r = \frac{ln(R_0)}{G}$ [tophat]
+Para una aproximación de primer orden, puede usar esta ecuación:
 
-Just looking at this equation, you see that organisms with longer generation times ($G$) have slower intrinsic rates of growth, all else being equal. 
+- 3. Now, can you compute the *intrinsic rate of growth* ($r$) for this age-structured population? 
 
-**Q:** Implement this equation in Excel. Is this an exponentially growing population?
+Para una aproximación de primer orden, puede usar esta ecuación:
 
-4. Load up an age-structured model in InsightMaker. You can clone [this one,  here](https://insightmaker.com/insight/70809/Age-structured-population). 
+$r = \frac{ln(R_0)}{G}$ 
 
+Con solo mirar esta ecuación, verá que los organismos con tiempos de generación más largos ($G $) tienen tasas intrínsecas de crecimiento más lentas, en igualdad de condiciones.
 
-    4a. Initialize the population like the spadefoot toad example from above- with only the first (juvenile) age class. What population dynamics occur at the beginning of the simulation? What about the end of the simulation?
+**Q:**Implemente esta ecuación en Excel. ¿Es esta una población en crecimiento exponencial?
+
+4. Cargue un modelo estructurado por edades en InsightMaker. Puedes clonar [this one,  here](https://insightmaker.com/insight/70809/Age-structured-population). 
+
+4a. Inicialice la población como en el ejemplo del sapo spadefoot de arriba, con solo la primera clase de edad (juvenil). ¿Qué dinámica poblacional ocurre al comienzo de la simulación? ¿Qué pasa con el final de la simulación?
+
+   - 4a. Initialize the population like the spadefoot toad example from above- with only the first (juvenile) age class. What population dynamics occur at the beginning of the simulation? What about the end of the simulation?
     
-    4b. Can you tweak the initial abundance of juveniles, subadults and adults so that the population exhibits smooth exponential growth for all three age classes (and the population as a whole)? This is called **Stable Age Distribution (S.A.D.)**
+4b. ¿Puede modificar la abundancia inicial de juveniles, subadultos y adultos para que la población exhiba un crecimiento exponencial uniforme para las tres clases de edad (y la población en su conjunto)? Esto se llama ** Distribución de edad estable (S.A.D.) **
     
-    4c. Now change the vital rates (*Juv mort rate*, *Sub mort rate*, *Transition rate to Subadult*, etc.). Is population growth still smooth? If not, can you find the NEW *Stable Age Distribution*??
+   - 4b. Can you tweak the initial abundance of juveniles, subadults and adults so that the population exhibits smooth exponential growth for all three age classes (and the population as a whole)? This is called **Stable Age Distribution (S.A.D.)**
     
-    4d. Return to the initial model ([this one,  here](https://insightmaker.com/insight/70809/Age-structured-population)). Now change the **Adult mort rate** to 0.65. What happens? Is this a growing population? 
+  4c. Ahora cambie las tasas vitales (*Tasa de mortalidad juvenil *, *Tasa de mortalidad secundaria *, *Tasa de transición a Subadulto *, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA *Distribución de edad estable *?  
     
-**Q**: (using the model from step 4d, with adult mortality set at 0.65) How many subadults would need to be added to the population each year (population supplementation) to maintain a stable or growing population of >20 adults?  [tophat]
+   - 4c. Now change the vital rates (*Juv mort rate*, *Sub mort rate*, *Transition rate to Subadult*, etc.). Is population growth still smooth? If not, can you find the NEW *Stable Age Distribution*??
+    
+  4d. Regrese al modelo inicial ([este, aquí](https://insightmaker.com/insight/70809/Age-structured-population)). Ahora cambie la **tasa de mortalidad de adultos** a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?
+    
+  - 4d. Return to the initial model ([this one,  here](https://insightmaker.com/insight/70809/Age-structured-population)). Now change the **Adult mort rate** to 0.65. What happens? Is this a growing population? 
+    
+**Q**: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de población) para mantener una población estable o en crecimiento de> 20 adultos?  [Edmodo]
 
-**Q**: Is supplementation the best strategy for conserving this population?    
+**Q**: ¿Es la suplementación la mejor estrategia para conservar esta población?   
 
 [--go to next lecture--](LECTURE7.html)
 
