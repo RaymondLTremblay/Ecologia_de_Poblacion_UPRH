@@ -14,8 +14,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-## W
-Cuando $d$ y $b$ dependen de algo más que la densidad ...
+## Cuando $d$ y $b$ dependen de algo más que la densidad ...
 
 
 ![](figures/elephant1.jpg)
