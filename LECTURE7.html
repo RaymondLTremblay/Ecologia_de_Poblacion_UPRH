@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="NRES 470/670" />
+<meta name="author" content="BIOL4558" />
 
 
-<title>Matrix population models</title>
+<title>Modelos de matrices poblacionales</title>
 
 <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -341,13 +341,13 @@ div.tocify {
       <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
     </li>
     <li>
-      <a href="LECTURE3.html">Thomas Robert Malthus</a>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
     </li>
     <li>
       <a href="LECTURE4.html">Regulación de Poblaciones</a>
     </li>
     <li>
-      <a href="LECTURE5.html">Passenger Pigeon</a>
+      <a href="LECTURE5.html">Paloma Viajera</a>
     </li>
     <li>
       <a href="LECTURE6.html">Población estructurada por Edad</a>
@@ -450,44 +450,40 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Matrix population models</h1>
-<h4 class="author">NRES 470/670</h4>
-<h4 class="date">Spring 2021</h4>
+<h1 class="title toc-ignore">Modelos de matrices poblacionales</h1>
+<h4 class="author">BIOL4558</h4>
+<h4 class="date">Agosto 2021</h4>
 
 </div>
 
 
-<div id="upcoming-midterm-exam" class="section level3">
-<h3>Upcoming midterm exam</h3>
-<p><strong>when and where</strong> The first midterm exam (out of two) is coming up Monday <strong>March 15</strong>. You will have the whole 50 minute class period to take the exam. The exam will be online (of course) and administered on Top Hat.</p>
-<p><strong>what</strong> The exam will cover:</p>
+<div id="próximo-examen-parcial" class="section level3">
+<h3>Próximo examen parcial</h3>
+<p><strong>cuándo y dónde</strong> El primer examen parcial (de dos) se realizará el lunes <strong>15 de marzo</strong>. Tendrás todo el período de clase de 120 minutos para realizar el examen. El examen será en línea (por supuesto) y se administrará en Edmodo.</p>
+<p><strong>qué </strong> El examen cubrirá:</p>
 <ul>
-<li>All material in Chapters 1-3 of the Gotelli book <em>including matrix population modeling concepts</em>.<br />
-</li>
-<li>All material covered in lectures up to and including this lecture on matrix population models.<br />
-</li>
-<li>All material covered in labs 1-4.<br />
-</li>
-<li>Ch. 1 of “Beyond Connecting the Dots” (basic systems thinking and stock-flow modeling, concepts of feedbacks and equilibria)</li>
-<li>Basic programming concepts (IF-THEN-ELSE and iteration loops)</li>
+<li>Todo el material de los capítulos 1-3 del libro de Gotelli <em>incluidos los conceptos de modelos de población matricial </em>.</li>
+<li>Todo el material cubierto en conferencias hasta e incluyendo esta conferencia sobre modelos matriciales de población.</li>
+<li>Ch. 1 de “Beyond Connecting the Dots” (pensamiento sistémico básico y modelado de flujo de existencias, conceptos de retroalimentación y equilibrios)</li>
+<li>Conceptos básicos de programación (IF-THEN-ELSE y de iteración)</li>
 </ul>
-<p><em>The exam will consist of a mixture of multiple-choice and short-answer questions.</em></p>
-<p><em>Please bring a calculator- a regular scientific calculator is fine (not absolutely necessary, but it could be helpful for at least one question on the exam!)</em></p>
+<p><em>El examen consistirá en una combinación de preguntas de opción múltiple y de respuesta corta.</em></p>
+<p><em>Por favor traiga una calculadora; una calculadora científica normal está bien (no es absolutamente necesaria, ¡pero podría ser útil para al menos una pregunta del examen!)</em></p>
 </div>
 <div id="matrix-population-models" class="section level1">
 <h1>Matrix population models</h1>
-<p>First of all, this lecture is full of R code (R is pretty good at running matrix population models!). If you want to follow along in R, you can find the R script <a href="LECTURE7.R">here</a>. I recommend right-clicking on the link, saving the script to a designated folder, and loading up the script in RStudio.</p>
-<div id="why-matrices" class="section level2">
-<h2>Why matrices?</h2>
+<p>En primer lugar, esta lección está llena de código R (¡R es bastante bueno para ejecutar modelos de población matricial!). Si desea seguir en R, puede encontrar el script R <a href="LECTURE7.R">aquí</a>. Recomiendo hacer clic derecho en el enlace, guardar el script en una carpeta designada y cargar el script en RStudio.</p>
+<div id="por-qué-matrices" class="section level2">
+<h2>¿Por qué matrices?</h2>
 <div id="reason-1-simplify" class="section level3">
 <h3>Reason 1: simplify!</h3>
 <p><img src="IM8.jpg" /></p>
-<p>You might recognize this InsightMaker model from Lab 3. This represents an age-structured population with only three age classes. Imagine if there were five age classes, or 10? What if you could jump from (e.g.) stage 3 to stage 5? Or from stage 5 back to stage 3? How many lines would you have to draw, how many equations would you have to put in all the different flows? It would be tedious, and you could easily run into errors that would be very hard to debug!</p>
+<p>Es posible que reconozca este modelo de InsightMaker. Esto representa una población estructurada por edad con solo tres clases de edad. Imagínese si hubiera cinco clases de edad o diez. ¿Qué pasaría si pudieras saltar de (por ejemplo) la etapa 3 a la etapa 5? ¿O de la etapa 5 a la etapa 3? ¿Cuántas líneas tendrías que dibujar, cuántas ecuaciones tendrías que poner en todos los diferentes flujos? Sería tedioso y fácilmente podría encontrarse con errores que serían muy difíciles de depurar.</p>
 <p><img src="teasel1.jpg" /></p>
-<p>Consider the teasel example from our textbook. It’s possible to implement this model in InsightMaker, but it would be tedious and potentially prone to error. And this is far from the most complicated populations out there (although notice that plants can do some things that animals can’t do- for instance go backwards in developmental stage. With matrix models, there is an easier way!</p>
+<p>Considere el ejemplo del teasel de nuestro libro de texto. Es posible implementar este modelo en InsightMaker, pero sería tedioso y potencialmente propenso a errores. Y esto está lejos de las poblaciones más complicadas que existen (aunque observe que las plantas pueden hacer algunas cosas que los animales no pueden hacer, por ejemplo, retroceder en la etapa de desarrollo. ¡Con los modelos matriciales, hay una manera más fácil!</p>
 <p><img src="gotelli3_6.jpg" /></p>
-<p>The population vital rates for pretty much any age-structured or stage-structured population can be represented as a <strong>transition matrix</strong> (or, projection matrix), which summarizes all the information about mortality, birth rates, and transitions between stages! (and the fact that a life history like teasel can be represented by a transition matrix illustrates the generality of this concept!)</p>
-<p>For example, the teasel vital rates can be summarized in <a href="teaselmatrix1.csv">this matrix</a>:</p>
+<p>Las tasas vitales de la población para casi cualquier población estructurada por edad o estructurada por etapas se pueden representar como una <strong>matriz de transición</strong> (o matriz de proyección), que resume toda la información sobre mortalidad, tasas de natalidad y transiciones entre etapas. (¡y el hecho de que una historia de vida como Teasel pueda representarse mediante una matriz de transición ilustra la generalidad de este concepto!)</p>
+<p>Por ejemplo, las tasas vitales de teasel se pueden resumir en <a href="teaselmatrix1.csv">esta matriz</a>:</p>
 <pre class="r"><code>#########
 # Teasel example from Gotelli: summarizing a complex life history!
 
@@ -504,34 +500,34 @@ teasel_matrix                                          # print the matrix</code>
 ## ros2      0.007  0.00 0.125 0.238 0.000    30.170
 ## ros3      0.008  0.00 0.000 0.245 0.167     0.862
 ## flowering 0.000  0.00 0.000 0.023 0.750     0.000</code></pre>
-<p>Isn’t that <em>elegant</em>!!</p>
-<p>We’ll go into more detail about matrices later!</p>
-<div id="aside-stage-structure-vs-age-structure" class="section level4">
-<h4>Aside: stage-structure vs age-structure</h4>
-<p>In the previous lecture, we talked about ‘age-structured populations’. What we meant by that is that the population vital rates (e.g., b and d) varied by age.</p>
-<p>Sometimes, it is convenient to classify individuals within a certain age range as belonging to a particular life-history stage. For example, we might classify the life history of a grizzly bear like this:</p>
-<p>Age 0-1: newborn<br />
-Age 1-2: yearling<br />
-Age 2-5: subadult<br />
-Age 6+: adult</p>
-<p>This can simplify our models considerably. For example, consider a species like a sea turtle, with up to 75 or 100 years of life. You could build a model in which you have 100 stocks, one for each year of life. OR, you could have 5 or so stocks representing age ranges in which sea turtles tend to have consistent(ish) vital rates. For example, we might divide the sea turtle life history into the following stages:</p>
-<p>Age 0-1: hatchling<br />
-Age 1-5: young juvenile<br />
-Age 5-10: older juvenile<br />
-Age 10-17: subadult<br />
-Age 18+: adult</p>
-<p>By using stages, we have simplified our model from having 100 stocks (with even more associated flows/transitions) to a model with only 5 stocks- and we are still capturing how vital rates change with age (the model is still biologically realistic).</p>
-<p>Matrix population models can represent age-structured and stage-structured models with equal simplicity and elegance.</p>
-<p>You won’t be tested on this, but the commonly used ‘Leslie Matrix’ refers to a matrix population model that represents an age-structured population. When a matrix is used to represent a stage-structured population, it is often called a ’Lefkovitch" Matrix.</p>
+<p>¿No es eso *elegante *?</p>
+<p>¡Entraremos en más detalles sobre las matrices más adelante!</p>
 </div>
+<div id="supplementario-matrices-estructura-por-etapas-vs.-estructura-por-edades" class="section level3">
+<h3>Supplementario: Matrices estructura por etapas vs. estructura por edades</h3>
+<p>En la conferencia anterior, hablamos de ‘poblaciones estructuradas por edad’. Lo que queremos decir con eso es que las tasas vitales de la población (por ejemplo, nacimiento y mortandad) variaban según la edad.</p>
+<p>A veces, es conveniente clasificar a los individuos dentro de un cierto rango de edad como pertenecientes a una etapa particular de su historia de vida. Por ejemplo, podríamos clasificar la historia de vida de un oso pardo así:</p>
+<p>Edad 0-1: recien nacidos<br />
+Edad 1-2: juveniles<br />
+Edad 2-5: sub-adulto<br />
+Edad 6+: adulto</p>
+<p>Esto puede simplificar nuestros modelos considerablemente. Por ejemplo, considere una especie como una tortuga marina, con hasta 75 o 100 años de vida. Podría construir un modelo en el que tenga 100 acciones, una por cada año de vida. O, podría tener 5 o más poblaciones que representen rangos de edad en los que las tortugas marinas tienden a tener tasas vitales consistentes (mas o menos). Por ejemplo, podríamos dividir la historia de vida de las tortugas marinas en las siguientes etapas:</p>
+<p>Edad 0-1: recien nacidos<br />
+Edad 1-5: juveniles joven<br />
+Edad 5-10: juvenile más grandes<br />
+Edad 10-17: sub-adult0<br />
+Edad 18+: adult0</p>
+<p>Al usar etapas, hemos simplificado nuestro modelo de tener 100 acciones (con aún más flujos / transiciones asociadas) a un modelo con solo 5 acciones, y todavía estamos capturando cómo cambian las tasas vitales con la edad (el modelo sigue siendo biológicamente realista).</p>
+<p>Los modelos matriciales de población pueden representar modelos estructurados por edades y estructurados por etapas con la misma simplicidad y elegancia.</p>
+<p>La ‘Leslie Matrix’ comúnmente utilizada se refiere a un modelo de población matricial que representa una población estructurada por edad. Cuando se utiliza una matriz para representar una población estructurada por etapas, a menudo se la denomina Matriz ‘Lefkovitch’.</p>
 </div>
-<div id="reason-2-projection" class="section level3">
-<h3>Reason 2: projection!</h3>
-<p>In one of the questions in Lab 3, your were asked to use a life table to project the age structure of a population one time step in the future. Was it simple and straightforward to do this? (answer: NO!!)</p>
-<p>Life tables are great for summarizing survivorship schedules and other aspects of age-structured populations. But <em>life tables are not great for projecting age-structured abundance into the future</em>!</p>
-<p>You know what <em>is</em> great for projecting age-structured abundance into the future? (obvious answer: MATRICES!)</p>
-<p>For example, let’s project a teasel population 1 year into the future:</p>
-<p>First of all, we need to begin with a teasel population <strong>vector</strong>…</p>
+<div id="razón-2-proyección" class="section level3">
+<h3>Razón 2: ¡proyección!</h3>
+<p>En una de las preguntas del laboratorio 3, se le pidió que usara una tabla de vida para proyectar la estructura de edad de una población en un paso de tiempo en el futuro. ¿Fue sencillo y directo hacer esto? (respuesta: ¡¡NO !!)</p>
+<p>Las tablas de vida son excelentes para resumir los cronogramas de supervivencia y otros aspectos de las poblaciones estructuradas por edad. ¡Pero las <em>tablas de vida no son excelentes para proyectar la abundancia estructurada por edades en el futuro</em>!</p>
+<p>¿Sabes qué <em>es</em> genial para proyectar la abundancia estructurada por edades en el futuro? (respuesta obvia: MATRICES!)</p>
+<p>Por ejemplo, proyectemos una población de teasel 1 año en el futuro:</p>
+<p>En primer lugar, debemos comenzar con una población de teasel <strong>vector </strong> …</p>
 <pre class="r"><code>#############
 # Summarize initial age-structured abundance as a matrix with one column
 
@@ -546,9 +542,9 @@ Initial_teasel</code></pre>
 ## ros2            300
 ## ros3            600
 ## flowering        25</code></pre>
-<p>Then all we need to do is ‘matrix-multiply’ this <strong>vector</strong> of abundances by the <strong>transition matrix</strong> from above! Each time we do this multiplication step, we advance one year! It’s that easy!</p>
-<p>NOTE: matrix multiplication (percent-asterisk-percent in R) is not the same as standard multiplication (asterisk in R). We will go over this in the intro to lab 4 a bit later.</p>
-<p>Here’s how we can do this in R!</p>
+<p>¡Entonces todo lo que tenemos que hacer es ‘multiplicar por matriz’ este <strong>vector </strong> de abundancias por la <strong>matriz de transición </strong> de arriba! ¡Cada vez que hacemos este paso de multiplicación, avanzamos un año! ¡Es fácil!</p>
+<p>NOTA: la multiplicación de matrices (porcentaje-asterisco-porcentaje en R) no es lo mismo que la multiplicación estándar (asterisco en R). Repasaremos esto en la introducción al laboratorio 4 un poco más adelante.</p>
+<p>¡Así es como podemos hacer esto en R!</p>
 <pre class="r"><code>#########
 # Project the population at time 1
 
@@ -561,8 +557,8 @@ Year1</code></pre>
 ## ros2         857.65
 ## ros3         203.25
 ## flowering    456.90</code></pre>
-<p>How easy is that?!</p>
-<p>To compute teasel abundance in year 2 of our simulation, we can simply repeat:</p>
+<p>¿Qué tan fácil es eso ?</p>
+<p>Para calcular la abundancia de carmesí en el año 2 de nuestra simulación, simplemente podemos repetir:</p>
 <pre class="r"><code>#########
 # Project the population at time 2
 
@@ -576,8 +572,8 @@ nextYear  # now we get the (age structured) population size at time 2!     </cod
 ## ros2       14062.6102
 ## ros3         702.3908
 ## flowering    172.1635</code></pre>
-<p>We could use this strategy to simulate abundance for ten years (or 20, or 30, or 10000)…</p>
-<p>Notice the use of a <strong>for loop</strong> here!</p>
+<p>Podríamos usar esta estrategia para simular la abundancia durante diez años (o 20, o 30, o 10000) …</p>
+<p>¡Observe el uso de un <strong>loop </strong> aquí!</p>
 <pre class="r"><code>########
 # Use a for loop to project the population dynamics for the next 10 years!
 
@@ -610,9 +606,9 @@ tenYears</code></pre>
 ## ros2       160533.59  440850.62  1312972.86  2281135.7  5859547.7
 ## ros3        46750.08   68459.45   186131.95   505712.0   948267.5
 ## flowering   12905.64   38754.83    61484.15   169797.3   431750.1</code></pre>
-<p>Finally, we can plot out the abundance of each stage over 10 years!</p>
+<p>¡Finalmente, podemos trazar la abundancia de cada etapa durante 10 años!</p>
 <p><img src="LECTURE7_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>So projection is easy with matrices!</p>
+<p>¡Así que la proyección es fácil con matrices!</p>
 </div>
 <div id="reason-3-matrix-algebra-tricks" class="section level3">
 <h3>Reason 3: Matrix algebra tricks!</h3>
