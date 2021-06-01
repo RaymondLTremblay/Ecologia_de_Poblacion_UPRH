@@ -5,8 +5,8 @@ output:
     theme: spacelab
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: yes
+    pdf_document:
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
