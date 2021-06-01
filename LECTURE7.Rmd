@@ -33,7 +33,6 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ####  Matrix population models                          ####
 ############################################################
 
-
 ```
 
 
