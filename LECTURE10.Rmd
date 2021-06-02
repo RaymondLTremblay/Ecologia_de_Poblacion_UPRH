@@ -18,132 +18,151 @@ NOTA: ¡Muchas gracias a Elizabeth Hunter (Georgia Southern Univerisity) por ayu
 
 ![](figures/birds1.jpg)
 
-So far in this class we have considered the **population** as the fundamental unit that we are interested in modeling. The population is a [Stock] and all processes that can change the size of the population are [Flows]. All individuals within any [Stock] are assumed to be interchangeable (identical in every way), and are not modeled explicitly.  
+Hasta ahora en esta clase hemos considerado la ** población ** como la unidad fundamental que nos interesa modelar. La población es un [Stock] y todos los procesos que pueden cambiar el tamaño de la población son [Flujos]. Se supone que todos los individuos dentro de cualquier [Stock] son ​​intercambiables (idénticos en todos los sentidos) y no se modelan explícitamente.
 
-The fact that we model populations as our fundamental unit of interest makes sense for a population ecology class! BUT we are also aware (of course) that populations consist of **individuals** that are semi-autonomous. Sometimes the questions we want to ask in ecology and conservation biology require us to zoom in on the processes that are occurring at the *individual level*. 
+¡El hecho de que modelemos poblaciones como nuestra unidad fundamental de interés tiene sentido para una clase de ecología de poblaciones! PERO también somos conscientes (por supuesto) de que las poblaciones consisten en ** individuos ** que son semiautónomos. A veces, las preguntas que queremos hacer en ecología y biología de la conservación requieren que nos acerquemos a los procesos que están ocurriendo a nivel * individual *.
 
-In some ways a population is hard to define- it can be a bit of an artificial or abstract concept. Where exactly does a population begin and end? 
+De alguna manera, una población es difícil de definir; puede ser un concepto algo artificial o abstracto. ¿Dónde exactamente comienza y termina una población? 
 
-However, the individual is (usually!) a straightforward, biologically meaningful concept.
+Sin embargo, el individuo es (¡generalmente!) Un concepto sencillo y biológicamente significativo.
 
-## The General Modeling Workflow
+## El flujo de trabajo de modelado general
 
-Before we define how individual-based models differ from the population-level stock-flow models we have already been using, let's first point out the similarities. 
+Antes de definir en qué se diferencian los modelos basados ​​en individuos de los modelos de flujo de existencias a nivel de población que ya hemos estado usando, primero señalemos las similitudes.
 
-First of all, the basic modeling workflow is ALWAYS the same, no matter what kind of model we want to use!
+En primer lugar, el flujo de trabajo de modelado básico SIEMPRE es el mismo, ¡sin importar qué tipo de modelo queramos usar!
 
-![](model_wkflow1.jpg)
+![](figures/model_wkflow1.jpg)
 
-All models are a way to **formalize our understanding about our study system**. 
+Todos los modelos son una forma de **formalizar nuestra comprensión sobre nuestro sistema de estudio **.
 
-**Population-based models** (PBM; i.e., models of $N$) are the main type of model we consider in this class: with all individuals in a [Stock] considered to be interchangeable, $N$ (possibly age-structured) is our main variable of interest. $N$ is in turn controlled by endogenous factors (forces coming from inside the population -- e.g., density-dependence, demographic stochasticity) and exogenous factors (forces coming from outside the population -- e.g., environmental stochasticity, harvest). 
+**Los modelos basados en la población ** (PBM; es decir, modelos de $N $) son el tipo principal de modelo que consideramos en esta clase: con todos los individuos en una [población] considerados intercambiables, $N $ (posiblemente edad -estructurado) es nuestra principal variable de interés. $N $ está a su vez controlado por factores endógenos (fuerzas que provienen del interior de la población, por ejemplo, dependencia de la densidad, estocasticidad demográfica) y factores exógenos (fuerzas que provienen de fuera de la población, por ejemplo, estocasticidad ambiental, cosecha).
 
-**Age/stage structured PBMs** and **sex structured PBMs** (i.e., models of $\mathbf{N}$, i.e., matrix population models) are types of PBM in which individuals are grouped together according to important traits like sex and age, with distinct population vital rates assigned to each group.
+**PBM estructuradas por edad / etapa ** y **PBM estructuradas por sexo ** (es decir, modelos de $\mathbf{N} $, es decir, modelos de población matricial) son tipos de PBM en los que los individuos se agrupan de acuerdo con rasgos importantes como el sexo y la edad, con tasas vitales poblacionales distintas asignadas a cada grupo.
 
-**Individual-based models** (IBM; also known as "agent-based" models) is a way of modeling populations such that all individuals are considered explicitly! We no longer need to group individuals into [Stocks]- each individual can potentially have a different survival probability, or chance of breeding, or movement propensity! These differences can be a result of (e.g.) spatial context or among-individual genetic variation. 
+**Los modelos basados en individuos ** (Individual Based models = IBM; también conocidos como modelos "basados en agentes") son una forma de modelar poblaciones de manera que todos los individuos se consideran explícitamente. Ya no necesitamos agrupar a los individuos en [Stocks] - ¡cada individuo puede tener potencialmente una probabilidad de supervivencia diferente, o posibilidad de reproducirse, o propensión a moverse! Estas diferencias pueden ser el resultado de (por ejemplo) el contexto espacial o la variación genética entre individuos.
 
-In this case, we don't model $N$ directly at all -- in fact, $N$ (in an IBM framework) is an **emergent property** of individual organisms interacting with each other, living or dying in the context of interactions with predators, competitors, and their abiotic environment.
+En este caso, no modelamos $N $ directamente en absoluto; de hecho, $ N $ (en un marco de IBM) es una **propiedad emergente ** de organismos individuales que interactúan entre sí, que viven o mueren en el contexto de interacciones con depredadores, competidores y su entorno abiótico.
 
-### Which model structure should I use? IBM or PBM??
+### ¿Qué estructura de modelo debo utilizar? IBM o PBM?
 
-In general, models are tools- you should use the model structure that best fits with the questions you are asking and your understanding of the study system!
+En general, los modelos son herramientas; debe utilizar la estructura del modelo que mejor se adapte a las preguntas que está formulando y a su comprensión del sistema de estudio.
 
-And also, if two different model structures are equally appropriate, you should usually use the **simplest approach**! This idea is often called the *Principle of Parsimony* (or, *Occam's Razor*). 
+Y también, si dos estructuras de modelo diferentes son igualmente apropiadas, ¡normalmente debería utilizar el **enfoque más simple **! Esta idea a menudo se denomina *Principio de parsimonia * (o *Navaja de Occam *). _Principle of Parsimony (or, Occam's Razor*)_. 
 
-![](occam1.jpg)
-
-Both IBM and PBM can be used to address questions at the population or metapopulation level.
+![](figures/occam1.jpg)
+Tanto IBM como PBM se pueden utilizar para abordar preguntas a nivel de población o metapoblación.
 
 #### Rules of thumb
 
-**Q**: All populations are composed of individuals. Why then don't we always model populations using individual-based models?
+**Q **: Todas las poblaciones están compuestas por individuos. Entonces, ¿por qué no siempre modelamos poblaciones utilizando modelos basados ​​en individuos?
 
-- In general, you should use IBM if your *primary information sources (data) are at the individual level* (e.g., telemetry data)-- allowing you to build informed models of how individuals interact with members of their own species, other interacting species, and with their local environment -- in which case the principle of parsimony dictates that you should build models at the individual level! That is, you make fewer assumptions if you model this system as an IBM. 
+- En general, debe utilizar IBM si sus *fuentes de información primarias (datos) están a nivel individual * (por ejemplo, datos de telemetría), lo que le permite construir modelos informados de cómo los individuos interactúan con miembros de su propia especie, especies y con su entorno local, en cuyo caso el principio de parsimonia dicta que se deben construir modelos a nivel individual. Es decir, hace menos suposiciones si modela este sistema como IBM.
 
-- You should use PBM if your *primary information is at the population level* (e.g., _the results of most mark-recapture analyses_) -- in which case the principle of parsimony dictates that you should build models at the population level!
+- Debe usar PBM si su *información primaria está a nivel de población * (por ejemplo, _los resultados de la mayoría de los análisis de marca-recaptura_), en cuyo caso el principio de parsimonia dicta que debe construir modelos a nivel de población.
 
-**Q**: What are some population ecology questions that might be best addressed using **individual-based models (IBM)**?
+**Q**: ¿Cuáles son algunas preguntas de ecología de poblaciones que podrían abordarse mejor utilizando **individual-based models (IBM)**?
 
-**Q**: What are some population ecology questions that might be best addressed using **population-based models (PBM)**?
-
-
-_Individual-based models are powerful- but with power comes great responsibility!_
+**Q**: ¿Cuáles son algunas preguntas de ecología de poblaciones que podrían abordarse mejor utilizando **population-based models (PBM)**?
 
 
-## Demo: Individual-based models!
 
-The goal of this activity is to build a mechanistic, individual-based model (IBM) of a (entirely real, not made-up by my a postdoc in my lab I swear!) ecological system. 
-
-### The scenario
-The *Laphlag island* archipelago is famous for its dramatic slopes, lush green grass, and its native sheep, the laphlag island bighorn. About 50 years ago, the native island wolf population was hunted to extinction by ranchers to prevent livestock predation. 
-
-However, without wolves, populations of the sheep population skyrocketed, and the famous laphlagian lush green grass is quickly being lost to overgrazing by the native sheep. 
-
-The locals now realize: to restore ecological balance to the islands *They must reintroduce wolves*!
-
-The Laphlag natural resources management agency is about to start an experimental wolf reintroduction in a very small island in the archipelago (as a test), but they want to know how to proceed.  
-
-You have been hired as a research ecologist to help address the following questions:
-
-- How are reintroduced wolves likely to affect grass biomass and distribution? 
-
-- How many wolves should be introduced to produce the desired ecological effect (lush carpets of green grass)? How long will it take to achieve this desired effect?
-
-The agency biologists give you some information to get a first guess and they promise that you’ll be able to come study this natural system once the reintroductions are underway.
+_Los modelos individuales son poderosos, ¡pero el poder conlleva una gran responsabilidad!_
 
 
-![](sheep1.png)
+## Demo: ¡Modelos individuales!
+
+El objetivo de esta actividad es construir un modelo mecanicista basado en el individuo (IBM) de un sistema ecológico (¡completamente real)
+
+### El Escenario
+El archipiélago de la * isla Laphlag * es famoso por sus espectaculares pendientes, su exuberante hierba verde y su oveja nativa, el cimarrón de la isla laphlag. Hace unos 50 años, la población nativa de lobos isleños fue cazada hasta la extinción por los ganaderos para evitar la depredación del ganado.
+
+Sin embargo, sin los lobos, las poblaciones de ovejas se dispararon y la famosa y exuberante hierba verde laflagiana se está perdiendo rápidamente debido al sobrepastoreo de las ovejas nativas.
+
+Los lugareños ahora se dan cuenta: para restaurar el equilibrio ecológico en las islas * ¡Deben reintroducir lobos *!
+
+La agencia de gestión de recursos naturales de Laphlag está a punto de iniciar una reintroducción experimental de lobos en una isla muy pequeña del archipiélago (como prueba), pero quieren saber cómo proceder. 
+
+Usted ha sido contratado como ecólogo investigador para ayudar a abordar las siguientes preguntas:
+
+- ¿Cómo es probable que los lobos reintroducidos afecten la biomasa y la distribución de las gramíneas?
+
+- ¿Cuántos lobos deberían introducirse para producir el efecto ecológico deseado (exuberantes alfombras de hierba verde)? ¿Cuánto tiempo llevará lograr este efecto deseado?
+
+Los biólogos de la agencia le brindan información para que adivine y le prometen que podrá venir a estudiar este sistema natural una vez que se realicen las reintroducciones.
 
 
-### The details!
-
-The reintroduction is initiated right after the breeding season and the experiment is run for 365 days. 
-
-#### Sheep
-
-- There are a total of 50 sheep at the release location. 
-- Each sheep eats 0.5 "units" of grass per day (see section on grass, below)
-- Each sheep gives birth to ca. 1-2 lambs approximately every 50-100 days of the experiment (very high fecundity!).
-- Sheep tend to stay in place unless either they run out of food to eat or there is a wolf in the vicinity
-
-#### Wolves
-
-- There are a total of 5 wolves released at the beginning of the "experiment".
-- Wolves are solitary hunters, at least on this (non-imaginary!) island!
-- Wolves have a 50% probability of finding and killing any sheep within 500 m of its location in any given day.
-- Each wolf can kill a maximum of one sheep per day.
-- Wolves tend to move approximately 500 m per day on average. 
-- Wolves give birth with a probability of 2% per day. 
-
-#### Grass
-
-- The release site is essentially one large grassy pasture. For the purposes of this exercise, we will model this pastoral release site as a grid of 100 functionally equivalent plots. Each plot starts off with 10 "units"" of grass (each "unit" of grass can support exactly 1 sheep). 
-- Each grass plot can have a maximum of 50 units of grass. 
-- Each plot can grow approximately 0.7 units of grass per day. 
+![](figures/sheep1.png)
 
 
-### In-class exercise:
+### Los detalles!
 
-First, go to InsightMaker and clone the demo individual-based model! [Here is the link!](https://insightmaker.com/insight/162354/Sheep-model-Individual-based-demo).
+La reintroducción se inicia inmediatamente después de la temporada de reproducción y el experimento se lleva a cabo durante 365 días.
 
-1) Make sure you can run the model and interpret the resulting figures.     
+#### Ovejas
 
-2) Does the model behave realistically?  Test it! What happens if you start with lots of sheep and no wolves? What happens if you start with no sheep, and a bunch of wolves?    
+- Hay un total de 50 ovejas en el lugar de liberación.
+- Cada oveja come 0,5 "unidades" de hierba por día (consulte la sección sobre hierba a continuación)
+- Cada oveja da a luz a ca. 1-2 corderos aproximadamente cada 50-100 días del experimento (¡fecundidad muy alta!).
+- Las ovejas tienden a permanecer en su lugar a menos que se queden sin comida para comer o que haya un lobo en las cercanías.
 
-3) Is it possible for the experimental plot to support sheep, wolves, and grass indefinitely?     
+#### Lobos
 
-4) Try to adjust the number of sheep and wolves to meet your management goals: [tophat]       
+
+- Hay un total de 5 lobos liberados al comienzo del "experimento".
+- Los lobos son cazadores solitarios, ¡al menos en esta isla (¡no imaginaria!).
+- Los lobos tienen un 50% de probabilidad de encontrar y matar cualquier oveja dentro de los 500 m de su ubicación en un día determinado.
+- Cada lobo puede matar un máximo de una oveja por día.
+- Los lobos tienden a moverse aproximadamente 500 m por día en promedio.
+- Los lobos dan a luz con una probabilidad del 2% por día.
+
+#### Graminea
+
+- El sitio de liberación es esencialmente una gran pradera cubierta de hierba. Para los propósitos de este ejercicio, modelaremos este sitio de liberación pastoral como una cuadrícula de 100 parcelas funcionalmente equivalentes. Cada parcela comienza con 10 "unidades" "de hierba (cada" unidad "de hierba puede soportar exactamente 1 oveja).
+- Cada parcela de césped puede tener un máximo de 50 unidades de césped.
+- Cada parcela puede crecer aproximadamente 0,7 unidades de hierba por día.
+
+
+### Ejercicio en Clase:
+
+
+Primero, vaya a InsightMaker y clone el modelo de demostración individual. [Here is the link!](https://insightmaker.com/insight/162354/Sheep-model-Individual-based-demo).
+
+1) Asegúrese de que puede ejecutar el modelo e interpretar las cifras resultantes. 
+> 1) Make sure you can run the model and interpret the resulting figures.     
+
+2) ¿El modelo se comporta de manera realista? ¡Pruébalo! ¿Qué pasa si empiezas con muchas ovejas y sin lobos? ¿Qué pasa si empiezas sin ovejas y con un montón de lobos?
+
+> 2) Does the model behave realistically?  Test it! What happens if you start with lots of sheep and no wolves? What happens if you start with no sheep, and a bunch of wolves?    
+
+3) ¿Es posible que la parcela experimental sostenga ovejas, lobos y pasto indefinidamente? 
+
+> 3) Is it possible for the experimental plot to support sheep, wolves, and grass indefinitely?     
+
+4) Intente ajustar el número de ovejas y lobos para cumplir con sus objetivos de gestión: [Edmodo]
+    - Mantener poblaciones viables tanto de ovejas como de lobos.
+    - ¡Mantenga una hierba exuberante!
+    
+> 4) Try to adjust the number of sheep and wolves to meet your management goals: [tophat]       
     - Maintain viable populations of both sheep and wolves       
     - Maintain lush grass!       
 
-5) What if wolves were more efficient at killing sheep? Try doubling the "Prob of kill" variable and see if/how your answer changes.
+5) ¿Qué pasaría si los lobos fueran más eficientes para matar ovejas? Intente duplicar la variable "Prob of kill" y vea si cambia su respuesta y cómo cambia.
 
-6) What if grass were more productive? Try doubling the "Grass Growth Rate" and see if more sheep can be supported sustainably. 
-
-7) What if the wolves don't actually kill the sheep, but just scare them (make them move continuously)?? Could the presence of wolves affect grass growth in this case? Can you think of a way to test this using this IBM? 
+> 5) What if wolves were more efficient at killing sheep? Try doubling the "Prob of kill" variable and see if/how your answer changes.
 
 
-**Q**: Is there any stochasticity in this model? If so, what kind of stochasticity is there? Take an educated guess! [tophat]
+6) ¿Y si la hierba fuera más productiva? Intente duplicar la "Tasa de crecimiento del pasto" y vea si se pueden mantener más ovejas de manera sostenible.
+
+> 6) What if grass were more productive? Try doubling the "Grass Growth Rate" and see if more sheep can be supported sustainably. 
+
+7) ¿Qué pasa si los lobos en realidad no matan a las ovejas, sino que las asustan (hacen que se muevan continuamente)? ¿Podría la presencia de lobos afectar el crecimiento de la hierba en este caso? ¿Puedes pensar en una forma de probar esto usando este IBM?
+
+> 7) What if the wolves don't actually kill the sheep, but just scare them (make them move continuously)?? Could the presence of wolves affect grass growth in this case? Can you think of a way to test this using this IBM? 
+
+
+
+**P **: ¿Hay alguna estocasticidad en este modelo? Si es así, ¿qué tipo de estocasticidad existe? ¡Haz unos supuestos fundamentada! [Edmodo]
 
 
 
