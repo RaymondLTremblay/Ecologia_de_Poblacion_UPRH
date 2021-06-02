@@ -1,19 +1,24 @@
 ---
-title: "Links"
-author: "NRES 470"
-date: "April 23, 2018"
+title: "Enlaces"
+author: "BIOL4558"
+date: "Agosto 2021"
 output: 
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Please let me know if there are other links that you think should be included on this page!
+
+## Por favor, avíseme si hay otros enlaces que crea que deberían incluirse en esta página. 
+Dirección de correo **raymondtremblay _@_ upr.edu**
+
+
 
 ## Software  
 
@@ -21,6 +26,5 @@ Please let me know if there are other links that you think should be included on
 - [R- free statistical programming language](https://cran.r-project.org/)
 - [Program MARK](http://warnercnr.colostate.edu/~gwhite/mark/mark.htm)
 
-[Weekly math/bio "Stats chats"](https://kevintshoemaker.github.io/StatsChats/)
 
 
