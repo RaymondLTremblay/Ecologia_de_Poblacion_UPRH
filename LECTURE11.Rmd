@@ -1,14 +1,15 @@
 ---
-title: "Declining-population paradigm"
-author: "NRES 470/670"
-date: "Spring 2021"
+title: "Paradigma de población en declive"
+author: "BIOL4558"
+date: "Agosto 2021"
 output:
-  pdf_document:
-    toc: yes
-  html_document:
+  html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -16,123 +17,127 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-**Q**: Is the intrinsic rate of growth $r_{max}$ positive or negative for most species on earth? Why???
+**P **: ¿Es la tasa intrínseca de crecimiento $r_{max}$ positiva o negativa para la mayoría de las especies de la tierra? ¿¿¿Por qué???
 
-**Q**: Given that most species are capable of sustained growth and attaining large population size under favorable conditions, how do populations get small in the first place? Why are many populations declining despite their intrinsic ability to grow? Is it all random, or is it more systematic?
+**P **: Dado que la mayoría de las especies son capaces de crecer de forma sostenida y alcanzar un gran tamaño de población en condiciones favorables, ¿cómo se reducen las poblaciones en primer lugar? ¿Por qué están disminuyendo muchas poblaciones a pesar de su capacidad intrínseca de crecer? ¿Es todo aleatorio o es más sistemático?
 
-## Threats to populations
+## Amenazas a las poblaciones
 
-The answer of course is that the intrinsic ability to grow under ideal conditions is not the whole story. Populations are stocks with inflows and outflows- and if mortalities exceed births *under present conditions* the population will decline until these unfavorable conditions are reversed. 
+La respuesta, por supuesto, es que la capacidad intrínseca de crecer en condiciones ideales no es toda la historia. Las poblaciones son existencias con entradas y salidas, y si la mortalidad excede los nacimientos *en las condiciones actuales *, la población disminuirá hasta que se inviertan estas condiciones desfavorables.
 
-In the "small-population paradigm" lecture, we discussed several **stochastic threats** to populations, including loss of genetic diversity (genetic drift), demographic stochasticity, catastrophic environmental events. These threats only really affect small populations. Large populations are mostly resilient to stochastic threats.
+En la conferencia del "paradigma de la pequeña población", discutimos varias **amenazas estocásticas ** para las poblaciones, incluida la pérdida de diversidad genética (deriva genética), la estocasticidad demográfica y los eventos ambientales catastróficos. Estas amenazas solo afectan realmente a poblaciones pequeñas. Las grandes poblaciones son en su mayoría resistentes a las amenazas estocásticas.
 
-Large populations can be threatened too though! Factors that threaten large populations are generally called **deterministic threats**! 
+¡Sin embargo, las grandes poblaciones también pueden verse amenazadas! Los factores que amenazan a grandes poblaciones generalmente se denominan **amenazas deterministas **.
 
-The **declining population paradigm** focuses on the factors that make large populations small -- that is, it is the *study of those deterministic processes that cause population decline (that tip the balance and cause deaths to exceed births), and how these processes may be reversed through effective conservation management*. 
-
-What are some factors that can *tip the balance* so to speak- so that growing or stable populations become declining populations? 
-
-### Over-harvest
-
-![](overharvest1.jpg)
-
-### Habitat loss and degradation
-
-![](habitatloss1.jpg)
-
-### Pathogens and parasites
-
-![](whitenose1.jpg)
-
-### Climate change
-
-![](climatechange1.jpg)
-
-This map shows the difference (anomaly) between current temperatures and mean (normal) temperatures recorded since 1880.
-
-### Exotic invasive species
-
-![](bullfrog1.jpg)
+El **paradigma de la población en declive ** se centra en los factores que hacen que las grandes poblaciones sean pequeñas, es decir, es el *estudio de los procesos deterministas que provocan el declive de la población (que inclinan la balanza y provocan que las muertes superen los nacimientos), y cómo estos procesos pueden revertirse mediante una gestión de conservación eficaz*. 
 
 
-### Pollution
+¿Cuáles son algunos de los factores que pueden *inclinar la balanza* por así decirlo, de modo que las poblaciones en crecimiento o estables se conviertan en poblaciones en declive?
 
-![](pollution1.png)
+### Recolección excesiva
+
+![](figures/overharvest1.jpg)
+
+### Pérdida y degradación del hábitat
+
+![](figures/habitatloss1.jpg)
+
+### Patógenos y parásitos
+
+![](figures/whitenose1.jpg)
+
+### Cambio climático
+
+![](figures/climatechange1.jpg)
+
+Este mapa muestra la diferencia (anomalía) entre las temperaturas actuales y las temperaturas medias (normales) registradas desde 1880.
+
+### Especies exóticas invasoras
+
+![](figures/bullfrog1.jpg)
 
 
-## The debate in Conservation Biology!
+### Contaminación
 
-So, which one is more important for conservation? The declining-population paradigm or the small-population paradigm??
+![](figures/pollution1.png)
 
-This "controversy" was ignited by a [very influential paper by Graeme Caughley](caughley1.pdf) in *Journal of Animal Ecology* in 1994.
 
-![](caughley1.jpg)
+## 
+¡El debate en Biología de la Conservación!
 
-In this paper, Caughley coined the terms 'small population paradigm' and 'declining population paradigm', and expressed a strong bias towards one paradigm and against the other...
+Entonces, ¿cuál es más importante para la conservación? ¿El paradigma de la población en declive o el paradigma de la pequeña población?
+
+
+Esta "controversia" fue iniciada por un [artículo muy influyente de Graeme Caughley](caughley1.pdf) en *Journal of Animal Ecology * en 1994.
+
+![](figures/caughley1.jpg)
+
+En este artículo, Caughley acuñó los términos 'paradigma de población pequeña' y 'paradigma de población en declive', y expresó un fuerte sesgo hacia un paradigma y contra el otro ...
+
+_La biología de la conservación tiene dos hilos: el paradigma de la pequeña población, que se ocupa del efecto de la pequeñez en la persistencia de una población, y el paradigma de la población en declive, que se ocupa de la causa de la pequeñez y su cura._
 
 > Conservation biology has two threads: the small-population paradigm which deals with the effect of smallness on the persistence of a population, and the declining- population paradigm which deals with the cause of smallness and its cure.
 
-**Q**: Can you detect Caughley's bias in the above quote? 
+**Q**: ¿Puedes detectar el sesgo de Caughley en la cita anterior?
 
-**Q**: What do you think? Do you agree with Caughley? Take a moment to look over the paper and please comment on TopHat!
+**Q**:¿Qué piensas? ¿Estás de acuerdo con Caughley? ¡Tómese un momento para revisar el documento y comente en Edmodo!
 
+### Ejercicio en clase: amenazas deterministas
 
-### In-Class Exercise: Deterministic threats
+Probemos con un ejemplo trabajado para ilustrar los puntos anteriores.
 
-Let's try a worked example to illustrate the above points.
+Comencemos con una población escalar y dependiente de la densidad mejorada; debería verse así:
 
-Let's start with a souped up scalar, density-dependent population -- should look something like this:
-
-You can clone this model by clicking [here](https://insightmaker.com/insight/74417/declining-population-paradigm)
-
-
-![](IM5.PNG)
+Puede clonar este modelo haciendo clic en [here](https://insightmaker.com/insight/74417/declining-population-paradigm)
 
 
-You should see logistic growth (with demographic stochasticity) if you hit the simulate button. Take a minute to run the base model and make sure you understand how it works.
-
-For this exercise, let's change the initial population to 200 (half of K).
-
-Also, make sure that the time step is 1 year, and the model should run for 50 years.
-
-**Let's add a harvest process!**
-
-- Assume that approximately 10% of the population is harvested each year (a fractional harvest). However, the true harvest rate is stochastic and *normally distributed*- occasionally harvest goes as high as 15%, and occasionally as low as 5%. Make sure you specify the 'fractional harvest' parameters (mean and stdev) in the model so that you achieve this range.   
-
-**Q**: what value did you use for standard deviation of the normal distribution?
-
-**Q**: is this variation in harvest rate best considered a type of *demographic stochasticity*, or a type of *environmental stochasticity*?     
-
-**Q**: why doesn't the population decline to extinction? What has the harvest process done in this case?   
-
-**Q**: What if you change the harvest rate- make it even more extreme? Starting at an abundance of 200, what is the expected final abundance (after 50 years) if the harvest rate is 40% and the variation (standard deviation) in harvest rate is 20%?   [tophat]
-
-**Let's add a habitat loss process!**
-
-Note that we are modeling habitat loss as a decline in carrying capacity. To do this, we impose larger density-dependence terms on survival and fecundity: because there is less habitat, the effects of crowding are more pronounced.   
-
-- Remove any fractional harvest process for now (set frac harvested terms to 0)     
-
-- Let's first model the case where 10% of K is lost each year (fractional habitat loss). 
-
-- Run the simulation to visually track K along with population dynamics! 
-
-**Q**: Does the reduction in K over time look realistic? Can you imagine other plausible shapes for this curve?
-
-- Try running the model with 10% habitat loss (fractional habitat loss) AND 10% harvest (fractional harvest and fractional habitat loss). 
-
-**Q**: Are the results different from what you expected?  
-
-- Try changing the harvest process to be 35 *individuals* per year (absolute harvest rate). What happens? Return the absolute harvest to zero.
-
-- Try changing the habitat loss process to be 5 *individuals* per year (absolute habitat loss). What happens?
-
-- Try changing the habitat loss process to be 5 *individuals* per year (absolute habitat loss) AND the harvest process to be 35 *individuals* per year (absolute harvest rate). What happens?   [tophat]
+![](figures/IM5.PNG)
 
 
-**Q**: Try different combinations of deterministic threats (competing threats!). Can you identify some combinations that are *synergistic*- that is, that affect population decline or extinction risk more than simply adding the effects of each threat in isolation??  
+Debería ver un crecimiento logístico (con estocasticidad demográfica) si presiona el botón de simulación. Tómese un minuto para ejecutar el modelo base y asegúrese de comprender cómo funciona.
 
-**Q**: Does stochasticity in harvest rates matter more than stochasticity in habitat loss? Or vice versa?
+Para este ejercicio, cambiemos la población inicial a 200 (la mitad de K).
+
+Además, asegúrese de que el intervalo de tiempo sea de 1 año y que el modelo deba funcionar durante 50 años.
+
+**Agreguemos un proceso de cosecha!**
+
+- Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y *normalmente distribuida* - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de 'cosecha fraccionada' (media y stdev) en el modelo para lograr este rango. 
+
+**Q**: ¿Qué valor usó para la desviación estándar de la distribución normal?
+
+**Q**: ¿Se considera mejor esta variación en la tasa de cosecha como un tipo de *estocasticidad demográfica * o un tipo de *estocasticidad ambiental *?   
+
+**Q**: ¿Por qué la población no desciende hasta la extinción? ¿Qué ha hecho el proceso de cosecha en este caso?  
+
+**Q**: ¿Qué pasa si cambia la tasa de cosecha, la hace aún más extrema? Comenzando con una abundancia de 200, ¿cuál es la abundancia final esperada (después de 50 años) si la tasa de cosecha es del 40% y la variación (desviación estándar) en la tasa de cosecha es del 20%?  [Edmodo]
+
+**¡Agreguemos un proceso de pérdida de hábitat!**
+
+Tenga en cuenta que estamos modelando la pérdida de hábitat como una disminución en la capacidad de carga. Para hacer esto, imponemos términos de dependencia de densidad más amplios sobre la supervivencia y la fecundidad: debido a que hay menos hábitat, los efectos del hacinamiento son más pronunciados.
+
+- Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0)
+
+- Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat).
+
+- ¡Ejecute la simulación para realizar un seguimiento visual de K junto con la dinámica de la población!
+
+**P **: ¿Parece realista la reducción de K a lo largo del tiempo? ¿Puedes imaginar otras formas plausibles para esta curva?
+
+- Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional) Y 10% de recolección (recolección fraccionada y pérdida de hábitat fraccional).
+
+**P **: ¿Los resultados son diferentes a los que esperaba?  
+
+- Intente cambiar el proceso de cosecha para que sea de 35 *individuos * por año (tasa de cosecha absoluta). ¿Lo que sucede? Regrese la cosecha absoluta a cero.
+
+- Intente cambiar el proceso de pérdida de hábitat para que sea de 5 *individuos * por año (pérdida absoluta de hábitat). ¿Lo que sucede?
+
+- Intente cambiar el proceso de pérdida de hábitat para que sea de 5 *individuos * por año (pérdida absoluta de hábitat) Y el proceso de recolección para que sea de 35 *individuos * por año (tasa de recolección absoluta). ¿Lo que sucede? [Edmodo]
+
+
+**P **: Pruebe diferentes combinaciones de amenazas deterministas (¡amenazas en competencia!). ¿Puede identificar algunas combinaciones que sean *sinérgicas *, es decir, que afecten la disminución de la población o el riesgo de extinción más que simplemente agregar los efectos de cada amenaza de forma aislada?
+
+**P **: ¿Importa más la estocasticidad en las tasas de aprovechamiento que la estocasticidad en la pérdida de hábitat? ¿O viceversa?
 
 [--go to next lecture--](LECTURE12.html)
 
