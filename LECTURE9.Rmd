@@ -1,7 +1,7 @@
 ---
-title: "Small-population paradigm"
-author: "NRES 470/670"
-date: "Spring 2021"
+title: "El paradigma de poblaciones pequeñas"
+author: "BIOL4558"
+date: "Agosto 2021"
 output: 
   html_document: 
     theme: spacelab
@@ -15,111 +15,120 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-The final extinction of a population usually is probabilistic. That is, once the population gets small enough, *demographic stochasticity*, *genetic drift*, and *inbreeding depression* can together deliver the final death knell to a population. In conservation biology the study of processes that disproportionately influence small populations is called the *small-population paradigm*. 
+La extinción final de una población suele ser probabilística. Es decir, una vez que la población se vuelve lo suficientemente pequeña, *estocasticidad demográfica *, *deriva genética * y *depresión endogámica * pueden, en conjunto, dar la sentencia de muerte final a una población. En biología de la conservación, el estudio de los procesos que influyen de manera desproporcionada en poblaciones pequeñas se denomina *paradigma de poblaciones pequeñas *.
 
-That is: the small-population paradigm refers to the tendency in **conservation biology** to study those largely *stochastic* factors that can result in the extinction or degradation of small populations. 
+Es decir: el paradigma de la pequeña población se refiere a la tendencia en **biología de la conservación ** a estudiar aquellos factores en gran parte *estocásticos * que pueden resultar en la extinción o degradación de pequeñas poblaciones. 
 
-### Demographic stochasticity
+### Estocasticidad demográfica
 
-We have already explored this concept, which is central to the small population paradigm! 
+¡Ya hemos explorado este concepto, que es fundamental para el paradigma de la pequeña población!
 
-The simple fact is: _it is much more likely for all 10 individuals in a population to be **unlucky** in a given year than for all 1000 individuals in a population to be **unlucky** in a given year!!_ -- just as it is very unlikely for all coin flips out of 1000 to come up heads...
+El simple hecho es: _¡es mucho más probable que los 10 individuos de una población tengan **mala suerte ** en un año dado que los 1000 individuos de una población que tengan **mala suerte ** en un año dado! _ - así como es muy poco probable que todas las monedas lanzadas de 1000 salgan cara ...
 
-This illustrates the very important concept, that small populations can go extinct due to demographic stochasticity alone, whereas this possibility is vanishingly small for large populations. 
+Esto ilustra el concepto muy importante de que las poblaciones pequeñas pueden extinguirse debido únicamente a la **estocasticidad demográfica**, mientras que esta posibilidad es extremadamente pequeña para las poblaciones grandes.
 
-The moral of the story for demographic stochasticity is: weird and dramatic things (e.g., extinction) can happen in small populations for no other reason than that the population is small!
+La moraleja de la historia de la estocasticidad demográfica es: ¡pueden suceder cosas extrañas y dramáticas (por ejemplo, la extinción) en poblaciones pequeñas sin otra razón que la de que la población es pequeña!
 
-Weird and dramatic things like random extinction just would **never happen** in large populations due to random mating, birth, and mortality processes (assuming a stable, favorable environment and no range-wide catastrophic events)!
-
-Same goes for *genetic drift*! Genetic drift is a _small-population phenomenon_!
+Cosas extrañas y dramáticas como la extinción aleatoria **nunca sucederían ** en poblaciones grandes debido a procesos de apareamiento, nacimiento y mortalidad aleatorios (asumiendo un ambiente estable y favorable y sin eventos catastróficos en todo el rango).
 
 
-### Genetic drift
+¡Lo mismo ocurre con la *deriva genética *! ¡La deriva genética es un _fenómeno de población pequeña_!
 
-In large populations, random forces are just not strong enough to eradicate a relatively common gene variant (allele) from a population (this could happen by natural selection, but not through random reproductive processes). In small populations, random chance can be the primary driver of genetic change over time! 
 
-![](geneticdrift1.png)
+### Deriva Genetica
 
-Let's imagine that the balls in the jars in the above figure are individuals. The black dots indicate how many offspring that individual will have (thereby passing on its genes). The different colored balls represent different genetic variants. Each jar, left to right, represents a different (non-overlappling) generation. 
+En poblaciones grandes, las fuerzas aleatorias simplemente no son lo suficientemente fuertes como para erradicar una variante genética relativamente común (alelo) de una población (esto podría suceder por selección natural, pero no a través de procesos reproductivos aleatorios). En poblaciones pequeñas, el azar puede ser el principal impulsor del cambio genético a lo largo del tiempo.
 
-Does this sound familiar? Just by random chance, some individuals will breed and some will not. Just by random chance, some individuals will have more of their offspring survive. Genetic drift is simply a consequence of **demographic stochasticity**. 
+![](figures/geneticdrift1.png)
 
-Finally, let's imagine that the red balls represent individuals that are more likely to survive a rare drought (but have no selective advantage or disadvantage under normal circumstances). Just by random chance, the blue individuals happen to successfully mate and reproduce more than the red individuals- the blue variant becomes **fixed** in the population and the red variants go extinct. *There is no natural selection involved in this scenario -- just stochasticity!*
+Imaginemos que las bolas de los frascos de la figura anterior son individuos. Los puntos negros indican cuántos descendientes tendrá ese individuo (transmitiendo así sus genes). Las bolas de diferentes colores representan diferentes variantes genéticas. Cada frasco, de izquierda a derecha, representa una generación diferente (que no se superpone).
 
-And now, by random chance, this population is now more susceptible to drought than it was before!
+¿Te suena familiar? Por casualidad, algunos individuos se reproducirán y otros no. Por casualidad, algunos individuos tendrán más descendientes que sobrevivan. La deriva genética es simplemente una consecuencia de la **estocasticidad demográfica **.
 
-**Q**: is a small population or a large population more susceptible to genetic drift (e.g., loss of variation due to random chance)?
+Finalmente, imaginemos que las bolas rojas representan individuos que tienen más probabilidades de sobrevivir a una sequía rara (pero que no tienen ventaja o desventaja selectiva en circunstancias normales). Por casualidad, los individuos azules se aparean y reproducen con éxito más que los individuos rojos: la variante azul se vuelve **fija ** en la población y las variantes rojas se extinguen. *No hay selección natural involucrada en este escenario, ¡solo estocasticidad! *
+
+¡Y ahora, por casualidad, esta población es ahora más susceptible a la sequía que antes!
+
+
+**P **: ¿Es una población pequeña o una población grande más susceptible a la deriva genética (p. Ej., Pérdida de variación debido al azar)?
 
 
 ### Inbreeding depression
 
-![](inbreeding1.jpg)
+![](figures/inbreeding1.jpg)
+### Depresión Endogámica
 
-Inbreeding depression is another problem peculiar to small populations.
+La depresión endogámica es otro problema peculiar de las poblaciones pequeñas.
 
-Most diploid populations have some 'bad' gene variants (alleles) in their gene pool. These are often called **deleterious alleles**. These deleterious alleles usually don't cause problems becuase in general they are **recessive** - that is, the bad effect is only apparent if an individual has _two copies of that allele_! And since these alleles are rare, it is extremely unlikely that you get two copies of the same bad allele!   
+La mayoría de las poblaciones diploides tienen algunas variantes genéticas "malas" (alelos) en su acervo genético. Estos a menudo se denominan **alelos deletéreos **. Estos alelos nocivos generalmente no causan problemas porque en general son **recesivos **, es decir, el efecto negativo solo es aparente si un individuo tiene _dos copias de ese alelo_. Y dado que estos alelos son raros, ¡es extremadamente improbable que obtenga dos copias del mismo alelo malo!
 
-Unless...your two parents are close relatives. If your parents are close relatives, both of them have a relatively high probability of inheriting at least one of the same 'bad' gene variants from a single common ancestor! 
+A menos que ... tus dos padres sean parientes cercanos. Si sus padres son parientes cercanos, ambos tienen una probabilidad relativamente alta de heredar al menos una de las mismas variantes genéticas "malas" de un único ancestro común.
 
-**Q**: Why is it more likely for your two parents to be close relatives if you are living in a small population?
+**P **: ¿Por qué es más probable que sus dos padres sean parientes cercanos si vive en una población pequeña?
 
-![](inbreeding2.jpg)
-
-The above image is of [Charles II of Spain](https://en.wikipedia.org/wiki/Charles_II_of_Spain), who tragically illustrates some of the issues that can emerge with severe inbreeding. 
+![](figures/inbreeding2.jpg)
 
 
-## Extinction vortex
+La imagen de arriba es de [Charles II of Spain](https://en.wikipedia.org/wiki/Charles_II_of_Spain), 
+quien ilustra trágicamente algunos de los problemas que pueden surgir con la endogamia severa.
+
+
+## El Vórtice de extinción
 
 ![](vortex1.jpg)
 
 
-One of the central ideas arising from the small population paradigm is the concept of the **extinction vortex**. This concept is illustrated in the above figure.
 
-Once a population gets small enough, it becomes subject to catastrophic declines due to demographic (and environmental) stochasticity, leading to inbreeding and random loss of useful genes, leading to reduced vital rates, leading to smaller population sizes, leading to further genetic degradation, leading to more possibility of catastrophic declines due to demographic stochasticity, leading inevitably to extinction...
+Una de las ideas centrales que surge del paradigma de la pequeña población es el concepto de **vórtice de extinción **. Este concepto se ilustra en la figura anterior.
 
-In general, extinction is often caused by stochastic processes, but stochastic processes are unlikely to be the reason the population got small in the first place!
 
-## Minimum Viable Populations (MVP)
+Una vez que una población se vuelve lo suficientemente pequeña, se vuelve sujeta a disminuciones catastróficas debido a la estocasticidad demográfica (y ambiental), lo que lleva a la endogamia y la pérdida aleatoria de genes útiles, lo que lleva a tasas vitales reducidas, lo que lleva a tamaños de población más pequeños, lo que lleva a una mayor degradación genética conduciendo a una mayor posibilidad de caídas catastróficas debido a la estocasticidad demográfica, conduciendo inevitablemente a la extinción ...
 
-As wildlife managers, we often wish to know: "how small does a population have to be before we have to start worrying about adverse consequences like extinction, genetic erosion, and inbreeding?"
+En general, la extinción a menudo es causada por procesos estocásticos, ¡pero es poco probable que los procesos estocásticos sean la razón por la que la población se redujo en primer lugar!
 
-When we talked about [Allee effects](LECTURE5.html), we saw a case in which a deterministic population model could have a minimum viable population size- below a certain critical threshold, the population was doomed to extinction, and above the threshold the population would deterministically increase until carrying capacity. 
+## Poblaciones viables mínimas = Minimum Viable Populations (MVP)
 
-However, the MVP concept is derived from *conservation biology* and not from theoretical population biology. Conservation biology deals with real-world systems which are messy, variable and uncertain. Therefore, the MVP concept is usually quantified using stochastic population models.  
+Como administradores de vida silvestre, a menudo deseamos saber: "¿qué tan pequeña debe ser una población antes de que tengamos que comenzar a preocuparnos por las consecuencias adversas como la extinción, la erosión genética y la endogamia?"
 
-The most satisfying general definition of MVP (in my opinion) directly relates to the extinction vortex concept: Minimum Viable Population size (MVP) is that *population size above which the extinction vortex can be safely averted*.
+Cuando hablamos de [Efectos de Allee](LECTURE5.html), vimos un caso en el que un modelo poblacional determinista podría tener un tamaño de población mínimo viable: por debajo de un cierto umbral crítico, la población estaba condenada a la extinción y por encima del umbral el la población aumentaría determinísticamente hasta la capacidad de carga.
 
-However, the above definition is not strictly quantifiable for most species. Also MVP is often defined in relation to population models, many of which don't have an explicit genetic component (becuase we often don't know exactly how many deleterious recessive alleles are in a population!). The quantitative, operational definition that we will use in this course is:
+Sin embargo, el concepto de MVP se deriva de * biología de la conservación * y no de la biología teórica de poblaciones. La biología de la conservación se ocupa de los sistemas del mundo real que son confusos, variables e inciertos. Por lo tanto, el concepto de MVP se suele cuantificar mediante modelos de población estocásticos.
 
-> _MVP: the smallest abundance that satisfies a specified extinction risk threshold (e.g., the smallest initial abundance such that the risk of extinction over 50 years is below 5%)_
+La definición general más satisfactoria de MVP (en mi opinión) se relaciona directamente con el concepto de vórtice de extinción: el tamaño mínimo de la población viable (MVP) es ese *tamaño de población por encima del cual el vórtice de extinción puede evitarse con seguridad *.
 
-## Population Viability Analysis (PVA)
+Sin embargo, la definición anterior no es estrictamente cuantificable para la mayoría de las especies. Además, MVP se define a menudo en relación con modelos de población, muchos de los cuales no tienen un componente genético explícito (¡porque a menudo no sabemos exactamente cuántos alelos recesivos deletéreos hay en una población!). La definición operativa cuantitativa que usaremos en este curso es:
 
-Population Viability Analysis (PVA) is often used to model the processes involved in the extinction vortex (the central concept of the small population paradigm). This can include genetic drift and inbreeding depression. However, in this course, we won't get into modeling genetics (unless you really want to- I'm happy to show you how to do this in Vortex!)
+> _MVP: la abundancia más pequeña que satisface un umbral de riesgo de extinción especificado (por ejemplo, la abundancia inicial más pequeña de manera que el riesgo de extinción en 50 años sea inferior al 5%) _
 
-The most widely-used PVA software, [Vortex](http://www.vortex10.org/Vortex10.aspx), gets its name from the extinction vortex concept. Vortex does allow explicit modeling of inbreeding and loss of genetic diversity in small populations.  
+## Análisis de viabilidad poblacional (PVA)
 
-![](vortex10.jpg)
+El Análisis de Viabilidad de la Población (PVA) se utiliza a menudo para modelar los procesos involucrados en el vórtice de extinción (el concepto central del paradigma de la pequeña población). Esto puede incluir deriva genética y depresión por endogamia. Sin embargo, en este curso, no entraremos en el modelado de la genética (a menos que realmente lo desee, ¡me complace mostrarle cómo hacer esto en Vortex!)
+
+
+El software PVA más utilizado, [Vortex](http://www.vortex10.org/Vortex10.aspx), recibe su nombre del concepto de vórtice de extinción. Vortex permite el modelado explícito de la endogamia y la pérdida de diversidad genética en poblaciones pequeñas.  
+
+![](figures/vortex10.jpg)
 
 
 ## Example: Aruba island rattlesnake
 
-The aruba island rattlesnake, or Cascabel (*Crotalus durissus unicolor*), is the top predator on the island of Aruba, and primarily consumes rodents. 
+La serpiente de cascabel de la isla de Aruba, o Cascabel (*Crotalus durissus unicolor *), es el principal depredador de la isla de Aruba y consume principalmente roedores.
 
-![](aruba_rattlesnake1.jpg)
+![](figures/aruba_rattlesnake1.jpg)
 
-The Aruba island rattlenake, as you might expect, occurs only on the island of Aruba.
+La serpiente de cascabel de la isla de Aruba, como era de esperar, ocurre solo en la isla de Aruba.
 
-![](aruba1.png)
+![](figures/aruba1.png)
 
-The Aruba rattlesnake is listed as *Critically Endangered* by IUCN, and has several attributes that make it particularly susceptible to falling into the extinction vortex:
+La serpiente de cascabel de Aruba está catalogada como * En peligro crítico * por la UICN, y tiene varios atributos que la hacen particularmente susceptible a caer en el vórtice de extinción:
 
-See [Lab 5](LAB5.html) for the related MVP activity.  
+Vea [Lab 5](LAB5.html) para una actividad de MVP.  
 
 
-**Q** Why are island-endemic species like the Aruba rattlesnake so vulnerable to extinction? [tophat]
+**Q** ¿Por qué las especies endémicas de la isla como la serpiente de cascabel de Aruba son tan vulnerables a la extinción? [Edmodo]
 
-**Q** Are species that are confined to small areas (like the Aruba rattlesnake) more vulnerable to *environmental stochasticity* than species that occupy larger geographic ranges? [tophat]
+**Q** 
+¿Son las especies confinadas a áreas pequeñas (como la serpiente de cascabel de Aruba) más vulnerables a la * estocasticidad ambiental * que las especies que ocupan áreas geográficas más amplias? [Edmodo]
 
 
 
