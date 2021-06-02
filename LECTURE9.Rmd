@@ -75,7 +75,7 @@ quien ilustra trágicamente algunos de los problemas que pueden surgir con la en
 
 ## El Vórtice de extinción
 
-![](vortex1.jpg)
+![](figures/vortex1.jpg)
 
 
 

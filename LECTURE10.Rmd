@@ -1,21 +1,22 @@
 ---
-title: "Intro to individual-based models (IBM)"
-author: "NRES 470/670"
-date: "Spring 2020"
+title: "Intro a modelos a base individuales (IBM)"
+author: "BIOL4558"
+date: "Agosto 2021"
 output: 
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-NOTE: Many thanks to Elizabeth Hunter (Georgia Southern Univerisity) for helping to develop the demonstration at the end of this lecture!
+NOTA: ¡Muchas gracias a Elizabeth Hunter (Georgia Southern Univerisity) por ayudar a desarrollar la demostración al final de esta conferencia!
 
-![](birds1.jpg)
+![](figures/birds1.jpg)
 
 So far in this class we have considered the **population** as the fundamental unit that we are interested in modeling. The population is a [Stock] and all processes that can change the size of the population are [Flows]. All individuals within any [Stock] are assumed to be interchangeable (identical in every way), and are not modeled explicitly.  
 
