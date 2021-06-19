@@ -14,7 +14,7 @@
 
 <title>Metapopulations</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -341,13 +341,13 @@ div.tocify {
       <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
     </li>
     <li>
-      <a href="LECTURE3.html">Thomas Robert Malthus</a>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
     </li>
     <li>
       <a href="LECTURE4.html">Regulación de Poblaciones</a>
     </li>
     <li>
-      <a href="LECTURE5.html">Passenger Pigeon</a>
+      <a href="LECTURE5.html">Paloma Viajera</a>
     </li>
     <li>
       <a href="LECTURE6.html">Población estructurada por Edad</a>
@@ -718,6 +718,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
