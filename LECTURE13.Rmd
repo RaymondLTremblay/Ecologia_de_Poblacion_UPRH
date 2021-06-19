@@ -1,12 +1,15 @@
 ---
-title: "Metapopulations"
-author: "NRES 470/670"
-date: "Spring 2021"
-output: 
+title: "Metapoiblaciones: Metapopulations"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -14,108 +17,106 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-### Upcoming midterm exam
+### Próximo examen parcial
 
-**when and where** The second midterm exam (out of two) is coming up on **April 19**. You will have the whole 50 minute class period to take the exam. We will use the same format as the first midterm. 
 
-**what** The exam will cover:
+**cuándo y dónde ** El segundo examen parcial (de dos) se realizará el ** 19 de abril **. Tendrás todo el período de clase de 50 minutos para realizar el examen. Usaremos el mismo formato que el primer semestre.
 
-- Everything from the first midterm      
-- Stochasticity and uncertainty (lecture and lab)       
-- Small-population paradigm, declining-population paradigm and PVA lectures        
-- Metapopulations and source-sink dynamics (lectures and lab), including Chapter 4 of Gotelli.
+**qué ** El examen cubrirá:
+
+- Todo desde el primer semestre
+- Estocasticidad e incertidumbre (conferencia)
+- Paradigma de población pequeña, paradigma de población en declive y conferencias PVA
+- Metapoblaciones y dinámica fuente-sumidero (conferencias), incluido el Capítulo 4 de Gotelli.
     
-*The exam will consist of a mixture of multiple-choice and short-answer questions.*  
+*El examen consistirá en una combinación de preguntas de opción múltiple y de respuesta corta. *
 
-I will host a review session via zoom on Wed April 14 during our regular class time. 
+Por último, no olvide que el laboratorio 5 (estocasticidad) debe entregarse al final de esta semana, el viernes 9 de abril, junto con sus modelos y justificaciones de PVA.
 
-Finally, don't forget that lab 5 (stochasticity) is due at the end of this week -- Friday, April 9 -- along with your PVA models and justifications.
+## Metapoblaciones
 
-## Metapopulations
+Ahora que estamos pensando en animales que viven en áreas particulares del espacio, ¡debemos empezar a pensar en **ecología de movimiento ** además de **ecología de población **! Los parches de una metapoblación se conectan mediante **dispersión **. Si no hubiera *conectividad * (dispersión entre parches), no sería realmente una metapoblación, sino un conjunto de poblaciones aisladas que podría modelar de forma independiente.  
+   
 
-Metapopulation ecology remains one of the most dynamic and active areas of population ecology!
-
-Broadly speaking, a **metapopulation** is just a *spatially structured* population.
-
-Now that we're thinking about animals living in particular areas in space, we need to start thinking about **movement ecology** in addition to **population ecology**! Patches in a metapopulation are connected via **dispersal**. If there were no *connectivity* (dispersal among patches), it wouldn't really be a metapopulation, but rather a set of isolated populations that you could model independently.   
-
-Including a dispersal process allows us (finally!) to think about the whole "BIDE" equation!      
+Incluir un proceso de dispersión nos permite (¡finalmente!) Pensar en toda la ecuación "BIDE".     
 
 $\Delta N = B + I - D - E$
 
-But -- in fact, many metapopulation models ('classical metapopulations', covered in this lecture and Gotelli's Chapter 4) don't consider individuals at all!  
+Pero, de hecho, muchos modelos de metapoblaciones ('metapoblaciones clásicas', cubiertas en esta conferencia y en el Capítulo 4 de Gotelli) ¡no consideran a los individuos en absoluto!
 
-## What is a metapopulation?
+## ¿Qué es una metapoblación?
 
-In *metapopulation ecology*, we are generally considering a **landscape** with a certain number of potentially habitable **patches** of habitat. 
+En *ecología de metapoblaciones *, generalmente estamos considerando un **paisaje ** con un cierto número de **parches ** de hábitat potencialmente habitables.
 
-A metapopulation is simply a *population of patches*, each of which may or may not be *occupied* by a species of interest at a given point in time. Different sets of patches may be occupied at different points in time. 
+Una metapoblación es simplemente una *población de parches *, cada uno de los cuales puede o no estar *ocupado * por una especie de interés en un momento dado. Se pueden ocupar diferentes conjuntos de parches en diferentes momentos.
 
-![](MP2.jpg)
+![](figures/MP2.jpg)
 
-![](patch1.jpg)
+![](figures/patch1.jpg)
 
-To simplify, we often assume that all areas outside a patch are completely unsuitable (i.e., they are NOT habitat).   
+Para simplificar, a menudo asumimos que todas las áreas fuera de un parche son completamente inadecuadas (es decir, NO son un hábitat).
 
-We also often assume that all patches are similar (similar habitat quality, area and connectivity to neighboring patches), and therefore are more or less interchangeable.   
+A menudo también asumimos que todos los parches son similares (calidad de hábitat, área y conectividad similares a los parches vecinos) y, por lo tanto, son más o menos intercambiables.
 
-Instead of keeping track of the individuals in each patch ($N$), we often just keep track of the fraction of occupied patches in our landscape ($f$)!
+En lugar de realizar un seguimiento de las personas en cada parche ($N $), a menudo solo hacemos un seguimiento de la fracción de parches ocupados en nuestro paisaje ($f $).
 
-Instead of keeping track of the dispersal of indviduals among patches, we only consider the *colonization* of unoccupied (empty) patches via immigration ($I$) and the *rescue effect* (immigration preventing extinction of a patch; see below). 
+En lugar de realizar un seguimiento de la dispersión de individuos entre parches, solo consideramos la *colonización * de parches desocupados (vacíos) a través de la inmigración ($ I $) y el *efecto de rescate * (inmigración que previene la extinción de un parche; ver más abajo).
 
-Metapopulation ecology covers a wide range of scenarios- as long as there are distinct habitat patches in a landscape, and as long as there is some dispersal among patches, then it is a type of metapopulation. When there is a very high rate of dispersal (and mating) among patches, then the metapopulation is described as "panmictic" (perfect genetic connectivity).
 
-NOTE: in some definitions (including for 'classical' metapopulations), a "metapopulation" is more narrowly defined as a set of patches with limited connectivity with at least some unoccupied patches at some points in time. I prefer the more inclusive definition!
+Para simplificar, a menudo asumimos que todas las áreas fuera de una paMetapoblación La ecología cubre una amplia gama de escenarios, siempre que haya parches de hábitat distintos en un paisaje, y siempre que haya alguna dispersión entre parches, entonces es un tipo de metapoblación.  Cuando hay una tasa muy alta de dispersión (y apareamiento) entre parches, la metapoblación se describe como "panmíctica" (conectividad genética perfecta).
 
-![](MP1.jpg)
+NOTA: en algunas definiciones (incluso para metapoblaciones 'clásicas'), una "metapoblación" se define de manera más estricta como un conjunto de parches con conectividad limitada con al menos algunos parches desocupados en algunos momentos. ¡Prefiero la definición más inclusiva! Tch son completamente inadecuados (es decir, NO son un hábitat).
 
-Although the term "metapopulation" is often used to refer to models where we don't care about abundance (we only consider **patch occupancy** - like the models in Gotelli Chapter 4), we can keep track of patch abundance in a metapopulation model if we really want to! In fact, if we want, each patch can contain a stage-structured, density dependent population. Or it can contain an assemblage of individuals, as in an individual-based model.     
+![](figures/MP1.jpg)
 
-We will have a chance to use a metapopulation model in Lab 6 that is much more complex than the models in Gotelli Chapter 4!
+Aunque el término "metapoblación" se utiliza a menudo para referirse a modelos en los que no nos importa la abundancia (solo consideramos ** ocupación de parches **, como los modelos del Capítulo 4 de Gotelli), podemos realizar un seguimiento de la abundancia de parches en un modelo de metapoblación si realmente queremos! De hecho, si queremos, cada parche puede contener una población dependiente de la densidad estructurada por etapas. O puede contener un conjunto de individuos, como en un modelo basado en individuos.
+
+¡Tendremos la oportunidad de usar un modelo de metapoblación en el laboratorio 6 que es mucho más complejo que los modelos del capítulo 4 de Gotelli!
 
 [Link to metapopulation model with explicit abundance](https://insightmaker.com/insight/74948/Agent-based-metapopulation-model)
 
 
-## "Classical" metapopulation models   
+## Modelos de metapoblación "clásicos"   
 
-The simplest type of spatially structured population model is the "classical" metapopulation model. 
+El tipo más simple de modelo de población estructurado espacialmente es el modelo de metapoblación "clásico". 
 
-The metapopulation concept was first introduced by ecologist [Richard Levins](https://en.wikipedia.org/wiki/Richard_Levins) in 1969, and further developed by [Ilkka Hanski](https://en.wikipedia.org/wiki/Ilkka_Hanski) among others.    
 
-In a classical metapopulation, patches are either **occupied** (coded as 1) or **unoccupied** (coded as 0) at any given point in time. We don't consider abundance ($N$) in these models- we just keep track of whether each patch is occupied or not, and how many total occupied patches we have in our metapopulation at each time step.
+El concepto de metapoblación fue introducido por primera vez por el ecologista [Richard Levins](https://en.wikipedia.org/wiki/Richard_Levins) en 1969, y desarrollado por [Ilkka Hanski](https://en.wikipedia.org/wiki/Ilkka_Hanski) entre otros.    
+
+En una metapoblación clásica, los parches están **ocupados ** (codificados como 1) o **desocupados ** (codificados como 0) en cualquier momento dado. No consideramos la abundancia ($N $) en estos modelos; solo hacemos un seguimiento de si cada parche está ocupado o no, y cuántos parches ocupados totales tenemos en nuestra metapoblación en cada paso de tiempo.
 
 That is, the [Stock] we are studying now is NOT the total number of individuals but instead it is the total number of occupied patches (or the fraction of patches occupied)!
 
-Instead of investigating population dynamics, we are investigating *metapopulation occupancy dynamics*. That is, how the number of occupied patches (or the fraction of patches occupied) changes over time.
+En lugar de investigar la dinámica de la población, estamos investigando la * dinámica de ocupación de la metapoblación *. Es decir, cómo cambia el número de parches ocupados (o la fracción de parches ocupados) con el tiempo.
 
-Under the classical model, it NOT a metapopulation unless some patches are unoccupied at some points in time!
+Bajo el modelo clásico, NO es una metapoblación a menos que algunos parches estén desocupados en algún momento.
 
-**Q**: how does a metapopulation grow?
+**P **: ¿cómo crece una metapoblación?
 
-**Q**: how does a metapopulation shrink?
+**P **: ¿cómo se reduce una metapoblación?
 
-**Q**: what is the equivalent of demographic stochasticity in a metapopulation model? [tophat]
+**P **: ¿cuál es el equivalente de la estocasticidad demográfica en un modelo de metapoblación? [Edmodo]
 
 [pause video and answer TopHat question]
 
-**colonization** is the process of a patch transitioning from unoccupied to occupied!
+La **colonización ** es el proceso de transición de un parche de desocupado a ocupado.
 
-How can a patch become colonized? The answer is **immigration** of course. That part of the "BIDE" equation that we have been ignoring up until now! 
+¿Cómo se puede colonizar un parche? La respuesta es **inmigración **, por supuesto. ¡Esa parte de la ecuación "BIDE" que hemos estado ignorando hasta ahora!
 
-**extirpation** (or extinction) is the process of a patch transitioning from occupied to unoccupied.
+**extirpación ** (o extinción) es el proceso de transición de un parche de ocupado a desocupado.
 
-**regional (or global) extinction** represents extinction (extirpation) of all patches in the metapopulation. 
+**extinción regional (o global) ** representa la extinción (extirpación) de todos los parches en la metapoblación.
 
-More formally, here are some terms we will consider:
+Más formalmente, aquí hay algunos términos que consideraremos:
 
-$f_t$ is the fraction, or proportion, of patches that are occupied at time $t$. This is also known as the **occupancy rate**. This is the primary [Stock] we model in a classical metapopulation model.   
+$f_t $ es la fracción, o proporción, de parches que están ocupados en el momento $ t $. Esto también se conoce como ** tasa de ocupación **. Este es el [Stock] primario que modelamos en un modelo de metapoblación clásico.
 
-$I$ is the total fraction of patches that are colonized by immigrants per time period (colonization rate, or "immigration" rate).   
+$I $ es la fracción total de parcelas colonizadas por inmigrantes por período de tiempo (tasa de colonización o tasa de "inmigración").
 
-$E$ is the total fraction of patches that are extirpated per time period (extirpation rate).    
+$E $ es la fracción total de parches que se extirpan por período de tiempo (tasa de extirpación).
 
 
-Therefore, the change in occupancy can be expressed as: 
+Por tanto, el cambio de ocupación se puede expresar como:
 
 $\Delta f = I - E$
 
@@ -123,106 +124,221 @@ $p_i$ is the probability of colonization for any given (non-occupied) patch.
 
 $p_e$ is the probability of extinction for any given (occupied) patch.
 
-Now that we have the basic terms defined, we can build a basic model of metapopulation dynamics! We will do this in lab- refer to the [metapopulation lab](LAB6.html) for more details!
 
-### Assumptions of the classical metapopulation model:
+Ahora que tenemos los términos básicos definidos, ¡podemos construir un modelo básico de dinámica de metapoblaciones! Haremos esto en el laboratorio; consulte el [metapopulation lab](LAB6.html) for more details!
 
-- Homogeneous patches (all patches are considered equal and interchangeable- they do not differ in size or quality -- any differences in habitat quality or spatial context within patches are ignored).     
-- Extinction and colonization are insensitive to spatial context (spatial context, or "neighborhood effects", do not affect $p_e$ and $p_i$).          
-- No time lags (metapopulation growth responds instantaneously to any changes in $f$).     
-- Very large number of patches (even when the fraction of occupied patches $f$ is very small, the classical metapopulation still persists!). That is, global extinction is not possible!    
+### Supuestos del modelo clásico de metapoblación:
 
-Clearly this is not a very realistic model, but it is a useful starting place. So.. we will start by making these assumptions, but then we will "relax" some of them!
+- Parches homogéneos (todos los parches se consideran iguales e intercambiables; no difieren en tamaño o calidad; se ignoran las diferencias en la calidad del hábitat o el contexto espacial dentro de los parches).
+- La extinción y la colonización son insensibles al contexto espacial (el contexto espacial, o "efectos de vecindad", no afectan a $p_e $ y $p_i $).
+- Sin demoras (el crecimiento de la metapoblación responde instantáneamente a cualquier cambio en $f $).
+- Gran cantidad de parches (incluso cuando la fracción de parches ocupados $f $ es muy pequeña, ¡la metapoblación clásica aún persiste!). Es decir, ¡la extinción global no es posible!
 
-#### Variant #1: island-mainland model
+Claramente, este no es un modelo muy realista, pero es un punto de partida útil. Entonces ... comenzaremos haciendo estas suposiciones, ¡pero luego "relajaremos" algunas de ellas!
 
-Colonization occurs via immigration from a constant external source -- a constant **propagule rain**.
+#### Variant #1: modelo isla-continente: island-mainland model
 
-This is the simplest metapopulation model. $p_i$ and $p_e$ are constant.
+La colonización se produce a través de la inmigración de una fuente externa constante: una constante ** lluvia de propágulos **.
 
-#### Variant #2: internal colonization
+Este es el modelo de metapoblación más simple. $ p_i $ y $ p_e $ son constantes.
 
-Now, colonization can only happen via immigration from within the metapopulation itself. So when a small fraction of patches are colonized, the colonization probability is low because of a lack of potential immigrants within the metapopulation. 
+#### Variant #2: colonización interna: internal colonization
+
+Ahora, la colonización solo puede ocurrir a través de la inmigración desde dentro de la propia metapoblación. Entonces, cuando se coloniza una pequeña fracción de parcelas, la probabilidad de colonización es baja debido a la falta de inmigrantes potenciales dentro de la metapoblación.
 
 $p_i = i\cdot f$
 
-$i$ represents the strength of internal immigration (how much the probability of colonization increases with each new occupied patch in the metapopulation.
+$i $ representa la fuerza de la inmigración interna (cuánto aumenta la probabilidad de colonización con cada nuevo parche ocupado en la metapoblación.
 
-Another way to think of $i$ in this model is the maximum rate of successful colonization of an unoccupied patch when nearly all patches in the metapopulation are occupied.
+Otra forma de pensar en $i $ en este modelo es la tasa máxima de colonización exitosa de un parche desocupado cuando casi todos los parches de la metapoblación están ocupados.
 
-#### Variant #3: rescue effect. 
+#### Variant #3: efecto de rescate: rescue effect. 
 
-Now, the extinction rate can be reduced by immigration from other populations in the metapopulation!
 
-**Q**: does this make sense? How does the rescue effect work? 
+¡Ahora, la tasa de extinción puede reducirse mediante la inmigración de otras poblaciones en la metapoblación!
+
+**P **: ¿tiene sentido esto? ¿Cómo funciona el efecto rescate? 
 
 $p_e = e(1-f)$
 
-$e$ represents the strength of the rescue effect. More to the point- $e$ represents the maximum rate of extinction (when nearly all patches are vacant so the rescue effect is negligible). 
+$e $ representa la fuerza del efecto de rescate. Más concretamente, $ e $ representa la tasa máxima de extinción (cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante). $ e $ representa la fuerza del efecto de rescate. Más concretamente, $ e $ representa la tasa máxima de extinción (cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante).
 
-### 'Dynamic' stability
+### Estabilidad 'dinámica': 'Dynamic' stability
 
-In the classical metapopulation model, extinction is not necessarily uncommon. Patches go extinct -- small patches can be highly vulnerable to demographic stochasiticity as we know! -- but as long as patches can get re-colonized, we can reach an equilibrium, where extinctions and colonizations cancel each other out. In a classical metapopulation model, this is a *stable equilibrium*, and a stable metapopulation in which local extinctions are possible ($p_e > 0$) is called **dynamically stable**. That is, any given patch could be extinct at any given time, but on the whole, the size of the metapopulation (total patches occupied) is relatively stable and not at risk of **regional (or global) extinction**!
 
-The concept of dynamic metapopulation stability- in which extinctions and colonizations balance out - has much in common with the dynamic stability of a single population at carrying capacity - in which any given individual could die at any given time, but deaths and births approximately balance out!
+En el modelo clásico de metapoblación, la extinción no es necesariamente infrecuente. Los parches se extinguen: ¡los parches pequeños pueden ser altamente vulnerables a la estocasiticidad demográfica, como sabemos! - pero mientras los parches puedan volver a colonizarse, podemos alcanzar un equilibrio, donde las extinciones y colonizaciones se anulan mutuamente. En un modelo de metapoblación clásico, se trata de un *equilibrio estable *, y una metapoblación estable en la que son posibles las extinciones locales ($ p_e> 0 $) se denomina **dinámicamente estable **. Es decir, cualquier parche dado podría extinguirse en un momento dado, pero en general, el tamaño de la metapoblación (parches totales ocupados) es relativamente estable y no está en riesgo de **extinción regional (o global) **.
 
-### Spreading the risk!
+El concepto de estabilidad dinámica de la metapoblación, en el que se equilibran las extinciones y las colonizaciones, tiene mucho en común con la estabilidad dinámica de una sola población a la capacidad de carga, en la que cualquier individuo podría morir en cualquier momento, pero las muertes y los nacimientos se equilibran aproximadamente!
 
-In the classical metapopulation models, we assumed a very large number of patches, so there was no real chance of regional/global extinction. But most real metapopulations are small enough such that we often need to consider the risk of global extinction.
+### ¡Distribuyendo el riesgo!
 
-Let's consider a system in which a species occupies a single patch, and there is a probability of extinction $p_e$ of 0.15 per patch per year. 
+En los modelos clásicos de metapoblación, asumimos una gran cantidad de parches, por lo que no había ninguna posibilidad real de extinción regional / global. Pero la mayoría de las metapoblaciones reales son lo suficientemente pequeñas como para que a menudo debamos considerar el riesgo de extinción global.
 
-**Q**: What is the probability of regional extinction sometime in the next 10 years? 
+Consideremos un sistema en el que una especie ocupa un solo parche, y hay una probabilidad de extinción $p_e $ de 0.15 por parche por año. 
 
-The probability of persistence for 1 year is $1-p_e$, so the probability of persistence for 10 years is $(1-p_e)^{10}$ and the probability of regional extinction is $1-((1-p_e)^{10})$
 
-which works out to be about 80%. There is a substantial probability of regional extinction sometime over the next 10 years!
+**P **: ¿Cuál es la probabilidad de extinción regional en algún momento de los próximos 10 años?
 
-What if there were two patches instead of just one? 
+La probabilidad de persistencia durante 1 año es $ 1-p_e $, por lo que la probabilidad de persistencia durante 10 años es $ (1-p_e) ^ {10} $ y la probabilidad de extinción regional es $ 1 - ((1-p_e) ^ { 10}) $
 
-Let's assume that the extinction risk for the two patches are **independent** -- that is, the extinction of one patch doesn't influence whether or not the other patch goes extinct!
+que resulta ser alrededor del 80%. ¡Existe una probabilidad sustancial de extinción regional en algún momento durante los próximos 10 años!
 
-If the probability of extinction of one patch over the next 10 years is 0.8, then the probability of both patches going extinct sometime over the next 10 years is 0.8*0.8 = 0.64 
+¿Y si hubiera dos parches en lugar de solo uno?
 
-So the chance of regional extirpation is somewhat reduced with two populations!!
+Supongamos que el riesgo de extinción de los dos parches es ** independiente **, es decir, ¡la extinción de un parche no influye en si el otro parche se extingue o no!
 
-This is an example of **spreading the risk**. 
+Si la probabilidad de extinción de un parche durante los próximos 10 años es 0,8, entonces la probabilidad de que ambos parches se extingan en algún momento durante los próximos 10 años es 0,8 * 0,8 = 0,64
 
-What if there are 5 independent populations instead of two? Then what is the chance of regional extirpation over 10 years?
+¡¡Entonces la posibilidad de extirpación regional es algo reducida con dos poblaciones !!
 
-$[1-(1-p_e)^{10}]^5$ 
+Esto es un ejemplo de **Distribuyendo el riesgo** : **spreading the risk**. 
 
-_This works out to be around 33%_
-
-What if there are 15 independent populations instead of five? Then what is the chance of regional extirpation over 10 years?
+¿Qué pasa si hay 5 poblaciones independientes en lugar de dos? Entonces, ¿cuál es la probabilidad de extirpación regional en 10 años?
 
 $[1-(1-p_e)^{10}]^5$ 
 
-_This works out to be around 3% -- we have effectively spread out the risk, so that despite a relatively high extinction risk at the patch level, the metapopulation is unlikely to experience global extinction_
+_Esto resulta ser alrededor del 33%_
 
-**Q**: if we included dispersal among patches, would dispersal serve to further reduce the risk of global extinction? Why or why not? 
+¿Qué pasa si hay 15 poblaciones independientes en lugar de cinco? Entonces, ¿cuál es la probabilidad de extirpación regional en 10 años?
 
-**Q**: What if the extinction of one patch was *perfectly correlated* with the extinction of all other patches. If one goes extinct, all go extinct. [tophat] 
+$[1-(1-p_e)^{10}]^5$ 
 
-## Sources and sinks!
+_Esto resulta ser alrededor del 3%; hemos distribuido efectivamente el riesgo, de modo que a pesar de un riesgo de extinción relativamente alto a nivel de parche, es poco probable que la metapoblación experimente una extinción global._
 
-One important and practically useful concept related to metapopulations is that of **source-sink dynamics**
+**P **: si incluyéramos la dispersión entre parches, ¿la dispersión serviría para reducir aún más el riesgo de extinción global? ¿Por qué o por qué no?
 
-![](sourcesink1.jpg)
+**P **: ¿Qué pasaría si la extinción de un parche estuviera * perfectamente correlacionada * con la extinción de todos los demás parches? Si uno se extingue, todos se extinguen. 
 
-In the real world, patches vary in size and quality. That is, the assumption of homogeneity of patches (inherent to the classical metapopulation framework) is unlikely to be met in most real metapopulations! 
+## Fuentes y sumideros: Sources and sinks!
 
-Just like with an age-structured population, where vital rates and equilibrium abundance can vary by age or size-class, _vital rates and abundances can vary over space_. Some areas might have better habitat, with higher overall population growth rates! On the other hand, some areas might have poor habitat- and these areas may be associated with lower vital rates...
+Un concepto importante y prácticamente útil relacionado con las metapoblaciones es el de **dinámica fuente-sumidero **
 
-In fact, some patches may be so resource-poor or afford such bad protection from predators that population growth is negative (i.e., $r$ below zero, or $\lambda$ less than 1). Other patches may represent perfect conditions for population growth (at least if the habitat isn't too crowded)!
+![](figures/sourcesink1.jpg)
 
-A **source population** is defined as a patch that provides a *net donation of immigrants** to nearby patches with lower-quality habitat (i.e., sink populations or pseudo-sink populations). A source population should persist indefinitely, even in isolation. 
+En el mundo real, los parches varían en tamaño y calidad. Es decir, es poco probable que se cumpla el supuesto de homogeneidad de los parches (inherente al marco clásico de la metapoblación) en la mayoría de las metapoblaciones reales.
 
-A **sink population** is defined as a patch that *would go extinct* if it were not for the constant input of immigrants from nearby **source populations**.
+Al igual que con una población estructurada por edad, donde las tasas vitales y la abundancia de equilibrio pueden variar según la edad o la clase de tamaño, las tasas vitales y las abundancias pueden variar en el espacio. ¡Algunas áreas pueden tener un mejor hábitat, con mayores tasas de crecimiento de la población general! Por otro lado, algunas áreas pueden tener un hábitat pobre, y estas áreas pueden estar asociadas con tasas vitales más bajas ...
 
-**Q**: how is the concept of a sink population related to the *rescue effect*?
+De hecho, algunos parches pueden tener tan pocos recursos o brindar una protección tan mala contra los depredadores que el crecimiento de la población es negativo (es decir, $ r $ por debajo de cero, o $ \ lambda $ menos de 1). Otros parches pueden representar las condiciones perfectas para el crecimiento de la población (al menos si el hábitat no está demasiado poblado).
 
-A **pseudo-sink population** is defined as a patch that is *artifically augmented* by immigrants from nearby source populations. In isolation (in the absence of a nearby source population) a psuedo-sink would not go extinct (a true sink would go extinct!), but would settle down at a much lower equilibrium abundance (carrying capacity). That is, a pseudo-sink *maintains an equlibrium abundance above its carrying capacity due to the influx of immigrants from one or more nearby source populations*.
+Una ** población de origen ** se define como un parche que proporciona una * donación neta de inmigrantes ** a parches cercanos con hábitat de menor calidad (es decir, poblaciones sumideros o poblaciones pseudo-sumideros). Una población de origen debe persistir indefinidamente, incluso aislada.
+
+Una ** población sumidero ** se define como un parche que * se extinguiría * si no fuera por la entrada constante de inmigrantes de ** poblaciones de origen ** cercanas.
+
+** P **: ¿Cómo se relaciona el concepto de población sumidero con el * efecto de rescate *?
+
+Una ** población pseudo-sumidero ** se define como un parche * aumentado artificialmente * por inmigrantes de poblaciones de origen cercanas. De forma aislada (en ausencia de una población fuente cercana), un pseudo-sumidero no se extinguiría (¡un verdadero sumidero se extinguiría!), Sino que se asentaría en una abundancia de equilibrio mucho menor (capacidad de carga). Es decir, un pseudo-sumidero * mantiene una abundancia de equlibrium por encima de su capacidad de carga debido a la afluencia de inmigrantes de una o más poblaciones de origen cercanas *.
+
+## Ejercicio en clase: ¡fuentes y sumideros!
+
+En este ejercicio, exploraremos la dinámica fuente-sumidero.
+
+1. Primero haga clic en este [enlace](https://insightmaker.com/insight/107587/Source-Sink-2) y clone este *modelo de fuente-receptor basado en la población * en InsightMaker. Este modelo representa una metapoblación de cuatro parches con una población fuente grande y tres poblaciones sumideros más pequeñas. Las poblaciones de sumideros están ubicadas a diferentes distancias de la población de origen. Aquí está la *configuración espacial * aproximada de esta metapoblación:
+
+
+
+
+![](figures/sourcesink1.png)
+
+2. Asegúrese de que los parámetros del modelo estén en los valores predeterminados. Los parámetros predeterminados deben ser:
+
+Abundancia inicial en fuente: 100
+Abundancia inicial en sumidero cercano: 10
+Abundancia inicial en sumidero de rango medio: 10
+Abundancia inicial en sumidero distante: 10
+K para la población de origen: 100
+K para lavabo cercano: 50
+K para fregadero de gama media: 25
+K para sumidero distante: 15
+Tasa máxima de dispersión: 10% anual (0,1)
+Lambda (tasa de crecimiento discreta) para poblaciones sumideros [lambda malo]: 0,8
+Lambda para la población de origen [lambda buena]: 2.1
+
+NOTA: la tasa de dispersión máxima (en este modelo) es la tasa de dispersión entre parches vecinos. Los parches que se encuentran más separados tienen tasas de dispersión que se calculan como una fracción de la tasa máxima.
+
+3. Ejecute el modelo, vea los resultados y asegúrese de comprender cómo funciona.
+
+** Q **: en este escenario, una fracción constante de cada población se dispersa a cada parche vecino cada año. ¿Es esto realista? ¿Puedes pensar en escenarios del mundo real que conducirían a diferentes patrones de dispersión?
+
+** P **: ¿Qué fuentes de datos podrían ser útiles para comprender las tasas de dispersión en una metapoblación?
+
+4. Cambie la tasa de dispersión a cero y ejecute el modelo. ¿Lo que sucede? ¿Esto tiene sentido?
+
+5. Cambie la tasa de dispersión a 0.01 (1%). ¿Que pasa ahora? ¿El sumidero distante sigue funcionando como población sumidero? Es decir, ¿está ocupado de forma continua? Si no es así, ¿cuál es la tasa de dispersión mínima que generalmente asegura que el sumidero distante esté constantemente ocupado (continuamente) (asegúrese de que el límite inferior de la región del 95% para la abundancia en este parche sea superior a 2 para todos los años)? 
+
+6. Vuelva a cambiar la tasa de dispersión al 10%. Ahora reduzca la tasa de crecimiento de la población en la población de origen ("lambda buena") a 1,1. ¿Que pasa ahora? ¿La población fuente todavía opera como una fuente efectiva (es decir, apoya la ocupación constante de todos los sumideros)? ¿Qué sucede si establece la tasa de crecimiento máxima en el parche de origen en 1? ¿Podría una población así servir alguna vez como una población fuente eficaz?
+
+#### ¡Un pseudo-sumidero!
+
+7. Vuelva a cambiar la lambda de origen a 2.1. Ahora cambie la lambda del sumidero a 1.1 y la tasa de dispersión máxima al 25%. ¿Cuál es la abundancia de equilibrio aproximada del sumidero distante? ¿Cómo se relaciona esto con su capacidad de carga? Genere una figura (utilizando InsightMaker) que ilustre la abundancia del sumidero distante frente a la capacidad de carga (a lo largo del tiempo). ¿Cómo ilustra esta figura el concepto de **pseudo-sumidero **?
+
+#### ¡Una trampa ecológica!
+
+8. Vuelva a cambiar todos los parámetros a sus valores predeterminados. Ahora considere el siguiente escenario:
+
+NOTA: es posible que desee clonar su modelo ahora para que pueda ir y venir fácilmente entre el modelo de "trampa ecológica" y el modelo de "fuente-sumidero".
+
+> ¡El fregadero cercano es ahora extremadamente atractivo para nuestra especie focal, ya que contiene abundantes recursos alimenticios y lo que parece un buen refugio! Sin embargo, en este hábitat también hay un nuevo depredador introducido que la especie no puede detectar. Por lo tanto, las tasas de dispersión al hábitat del sumidero son muy altas, pero las tasas de mortalidad también son muy altas.
+
+Para forzar a un número desproporcionado de personas a ingresar al sumidero cercano, abra el editor de ecuaciones para el flujo desde la fuente al sumidero cercano. Cambie la primera línea para que lea:
+
+
+```
+0.01*[nearby sink] - 0.5*[SOURCE]
+```
+
+NOTA: puede "comentar" lo que estaba anteriormente en el editor de ecuaciones para este flujo. Para hacer esto, puede usar símbolos de almohadilla como lo hemos hecho en el pasado (¡y como R!) O podemos poner entre corchetes un bloque completo de código usando la siguiente sintaxis:
+
+```
+/ *
+algunos al azar
+codificar aquí
+y
+algo mas
+codigo aleatorio
+* /
+```
+
+
+¡Esto obligará al 50% de la población de origen a intentar trasladarse al hábitat del sumidero cada año! Casi todos los individuos que se encuentran en el hábitat del sumidero intentarán permanecer allí.
+
+Además, cambie la lambda para el sumidero cercano a 0.25, (lo que significa que el 75% de la población de sumideros muere cada año debido a la depredación). Para hacer esto, reemplace el término [lambda malo] en el flujo de nacimientos / muertes para el sumidero cercano con el número "0.25". Abra el editor de ecuaciones para este flujo; después de cambiar, debería verse así:
+
+
+```
+growth <- [nearby sink]*Ln(0.25)
+
+totalexp <- [nearby sink]+growth   # expected population size
+newexp <- 0
+If totalexp>0.5 Then
+  newexp <- RandPoisson(totalexp)
+End If
+newexp-[nearby sink]
+
+```
+
+9. Ejecute el modelo con el fregadero cercano como trampa ecológica e intente abordar las siguientes preguntas:
+
+** P **: ¿de qué manera el sumidero cercano es ahora una * trampa ecológica *? ¿Son todas las poblaciones de sumideros realmente * trampas ecológicas *?
+
+** P **: ¿Están mejor las metapoblaciones sin poblaciones sumideros? ¿Podría ser * deseable * eliminar una población sumidero para mejorar el estado de conservación de una metapoblación? ¿Bajo que circunstancias? ¿Cómo se relaciona esto con el concepto de * dependencia de la densidad?
+
+
+#### ¡Beneficios de las poblaciones de sumideros!
+
+¡Es posible que las poblaciones de sumideros no siempre sean tan malas para la conservación! Considere el siguiente escenario:
+
+> Una gran población de origen puede mantener un conjunto de 3 poblaciones satélite, cada una de las cuales no persistiría en ausencia de dispersión de la población de origen. Ocasionalmente (por ejemplo, una vez cada 100 años), un incendio catastrófico erradica la población fuente. Sin embargo, la población de origen es colonizada por individuos que migran de las poblaciones satélites (sumideros). ¡En ausencia de las poblaciones de sumideros, es casi seguro que toda la metapoblación se extinguiría! #### ¡Beneficios de las poblaciones de sumideros!
+
+
+
+
+
+
+
+______________________
+
+
 
 ## In-class exercise: sources and sinks!
 
@@ -230,7 +346,7 @@ In this exercise, we will explore source-sink dynamics!
 
 1. First click on this [link](https://insightmaker.com/insight/107587/Source-Sink-2) and clone this *population-based source-sink model* in InsightMaker. This model represents a four-patch metapopulation with one large source population and three smaller sink populations. The sink populations are located at varying distances from the source population. Here is the approximate *spatial configuration* of this metapopulation:
 
-![](sourcesink1.png)
+![](figures/sourcesink1.png)
 
 
 2. Make sure the model parameters are at default values. The default parameters should be:
@@ -306,6 +422,8 @@ End If
 newexp-[nearby sink]
 
 ```
+
+
 
 9. Run the model with the nearby sink as an ecological trap, and try to address the following questions:
 
