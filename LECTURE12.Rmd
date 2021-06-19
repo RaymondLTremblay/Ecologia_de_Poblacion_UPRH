@@ -1,12 +1,15 @@
 ---
-title: "Population Viability Analysis"
-author: "NRES 470/670"
-date: "Spring 2021"
-output: 
+title: "Análisis de viabilidad poblacional: Population Viability Analysis"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -17,16 +20,16 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ############################################################
 ####                                                    ####  
-####  NRES 470, Lecture 12                               ####
+####  BIOL4558, Lecture 12                              ####
 ####                                                    ####
-####  Kevin Shoemaker                                   #### 
-####  University of Nevada, Reno                        ####
+#### Raymond L. Tremblay                                #### 
+####  Universidad de Puerto Rico                        ####
 ####                                                    #### 
 ############################################################
 
 
 ############################################################
-####  Population Viability Analysis                     ####
+####  Análisis de viabilidad poblacional                ####
 ############################################################
 
 
@@ -34,219 +37,223 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ### Final projects:
 
-Just a heads up about [final projects](FINAL_PROJECTS.html). Your working PVA and a document justifying your modeling decisions is *due Friday, April 9*!
+Un aviso sobre [final projects](FINAL_PROJECTS.html). 
+¡Su PVA de trabajo y un documento que justifica sus decisiones de modelado vencen *el viernes 9 de abril *!
 
 
-## Population Viability Analysis (PVA)
+## Análisis de viabilidad poblacional (PVA)
 
-Population Viability Analysis (PVA) integrates everything we have studied so far and more. 
+Análisis de viabilidad poblacional: Population Viability Analysis (PVA) 
+integra todo lo que hemos estudiado hasta ahora y más.
 
-At its most basic level, PVA is the _process of building and running a formal predictive population model for the purpose of gaining insight about present and future conservation status, or ranking alternative management options_.
+En su nivel más básico, PVA es el _proceso de construcción y ejecución de un modelo poblacional predictivo formal con el fin de obtener información sobre el estado de conservación presente y futuro, o clasificar opciones de gestión alternativas_.
 
-**Q:** Does PVA align well with the small-population paradigm?
+**P: ** ¿El PVA se alinea bien con el paradigma de población pequeña?
 
-**Q:** Does PVA align well the declining-population paradigm?
+**P: ** ¿El PVA se alinea bien con el paradigma de la población en declive?
 
-**Q:** Are PVA models always stochastic?
+**P: ** ¿Los modelos PVA son siempre estocásticos?
 
-**Q:** Are PVA models always density-dependent?
+**P: ** ¿Los modelos PVA siempre dependen de la densidad?
 
-**Q:** Are PVA models always age-structured?
+**P: ** ¿Los modelos PVA siempre están estructurados por edades?
 
-**Q**: Are PVA models always spatially-explicit?
-
-### The PVA process (recipe for PVA!)
-
-![](PVAschematic1.png) 
-
-NOTE: The process of building a PVA model is **iterative** and **non-linear**. 
-
-For example -- after running your model (step 4) and looking at your results (step 5) you might realize that the model is totally unrealistic. This might prompt you to go back and change your conceptual model of the life history (step 1), and re-parameterize your model (step 2).   
-
-#### Step 1: Life history
-
-Lecture 1: systems thinking     
-Lecture 2: feedbacks    
-Lecture 3: exponential growth    
-Lecture 4: density dependence    
-Lecture 5: allee effects    
-Lecture 6: age structured populations    
-Lecture 7: matrix population models    
-Lecture 8: stochasticity    
-Labs 1,2,3,4,5    
-
-The first step is to conceptualize the life history for your species of interest. This is where you might put together a life history diagram, and think about the following questions:
-
-- How many life stages should I include?
-- Which life stages are reproductive?
-- Which vital rates are density-dependent?
-- Does your species benefit from social aggregation? If so, are there any Allee effects?
-- Which vital rates are subject to environmental stochasticity?
-- Which vital rates could be altered by management activities?
-- Are there any important catastrophes that can affect the system?
-
-**Q**: is there ever a case where you *WON'T* include demographic stochasticity in your model? 
-
-#### Step 2: Parameterize the demographic model! 
-
-Lecture 3: exponential growth    
-Lecture 4: density dependence    
-Lecture 5: allee effect    
-Lecture 7: matrix population models    
-Lecture 8: stochasticity and uncertainty    
-Labs 1,2,3,4,5,7    
+**P **: ¿Los modelos PVA son siempre espacialmente explícitos?
 
 
-This is where you attach real numbers to the stocks and flows in your conceptual life history diagram. Remember that these parameters are more than just survival and fecundity. It's also:
+### El proceso PVA (¡receta para PVA!)
 
-- Annual variation in survival and fecundity (environmental stochasticity)    
-- Initial abundances    
-- Density dependence functions and parameters (including K)    
-- Allee thresholds    
-- Catastrophe effect sizes and probabilities    
-- Effects of management actions    
-- And more...    
+![](figures/PVAschematic1.png) 
 
-[stone soup analogy to model parameterization!]
+NOTA: El proceso de construcción de un modelo PVA es **iterativo ** y **no lineal **.
 
-#### Step 3: Spatial structure!
+Por ejemplo, después de ejecutar su modelo (paso 4) y observar los resultados (paso 5), es posible que se dé cuenta de que el modelo es totalmente irreal. Esto podría pedirle que retroceda y cambie su modelo conceptual de la historia de vida (paso 1) y vuelva a parametrizar su modelo (paso 2).  
 
-Lecture 13: metapopulation models    
-Lecture 14: source-sink dynamics    
-Lab 6: metapopulation models    
+#### Paso 1: historia de vida
+
+Clase 1: pensamiento sistémico
+Clase 2: retroalimentación
+Clase 3: crecimiento exponencial
+Clase 4: dependencia de la densidad
+Clase 5: efectos allee
+Clase 6: poblaciones estructuradas por edad
+Clase 7: modelos matriciales de población
+Clase 8: estocasticidad
+Laboratorios 1,2,3,4,5   
+
+El primer paso es conceptualizar la historia de vida de su especie de interés. Aquí es donde puede armar un diagrama de historia de vida y pensar en las siguientes preguntas:
+
+- ¿Cuántas etapas de la vida debo incluir?
+- ¿Qué etapas de la vida son reproductivas?
+- ¿Qué tasas vitales dependen de la densidad?
+- ¿Su especie se beneficia de la agregación social? Si es así, ¿hay algún efecto de Allee?
+- ¿Qué tasas vitales están sujetas a estocasticidad ambiental?
+- ¿Qué índices vitales podrían verse alterados por las actividades de manejo?
+- ¿Existen catástrofes importantes que puedan afectar al sistema?
+
+**P **: ¿hay algún caso en el que *NO * incluyas la estocasticidad demográfica en tu modelo?
+
+#### Paso 2: ¡Parametrizar el modelo demográfico!
+
+Clase 3: crecimiento exponencial
+Clase 4: dependencia de la densidad
+Clase 5: efecto allee
+Clase 7: modelos matriciales de población
+Clase 8: estocasticidad e incertidumbre
+Laboratorios 1,2,3,4,5,7  
 
 
-If you want to ask spatial questions, your model needs to be spatially explicit, or at least consider spatial structure in some way. The kinds of questions you might think about include:
+Aquí es donde se adjuntan números reales a las existencias y flujos en su diagrama de historia de vida conceptual. Recuerde que estos parámetros son más que solo supervivencia y fecundidad. Es también:
 
-- How many discrete populations are there in your metapopulation?  
-- Do different populations have different mean vital rates? Are some populations likely to be sources and others likely to be sinks?   
-- Is environmental stochasticity **spatially correlated**? (is a bad year in one subpopulation likely to be a bad year in every subpopulation?)
-- At what rate do individuals move among these populations?
-- Can connectivity be enhanced via management?
-- Are dispersal rates density-dependent?
+- Variación anual de supervivencia y fecundidad (estocasticidad ambiental)
+- Abundancias iniciales
+- Funciones y parámetros de dependencia de la densidad (incluido K)
+- Allee umbrales
+- Tamaños y probabilidades del efecto de catástrofe
+- Efectos de las acciones de gestión
+- Y más... 
 
-#### Step 4: Simulate!
+[¡analogía de la sopa de piedra con la parametrización del modelo!]
 
-In class exercises, all labs
+Paso 3: ¡Estructura espacial!
 
-You know how to simulate populations now- you can choose whether it makes sense to use R, InsightMaker, Vortex, or some other software or programming platform for your simulations!
+Clase 13: modelos de metapoblación
+Clase 14: dinámica fuente-sumidero
+Laboratorio 6: modelos de metapoblación 
 
-Either way, you can be creative- set up the simulations so that they can help you answer your key research questions! You are in control- you can set up the simulations so that they give you the kinds of data you need!!
 
-- What scenarios do you want to test?
-- How many replicates are sufficient?
-- What data do you need to store for your plots and analyses?
+Si desea hacer preguntas espaciales, su modelo debe ser espacialmente explícito, o al menos considerar la estructura espacial de alguna manera. Los tipos de preguntas en las que podría pensar incluyen:
 
-#### Step 5: Results
+- ¿Cuántas poblaciones discretas hay en su metapoblación?
+- ¿Las diferentes poblaciones tienen diferentes tasas vitales medias? ¿Es probable que algunas poblaciones sean fuentes y otras, sumideros?
+- ¿La estocasticidad ambiental ** está espacialmente correlacionada **? (¿Es probable que un mal año en una subpoblación sea un mal año en todas las subpoblaciones?)
+- ¿A qué ritmo se mueven los individuos entre estas poblaciones?
+- ¿Se puede mejorar la conectividad mediante la gestión?
+- ¿Las tasas de dispersión dependen de la densidad?
 
-I recommend using R to analyze and plot out your simulation results. BUT you can use Excel and InsightMaker to make perfectly good plots as well!
+#### Paso 4: ¡Simular!
 
-Finally, you need to make sense of all the simulations you just ran. 
+En los ejercicios de clase, todos los laboratorios
 
-There are two types of data analysis tools that you will need to be able to use the simulation results to answer your questions: **graphical visualization** and **statistical analysis**.
+Ya sabe cómo simular poblaciones; puede elegir si tiene sentido utilizar R, InsightMaker, Vortex o algún otro software o plataforma de programación para sus simulaciones.
 
-These tools- visualization and statistical analysis - are diverse, and there is no one-size-fits-all way that you should visualize and analyze your simulation results. It really depends on your question!! 
+De cualquier manera, puede ser creativo: configure las simulaciones para que puedan ayudarlo a responder sus preguntas clave de investigación. Usted tiene el control: ¡puede configurar las simulaciones para que le brinden los tipos de datos que necesita!
 
-I will give you some ideas here about graphical representations in the demo PVA - but just remember you are not limited to these ideas- be creative! 
-Since this class is not a statistics class, I don't necessarily expect you to do sophisticated stats as part of your project- but your TAs and I can work with your groups individually to figure out some simple stats that make sense for your project. 
+- ¿Qué escenarios quieres probar?
+- ¿Cuántas réplicas son suficientes?
+- ¿Qué datos necesita almacenar para sus gráficos y análisis?
 
-## A Simple Demonstration PVA
+#### Paso 5: Resultados
 
-To illustrate some of these concepts, let's build a very simple PVA model in R. If you want to follow along, click [here](LECTURE12.R)
+Recomiendo usar R para analizar y trazar los resultados de su simulación. ¡PERO también puede usar Excel e InsightMaker para hacer gráficos perfectamente buenos!
 
-We are using R because of its flexible and powerful visualization tools. 
+Por último, debe comprender todas las simulaciones que acaba de ejecutar.
 
-### Step 1: conceptualize the life history
+Hay dos tipos de herramientas de análisis de datos que necesitará para poder utilizar los resultados de la simulación para responder a sus preguntas: **visualización gráfica ** y **análisis estadístico **.
 
-For simplicity, let's ignore age structure for now - this is just a simple stochastic, one-stage (scalar) population model!
+Estas herramientas (visualización y análisis estadístico) son diversas y no existe una forma única de visualizar y analizar los resultados de la simulación. ¡¡Realmente depende de tu pregunta !!
 
-Also let's ignore parameter uncertainty too! 
+Le daré algunas ideas aquí sobre las representaciones gráficas en el PVA de demostración, pero recuerde que no está limitado a estas ideas, ¡sea creativo!
+Dado que esta clase no es una clase de estadísticas, no necesariamente espero que haga estadísticas sofisticadas como parte de su proyecto, pero sus asistentes técnicos y yo podemos trabajar con sus grupos individualmente para descubrir algunas estadísticas simples que tengan sentido para su proyecto.
 
-### Step 2: parameterize!
+## Un PVA de demostración simple
 
-Here is the basic model parameterization:
+Para ilustrar algunos de estos conceptos, construyamos un modelo PVA muy simple en R. Si desea seguir adelante, haga clic [aquí] (LECTURA12.R)
+
+Usamos R debido a sus herramientas de visualización flexibles y poderosas.
+
+### Paso 1: conceptualiza la historia de vida
+
+Para simplificar, ignoremos la estructura de edades por ahora: ¡esto es solo un modelo de población estocástico simple de una etapa (escalar)!
+
+¡También ignoremos la incertidumbre de los parámetros!
+
+### Paso 2: parametrizar!
+
+Aquí está la parametrización básica del modelo:
 
 ```{r}
 
 ##############
-# Demonstration PVA
+# Demostración PVA
 ##############
 
-# STEP 1: conceptualize life history (we are modeling this population as a simple, single-stage stochastic model with density dependence)
+# PASO 1: conceptualice la historia de vida (estamos modelando esta población como un modelo estocástico simple de una etapa con dependencia de la densidad)
 
-# STEP 2: parameterize the model
-
-####
-# Basic life history parameters
-####
-
-R_max <- 1.15       # Maximum rate of growth
-Init_N <- 51        # Initial abundance
-K <- 175            # Carrying capacity
+# PASO 2: parametrizar el modelo
 
 ####
-# Environmental stochasticity
+# Parámetros básicos de la historia de vida
 ####
 
-SD_anngrowth <- 0.11  # standard deviation of annual growth rate
+R_max <- 1.15       # Tasa máxima de crecimiento
+Init_N <- 51        # Abundancia inicial
+K <- 175            # CCapacidad de carga
 
 ####
-# Density-dependence (Ricker model)
+# Estocasticidad ambiental
 ####
 
-Ricker <- function(prev_abund){       # this is a function for computing next-year abundance -- includes env stochasticity
+SD_anngrowth <- 0.11  # desviación estándar de la tasa de crecimiento anual
+
+####
+# Densidad-dependencia (modelo de Ricker)
+####
+
+Ricker <- function(prev_abund){       # esta es una función para calcular la abundancia del próximo año - incluye estocasticidad env
   prev_abund * exp(log(rnorm(1,R_max,SD_anngrowth))*(1-(prev_abund/K)))
 }
 
 ####
-# Catastrophe
+# Catástrofe
 ####
 
-Flood_prob <- 0.05      # 5% chance of major flood
-Flood_lambda <- 0.25    # 25% of population can survive a flood 
+Flood_prob <- 0.05      # 5% probabilidad de una gran inundación
+Flood_lambda <- 0.25    # 25% de la población puede sobrevivir a una inundación
 
 ```
 
 
-### Step 3: spatial structure
+### Step 3: estructura espacial
 
 Let's ignore spatial structure! We will learn more about modeling spatial structure in the next two lectures!
+¡Ignoremos la estructura espacial! ¡Aprenderemos más sobre el modelado de la estructura espacial en las próximas dos conferencias!
 
-### Step 4: simulate!
+### Step 4: ¡simular!
 
-Now we can use these parameters to build and run a simple PVA model:
+Ahora podemos usar estos parámetros para construir y ejecutar un modelo PVA simple:
 
 ```{r}
 
-# STEP 3: add spatial structure (not applicable here)
+# PASO 3: agregue estructura espacial (no se aplica aquí)
 
-# STEP 4: simulate!
+# PASO 4: ¡simular!
 
 ####
-# Basic simulation parameters
+# Parámetros de simulación básicos
 ####
 
-nyears <- 100     # number of years
-nreps <- 500      # number of replicates
+nyears <- 100     # número de años
+nreps <- 500      # número de réplicas
 
 
 PVAdemo <- function(nreps,nyears,Init_N,R_max,K,Flood_prob,Flood_lambda){
   #browser()
-  PopArray2 <- array(0,dim=c((nyears+1),nreps))   # set up storage array
+  PopArray2 <- array(0,dim=c((nyears+1),nreps))   # configurar matriz de almacenamiento
   
-  ## start looping through replicates
+  ## empezar a recorrer las réplicas
   
   for(rep in 1:nreps){
     
-    # set initial abundance
-    PopArray2[1,rep] <- Init_N     # set the initial abundance
+    # establecer abundancia inicial
+    PopArray2[1,rep] <- Init_N     # establecer la abundancia inicial
     
-    ### loop through years
+    ### recorrer años: loop through years
     for(y in 2:(nyears+1)){
-      ### stochasticity and d-d
+      ### estocasticidad y d-d
       nextyear <- max(0,trunc(Ricker(PopArray2[y-1,rep])))
       
-      ### catastrophe
+      ### catástrofe
       if(runif(1)<Flood_prob) nextyear <- nextyear*Flood_lambda
       PopArray2[y,rep] <- nextyear 
     }
@@ -264,21 +271,21 @@ Default <- PVAdemo(nreps,nyears,Init_N,R_max,K,Flood_prob,Flood_lambda)
 
 ### Step 5: results!
 
-Now we can perform graphical visualizations and statistics that answer our original questions!
+¡Ahora podemos realizar visualizaciones gráficas y estadísticas que responden a nuestras preguntas originales!
 
-#### Graphical visualization
+#### Visualización gráfica
 
-There are several types of visualizations that you might want to use for your PVA models:
+Hay varios tipos de visualizaciones que quizás desee utilizar para sus modelos PVA:
 
-The first is to look at the "cloud" of abundance trajectories. This is the same type of figure we have seen in InsightMaker using the "Sensitivity testing" tool. 
+El primero es mirar la "nube" de trayectorias de abundancia. Este es el mismo tipo de figura que hemos visto en InsightMaker usando la herramienta "Prueba de sensibilidad".
 
 
 ```{r}
 
-# STEP 5: results 
+# PASO 5: resultados
 
 ############
-# Graphical visualization
+# Visualización gráfica
 
 PlotCloud <- function(simdata){
   plot(c(1:101),simdata[,1],col=gray(0.7),type="l",ylim=c(0,max(simdata)),xlab="Years",ylab="Abundance")
@@ -292,13 +299,14 @@ PlotCloud(Default)
 
 ```
 
-Okay, what do we learn from this? Really, it's a mess!!! 
+Bien, ¿qué aprendemos de esto? Realmente, es un desastre !!!
 
-If our question is about extinction risk, maybe we want to plot extinction risk by time... 
+
+Si nuestra pregunta es sobre el riesgo de extinción, tal vez queramos trazar el riesgo de extinción por tiempo ...
 
 ```{r}
 
-# Visualize extinction rates over time
+# Visualice las tasas de extinción a lo largo del tiempo
 
 Extinction_byyear <- function(simdata){
   apply(simdata,1,function(t)  length(which(t==0)))/ncol(simdata)
@@ -312,13 +320,13 @@ abline(h=0.05,col="red",lwd=2)
 ```
 
 
-Maybe our question is about the probability of decline over 100 years ... 
+Quizás nuestra pregunta sea sobre la probabilidad de declive en 100 años ...
 
-In that case maybe we should present a histogram of final abundances...
+En ese caso quizás deberíamos presentar un histograma de abundancias finales ...
 
 ```{r}
 
-# visualize final abundance after 100 years relative to initial abundance
+# visualizar la abundancia final después de 100 años en relación con la abundancia inicial
 
 hist(Default[nrow(Default),],xlab="Final abundance after 100 years",ylab="Number of replicates",main="")
 abline(v=Init_N,col="green",lwd=2)
@@ -326,11 +334,11 @@ abline(v=Init_N,col="green",lwd=2)
 ```
 
 
-Or we could plot the extent of decline vs the probability of falling below that threshold at year 100. 
+O podríamos graficar el grado de disminución frente a la probabilidad de caer por debajo de ese umbral en el año 100.
 
 ```{r}
 
-# plot probabilities of different severities of decline
+# plot probabilities of different severities of declinegraficar las probabilidades de diferentes grados de declive
 
 declines <- seq(0,100,by=1)
 declineprob <- numeric(length(declines))
@@ -346,13 +354,16 @@ abline(v=25,col="red",lwd=2)
 ```
 
 
-What if our question is about the effect of flooding on extinction risk. Let's imagine that the probability of flooding is not expected to change with climate change, but that the intensity of the flood damage is likely to increase substantially!
+¿Y si nuestra pregunta es sobre el efecto de las inundaciones en el riesgo de extinción? Imaginemos que no se espera que la probabilidad de inundaciones cambie con el cambio climático, ¡pero es probable que la intensidad de los daños por inundaciones aumente sustancialmente!
 
-Currently, floods generally result in a 10% population reduction. But climate change could increase this number to as much as 90%. Let's look at how much this could increase extinction risk!
+Actualmente, las inundaciones generalmente resultan en una reducción de la población del 10%. Pero el cambio climático podría aumentar este número hasta en un 90%. ¡Veamos cuánto podría aumentar esto el riesgo de extinción!
+
+
 
 ```{r}
 
-# Plot extinction risk as a function of flood severity
+
+# Grafique el riesgo de extinción en función de la gravedad de las inundaciones
 
 Exctinction_risk <- function(simdata){
   length(which(simdata[nrow(simdata),]==0))/ncol(simdata)
