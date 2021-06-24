@@ -1,149 +1,164 @@
 ---
-title: "Example: parameterizing a PVA model"
-author: "NRES 470/670"
-date: "Spring 2020"
-output: 
+title: "Ejemplo: Parametizando un modelo PVA"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-# PVA case study- Modeling the recovery of the black-footed ferret in a linked predator-prey-disease system
+# Estudio de caso de PVA: modelando de la recuperación el "Black-footed ferret" en un sistema vinculado depredador-presa-enfermedad
 
-![Figure 1: prairie dog and black-footed ferret range](pdog_range1.jpg)
+![Grafico 1: prairie dog and black-footed ferret range](figures/pdog_range1.jpg)
 
-## An obligate predator
-- Approximately 90% of the diet of black-footed ferret consists of prairie dogs (obligate predator). 
-- Ferrets give birth in prairie dog burrows. 
-- The historic range of the black-footed ferret coincides with the three prairie dog species that constitute its prey. 
-- *You can’t know what’s going on with BFF populations without knowing what’s going on with prairie dogs* 
+## Un depredador obligado
 
-![](ferret1.jpg)
+- Aproximadamente el 90% de la dieta del **Black-footed ferret** consiste en perros de la pradera (depredador obligado).
+- Los **Black-footed ferret** dan a luz en madrigueras de perritos de la pradera.
+- La distribución histórica del **Black-footed ferret** coincide con las tres especies de perritos de la pradera que constituyen su presa.
+- *No puedes saber qué está pasando con las poblaciones de BFF sin saber qué está pasando con los perros de la pradera*
 
-## Ferret facts!
+![](figures/ferret1.jpg)
 
-- Extinct in the wild by 1987 
-- In 1987, last 18 individuals were removed for captive breeding
-- Over 3,500 released into the wild at 19 locations in US, Mexico and Canada (Livieri 2011) 
-- Four reintroduction sites considered self-sustaining
+## ¡Hechos sobre los **Black footed ferret**!
+
+- Extinto en la naturaleza en 1987
+- En 1987, los últimos 18 individuos fueron retirados para críarlos en cautividad.
+- Más de 3500 liberados en la naturaleza en 19 ubicaciones en EE. UU., México y Canadá (Livieri 2011)
+- Cuatro sitios de reintroducción considerados autosuficientes
 
 
-## Study site: Conata Basin
-- As part of black-footed ferret reintroduction efforts, 150 captive-born ferret kits were released over a 4-year period to prairie dog colonies in Conata Basin beginning in 1996. 
+## Sitio de Estudio: Conata Basin
+- Como parte de los esfuerzos de reintroducción de los BFF, se lanzaron 150 kits de BBF nacidos en cautiverio durante un período de 4 años a las colonias de perros de la pradera en la Cuenca de Conata a partir de 1996
 
-![Conata basin](conata1.jpg)
+![Conata basin](figures/conata1.jpg)
 
-- This effort resulted in a self-sustaining population with a total of approximately 200 animals by 2000 (Livieri 2006). 
-- Plague-free, rapid establishment of ferrets, _among the most successful ferret reintroduction sites_. 
-- Declined dramatically since *sylvatic plague* was detected in 2008, falling from 335 individuals documented in 2007 to only 71 in 2012 (Livieri 2012).
-- Plague mitigation efforts have been implemented, including 
-    - dusting of prairie dog burrows (insecticide treatment) 
-    - experimental vaccination of black-footed ferrets (Abbott and Rocke 2012).
+## Resultados
 
-## Prairie dogs in Conata Basin and surrounding region
+- Este esfuerzo resultó en una población autosuficiente con un total de aproximadamente 200 animales para el año 2000 (Livieri 2006).
+- Establecimiento rápido y libre de plagas de BBF, entre los sitios de reintroducción de BBF más exitosos.
+- Disminuyó drásticamente desde que se detectó *peste selvática* en 2008, pasando de 335 individuos documentados en 2007 a solo 71 en 2012 (Livieri 2012).
+- Se han implementado esfuerzos de mitigación de plagas, incluyendo
+    - tratamiento con insecticida en la madriguera
+    - vacunación experimental de BBF (Abbott y Rocke 2012).
 
-![](prairie_dogs3.jpg)
+## Perritos de la pradera en la Cuenca de Conata y la región circundante
 
-### Spatial structure of study region 
+![](figures/prairie_dogs3.jpg)
 
-![Figure 2: study region](pdog_studyregion1.jpg)
+### Estructura espacial de la región de estudio 
 
-![](flea1.jpg)
+![Figura 2: Area de Estudio](figures/pdog_studyregion1.jpg)
 
-## Sylvatic plague
-- Exotic flea borne disease 
-- Highly fatal to prairie dogs (and ferrets)
-- Continued eastward expansion of plague threatens to undermine ferret recovery efforts
-- Plague was first observed at our study site (Conata Basin) in 2008
 
-## A "metamodel"!
-- PVA is typically focused on a single species. 
-- Species interactions are not typically included explicitly!
+![](figures/flea1.jpg)
 
-![](metamodel1.png)
+## Plaga Silvática
+  [USGS_Sylvatic_Plague](https://www.usgs.gov/centers/nwhc/science/sylvatic-plague?qt-science_center_objects=0#qt-science_center_objects)
+- Enfermedad exótica transmitida por pulgas
+- Altamente fatal para los perros de la pradera (y BBF)
+- La continua expansión de la plaga hacia con socavar los esfuerzos de recuperación de los BBF.
+- La peste se observó por primera vez en nuestro sitio de estudio (Cuenca de Conata) en 2008
 
-## Prairie dog submodel
-- Metapopulation of 1591 colonies
-- Wide range of abundance, connectivity among colonies
+## Un metamodelo" "metamodel"!
+
+- El PVA se centra típicamente en una sola especie.
+- ¡Las interacciones entre especies no suelen incluirse explícitamente!
+
+![](figures/metamodel1.png)
+
+## Submodelo de perro de la pradera
+- Metapoblación de 1591 colonias
+- Amplia gama de abundancia, conectividad entre colonias.
 - RAMAS GIS
 
-This is what the prairie dog model looks like in the absence of plague. Robust population with essentially no risk of prairie dog extinction.
 
-![](pdogres1.png)
+Así es como se ve el modelo del perrito de las praderas en ausencia de plaga. Población robusta con prácticamente ningún riesgo de extinción de los perros de las praderas.
 
-## Ferret submodel
+![](figures/pdogres1.png)
 
-In the absence of plague...
-
-![](ferretres1.png)
-
-## The linked predator-prey-disease model...
-
-![](linkedres1.png)
-
-- The prairie dog population declines and settles at a new lower equilibrium. 
-- The minimum abundance of Pdogs is around 12k for the Conata Basin, which really is insufficient for supporting ferrets. 
-- The ferret population quickly goes extinct if they can only access those Pdog colonies in the Conata Basin area. 
-- However, the reintroduced Ferret population in Conata is likely to be sustainable (given the presence of Plague) _if the ferrets can access prey outside the region currently managed for ferrets (Conata basin)_. 
-
-## An emergent property!
-
-![](oscillation1.png)
-
-BFF population and PD populations are now cycling due to PD plague dynamics!   
-
-[Link to video of simulation results](https://www.youtube.com/watch?v=4hCBK_JZ-Mg)
-
-![](oscillation2.jpg)
-
-![](rfresults1.png)
-
-![](finalpdresults1.png)
-
-## Conclusions
-- Ferrets may require _vast prairie landscapes_ to persist through plague epizootics
-- Observed rates of plague spread (or synchronicity of plague outbreaks) may be used to define the spatial scale at which ferrets are likely to persist.
-
-# Detailed parameterization: a metapopulation model of prairie dogs and black-footed ferrets!
-
-Here I will take you through a detailed parameterization of the prairie dog and ferret models (see the paper [here](shoemaker1.pdf)).
-
-This model is more complex than the models you will be doing for your final project, but hopefully it serves as a useful illustration of how you can justify your decisions about how to build and parameterize your models. 
+## BBF submodel
 
 
-### Spatial structure of study region 
+En ausencia de plaga ...
 
-![Figure 2: study region](pdog_studyregion1.jpg)
+![](figures/ferretres1.png)
 
-The spatial structure of the metapopulation was based on the distribution of prairie dogs in the *Conata Basin*, a subset of 71 prairie dog populations within the Conata/Badlands region in South Dakota and covering ca. 500 km2 (Fig. 2; delineated based on Biggins et al. 2011) is a portion of the Buffalo Gap National Grasslands directly south of Badlands National Park and is administered by the US Forest Service (Fig. 2). This area was chosen in the early 1990’s for reintroduction of black-footed ferrets due to the extensive network of high-density prairie dog colonies located on public lands (Livieri 2006).
+## El modelo vinculado depredador-presa-enfermedad ...
 
-Prairie dog colonies in Conata Basin, Badlands National Park, and Buffalo Gap National Grasslands in southwestern South Dakota, USA (hereafter, Conata/Badlands region) were *mapped biennially by the US Forest Service* from 1996-2009 using differentially corrected Global Positioning Systems (GPS) units to connect the outermost prairie dog burrows into a polygon (Biggins et al. 2006a). 
+![](figures/linkedres1.png)
 
-Prairie dog colonies in the surrounding areas were mapped in 2004 using aerial transects and digital imaging (Sidle et al. 2001, Cooper and Gabriel 2005). We converted prairie dog colony maps to binary (0=non-habitat, 1=habitat) raster maps with 50m cell size. We re-imposed barriers (e.g., roads, pipelines) that were lost in the rasterization process. 
+- La población de perros de la pradera declina y se asienta en un nuevo equilibrio inferior.
+- La abundancia mínima de Pdogs es de alrededor de 12k para la Cuenca de Conata, lo que realmente es insuficiente para mantener a los BBF.
+- La población de BBF se extingue rápidamente si solo pueden acceder a las colonias de Pdog en el área de la Cuenca de Conata.
+- Sin embargo, es probable que la población de BBF reintroducida en Conata sea sostenible (dada la presencia de peste) _si los BBF pueden acceder a presas fuera de la región actualmente gestionada para hurones (cuenca de Conata)_.
 
-We used the union of all years to define potential habitat. We used neighborhood distance of 1 cell (50m) to define the population structure (see Akçakaya 2002 for details of how RAMAS GIS determines spatial structure). Thus, we assumed each colony is a distinct biological population, which may be connected to other such populations (see section on dispersal below). Excluding very small colonies with carrying capacity (K) <100 (see below), this resulted in 1591 PD populations ranging from about 5 ha to 10,000 ha, with a median size of 16 ha and covering ca. 20,000 km2 (Fig. 3).
+## ¡Una propiedad emergente!
 
-![Fig. 3: Histogram of patch areas (ha) for all prairie dog habitat patches (n = 1591) identified in the Conata-Badlands region of South Dakota, based on mapped records of prairie dog colony boundaries.](s11.png)
+![](figures/oscillation1.png)
+
+¡La población de BFF y las poblaciones de EP ahora están en ciclo debido a la dinámica de la plaga de EP!  
+
+[Enlace video de simulación](https://www.youtube.com/watch?v=4hCBK_JZ-Mg)
+
+![](figures/oscillation2.jpg)
+
+![](figures/rfresults1.png)
+
+![](figures/finalpdresults1.png)
+
+## Conclución
+
+- Los BBF pueden requerir _paisajes de praderas extensas_ para persistir a través de epizootias de peste
+- Las tasas observadas de propagación de la peste (o la sincronicidad de los brotes de peste) se pueden utilizar para definir la escala espacial en la que es probable que persistan los BBF.
+
+# Parametrización detallada: ¡un modelo de metapoblación de perros de la pradera y BBF!
+
+Aquí lo guiaré a través de una parametrización detallada de los modelos de perro de la pradera y hurón (ver el documento [here](shoemaker1.pdf)).
+
+Este modelo es más complejo que los modelos que hará para su proyecto final, pero es de esperar que sirva como una ilustración útil de cómo puede justificar sus decisiones sobre cómo construir y parametrizar sus modelos.
+
+
+### Estructura espacial de la región de estudio 
+
+![Figur2 2: area de Estudio](figures/pdog_studyregion1.jpg)
+
+La estructura espacial de la metapoblación se basó en la distribución de los perros de la pradera en la * Cuenca de Conata *, un subconjunto de 71 poblaciones de perros de la pradera dentro de la región de Conata / Badlands en Dakota del Sur y que cubre aprox. 500 km2 (Fig. 2; delineado en base a Biggins et al. 2011) es una porción de los Pastizales Nacionales de Buffalo Gap directamente al sur del Parque Nacional Badlands y es administrado por el Servicio Forestal de los Estados Unidos (Fig. 2). Esta área fue elegida a principios de la década de 1990 para la reintroducción de BFF debido a la extensa red de colonias de perros de la pradera de alta densidad ubicadas en tierras públicas (Livieri 2006).
+
+Las colonias de perros de la pradera en Conata Basin, Badlands National Park y Buffalo Gap National Grasslands en el suroeste de Dakota del Sur, EE. UU. (En adelante, la región de Conata / Badlands) fueron *mapeadas cada dos años por el Servicio Forestal de EE. UU.* Desde 1996-2009 utilizando sistemas de posicionamiento global corregidos diferencialmente (GPS) para conectar las madrigueras más externas de los perros de la pradera en un polígono (Biggins et al. 2006a).
+
+Las colonias de perros de la pradera en las áreas circundantes fueron mapeadas en 2004 utilizando transectos aéreos e imágenes digitales (Sidle et al. 2001, Cooper y Gabriel 2005). Convertimos mapas de colonias de perros de la pradera a mapas ráster binarios (0 = sin hábitat, 1 = hábitat) con un tamaño de celda de 50 m. Reimponemos barreras (por ejemplo, carreteras, tuberías) que se perdieron en el proceso de rasterización. 
+
+Usamos la unión de todos los años para definir el hábitat potencial. Usamos una distancia de vecindario de 1 celda (50 m) para definir la estructura de la población (ver Akçakaya 2002 para detalles de cómo RAMAS GIS determina la estructura espacial). Por lo tanto, asumimos que cada colonia es una población biológica distinta, que puede estar conectada a otras poblaciones similares (ver la sección sobre dispersión a continuación). Excluyendo las colonias muy pequeñas con capacidad de carga (K) <100 (ver más abajo), esto dio como resultado 1591 poblaciones de DP que van desde aproximadamente 5 ha hasta 10,000 ha, con un tamaño medio de 16 ha y cubriendo aprox. 20.000 km2 (figura 3).
+
+![Fig. 3: Histograma de áreas de parches (ha) para todos los parches de hábitat de perros de las praderas (n = 1591) identificados en la región de Conata-Badlands de Dakota del Sur, basado en registros mapeados de los límites de las colonias de perros de las praderas.](figures/s11.png)
+
  
 
-### Carrying capacity and density-dependence
+### Capacidad de acereo y dependencia de la densidad
 
-Reproduction in prairie dogs is often limited by resources (Hoogland 2001), suggesting a Ricker-type (scramble) density-dependent effect on fecundities. We therefore used this type of density dependence, and estimated the maximum growth rate ($R_{max}$) based on the average of exponential growth rates exhibited by several populations following crashes. Three of these rates were following crashes due to plague: 1.466 (Biggins et al. 2006a, Fig 6.4), 2.024 (Cully and Williams 2001, Fig 4, years 1989-1991) and 3.806 (Cully and Williams 2001, Fig 4, years 1995-1997). We combined these rates with four growth rates following crashes due to other causes, including shooting, toxicants and removal and translocation (Reeve and Vosburgh 2006, Table 10-3, excluding the lowest and highest rates, which were from populations that had not undergone a recent population reduction). The average of these 7 exponential growth rates was 2.44. For sensitivity analysis, we used the quartiles, giving a range of 1.8 to 2.8. These values coincided with an independent estimate based on the intercept of the regression of population growth rate ($R$) on population size ($N$) from the data of Hoogland (1995, Table 16.1), which gave us estimates of 2.4 to 3.7, depending on the type of regression. Given that regression of R on N often overestimates $R_{max}$, this range is consistent with the estimate based on exponential growth phases of the two populations mentioned above.
+La reproducción en los perros de la pradera a menudo está limitada por los recursos (Hoogland 2001), lo que sugiere un efecto dependiente de la densidad de tipo Ricker (scramble) sobre la fecundidad. Por lo tanto, usamos este tipo de dependencia de la densidad y estimamos la tasa de crecimiento máxima ($R_ {max}$) basada en el promedio de tasas de crecimiento exponencial exhibidas por varias poblaciones después de choques. Tres de estas tasas fueron después de reducciones debidos a la peste: 1.466 (Biggins et al.2006a, Fig 6.4), 2.024 (Cully y Williams 2001, Fig 4, años 1989-1991) y 3.806 (Cully y Williams 2001, Fig 4, años 1995-1997). Combinamos estas tasas con cuatro tasas de crecimiento después de la peste debidos a otras causas, incluidos disparos, sustancias tóxicas y remoción y translocación (Reeve y Vosburgh 2006, Tabla 10-3, excluyendo las tasas más bajas y más altas, que eran de poblaciones que no se habían sometido a una reducción de población reciente). El promedio de estas 7 tasas de crecimiento exponencial fue 2,44. Para el análisis de sensibilidad, usamos los cuartiles, dando un rango de 1.8 a 2.8. Estos valores coincidieron con una estimación independiente basada en la intersección de la regresión de la tasa de crecimiento de la población ($R $) sobre el tamaño de la población ($ N $) de los datos de Hoogland (1995, Tabla 16.1), que nos dio estimaciones de 2,4 a 3.7, según el tipo de regresión. Dado que la regresión de R sobre N a menudo sobreestima $R_ {max} $, este rango es consistente con la estimación basada en las fases de crecimiento exponencial de las dos poblaciones mencionadas anteriormente.
 
-We assumed each mapped colony (see above) represented a distinct biological population, with carrying capacity (K) defined as a function of colony area and average densities of prairie dogs. At Conata Basin, the average density of prairie dogs prior to the arrival of plague was 28.7/ha (Livieri 2006). Thus, we multiplied the number of cells in each patch with 7.175 (=28.7x0.25) to calculate the carrying capacity of that patch (because under the Ricker-type density dependence we used, average abundance would approximately equal the equilibrium abundance or carrying capacity). Colonies with K<100 were excluded from analysis, to decrease the number of populations and because very small populations do not contribute substantially to population dynamics. We assumed initial abundances were equal to K for each population, and we ran a 10-year burn-in period for all simulations to ensure that all colonies were at equilibrium with their environment and had reached a *stable age distribution* (S.A.D.).
+Asumimos que cada colonia mapeada (ver arriba) representaba una población biológica distinta, con la capacidad de carga (K) definida como una función del área de la colonia y las densidades promedio de los perros de la pradera. En la Cuenca de Conata, la densidad promedio de los perros de la pradera antes de la llegada de la peste era de 28,7 / ha (Livieri 2006). Por lo tanto, multiplicamos el número de células en cada parche por 7.175 (= 28.7x0.25) para calcular la capacidad de carga de ese parche (porque bajo la dependencia de densidad tipo Ricker que usamos, la abundancia promedio sería aproximadamente igual a la abundancia de equilibrio o carga capacidad). Las colonias con K < 100 fueron excluidas del análisis, para disminuir el número de poblaciones y porque las poblaciones muy pequeñas no contribuyen sustancialmente a la dinámica poblacional. Asumimos que las abundancias iniciales eran iguales a K para cada población, y ejecutamos un período de quemado de 10 años para todas las simulaciones para asegurarnos de que todas las colonias estuvieran en equilibrio con su entorno y hubieran alcanzado una *distribución de edad estable * (S.A.D.).
 
-### Demographic structure and vital rates
-We developed an age- and sex-structured matrix model for prairie dogs using RAMAS Metapop software (v. 6.0; Akçakaya and Root 2013), with eight female and six male age classes, parameterized using survival rates and fecundities drawn from Hoogland (2001). We parameterized the matrix according to a pre-breeding census. We used survival rates based on Hoogland (2001, Figs. 1a and 2a), and fitted a polynomial regression of survival rate vs. age for each sex to obtain a smooth function of age (Fig. 4). We calculated litter size as 3.1 (from Hoogland 2001, figure 3a). Combining this value with proportion of females breeding (0.43; Hoogland 2001), and survival rate of zero-year olds, we estimated fecundity as 0.418 daughters and 0.379 sons per adult female (age 2+) and 0.209 daughters and 0.189 sons per yearling female (age 1). We assumed polygynous mating system with each male mating with up to 4 females. Because the density dependence function modifies the stage matrix as a function of population size, the model results would be sensitive to the $R_{max}$ value of the density-dependence function, not to the exact vales of survival rates and fecundities. Therefore, the sensitivity to vital rates was modeled through the $R_{max}$ sensitivity (see section on sensitivity analysis, below).  All colonies were initialized at $K$ and at stable age distribution, and all simulations were run with a 10 year burn-in period (to reach approximate equilibrium in the prairie dog metapopulation).
+### Estructura demográfica y tasas vitales
 
-![Figure 4. Illustration of polynomial regressions used to estimate expected age-specific survival rates for prairie dogs in this study, based on Hoogland (2001).](pdsurv1.png) 
+Desarrollamos un modelo matricial estructurado por edad y sexo para perros de la pradera utilizando el software RAMAS Metapop (v. 6.0; Akçakaya y Root 2013), con ocho clases de edad de hembras y seis de machos, parametrizadas utilizando tasas de supervivencia y fecundidad extraídas de Hoogland (2001). Parametrizamos la matriz según un censo previo a la reproducción. Usamos tasas de supervivencia basadas en Hoogland (2001, figuras 1a y 2a) y ajustamos una regresión polinomial de la tasa de supervivencia frente a la edad para cada sexo para obtener una función uniforme de la edad (figura 4). Calculamos el tamaño de la camada como 3,1 (de Hoogland 2001, figura 3a). Combinando este valor con la proporción de hembras reproductoras (0,43; Hoogland 2001) y la tasa de supervivencia de los niños de cero años, estimamos la fecundidad en 0,418 hijas y 0,379 hijos por hembra adulta (de 2 años o más) y 0,209 hijas y 0,189 hijos por hembra por año. (1 año). Asumimos un sistema de apareamiento poligínico con cada macho apareamiento con hasta 4 hembras. Debido a que la función de dependencia de la densidad modifica la matriz de la etapa en función del tamaño de la población, los resultados del modelo serían sensibles al valor $R_ {max} $ de la función de dependencia de la densidad, no a los valores exactos de las tasas de supervivencia y fecundidad. Por lo tanto, la sensibilidad a las tasas vitales se modeló a través de la sensibilidad $R_ {max} $ (consulte la sección sobre análisis de sensibilidad, a continuación). Todas las colonias se inicializaron a $K $ y con una distribución de edad estable, y todas las simulaciones se realizaron con un período de quemado de 10 años (para alcanzar un equilibrio aproximado en la metapoblación de perros de la pradera).
+
+![Figura 4. Ilustración de regresiones polinomiales utilizadas para estimar las tasas esperadas de supervivencia específicas por edad para los perros de la pradera en este estudio, basado en Hoogland (2001).](figures/pdsurv1.png) 
  
-### Variability
-The temporal variation in vital rates is based on 14 years of age and sex-specific census data from Hoogland (1995, Table 16.1, page 377). It is important to note that the censused population has fluctuated between 150 and 250 individuals and does not seem to have crashed because of plague or other reasons during the study period (otherwise, adding disease dynamics would overestimate variability). In order to obtain environmental variability, we removed demographic variance from observed variance of survival rates and fecundities, based on expected binomial and Poisson variance (Akçakaya 2002), and calculated coefficients of variation (Table A1-1). For sensitivity analysis, we used minimum and maximum values based on bootstrapping (Table A1-1).
+### Variabilidad
+
+La variación temporal de las tasas vitales se basa en 14 años de edad y datos del censo específico por sexo de Hoogland (1995, Cuadro 16.1, página 377). Es importante señalar que la población censada ha fluctuado entre 150 y 250 individuos y no parece haberse desplomado debido a la peste u otras razones durante el período de estudio (de lo contrario, agregar la dinámica de la enfermedad sobrestimaría la variabilidad). Para obtener la variabilidad ambiental, eliminamos la varianza demográfica de la varianza observada de las tasas de supervivencia y fecundidad, con base en el binomio esperado y la varianza de Poisson (Akçakaya 2002), y calculamos los coeficientes de variación (Tabla A1-1). Para el análisis de sensibilidad, usamos valores mínimos y máximos basados en bootstrapping (Tabla A1-1).
 
 
 ```{r echo=F}
@@ -160,54 +175,61 @@ df
 ```
 
 
-### Plague
-We modeled plague dynamics within the prairie dog metapopulation as catastrophes spread by dispersers, with virulence (overall survival) and per-disperser probability of initiating an outbreak  estimated from the Outbreak epidemiological model described below (n = 1000 replicates). We calculated the probability that a disperser initiates a catastrophe in the target population by multiplying the year-averaged probability that an individual (in a population that is experiencing an outbreak) is in disease state E (infected but not yet infectious), with the probability that a single individual in disease state E initiates an plague epizootic that kills at least half of the population.  Specifically, the OUTBREAK model indicated a 9.3% chance of an individual disperser being capable of initiating plague in a new colony (averaged over an entire year, a prairie dog capable of dispersal from an infected colony had a 9.3% chance of being an exposed carrier), and a 97% chance that such a disperer would initiate a catastrophe, resulting in a 9% per-disperser chance of initiating a catastrophe. When a catastrophe does get initiated in a population, the survival rate is determined, according to the Outbreak results, as 2.9% survival (97.1% mortality) in the year that plague is initiated (with no long-term effects). We initiated the plague outbreak in year 11, following a 10-year plague-free period (in turn, following the 10-year burn-in period). reflecting ca. ten plague-free years at Conata Basin following the first ferret introductions (sylvatic plague was first detected in the Conata Basin in May 2008; Abbott and Rocke 2012). Plague was initiated in the prairie dog metapopulation assuming either (1) plague was initiated in a single randomly selected prairie dog population (selected from among mid size or larger populations in the Conata Basin), or (2) plague outbreaks arise spontaneously with a probability of 0.005 per year per colony (effectively resulting in spontaneous plague initiation events somewhere in the metapopulation nearly every other year). Because RAMAS Metapop computes the number of dispersers based on post-plague abundances, we also computed the mean number of infected (exposed) dispersers as a function of the final colony abundance, resulting in an estimate of 118% (SE 28%). Therefore, we set the "probability of infection per disperser" parameter in Ramas Metapop at its maximum value of 100% (thereby potentially underestimating the rate of spread).
+### Plaga
 
-### Dispersal
-Dispersal rates (proportion of individuals dispersing between each pair of defined populations) were modeled as a function of centre to edge distances between populations, in order to avoid very large populations flooding small populations around them. Dispersing prairie dogs traveled a mean straight-line distance of 2.4 km (Garrett and Franklin 1988). Maximum dispersal distance is 10 km (Knowles 1985 cited in Knowles et al. 2002; Lomolino and Smith 2001). Thus, we used a dispersal-distance function 
+
+Modelamos la dinámica de la plaga dentro de la metapoblación de perritos de la pradera como catástrofes propagadas por dispersores, con virulencia (supervivencia general) y probabilidad por dispersor de iniciar un brote estimado a partir del modelo epidemiológico Brote descrito a continuación (n = 1000 repeticiones). Calculamos la probabilidad de que un dispersor inicie una catástrofe en la población objetivo multiplicando la probabilidad promedio anual de que un individuo (en una población que está experimentando un brote) esté en el estado de enfermedad E (infectado pero aún no infeccioso), con la probabilidad que un solo individuo en el estado de enfermedad E inicia una epizootia de peste que mata al menos a la mitad de la población. Específicamente, el modelo OUTBREAK indicó un 9.3% de probabilidad de que un dispersor individual sea capaz de iniciar la plaga en una nueva colonia (promediado durante todo un año, un perrito de la pradera capaz de dispersarse de una colonia infectada tenía un 9.3% de probabilidad de ser un portador expuesto). ), y un 97% de probabilidad de que tal dispersador inicie una catástrofe, lo que resulta en un 9% de probabilidad por dispersor de iniciar una catástrofe. Cuando se inicia una catástrofe en una población, la tasa de supervivencia se determina, de acuerdo con los resultados del brote, como 2.9% de supervivencia (97.1% de mortalidad) en el año en que se inicia la plaga (sin efectos a largo plazo). Iniciamos el brote de plaga en el año 11, luego de un período libre de plaga de 10 años (a su vez, después del período de quemado de 10 años). reflejando ca. diez años libres de peste en la Cuenca de Conata después de las primeras introducciones de hurones (la peste selvática se detectó por primera vez en la Cuenca de Conata en mayo de 2008; Abbott y Rocke 2012). La peste se inició en la metapoblación de perritos de la pradera asumiendo que (1) la peste se inició en una sola población de perritos de la pradera seleccionada al azar (seleccionada entre poblaciones de tamaño mediano o mayor en la cuenca de Conata), o (2) los brotes de peste surgen espontáneamente con una probabilidad de 0,005 por año por colonia (resultando efectivamente en eventos de iniciación espontánea de la plaga en algún lugar de la metapoblación casi cada dos años). Debido a que RAMAS Metapop calcula el número de dispersores en función de las abundancias posteriores a la plaga, también calculamos el número medio de dispersores infectados (expuestos) en función de la abundancia de colonias final, lo que arroja una estimación del 118% (SE 28%). Por lo tanto, establecemos el parámetro de "probabilidad de infección por dispersor" en Ramas Metapop en su valor máximo del 100% (por lo tanto, se subestima potencialmente la tasa de propagación).
+
+### Dispersión
+
+Las tasas de dispersión (proporción de individuos que se dispersan entre cada par de poblaciones definidas) se modelaron en función de las distancias entre el centro y el borde entre las poblaciones, para evitar que poblaciones muy grandes inunden a poblaciones pequeñas a su alrededor. Los perros de la pradera dispersos viajaron una distancia media en línea recta de 2,4 km (Garrett y Franklin 1988). La distancia máxima de dispersión es de 10 km (Knowles 1985 citado en Knowles et al. 2002; Lomolino y Smith 2001). Por lo tanto, usamos una función de distancia de dispersión
 
 $a \cdot e^{\frac{-D}{b}}=0.083 \cdot e^{\frac{-D}{2.4}}$ 
 
-where D is distance from the centre of the source population to the closest edge of the target population, with a maximum dispersal distance of Dmax = 10 km. We calculated the intercept (the a parameter) as follows. Based on the spatial structure of populations, we calculated the average number of neighbors at distances of 0-0.5 km, 0.5-1 km, 1-2.5 km, 2.5-5 km and 5-10 km. We set the intercept such that the total expected rate of dispersal from this average population was about 0.37, which was calculated as the product of two numbers: (1) 59% of yearling males dispersing from a study population (based on data reported in Tables 1 and 2 in Garrett and Franklin 1988), and (2) relative survival rate of dispersers (calculated as 0.62, based on survival rate of 0.9 and 0.56 of residents and dispersers as reported by Garrett and Franklin 1988). For the spatial sensitivity analysis, we used a range of 0.061 to 0.105 for the a parameter, based on ± 0.10 for the total expected rate of dispersal from the average population.
+donde D es la distancia desde el centro de la población de origen hasta el borde más cercano de la población objetivo, con una distancia máxima de dispersión de Dmax = 10 km. Calculamos la intersección (el parámetro a) de la siguiente manera. Con base en la estructura espacial de las poblaciones, calculamos el número promedio de vecinos a distancias de 0-0,5 km, 0,5-1 km, 1-2,5 km, 2,5-5 km y 5-10 km. Establecimos la intersección de modo que la tasa total de dispersión esperada de esta población promedio fuera de aproximadamente 0,37, que se calculó como el producto de dos números: (1) 59% de machos de un año que se dispersan de una población de estudio (según los datos informados en las Tablas 1 y 2 en Garrett y Franklin 1988), y (2) tasa de supervivencia relativa de los dispersores (calculada como 0,62, basada en la tasa de supervivencia de 0,9 y 0,56 de los residentes y dispersores según lo informado por Garrett y Franklin 1988). Para el análisis de sensibilidad espacial, usamos un rango de 0.061 a 0.105 para el parámetro a, basado en ± 0.10 para la tasa total esperada de dispersión de la población promedio. 
 
-The above calculation refers to dispersal rate of yearling males. We calculated the relative dispersal of other age/sex classes as 0.46 for yearling females, 0.1 for adult males and 0.39 for adult females (based on data reported in Tables 1 and 2 in Garrett and Franklin 1988). These numbers are consistent with general observations of age- and sex-specific dispersal: Hoogland (1995) reported that female prairie dogs usually remain with their natal coterie, or they disperse long distance to other colonies, but "short-distance dispersal of females within the home colony almost never occurs" (p.383); male prairie dogs, on the other hand, disperse either long-distance to new colonies (mostly as yearlings, rarely as adults) or short-distance within the home colony.
+El cálculo anterior se refiere a la tasa de dispersión de los machos de un año. Calculamos la dispersión relativa de otras clases de edad / sexo como 0,46 para las hembras de un año, 0,1 para los machos adultos y 0,39 para las hembras adultas (según los datos informados en las Tablas 1 y 2 en Garrett y Franklin 1988). Estos números son consistentes con las observaciones generales de la dispersión específica por edad y sexo: Hoogland (1995) informó que las hembras de perritos de la pradera generalmente permanecen con su camarilla natal, o se dispersan a largas distancias a otras colonias, pero "la dispersión a corta distancia de las hembras dentro de la colonia de origen casi nunca ocurre "(p. 383); Los perros de la pradera machos, por otro lado, se dispersan a grandes distancias hacia nuevas colonias (principalmente como crías de un año, rara vez como adultos) o a distancias cortas dentro de la colonia de origen.
 
-### Spatial correlation
-Correlation of population dynamics among populations was based on a function of center-to-center distances between populations. Because annual fluctuations in vital rates are likely a function of weather conditions, we used temporal correlation in weather conditions as a proxy for describing correlation of population fluctuations.  Specifically, spatial autocorrelation in vital rates was modeled as a function of inter-colony distances based on 30 years of summer rainfall data from 15 sites randomly drawn from within the range of the black-tailed prairie dog. We fitted a negative exponential model using 30 years of summer rainfall data drawn from 15 random locations in the southwestern quarter of South Dakota (PRISM dataset; PRISM Climate Group, Oregon State University, http://prism.oregonstate.edu). The resulting equation, correlation= exp(-D/601), where D is the distance between populations, was used for all model runs and was not modified as part of spatial sensitivity analyses (Fig. 5).
+### Correlación espacial
+
+La correlación de la dinámica poblacional entre poblaciones se basó en una función de las distancias de centro a centro entre poblaciones. Debido a que las fluctuaciones anuales en las tasas vitales son probablemente una función de las condiciones climáticas, usamos la correlación temporal en las condiciones climáticas como un sustituto para describir la correlación de las fluctuaciones de la población. Específicamente, la autocorrelación espacial en las tasas vitales se modeló como una función de las distancias entre colonias basadas en 30 años de datos de lluvia de verano de 15 sitios extraídos aleatoriamente dentro del rango del perrito de las praderas de cola negra. Ajustamos un modelo exponencial negativo utilizando 30 años de datos de lluvia de verano extraídos de 15 ubicaciones aleatorias en el barrio suroeste de Dakota del Sur (conjunto de datos PRISM; PRISM Climate Group, Oregon State University, http://prism.oregonstate.edu). La ecuación resultante, correlación = exp (-D / 601), donde D es la distancia entre poblaciones, se utilizó para todas las ejecuciones del modelo y no se modificó como parte de los análisis de sensibilidad espacial (Fig. 5).
  
  
-![Figure 5. Illustration of the correlation-distance function used for all prairie dog models in this study. Spatial correlation in rainfall was assumed to correspond more generally to spatial correlation in environmental variation.](pdcor1.png)
+![Figura 5. Ilustración de la función de correlación-distancia utilizada para todos los modelos de perros de la pradera en este estudio. Se asumió que la correlación espacial en la lluvia corresponde de manera más general a la correlación espacial en la variación ambiental.](figures/pdcor1.png)
 
  
-## Black-footed Ferret Population Model
+## Modelo de la población de *Black-footed Ferret*
 
-![](ferret2.jpg)
+![](figures/ferret2.jpg)
 
-### Demographic structure and vital rates
+### Estructura demográfica y tasas vitales
 
-We developed an age- and sex-structured matrix model, with 5 female and 5 male age classes. We parameterized the matrix according to a post-breeding census, with survival rates drawn from a Wyoming mark recapture study (Grenier 2008). Juvenile (first year) and adult (yearling and above) survival rates were set at 0.39 (SE 0.17) and 0.67 (SE 0.15), respectively. For sensitivity analysis, we used a range of 0.22 to 0.56 for juvenile survival rate, and 0.52 to 0.82 for adult survival rate, representing one standard error from the mean. Juvenile and adult fecundity were set at 0.73 and 1.25, respectively, based on observations of kits produced from 2004-2006 (Grenier 2008). For sensitivity analysis, we used a range of 0.36 to 0.92 for juvenile fecundity and 0.86 to 1.35 for adult fecundity.
+Desarrollamos un modelo matricial estructurado por edad y sexo, con 5 clases de edad femeninas y 5 masculinas. Parametrizamos la matriz de acuerdo con un censo posterior a la reproducción, con tasas de supervivencia extraídas de un estudio de recaptura de marcas de Wyoming (Grenier 2008). Las tasas de supervivencia de jóvenes (primer año) y adultos (de un año y mayores) se fijaron en 0,39 (SE 0,17) y 0,67 (SE 0,15), respectivamente. Para el análisis de sensibilidad, utilizamos un rango de 0,22 a 0,56 para la tasa de supervivencia juvenil y de 0,52 a 0,82 para la tasa de supervivencia de adultos, lo que representa un error estándar de la media. La fecundidad juvenil y adulta se estableció en 0,73 y 1,25, respectivamente, según las observaciones de los kits producidos entre 2004 y 2006 (Grenier 2008). Para el análisis de sensibilidad, utilizamos un rango de 0,36 a 0,92 para la fecundidad juvenil y de 0,86 a 1,35 para la fecundidad adulta.
 
-### Density dependence, carrying capacity, and initial abundances 
+### 
+Dependencia de la densidad, capacidad de acarreo y abundancias iniciales 
 
-The strong dependence of Black-footed Ferrets on Prairie Dogs as prey suggests density dependence based on resource limitation and linked to resource (prey) dynamics. We therefore modeled Black-footed Ferret density dependence with a Ricker-type density dependence, corresponding to a scramble competition model (Brannstrom and Sumpter 2005).
 
-We ran the black-footed ferret population model assuming either (1) ferrets could only access prairie dog colonies within the Conata Basin, or (2) ferrets could access all 1591 prairie dog colonies within the Conata/Badlands region. In the former case, we assumed the ferrets could only access PD colonies within the Conata Basin, a region of approximately 13,000 ha which we delineated as the aggregate of the three ferret subunits identified in Biggins et al. (2011). Thus, although the PD/plague model (see above) covered a larger area of southwestern South Dakota, only those populations in the Conata Basin were linked to the black-footed ferret model. Because ferret populations were rapidly extirpated by plague if limited to the Conata Basin proper, and because the maximum possible spatial extent for black-footed ferret populations is unclear (see main text), we also ran scenarios in which all prairie dog populations in the Conata-Badlands region were assumed to be available to the ferrets as prey.
+La fuerte dependencia de los BBF sobre los perros de la pradera como presas sugiere una dependencia de la densidad basada en la limitación de recursos y vinculada a la dinámica de los recursos (presas). Por lo tanto, modelamos la dependencia de la densidad del hurón de patas negras con una dependencia de la densidad de tipo Ricker, correspondiente a un modelo de competencia scramble (Brannstrom y Sumpter 2005).
 
-We calculated the black-footed ferret functional response based on the energy balance model of Stromberg et al. (1983), who concluded (via maximum sustainable yield computations) that a habitat area capable of supporting ca. 766 black-tailed prairie dogs  was necessary to support the minimum energy requirements of a single black-footed ferret. We thereby equate a per-capita prey availability of 766 prairie dogs per ferret with a stable long-term ferret population growth rate (R = 1, corresponding to the carrying capacity in the scramble/Ricker density dependence function in RAMAS Metapop). Thus, carrying capacity (K) of the black-footed ferret population was calculated as 1/766 of the PD population size in Conata Basin at each time step. However, in years of high prairie dog abundance, ferrets typically maintain territories supporting more prairie dogs than they need to survive (Biggins et al. 2006b). In other words, the linear relationship between prairie dog density and black-footed ferret carrying capacity breaks down at high prairie dog densities. We capped the value of K at 462 for the Conata region based on the maximum ferret density of 0.04 ferrets per ha suggested by Biggins et al. (2006b). For global sensitivity analysis, we similarly capped the value of K to maintain a maximum density of 0.04 ferrets per ha (therefore, K varied based on landscape extent). Thus, even in years when prairie dog abundance is very high, the carrying capacity of the simulated ferret population does not exceed the maximum limit dictated by territoriality. 
 
-The energy balance model of Stromberg et al. (1983), upon which we based the functional linkage between ferret carrying capacity and prairie dog abundance (see above), assumed that ferrets fed exclusively on prairie dogs. However, a small but non-negligible component (ca. 10%) of the diet of the black-footed ferret is believed to comprise alternate prey items such as mice and lagomorphs (Campbell et al. 1987). The existence of alternate prey species raises the possibility that our models may overestimate the per-capita prey availability necessary to accommodate stable ferret population growth. However, prairie dogs are consumed by many species aside from the black-footed ferret (including badgers, bobcats, and coyotes; Hoogland 1995), raising the possibility that our model may underestimate the number of prairie dogs necessary to support a population of ferrets. Clearly, there is a great deal of uncertainty around this estimate, and we are planning a follow-up study to test the sensitivity of the ferret/prairie dog system to alternative characterizions of the functional and numerical response. Nonetheless, an estimated ferret carrying capacity of 485 at Conata Basin, computed as 1/766 of estimated total prairie dog carrying capacity, is consistent with the observed growth of the reintroduced ferret population at Conata Basin, which was beginning to plateau at abundances ca. 350 prior to the arrival of plague in 2007 (Livieri 2006; Fig. 6).      
+Ejecutamos el modelo de población de hurones de patas negras asumiendo que (1) los BBF solo podían acceder a las colonias de perros de la pradera dentro de la cuenca de Conata, o (2) los hBBF podían acceder a todas las 1591 colonias de perros de la pradera dentro de la región de Conata / Badlands. En el primer caso, asumimos que los BBF solo podían acceder a las colonias de DP dentro de la Cuenca de Conata, una región de aproximadamente 13,000 ha que delineamos como el agregado de las tres sub-unidades de hurones identificadas en Biggins et al. (2011). Por lo tanto, aunque el modelo PD / plaga (ver arriba) cubría un área más grande del suroeste de Dakota del Sur, solo aquellas poblaciones en la Cuenca de Conata estaban vinculadas al modelo del BBF. Debido a que las poblaciones de hurones fueron rápidamente extirpadas por la peste si se limitaban a la cuenca de Conata propiamente dicha, y debido a que la extensión espacial máxima posible para las poblaciones de BBF no está clara (ver texto principal), también ejecutamos escenarios en los que todas las poblaciones de perros de la pradera en Conata -Se suponía que la región de las Tierras Baldías estaba disponible para los BBF como presa.
+
+Calculamos la respuesta funcional de los BBF con base en el modelo de balance energético de Stromberg et al. (1983), quien concluyó (a través de cálculos de rendimiento máximo sostenible) que un área de hábitat capaz de soportar cerca de 766 perros de la BBF para soportar los requisitos mínimos de energía de un solo hurón de patas negras. Por lo tanto, equiparamos una disponibilidad de presas per cápita de 766 perros de la pradera por hurón con una tasa de crecimiento de la población de BBF estable a largo plazo (R = 1, correspondiente a la capacidad de carga en la función de dependencia de la densidad scramble / Ricker en RAMAS Metapop). Por lo tanto, la capacidad de carga (K) de la población de hurones de patas negras se calculó como 1/766 del tamaño de la población de PD en la Cuenca de Conata en cada paso de tiempo. Sin embargo, en años de gran abundancia de perros de la pradera, los BBF suelen mantener territorios que albergan más perros de las praderas de los que necesitan para sobrevivir (Biggins et al. 2006b). En otras palabras, la relación lineal entre la densidad de los perritos de las praderas y la capacidad de carga de los BBF se rompe a altas densidades de perritos de las praderas. Limitamos el valor de K a 462 para la región de Conata con base en la densidad máxima de hurones de 0.04 hurones por ha sugerida por Biggins et al. (2006b). Para el análisis de sensibilidad global, establecimos un tope similar al valor de K para mantener una densidad máxima de 0.04 hurones por ha (por lo tanto, K varió según la extensión del paisaje). Por lo tanto, incluso en años en los que la abundancia de perritos de la pradera es muy alta, la capacidad de carga de la población de hurones simulados no excede el límite máximo dictado por la territorialidad.
+
+
+El modelo de balance energético de Stromberg et al. (1983), en el que basamos el vínculo funcional entre la capacidad de carga de los BBF y la abundancia de los perros de la pradera (ver más arriba), asumió que los BBF se alimentaban exclusivamente de los perros de la pradera. Sin embargo, se cree que un componente pequeño pero no dnegligente (aproximadamente el 10%) de la dieta del BBF comprende presas alternativas como ratones y lagomorfos (conejos) (Campbell et al. 1987). La existencia de especies de presas alternativas plantea la posibilidad de que nuestros modelos sobreestimen la disponibilidad de presas per cápita necesaria para adaptarse al crecimiento estable de la población de hurones. Sin embargo, los perros de la pradera son consumidos por muchas especies además del BBF (incluidos tejones, gatos monteses y coyotes; Hoogland 1995), lo que aumenta la posibilidad de que nuestro modelo subestime el número de perros de la pradera necesarios para mantener una población de BBF. Claramente, existe una gran incertidumbre en torno a esta estimación, y estamos planeando un estudio de seguimiento para probar la sensibilidad del sistema BBF / perro de la pradera a las caracterizaciones alternativas de la respuesta funcional y numérica. No obstante, una capacidad de carga de BBF estimada de 485 en la Cuenca de Conata, calculada como 1/766 de la capacidad de carga total estimada de perritos de la pradera, es consistente con el crecimiento observado de la población de BBF reintroducidos en la Cuenca de Conata, que estaba comenzando a estabilizarse en abundancias ca. 350 antes de la llegada de la peste en 2007 (Livieri 2006; Fig. 6).      
     
     
-![Figure 6. Observed abundance of black-footed ferrets at Conata Basin (from Livieri 2006), plotted alongside a single random replicate trajectory from the ferret population model , indicating the relative agreement between the observed growth of this population since ferrets were reintroduced in 1996, and the simulated trajectories from our model.](ferretplot1.png)
+![Figura 6. Abundancia observada de BBF en la cuenca de Conata (de Livieri 2006), graficada junto con una única trayectoria replicada aleatoria del modelo de población de hurón, lo que indica la concordancia relativa entre el crecimiento observado de esta población desde que se reintrodujeron los hurones en 1996, y el modelo simulado trayectorias de nuestro modelo](figures/ferretplot1.png)
 
  
-We set the maximum growth rate (Rmax) to 1.48, based on the average of two estimates of the rate of (exponential) growth in a Wyoming population (Grenier et al. 2007). One estimate is 1.35, the eigenvalue of the matrix fitted to mark-recapture data, and the other estimate is 1.60, the (scalar) rate of growth in the minimum number of live ferrets from 2000 to 2006. For sensitivity analysis, we used these two values.
+Establecimos la tasa de crecimiento máxima (Rmax) en 1,48, con base en el promedio de dos estimaciones de la tasa de crecimiento (exponencial) en una población de Wyoming (Grenier et al. 2007). Una estimación es 1.35, el valor propio de la matriz ajustada a los datos de marcado-recaptura, y la otra estimación es 1.60, la tasa (escalar) de crecimiento en el número mínimo de BBF vivos de 2000 a 2006. Para el análisis de sensibilidad, usamos estos dos valores.
 
-Black-footed ferret abundance for each iteration was initialized using  known reintroduction events in the Conata Basin , as described by Livieri (2006; i.e., dates and ages of releases were modeled explicity).  Ferret population viability was summarized using three metrics: quasi-extinction risk (defined as the proportion of simulation runs falling below 5 individuals at year 60 of the simulation), expected minimum abundance (defined as the minimum abundance after year 10 of the trajectory averaged over all 1000 simulations; McCarthy and Thompson 2001), and mean final abundance (at year 60).
+La abundancia de BBF para cada iteración se inicializó utilizando eventos de reintroducción conocidos en la Cuenca de Conata, como lo describe Livieri (2006; es decir, las fechas y edades de las liberaciones se modelaron explícitamente). La viabilidad de la población de BBF se resumió utilizando tres métricas: riesgo de cuasi extinción (definido como la proporción de ejecuciones de simulación que caen por debajo de 5 individuos en el año 60 de la simulación), abundancia mínima esperada (definida como la abundancia mínima después del año 10 de la trayectoria promediada durante todas las 1000 simulaciones; McCarthy y Thompson 2001), y la abundancia final media (en el año 60).
 
-### Variability
-We estimated temporal variability in ferret vital rates (i.e., variability not due to fluctuations in the prey base, which was modeled explicitly via variation in K) by running the linked ferret/prairie dog metamodel for Conata basin under plague-free conditions and adjusting the ferret temporal variability parameter  to match the observed annual variability from the re-established ferret population in the Conata Basin (Livieri 2006; Fig. 6). Although most of the variability in black-footed ferret populations is likely due to variation in the prey base (here translated into variation in K), variability in other environmental factors may contribute to variability in black-footed ferret vital rates. To estimate the magnitude of this contribution, we created a retrospective model of the growth of the Conata Basin black-footed ferret population from 1996 (shortly after its introduction) until 2007 (before the first plague outbreak) based on Livieri (2006). We reconstructed the Conata reintroduction effort using RAMAS Metapop, using management events (introduction and harvest) to schedule the history of ferret introductions and translocations described by Livieri (2006). We ran the simulations with demographic stochasticity, vital rates specified as above, and carrying capacity linked to natural temporal variability in plague-free prairie dog population density (see above). Variability in black-footed ferret population growth in the early years of the Conata reintroduction program was likely related to different release strategies and predator exclusion measures (Livieri 2006). Ferret releases largely ended in 1999, and therefore we assumed that population variability observed from 2001 through 2007 (prior to sylvatic plague epizootic) were due primarily to natural variability. Holding all other sources of variability constant (demographic stochasticity and variability in prey abundance), we adjusted the coefficient of variation for environmental variation in black-footed ferret vital rates so that the median simulated population variance (computed as the variance of (Nt+1/Nt), n = 1000 simulations) matched the observed variability in the Conata time series. The CV value that best fit the observed Conata time series (Fig. 6) was 11.5%, and this value was used to compute temporal process variation for all vital rates. For sensitivity analysis, the CV for ferret vital rates varied between 5 and 16%, which was the range of CV values for which the observed variability fell within the interquartile range from the simulations. 
-
+### Variabilidad
+Estimamos la variabilidad temporal en las tasas vitales de los hurones (es decir, la variabilidad no debida a las fluctuaciones en la base de la presa, que se modeló explícitamente a través de la variación en K) ejecutando el metamodelo vinculado BBF/ perro de la pradera para la cuenca de Conata en condiciones libres de plaga y ajustando parámetro de variabilidad temporal del BBF para igualar la variabilidad anual observada de la población de BBF restablecida en la Cuenca de Conata (Livieri 2006; Fig. 6). Aunque la mayor parte de la variabilidad en las poblaciones de BBF probablemente se deba a la variación en la base de presas (aquí traducida en variación en K), la variabilidad en otros factores ambientales puede contribuir a la variabilidad en las tasas vitales del hurón de patas negras. Para estimar la magnitud de esta contribución, creamos un modelo retrospectivo del crecimiento de la población de BBF de la Cuenca de Conata desde 1996 (poco después de su introducción) hasta 2007 (antes del primer brote de peste) basado en Livieri (2006). Reconstruimos el esfuerzo de reintroducción de Conata usando RAMAS Metapop, usando eventos de manejo (introducción y cosecha) para programar la historia de introducciones y traslocaciones de hurones descritas por Livieri (2006). Realizamos las simulaciones con estocasticidad demográfica, tasas vitales especificadas anteriormente y capacidad de carga vinculada a la variabilidad temporal natural en la densidad de población de perritos de la pradera libre de plaga (ver arriba). La variabilidad en el crecimiento de la población de hurones de patas negras en los primeros años del programa de reintroducción de Conata probablemente estuvo relacionada con diferentes estrategias de liberación y medidas de exclusión de depredadores (Livieri 2006). Las liberaciones de BBF terminaron en gran medida en 1999 y, por lo tanto, asumimos que la variabilidad de la población observada desde 2001 hasta 2007 (antes de la epizootia de la peste selvática) se debió principalmente a la variabilidad natural. Manteniendo constantes todas las demás fuentes de variabilidad (estocasticidad demográfica y variabilidad en la abundancia de presas), ajustamos el coeficiente de variación para la variación ambiental en las tasas vitales del hurón de patas negras para que la mediana de la varianza de la población simulada (calculada como la varianza de (Nt + 1 / Nt), n = 1000 simulaciones) coincidió con la variabilidad observada en la serie de tiempo de Conata. El valor de CV que mejor se ajusta a la serie de tiempo de Conata observada (Fig. 6) fue 11,5%, y este valor se utilizó para calcular la variación del proceso temporal para todas las tasas vitales. Para el análisis de sensibilidad, el CV de las tasas vitales de hurones varió entre el 5 y el 16%, que fue el rango de valores de CV para los que la variabilidad observada cayó dentro del rango intercuartílico de las simulaciones.
 
 [--go to next lecture--](LECTURE15.html)
 

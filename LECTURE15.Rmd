@@ -1,12 +1,15 @@
 ---
-title: "Parameter estimation!"
-author: "NRES 470/670"
-date: "Spring 2021"
-output: 
+title: "Estimando los Parametros"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -15,59 +18,54 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ```{r echo=FALSE}
 
-############################################################
-####                                                    ####  
-####  NRES 470/670, Lecture 15                          ####
-####                                                    ####
-####  Kevin Shoemaker                                   #### 
-####  University of Nevada, Reno                        ####
-####                                                    #### 
-############################################################
 
 
 ############################################################
-####  Parameter estimation                              ####
+####  Estimación de Parametros                          ####
 ############################################################
 
 
 ```
 
-# Parameter estimation for wildlife population models!
+# Estimación de parámetros para modelos de población de vida silvestre.
 
-We have now gone through the basic mechanics of population modeling. But we have barely discussed where the parameter estimates come from!
 
-This is the focus of the current lecture!
+Ahora hemos pasado por la mecánica básica del modelado de poblaciones. ¡Pero apenas hemos discutido de dónde provienen las estimaciones de los parámetros!
 
-## Data requirements
 
-### Scalar models (no age structure)
-- Initial abundance ($N_0$)
-- Mean population growth rate ($r$ or $r_{max}$)
-- Variation in population growth rate (standard deviation for a normal distribution representing environmental stochasticity)
-- Carrying capacity of the population ($K$; equilibrium abundance of logistic model)
+¡Este es el tema central de la conferencia actual!
 
-### Stage-structured (life history) models
-- Initial abundance ($\mathbf{N_0}$) (vector of initial abundances for all stages)
-- Stage-specific vital rates (fecundity, survival; fill in a transition matrix) 
-- Temporal variation in stage-specific vital rates (environmental stochasticity) 
-- Dependence of vital rates on density (e.g., how fecundity decreases as population gets more crowded)    
-    - Which vital rates are density-dependent?    
+## Requerimientos de datos
+
+### Modelos escalares (sin estructura de edad)
+- Abundancia inicial ($N_0$)
+- Tasa media de crecimiento de la población ($r$ or $r_{max}$)
+- Variación en la tasa de crecimiento de la población (desviación estándar de una distribución normal que representa la estocasticidad ambiental)
+- 
+Capacidad de carga (accareo) de la población ($K$; abundancia de equilibrio del modelo logístico)
+
+### Modelos estructurados por etapas (historia de vida)
+- Abundancia inicial($\mathbf{N_0}$) (vector de abundancias iniciales para todas las etapas)
+- Tasas vitales específicas de la etapa (fecundidad, supervivencia; complete una matriz de transición)
+- Variación temporal en las tasas vitales específicas de la etapa (estocasticidad ambiental)
+- Dependencia de las tasas vitales de la densidad (p. Ej., Cómo disminuye la fecundidad a medida que la población se vuelve más poblada)
+- ¿Qué tasas vitales dependen de la densidad? 
   
-### Metapopulation (spatial) models
-- Spatial distributions of suitable habitat patches (define patches)
-- Spatial variation in vital rates (e.g., variation in habitat quality among different patches)
-- Correlation in environmental stochasticity among patches 
-- Dispersal rates among habitat patches
-- Habitat requirements of different life stages
-- For "classical" metapopulation models: rates of colonization and extinction in habitat patches
+### Modelos de metapoblación (espaciales)
+- Distribuciones espaciales de parches de hábitat adecuados (definir parches)
+- Variación espacial en las tasas vitales (por ejemplo, variación en la calidad del hábitat entre diferentes parches)
+- Correlación en estocasticidad ambiental entre parches.
+- Tasas de dispersión entre parcelas de hábitat.
+- Requisitos de hábitat de diferentes etapas de la vida.
+- Para modelos de metapoblación "clásicos": tasas de colonización y extinción en parcelas de hábitat
 
-## Data sources!
+## ¡Fuentes de datos!
 
-### Life tables
+### Tablas de vida
 
-As you recall, classical life tables represent a single cohort that has been followed over time until the last one has died. 
+Como recordará, las tablas de vida clásicas representan un solo cohorte que se ha seguido a lo largo del tiempo hasta que la última ha muerto.
 
-NOTE: in practice, it is nearly impossible to follow a single cohort over time in the wild (although life tables are commonly available for captive populations). Therefore, in practice, most published life tables for wild populations use the **static life table**, which compares population size from multiple different cohorts (across the entire range of ages), at a single point in time. Static life tables assume the population has a stable age structure —- that is, the proportion of individuals in each age class does not change from generation to generation. This assumption is often violated in natural populations, but in the absence of better data, this method can be better than nothing!
+NOTA: en la práctica, es casi imposible seguir uno solo cohorte a lo largo del tiempo en la naturaleza (aunque las tablas de vida están comúnmente disponibles para las poblaciones en cautiverio). Por lo tanto, en la práctica, la mayoría de las tablas de vida publicadas para las poblaciones silvestres utilizan la **tabla de vida estática **, que compara el tamaño de la población de múltiples cohortes diferentes (en todo el rango de edades), en un solo punto en el tiempo. Las tablas de vida estáticas asumen que la población tiene una estructura de edad estable, es decir, la proporción de individuos en cada clase de edad no cambia de generación en generación. Este supuesto a menudo se viola en poblaciones naturales, pero en ausencia de mejores datos, ¡este método puede ser mejor que nada!
 
 
 ```{r echo=FALSE}
@@ -80,194 +78,206 @@ knitr::kable(lifetable,caption="",col.names = c("x","S(x)","b(x)","l(x)","g(x)")
 ```
 
 **PROS**
-- Summary of survival and fecundity schedules, often available in the literature. Be careful when using data from captive populations!
+
+- Resumen de los programas de supervivencia y fecundidad, a menudo disponible en la literatura. ¡Tenga cuidado al utilizar datos de poblaciones cautivas!
 
 **CONS**
-- Makes unrealistic assumptions (especially the *static life table* method).
-- Can not be used to estimate environmental stochasticity
-- Can not be used to estimate density dependence
-- Ignores **imperfect detection** and the fact that some age classes are less detectable than others   
-- Remember, it's not always perfectly straightforward to translate into a matrix-based (age-structured) population model- but it can be done!
+- Hace suposiciones poco realistas (especialmente el método * tabla de vida estática *).
+- No se puede utilizar para estimar la estocasticidad ambiental.
+- No se puede utilizar para estimar la dependencia de la densidad
+- Ignora la ** detección imperfecta ** y el hecho de que algunas clases de edad son menos detectables que otras
+- Recuerde, no siempre es perfectamente sencillo traducirlo en un modelo de población basado en matrices (estructurado por edad), ¡pero se puede hacer!
 
-### Census data!
+### ¡Datos del censo!
 
-Census data is ultimately what we all **wish** we had! It means we follow a population over time, and we know exactly how many individuals of each stage are in the population each year. We have *perfect detection!!!!*
+¡Los datos del censo son, en última instancia, lo que todos ** deseamos ** tener! Significa que seguimos una población a lo largo del tiempo y sabemos exactamente cuántos individuos de cada etapa hay en la población cada año. Tenemos * detección perfecta !!!! *
 
-In this case, computing survival and fecundity (and variation in these parameters, and density-dependence) is relatively straightforward!
+En este caso, calcular la supervivencia y la fecundidad (y la variación de estos parámetros y la dependencia de la densidad) es relativamente sencillo.
 
-![](census1.png)
+![](figures/census1.png)
 
-![](census2.png)
+![](figures/census2.png)
 
-![](census3.png)
+![](figures/census3.png)
 
 **PROS**
-- Can estimate survival and fecundity, env. stochasticity, density dependence- pretty much everything we want for a population model!
+- Puede estimar la supervivencia y la fecundidad, env. estocasticidad, dependencia de la densidad, ¡prácticamente todo lo que queremos para un modelo de población!
 
-**CONS**
-- Very rarely (if ever) available!!
-- Ignores **imperfect detection** (assumes perfect detection), which is almost always not realistic.
+
+- Muy raramente (si es que alguna vez) disponible !!
+- Ignora la ** detección imperfecta ** (asume una detección perfecta), que casi siempre no es realista.
 
 ### Capture-mark-recapture (CMR)
 
 **PROS**
-- Can estimate survival, variation in survival, lambda, recruitment, dispersal rates. 
-- Probably the most widely used source of data for population models!
+- Puede estimar supervivencia, variación en supervivencia, lambda, reclutamiento, tasas de dispersión.
+- ¡Probablemente la fuente de datos más utilizada para modelos de población!
 
 **CONS**
-- Few downsides, although the analytical techniques can be difficult to master
-- Mounting a proper CMR study can be very costly, and require many years of data. 
-- Estimating landscape-scale movements can require an even more costly and time-consuming study.
-- Emigration and survival can be difficult to tease apart in many cases. 
+- Pocas desventajas, aunque las técnicas analíticas pueden ser difíciles de dominar
+- Montar un estudio CMR adecuado puede resultar muy costoso y requerir muchos años de datos.
+- La estimación de los movimientos a escala del paisaje puede requerir un estudio aún más costoso y que requiere más tiempo.
+- En muchos casos, la emigración y la supervivencia pueden ser difíciles de separar.
 
-See below for more! Also this is the main focus of the Population Dynamics course (NRES 488, the next course in the Wildlife Ecology and Conservation sequence!)
+¡Vea más abajo para más! Además, este es el enfoque principal del curso de Dinámica de la población (NRES 488, ¡el próximo curso en la secuencia de Ecología y Conservación de la Vida Silvestre!)
 
-### Data on spatial structure/habitat
-- See [links](FINAL_PROJECTS.html) on Final projects page
+### Datos sobre estructura espacial / hábitat
+- Vea [links](FINAL_PROJECTS.html) en la página de proyectos finales
 
-### What if there's "no data"?
+### ¿Qué pasa si "no hay datos"?
 
-Remember the ["Stone Soup" analogy!](https://en.wikipedia.org/wiki/Stone_Soup) - even when you think there's no data, there probably is more than there initially appears!
+Recuerda el ["Stone Soup" analogy!](https://en.wikipedia.org/wiki/Stone_Soup) - incluso cuando crea que no hay datos, ¡probablemente haya más de los que parece inicialmente!
 
-- Use algebra to construct a full age-structured transition matrix from available information
-    - E.g., we are missing information on hatchling survival. We only know: 
-        - Juvenile and adult survival rates      
-        - Nesting success     
-        - Population growth (lambda) is 1.09     
-        - Now we can solve for hatchling survival!    
-        - For an example of this, see [Congdon et al 1993](congdon et al 1993.pdf)     
-- Simplify! (Models are always simplified representations of reality)    
-    - Ignore age structure? (i.e., use scalar model)    
-    - Ignore density-dependence?      
-    - Ignore trophic interactions (we usually make this simplification anyway!)      
-    - Ignore abundance entirely (e.g., use classical metapopulation model)       
-- Conservative strategies (use *worst case scenario*)!    
-    - Density-independent model is conservative, so if you don't have data on D-D, then maybe just ignore it!     
-    - With parameter uncertainty, use the worst case scenario    
-    - Under decline trends, use the worst case scenario   
-- Use data from similar species!      
-   - E.g., tamarin species have similar life histories, so use data on golden lion tamarins to model golden-headed lion tamarins.
-- Expert Opinion
-    - See below... 
-- National Databases
-    - See [links](FINAL_PROJECTS.html) on Final projects page
+- Usar álgebra para construir una matriz de transición estructurada por edades completa a partir de la información disponible.
+    - Por ejemplo, nos falta información sobre la supervivencia de las crías. Solo sabemos:
+        - Tasas de supervivencia de jóvenes y adultos
+        - Éxito de anidación
+        - El crecimiento de la población (lambda) es 1.09
+        - ¡Ahora podemos resolver la supervivencia de las crías!
+        - Para un ejemplo de esto, ver [Congdon et al 1993] (congdon et al 1993.pdf)
+- ¡Simplifica! (Los modelos son siempre representaciones simplificadas de la realidad)
+    - ¿Ignora la estructura de edad? (es decir, use el modelo escalar)
+    - ¿Ignora la dependencia de la densidad?
+    - Ignore las interacciones tróficas (¡generalmente hacemos esta simplificación de todos modos!)
+    - Ignorar la abundancia por completo (por ejemplo, utilizar el modelo de metapoblación clásico)
+- Estrategias conservadoras (use * el peor de los casos *)!
+    - El modelo independiente de la densidad es conservador, por lo que si no tiene datos en D-D, ¡tal vez simplemente ignórelo!
+    - Con incertidumbre de los parámetros, utilice el peor de los casos
+    - Bajo tendencias de declive, use el peor de los casos
+    
+- ¡Utilice datos de especies similares!
+   - Por ejemplo, las especies de tamarinos tienen historias de vida similares, así que utilice datos sobre titíes león dorado para modelar los titíes león con cabeza dorada.
+- Opinión experta
+    - Vea abajo...
+- Bases de datos nacionales
+    - Vea [links](FINAL_PROJECTS.html) en la página de proyectos finales
 - [Allometries](https://www.astronomyclub.xyz/maternal-effect/does-ecology-have-laws.html)
-    - e.g., Fenchel's allometry
-    - This type of thinking (looking for broad patterns across species) is often called "Macroecology"
+    - por ejemplo, la alometría de Fenchel
+    - Este tipo de pensamiento (que busca patrones amplios entre especies) a menudo se denomina "macroecología".
     
     
-![](allometry2.jpg)
+![](figures/allometry2.jpg)
 
-![](allometry1.jpg)
+![](figures/allometry1.jpg)
 
-## Aside- is expert opinion okay to use???
-
-- Not ideal, because it is hard or impossible to validate, and hard to document, but ...
-- That is what will be done in any case!
-- And it is better to use it than to do nothing
-- And it is better to document that expert opinion was used than to proceed with conservation planning in the absence of stating sources and assumptions
-- It is a starting point (and sometimes a reasonable one)
-
-
-## Capture-mark-recapture (CMR) analysis
+## Aparte, ¿se puede utilizar la opinión de un experto?
+- No es ideal, porque es difícil o imposible de validar y difícil de documentar, pero ...
+- ¡Eso es lo que se hará en cualquier caso!
+- Y es mejor usarlo que no hacer nada
+- Y es mejor documentar que se utilizó la opinión de expertos que proceder con la planificación de la conservación en ausencia de fuentes y supuestos establecidos.
+- Es un punto de partida (y a veces uno razonable)
 
 
-![](statistics1.png)
+## Análisis de captura-marca-recaptura (CMR): Capture-mark-recapture (CMR) analysis
 
-### PVA Parameters estimable from CMR data
 
-- Survival rate (possibly age or size structured)
-- Fecundity (entry of new individuals in the population)
-- Recruitment (entry of new individuals into the adult population)  
-- Abundance
-- Lambda (finite rate of growth)
-- Environmental influences on survival rates and fecundity
-- Temporal process variance (env. stochasticity)
-- Dispersal rates
+![](figures/statistics1.png)
 
-### The data needed for CMR analysis: capture histories
+### Parámetros PVA estimables a partir de datos CMR
 
-Consider a project designed to monitor a population of alligators. These alligators were monitored for four years, from 1976 to 1979. 
+- Tasa de supervivencia (posiblemente estructurada por edad o tamaño)
+- Fecundidad (entrada de nuevos individuos en la población)
+- Reclutamiento (ingreso de nuevos individuos a la población adulta)
+- abundancia
+- Lambda (tasa de crecimiento finita)
+- Influencias ambientales en las tasas de supervivencia y fecundidad.
+- Varianza del proceso temporal (estocasticidad env.)
+- Tasas de dispersión
 
-Each row in the following table represents a unique possible history of captures:
+### Los datos necesarios para el análisis CMR: historiales de captura
 
-A "1" indicates that an animal was successfully captured in a given year, and subsequently released. 
+Considere un proyecto diseñado para monitorear una población de caimanes. Estos caimanes fueron monitoreados durante cuatro años, desde 1976 hasta 1979.
 
-A "0" indicates that an animal was not successfully captured in a given year.
+Cada fila de la siguiente tabla representa un historial de capturas posible único:
 
-A "2" indicates that an animal was successfully captured in a given year but was not released back into the population (probably died due to handling or capture).
+Un "1" indica que un animal fue capturado con éxito en un año determinado y posteriormente liberado.
 
-![](caphist1.png)
+Un "0" indica que un animal no fue capturado con éxito en un año determinado.
 
-### Two main types of CMR analyses
+Un "2" indica que un animal fue capturado con éxito en un año determinado, pero no fue devuelto a la población (probablemente murió debido a la manipulación o captura).
 
-#### Closed population models
-We assume that the population is closed (no BIDE processes!). That is, abundance does not change!
-We attempt to estimate abundance!
 
-- No mortality
-- No births
-- No immigration
-- No emigration
-- All individuals are observable (but not necessarily observed...)
+![](figures/caphist1.png)
 
-![](peterson1.png)
+### Dos tipos principales de análisis CMR
 
-Parameters estimated:
+#### Modelos poblacionales cerrados
 
-- Abundance
+Suponemos que la población está cerrada (¡sin procesos BIDE!). Es decir, ¡la abundancia no cambia!
+¡Intentamos estimar la abundancia!
 
-M = the number of individuals marked in the first sample   
-C = total number of individuals captured in 2nd sample   
-R = number of individuals in 2nd sample that are marked   
 
-We can use the following formula to estimate abundance (the **lincoln-peterson estimator**): 
+- Sin mortalidad
+- Sin nacimientos
+- Sin inmigración
+- Sin emigración
+- Todos los individuos son observables (pero no necesariamente observados ...)
+
+![](figures/peterson1.png)
+
+Parámetros estimados:
+
+- abundancia
+
+M = el número de individuos marcados en la primera muestra
+C = número total de individuos capturados en la segunda muestra
+R = número de individuos en la segunda muestra que están marcados
+
+Podemos usar la siguiente fórmula para estimar la abundancia (el **estimador lincoln-peterson **):
 
 $N = \frac{M \times C}{R}$
 
 
-#### Open population models
-We assume that the population is open to one or more of the BIDE processes. That is, abundance CAN change! 
-We attempt to estimate the processes driving abundance change (often, survival rates)
+#### Modelos de población abiertos
 
-- Populations open to birth, death, and possibly even migration (abundance can change during the study).
-- Enables estimation of the drivers of population dynamics over extended time periods 
-- Often of great interest to ecologists and managers.
+Suponemos que la población está abierta a uno o más de los procesos BIDE. Es decir, ¡la abundancia PUEDE cambiar!
+Intentamos estimar los procesos que impulsan el cambio de abundancia (a menudo, tasas de supervivencia)
+
+- Poblaciones abiertas al nacimiento, la muerte y posiblemente incluso la migración (la abundancia puede cambiar durante el estudio).
+- Permite la estimación de los impulsores de la dinámica de la población durante períodos de tiempo prolongados
+- A menudo de gran interés para ecologistas y gestores.
 
 
-### Maximum likelihood: a framework for statistical inference!
+### Máxima verosimilitud: ¡un marco para la inferencia estadística!
 
-**FOR CMR ANALYSIS**:
-- What value of survival maximizes the probability of generating the observed capture histories?
+**PARA ANÁLISIS CMR **:
+- ¿Qué valor de supervivencia maximiza la probabilidad de generar los historiales de captura observados?
 
-EXAMPLE:
+EJEMPLO:
 
-Consider the following capture history for a single individual: 
+Considere el siguiente historial de captura de una sola persona:
 
 ```
 1 0 1 1
 ```
 
-This individual was marked and released upon initial capture. It was not captured in the next survey, but then was captured in each of the next two subsequent surveys.  
+Este individuo fue marcado y liberado en la captura inicial. No se capturó en la siguiente encuesta, pero luego se capturó en cada una de las siguientes dos encuestas posteriores.
 
-What is the probability of observing this capture history?
+¿Cuál es la probabilidad de observar este historial de capturas?
 
-> [(Probability of surviving from time 1 to 2) X (Probability of not being seen at time 2)] X [(Probability of surviving from time 2 to 3) X (Probability of being seen at time 3)] X [(Probability of surviving from time 3 to 4) X (Probability of being seen at time 4)]
 
-This can be written:
+
+> [(Probabilidad de sobrevivir del tiempo 1 al 2) X (Probabilidad de no ser visto en el momento 2)] X [(Probabilidad de sobrevivir del tiempo 2 al 3) X (Probabilidad de ser visto en el momento 3)] X [(Probabilidad de sobrevivir del tiempo 3 al 4) X (Probabilidad de ser visto en el tiempo 4)]
+
+-> [(Probability of surviving from time 1 to 2) X (Probability of not being seen at time 2)] X [(Probability of surviving from time 2 to 3) X (Probability of being seen at time 3)] X [(Probability of surviving from time 3 to 4) X (Probability of being seen at time 4)]
+
+Esto se puede escribir:
 
 $L_1 = \phi_1(1-p_2) \cdot \phi_2p_3 \cdot \phi_3p_4$
 
 
-How about the following capture history for a single individual: 
+¿Qué tal el siguiente historial de captura para una sola persona?
 
 ```
 1 0 1 0
 ```
 
-What is the probability of observing this capture history?
+¿Cuál es la probabilidad de observar este historial de capturas?
 
-> [(Probability of surviving from time 1 to 2) X (Probability of not being seen at time 2)] X [(Probability of surviving from time 2 to 3) X (Probability of being seen at time 3)] X
+
+> [(Probabilidad de sobrevivir del tiempo 1 al 2) X (Probabilidad de no ser visto en el momento 2)] X [(Probabilidad de sobrevivir del tiempo 2 al 3) X (Probabilidad de ser visto en el momento 3)] X
+
+-> [(Probability of surviving from time 1 to 2) X (Probability of not being seen at time 2)] X [(Probability of surviving from time 2 to 3) X (Probability of being seen at time 3)] X
 
 -- either -- 
 
@@ -277,39 +287,41 @@ What is the probability of observing this capture history?
 
 >  [(Probability of NOT surviving from time 3 to 4) 
 
-This can be written:
+
+Esto se puede escribir:
 
 $L_1 = \phi_1(1-p_2) \cdot \phi_2p_3 \cdot \left \{(1-\phi_3)+\phi_3(1-p_4)  \right \}$
 
-**Q**: if survival were 100% and capture probability were 100%, what is the probability of observing the above capture histories?
+**P **: si la supervivencia fuera del 100% y la probabilidad de captura fuera del 100%, ¿cuál es la probabilidad de observar los historiales de captura anteriores?
 
-**Q**: what about if survival was 100% and capture probability was 75%? 
+**P **: ¿y si la supervivencia fuera del 100% y la probabilidad de captura fuera del 75%?
 
-Maximum likelihood estimation is the process of finding those values of the parameters $\phi$ and $p$ that would be most *likely* to generate the observed capture histories!
+La estimación de máxima verosimilitud es el proceso de encontrar los valores de los parámetros $ \ phi $ y $ p $ que serían más * probables * para generar los historiales de captura observados.
 
-This model is known as the *Cormack-Jolly-Seber* model (CJS), and is the most common analysis performed by Program MARK. 
+Este modelo se conoce como el modelo *Cormack-Jolly-Seber * (CJS) y es el análisis más común realizado por el programa MARK.
 
-**Q**: Why is $\phi$ also known as "apparent" survival? Why is it not "true" survival???
+*P **: ¿Por qué $ \ phi $ también se conoce como supervivencia "aparente"? ¿Por qué no es la "verdadera" supervivencia ???
 
-#### Key assumptions of the CJS model
+#### Supuestos clave del modelo CJS
 
-- All individuals in population are equally detectible at each sampling occasion (each capture session represents a totally random sample from the population)    
-- Marks are not lost or missed by surveyors    
-- All emigration is permanent (equivalent to a mortality)    
+- Todos los individuos de la población son igualmente detectables en cada ocasión de muestreo (cada sesión de captura representa una muestra totalmente aleatoria de la población)
+- Los topógrafos no pierden ni pierden las marcas
+- Toda emigración es permanente (equivalente a una mortalidad)  
 
 ### Program MARK
 
-MARK is a numerical maximum-likelihood engine designed for mark-recapture analysis. You input a capture history dataset and MARK will output results such as survival rate and capture probability!! 
+MARK es un motor numérico de máxima verosimilitud diseñado para el análisis de marcado-recaptura. Ingresa un conjunto de datos del historial de captura y MARK generará resultados como la tasa de supervivencia y la probabilidad de captura. 
 
-## Example of an open-population mark-recapture analysis!
+## ¡Ejemplo de un análisis de marcado-recaptura de población abierta!
 
-Let's run through a CJS analysis in R! To follow along, please [save this script and load it up in Rstudio](LECTURE15.R).
+¡Repasemos un análisis CJS en R! Para seguir adelante, por favor [guarde este script y cárguelo en Rstudio](LECTURE15.R).
 
-NOTE: this analysis includes both males and females (unlike the example in Lab 7), so the results will look somewhat different!
 
-![](dipper1.png)
+NOTA: este análisis incluye tanto hombres como mujeres (a diferencia del ejemplo del laboratorio 7), por lo que los resultados se verán algo diferentes.
 
-The European dipper data is THE classic example of a CMR dataset. Let's look at it!
+![](figures/dipper1.png)
+
+Los datos del cazo europeo son EL ejemplo clásico de un conjunto de datos CMR. ¡Veámos!
 
 
 ```{r}
@@ -324,8 +336,7 @@ head(dipper,10)
 
 ```
 
-
-Here we use the "marked" package in R (instead of MARK) to do the ML parameter estimation!
+Aquí usamos el paquete "marked" en R (en lugar de MARK) para hacer la estimación del parámetro ML.
 
 ```{r}
 
@@ -422,23 +433,25 @@ errbar(1:nrow(Phi_by_year),Phi_by_year$estimate,Phi_by_year$ucl,Phi_by_year$lcl,
 
 ```
 
-What is our estimate for mean survival?
+
+¿Cuál es nuestra estimación de supervivencia media?
 
 ```{r}
 
 #######
-# Compute the mean survival rate for the population
+# Calcule la tasa de supervivencia media de la población.
 
 mean(Phi_by_year$estimate)
 
 ```
 
-What is the environmental stochasticity?
+
+¿Qué es la estocasticidad ambiental?
 
 ```{r}
 
 #######
-# Compute the environmental variablility in annual survival rates. 
+# Calcule la variabilidad ambiental en las tasas de supervivencia anuales.
 
 sd(Phi_by_year$estimate)
 
@@ -446,9 +459,9 @@ sd(Phi_by_year$estimate)
 
 ### Program MARK!
 
-MARK is free software, and can be downloaded from [here](http://warnercnr.colostate.edu/~gwhite/mark/mark.htm)
+MARK es un software gratuito y se puede descargar desde[here](http://warnercnr.colostate.edu/~gwhite/mark/mark.htm)
 
-The demo from Lab 7 can be found [here](LAB7.html#open-population_models)
+La demostración de Lab 7 se puede encontrar [here](LAB7.html#open-population_models)
 
 [--go to next lecture--](LECTURE16.html)
 
