@@ -1,12 +1,13 @@
 ---
-title: "Species interactions: competition!"
-author: "NRES 470/670"
-date: "Spring 2021"
-output: 
+title: "Interacciones de especies: competencia!"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -15,122 +16,124 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ```{r echo=FALSE}
 
-############################################################
-####                                                    ####  
-####  NRES 470/670, Lecture 16                          ####
-####                                                    ####
-####  Kevin Shoemaker                                   #### 
-####  University of Nevada, Reno                        ####
-####                                                    #### 
-############################################################
-
-
-############################################################
-####  Competition                                       ####
-############################################################
-
-
 ```
 
 
-## Species interactions
+## Interacciones de especies
 
-PVA, as you may recall, tends to be very single-species focused. 
+El PVA, como recordará, tiende a estar muy centrado en una sola especie.
 
-BUT population ecology doesn't have to be single-species focused. There are many cases where we would do well to think about species interactions specifically.
+PERO la ecología de la población no tiene que estar centrada en una sola especie. Hay muchos casos en los que haríamos bien en pensar específicamente en las interacciones de las especies.
 
-From a modeling standpoint, this is where things really get interesting -- with species interactions, we start to see some really unpredictable emergent properties!
+Desde el punto de vista del modelado, aquí es donde las cosas se ponen realmente interesantes: con las interacciones de las especies, ¡comenzamos a ver algunas propiedades emergentes realmente impredecibles!
 
-Species interactions can be classified according to the effect of the interaction on each species: (+,+), (+,-), (+,0), (-,-), (-,0), (0,0)
+Las interacciones de las especies se pueden clasificar según el efecto de la interacción en cada especie: (+, +), (+, -), (+, 0), (-, -), (-, 0), (0,0 )
 
-**Q**: Can you name each of the above interaction classes? [tophat]
+**P **: ¿Puede nombrar cada una de las clases de interacción anteriores? [Edmodo]
 
-## Competition
 
-### What is competition?
+## Competencia
 
-Competition is defined a type of inter-species interaction by which the *population vital rates of each species is negatively influenced by the presence of the other*. 
+### ¿Qué es la competencia?
 
-There is not much essential difference between within-species competition (one of the primary mechanisms for density-dependent population regulation) and among-species competition for resources!
+La competencia se define como un tipo de interacción entre especies mediante la cual *las tasas vitales de población de cada especie se ven influenciadas negativamente por la presencia de la otra *.
 
-#### Exploitation
-This is the kind of competition we probably think about first- all individuals are competing for resources and all have similar competitive abilities. It's a free-for-all: everyone gets some piece of a limited pie!  
+¡No hay mucha diferencia esencial entre la competencia dentro de las especies (uno de los mecanismos principales para la regulación de la población dependiente de la densidad) y la competencia entre especies por los recursos!
 
-Competition for resources within species is often the mechanism behind the density-dependent processes that we have already discussed this class. Within a single species, this is often called "*scramble competition*".  
 
-#### Interference
-Sometimes the negative effect of one actor (individual of the same or another species) on another actor is due to direct behavioral exclusion. This is the case with birds that maintain territories and keep other birds off the territory. 
+#### Explotación
 
-Some plants engage in interference competition in a process called "allelopathy".
+Este es el tipo de competencia en la que probablemente pensamos primero: todos los individuos compiten por los recursos y todos tienen habilidades competitivas similares. Es gratis para todos: ¡todos reciben una porción de un pastel limitado!
 
-![](allelopathy.jpg)
+La competencia por los recursos dentro de las especies es a menudo el mecanismo detrás de los procesos dependientes de la densidad que ya hemos discutido en esta clase. Dentro de una sola especie, esto a menudo se denomina "* competencia de revueltas *".
 
-### Modeling competition: extending the logistic growth equations to more than one species!
+#### Interferencia
+A veces, el efecto negativo de un actor (individuo de la misma u otra especie) sobre otro actor se debe a la exclusión conductual directa. Este es el caso de las aves que mantienen territorios y mantienen a otras aves fuera del territorio.
 
-If *intra-species competition* and *inter-species competition* are essentially the same, maybe we can model these processes the same!!
+Algunas plantas participan en una competencia de interferencia en un proceso llamado "alelopatía".
 
-1. Recall the logistic growth equation!
+![](figuures/allelopathy.jpg)
+
+### Competencia de modelado: ¡extendiendo las ecuaciones de crecimiento logístico a más de una especie!
+
+Si * competencia entre especies * y * competencia entre especies * son esencialmente lo mismo, ¡quizás podamos modelar estos procesos de la misma manera!
+
+1. ¡Recuerde la ecuación de crecimiento logístico!
 
 $\Delta N = r\cdot N_t \cdot (1-\frac{N}{K})$
 
-2. Now consider the case where we have two species whose dynamics can be described by logistic growth equations:
+2. Ahora considere el caso en el que tenemos dos especies cuya dinámica se puede describir mediante ecuaciones de crecimiento logístico:
 
-Species 1: $\Delta N1 = r\cdot N1_t \cdot (1-\frac{N1}{K1})$      
+Especie 1: $\Delta N1 = r\cdot N1_t \cdot (1-\frac{N1}{K1})$      
 
-Species 2: $\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2}{K2})$
+Especie 2: $\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2}{K2})$
 
-3. Now imagine that population growth for each species is further depressed by the presence of the other! We can envision a scenario where (e.g.,) the presence of one species helps to *fill up* the carrying capacity for the other species, and vice versa!
+3. ¡Ahora imagina que el crecimiento de la población de cada especie se deprime aún más por la presencia de la otra! Podemos imaginar un escenario en el que (por ejemplo,) la presencia de una especie ayude a * llenar * la capacidad de carga de las otras especies, ¡y viceversa!
 
-Species 1: $\Delta N1 = r\cdot N1_t \cdot (1-\frac{N1+\alpha N2}{K1})$      
+Especie 1: $\Delta N1 = r\cdot N1_t \cdot (1-\frac{N1+\alpha N2}{K1})$      
 
-Species 2: $\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2+\beta N1}{K2})$
+Especie 2: $\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2+\beta N1}{K2})$
 
-The constants $\alpha$ and $\beta$ are measures of the effect of one species on the growth of the other species. 
+Las constante $\alpha$ y $\beta$ son medidas del efecto de una especie sobre el crecimiento de las otras especies.
 
-**Q**: what does it mean if $\alpha$ is equal to 1?
+**P **: ¿qué significa si $ \ alpha $ es igual a 1?
 
-**Q**: what does it mean if $\alpha$ is equal to 5?
+**P **: ¿qué significa si $ \ alpha $ es igual a 5?
 
-**Q**: what does it mean if $\alpha$ is equal to $\frac{1}{5}$?
+**P **: ¿qué significa si $ \ alpha $ es igual a $ \ frac {1} {5} $?
 
-**Q**: what does it mean if $\alpha$ is equal to zero? 
+**P **: ¿qué significa si $ \ alpha $ es igual a cero?
 
-### Let's explore this model together in InsightMaker!
+### Exploremos este modelo juntos en InsightMaker!
 
-**Step 1**: clone a basic (non-interacting) two-species model [here](https://insightmaker.com/insight/77729/Base-2-species-model). Try some different parameter settings, to make sure the model is doing what you expect!
 
-**Step 2**: Now add the "alpha" and "beta" terms to represent the degree to which species 1 competes with species 2, and vice versa.  *What should "alpha" and "beta" link to??*
 
-**Step 3**: Change the parameter values around and see how the model behaves. 
+
+
+**Paso 1 **: clone un modelo básico de dos especies (que no interactúe) [aquí] (https://insightmaker.com/insight/77729/Base-2-species-model). Pruebe algunos ajustes de parámetros diferentes para asegurarse de que el modelo está haciendo lo que espera.
+
+**Paso 2 **: Ahora agregue los términos "alfa" y "beta" para representar el grado en que la especie 1 compite con la especie 2, y viceversa. * ¿A qué deberían enlazar "alfa" y "beta"? *
+
+**Paso 3 **: Cambie los valores de los parámetros y vea cómo se comporta el modelo.
+
+¡Este modelo se conoce como * competición Lotka-Volterra *! El modelo lleva el nombre de los matemáticos Alfred Lotka y Vito Volterra.
+
+
+>> **Step 1**: clone a basic (non-interacting) two-species model [here](https://insightmaker.com/insight/77729/Base-2-species-model). Try some different parameter settings, to make sure the model is doing what you expect!
+
+>> **Step 2**: Now add the "alpha" and "beta" terms to represent the degree to which species 1 competes with species 2, and vice versa.  *What should "alpha" and "beta" link to??*
+
+>> **Step 3**: Change the parameter values around and see how the model behaves. 
 
 This model is known as *Lotka-Volterra competition*! The model is named after mathematicians Alfred Lotka and Vito Volterra 
 
-**Q**: what happens if one species is a superior competitor? What does it mean to be a superior competitor? Can one species go extinct?
+______________
+ **P**: Qué sucede si una especie es un competidor superior? ¿Qué significa ser un competidor superior? ¿Puede una especie extinguirse?
 
-**Q**: what conditions are necessary for coexistence in this model? [tophat]
+**P **: ¿Qué condiciones son necesarias para la convivencia en este modelo? [sombrero de copa]
 
-**Q**: imagine that species 1 is an exotic species- a possible invader of an ecosystem dominated by species 2 (which is at carrying capacity). Under what conditions is species 1 successful in invading? Under what conditions does the invader cause the extinction of the native species? 
+**P **: imagina que la especie 1 es una especie exótica, un posible invasor de un ecosistema dominado por la especie 2 (que está en capacidad de carga). ¿Bajo qué condiciones la especie 1 tiene éxito en la invasión? ¿En qué condiciones el invasor provoca la extinción de las especies nativas?
 
-**Q**: can you identify any equilibrium conditions (either stable or unstable)?
+**P **: ¿puede identificar alguna condición de equilibrio (estable o inestable)?
 
 
-## Phase plane!
+## La fase plana!
 
-In the study of dynamic systems (such as the Lotka-Volterra competition model) it can be very useful to visualize the system on the **phase plane**.
+En el estudio de sistemas dinámicos (como el modelo de competición Lotka-Volterra) puede resultar muy útil visualizar el sistema en el **la fase plana**.
 
-To do this, we envision the abundance of each interacting species as a coordinate in a cartesian plane, with one species as the y axis and the other species as the x axis. This 2-D surface is called the phase plane. 
+Para hacer esto, visualizamos la abundancia de cada especie que interactúa como una coordenada en un plano cartesiano, con una especie como eje y y la otra especie como eje x. Esta superficie 2-D se llama plano de fase.
 
-Then, for each time step in the model, we plot out where we are in the phase plane (plot the abundances of species 1 and species 2 as a point on the 2-D cartesian surface). 
+Luego, para cada paso de tiempo en el modelo, graficamos dónde estamos en el plano de fase (grafica las abundancias de la especie 1 y la especie 2 como un punto en la superficie cartesiana bidimensional).
 
-For example:
+Por ejemplo:
 
-Let's build the basic Lotka-Volterra competition model in R. 
+Construyamos el modelo básico de competencia Lotka-Volterra en R.
 
-If you want to follow along, you can download the script [here](LECTURE16.R)
+Si desea seguir, puede descargar el guión [aquí](LECTURE16.R)
 
 ```{r}
 
-##### LOTKA VOLTERRA COMPETITION EXAMPLE
+##### EJEMPLO DE COMPETICIÓN DE LOTKA VOLTERRA
 
 ## Params
 
@@ -162,12 +165,12 @@ for(i in 1:(Nyears+1)){
 ```
 
 
-Now let's visualize year zero in *phase space*:
+Ahora visualicemos el año cero en *phase space*:
 
 ```{r}
 
 ####
-# visualize the initial abundances on the phase plane
+# visualizar las abundancias iniciales en el plano de fase
 
 plot(1,1,pch="",ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab="species 1",ylab="species 2")
 points(System[1,],col="green",pch=20,cex=2)
@@ -175,7 +178,7 @@ points(System[1,],col="green",pch=20,cex=2)
 ```
 
 
-How about the first 5 years...
+¿Qué tal los primeros 5 años ...
 
 ```{r}
 
@@ -185,9 +188,9 @@ points(System[1:6,],col="green",pch=20,cex=2)
 
 ```
 
-Note that every point on the phase plane has both a location and a *direction* - think of the phase plane like a magnetic field- at each point in the phase plane, the system is attracted or repelled from going certain directions. 
+Tenga en cuenta que cada punto en el plano de fase tiene una ubicación y una * dirección * (piense en el plano de fase como un campo magnético) en cada punto del plano de fase, el sistema es atraído o repelido de ir en ciertas direcciones.
 
-And the entire simulation?
+¿Y toda la simulación?
 
 ```{r}
 
@@ -198,16 +201,16 @@ points(System,col="green",pch=20,cex=2)
 ```
 
 
-Okay, so species 1 is outcompeting species 2. As abundance of species 1 goes up, the abundance of species 2 declines, and we end up with just species 1! 
+Bien, entonces la especie 1 está superando a la especie 2. ¡A medida que aumenta la abundancia de la especie 1, la abundancia de la especie 2 disminuye y terminamos con solo la especie 1!
 
 
-Here is another example...
+Aquí hay otro ejemplo ...
 
 ```{r}
 
-##### LOTKA VOLTERRA COMPETITION EXAMPLE #2
+##### EJEMPLO DE COMPETICIÓN DE LOTKA VOLTERRA # 2
 
-## Params
+## Parametros
 
 Alpha <- 0.3
 Beta <- 0.2
@@ -237,11 +240,11 @@ for(i in 1:(Nyears+1)){
 ```
 
 
-With these new parameters, phase space looks like this (with jittering to indicate concentration of points:
+Con estos nuevos parámetros, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:
 
 ```{r}
 
-# visualize on the phase plane
+# visualizar en el plano de fase
 
 plot(1,1,pch="",ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab="species 1",ylab="species 2")
 points(jitter(System[,1],500),jitter(System[,2],500),col="brown",pch=20,cex=0.3)
@@ -249,15 +252,16 @@ abline(h=K2,v=K1,col="gray",lwd=2,lty=2)
 
 ```
 
-You can see that this sytem has arrived at an equilibrium at the end, just below the carrying capacity for species 1. 
 
-Finally, let's consider multiple starting points and see how the system behaves!
+Puede ver que este sistema ha llegado a un equilibrio al final, justo por debajo de la capacidad de carga de la especie 1.
+
+Finalmente, consideremos múltiples puntos de partida y veamos cómo se comporta el sistema.!
 
 ```{r}
 
-##### LOTKA VOLTERRA COMPETITION EXAMPLE #3: multiple starting points
+##### EJEMPLO DE COMPETICIÓN DE LOTKA VOLTERRA # 3: múltiples puntos de partida
 
-## Params
+## Parametros
 
 
 InitN1 <- 1200
@@ -289,11 +293,12 @@ for(i in 1:(Nyears+1)){
 ```
 
 
-Now, phase space looks like this (with jittering to indicate concentration of points:
+
+Ahora, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:
 
 ```{r}
 
-# visualize on the phase plane
+# visualizar en el plano de fase
 
 plot(1,1,pch="",ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab="species 1",ylab="species 2")
 points(jitter(System[,1],500),jitter(System[,2],500),col="brown",pch=20,cex=0.3)
@@ -304,7 +309,7 @@ points(jitter(System3[,1],500),jitter(System3[,2],500),col="blue",pch=20,cex=0.3
 abline(h=K2,v=K1,col="gray",lwd=2,lty=2)
 ```
 
-**Q**: Does this two-species system have a stable equilibrium?
+**P **: ¿Tiene este sistema de dos especies un equilibrio estable?
 
 
 ```{r echo=FALSE}
@@ -650,24 +655,24 @@ jacobianAtXY <- compiler::cmpfun(function(fun,x=NULL, y=NULL,inc=1e-7){
 ```
 
 
-### Working in the phase plane!
+### ¡Trabajando en el plano de fase!
 
-There is a lot you can learn about an interacting two-species system by working with the phase plane. 
+Hay mucho que puede aprender sobre un sistema de dos especies que interactúan trabajando con el plano de fase.
 
-First of all, it is useful to imagine that each point in phase space is associated with an arrow, indicating where the system is expected to go from that point in phase space (every point has a direction associated with it). 
+En primer lugar, es útil imaginar que cada punto en el espacio de fase está asociado con una flecha, que indica hacia dónde se espera que vaya el sistema desde ese punto en el espacio de fase (cada punto tiene una dirección asociada).
 
-So, imagine we start at the initial abundance in the above figures. Where does the arrow point in phase space? 
+Entonces, imagina que comenzamos con la abundancia inicial en las figuras anteriores. ¿Dónde apunta la flecha en el espacio de fase?
 
-The *length* of the arrow represents the speed at which the system will move in the direction of the arrow (the degree of *repulsion* from that point in phase space).  
+La * longitud * de la flecha representa la velocidad a la que el sistema se moverá en la dirección de la flecha (el grado de * repulsión * desde ese punto en el espacio de fase).
 
-Now imagine we draw arrows throughout phase space, representing where the system would be expected to go. 
+Ahora imagine que dibujamos flechas a lo largo del espacio de fase, que representan hacia dónde se espera que vaya el sistema.
 
-Note: this example uses R code from [Paul Hurtado](http://www.pauljhurtado.com/)
+Nota: este ejemplo usa código R de [Paul Hurtado](http://www.pauljhurtado.com/)
 
 ```{r}
 
 ##########
-# Visualize phase plane with arrows!
+# ¡Visualice el plano de fase con flechas!
 ##########
 
 #######################################################################################
@@ -711,21 +716,21 @@ phasearrows.draw(new)
 
 ```
 
-Take any arbitrary starting point. Now we can trace the trajectory that the system will take in phase space. 
+Tome cualquier punto de partida arbitrario. Ahora podemos rastrear la trayectoria que tomará el sistema en el espacio de fase.
 
-Try it!!
-
-
-You will see that there are some key thresholds in phase space that we should consider. For example, arrows can reverse direction!
+¡¡Intentalo!!
 
 
-### Isoclines!
+Verá que hay algunos umbrales clave en el espacio de fase que debemos considerar. Por ejemplo, las flechas pueden invertir la dirección.
 
-Isoclines help to delineate those key features in phase space - kind of like ridgetops on mountains. The place beyond which up arrows turn to down arrows!
 
-Here is one example:
+### Isoclinas!
 
-#### Species 1 isocline...
+Las isoclinas ayudan a delinear esas características clave en el espacio de fase, algo así como las cimas de las montañas. ¡El lugar más allá del cual las flechas hacia arriba se convierten en flechas hacia abajo!
+
+He aquí un ejemplo:
+
+#### Especie 1 isoclina ...
 
 ```{r}
 
@@ -738,25 +743,25 @@ abline(K2,-K2/(K2/Beta),col="blue",lwd=3)   # species 1
 
 ```
 
-The red line represents the conditions under which the growth rate of species 1 is zero.
+La línea roja representa las condiciones bajo las cuales la tasa de crecimiento de la especie 1 es cero.
 
-**Q**: under what conditions is carrying capacity "used up" for species 1??
+**P **: ¿bajo qué condiciones se "agota" la capacidad de carga para la especie 1?
 
-Below the red line, species 1 will tend to increase. 
+Por debajo de la línea roja, la especie 1 tenderá a aumentar.
 
-Above the red line, species 1 will tend to decrease.
+Por encima de la línea roja, la especie 1 tenderá a disminuir.
 
-The blue line (isocline) represents the conditions under which carrying capacity is used up for species 2!
+¡La línea azul (isoclina) representa las condiciones bajo las cuales se agota la capacidad de carga de la especie 2!
 
-**Q**: under what conditions is carrying capacity "used up" for species 2??
+**P **: ¿bajo qué condiciones se "agota" la capacidad de carga para la especie 2?
 
-Below the blue line, species 2 will tend to increase. 
+Por debajo de la línea azul, la especie 2 tenderá a aumentar.
 
-Above the blue line, species 2 will tend to decrease.
+Por encima de la línea azul, la especie 2 tenderá a disminuir.
 
-**Q**: consider the point where the two isoclines cross. What does this point represent? [tophat]
+**Q **: considere el punto donde se cruzan las dos isoclinas. ¿Qué representa este punto? [Edmodo]
 
-Let's consider the following case...
+Consideremos el siguiente caso ...
 
 
 ```{r}
@@ -786,18 +791,18 @@ abline(K1/Alpha,-(K1/Alpha)/K1,col="red",lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col="blue",lwd=3)   # species 2
 ```
 
-Follow the trajectories from any point in this phase space. What is the outcome here?
+Siga las trayectorias desde cualquier punto en este espacio de fase. ¿Cuál es el resultado aquí?
 
-**Q**: Is there a system-wide equilibrium? [tophat]
+**P **: ¿Existe un equilibrio en todo el sistema? [sombrero de copa]
 
-**Q**: Is there any point in this phase space where the population growth goes negative for species 1 (K1 used up) and positive for species 2 (some of K2 left unused)? 
+**P **: ¿Hay algún punto en este espacio de fase en el que el crecimiento de la población sea negativo para la especie 1 (K1 agotado) y positivo para la especie 2 (parte del K2 sin uso)?
 
-**Q**: What happens to species 1 when carrying capacity is used up for species 2? Is there room for species 1 to invade? 
+**P **: ¿Qué sucede con la especie 1 cuando la capacidad de carga se agota para la especie 2? ¿Hay espacio para la invasión de la especie 1?
 
-**Q**: What happens to species 2 when carrying capacity is used up for species 1? Is there room for species 2 to invade? 
+**P **: ¿Qué sucede con la especie 2 cuando la capacidad de carga se agota para la especie 1? ¿Hay espacio para la invasión de la especie 2?
 
 
-How about this example?
+¿Qué tal este ejemplo?
 
 ```{r}
 
@@ -827,11 +832,12 @@ abline(K2,-K2/(K2/Beta),col="blue",lwd=3)   # species 2
 
 ```
 
-Follow the trajectories from any point in this phase space. What is the outcome here?
+Siga las trayectorias desde cualquier punto en este espacio de fase. ¿Cuál es el resultado aquí?
 
-**Q**: Is there a system-wide equilibrium?
+** P **: ¿Existe un equilibrio en todo el sistema?
 
-What about this case(going back to the earlier example...):
+¿Qué pasa con este caso (volviendo al ejemplo anterior ...):
+
 
 ```{r}
 
@@ -865,10 +871,11 @@ abline(K2,-K2/(K2/Beta),col="blue",lwd=2)   # species 2
 
 ```
 
-**Q**: Where in this figure does the system "move" the fastest? (Magnetic field analogy: strongest attraction and repulsion)
+** P **: ¿En qué parte de esta figura se "mueve" el sistema más rápido? (Analogía del campo magnético: atracción y repulsión más fuertes)
 
 
-Finally consider this example:
+
+Finalmente, considere este ejemplo:
 
 ```{r}
 
@@ -898,15 +905,14 @@ abline(K2,-K2/(K2/Beta),col="blue",lwd=3)   # species 2
 
 ```
 
-**Q**: is the point where the two isoclines cross an *equilibrium*?
+**P **: ¿es el punto donde las dos isoclinas cruzan un * equilibrio *?
 
-**Q**: is the point where the two isoclines cross a *stable equilibrium*?
+**P **: ¿es el punto donde las dos isoclinas cruzan un * equilibrio estable *?
 
-**Q**: what would happen if species 1 was at K and species 2 tried to invade?  And vice versa?
+**P **: ¿qué pasaría si la especie 1 estuviera en K y la especie 2 intentara invadir? ¿Y viceversa?
 
-**Q**: what would happen if both species tried to invade a vacant habitat at the same time? 
+**P **: ¿qué pasaría si ambas especies intentaran invadir un hábitat vacío al mismo tiempo? 
 
-**Q**" "
 
 ### Phase space in InsightMaker
 
