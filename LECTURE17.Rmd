@@ -1,12 +1,13 @@
 ---
-title: "Species interactions: prey-predator!"
-author: "NRES 470/670"
-date: "Spring 2021"
-output: 
+title: "Interacciones de especies: presa-depredador"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -15,91 +16,87 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ```{r echo=FALSE}
 
-############################################################
-####                                                    ####  
-####  NRES 470/670, Lecture 17                          ####
-####                                                    ####
-####  Kevin Shoemaker                                   #### 
-####  University of Nevada, Reno                        ####
-####                                                    #### 
-############################################################
+
 
 
 ############################################################
-####  Predator-prey                                     ####
+####  Presa-depredador                                    ####
 ############################################################
 
 
 ```
 
 
-## Predation
+## Depredador
 
-![](predation1.jpg)
+![](figures/predation1.jpg)
 
-![](predation2.jpg)
+![](figures/predation2.jpg)
 
-In the case of competition, we saw that each species negatively influenced the other. In the case of prey-predator interactions, one of the two species species benefits greatly from the interaction -- and the other species loses out!
 
-Nearly all prey-predator models, even the most state-of-the-art, complex ones, share this common framework:
+En el caso de la competencia, vimos que cada especie influía negativamente en la otra. En el caso de las interacciones presa-depredador, una de las dos especies se beneficia enormemente de la interacción, ¡y la otra pierde!
+
+Casi todos los modelos de presa-depredador, incluso los más avanzados y complejos, comparten este marco común:
 
 $\Delta V = rV^* - f(V,P) \cdot P$
 
-AND
+y
 
 $\Delta P = f(V,P)*conversion.factor \cdot P - qP^*$
 
-Where
+y
 
-$V$ is the total prey abundance (V for victims!), and 
+$V $ es la abundancia total de presas (¡V para las víctimas!), Y
 
-$P$ is the total predator abundance, and
+$P $ es la abundancia total de depredadores, y
 
-$rV^*$ represents the growth of the prey population *in the absence of predators* -- usually, this is some form of the standard single-species population growth models we have considered throughout most of this course (possibly density-dependent),
+$rV^* $ representa el crecimiento de la población de presas *en ausencia de depredadores*; por lo general, esta es una forma de los modelos estándar de crecimiento de la población de una sola especie que hemos considerado durante la mayor parte de este curso (posiblemente dependiente de la densidad) ,
 
-$qP^*$ represents the growth of the predator population *in the absence of prey* -- usually this is simply exponential decline!,
+$qP^* $ representa el crecimiento de la población de depredadores *en ausencia de presas* - ¡por lo general esto es simplemente una disminución exponencial!
 
-AND
+Y
 
-$f(V,P)$ is known as the **functional response** -- that is, the per capita rate of prey consumption, usually a function of just the density (availability) of prey, but sometimes a function of both predator and prey densities.
 
-AND
+$f(V,P)$ se conoce como la **respuesta funcional**, es decir, la tasa per cápita de consumo de presas, generalmente una función de la densidad (disponibilidad) de presas, pero a veces una función de ambas densidades de depredadores y presas.
 
-$f(V,P)\cdot conversion.factor$ (alternatively represented as $g(V,P)$) is known as the **numerical response** -- that is, the increase in per-capita predator population growth due to prey consumption.
+Y
 
-There are many different types of possible functional and numerical response curves. Let's start simple!
+$ f(V,P)\cdot conversion.factor$ (alternativamente representado como $g(V,P)$) se conoce como la **respuesta numérica**, es decir, el aumento en el crecimiento de la población de depredadores per cápita debido al consumo de presas.
 
-### The classical prey-predator model
+Hay muchos tipos diferentes de posibles curvas de respuesta funcional y numérica. ¡Empecemos de forma sencilla!
 
-Let's look at predation mathematically, starting with the simplest possible model...
+### El modelo clásico presa-depredador
 
-#### The victims...
+Veamos la depredación matemáticamente, comenzando con el modelo más simple posible ...
 
-We will consider the prey, or "victims" first:
 
-In the absence of predators, let's assume that the victim population grows according to the basic exponential growth equation:
+#### Las victimas...
+
+Consideraremos primero la presa o "víctimas":
+
+En ausencia de depredadores, supongamos que la población de víctimas crece de acuerdo con la ecuación básica de crecimiento exponencial:
 
 $\Delta V = rV$
 
-We will assume that the intrinsic rate of growth, $r$, is positive! In the absence of predators, the population grows exponentially.
+¡Asumiremos que la tasa intrínseca de crecimiento, $ r $, es positiva! En ausencia de depredadores, la población crece exponencialmente.
 
-If predators are present, the population growth of the victims will slow down... 
+Si hay depredadores, el crecimiento de la población de las víctimas se ralentizará ...
 
-What expression could define the rate at which prey are consumed by predators?
+¿Qué expresión podría definir la velocidad a la que los depredadores consumen las presas?
 
-First of all, let's assume that predators and prey walk randomly through their common environment, bumping into each other randomly. Every time the predator bumps into a prey item, the predator has some chance of consuming that prey item. 
+En primer lugar, supongamos que los depredadores y las presas caminan al azar a través de su entorno común, chocando unos con otros al azar. Cada vez que el depredador choca con un objeto de presa, el depredador tiene alguna posibilidad de consumir ese objeto de presa.
 
-This is analogous to molecules moving randomly in a solution, occasionally causing reactions whenever they bump into other molecule(s) in the right way. 
+Esto es análogo a las moléculas que se mueven al azar en una solución, provocando ocasionalmente reacciones cada vez que chocan con otras moléculas de la manera correcta.
 
-Under such circumstances, the predators do NOT interfere with one another and never get full. Each predator consumes a fixed number of prey in a given time period, depending only on prey availability. 
+En tales circunstancias, los depredadores NO interfieren entre sí y nunca se llenan. Cada depredador consume un número fijo de presas en un período de tiempo determinado, dependiendo solo de la disponibilidad de presas. 
 
-Consider the case where there are $V$ prey and only a single predator in a hypothetical prey-predator system.  
+Considere el caso donde hay $ V $ presas y solo un depredador en un sistema hipotético presa-depredador.
 
-**Q**: Imagine there are 100 prey and only one predator. A total of 3 prey are consumed in a single day. What is the daily rate of prey consumption per predator in this example ($\alpha$)? 
+**P**: Imagina que hay 100 presas y solo un depredador. Se consumen un total de 3 presas en un solo día. ¿Cuál es la tasa diaria de consumo de presas por depredador en este ejemplo ($ \ alpha $)?
 
-In this case, 3% (0.03) of prey are successfully encountered and consumed by the predator each day. If there were 1000 prey on the landscape, the predator would catch and consume 30 prey. And if there were 1 million prey, the predator would catch and consume 30000 prey per day. (realistic?) 
+En este caso, el depredador encuentra y consume con éxito el 3% (0.03) de las presas todos los días. Si hubiera 1000 presas en el paisaje, el depredador capturaría y consumiría 30 presas. Y si hubiera 1 millón de presas, el depredador capturaría y consumiría 30000 presas por día. (¿realista?)
 
-**Q** what is the shape of the functional response in this case?
+**P** ¿cuál es la forma de la respuesta funcional en este caso?
 
 $f(V)=\alpha \cdot V$
 
@@ -116,61 +113,64 @@ curve(LVfuncresp(x,0.03),0,200,xlab="Victim abundance",ylab="Total prey eaten pe
 
 ```
 
-Note the intercept- does the functional response need to have an intercept of zero?
+Tenga en cuenta la intersección: ¿la respuesta funcional debe tener una intersección de cero?
 
-...Of course, this *alpha* term has a different meaning from the *alpha* in the L-V competition models! Sorry! 
+... ¡Por supuesto, este término *alfa * tiene un significado diferente del *alfa * en los modelos de competición L-V! ¡Lo siento!
 
-Now consider the case where there is more than one predator -- that is, there are $P$ predators and there are $V$ prey. Recall that each predator has *no influence* on the consumption rates of other predators. The predators are just like molecules randomly bumping into prey molecules. 
+Ahora considere el caso en el que hay más de un depredador, es decir, hay depredadores $P $ y presas $V $. Recuerde que cada depredador *no influye * en las tasas de consumo de otros depredadores. Los depredadores son como moléculas que chocan aleatoriamente con moléculas de presa.
 
 The *total rate of predation* now is:
 
 $f(V) \cdot P = \alpha VP$
 
-Does this make sense?
 
-The term $\alpha$ is also known as the **capture efficiency**. Does this make sense? Consider a case where every predator "bumps into" all prey in the landscape each time step, but only consumes 3% of those prey. Now consider a predator that consumes 50% of those prey per time step? Which predator is more *efficient*? 
+¿Esto tiene sentido?
 
-**Q** what are the units of *alpha*? [tophat]
+El término $\ alpha $ también se conoce como **eficiencia de captura **. ¿Esto tiene sentido? Considere un caso en el que cada depredador "choca" con todas las presas en el paisaje en cada paso de tiempo, pero solo consume el 3% de esas presas. Ahora considere un depredador que consume el 50% de esas presas por paso de tiempo. ¿Qué depredador es más *eficiente *?
 
-Now, the (instantaneous) prey growth rate can be defined by the following equation:
+**P ** ¿Cuáles son las unidades de *alfa *? [Edmodo]
+
+Ahora, la tasa de crecimiento de la presa (instantánea) se puede definir mediante la siguiente ecuación:
 
 $\Delta V = rV - \alpha VP$
 
-In the absence of predators, the prey population grows exponentially. However, with enough predators on the landscape, the population will decline.
 
-This model is one half of what is known as the **Lotka-Volterra** prey-predator model.
+En ausencia de depredadores, la población de presas crece exponencialmente. Sin embargo, con suficientes depredadores en el paisaje, la población disminuirá.
 
-The other half is the predator population growth model, of course!!
+Este modelo es la mitad de lo que se conoce como el modelo presa-depredador ** Lotka-Volterra **.
 
-#### The predators...
+¡La otra mitad es el modelo de crecimiento de la población de depredadores, por supuesto!
 
-In the absence of prey, let's assume that the predator population grows just how we might imagine it grows- BADLY!
+#### Los depredadores
+
+En ausencia de presas, supongamos que la población de depredadores crece como podríamos imaginar que crece: ¡MALO!
 
 $\Delta P = -qP$
 
-In the absence of prey, the predator population declines exponentially.
+En ausencia de presas, la población de depredadores disminuye exponencialmente.
 
-If enough prey are present, the population growth rate of the predators will go up... 
+Si hay suficientes presas, la tasa de crecimiento de la población de los depredadores aumentará ...
 
-Recall that (in this simple model) predators and prey walk randomly through their common environment, bumping into each other randomly. Each predator consumes a fixed percentage of the prey population. That is, the functional response is:
+Recuerde que (en este modelo simple) los depredadores y las presas caminan al azar a través de su entorno común, chocando entre sí al azar. Cada depredador consume un porcentaje fijo de la población de presas. Es decir, la respuesta funcional es:
 
 $f(V) = \alpha V$
 
-The *numerical response* is the increase in the fractional growth rate of *predators* per unit prey consumed. The numerical response is related to the functional response. While the functional response describes the prey consumption per predator, the numerical response describes how that prey consumption translates into the growth of the predator population.
-
+La *respuesta numérica * es el aumento en la tasa de crecimiento fraccional de *depredadores * por unidad de presa consumida. La respuesta numérica está relacionada con la respuesta funcional. Mientras que la respuesta funcional describe el consumo de presas por depredador, la respuesta numérica describe cómo ese consumo de presas se traduce en el crecimiento de la población de depredadores.
 $g(V) = some.function(f(V))$
 
-The simplest numerical response is that predator population growth increases as a linear function of per-capita prey consumption: 
+
+La respuesta numérica más simple es que el crecimiento de la población de depredadores aumenta como una función lineal del consumo de presas per cápita:
 
 $g(V) = \gamma (\alpha \cdot V)$
 
-Where $\gamma$ is the conversion efficiency and $\alpha$ is the capture efficency and $\alpha \cdot V$ is the total prey consumed per predator.
 
-Or, more simply stated:
+Donde $\gamma $ es la eficiencia de conversión y $\ alpha $ es la eficiencia de captura y $\ alpha\cdot V $ es la presa total consumida por depredador.
+
+O, dicho de manera más simple:
 
 $g(V)=\beta \cdot V$
 
-**Q** what is the shape of the **numerical response** in this case?
+**P ** ¿cuál es la forma de la ** respuesta numérica ** en este caso?
 
 ```{r}
 
@@ -185,65 +185,71 @@ curve(LVnumresp(x,0.001),0,200,xlab="Victim abundance",ylab="Increase in r for p
 
 ```
 
-Note the intercept- does the numerical response need to have an intercept of zero?
 
-The *increase in total predators due to prey consumption* now is:
+Tenga en cuenta la intersección: ¿la respuesta numérica debe tener una intersección de cero?
+
+
+El *aumento en el total de depredadores debido al consumo de presas* ahora es:
 
 $g(V) \cdot P = \beta V \cdot P$
 
-Does this make sense?
+¿Esto tiene sentido?
 
-The term $\beta$ is related to the **conversion efficiency** of the predator (how effieciently the predator converts its food into the production of new predators). Consider a case where every predator consumes 100 prey per time step ($\alpha \cdot V = 100$), but the predator population growth increases by only 0.01 relative to a scenario with no prey. Now consider a predator that consumes 1 prey per time step, and growth increases by 0.1... Which predator is more *efficient* at converting prey biomass into growth of the predator population (creating new predators)? 
+El término $\ beta $ está relacionado con la **eficiencia de conversión ** del depredador (cuán eficientemente el depredador convierte su alimento en la producción de nuevos depredadores). Considere un caso en el que cada depredador consume 100 presas por paso de tiempo ($\ alpha \cdot V = 100 $), pero el crecimiento de la población de depredadores aumenta solo en 0.01 en relación con un escenario sin presas. Ahora considere un depredador que consume 1 presa por paso de tiempo, y el crecimiento aumenta en 0.1 ... ¿Qué depredador es más *eficiente * para convertir la biomasa de presas en crecimiento de la población de depredadores (creando nuevos depredadores)?
 
-**Q** what are the units of *beta*?
+** P ** ¿Cuáles son las unidades de * beta *?
 
-Now, the (instantaneous) PREDATOR growth rate can be defined by the following equation:
+Ahora, la tasa de crecimiento (instantánea) del DEPREDADOR se puede definir mediante la siguiente ecuación:
 
 $\Delta P = \beta VP - qP$
 
-This model is the other half of what is known as the **Lotka-Volterra** prey-predator model.
+Este modelo es la otra mitad de lo que se conoce como el modelo presa-depredador **Lotka-Volterra **.
 
-Taken together, the model can be described as follows:
+Tomados en conjunto, el modelo se puede describir de la siguiente manera:
 
 $\Delta P = \beta VP - qP$
 
 $\Delta V = rV - \alpha VP$
 
 
-### L-V predation model in InsightMaker 
-
-Before we go deeper into predation modeling, let's simulate prey and predator population growth under the L-V predation model. 
-
-**Step 1**: First, clone [this Insight](https://insightmaker.com/insight/78356/Base-prey-predator-model), which provides the skeleton for a basic prey-predator model
-
-**Step 2**: Correctly set up the equations for the variables "functional response"" and "numerical response".  
-
-**Step 3**: Correctly set up the flow equations for "total prey consumed" and "predator growth", which refer to the the prey lost and the predators gained per time step, respectively.
-
-**Step 4**: In the settings menu, change the simulation length to 200 and make sure that your analysis algorithm is set to "Accurate (RK4)" (this makes InsightMaker behave more like a continuous growth model).
-
-**Step 5**: Set the Initial abundance of prey and predators to 100 and 50, respectively. Set the alpha and beta terms to 0.001, and set the r_prey and q_pred terms to 0.1. Run the model and visualize the time series for prey and predators.
-
-**Step 6**: Add a new display to represent the **phase plane**: Choose the "scatter plot" type, and under "Data" select *Prey* first, then *Predator*. What does this system look like on the phase plane? 
-
-**Q** What happens if you change the initial abundances?
-
-**Q** What happens if you change initial abundance of both species to 100? Is this an **equilibrium**? If so, is it **stable**?
-
-**Step 7**: Try some other parameter values for alpha, beta, r, and q...
-
-**Q** Does the prey or predator ever go extinct?
-
-**Q** Can you find some settings that make very slow oscillations?
-
-**Q** Can you find some settings that make very fast oscillations?
-
-**Q** Can you find some settings that make very shallow oscillations?
+### L-V modelo de depredación en InsightMaker
 
 
-## Prey-Predator models on the phase plane!
+Antes de profundizar en el modelo de depredación, simulemos el crecimiento de la población de presas y depredadores bajo el modelo de depredación L-V.
 
-If you want to follow along in R, click [here](LECTURE17.R) for the R script!
+**Step 1**: Primero, clonar [this Insight](https://insightmaker.com/insight/78356/Base-prey-predator-model),
+que proporciona el esqueleto para un modelo básico de presa-depredador
+
+**Step 2**: Configure correctamente las ecuaciones para las variables "respuesta funcional" "y" respuesta numérica ". 
+
+**Step 3**: Configure correctamente las ecuaciones de flujo para "presa total consumida" y "crecimiento de depredadores", que se refieren a la presa perdida y los depredadores ganados por paso de tiempo, respectivamente.
+
+**Step 4**: En el menú de configuración, cambie la duración de la simulación a 200 y asegúrese de que su algoritmo de análisis esté configurado en "Preciso (RK4)" (esto hace que InsightMaker se comporte más como un modelo de crecimiento continuo).
+
+**Step 5**: Establezca la abundancia inicial de presas y depredadores en 100 y 50, respectivamente. Establezca los términos alfa y beta en 0,001 y establezca los términos r_prey y q_pred en 0,1. Ejecute el modelo y visualice la serie temporal de presas y depredadores.
+
+**Step 6**: 
+Agregue una nueva pantalla para representar el **plano de fase**: Elija el tipo de "diagrama de dispersión", y en "Datos" seleccione *Prey * primero, luego *Predator *. ¿Cómo se ve este sistema en el plano de fase?
+
+**P ** ¿Qué sucede si cambia las abundancias iniciales?
+
+**P ** ¿Qué sucede si cambia la abundancia inicial de ambas especies a 100? ¿Es esto un **equilibrio **? Si es así, ¿es **estable **?
+
+**Step 7 **: Pruebe otros valores de parámetros para alfa, beta, r y q ...
+
+**P ** ¿Se extingue alguna vez la presa o el depredador?
+
+**P ** ¿Puede encontrar algunos ajustes que produzcan oscilaciones muy lentas?
+
+**P ** ¿Puede encontrar algunos ajustes que produzcan oscilaciones muy rápidas?
+
+**P ** ¿Puede encontrar algunos ajustes que produzcan oscilaciones muy superficiales?
+
+
+## ¡Modelos Prey-depredator en el plano de fase!
+
+
+Si desea seguir en R, haga clic en [here](LECTURE17.R) para el script R!
 
 
 ```{r}
@@ -279,7 +285,7 @@ for(i in 1:(Nyears*10+1)){
 ```
 
 
-Now let's visualize this basic L-V system in *phase space*:
+Ahora visualicemos este sistema básico L-V en *espacio de fase/Phase Plane*:
 
 ```{r}
 
@@ -290,10 +296,11 @@ points(System[1,],col="blue",pch=20,cex=3)
 ```
 
 
-Okay, so as prey get more abundant, predators start increasing, but as predators increase, prey abundance goes down. And repeat!
+
+De acuerdo, a medida que las presas se vuelven más abundantes, los depredadores comienzan a aumentar, pero a medida que aumentan los depredadores, la abundancia de presas disminuye. ¡Y repetir!
 
 
-Here is another example...
+Aquí hay otro ejemplo ...
 
 ```{r}
 
@@ -331,7 +338,7 @@ points(System[1,],col="blue",pch=20,cex=3)
 ```
 
 
-With some jittering, we can visualize the amount of time the system spends in various parts of phase space...
+Con algo de *jittering* podemos visualizar la cantidad de tiempo que el sistema pasa en varias partes del espacio de fase ...
 
 ```{r}
 
@@ -341,9 +348,9 @@ points(jitter(System[,1],200),jitter(System[,2],200),col="brown",pch=20,cex=0.3)
 
 ```
 
-You can see that this system spends much more time near the origin, where abundances are low for both prey and predator! 
+¡Puede ver que este sistema pasa mucho más tiempo cerca del origen, donde las abundancias son bajas tanto para las presas como para los depredadores!
 
-Finally, let's consider multiple starting points and see how the system behaves!
+Finalmente, consideremos múltiples puntos de partida y veamos cómo se comporta el sistema.
 
 ```{r}
 
@@ -381,7 +388,8 @@ for(i in 1:(Nyears*10+1)){
 ```
 
 
-Now, phase space looks like this (with jittering to indicate concentration of points:
+
+Ahora, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:
 
 ```{r}
 
@@ -394,11 +402,12 @@ points(jitter(System3[,1],500),jitter(System3[,2],500),col="blue",pch=20,cex=0.3
 
 ```
 
-**Q**: Does this predator-prey system have a stable equilibrium?
 
-**Q**: Does this predator-prey system have an equilibrium at all?
+**P **: ¿Tiene este sistema depredador-presa un equilibrio estable?
 
-**Q**: How do these dynamics look like when visualized as time series?
+**P **: ¿Este sistema depredador-presa tiene un equilibrio?
+
+**P **: ¿Cómo se ven estas dinámicas cuando se visualizan como series de tiempo?
 
 ```{r}
 
@@ -751,10 +760,11 @@ jacobianAtXY <- compiler::cmpfun(function(fun,x=NULL, y=NULL,inc=1e-7){
 
 ```
 
-### More with the L-V predator-prey phase space!
+### 
+¡Más con el espacio de fase L-V depredador-presa!
 
 
-Just like before, let's draw arrows throughout phase space, representing where the system would be expected to go from each point in phase space. 
+Al igual que antes, dibujemos flechas a lo largo del espacio de fase, que representan a dónde se espera que vaya el sistema desde cada punto en el espacio de fase.
 
 ```{r}
 
@@ -797,28 +807,29 @@ phasearrows.draw(new)
 
 ```
 
-Are there any other possible outcomes of this simple L-V model?
+¿Hay otros posibles resultados de este modelo simple L-V?
 
-Well, let's plot out the isoclines then!!
+¡Bien, entonces tracemos las isoclinas!
+
 
 ### Isoclines!
 
-Again, it can be helpful to plot out the isoclines in phase space -- that is, the conditions under which the predator and prey populations do NOT grow!
+Una vez más, puede ser útil trazar las isoclinas en el espacio de fase, es decir, las condiciones en las que las poblaciones de depredadores y presas NO crecen.
 
-If we set the L-V prey growth equation to zero, we find that the victim population is stable under the following conditions in phase space:
+Si establecemos la ecuación de crecimiento de presas L-V en cero, encontramos que la población de víctimas es estable bajo las siguientes condiciones en el espacio de fase:
 
 $\hat{P} =\frac{r}{\alpha}$
 
-If we set the L-V predator equation to zero, we find that the predator population is stable under the following conditions in phase space:
+Si establecemos la ecuación del depredador L-V en cero, encontramos que la población de depredadores es estable en las siguientes condiciones en el espacio de fase:
 
 $\hat{V} =\frac{q}{\beta}$
 
-That is, the prey population is stable only if there are just enough predators to bump into (and subsequently eat up) any excess individuals produced each year
 
-And the predator population is stable only if there are just enough prey to offset natural mortality.
+Es decir, la población de presas es estable solo si hay suficientes depredadores para chocar (y luego devorar) cualquier exceso de individuos producidos cada año.
 
-Let's visualize this in phase space.
+Y la población de depredadores es estable solo si hay presas suficientes para compensar la mortalidad natural.
 
+Visualicemos esto en el espacio de fase.
 ```{r}
 
 plot(1,1,pch="",xlim=xlim,ylim=ylim,xlab="Prey",ylab="Predators")
@@ -828,26 +839,28 @@ abline(v=q/Beta,col="blue",lwd=3)   # pred
 
 ```
 
-## Assumptions of the L-V prey-predator model
 
-- Victim population is regulated only by predation
-- Predator feeds only on one species of prey
-- Individual predators can consume infinity prey items per time step theoretically
-- No interference among predators
-- Victims have no refuge from predators
+## Supuestos del modelo L-V presa-depredador
 
-## More realistic prey-predator models
+- La población de víctimas está regulada solo por la depredación
+- El depredador se alimenta solo de una especie de presa
+- Los depredadores individuales pueden consumir presas infinitas por paso de tiempo teóricamente
+- Sin interferencia entre depredadores
+- Las víctimas no tienen refugio de los depredadores.
 
-Let's see what happens if we relax some of these assumptions!
+## Modelos de presa-depredador más realistas
 
-- give the prey a carrying capacity!
-- modify the functional response!
-- add a refuge for prey!
-- add a predator carrying capacity!
+¡Veamos qué pasa si relajamos algunas de estas suposiciones!
 
-We can play around with these scenarios in InsightMaker. But it can be instructive to visualize in phase space first. For example, let's incorporate a victim carrying capacity.
+- ¡Dale a la presa capacidad de carga!
+- modificar la respuesta funcional!
+- ¡Agrega un refugio para las presas!
+- ¡Agregue una capacidad de carga de depredadores!
 
-### victim K in phase space
+
+Podemos jugar con estos escenarios en InsightMaker. Pero puede ser instructivo visualizar primero en el espacio de fase. Por ejemplo, incorporemos una capacidad de carga para víctimas.
+
+### Víctima K en el espacio de fase
 
 ```{r}
 
@@ -891,7 +904,8 @@ phasearrows.draw(new)
 
 ```
 
-Adding isoclines, it looks something like this:
+
+Añadiendo isoclinas, se parece a esto:
 
 ```{r}
 
@@ -972,9 +986,10 @@ points(jitter(System3[,1],500),jitter(System3[,2],500),col="blue",pch=20,cex=0.3
 
 ```
 
-Now, does the system have a stable equilibrium???
 
-Let's visualize as a time series!
+Ahora, ¿el sistema tiene un equilibrio estable ???
+
+¡Visualicemos como una serie de tiempo!
 
 ```{r}
 
@@ -984,13 +999,13 @@ legend("top",lwd=c(2,2),lty=c(1,2),col=c("orange","green"),legend=c("prey","pred
 
 ```
 
-### Alternative functional responses
+### Respuestas funcionales alternativas
 
-The L-V prey-predator model assumes that prey consumption per predator increases linearly with an increase in prey abundance. Following C.S. "Buzz" Holling, this is known as a **"Type I" functional response**.
+El modelo L-V presa-depredador asume que el consumo de presas por depredador aumenta linealmente con un aumento en la abundancia de presas. Siguiendo a C.S. "Buzz" Holling, esto se conoce como una **respuesta funcional "Tipo I" **.
 
-The Type I functional response makes several unrealistic assumptions -- for example, that predators never get full and stop eating!
+La respuesta funcional de Tipo I hace varias suposiciones poco realistas, por ejemplo, ¡que los depredadores nunca se llenan y dejan de comer!
 
-As we have seen before, the type I functional response looks something like this!
+Como hemos visto antes, ¡la respuesta funcional de tipo I se parece a esto!
 
 $f(V)=\alpha \cdot V$
 
@@ -1006,21 +1021,21 @@ curve(TypeIfuncresp(x,0.1),0,500,xlab="Victim abundance",ylab="Total prey eaten 
 
 #### Type II functional response
 
-The **Type II functional response** takes prey saturation into account- the predators will consume more prey with increasing prey densities, but only up to a point! 
+La **respuesta funcional Tipo II ** toma en cuenta la saturación de presas: los depredadores consumirán más presas con densidades de presas crecientes, ¡pero solo hasta cierto punto!
 
-The type II functional response is described mathematically as:
+La respuesta funcional de tipo II se describe matemáticamente como:
 
 $f(V,P) = \frac{\alpha V}{1+\alpha hV}$, 
 
-where *f(V,P)* is the functional response (prey consumed per predator).
+donde * f (V, P) * es la respuesta funcional (presa consumida por depredador).
 
-Similar to the Type I functional response, $\alpha$ is the "attack rate" (rate at which predator-prey encounters increase as prey densities increase) 
+Similar a la respuesta funcional de Tipo I, $\ alpha $ es la "tasa de ataque" (tasa a la que los encuentros depredador-presa aumentan a medida que aumentan las densidades de presas)
 
-The new term, *h*, describes the handling time (average time a predator spends processing a single prey item). 
+El nuevo término, *h *, describe el tiempo de manipulación (tiempo promedio que un depredador pasa procesando una sola presa).
 
-The term *h* is probably best understood as the *inverse of the maximum prey consumption rate*!
+¡El término *h * probablemente se entiende mejor como *inverso de la tasa máxima de consumo de presas *!
 
-Let's visualize it!
+¡Visualicémoslo!
 
 ```{r}
 
@@ -1034,23 +1049,23 @@ curve(TypeIIfuncresp(x,0.1,0.1),0,500,xlab="Victim abundance",ylab="Total prey e
 
 #### Type III functional response
 
-The **Type III functional response** takes predator learning into account- as prey become more abundant (relative to other potential prey) the predators will develop a *search image* and the capture efficiency will increase with increasing prey abundance up to a certain point.
+La **respuesta funcional Tipo III ** toma en cuenta el aprendizaje de los depredadores: a medida que las presas se vuelven más abundantes (en relación con otras presas potenciales), los depredadores desarrollarán una * imagen de búsqueda * y la eficiencia de captura aumentará con el aumento de la abundancia de presas hasta un cierto punto.
 
-Conversely, as prey densities get really low, predators will stop even bothering to look for the prey, so capture efficiency will be depressed. 
+Por el contrario, a medida que la densidad de presas sea realmente baja, los depredadores dejarán de molestarse en buscar a la presa, por lo que la eficiencia de captura disminuirá.
 
-The type III functional response can be described mathematically as:
+La respuesta funcional de tipo III se puede describir matemáticamente como:
 
 $f(V,P) = \frac{\alpha V}{1+\alpha hV}$, 
 
-where *f(V,P)* is the functional response (prey consumed per predator).
+donde * f (V, P) * es la respuesta funcional (presa consumida por depredador).
 
-Similar to the Type I functional response, $\alpha$ is the "attack rate" (rate at which a predator-prey encounters increase as prey densities increase)
+Similar a la respuesta funcional de Tipo I, $\ alpha $ es la "tasa de ataque" (la tasa a la que un depredador-presa se encuentra aumenta a medida que aumenta la densidad de presas)
 
-The new term, *h*, describes the handling time (average time a predator spends processing a single prey item). 
+El nuevo término, * h *, describe el tiempo de manipulación (tiempo promedio que un depredador pasa procesando una sola presa).
 
-The term *h* is probably best understood as the *inverse of the maximum prey consumption rate*!
+¡El término  h * probablemente se entiende mejor como *inverso de la tasa máxima de consumo de presas *!
 
-Let's visualize it!
+¡Visualicémoslo!
 
 ```{r}
 
@@ -1064,17 +1079,18 @@ curve(TypeIIIfuncresp(x,0.0005,0.1,1.6),0,1000,xlab="Victim abundance",ylab="Tot
 
 ## Final InsightMaker activity (on your own)!!
 
-**Step 1** Add prey density-dependence to your basic predator-prey model, using your knowledge of modeling density-dependence (or just use the equations in chapter 6 of the Gotelli book). Visualize the dynamics as time series and in phase space. Do you ever see oscillations with prey density dependence? Is this model more stable than the base L-V model?
 
-**Step 2** Change the functional response to a type-II functional response. Visualize the dynamics as time series and in phase space. Do you ever see oscillations with this model? Is this model more stable than the base L-V model?
+**Paso 1 ** Agregue la dependencia de la densidad de presas a su modelo básico de depredador-presa, utilizando su conocimiento de modelado de la dependencia de la densidad (o simplemente use las ecuaciones del capítulo 6 del libro de Gotelli). Visualice la dinámica como series de tiempo y en espacio de fase. ¿Alguna vez ha visto oscilaciones con dependencia de la densidad de presas? ¿Es este modelo más estable que el modelo base L-V?
 
-**Step 3** Change the model to account for prey refuges. That is, there is a segment of the prey population that is not accessible to predators. How does this change the system dynamics?  
+**Paso 2 ** Cambie la respuesta funcional a una respuesta funcional de tipo II. Visualice la dinámica como series de tiempo y en espacio de fase. ¿Alguna vez ha visto oscilaciones con este modelo? ¿Es este modelo más estable que el modelo base L-V?
 
-**Step 4** Change the model to include a type II functional response AND prey density-dependence. How does this change the system dynamics? Is this system stable? Under what conditions?
+**Paso 3 ** Cambie el modelo para tener en cuenta los refugios de presas. Es decir, hay un segmento de la población de presas que no es accesible para los depredadores. ¿Cómo cambia esto la dinámica del sistema?
 
-**Step 5** Evaluate the following statement (from the Gotelli Book):
+**Paso 4 ** Cambiar el modelo para incluir una respuesta funcional de tipo II Y dependencia de la densidad de presas. ¿Cómo cambia esto la dinámica del sistema? ¿Es este sistema estable? ¿Bajo que condiciones?
 
-> "the more independent the predator and the prey are of one another, the more stable the interaction"
+**Paso 5 ** Evalúe la siguiente declaración (del Libro de Gotelli):
+
+> "Cuanto más independientes sean el depredador y la presa, más estable será la interacción"
 
 [--go to next lecture--](LECTURE18.html)
 
