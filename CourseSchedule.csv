@@ -1,47 +1,48 @@
-Week,Dates,Topic,Readings
-Week 1,1/25/2021,LECTURE: Course overview; Intro to Systems Thinking,BCTD Chapter 1
-,1/27/2021,LECTURE: Intro to Population Ecology; Exponential growth,Gotelli Chapter 1
-,1/29/2021,"LAB 1: Introduction to population modeling  in Excel, InsightMaker, and R",Gotelli Chapter 1
-Week 2,2/1/2021,LECTURE: Malthus and exponential growth,
-,2/3/2021,LECTURE: Density-dependent growth,Gotelli Chapter 2
-,2/5/2021,LAB 1 (cont'd),
-Week 3,2/8/2021,LECTURE: Density-dependent growth,Gotelli Chapter 2
-,2/10/2021,LECTURE: Passenger pigeon/Allee Effect,
-,2/12/2021,LAB 2: Density-dependent populations in InsightMaker; maximum sustainable yield (MSY) and more,BCTD Chapter 2 (skim)
-Week 4,2/15/2021,NO CLASS: President's Day,
-,2/17/2021,LECTURE: Age-structured populations,Gotelli Chapter 3
-,2/19/2021,LAB 3: Age-structured populations in Excel and InsightMaker,
-Week 5,2/22/2021,LECTURE: Matrix population models,[Heppell 1998](heppell1.pdf)
-,2/24/2021,LECTURE: Matrix population models,Gotelli Chapter 3
-,2/26/2021,Work on PVA proposals,
-Week 6,3/1/2021,LECTURE: Matrix population models,Gotelli Chapter 3
-,3/3/2021,LECTURE: Stochasticity and uncertainty,[Regan 2002](Regan_2002.pdf)
-,3/5/2021,LAB 4: Matrix population models in R and InsightMaker,
-Week 7,3/8/2021,LECTURE: Stochasticity and uncertainty ,
-,3/10/2021,NO CLASS: READING DAY,
-,3/12/2021,PVA proposals  (proposals due),
-Week 8,3/15/2021,MIDTERM #1,
-,3/17/2021,LECTURE: Stochasticity and uncertainty ,
-,3/19/2021,Work on group PVA projects (proposal meetings),
-Week 9,3/22/2021,LECTURE: Small population paradigm,[Caughley 1994](caughley1.pdf) 
-,3/24/2021,NO CLASS (No Instruction Day) ,
-,3/26/2021,LAB 5: Stochasticity and uncertainty,
-Week 10,3/29/2021,LECTURE: Declining population paradigm,[Caughley 1994](caughley1.pdf) 
-,3/31/2021,LECTURE: PVA!,[Beissinger and Westphal 1998](beissinger1.pdf)
-,4/2/2021,Final projects (PVA models due next week),
-Week 11,4/5/2021,LECTURE: Metapopulations,Gotelli Chapter 4
-,4/7/2021,LECTURE: Source-sink dynamics,[Griffin et al](griffin1.pdf)
-,4/9/2021,LAB 6: Metapopulation modeling in InsightMaker  (PVA models due),
-Week 12,4/12/2021,LECTURE: Parameter estimation,[Amstrup et al Chapter 1](amstrup1.pdf)
-,4/14/2021,LECTURE: Species interactions: competition,Gotelli Chapter 5
-,4/16/2021,LAB 7 (optional): Parameter estimation: mark-recapture data,
-Week 13,4/19/2021,LECTURE: MIDTERM #2,
-,4/21/2021,NO CLASS: READING DAY (peer review papers due),
-,4/23/2021,LAB: PEER REVIEW,
-Week 14,4/26/2021,LECTURE: Species interactions: competition ,
-,4/28/2021,LECTURE: Species interactions: predator-prey (final project: complete drafts due),Gotelli Chapter 6
-,4/30/2021,LAB: STUDENT PRESENTATIONS,
-Week 15,5/3/2021,LECTURE: Final Class Review,
-,5/5/2021,NO CLASS: Prep Day,
-,5/7/2021,FINAL EXAM (9:50 to 11:50am),
-Week 16,5/12/2021,FINAL PAPERS DUE (last day of finals),
+Week,Dates,Topic,Lecturas
+Week 1,8/9/21,CONFERENCIA: Introducci—n al curso; Intro to Systems Thinking,
+,8/11/21,CONFERENCIA: Intro a la Ecolog’a de Poblaciones; Crecimiento exponencial,Gotelli Chapter 1
+,,"Hands_on_1: Introducci—n a moelar en Ecol. Poblaci—n  con Excel, InsightMaker y R",Gotelli Chapter 1
+Week 2,8/16/21,CONFERENCIA: Malthus y el crecimiento poblacional,
+,8/18/21,CONFERENCIA: Crecimiento denso-dependiente,Gotelli Chapter 2
+,,Hands_on_1 (cont'd),
+Week 3,8/23/21,CONFERENCIA: Crecimiento denso-dependiente,Gotelli Chapter 2
+,8/25/21,CONFERENCIA: Paloma viajera/El Efecto Allee,
+,,Hands_on_2: Crecimiento denso-dependiente en InsightMaker; rendimiento m‡ximo sostenible (maximum sustainable yield (MSY)) y m‡s,
+Week 4,8/30/21,CONFERENCIA: Poblaciones estructuradas por edad,
+,9/1/21,CONFERENCIA: Modelos matriciales de poblaci—n,Gotelli Chapter 3
+,,Hand_on_3: Poblaciones estructuradas por edad in Excel and InsightMaker,
+Week 5,9/6/21,Labor Day,[Heppell 1998](heppell1.pdf)
+,9/8/21,CONFERENCIA: Modelos matriciales de poblaci—n,Gotelli Chapter 3
+,,Trabajar en propuestas de PVA,
+Week 6,9/13/21,CONFERENCIA: Modelos matriciales de poblaci—n,Gotelli Chapter 3
+,9/15/21,CONFERENCIA: Estocasticidad e incertidumbre,[Regan 2002](Regan_2002.pdf)
+,,Hands_On_4: Modelos matriciales de poblaci—n en R and InsightMaker,
+Week 7,9/20/21,CONFERENCIA: Estocasticidad e incertidumbre,
+,9/22/21,Articulo: ,
+,,Propuestas PVA (propuestas sometida),
+Week 8,9/27/21,MIDTERM #1,
+,9/29/21,CONFERENCIA: Estocasticidad e incertidumbre,
+,,Trabajar en proyectos de PVA grupales (reuniones de propuestas),
+Week 9,10/4/21,CONFERENCIA: Paradigma de peque–a poblaci—n,[Caughley 1994](caughley1.pdf) 
+,10/6/21,Articulo: ,
+,,Hands_on_5: Estocasticidad e incertidumbre,
+Week 10,10/11/21,Colombus Day: ,[Caughley 1994](caughley1.pdf) 
+,10/13/21,"CONFERENCIA: Declining population paradigm, PVA!",[Beissinger and Westphal 1998](beissinger1.pdf)
+,,Proyectos finales (modelos PVA que vencen la pr—xima semana),
+Week 11,10/18/21,CONFERENCIA: Metapopulaci—n,Gotelli Chapter 4
+,10/20/21,CONFERENCIA: Din‡mica fuente-sumidero,[Griffin et al](griffin1.pdf)
+,,Hands_on_6: Modelado de metapoblaciones en InsightMaker  (PVA models due),
+Week 12,10/25/21,CONFERENCIA: Estimaci—n de par‡metros,[Amstrup et al Chapter 1](amstrup1.pdf)
+,10/27/21,Articulo: ,Gotelli Chapter 5
+,,,
+Week 13,11/1/21,CONFERENCIA: MIDTERM #2,
+,11/3/21,Hands_on: PEER REVIEW of Project,
+,,,
+Week 14,11/8/21,CONFERENCIA: Interacciones de especies: competencia,
+,11/10/21,CONFERENCIA: Species interactions: predator-prey (final project: complete drafts Interacciones de especies: depredador-presa (proyecto final: anteproyecto completo),Gotelli Chapter 6
+,,,
+Week 15,11/15/21,Hands_on: STUDENT PRESENTATIONS,
+,11/17/21,Hands_on: STUDENT PRESENTATIONS,
+,,,
+Week 16,11/22/21,Hands_on: STUDENT PRESENTATIONS,
+,11/24/21,FINAL PAPERS DUE (last day of finals),

@@ -53,6 +53,11 @@ navbar:
           href: PVA2_421.html
         - text: "NRES421: loggerhead PVA"
           href: PVA3_421.html
+          
+    - text: "Tareas"
+      menu: 
+        - text: "Tarea 1: Historia de Vida"
+          href: Tarea_1_historia_vida.html
     - text: "Labs"
       menu:
         - text: "Lab 1: exponential growth"
