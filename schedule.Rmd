@@ -1,27 +1,33 @@
 ---
-title: "Schedule, Spring 2021"
-author: "NRES 470/670"
-output: 
+title: "Calendario, Agosto 2021"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
   html_document: 
     theme: spacelab
-    toc: no
-    toc_float: no
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Please check for updates frequently!
+¡Compruebe las actualizaciones con frecuencia!
 
-NOTE: in 2021 we are online, the course materials are available for you to work through on your own pace, and you are only required to attend one 'lecture' period per week (M or W). So we will mostly follow the schedule listed below, but the items labeled 'LECTURE' are available online (asynchronously). Hope this makes sense!!
+NOTA: en 2021 estamos en línea, los materiales del curso están disponibles para que trabaje a su propio ritmo, y debe asistir a todas las 'conferencias' (lunes o miércoles). Por lo tanto, seguiremos principalmente el programa que se enumera a continuación, pero los elementos etiquetados como 'CONFERENCIA' están disponibles en línea (de forma asincrónica). ¡Espero que esto tenga sentido!
 
 
 ```{r include=FALSE}
 courseSchedule <- read.csv("CourseSchedule.csv")
+courseSchedule
 ```
 
 ```{r results='asis', echo=FALSE}
-knitr::kable(courseSchedule,caption="")
+library(kableExtra)
+kbl(courseSchedule,caption = "")
 
 ```

@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="NRES 470/670" />
+<meta name="author" content="BIOL4558" />
 
 
-<title>Schedule, Spring 2021</title>
+<title>Calendario, Agosto 2021</title>
 
 <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -30,9 +30,15 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -216,7 +222,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -226,6 +298,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -325,6 +407,18 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Labs
      
     <span class="caret"></span>
@@ -372,313 +466,629 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">Schedule, Spring 2021</h1>
-<h4 class="author">NRES 470/670</h4>
+
+<h1 class="title toc-ignore">Calendario, Agosto 2021</h1>
+<h4 class="author">BIOL4558</h4>
+<h4 class="date">Agosto 2021</h4>
 
 </div>
 
 
-<p>Please check for updates frequently!</p>
-<p>NOTE: in 2021 we are online, the course materials are available for you to work through on your own pace, and you are only required to attend one ‘lecture’ period per week (M or W). So we will mostly follow the schedule listed below, but the items labeled ‘LECTURE’ are available online (asynchronously). Hope this makes sense!!</p>
+<p>¡Compruebe las actualizaciones con frecuencia!</p>
+<p>NOTA: en 2021 estamos en línea, los materiales del curso están disponibles para que trabaje a su propio ritmo, y debe asistir a todas las ‘conferencias’ (lunes o miércoles). Por lo tanto, seguiremos principalmente el programa que se enumera a continuación, pero los elementos etiquetados como ‘CONFERENCIA’ están disponibles en línea (de forma asincrónica). ¡Espero que esto tenga sentido!</p>
 <table>
-<colgroup>
-<col width="4%" />
-<col width="6%" />
-<col width="59%" />
-<col width="29%" />
-</colgroup>
+<caption>
+</caption>
 <thead>
-<tr class="header">
-<th align="left">Week</th>
-<th align="left">Dates</th>
-<th align="left">Topic</th>
-<th align="left">Readings</th>
+<tr>
+<th style="text-align:left;">
+Semanas
+</th>
+<th style="text-align:left;">
+Dates
+</th>
+<th style="text-align:left;">
+Topicos
+</th>
+<th style="text-align:left;">
+Lecturas
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Week 1</td>
-<td align="left">1/25/2021</td>
-<td align="left">LECTURE: Course overview; Intro to Systems Thinking</td>
-<td align="left">BCTD Chapter 1</td>
+<tr>
+<td style="text-align:left;">
+Week 1
+</td>
+<td style="text-align:left;">
+8/9/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Introduccion al curso; Intro to Systems Thinking
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">1/27/2021</td>
-<td align="left">LECTURE: Intro to Population Ecology; Exponential growth</td>
-<td align="left">Gotelli Chapter 1</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+8/11/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Intro a la Ecologia de Poblaciones; Crecimiento exponencial
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 1
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">1/29/2021</td>
-<td align="left">LAB 1: Introduction to population modeling in Excel, InsightMaker, and R</td>
-<td align="left">Gotelli Chapter 1</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hands_on_1: Introduccion a modelar en Ecol. Poblacion con Excel, InsightMaker y R
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 1
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 2</td>
-<td align="left">2/1/2021</td>
-<td align="left">LECTURE: Malthus and exponential growth</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 2
+</td>
+<td style="text-align:left;">
+8/16/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Malthus y el crecimiento poblacional
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">2/3/2021</td>
-<td align="left">LECTURE: Density-dependent growth</td>
-<td align="left">Gotelli Chapter 2</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+8/18/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Crecimiento denso-dependiente
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 2
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">2/5/2021</td>
-<td align="left">LAB 1 (cont’d)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hands_on_1 (cont’d)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 3</td>
-<td align="left">2/8/2021</td>
-<td align="left">LECTURE: Density-dependent growth</td>
-<td align="left">Gotelli Chapter 2</td>
+<tr>
+<td style="text-align:left;">
+Week 3
+</td>
+<td style="text-align:left;">
+8/23/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Crecimiento denso-dependiente
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 2
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">2/10/2021</td>
-<td align="left">LECTURE: Passenger pigeon/Allee Effect</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+8/25/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Paloma viajera/El Efecto Allee
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">2/12/2021</td>
-<td align="left">LAB 2: Density-dependent populations in InsightMaker; maximum sustainable yield (MSY) and more</td>
-<td align="left">BCTD Chapter 2 (skim)</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hands_on_2: Crecimiento denso-dependiente en InsightMaker; rendimiento maximo sostenible (maximum sustainable yield (MSY)) y mas
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 4</td>
-<td align="left">2/15/2021</td>
-<td align="left">NO CLASS: President’s Day</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 4
+</td>
+<td style="text-align:left;">
+8/30/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Poblaciones estructuradas por edad
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">2/17/2021</td>
-<td align="left">LECTURE: Age-structured populations</td>
-<td align="left">Gotelli Chapter 3</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+9/1/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Modelos matriciales de poblacion
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 3
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">2/19/2021</td>
-<td align="left">LAB 3: Age-structured populations in Excel and InsightMaker</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hand_on_3: Poblaciones estructuradas por edad in Excel and InsightMaker
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 5</td>
-<td align="left">2/22/2021</td>
-<td align="left">LECTURE: Matrix population models</td>
-<td align="left"><a href="heppell1.pdf">Heppell 1998</a></td>
+<tr>
+<td style="text-align:left;">
+Week 5
+</td>
+<td style="text-align:left;">
+9/6/21
+</td>
+<td style="text-align:left;">
+Labor Day
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">2/24/2021</td>
-<td align="left">LECTURE: Matrix population models</td>
-<td align="left">Gotelli Chapter 3</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+9/8/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Modelos matriciales de poblacion
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 3
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">2/26/2021</td>
-<td align="left">Work on PVA proposals</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Trabajar en propuestas de PVA
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 6</td>
-<td align="left">3/1/2021</td>
-<td align="left">LECTURE: Matrix population models</td>
-<td align="left">Gotelli Chapter 3</td>
+<tr>
+<td style="text-align:left;">
+Week 6
+</td>
+<td style="text-align:left;">
+9/13/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Modelos matriciales de poblacion
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 3
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">3/3/2021</td>
-<td align="left">LECTURE: Stochasticity and uncertainty</td>
-<td align="left"><a href="Regan_2002.pdf">Regan 2002</a></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+9/15/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Estocasticidad e incertidumbre
+</td>
+<td style="text-align:left;">
+Quiz: <a href="Regan_2002.pdf">Regan 2002</a>
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">3/5/2021</td>
-<td align="left">LAB 4: Matrix population models in R and InsightMaker</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hands_On_4: Modelos matriciales de poblacion en R and InsightMaker
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 7</td>
-<td align="left">3/8/2021</td>
-<td align="left">LECTURE: Stochasticity and uncertainty</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 7
+</td>
+<td style="text-align:left;">
+9/20/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Estocasticidad e incertidumbre
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">3/10/2021</td>
-<td align="left">NO CLASS: READING DAY</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+9/22/21
+</td>
+<td style="text-align:left;">
+Articulo: Heppell, 1998: Coates el al. 
+</td>
+<td style="text-align:left;">
+<a href="heppell1.pdf">Heppell 1998</a>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">3/12/2021</td>
-<td align="left">PVA proposals (proposals due)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Propuestas PVA (propuestas sometida)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 8</td>
-<td align="left">3/15/2021</td>
-<td align="left">MIDTERM #1</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 8
+</td>
+<td style="text-align:left;">
+9/27/21
+</td>
+<td style="text-align:left;">
+MIDTERM #1
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">3/17/2021</td>
-<td align="left">LECTURE: Stochasticity and uncertainty</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+9/29/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Estocasticidad e incertidumbre
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">3/19/2021</td>
-<td align="left">Work on group PVA projects (proposal meetings)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Trabajar en proyectos de PVA grupales (reuniones de propuestas)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 9</td>
-<td align="left">3/22/2021</td>
-<td align="left">LECTURE: Small population paradigm</td>
-<td align="left"><a href="caughley1.pdf">Caughley 1994</a></td>
+<tr>
+<td style="text-align:left;">
+Week 9
+</td>
+<td style="text-align:left;">
+10/4/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Paradigma de pequena poblacion
+</td>
+<td style="text-align:left;">
+Quiz: <a href="caughley1.pdf">Caughley 1994</a>
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">3/24/2021</td>
-<td align="left">NO CLASS (No Instruction Day)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+10/6/21
+</td>
+<td style="text-align:left;">
+Articulo: Amazona vittata
+</td>
+<td style="text-align:left;">
+<a href="Amazona%20Vittata.pdf">J Thompson 2004</a>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">3/26/2021</td>
-<td align="left">LAB 5: Stochasticity and uncertainty</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hands_on_5: Estocasticidad e incertidumbre
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 10</td>
-<td align="left">3/29/2021</td>
-<td align="left">LECTURE: Declining population paradigm</td>
-<td align="left"><a href="caughley1.pdf">Caughley 1994</a></td>
+<tr>
+<td style="text-align:left;">
+Week 10
+</td>
+<td style="text-align:left;">
+10/11/21
+</td>
+<td style="text-align:left;">
+Colombus Day:
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">3/31/2021</td>
-<td align="left">LECTURE: PVA!</td>
-<td align="left"><a href="beissinger1.pdf">Beissinger and Westphal 1998</a></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+10/13/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Declining population paradigm, PVA!
+</td>
+<td style="text-align:left;">
+Quiz_Bono: <a href="beissinger1.pdf">Beissinger and Westphal 1998</a>
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">4/2/2021</td>
-<td align="left">Final projects (PVA models due next week)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Proyectos finales (modelos PVA que vencen la proxima semana)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 11</td>
-<td align="left">4/5/2021</td>
-<td align="left">LECTURE: Metapopulations</td>
-<td align="left">Gotelli Chapter 4</td>
+<tr>
+<td style="text-align:left;">
+Week 11
+</td>
+<td style="text-align:left;">
+10/18/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Metapopulacion
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 4
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">4/7/2021</td>
-<td align="left">LECTURE: Source-sink dynamics</td>
-<td align="left"><a href="griffin1.pdf">Griffin et al</a></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+10/20/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Dinamica fuente-sumidero
+</td>
+<td style="text-align:left;">
+Quiz_Bono: <a href="griffin1.pdf">Griffin et al</a>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">4/9/2021</td>
-<td align="left">LAB 6: Metapopulation modeling in InsightMaker (PVA models due)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Hands_on_6: Modelado de metapoblaciones en InsightMaker (PVA models due)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 12</td>
-<td align="left">4/12/2021</td>
-<td align="left">LECTURE: Parameter estimation</td>
-<td align="left"><a href="amstrup1.pdf">Amstrup et al Chapter 1</a></td>
+<tr>
+<td style="text-align:left;">
+Week 12
+</td>
+<td style="text-align:left;">
+10/25/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Estimacion de parametros
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">4/14/2021</td>
-<td align="left">LECTURE: Species interactions: competition</td>
-<td align="left">Gotelli Chapter 5</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+10/27/21
+</td>
+<td style="text-align:left;">
+Articulo: Tremblay et al. 
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 5; Do orchids behave as metapopulations?
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">4/16/2021</td>
-<td align="left">LAB 7 (optional): Parameter estimation: mark-recapture data</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 13</td>
-<td align="left">4/19/2021</td>
-<td align="left">LECTURE: MIDTERM #2</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 13
+</td>
+<td style="text-align:left;">
+11/1/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: MIDTERM #2
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">4/21/2021</td>
-<td align="left">NO CLASS: READING DAY (peer review papers due)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+11/3/21
+</td>
+<td style="text-align:left;">
+Hands_on: PEER REVIEW of Project
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">4/23/2021</td>
-<td align="left">LAB: PEER REVIEW</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 14</td>
-<td align="left">4/26/2021</td>
-<td align="left">LECTURE: Species interactions: competition</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 14
+</td>
+<td style="text-align:left;">
+11/8/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Interacciones de especies: competencia
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">4/28/2021</td>
-<td align="left">LECTURE: Species interactions: predator-prey (final project: complete drafts due)</td>
-<td align="left">Gotelli Chapter 6</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+11/10/21
+</td>
+<td style="text-align:left;">
+CONFERENCIA: Species interactions: predator-prey (final project: complete drafts Interacciones de especies: depredador-presa (proyecto final: anteproyecto completo)
+</td>
+<td style="text-align:left;">
+Gotelli Chapter 6
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">4/30/2021</td>
-<td align="left">LAB: STUDENT PRESENTATIONS</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Week 15</td>
-<td align="left">5/3/2021</td>
-<td align="left">LECTURE: Final Class Review</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 15
+</td>
+<td style="text-align:left;">
+11/15/21
+</td>
+<td style="text-align:left;">
+Hands_on: STUDENT PRESENTATIONS
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">5/5/2021</td>
-<td align="left">NO CLASS: Prep Day</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+11/17/21
+</td>
+<td style="text-align:left;">
+Hands_on: STUDENT PRESENTATIONS
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">5/7/2021</td>
-<td align="left">FINAL EXAM (9:50 to 11:50am)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Week 16</td>
-<td align="left">5/12/2021</td>
-<td align="left">FINAL PAPERS DUE (last day of finals)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Week 16
+</td>
+<td style="text-align:left;">
+11/22/21
+</td>
+<td style="text-align:left;">
+Hands_on: STUDENT PRESENTATIONS
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+11/24/21
+</td>
+<td style="text-align:left;">
+FINAL PAPERS DUE (last day of finals)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
 </tbody>
 </table>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -710,7 +1120,41 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
