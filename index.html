@@ -34,8 +34,11 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -219,6 +222,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -401,6 +407,18 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Labs
      
     <span class="caret"></span>
@@ -448,10 +466,19 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">Bienvenido a BIOL4458</h1>
 <h4 class="author">Ecología de Población Aplicada</h4>
+<h4 class="date">Agosto 2021</h4>
 
 </div>
 
@@ -512,8 +539,88 @@ div.tocify {
 <div id="puntación" class="section level3">
 <h3>Puntación:</h3>
 <p>The course grade will be based on the following components:</p>
-<p>Lab exercises Vea prontuartio correspondiente 33%</p>
-<p>Cuestionarios y participación 10% (40 puntos) Proyecto grupal de un tema 25% (100 puntos) Examen parcial n.°1 (fecha por determinar) 10% (40 puntos) Trabajo de PVA (fecha por determinar) 10% (40 puntos) Examen final (TBD) 25% (100 puntos)</p>
+<pre class="r"><code>library(tidyverse)
+library(kableExtra)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;kableExtra&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     group_rows</code></pre>
+<pre class="r"><code>Notas=tribble(
+  ~Componentes, ~Nota_porcentual,
+  
+ &quot;Lab exercises Vea prontuartio correspondiente&quot;,         &quot;33%&quot;,  
+
+&quot;Cuestionarios y participación&quot;,                        &quot;10% (40 puntos)&quot;,
+&quot;Proyecto grupal de un tema&quot; ,                           &quot;25% (100 puntos)&quot;,
+&quot; Examen parcial n.°1 (fecha por determinar) &quot;,           &quot;10% (40 puntos)&quot;,
+ &quot;Trabajo de PVA (fecha por determinar)&quot;   ,              &quot;10% (40 puntos)&quot;,
+ &quot;Examen final (fecha por determinar) &quot;   ,               &quot;25% (100 puntos)&quot;,
+)
+
+kbl(Notas)</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Componentes
+</th>
+<th style="text-align:left;">
+Nota_porcentual
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lab exercises Vea prontuartio correspondiente
+</td>
+<td style="text-align:left;">
+33%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cuestionarios y participación
+</td>
+<td style="text-align:left;">
+10% (40 puntos)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Proyecto grupal de un tema
+</td>
+<td style="text-align:left;">
+25% (100 puntos)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Examen parcial n.°1 (fecha por determinar)
+</td>
+<td style="text-align:left;">
+10% (40 puntos)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trabajo de PVA (fecha por determinar)
+</td>
+<td style="text-align:left;">
+10% (40 puntos)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Examen final (fecha por determinar)
+</td>
+<td style="text-align:left;">
+25% (100 puntos)
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="examenes" class="section level3">
 <h3>Examenes:</h3>
@@ -521,7 +628,7 @@ div.tocify {
 </div>
 <div id="lectures" class="section level3">
 <h3>Lectures</h3>
-<p>Las calificaciones de las conferencias se basarán principalmente en la participación y en las pruebas breves. La participación es esencial para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta clase). El aprendizaje no es un proceso pasivo; Se espera que los estudiantes se involucren con el material en clase en lugar de simplemente escuchar y tomar notas. Debe estar preparado en clase para hacer preguntas, responder preguntas de otros estudiantes y participar en actividades de resolución de problemas en clase.</p>
+<p>Las calificaciones de las conferencias se basarán principalmente en la participación y en las pruebas breves. La participación es esencial para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta clase). El aprendizaje no es un proceso pasivo. Se espera que los estudiantes se involucren con el material en clase en lugar de simplemente escuchar y tomar notas. Debe estar preparado en clase para hacer preguntas, responder preguntas de otros estudiantes y participar en actividades de resolución de problemas en clase.</p>
 </div>
 <div id="labs" class="section level3">
 <h3>Labs</h3>
@@ -594,6 +701,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {

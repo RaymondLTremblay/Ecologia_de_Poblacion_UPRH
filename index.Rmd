@@ -1,11 +1,13 @@
 ---
 title: "Bienvenido a BIOL4458"
 author: "Ecología de Población Aplicada"
-output:
+date: "Agosto 2021"
+output: 
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -58,20 +60,34 @@ Los estudiantes podrán:
 ### Puntación: 
 The course grade will be based on the following components:
 
-Lab exercises Vea prontuartio correspondiente         33%   
+```{r}
+library(tidyverse)
+library(kableExtra)
+Notas=tribble(
+  ~Componentes, ~Nota_porcentual,
+  
+ "Lab exercises Vea prontuartio correspondiente",         "33%",  
 
-Cuestionarios y participación                         10% (40 puntos)
-Proyecto grupal de un tema                            25% (100 puntos)
-Examen parcial n.°1 (fecha por determinar)            10% (40 puntos)
-Trabajo de PVA (fecha por determinar)                 10% (40 puntos)
-Examen final (TBD)                                    25% (100 puntos)
+"Cuestionarios y participación",                        "10% (40 puntos)",
+"Proyecto grupal de un tema" ,                           "25% (100 puntos)",
+" Examen parcial n.°1 (fecha por determinar) ",           "10% (40 puntos)",
+ "Trabajo de PVA (fecha por determinar)"   ,              "10% (40 puntos)",
+ "Examen final (fecha por determinar) "   ,               "25% (100 puntos)",
+)
+
+kbl(Notas)
+
+```
+
+
+
 
    
 ### Examenes:
 Habrá un examen parcial y un examen final (acumulativo). Estos consistirán en preguntas de opción múltiple, de respuesta corta y preguntas de ensayo que requieren síntesis de ideas y pensamiento crítico. El exámen parcial y final serán acumulativos y se basarán en toda la información presentada durante la semanas anterior al examen.
 
 ### Lectures
-Las calificaciones de las conferencias se basarán principalmente en la participación y en las pruebas breves. La participación es esencial para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta clase). El aprendizaje no es un proceso pasivo; Se espera que los estudiantes se involucren con el material en clase en lugar de simplemente escuchar y tomar notas. Debe estar preparado en clase para hacer preguntas, responder preguntas de otros estudiantes y participar en actividades de resolución de problemas en clase.   
+Las calificaciones de las conferencias se basarán principalmente en la participación y en las pruebas breves. La participación es esencial para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta clase). El aprendizaje no es un proceso pasivo. Se espera que los estudiantes se involucren con el material en clase en lugar de simplemente escuchar y tomar notas. Debe estar preparado en clase para hacer preguntas, responder preguntas de otros estudiantes y participar en actividades de resolución de problemas en clase.   
 
 ### Labs  
 Vea el Prontuario
@@ -80,6 +96,7 @@ Vea el Prontuario
 Los estudiantes trabajarán en grupos de ~ 2 para realizar un análisis de viabilidad de la población (PVA) para clasificar las acciones de conservación o manejo para una especie de interés de conservación (¡especie de su elección!). La calificación se basará en los productos terminados (presentaciones escritas y orales), así como en la participación y evaluaciones de pares.
 
 ### Proyecto de grupal de un tema
+
 
 
 
@@ -152,25 +169,6 @@ rmarkdown::render('PVA2_421.Rmd',rmarkdown::pdf_document())
 rmarkdown::render('PVA3_421.Rmd',rmarkdown::pdf_document())
 
 
-## [Quiz #1](https://unr.instructure.com/courses/15896/quizzes/21572)
-## [Quiz #2](https://unr.instructure.com/courses/15896/quizzes/24149)
-
-### Field Trips
-# We will be taking 1-2 field trips to collect wildlife population data. One field trip will be full-day, on a weekend: bring breakfast, lunch, and plenty of water. Bring any appropriate gear for spending the day in the field including: binoculars, spotting scopes, and field guides, and wear appropriate clothing for hiking. Be prepared for inclement weather.
-
-
-## UPCOMING
-
-# - metapopulations
-# - source sink
-
-
-        # - text: "Lab 8: mule deer PVA"
-        #   href: Lab8_muledeer.docx
-        # - text: "Lab 8: mule deer MARK file"
-        #   href: PDH_KnownFate.zip
-
-
 ```
 
 
@@ -235,8 +233,6 @@ rmd2rscript_labanswers <- function(infile="LECTURE2.Rmd"){    # function for con
 
 
 ```{r echo=FALSE, eval=FALSE}
-
-
 rmd2rscript("LECTURE7.Rmd")  ##
 rmd2rscript("LECTURE8.Rmd")
 rmd2rscript("LECTURE15.Rmd")

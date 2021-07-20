@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Resumen
 
-En esta clase exploraremos cómo los conceptos de * ecología de poblaciones * se pueden aplicar a sistemas del mundo real para apoyar y mejorar la conservación y el manejo de la vida silvestre. Para tomar este curso, ya debe tener una base básica en el campo de la ecología (por ejemplo, Ecología General). BIOL4458 está destinado a ser un puente entre Egologái General y el curso de Ecología de comunidades.  Esta clase está estrechamente relacionada con la Biología de la conservación, ya que aprendemos y aplicamos una de las herramientas más importantes utilizadas por los biólogos de la conservación y los administradores de la vida silvestre: ¡modelos cuantitativos de población!    
+En esta clase exploraremos cómo los conceptos de *Ecología de poblaciones* se pueden aplicar a sistemas del mundo real para apoyar y mejorar la conservación y el manejo de la vida silvestre. Para tomar este curso, ya debe tener una base básica en el campo de la ecología (por ejemplo, Ecología General). BIOL4458 está destinado a ser un puente entre Ecología General y el curso de Ecología de Comunidades.  Esta clase está estrechamente relacionada con la Biología de la conservación, ya que aprendemos y aplicamos una de las herramientas más importantes utilizadas por los biólogos de la conservación y los administradores de la vida silvestre: ¡modelos cuantitativos de población!    
 
 ## Syllabus:
 Revisamos el Syllabus y el calendario:
@@ -42,7 +42,7 @@ Este semestre proporcionaré materiales de conferencias, videos y lecturas antes
 ## Actividades fuera de clase
 Para aprovechar al máximo este curso, deberá dedicar una cantidad significativa de tiempo fuera de clase a:
 
-1. Estudiar las lecturas asignadas (consulte [the schedule](schedule.html)) y los materiales de las conferencias en línea.
+1. Estudiar las lecturas asignadas (consulte [EL CALENDARIO](schedule.html)) y los materiales de las conferencias en línea.
 2. Terminar cualquier problema / ejercicio que no completó durante la clase o el laboratorio
 3. Trabajando en sus proyectos finales grupales.
 
@@ -64,7 +64,7 @@ Necesito sus comentarios frecuentes y honestos para asegurarme de que el nivel y
 [--go to next lecture--](LECTURE1.html)
 
 ## NOTA IMPORTANTE: 
-La gran mayoria de la información de este website proviene de un curso preparado y organizado por el Dr. Ken Shoemaker [https://github.com/kevintshoemaker/NRES-470](https://github.com/kevintshoemaker/NRES-470). El Dr. Shoemaker dio su aprobación que se podría utilizar y traducir su website al español. Hay cambio de información y de temas en diferentes paginas.  
+La gran mayoria de la información de este website proviene de un curso preparado y organizado por el Dr. Ken Shoemaker [https://github.com/kevintshoemaker/NRES-470](https://github.com/kevintshoemaker/NRES-470). El Dr. Shoemaker dio su aprobación que se podría utilizar y traducir su website al español. Hay cambio de información y de temas en diferentes paginas.  Cualquier error de traduccion/conceptos o conflicto el presente autor (RLT) es responsable.  Se añadio ejemplo en diferentes modulos relevante al Tropico y al Caribe.   
 
 ## IMPORTANT NOTE:
 
