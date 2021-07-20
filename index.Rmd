@@ -60,19 +60,21 @@ Los estudiantes podrán:
 ### Puntación: 
 The course grade will be based on the following components:
 
-```{r}
+```{r include=FALSE}
 library(tidyverse)
 library(kableExtra)
+```
+
+```{r}
 Notas=tribble(
   ~Componentes, ~Nota_porcentual,
   
  "Lab exercises Vea prontuartio correspondiente",         "33%",  
-
-"Cuestionarios y participación",                        "10% (40 puntos)",
-"Proyecto grupal de un tema" ,                           "25% (100 puntos)",
-" Examen parcial n.°1 (fecha por determinar) ",           "10% (40 puntos)",
- "Trabajo de PVA (fecha por determinar)"   ,              "10% (40 puntos)",
- "Examen final (fecha por determinar) "   ,               "25% (100 puntos)",
+ "Cuestionarios y participación",                         "10% (40 puntos)",
+ "Proyecto grupal de un tema",                            "25% (100 puntos)",
+ "Examen parcial n.°1 (fecha por determinar)",            "10% (40 puntos)",
+ "Trabajo de PVA (fecha por determinar)",                 "10% (40 puntos)",
+ "Examen final (fecha por determinar) ",                  "25% (100 puntos)",
 )
 
 kbl(Notas)

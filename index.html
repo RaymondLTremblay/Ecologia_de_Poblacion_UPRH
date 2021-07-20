@@ -539,23 +539,15 @@ div.tocify {
 <div id="puntación" class="section level3">
 <h3>Puntación:</h3>
 <p>The course grade will be based on the following components:</p>
-<pre class="r"><code>library(tidyverse)
-library(kableExtra)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;kableExtra&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     group_rows</code></pre>
 <pre class="r"><code>Notas=tribble(
   ~Componentes, ~Nota_porcentual,
   
  &quot;Lab exercises Vea prontuartio correspondiente&quot;,         &quot;33%&quot;,  
-
-&quot;Cuestionarios y participación&quot;,                        &quot;10% (40 puntos)&quot;,
-&quot;Proyecto grupal de un tema&quot; ,                           &quot;25% (100 puntos)&quot;,
-&quot; Examen parcial n.°1 (fecha por determinar) &quot;,           &quot;10% (40 puntos)&quot;,
- &quot;Trabajo de PVA (fecha por determinar)&quot;   ,              &quot;10% (40 puntos)&quot;,
- &quot;Examen final (fecha por determinar) &quot;   ,               &quot;25% (100 puntos)&quot;,
+ &quot;Cuestionarios y participación&quot;,                         &quot;10% (40 puntos)&quot;,
+ &quot;Proyecto grupal de un tema&quot;,                            &quot;25% (100 puntos)&quot;,
+ &quot;Examen parcial n.°1 (fecha por determinar)&quot;,            &quot;10% (40 puntos)&quot;,
+ &quot;Trabajo de PVA (fecha por determinar)&quot;,                 &quot;10% (40 puntos)&quot;,
+ &quot;Examen final (fecha por determinar) &quot;,                  &quot;25% (100 puntos)&quot;,
 )
 
 kbl(Notas)</code></pre>
