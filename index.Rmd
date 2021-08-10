@@ -17,16 +17,19 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 **Instructor:** Raymond L. Tremblay  
  
-**Website**: [https://github.com/RaymondLTremblay?tab=repositories](https://raymondltremblay.github.io/Ecologia_de_Poblacion_UPRH/) 	
+**Website**: [https://github.com/RaymondLTremblay?tab=repositories](https://raymondltremblay.github.io/Ecologia_de_Poblacion_Humacao/index.html) 	
 **Email**: raymondtremblay_at_upr.edu
  
 ### Horario de la Clase
-**Lectures**: L, W a las 11:00am hasta las 12:20 pm (120 mins)  in NL204.     
+**Lectures**: L, W a las 11:00am hasta las 12:20 pm (120 mins) en el Vagon de Biología.     
 
 
 **Hora de Consulta**:   
 
-- Tremblay: TBD    
+- Tremblay: 
+    - Lunes 8:30 - 10:30
+    - Martes 8:30 - 10:00
+    - Miercoles  9:00 - 10:00
  
   
 
@@ -78,7 +81,6 @@ Notas=tribble(
 )
 
 kbl(Notas)
-
 ```
 
 
