@@ -64,19 +64,19 @@ Por supuesto, **ensuciarse: getting messy** significa no solo leer y escuchar co
 ## Ejercicio en clase: InsightMaker
 
 
-Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa *Moose*! *Moose Births* sería la entrada [Flujo] de la población de *Moose* a lo largo del tiempo.
+- Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa *Moose*! *Moose Births* sería la entrada [Flujo] de la población de *Moose* a lo largo del tiempo.
 
-Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, *Moose Death* podría representar el [Flujo] de la población de *Moose*.
+- Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, *Moose Death* podría representar el [Flujo] de la población de *Moose*.
 
-Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.
+- Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.
 
-Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el [Stock] disminuye con el tiempo.
+- Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el [Stock] disminuye con el tiempo.
 
-Si el [Flujo] de entrada es igual al [Flujo] de salida, la cantidad de [Stock] no cambiará con el tiempo.
+- Si el [Flujo] de entrada es igual al [Flujo] de salida, la cantidad de [Stock] no cambiará con el tiempo.
 
-La conclusión importante es que una [Acción] representa una cantidad de algo. El [Stock] solo cambia con el tiempo a través de [Flujos de entrada] o [Flujos de salida]. Una [acción] no cambia instantáneamente, con agitar las manos, magia o humo y espejos.
+- La conclusión importante es que una [Acción] representa una cantidad de algo. El [Stock] solo cambia con el tiempo a través de [Flujos de entrada] o [Flujos de salida]. Una [acción] no cambia instantáneamente, con agitar las manos, magia o humo y espejos.
 
-
+## Ahora un primer ejemplo con **Insight Maker**
 
 1. Abra [InsightMaker](https://insightmaker.com/). Si nunca lo ha usado antes, primero debe registrarse con un nombre de usuario y contraseña. *¡InsightMaker es gratis!*
 
@@ -95,11 +95,11 @@ La conclusión importante es que una [Acción] representa una cantidad de algo. 
 6. ¿Puede averiguar cómo cambiar la configuración para ejecutar el modelo durante 50 años? Pruebe esto y haga clic en **Ejecutar simulación**.
 
 
-7. Utilice los mismos métodos que en el *paso 4* para crear un [Flujo de salida], que representa la muerte de los alces. Vuelva a ejecutar el modelo. ¿La población está aumentando o disminuyendo? ¿Por qué?
+7. Utilice los mismos métodos que en el **paso 4** para crear un [Flujo de salida], que representa la muerte de los alces. Vuelva a ejecutar el modelo. ¿La población está aumentando o disminuyendo? ¿Por qué?
 
 8. Cambie el **Panel de configuración** para [Stock] y para [Flujo de entrada] y [Flujo de salida] de modo que "Mostrar control deslizante de valor" se establezca en "Sí". Puede cambiar la parametrización del modelo fácilmente usando estos controles deslizantes. Pruébelo un par de veces y vuelva a ejecutar la simulación después de cada cambio.
 
-**Q**: ¿Es este modelo de Moose realista? ¿Qué es lo primero que le gustaría cambiar para que el modelo sea más realista?
+**Q**: ¿Es este modelo de realista? ¿Qué es lo primero que le gustaría cambiar para que el modelo sea más realista?
 
 9. Tómese unos minutos para consultar las "Estadísticas" realizadas por otros mediante el enlace "Explorar información" en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!
 
@@ -108,6 +108,8 @@ La conclusión importante es que una [Acción] representa una cantidad de algo. 
 Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!
 
 [Lorenz attractor video!](https://www.youtube.com/watch?v=iu4RdmBVdps)
+
+Para otros ejemplos de uso básico de InsightMaker vea el enlace de [Denny Fernández](https://insightmaker.com/find?search=Denny).  
 
 
 [--go to next lecture--](LECTURE2.html)
