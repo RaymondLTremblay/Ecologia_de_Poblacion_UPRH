@@ -54,19 +54,19 @@ Las computadoras modernas han reducido o eliminado muchas de las barreras para c
 
 Al final de este curso, los estudiantes tendrán la capacidad de programar sus propios modelos de sistemas completos en InsightMaker y utilizar software especializado para parametrizar estos modelos (por ejemplo, Programa MARK, R )
 
-**El lema del curso**: *¡GET MESSY*! Esto puede sonar divertido para una clase basada en computadora. Pero así como los sistemas ecológicos son complejos y desordenados, los modelos a veces se vuelven desordenados.
+**El lema del curso**: *¡GET MESSY!* Esto puede sonar divertido para una clase basada en computadora. Pero así como los sistemas ecológicos son complejos y desordenados, los modelos a veces se vuelven desordenados.
 No tenga miedo de modelar sistemas desordenados. Y, sobre todo, **no tengas miedo de equivocarte** (especialmente al principio): ¡esa actitud es enemiga de la programación informática exitosa y de la buena gestión de la vida silvestre! Cuando construimos nuestros propios algoritmos, podemos estar entrando en un territorio inexplorado. Y esto puede ser difícil y peligroso, ¡pero en última instancia gratificante! ¡Sigue intentándolo y mantén una actitud positiva!
 
-Por supuesto, "ensuciarse "getting messy" significa no solo leer y escuchar conferencias, ¡significa *aprender haciendo*! Las conferencias dirigidas por un instructor serán breves y pasaremos una cantidad significativa de tiempo de clase (y casi todo el tiempo de laboratorio) en nuestras computadoras, resolviendo problemas.
+Por supuesto, **ensuciarse: getting messy** significa no solo leer y escuchar conferencias, *¡significa aprender haciendo*! Las conferencias dirigidas por un instructor serán breves y pasaremos una cantidad significativa de tiempo de clase (y casi todo el tiempo de laboratorio) en nuestras computadoras o el campo, resolviendo problemas.
 
 
 
 ## Ejercicio en clase: InsightMaker
 
 
-Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa * Moose *! * Moose Births * sería la entrada [Flujo] de la población de * Moose * a lo largo del tiempo.
+Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa *Moose*! *Moose Births* sería la entrada [Flujo] de la población de *Moose* a lo largo del tiempo.
 
-Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, * Moose Deaths * podría representar el [Flujo] de la población de * Moose *.
+Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, *Moose Death* podría representar el [Flujo] de la población de *Moose*.
 
 Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.
 
@@ -83,7 +83,7 @@ La conclusión importante es que una [Acción] representa una cantidad de algo. 
 2. Cree un nuevo Insight (¡el botón para hacer esto debería ser obvio!) Y borre el modelo de demostración.
 
 
-3. Haga clic derecho en el centro de la pantalla y seleccione **Crear stock** en la ventana emergente. Observe que el nombre es * Stock nuevo * y está seleccionado. Escriba un nombre para lo que es una acumulación. Tenga en cuenta que el ** Panel de configuración ** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el *Valor inicial* en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!
+3. Haga clic derecho en el centro de la pantalla y seleccione **Crear stock** en la ventana emergente. Observe que el nombre es **Stock nuevo** y está seleccionado. Escriba un nombre para lo que es una acumulación. Tenga en cuenta que el **Panel de configuración** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el **Valor inicial** en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!
 
 
 4. Seleccione [Flujo] en la esquina superior izquierda de su pantalla en [Conexiones]. Ahora observe que cuando pasa el mouse sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un [Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón **Invertir** en el menú **Conexiones**. Por favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el **Panel de configuración** configure **Flow Rate** = 1.
