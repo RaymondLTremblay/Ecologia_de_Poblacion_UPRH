@@ -103,7 +103,7 @@ Por supuesto, **ensuciarse: getting messy** significa no solo leer y escuchar co
 
 9. Tómese unos minutos para consultar las "Estadísticas" realizadas por otros mediante el enlace "Explorar información" en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!
 
-**Q**  ¿Pudiese pensar en como adaptar este ejemplo a Coquis?
+**Q**  ¿Pudiese pensar en como adaptar este ejemplo a Coquis?  Aqui un enlace que tiene información basíca sobre [Coqui](https://www.ctahr.hawaii.edu/coqui/life.asp)
 
 Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!
 
