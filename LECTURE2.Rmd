@@ -21,21 +21,21 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ### Ecologicas
  - ¿Por qué algunas especies son más abundantes que otras?
   - ¿Qué hace que la densidad de población varíe en el espacio y el tiempo?
-  - ¿Qué provoca la extirpación de poblaciones? Recolonizado?
+  - ¿Qué provoca la extirpación de poblaciones o Recolonización de un sitio?
   - ¿Qué procesos *regulan* el crecimiento de la población?
   - Factores extrínsecos vs intrínsecos (debate Nicholson vs Andrewartha)
   - ¿Qué evita que las relaciones depredador-presa colapsen?
   - ¿Qué factores permiten que los competidores coexistan?
   - ¿Qué factores permiten que las metapoblaciones sean estables y autosuficientes?
   
-![](figures/White-tailed_deer.jpg)
+![Un "White tail deer"](figures/White-tailed_deer.jpg)
 
 ### Conservación y Manejo
   - ¿Cuál es el estado de conservación de una especie o población focal?
   - ¿Cómo afectan las estructuras antropogénicas y los usos del suelo a las poblaciones?
-  - ¿Cuál es el *Rendimiento Máximo Sostenible* para una especie de caza focal?
-  - ¿Cómo se pueden controlar eficazmente las especies de plagas?
-  - ¿Qué áreas de tierra específicas deben preverse para preservar las poblaciones y metapoblaciones en riesgo?
+  - ¿Cuál es el *Rendimiento Máximo Sostenible* para una especie de caza focal? En otra palabra cuanto individuos se puede remover una población sin afectar su supervivencia? 
+  - ¿Cómo se pueden controlar eficazmente las plagas?
+  - ¿Qué áreas de tierra específicas deben conservar para preservar las poblaciones y metapoblaciones en riesgo?
   - ¿Cuáles son los posibles efectos a nivel de población de estrategias alternativas de conservación o manejo? 
 
 ## ¿Qué es una población?
@@ -45,11 +45,11 @@ De Krebs (1972):
 
 Los límites espaciales que definen a las poblaciones a veces se definen fácilmente, pero por lo general son vagos y difíciles de determinar.
 
-El tamaño de la población, o abundancia, a menudo se representa como $ N $ y es la medida más básica de una población silvestre.
+El tamaño de la población, o abundancia, a menudo se representa como $N$ y es la medida más básica de una población silvestre.
 
 ## Crecimiento exponencial: el principio fundamental de la ecología de poblaciones
 
-![](figures/puffball1.png)
+![Un zeta lista a liberar sus esporas](figures/puffball1.png)
 
 Los *Puffballs* producen 7 billones de esporas (¡12 ceros!) En un evento reproductivo
 ... Si todos esos individuos llegaran a la edad adulta, ¡los descendientes de solo dos padres puffballs pesarían más que todo el planeta en dos generaciones!
@@ -65,49 +65,52 @@ Los *Puffballs* producen 7 billones de esporas (¡12 ceros!) En un evento reprod
 'Like most mathematicians, he takes the hopeful biologist to the edge of the pond, points out that a good swim will help his work, and then pushes him in and leaves him to drown'
   - Charles Elton, en referencia a una obra de Alfred Lotka  
   
-![](figures/1976_Elton.jpg)
+![Charles Elton](figures/1976_Elton.jpg)
 
-La importancia del método es la siguiente: si conocemos ciertas variables, en su mayoría deseadas por los ecologistas y en algunos casos ya determinadas por ellos, podemos predecir ciertos resultados que normalmente no serían predecibles o ni siquiera esperados por los ecologistas. La etapa de verificación de estas predicciones matemáticas apenas ha comenzado; pero su importancia no puede subestimarse, y esperamos ver más volúmenes de estudios de Lotka.
+> La importancia del método es la siguiente: si conocemos ciertas variables, en su mayoría deseadas por los ecologistas y en algunos casos ya determinadas por ellos, podemos predecir ciertos resultados que normalmente no serían predecibles o ni siquiera esperados por los ecólogos. La etapa de verificación de estas predicciones matemáticas apenas ha comenzado; pero su importancia no se puede subestimar, y esperamos ver más volúmenes de estudios de Lotka.
   - Charles Elton
   
 ## La ecología de la población es fundamental para muchas de las cuestiones más urgentes de la ecología y la evolución modernas.
 
 
-Esta curso trata principalmente sobre la importancia de la ecología de poblaciones para la conservación y el manejo de la vida silvestre. Pero vale la pena mencionar que la Ecología de poblaciones es un campo muy activo de la ciencia básica, y que la ecología de poblaciones es el núcleo de muchas de las cuestiones centrales de la ecología y la evolución.
+Este curso trata principalmente sobre la importancia de la ecología de poblaciones para la conservación y el manejo de la vida silvestre. Pero vale la pena mencionar que la Ecología de poblaciones es un campo muy activo de la ciencia básica, y que la ecología de poblaciones es el núcleo de muchas de las cuestiones centrales de la ecología y la evolución.
 
 Estas preguntas son de [Sutherland et al. 2012](http://onlinelibrary.wiley.com/doi/10.1111/1365-2745.12025/full).  
 Por supuesto, hay muchas más preguntas interesantes, limitadas únicamente por su imaginación. 
 
 Es posible que no comprenda todas estas preguntas ahora; ¡revisaremos esta lista al final del semestre!
 
-![](figures/Fragmentation1.jpg)
+![Fragmentación](figures/Fragmentation1.jpg)
 
 - ¿Cuáles son las consecuencias ecológicas de que las especies estén menos conectadas a través de la **fragmentación** o más conectadas a través de la globalización?  
 
-![](figures/Juniperus_range_map.png)
+![Fragmentación de un paysaje](figures/Juniperus_range_map.png)
 
-- ¿Cuáles son los mecanismos ecológicos que gobiernan los ** márgenes de distribución ** de las especies? (la figura es para enebro común)
+- ¿Cuáles son los mecanismos ecológicos que influencia las **distribuciones márginales** de las especies? 
 
 - ¿Cómo podemos escalar procesos detallados a nivel de individuos (por ejemplo, interacciones conductuales) en patrones a escala poblacional? (¡propiedades emergentes!)
 
-![](figures/Wolves_and_bones.jpg)
+![Lobos](figures/Wolves_and_bones.jpg)
 
-- ¿Cuál es la importancia relativa de las interacciones directas (** depredación, competencia **) frente a las indirectas (cambio de comportamiento inducido; por ejemplo, miedo) para determinar el efecto de una especie sobre otras?   
+- ¿Cuál es la importancia relativa de las interacciones directas (**depredación, competencia **) frente a las indirectas (cambio de comportamiento inducido; por ejemplo, miedo) para determinar el efecto de una especie sobre otras?   
 
-![](figures/Gopherus_agassizii.jpg)
+![Tortuga](figures/Gopherus_agassizii.jpg)
 
 - ¿Qué rasgos demográficos determinan la **resiliencia** de las poblaciones naturales a las perturbaciones y perturbaciones (por ejemplo, el cambio climático)?
 
 - ¿En qué medida el cambio climático desacoplará los vínculos tróficos debidos a **desajustes fenológicos**?
 - ¿Cómo responden las poblaciones y comunidades naturales al aumento de la frecuencia de **eventos climáticos extremos** pronosticados bajo el cambio climático global?
 - ¿Cómo afectan las **interacciones interespecíficas** a las respuestas de las especies al cambio global?
-
 - ¿Qué importancia tienen las **especies raras** en el funcionamiento de las comunidades ecológicas?
 - ¿Cuál es la magnitud de la **"deuda de extinción"** tras la pérdida y fragmentación de los hábitats naturales y cuándo se pagará?  
 
 #### Y mucho más... 
 
-![](figures/positivefeedback1.png)
+![Un ciclo de vida basico](figures/positivefeedback1.png)
+
+
+
+###### ------------
 
 ## Ejercicio en clase: retroalimentación positiva
 
@@ -159,7 +162,7 @@ Este modelo agrega una **retroalimentación** usando un [Link] del [Stock] de vu
 
 **Q** Recuerde la ecuación básica del crecimiento exponencial: $\ Delta N = r \ cdot N_t$. ¿Cómo se relaciona con el modelo de InsightMaker que acaba de crear? ¿Qué componente de la ecuación se refiere a qué componente del modelo en InsightMaker? [Sombrero de copa]
 
-**QE** Recall the basic equation of exponential growth: $\Delta N = r \cdot N_t$. How does it relate to the InsightMaker model you have just created? Which component of the equation refers to which component of the model in InsightMaker? [TopHat]
+**QE** Recall the basic equation of exponential growth: $\Delta N = r \cdot N_t$. How does it relate to the InsightMaker model you have just created? Which component of the equation refers to which component of the model in InsightMaker? 
 
 7. Piense en la primera pregunta anterior mientras hace esto (bola de nieve, personas, conejos, fuego, bacterias, pulgas, cuentas de ahorro, cáncer). ¿Cómo cambiaría los valores para representar cada una de estas cantidades? ¡Elige un par de estos y pruébalo!
 
