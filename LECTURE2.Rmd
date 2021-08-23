@@ -112,6 +112,10 @@ Es posible que no comprenda todas estas preguntas ahora; ¡revisaremos esta list
 
 ###### ------------
 
+###### Comenzar con ver el siguiente video  
+ [Insight Maker Retroalimentación](https://www.youtube.com/watch?v=SZl-korXBxM)
+
+
 ## Ejercicio en clase: retroalimentación positiva
 
 **La retroalimentación** en los sistemas ocurre cuando las tasas de entrada y salida (por ejemplo, nacimientos y muertes por año) dependen del valor de la población (por ejemplo, ¡una población silvestre!).
