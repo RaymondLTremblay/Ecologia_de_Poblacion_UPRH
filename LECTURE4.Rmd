@@ -215,6 +215,10 @@ Haga que el tamaño de su población inicial sea muy pequeño en comparación co
 
 ### Proyecto de esta semana
 
+![](figures/Cyclura.jpg) 
+
+Foto del Nuevo Dia la siguiente [pagina](https://www.indicepr.com/noticias/2017/06/07/action/70906/upr-ayuda-en-la-restauracion-del-habitat-de-la-iguana-de-mona/)
+
 Considerando la estructura los dos modelos anteriores, busca información sobre la Iguana de la Mona, *Cyclura stejnegeri* de fuentes como wikipedia y articulos revisados por pares, y construye modelos sencillo de crecimiento poblacional.  
 
   - deberia defender por que uso estos los parametros
