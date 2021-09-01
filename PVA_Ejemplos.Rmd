@@ -1,0 +1,42 @@
+---
+title: "PVA_Shoemaker"
+author: "BIOL4558"
+date: "Agosto 2021"
+output: 
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Los siguientes trabajos son del laboratorio del Dr. K. Shoemaker.
+
+El objetivo de poner estos ejemplos aui es que pueden apreciar lo que uno puede lograr con un cursos introductorio en Ecología de Población enfocado en la conservación. Estos ejemplos deberian darle una idea de como se construye su trabajo final de la clase.
+
+Los proyectos siguientes fueron preparado por estudiantes de las clases del Dr. Shoemaker en la Universidad de Reno, Nevada.  
+
+
+## Ejemplo 1: 
+
+[Determining Resilience of Recovering North American Peregrine Falcons](PVA_Ejemplos/falcon.pdf)
+
+
+
+## Ejemplo 2:
+
+[A Synopsis on Paddlefish Populations in the Mississippi Basin and Factors Affecting their Viability](PVA_Ejemplos/Paddlefish.pdf)
+
+
+
+## Ejemplo 3
+
+[Southern Beaufort Sea Polar Bear, *Ursus arctos maritimus*](PVA_Ejemplos/Polar_bear.pdf)
+
+
+
+

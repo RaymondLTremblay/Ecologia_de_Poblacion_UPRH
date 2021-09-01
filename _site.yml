@@ -78,6 +78,11 @@ navbar:
           href: FINAL_PROJECTS.html
         - text: "Extra Credit!"
           href: EXTRA_CREDIT.html
+    - text: "Ejemplos de proyecto de PVA"
+      menu:
+        - text: "Ejemplos de PVA por los estudiantes"
+          href: PVA_Ejemplos.html          
+          
     - text: "Links"
       href: Links.html
       
