@@ -211,6 +211,21 @@ Haga que el tamaño de su población inicial sea muy pequeño en comparación co
 
 **Q:** ¿Un valor alto de $r$ es bueno o malo para la conservación?
 
+***
+
+### Proyecto de esta semana
+
+Considerando la estructura los dos modelos anteriores, busca información sobre la Iguana de la Mona, *Cyclura stejnegeri* de fuentes como wikipedia y articulos revisados por pares, y construye modelos sencillo de crecimiento poblacional.  
+
+  - deberia defender por que uso estos los parametros
+  - considerar cual con alternativas, y como afecta el crecimiento
+  - cual son parametros incierto o que falta para construir un modelo más realista. 
+  
+***   
+
+### Trabajo que entregar miercoles proximo:
+  - a definir la estructura para viernes.  
+  
 
 
 [--go to next lecture--](LECTURE5.html)
