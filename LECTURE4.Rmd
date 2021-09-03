@@ -106,6 +106,15 @@ legend("bottomleft",col=c("green","red"),lty=c(1,1),legend=c("per-capita birth r
   
 ```
 
+
+```{r message=TRUE, warning=TRUE}
+library(tidyverse)
+```
+
+
+
+
+
 **Q**: ¿Cuál es el punto de equilibrio en este sistema? Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que el crecimiento de la población es igual a cero?
 
 Este equilibrio se conoce como **K** o **capacidad de carga**?
@@ -227,9 +236,59 @@ Considerando la estructura los dos modelos anteriores, busca información sobre 
   
 ***   
 
-### Trabajo que entregar miercoles proximo:
-  - a definir la estructura para viernes.  
+
+
+## Los supuestos del crecimiento logistico
+
+### La capacidad acerreo es constante:
+
+Para lograr is curva en forma de S, o sea una curva logística se asume que K es consistente en tiempo.  En otra palabra los recursos y su interaciones con sus depredadores etc no varia en el tiempo. 
   
+### La crecimiento denso dependiente es lineal:
+
+El modelo logistico asume que cada individuo que se añade a una población tiene un efecto negativo sobre la razón de crecimiento per capita.  Esto se observa con la el crecimiento per capita de la población $\frac{1}{N}*\frac{dN}{dt}$ donde el crecimiento depende del tamaño poblacional y la capacidad de acerreo.  
+
+  - El crecimiento es maximo cuando $(b-d)=r$ cuando N es cerca de zero, despues el crecimiento reduce hasta llegar a zero y entonces llega a K.  
+  - Si N es mayor K, la porblación se va a reducir
+  - Nota que aunque $b$ y $d$ son constantes, el razón de de mortandad $b'$ y natalidad $n'$ cambia con el tamaño poblacional.
+  
+
+
+
+## Variación sobre el modelo básico
+
+### Retrasos en tiempo / *Time Lag*
+
+El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es imediato.  Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.  
+
+Ejemplos:
+ - Plantas anuales no tienen time lag (asumiendo que no hay banco de semillas)
+ - Los elefantes comienzan a reproducirse solamente despues de 14-15 años
+ - Los coquis se pueden reproducir a la edad de ± 8 meses
+ - El árbol de "Brazil Nuts", *Bertholletia excelsa* necesita más de 120 años antes de producir flores.
+ - La Caoba, *Swietenia mahogani* tienen que tener 50 años antes de comenzar a reproducrise
+ 
+ 
+ Para considerar el efecto de retraso en tiempo, se puede incluir la información en el modelo de la siguiente forma
+ 
+ $$\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})$$ por consecuencia el efecto sobre el crecimiento esta atrasado por el tiempo $t$, donde la $i$ representa el tiempo.  El comportamiento de los que es una **ecuación differencial de retardo** depende de 2 factores.
+ 
+  1) el tiempo del tiempo de retardo,  $\tau$ (se dice *tau*), 
+  2) el tiempo de repuesta de una población, que es inversamente proporcional.
+  
+
+La razón de $\tau$ al tiempo de respuesta $\frac{1}{r}$ o $r\tau$ controla para el crecimiento de la población.
+
+Si $r\tau$ 
+
+  - *pequeño*,  $(0 < r\tau < 0.368)$, la población aumenta de forma gradual a K
+  - *mediano*, $(0.368 < r\tau < 1.570)$, la población sobre pasa K, despues va por debajo, y con tiempo con una oscilación amortiguada se estabiliza a K.
+  - *grande* $(r\tau > 1.570)$, la población entra en una oscilación continua sin llegar (Stable Limit Cycle) a estabilizarse a K. 
+
+
+
+ 
+ 
 
 
 [--go to next lecture--](LECTURE5.html)

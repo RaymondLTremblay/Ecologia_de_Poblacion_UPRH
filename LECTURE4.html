@@ -551,6 +551,15 @@ axis(4,at=seq(0,1,0.2))
 #mtext(&quot;d&quot;,4)
 legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1),legend=c(&quot;per-capita birth rate&quot;,&quot;per-capita mortality&quot;),bty=&quot;n&quot;)</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.4     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   2.0.1     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
 <p><strong>Q</strong>: ¿Cuál es el punto de equilibrio en este sistema? Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que el crecimiento de la población es igual a cero?</p>
 <p>Este equilibrio se conoce como <strong>K</strong> o <strong>capacidad de carga</strong>?</p>
 <p><img src="figures/gstab.png" /></p>
@@ -660,10 +669,42 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 </ul>
 <hr />
 </div>
-<div id="trabajo-que-entregar-miercoles-proximo" class="section level3">
-<h3>Trabajo que entregar miercoles proximo:</h3>
+</div>
+<div id="los-supuestos-del-crecimiento-logistico" class="section level2">
+<h2>Los supuestos del crecimiento logistico</h2>
+<div id="la-capacidad-acerreo-es-constante" class="section level3">
+<h3>La capacidad acerreo es constante:</h3>
+<p>Para lograr is curva en forma de S, o sea una curva logística se asume que K es consistente en tiempo. En otra palabra los recursos y su interaciones con sus depredadores etc no varia en el tiempo.</p>
+</div>
+<div id="la-crecimiento-denso-dependiente-es-lineal" class="section level3">
+<h3>La crecimiento denso dependiente es lineal:</h3>
+<p>El modelo logistico asume que cada individuo que se añade a una población tiene un efecto negativo sobre la razón de crecimiento per capita. Esto se observa con la el crecimiento per capita de la población <span class="math inline">\(\frac{1}{N}*\frac{dN}{dt}\)</span> donde el crecimiento depende del tamaño poblacional y la capacidad de acerreo.</p>
 <ul>
-<li>a definir la estructura para viernes.</li>
+<li>El crecimiento es maximo cuando <span class="math inline">\((b-d)=r\)</span> cuando N es cerca de zero, despues el crecimiento reduce hasta llegar a zero y entonces llega a K.<br />
+</li>
+<li>Si N es mayor K, la porblación se va a reducir</li>
+<li>Nota que aunque <span class="math inline">\(b\)</span> y <span class="math inline">\(d\)</span> son constantes, el razón de de mortandad <span class="math inline">\(b&#39;\)</span> y natalidad <span class="math inline">\(n&#39;\)</span> cambia con el tamaño poblacional.</li>
+</ul>
+</div>
+</div>
+<div id="variación-sobre-el-modelo-básico" class="section level2">
+<h2>Variación sobre el modelo básico</h2>
+<div id="retrasos-en-tiempo-time-lag" class="section level3">
+<h3>Retrasos en tiempo / <em>Time Lag</em></h3>
+<p>El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es imediato. Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.</p>
+<p>Ejemplos: - Plantas anuales no tienen time lag (asumiendo que no hay banco de semillas) - Los elefantes comienzan a reproducirse solamente despues de 14-15 años - Los coquis se pueden reproducir a la edad de ± 8 meses - El árbol de “Brazil Nuts”, <em>Bertholletia excelsa</em> necesita más de 120 años antes de producir flores. - La Caoba, <em>Swietenia mahogani</em> tienen que tener 50 años antes de comenzar a reproducrise</p>
+<p>Para considerar el efecto de retraso en tiempo, se puede incluir la información en el modelo de la siguiente forma</p>
+<p><span class="math display">\[\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})\]</span> por consecuencia el efecto sobre el crecimiento esta atrasado por el tiempo <span class="math inline">\(t\)</span>, donde la <span class="math inline">\(i\)</span> representa el tiempo. El comportamiento de los que es una <strong>ecuación differencial de retardo</strong> depende de 2 factores.</p>
+<ol style="list-style-type: decimal">
+<li>el tiempo del tiempo de retardo, <span class="math inline">\(\tau\)</span> (se dice <em>tau</em>),</li>
+<li>el tiempo de repuesta de una población, que es inversamente proporcional.</li>
+</ol>
+<p>La razón de <span class="math inline">\(\tau\)</span> al tiempo de respuesta <span class="math inline">\(\frac{1}{r}\)</span> o <span class="math inline">\(r\tau\)</span> controla para el crecimiento de la población.</p>
+<p>Si <span class="math inline">\(r\tau\)</span></p>
+<ul>
+<li><em>pequeño</em>, <span class="math inline">\((0 &lt; r\tau &lt; 0.368)\)</span>, la población aumenta de forma gradual a K</li>
+<li><em>mediano</em>, <span class="math inline">\((0.368 &lt; r\tau &lt; 1.570)\)</span>, la población sobre pasa K, despues va por debajo, y con tiempo con una oscilación amortiguada se estabiliza a K.</li>
+<li><em>grande</em> <span class="math inline">\((r\tau &gt; 1.570)\)</span>, la población entra en una oscilación continua sin llegar (Stable Limit Cycle) a estabilizarse a K.</li>
 </ul>
 <p><a href="LECTURE5.html">–go to next lecture–</a></p>
 </div>
