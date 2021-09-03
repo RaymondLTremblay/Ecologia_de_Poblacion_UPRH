@@ -39,7 +39,7 @@ Uno de los ejemplos más famosos de un posible efecto Allee involucra a la palom
 
 ![](figures/PP2.jpg)
 
-La [passenger pigeon](https://en.wikipedia.org/wiki/Passenger_pigeon) fue una de las aves más abundantes de América del Norte. ¡Algunos estiman que la abundancia total de especies puede haber sido de más de tres * mil millones * a la vez!
+La [passenger pigeon](https://en.wikipedia.org/wiki/Passenger_pigeon) fue una de las aves más abundantes de América del Norte. ¡Algunos estiman que la abundancia total de especies puede haber sido de más de tres *mil millones* a la vez!
 
 Aldo Leopold dijo una vez:
 
@@ -52,15 +52,20 @@ Aldo Leopold dijo una vez:
 
 ![](figures/PP1.jpg)
 
-En segundo lugar, los bosques de frondosas (la principal fuente de alimento para las palomas era el mástil de los árboles de frondosas) se talaron a gran escala, reduciendo el hábitat.
+En segundo lugar, los bosques frondosos/"hardwood forest" , (la principal fuente de alimento para las palomas era las semillas de los árboles de los bosques frondosas) se talaron a gran escala, reduciendo el hábitat.
 
-Pero, ¿qué tienen que ver las palomas migratorias con el efecto Allee? Bueno, eran una especie *extremadamente* gregaria. Una vez que su número disminuyó (debido a la caza y la tala), sus sistemas sociales se derrumbaron y ya no pudieron reproducirse ni evitar a los depredadores de manera efectiva.
+Pero, ¿qué tienen que ver las palomas migratorias con el efecto Allee? 
+
+  - Bueno, eran una especie *extremadamente* gregaria. Una vez que su número disminuyó (debido a la caza y la tala), sus sistemas sociales se derrumbaron y ya no pudieron reproducirse ni evitar a los depredadores de manera efectiva.
+
+
+***
 
 ## Ejercicio en clase: efecto Allee
 
 En este ejercicio exploraremos las implicaciones de la **dependencia de densidad positiva** en las tasas vitales.
 
-1. En InsightMaker, cargue el modelo logístico con tasas vitales, es decir, donde $ b $ y $ d $ dependen de la densidad del modelo. Debería verse algo como esto (o si aún no lo tiene, clónelo desde [aquí](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
+1. En InsightMaker, cargue el modelo logístico con tasas vitales, es decir, donde $b$ y $d$ dependen de la densidad del modelo. Debería verse algo como esto (o si aún no lo tiene, clónelo desde [aquí](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
 
 - 1. In InsightMaker, load up the logistic model with vital rates -- that is, where $b$ and $d$ are each modeled density-dependent.  It should look something like this (or if you don't already have this, clone it from [here](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
 
@@ -95,7 +100,7 @@ e. Mortalidad mínima: 0.3
 - 4. Now let's use a *Conditional (IF-THEN-ELSE) statement* to specify an Allee effect. The population experiences maximum growth rate at the Allee threshold. If the population is above the Allee threshold, the population exhibits (stabilizing) negative density dependence. If the population is below the Allee threshold, then the population experiences positive density dependence- whereby individuals in smaller populations have *lower* overall fitness. 
 
 
-Para hacer esto, defina su * Nacimientos per cápita * usando la siguiente sintaxis:
+Para hacer esto, defina su *Nacimientos per cápita* usando la siguiente sintaxis:
 
 - To do this, define your *Births per Capita* using the following syntax:
 
@@ -122,6 +127,10 @@ End If
 5. Si nos estamos quedando sin tiempo en clase (¡lo cual probablemente lo estaremos!), Cargue el modelo (¡y clónelo!) Usando [este enlace](https://insightmaker.com/insight/71147/Allee-Effect -1 #)!
 
 - 5. If we are running out of time in class (which we probably will be!), load the model (and clone it!) using [this link](https://insightmaker.com/insight/71147/Allee-Effect-1#)!    
+
+
+****
+
 
 Ahora puede intentar responder las siguientes preguntas:
 
