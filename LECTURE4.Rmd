@@ -285,8 +285,45 @@ Si $r\tau$
   - *mediano*, $(0.368 < r\tau < 1.570)$, la población sobre pasa K, despues va por debajo, y con tiempo con una oscilación amortiguada se estabiliza a K.
   - *grande* $(r\tau > 1.570)$, la población entra en una oscilación continua sin llegar (Stable Limit Cycle) a estabilizarse a K. 
 
+Lo importante no son tanto los valores que reconocer que debido a la razon de $r\tau$, la población actua de forma muy diferentes. 
+
+### Gráficos Logistico
 
 
+```{r}
+p <- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+
+
+scurve <- function(x){
+  y <- exp(x) / (1 + exp(x))
+  return(y)
+}
+
+p + stat_function(fun = scurve, n = 500) 
+```
+
+
+```{r}
+p <- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+
+
+r=0.1
+N=10
+damped <- function(x){
+  y <- exp(x) / (1 + exp(x))
+  return(y)
+}
+
+N
+damped <- function(x){
+  y <- r*N* (1 - lag(N(x)))
+  return(y)
+}
+
+
+p + stat_function(fun = damped, n = 50) 
+```
+ 
  
  
 

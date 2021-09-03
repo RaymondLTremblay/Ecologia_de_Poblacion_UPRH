@@ -706,6 +706,42 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 <li><em>mediano</em>, <span class="math inline">\((0.368 &lt; r\tau &lt; 1.570)\)</span>, la población sobre pasa K, despues va por debajo, y con tiempo con una oscilación amortiguada se estabiliza a K.</li>
 <li><em>grande</em> <span class="math inline">\((r\tau &gt; 1.570)\)</span>, la población entra en una oscilación continua sin llegar (Stable Limit Cycle) a estabilizarse a K.</li>
 </ul>
+<p>Lo importante no son tanto los valores que reconocer que debido a la razon de <span class="math inline">\(r\tau\)</span>, la población actua de forma muy diferentes.</p>
+</div>
+<div id="gráficos-logistico" class="section level3">
+<h3>Gráficos Logistico</h3>
+<pre class="r"><code>p &lt;- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+
+
+scurve &lt;- function(x){
+  y &lt;- exp(x) / (1 + exp(x))
+  return(y)
+}
+
+p + stat_function(fun = scurve, n = 500) </code></pre>
+<p><img src="LECTURE4_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>p &lt;- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+
+
+r=0.1
+N=10
+damped &lt;- function(x){
+  y &lt;- exp(x) / (1 + exp(x))
+  return(y)
+}
+
+N</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>damped &lt;- function(x){
+  y &lt;- r*N* (1 - lag(N(x)))
+  return(y)
+}
+
+
+p + stat_function(fun = damped, n = 50) </code></pre>
+<pre><code>## Warning: Computation failed in `stat_function()`:
+## could not find function &quot;N&quot;</code></pre>
+<p><img src="LECTURE4_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p><a href="LECTURE5.html">–go to next lecture–</a></p>
 </div>
 </div>
