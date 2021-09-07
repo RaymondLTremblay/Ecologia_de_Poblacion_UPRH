@@ -325,10 +325,14 @@ p + stat_function(fun = damped, n = 50)
 ```
  
  
+ See this website for visualizing change in time of a simple logistic model
  
+ 
+ [Logistic model](http://virtualbiologylab.org/population-ecology/)
 
 
 [--go to next lecture--](LECTURE5.html)
+
 
 
 
