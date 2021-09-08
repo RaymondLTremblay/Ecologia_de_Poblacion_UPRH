@@ -70,6 +70,7 @@ En este ejercicio exploraremos las implicaciones de la **dependencia de densidad
 - 1. In InsightMaker, load up the logistic model with vital rates -- that is, where $b$ and $d$ are each modeled density-dependent.  It should look something like this (or if you don't already have this, clone it from [here](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
 
 ![](figures/IM5.jpg)
+![](figures/Paloma_Viajera.png)
 
 
 2. Ahora agregue una nueva constante ([Variable] en InsightMaker) llamada *Umbral de Allee *. Establezca esta constante en 200.
@@ -124,7 +125,7 @@ Else
 End If
 ```
 
-5. Si nos estamos quedando sin tiempo en clase (¡lo cual probablemente lo estaremos!), Cargue el modelo (¡y clónelo!) Usando [este enlace](https://insightmaker.com/insight/71147/Allee-Effect -1 #)!
+5. Si nos estamos quedando sin tiempo en clase (¡lo cual probablemente lo estaremos!), Cargue el modelo (¡y clónelo!) Usando [este enlace](https://insightmaker.com/insight/71147/Allee-Effect-1#)!
 
 - 5. If we are running out of time in class (which we probably will be!), load the model (and clone it!) using [this link](https://insightmaker.com/insight/71147/Allee-Effect-1#)!    
 
@@ -137,11 +138,11 @@ Ahora puede intentar responder las siguientes preguntas:
 
 **Q**: ¿Cuál es la capacidad de carga (K) de esta población?
 
-**Q**: La capacidad de carga (K) representa un punto de equilibrio en este modelo. Trate de encontrar otro punto de equilibrio, es decir, un punto donde la población no crece ni declina. [Edmodo]
+**Q**: La capacidad de carga (K) representa un punto de equilibrio en este modelo. Trate de encontrar otro punto de equilibrio, es decir, un punto donde la población no crece ni declina.
 
-**Q**:¿Es este equilibrio un *equilibrio estable * o un *equilibrio inestable *? [Edmodo]
+**Q**:¿Es este equilibrio un *equilibrio estable * o un *equilibrio inestable *? 
 
-**Q**: Si traza las tasas de natalidad y mortalidad en función de la densidad en este modelo, ¿puede identificar los dos equilibrios? [Edmodo]
+**Q**: Si traza las tasas de natalidad y mortalidad en función de la densidad en este modelo, ¿puede identificar los dos equilibrios? 
 
 **Q:** ¿Por qué los efectos Allee a menudo significan malas noticias para la conservación de la vida silvestre?
 
@@ -149,6 +150,11 @@ Ahora puede intentar responder las siguientes preguntas:
 Para ver expandir su conocimiento [the passenger pigeon and its possible "de-extinction"](http://www.audubon.org/magazine/may-june-2014/why-passenger-pigeon-went-extinct)
 
 **Q:** ¿Apoya los esfuerzos de Revive and Restore para recuperar la paloma migratoria? ¿Por qué o por qué no?
+
+***
+
+[Usa este enlace para el modelo en español](https://insightmaker.com/insight/234348/Allee-Effect)
+
 
 
 [--go to next lecture--](LECTURE6.html)
