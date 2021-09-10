@@ -185,6 +185,8 @@ Con solo mirar esta ecuación, verá que los organismos con tiempos de generaci�
 **Q**: ¿Es la suplementación la mejor estrategia para conservar esta población?  
 
 
+[Vea este documento para los codigos en Excel](PDF/LifeTables_Excel.pdf)
+
  ### Texto en Ingles:
  
 ## In-class exercise: age-structured population growth
