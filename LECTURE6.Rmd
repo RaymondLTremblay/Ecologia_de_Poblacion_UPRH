@@ -56,11 +56,13 @@ Entonces, para muchas especies, la tasa de natalidad per cápita y la tasa de mo
 
 ![](figures/spadefoot1.jpg)
 
-**Q:** Imagina que estás intentando restablecer una población de sapos "pata de espada". Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa? [Edmodo]
+**Q:** Imagina que estás intentando restablecer una población de sapos "pata de espada". Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa?
+
+***
 
 ## Adicional: tasas vitales estructuradas por sexo
 
-**Q:** ¿Puede pensar en algunos ejemplos del mundo real en los que las tasas vitales pueden diferir entre hombres y mujeres? [Edmodo]
+**Q:** ¿Puede pensar en algunos ejemplos del mundo real en los que las tasas vitales pueden diferir entre hombres y mujeres?
 
 **Q:** ¿Es importante considerar la estructura de sexos al modelar poblaciones? ¿Por qué o por qué no?
 
@@ -83,24 +85,32 @@ knitr::kable(lifetable,caption="",col.names = c("x","S(x)","b(x)","l(x)","g(x)")
 
 ### Calendario de fecundidad
 
-El componente de fecundidad de la tabla de vida se llama "programa de fecundidad". El término $b (x)$ representa la tasa de natalidad per cápita para las mujeres de edad x. 
+El componente de fecundidad de la tabla de vida se llama "programa de fecundidad". El término $b(x)$ representa la tasa de natalidad per cápita para las mujeres de edad x. 
 
 ### Calendario de supervivencia
 
 ¡La fecundidad es solo la mitad de la historia! El componente de supervivencia de la tabla de vida se llama "programa de supervivencia". 
 
 
-El término **cohorte ** representa un grupo de personas que nacieron al mismo tiempo. En la tabla de vida, el término S(x) se refiere al número de individuos de una cohorte particular que todavía están vivos a la edad x. A partir de estos datos sin procesar, calculamos dos términos, llamados **supervivencia** y **tasa de supervivencia**
+El término **cohorte ** representa un grupo de personas que nacieron al mismo tiempo. En la tabla de vida, el término $S(x)$ se refiere al número de individuos de una cohorte particular que todavía están vivos a la edad x. A partir de estos datos sin procesar, calculamos dos términos, llamados **supervivencia** y **tasa de supervivencia**
 
-El término $l (x) $ representa la _proporción de la cohorte que sobrevive desde la edad 0 hasta la edad x_. Esto se llama **supervivencia**
+El término $l(x)$ representa la _proporción de la cohorte que sobrevive desde la edad 0 hasta la edad x_. Esto se llama **supervivencia**
 
-El término $g (x) $ representa la _proporción que sobrevive desde la edad x hasta la edad x + 1_. Esto se llama **tasa de supervivencia **
+El término $g(x)$ representa la _proporción que sobrevive desde la edad x hasta la edad x + 1_. Esto se llama **tasa de supervivencia **
 
 ### Tipos de curvas de supervivencia ...
 
-Hay tres tipos principales de curvas de supervivencia (también llamadas programas de supervivencia), clasificadas como ** Tipo I **, ** Tipo II ** y ** Tipo III **.
+Hay tres tipos principales de curvas de supervivencia (también llamadas programas de supervivencia), clasificadas como 
 
-*Las curvas de supervivencia * describen cómo el logaritmo de supervivencia ($ log (l (x)) $) disminuye con la edad. Estos tres tipos de patrones de **historia de vida ** se pueden ilustrar con tres ejemplos del mundo real: humanos, pájaros cantores y ranas.
+ - **Tipo I ** 
+ - **Tipo II ** 
+ - **Tipo III **
+
+*Las curvas de supervivencia * describen cómo el logaritmo de supervivencia ($log(l(x))$) disminuye con la edad. Estos tres tipos de patrones de **historia de vida ** se pueden ilustrar con tres ejemplos del mundo real: 
+
+ - humanos, 
+ - pájaros cantores 
+ - ranas.
 
 **Q**: ¿Puede la supervivencia aumentar con la edad?
 
@@ -119,7 +129,7 @@ Hay tres tipos principales de curvas de supervivencia (también llamadas program
 
 ¡Tenga en cuenta la escala logarítmica en el eje Y!
 
-**Q:** ¿Qué curva de supervivencia es la más común en la naturaleza? [Edmodo]
+**Q:** ¿Qué curva de supervivencia es la más común en la naturaleza?
 
 
 ## Ejercicio en clase: crecimiento de la población estructurado por edad
@@ -133,32 +143,23 @@ In this exercise we will explore some facets of **age-stuctured populations**.
 $R_0 = \sum_{x=0}^k l(x)\cdot b(x)$
 
 
-Donde $k$ es la edad máxima.
+Cuando es que $k$ es la edad máxima.
 
 **Q:** ¿Puedes implementar esta fórmula en Excel? ¿Cuál es la respuesta?
 
 2. Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la **tasa de reemplazo ** de 1 y, por lo tanto, la población crecerá. Si $R_0$ es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, $\lambda$.
 
-- 2. If the net reproductive rate, $R_0$ is positive, then the population is above the **replacement rate** of 1, and therefore the population will grow. If $R_0$ is negative, then the population will decline. This sounds familiar, right? Just like the finite rate of growth, $\lambda$. 
-
 PERO, ¿cuál es el marco de tiempo de $ R_0 $? ¿Cuál es el período de tiempo de $ \ lambda $? Son diferentes, ¿verdad? ¡La diferencia es que $ R_0 $ describe el crecimiento por ** generación ** !.
-
-- BUT, what is the time frame of $R_0$? What is the timeframe of $\lambda$? They are different right? The difference is that $R_0$ describes growth per **generation**!. 
 
 ¿Qué es una ** generación **? La definición más común (para el tiempo de generación) es la _Edad media de los padres de toda la descendencia producida por una sola cohorte_. Esto se puede calcular a partir de la tabla de vida como:
 
 $G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}$
-
 
 Vea si puede implementar esto en Excel (¡o cualquier software de hoja de cálculo que use!).
 
 **Q:** ¿Cuál es el *tiempo de generación* de la población en la tabla?
 
 3. Ahora, ¿puede calcular la *tasa intrínseca de crecimiento* ($r$) para esta población estructurada por edad?
-
-Para una aproximación de primer orden, puede usar esta ecuación:
-
-- 3. Now, can you compute the *intrinsic rate of growth* ($r$) for this age-structured population? 
 
 Para una aproximación de primer orden, puede usar esta ecuación:
 
@@ -172,23 +173,66 @@ Con solo mirar esta ecuación, verá que los organismos con tiempos de generaci�
 
 4a. Inicialice la población como en el ejemplo del sapo spadefoot de arriba, con solo la primera clase de edad (juvenil). ¿Qué dinámica poblacional ocurre al comienzo de la simulación? ¿Qué pasa con el final de la simulación?
 
-   - 4a. Initialize the population like the spadefoot toad example from above- with only the first (juvenile) age class. What population dynamics occur at the beginning of the simulation? What about the end of the simulation?
-    
 4b. ¿Puede modificar la abundancia inicial de juveniles, subadultos y adultos para que la población exhiba un crecimiento exponencial uniforme para las tres clases de edad (y la población en su conjunto)? Esto se llama ** Distribución de edad estable (S.A.D.) **
-    
-   - 4b. Can you tweak the initial abundance of juveniles, subadults and adults so that the population exhibits smooth exponential growth for all three age classes (and the population as a whole)? This is called **Stable Age Distribution (S.A.D.)**
-    
+
   4c. Ahora cambie las tasas vitales (*Tasa de mortalidad juvenil *, *Tasa de mortalidad secundaria *, *Tasa de transición a Subadulto *, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA *Distribución de edad estable *?  
-    
-   - 4c. Now change the vital rates (*Juv mort rate*, *Sub mort rate*, *Transition rate to Subadult*, etc.). Is population growth still smooth? If not, can you find the NEW *Stable Age Distribution*??
     
   4d. Regrese al modelo inicial ([este, aquí](https://insightmaker.com/insight/70809/Age-structured-population)). Ahora cambie la **tasa de mortalidad de adultos** a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?
     
-  - 4d. Return to the initial model ([this one,  here](https://insightmaker.com/insight/70809/Age-structured-population)). Now change the **Adult mort rate** to 0.65. What happens? Is this a growing population? 
-    
+  
 **Q**: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de población) para mantener una población estable o en crecimiento de> 20 adultos?  [Edmodo]
 
-**Q**: ¿Es la suplementación la mejor estrategia para conservar esta población?   
+**Q**: ¿Es la suplementación la mejor estrategia para conservar esta población?  
+
+
+ ### Texto en Ingles:
+ 
+## In-class exercise: age-structured population growth
+
+ > In this exercise we will explore some facets of **age-stuctured populations**. 
+
+  > 1. Load up the life table from earlier in this lecture, by clicking [here](life_table.csv). Use this table to compute the **net reproductive rate, $R_0$**. This represents the mean number of female offspring produced per female over her entire lifetime. This is also known as *lifetime reproductive potential*! This can be computed as:
+
+> $R_0 = \sum_{x=0}^k l(x)\cdot b(x)$
+
+> Where $k$ is the maximum age. 
+
+**Q:** Can you implement this formula in Excel? What's the answer?
+
+> 2. If the net reproductive rate, $R_0$ is positive, then the population is above the **replacement rate** of 1, and therefore the population will grow. If $R_0$ is negative, then the population will decline. This sounds familiar, right? Just like the finite rate of growth, $\lambda$. 
+
+> BUT, what is the time frame of $R_0$? What is the timeframe of $\lambda$? They are different right? The difference is that $R_0$ describes growth per **generation**!. 
+
+> What is a **generation**? The most common definition (for generation time) is the _Average age of the parents of all the offspring produced by a single cohort_. This can be computed from the life table as:
+
+> $G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}$
+
+> See if you can implement this in Excel (or whatever spreadsheet software you use!).
+
+**Q:** What is the *generation time* of the population in the table?
+
+> 3. Now, can you compute the *intrinsic rate of growth* ($r$) for this age-structured population? 
+
+> To a first-order approximation, you can use this equation:
+
+$r = \frac{ln(R_0)}{G}$ 
+
+> Just looking at this equation, you see that organisms with longer generation times ($G$) have slower intrinsic rates of growth, all else being equal. 
+
+**Q:** Implement this equation in Excel. Is this an exponentially growing population?
+
+  > 4. Load up an age-structured model in InsightMaker. You can clone [this one,  here](https://insightmaker.com/insight/70809/Age-structured-population). 
+
+  >  4a. Initialize the population like the spadefoot toad example from above- with only the first (juvenile) age class. What population dynamics occur at the beginning of the simulation? What about the end of the simulation?
+    
+  >  4b. Can you tweak the initial abundance of juveniles, subadults and adults so that the population exhibits smooth exponential growth for all three age classes? This is called **Stable Age Distribution**
+    
+  >  4c. Now change the vital rates (*Juv mort rate*, *Sub mort rate*, *Transition rate to Subadult*, etc.). Is the population growth still smooth? If not, can you find the *Stable Age Distribution* now??
+    
+   >  4d. Now change the **Simulation time step** to 5 years, and return to an initial population with only juveniles. What happens? Is this a **stochastic** model? If not, why does it look like it has a random component? > 
+
+    
+ 
 
 [--go to next lecture--](LECTURE7.html)
 
