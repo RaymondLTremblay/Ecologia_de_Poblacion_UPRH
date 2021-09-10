@@ -233,7 +233,31 @@ $r = \frac{ln(R_0)}{G}$
     
    >  4d. Now change the **Simulation time step** to 5 years, and return to an initial population with only juveniles. What happens? Is this a **stochastic** model? If not, why does it look like it has a random component? > 
 
-    
+  
+  Fill in the blanks:  Usa las formulas aprendida para calcular llenar los blancos
+  
+  
+```{r}
+library(tidyverse)
+library(gt)
+LT=tribble(
+  ~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+  0, 956, 1, 0, 0, 0.24, NA, 0.24,
+  1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+  2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+  3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+  4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+  5, 0,0,0,0,NA, NA, NA
+    )
+  
+
+LT %>% 
+  gt()
+```
+  
+  Cual son las definiciones matemática y ecológica de cada una de las variables en la tabla.
+
+  
  
 
 [--go to next lecture--](LECTURE7.html)
