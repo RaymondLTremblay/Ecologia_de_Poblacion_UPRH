@@ -14,7 +14,7 @@
 
 <title>Poblaciones estructurada por edad</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -499,9 +499,17 @@ div.tocify {
 <p>Tome este elefante de la india, por ejemplo. ¿Cómo depende la tasa de reproducción de la edad en este caso?</p>
 <p>¡Podríamos imaginar que se parece a esto!</p>
 <pre class="r"><code>Elephant_age &lt;- seq(0,60, by=2)
+Elephant_age</code></pre>
+<pre><code>##  [1]  0  2  4  6  8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48
+## [26] 50 52 54 56 58 60</code></pre>
+<pre class="r"><code>#Birth_rate &lt;- c(rep(0,times=7),seq(0,0.3,length=4),rep(0.3,times=15),seq(0.3,0,length=5))
 
-Birth_rate &lt;- c(rep(0,times=7),seq(0,0.3,length=4),rep(0.3,times=15),seq(0.3,0,length=5))
-
+Birth_rate &lt;- c(0,0,0,0,0,0,0,
+                0,0.1, 0.2, 0.3,
+                0.3,0.3,0.3,0.3,0.3,
+                0.3,0.3,0.3,0.3,0.3,
+                0.3,0.3,0.3,0.3,0.3,
+                0.3, 0.225, 0.15, 0.075, 0)
 names(Birth_rate) &lt;- Elephant_age
 
 barplot(Birth_rate,xlab=&quot;Age&quot;,ylab=&quot;b, per-capita birth rate&quot;,col=&quot;blue&quot;,ylim=c(0,0.5))</code></pre>
@@ -519,6 +527,7 @@ barplot(Death_rate,xlab=&quot;Age&quot;,ylab=&quot;d, per-capita death rate&quot
 <p>Entonces, para muchas especies, la tasa de natalidad per cápita y la tasa de mortalidad dependen fundamentalmente de la edad.</p>
 <p><img src="figures/spadefoot1.jpg" /></p>
 <p><strong>Q:</strong> Imagina que estás intentando restablecer una población de sapos “pata de espada”. Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa?</p>
+<p>Trata de calcular cuantas ranas originales hubiese en el 2 año, el 3 año, en 10 años.</p>
 <hr />
 </div>
 <div id="adicional-tasas-vitales-estructuradas-por-sexo" class="section level2">
@@ -620,6 +629,10 @@ barplot(Death_rate,xlab=&quot;Age&quot;,ylab=&quot;d, per-capita death rate&quot
 <p><img src="figures/Survivorship_Curves.jpg" /></p>
 <p>¡Tenga en cuenta la escala logarítmica en el eje Y!</p>
 <p><strong>Q:</strong> ¿Qué curva de supervivencia es la más común en la naturaleza?</p>
+<ul>
+<li><p>Defiende su respuesta</p></li>
+<li><p>Debate entre cuatro grupos del salón</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -627,21 +640,16 @@ barplot(Death_rate,xlab=&quot;Age&quot;,ylab=&quot;d, per-capita death rate&quot
 <h2>Ejercicio en clase: crecimiento de la población estructurado por edad</h2>
 <p>In this exercise we will explore some facets of <strong>age-stuctured populations</strong>.</p>
 <ol style="list-style-type: decimal">
-<li>Cargue la tabla de vida anterior en esta lección, haciendo clic [aquí] (life_table.csv). Utilice esta tabla para calcular la ** tasa de reproducción neta, $ R_0 $ **. Esto representa el número medio (esperado) de crías hembras producidas por hembra durante toda su vida. ¡Esto también se conoce como * potencial reproductivo de por vida *! Esto se puede calcular como:</li>
+<li>Cargue la tabla de vida anterior en esta lección, haciendo clic <a href="life_table.csv">aquí</a>. Utilice esta tabla para calcular la <strong>tasa de reproducción neta, $R_0 $</strong>. Esto representa el número promedio (esperado) de crías hembras producidas por hembra durante toda su vida. ¡Esto también se conoce como <em>potencial reproductivo de por vida</em>! Esto se puede calcular como:</li>
 </ol>
-<ul>
-<li><ol style="list-style-type: decimal">
-<li>Load up the life table from earlier in this lecture, by clicking <a href="life_table.csv">here</a>. Use this table to compute the <strong>net reproductive rate, <span class="math inline">\(R_0\)</span></strong>. This represents the mean (expected) number of female offspring produced per female over her entire lifetime. This is also known as <em>lifetime reproductive potential</em>! This can be computed as:</li>
-</ol></li>
-</ul>
 <p><span class="math inline">\(R_0 = \sum_{x=0}^k l(x)\cdot b(x)\)</span></p>
-<p>Cuando es que <span class="math inline">\(k\)</span> es la edad máxima.</p>
+<p>Donde <span class="math inline">\(k\)</span> es la edad máxima.</p>
 <p><strong>Q:</strong> ¿Puedes implementar esta fórmula en Excel? ¿Cuál es la respuesta?</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la <strong>tasa de reemplazo </strong> de 1 y, por lo tanto, la población crecerá. Si <span class="math inline">\(R_0\)</span> es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, <span class="math inline">\(\lambda\)</span>.</li>
+<li>Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la <strong>tasa de reemplazo</strong> de 1 y, por lo tanto, la población crecerá. Si <span class="math inline">\(R_0\)</span> es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, <span class="math inline">\(\lambda\)</span>.</li>
 </ol>
-<p>PERO, ¿cuál es el marco de tiempo de $ R_0 $? ¿Cuál es el período de tiempo de $  lambda $? Son diferentes, ¿verdad? ¡La diferencia es que $ R_0 $ describe el crecimiento por ** generación ** !.</p>
-<p>¿Qué es una ** generación **? La definición más común (para el tiempo de generación) es la <em>Edad media de los padres de toda la descendencia producida por una sola cohorte</em>. Esto se puede calcular a partir de la tabla de vida como:</p>
+<p>PERO, ¿cuál es el marco de tiempo de $R_0 $? ¿Cuál es el período de tiempo de <span class="math inline">\(\lambda\)</span>? Son diferentes, ¿verdad? ¡La diferencia es que $R_0 $ describe el crecimiento por <strong>generación </strong> !.</p>
+<p>¿Qué es una <strong>generación</strong>? La definición más común (para el tiempo de generación) es la <em>Edad media de los padres de toda la descendencia producida por una sola cohorte</em>. Esto se puede calcular a partir de la tabla de vida como:</p>
 <p><span class="math inline">\(G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}\)</span></p>
 <p>Vea si puede implementar esto en Excel (¡o cualquier software de hoja de cálculo que use!).</p>
 <p><strong>Q:</strong> ¿Cuál es el <em>tiempo de generación</em> de la población en la tabla?</p>
@@ -653,13 +661,13 @@ barplot(Death_rate,xlab=&quot;Age&quot;,ylab=&quot;d, per-capita death rate&quot
 <p>Con solo mirar esta ecuación, verá que los organismos con tiempos de generación más largos ($G $) tienen tasas intrínsecas de crecimiento más lentas, en igualdad de condiciones.</p>
 <p><strong>Q:</strong>Implemente esta ecuación en Excel. ¿Es esta una población en crecimiento exponencial?</p>
 <ol start="4" style="list-style-type: decimal">
-<li>Cargue un modelo estructurado por edades en InsightMaker. Puedes clonar <a href="https://insightmaker.com/insight/70809/Age-structured-population">this one, here</a>.</li>
+<li>Cargue un modelo estructurado por edades en InsightMaker. Puedes clonar <a href="https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad">Este Aqui</a>.</li>
 </ol>
 <p>4a. Inicialice la población como en el ejemplo del sapo spadefoot de arriba, con solo la primera clase de edad (juvenil). ¿Qué dinámica poblacional ocurre al comienzo de la simulación? ¿Qué pasa con el final de la simulación?</p>
 <p>4b. ¿Puede modificar la abundancia inicial de juveniles, subadultos y adultos para que la población exhiba un crecimiento exponencial uniforme para las tres clases de edad (y la población en su conjunto)? Esto se llama ** Distribución de edad estable (S.A.D.) **</p>
-<p>4c. Ahora cambie las tasas vitales (<em>Tasa de mortalidad juvenil </em>, <em>Tasa de mortalidad secundaria </em>, <em>Tasa de transición a Subadulto </em>, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA <em>Distribución de edad estable </em>?</p>
-<p>4d. Regrese al modelo inicial (<a href="https://insightmaker.com/insight/70809/Age-structured-population">este, aquí</a>). Ahora cambie la <strong>tasa de mortalidad de adultos</strong> a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?</p>
-<p><strong>Q</strong>: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de población) para mantener una población estable o en crecimiento de&gt; 20 adultos? [Edmodo]</p>
+<p>4c. Ahora cambie las tasas vitales (<em>Tasa de mortalidad juvenil</em>, <em>Tasa de mortalidad secundaria </em>, <em>Tasa de transición a Subadulto </em>, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA <em>Distribución de edad estable </em>?</p>
+<p>4d. Regrese al modelo inicial (<a href="https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad">este, aquí</a>). Ahora cambie la <strong>tasa de mortalidad de adultos</strong> a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?</p>
+<p><strong>Q</strong>: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de individuos a la población) para mantener una población estable o en crecimiento de&gt; 20 adultos?</p>
 <p><strong>Q</strong>: ¿Es la suplementación la mejor estrategia para conservar esta población?</p>
 <p><a href="PDF/LifeTables_Excel.pdf">Vea este documento para los codigos en Excel</a></p>
 <p>### Texto en Ingles:</p>
@@ -729,7 +737,10 @@ barplot(Death_rate,xlab=&quot;Age&quot;,ylab=&quot;d, per-capita death rate&quot
 <blockquote>
 <p>4d. Now change the <strong>Simulation time step</strong> to 5 years, and return to an initial population with only juveniles. What happens? Is this a <strong>stochastic</strong> model? If not, why does it look like it has a random component? &gt;</p>
 </blockquote>
-<p>Fill in the blanks: Usa las formulas aprendida para calcular llenar los blancos</p>
+</div>
+<div id="ejercicio-to-be-submitted-in-msteam" class="section level2">
+<h2>Ejercicio: To be submitted in MSTeam</h2>
+<p>LLenar los blancos: Usa las formulas aprendida para calcular y llenar los blancos. Enviaré un enlace por MSTEam para llenar los blancos.</p>
 <pre class="r"><code>library(tidyverse)
 library(gt)
 LT=tribble(
@@ -1151,7 +1162,11 @@ LT %&gt;%
   
 </table>
 </div>
+<hr />
+<div id="cuales-son-las-definiciones-matemática-y-ecológica-de-cada-una-de-las-variables-en-la-tabla" class="section level3">
+<h3>¿Cuales son las definiciones matemática y ecológica de cada una de las variables en la tabla?</h3>
 <p><a href="LECTURE7.html">–go to next lecture–</a></p>
+</div>
 </div>
 
 

@@ -26,9 +26,15 @@ Tome este elefante de la india, por ejemplo. ¿Cómo depende la tasa de reproduc
 
 ```{r}
 Elephant_age <- seq(0,60, by=2)
+Elephant_age
+#Birth_rate <- c(rep(0,times=7),seq(0,0.3,length=4),rep(0.3,times=15),seq(0.3,0,length=5))
 
-Birth_rate <- c(rep(0,times=7),seq(0,0.3,length=4),rep(0.3,times=15),seq(0.3,0,length=5))
-
+Birth_rate <- c(0,0,0,0,0,0,0,
+                0,0.1, 0.2, 0.3,
+                0.3,0.3,0.3,0.3,0.3,
+                0.3,0.3,0.3,0.3,0.3,
+                0.3,0.3,0.3,0.3,0.3,
+                0.3, 0.225, 0.15, 0.075, 0)
 names(Birth_rate) <- Elephant_age
 
 barplot(Birth_rate,xlab="Age",ylab="b, per-capita birth rate",col="blue",ylim=c(0,0.5))
@@ -56,7 +62,9 @@ Entonces, para muchas especies, la tasa de natalidad per cápita y la tasa de mo
 
 ![](figures/spadefoot1.jpg)
 
-**Q:** Imagina que estás intentando restablecer una población de sapos "pata de espada". Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa?
+**Q:** Imagina que estás intentando restablecer una población de sapos "pata de espada". Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa? 
+
+Trata de calcular cuantas ranas originales hubiese en el 2 año, el 3 año, en 10 años.  
 
 ***
 
@@ -131,27 +139,29 @@ Hay tres tipos principales de curvas de supervivencia (también llamadas program
 
 **Q:** ¿Qué curva de supervivencia es la más común en la naturaleza?
 
+  - Defiende su respuesta
+
+  - Debate entre cuatro grupos del salón
+
 
 ## Ejercicio en clase: crecimiento de la población estructurado por edad
 
 In this exercise we will explore some facets of **age-stuctured populations**. 
 
-1. Cargue la tabla de vida anterior en esta lección, haciendo clic [aquí] (life_table.csv). Utilice esta tabla para calcular la ** tasa de reproducción neta, $ R_0 $ **. Esto representa el número medio (esperado) de crías hembras producidas por hembra durante toda su vida. ¡Esto también se conoce como * potencial reproductivo de por vida *! Esto se puede calcular como:
-
-- 1. Load up the life table from earlier in this lecture, by clicking [here](life_table.csv). Use this table to compute the **net reproductive rate, $R_0$**. This represents the mean (expected) number of female offspring produced per female over her entire lifetime. This is also known as *lifetime reproductive potential*! This can be computed as:
+1. Cargue la tabla de vida anterior en esta lección, haciendo clic [aquí](life_table.csv). Utilice esta tabla para calcular la **tasa de reproducción neta, $R_0 $**. Esto representa el número promedio (esperado) de crías hembras producidas por hembra durante toda su vida. ¡Esto también se conoce como *potencial reproductivo de por vida*! Esto se puede calcular como:
 
 $R_0 = \sum_{x=0}^k l(x)\cdot b(x)$
 
 
-Cuando es que $k$ es la edad máxima.
+Donde $k$ es la edad máxima.
 
 **Q:** ¿Puedes implementar esta fórmula en Excel? ¿Cuál es la respuesta?
 
-2. Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la **tasa de reemplazo ** de 1 y, por lo tanto, la población crecerá. Si $R_0$ es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, $\lambda$.
+2. Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la **tasa de reemplazo** de 1 y, por lo tanto, la población crecerá. Si $R_0$ es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, $\lambda$.
 
-PERO, ¿cuál es el marco de tiempo de $ R_0 $? ¿Cuál es el período de tiempo de $ \ lambda $? Son diferentes, ¿verdad? ¡La diferencia es que $ R_0 $ describe el crecimiento por ** generación ** !.
+PERO, ¿cuál es el marco de tiempo de $R_0 $? ¿Cuál es el período de tiempo de $\lambda$? Son diferentes, ¿verdad? ¡La diferencia es que $R_0 $ describe el crecimiento por **generación ** !.
 
-¿Qué es una ** generación **? La definición más común (para el tiempo de generación) es la _Edad media de los padres de toda la descendencia producida por una sola cohorte_. Esto se puede calcular a partir de la tabla de vida como:
+¿Qué es una **generación**? La definición más común (para el tiempo de generación) es la _Edad media de los padres de toda la descendencia producida por una sola cohorte_. Esto se puede calcular a partir de la tabla de vida como:
 
 $G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}$
 
@@ -169,18 +179,18 @@ Con solo mirar esta ecuación, verá que los organismos con tiempos de generaci�
 
 **Q:**Implemente esta ecuación en Excel. ¿Es esta una población en crecimiento exponencial?
 
-4. Cargue un modelo estructurado por edades en InsightMaker. Puedes clonar [this one,  here](https://insightmaker.com/insight/70809/Age-structured-population). 
+4. Cargue un modelo estructurado por edades en InsightMaker. Puedes clonar [Este Aqui](https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad). 
 
 4a. Inicialice la población como en el ejemplo del sapo spadefoot de arriba, con solo la primera clase de edad (juvenil). ¿Qué dinámica poblacional ocurre al comienzo de la simulación? ¿Qué pasa con el final de la simulación?
 
 4b. ¿Puede modificar la abundancia inicial de juveniles, subadultos y adultos para que la población exhiba un crecimiento exponencial uniforme para las tres clases de edad (y la población en su conjunto)? Esto se llama ** Distribución de edad estable (S.A.D.) **
 
-  4c. Ahora cambie las tasas vitales (*Tasa de mortalidad juvenil *, *Tasa de mortalidad secundaria *, *Tasa de transición a Subadulto *, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA *Distribución de edad estable *?  
+  4c. Ahora cambie las tasas vitales (*Tasa de mortalidad juvenil*, *Tasa de mortalidad secundaria *, *Tasa de transición a Subadulto *, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA *Distribución de edad estable *?  
     
-  4d. Regrese al modelo inicial ([este, aquí](https://insightmaker.com/insight/70809/Age-structured-population)). Ahora cambie la **tasa de mortalidad de adultos** a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?
+  4d. Regrese al modelo inicial ([este, aquí](https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad)). Ahora cambie la **tasa de mortalidad de adultos** a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?
     
   
-**Q**: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de población) para mantener una población estable o en crecimiento de> 20 adultos?  [Edmodo]
+**Q**: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de individuos a la población) para mantener una población estable o en crecimiento de> 20 adultos?
 
 **Q**: ¿Es la suplementación la mejor estrategia para conservar esta población?  
 
@@ -234,7 +244,9 @@ $r = \frac{ln(R_0)}{G}$
    >  4d. Now change the **Simulation time step** to 5 years, and return to an initial population with only juveniles. What happens? Is this a **stochastic** model? If not, why does it look like it has a random component? > 
 
   
-  Fill in the blanks:  Usa las formulas aprendida para calcular llenar los blancos
+## Ejercicio: To be submitted in MSTeam
+
+LLenar los blancos:  Usa las formulas aprendida para calcular y llenar los blancos. Enviaré un enlace por MSTEam para llenar los blancos. 
   
   
 ```{r}
@@ -254,8 +266,10 @@ LT=tribble(
 LT %>% 
   gt()
 ```
+
+***
   
-  Cual son las definiciones matemática y ecológica de cada una de las variables en la tabla.
+### ¿Cuales son las definiciones matemática y ecológica de cada una de las variables en la tabla?
 
   
  
