@@ -24,6 +24,8 @@ navbar:
         - text: "Población estructurada por Edad"
           href: LECTURE6.html
         - text: "Modelos de población usando Matrices"
+          href: LECTURE6a.html
+        - text: "Dinamica Poblacional en Orquideas"
           href: LECTURE7.html
         - text: "Modelos Estochasticos de poblaciones"
           href: LECTURE8.html
@@ -58,6 +60,10 @@ navbar:
       menu: 
         - text: "Tarea 1: Historia de Vida"
           href: Tarea_1_historia_vida.html
+    - text: "Invitados"
+      menu:
+        - text: "Lecturas de los Invitados"
+          href: Invitados.html
     - text: "Labs"
       menu:
         - text: "Lab 1: exponential growth"

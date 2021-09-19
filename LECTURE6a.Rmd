@@ -1,0 +1,41 @@
+---
+title: "LECTURE6a"
+author: "BIOL4558"
+date: "Agosto 2021"
+output: 
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Dinamica poblacional en plantas
+
+En este modulo encontrarán una serie presentaciones sobre como evaluar la dinamica de especies por 
+
+  - Edad
+  - Estapas
+  - Edad y Etapas
+  
+  
+> la presentaciones incluyido aqui fueron presentado en un taller sobre dinamica poblacional a estudiantes graduados en un taller en Lodz, Polonia del 24 - 28 de septiembre, 2019. El taller titulado "International Orchid Conference & Workshops for Young Scientist organbizada por Marta Kolanowska (University of Lodz). 
+
+### Parte 1:
+
+[Parte 1](POP_DYN _PDF_Workshops/Population_Dynamics.pdf)
+
+### Parte 2
+
+[Parte 2](POP_DYN _PDF_Workshops/Population_Dynamics_2.pdf)
+
+### Parte 3
+
+[Parte 3](POP_DYN _PDF_Workshops/Population_Dynamics_3.pdf)
+

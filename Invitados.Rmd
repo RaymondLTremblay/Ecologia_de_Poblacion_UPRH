@@ -1,0 +1,43 @@
+---
+title: "Invitados"
+author: "Raymond L. Tremblay"
+date: "9/19/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Invitados
+
+En este documentos encontrarán información los invitados que trabaja en dinamica poblacional, conservación y PVA.
+
+Se encontrará información sobre los invitados y un enlace para el articulo que DEBEN leer antes del dia.  Se le estará haciendo pregunta sobre los articulos leido. 
+
+
+****
+
+
+
+## 1. Martha Charitonidou
+
+ - Candidata al PhD
+ - Laboratory of Ecology
+ - Dept. of Biological Application and TECHNOLOGY
+ - UNIVERSITY OF IOANNINA, GREECE.
+ 
+ VEA EL SIGUIENTE ENLACE
+ 
+ [M_CHARITONIDOU](https://www.researchgate.net/profile/Martha-Charitonidou)
+
+ ## LEER EL SIGUIENTE ARTICULO
+ 
+ [OPRHYS](Guest_Speakers/Charitonidou, Kougioumoutzis, Halley - 2021.pdf)
+ 
+ 
+ ***
+ 
+ 
+ 
+
