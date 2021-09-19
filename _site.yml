@@ -1,5 +1,7 @@
 name: "BIOL 4458"
+
 output_dir: "."
+favicon: favicon.ico
 navbar:
   title: " BIOL4458"
   left:

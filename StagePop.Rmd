@@ -14,7 +14,7 @@ library(stagePop)
 ```
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 runStagePopExample('BlowFlies')
 ```
 
@@ -22,7 +22,7 @@ runStagePopExample('BlowFlies')
 ### A single species whose stage durations depend on temperature [VarDurEnv.R]
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 library(stagePop)
 #All the vectors are specified in the order of the life cycle
 #e.g. start with eggs and finish with reproducing adults
