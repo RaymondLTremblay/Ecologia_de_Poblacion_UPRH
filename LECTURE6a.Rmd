@@ -16,16 +16,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-# Dinamica poblacional en plantas
+# Dinámica poblacional en plantas
 
-En este modulo encontrarán una serie presentaciones sobre como evaluar la dinamica de especies por 
+En este modulo encontrarán una serie presentaciones sobre como evaluar la dinámica de especies por 
 
   - Edad
-  - Estapas
-  - Edad y Etapas
+  - Etapas
+  - Edad y Etapas (modelos estructurados por Edad y Etapas, Mixto)
   
   
-> la presentaciones incluyido aqui fueron presentado en un taller sobre dinamica poblacional a estudiantes graduados en un taller en Lodz, Polonia del 24 - 28 de septiembre, 2019. El taller titulado "International Orchid Conference & Workshops for Young Scientist organbizada por Marta Kolanowska (University of Lodz). 
+> La presentaciones incluido aqui fueron presentado en un taller sobre dinámica poblacional a estudiantes graduados en un taller en Lodz, Polonia del 24 - 28 de septiembre, 2019. El taller titulado "International Orchid Conference & Workshops for Young Scientist organizada por la Dra. Marta Kolanowska (University of Lodz). 
 
 ### Parte 1:
 
@@ -39,3 +39,12 @@ En este modulo encontrarán una serie presentaciones sobre como evaluar la dinam
 
 [Parte 3](POP_DYN _PDF_Workshops/Population_Dynamics_3.pdf)
 
+
+Aquí tres fotos de Lodz, para se anime a viajar
+
+![El hotel donde nos quedamos en Lodz](figures/Hotel_Lodz.png){width=50%}
+
+![Una iglesia del periodo medieval](figures/Medieval_Church_2.png){width=50%}
+
+
+![Un Garaje donde los Nazi econdia los trenes antes de antacar a Rusia](figures/Nazi_train_Bunker_Lodz.png){width=50%}
