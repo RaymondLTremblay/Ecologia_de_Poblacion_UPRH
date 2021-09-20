@@ -24,9 +24,9 @@ navbar:
           href: LECTURE5.html
         - text: "Población estructurada por Edad"
           href: LECTURE6.html
-        - text: "Modelos de población usando Matrices"
-          href: LECTURE6a.html
         - text: "Dinamica Poblacional en Orquideas"
+          href: LECTURE6a.html
+        - text: "Modelos de población usando Matrices"
           href: LECTURE7.html
         - text: "Modelos Estochasticos de poblaciones"
           href: LECTURE8.html
