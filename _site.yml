@@ -1,5 +1,4 @@
 name: "BIOL 4458"
-
 output_dir: "."
 navbar:
   title: " BIOL4458"
@@ -12,22 +11,31 @@ navbar:
       menu:
         - text: "Introducción a BIOL4458"
           href: INTRO.html
+          
         - text: "Un enfoque de sistemas holístico"
           href: LECTURE1_2.html
+          
         - text: "Introducción a la Ecología de Poblaciones"
           href: LECTURE2.html
+          
         - text: "Thomas Robert Malthus"
           href: LECTURE3_2.html
+          
         - text: "Regulación de Poblaciones"
           href: LECTURE4.html
+          
         - text: "Paloma Viajera"
           href: LECTURE5.html
+          
         - text: "Población estructurada por Edad"
           href: LECTURE6.html
+          
         - text: "Dinamica Poblacional en Orquideas"
           href: LECTURE6a.html
+          
         - text: "Modelos de población usando Matrices"
           href: LECTURE7.html
+          
         - text: "Modelos Estochasticos de poblaciones"
           href: LECTURE8.html
         - text: "El paradigma de pequeñas poblaciones"

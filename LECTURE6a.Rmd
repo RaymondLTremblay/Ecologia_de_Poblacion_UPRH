@@ -47,4 +47,4 @@ Aquí tres fotos de Lodz, para se anime a viajar
 ![Una iglesia del periodo medieval](figures/Medieval_Church_2.png){width=50%}
 
 
-![Un Garaje donde los Nazi econdia los trenes antes de antacar a Rusia](figures/Nazi_train_Bunker_Lodz.png){width=50%}
+![Un Garaje donde los Nazi escondia los trenes antes de atacar a Rusia, Myosotis T, El profe, y la Dra. Tiiu Kull de Estonia](figures/Nazi_train_Bunker_Lodz.png){width=50%}
