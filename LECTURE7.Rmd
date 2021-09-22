@@ -22,16 +22,16 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ####  BIOL4558, Topico 7                               ####
 ####                                                    ####
 ####  Kevin Shoemaker                                   #### 
-####  University of Nevada, Reno                    ####
-####        &                           ####
-####  Raymond L. Tremblay       ####
-####  Universidad de Puerto Rico                   ####
+####  University of Nevada, Reno                       ####
+####        &                                          ####
+####  Raymond L. Tremblay                             ####
+####  Universidad de Puerto Rico                        ####
 ####                                                    #### 
 ############################################################
 
 
 ############################################################
-####  Matrix population models                          ####
+####  Modelos de matriz poblacional                         ####
 ############################################################
 
 ```
@@ -508,13 +508,13 @@ NOTA: ¡esta también es una pregunta en el laboratorio 4!
 
 > Asumimos que la historia de vida del halcón de cola roja podría describirse en términos de tres etapas principales de la vida: cría (primer año de vida), juvenil (principalmente individuos en su segundo año de vida) y adulto (generalmente el tercer año de vida). y más allá). Los adultos son la etapa reproductiva primaria y producen un promedio de 3 nuevas crías cada año. Se espera que los juveniles produzcan solo 1 cría nueva cada año. Asumimos que los adultos experimentaron un promedio de 18% de mortalidad cada año. La mortalidad juvenil se fijó en un 30% anual. Aproximadamente el 5% de los juveniles permanecen en la fase juvenil cada año, y todos los demás sobrevivientes pasan a la etapa adulta. Finalmente, las crías tenían un 20% de posibilidades de sobrevivir y hacer la transición para convertirse en juveniles. Inicializamos la población con 1000 crías, 150 juveniles y 5 adultos.
 
-** P: ** ¿Cómo se ve la matriz de transición? [EDMODO]
+**P: ** ¿Cómo se ve la matriz de transición? [EDMODO]
 
-** P: ** ¿Cómo se ve el vector de abundancia de la etapa inicial?
+**P: ** ¿Cómo se ve el vector de abundancia de la etapa inicial?
 
-** P: ** ¿Se encuentra esta población en una distribución por etapas estable?
+**P: ** ¿Se encuentra esta población en una distribución por etapas estable?
 
-** P: ** ¿Cuál es la tasa de crecimiento de esta población?
+**P: ** ¿Cuál es la tasa de crecimiento de esta población?
 
 
 Para obtener más información sobre los modelos matriciales de población, la Biblia de este tema es [this book by Hal Caswell](https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=C1DH1414B1C6AK%2C1).
