@@ -37,7 +37,11 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-### Próximo examen parcial
+### Próximo examen parcial some date
+
+Test date in the future real soon
+
+No texto
 
 **cuándo y dónde** El primer examen parcial (de dos) se realizará el lunes **15 de marzo**. Tendrás todo el período de clase de 120 minutos para realizar el examen. El examen será en línea (por supuesto) y se administrará en Edmodo.
 
