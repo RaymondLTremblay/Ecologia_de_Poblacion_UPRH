@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ############################################################
 ####                                                    ####  
-####  BIOL4558, Topico 7                               ####
+####  BIOL4558, Tópico 7                               ####
 ####                                                    ####
 ####  Kevin Shoemaker                                   #### 
 ####  University of Nevada, Reno                       ####
@@ -42,6 +42,8 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 Test date in the future real soon
 
 No texto
+
+El 6 de octubre
 
 **cuándo y dónde** El primer examen parcial (de dos) se realizará el lunes **15 de marzo**. Tendrás todo el período de clase de 120 minutos para realizar el examen. El examen será en línea (por supuesto) y se administrará en Edmodo.
 
