@@ -95,8 +95,6 @@ navbar:
           href: LAB7.html
         - text: "Final Projects!"
           href: FINAL_PROJECTS.html
-        - text: "Extra Credit!"
-          href: EXTRA_CREDIT.html
     - text: "Ejemplos de proyecto de PVA"
       menu:
         - text: "PVA por los estudiantes"
