@@ -521,16 +521,20 @@ div.tocify {
 </div>
 <div id="load-the-library" class="section level3">
 <h3>Load the library</h3>
-<pre class="r"><code>library(popdemo)
-library(popbio)</code></pre>
-<p><em>Lepanthes</em> is one of the largest of orchids with &gt;1200 species, found only in the Neotropics</p>
+<pre class="r"><code>library(popdemo)</code></pre>
+<pre><code>## Welcome to popdemo! This is version 1.3-0
+## Use ?popdemo for an intro, or browseVignettes(&#39;popdemo&#39;) for vignettes
+## Citation for popdemo is here: doi.org/10.1111/j.2041-210X.2012.00222.x
+## Development and legacy versions are here: github.com/iainmstott/popdemo</code></pre>
+<pre class="r"><code>library(popbio)</code></pre>
+<p><em>Lepanthes</em> is one of the largest genera of the Orchidaceae with &gt;1200 species, found only in the Neotropics.</p>
 <hr />
 <p>Here is photo of the flower of <em>Lepanthes rubripetala</em>,</p>
 <div class="figure">
 <img src="figures/Lepanthes_rubripetala.png" alt="" />
 <p class="caption">Lepanthes rubripetala</p>
 </div>
-<p>A population of <em>Lepanthes rupestris</em>, those of Lepanthes rubripetala growth in the smae way (on rocks or trees)</p>
+<p>A population of <em>Lepanthes rupestris</em>, those of <em>Lepanthes rubripetala</em> growth in the same way (on rocks or trees), so these groups of individuals are discrete and may be seperated by large distances.</p>
 <hr />
 <div class="figure">
 <img src="figures/Lepanthes-rupestris-on-a-boulder-along-Quebrada-Sonadora-in-the-Caribbean-National.png" alt="" />
@@ -560,10 +564,10 @@ Lrub1=R3</code></pre>
 <div id="two-problems-need-to-be-evaluated-before-analysis" class="section level2">
 <h2>Two problems need to be evaluated before analysis</h2>
 <ul>
-<li><p><strong>ergodicity</strong> (the condition that regardless of the initial stage structure, the asymptotic growth rate will be the same) and</p></li>
-<li><p><strong>irreducibility</strong> (the condition that the transitions from all stages to all other stages are possible),</p></li>
+<li><p><strong>Ergodicity</strong> (the condition that regardless of the initial stage structure, the asymptotic growth rate will be the same)</p></li>
+<li><p><strong>Irreducibility</strong> (the condition that the transitions from all stages to all other stages are possible),</p></li>
 </ul>
-<p>both of which may severely impact matrix structure and analyses (Stott et al., 2010a).</p>
+<p>failure to meet both of these conditions which may severely impact matrix structure and analyses (Stott et al., 2010a).</p>
 <p>You can test this with the following functions from “popdemo”.</p>
 <pre class="r"><code>isErgodic(Lrub1, digits=10, return.eigvec=FALSE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>

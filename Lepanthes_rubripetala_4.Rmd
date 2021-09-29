@@ -32,7 +32,7 @@ library(popdemo)
 library(popbio)
 ```
 
-*Lepanthes* is one of the largest of orchids with >1200 species, found only in the Neotropics
+*Lepanthes* is one of the largest genera of the Orchidaceae with >1200 species, found only in the Neotropics.  
 
 
 ***
@@ -41,7 +41,7 @@ Here is photo of the flower of *Lepanthes rubripetala*,
 
 ![Lepanthes rubripetala](figures/Lepanthes_rubripetala.png)
 
-A population of *Lepanthes rupestris*, those of Lepanthes rubripetala growth in the smae way (on rocks or trees)
+A population of *Lepanthes rupestris*, those of *Lepanthes rubripetala* growth in the same way (on rocks or trees), so these groups of individuals are discrete and may be seperated by large distances. 
 
 ***
 
@@ -75,14 +75,14 @@ Lrub1=R3
 
 ## Two problems need to be evaluated before analysis 
 
- - **ergodicity** (the condition that regardless of the initial stage
-structure, the asymptotic growth rate will be the same) and 
+ - **Ergodicity** (the condition that regardless of the initial stage
+structure, the asymptotic growth rate will be the same) 
 
- - **irreducibility**
+ - **Irreducibility**
 (the condition that the transitions from all stages to all other
 stages are possible), 
 
-both of which may severely impact matrix structure
+failure to meet both of these conditions which may severely impact matrix structure
 and analyses (Stott et al., 2010a).
 
 
