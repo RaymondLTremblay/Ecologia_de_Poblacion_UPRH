@@ -460,9 +460,6 @@ div.tocify {
     <li>
       <a href="FINAL_PROJECTS.html">Final Projects!</a>
     </li>
-    <li>
-      <a href="EXTRA_CREDIT.html">Extra Credit!</a>
-    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -606,9 +603,9 @@ legend(&quot;topleft&quot;,col=cols,lwd=rep(2,ncol(TMat)),legend=paste(&quot;Sta
 <pre class="r"><code>############
 # Use the &#39;popbio&#39; package to compute lambda (NOTE: you first have to install the popbio package! You only have to install the package once...)
 
-library(popbio)</code></pre>
-<pre><code>## Warning: package &#39;popbio&#39; was built under R version 4.0.3</code></pre>
-<pre class="r"><code>lambda(projection_matrix)</code></pre>
+library(popbio)
+
+lambda(projection_matrix)</code></pre>
 <pre><code>## [1] 1.138728</code></pre>
 <p>Pretty easy right?</p>
 <p>NOTE: we are using a “package” in R to make these analyses super easy! So if you don’t already have the “popbio” package, go to the “Packages” tab in Rstudio (should be at the top of the lower right panel), click on “Install”, and then type “popbio” in the “Packages” field in the pop-up window, then click on the “Install” button.</p>

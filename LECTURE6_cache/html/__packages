@@ -9,3 +9,13 @@ dplyr
 stringr
 forcats
 gt
+mra
+Matrix
+lme4
+marked
+lattice
+survival
+Formula
+Hmisc
+popbio
+deSolve

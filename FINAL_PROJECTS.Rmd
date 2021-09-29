@@ -1,12 +1,13 @@
 ---
 title: "Final projects!"
-author: "NRES 470/670"
-date: "Spring 2021"
+author: "BIOL4558"
+date: "Agosto 2021"
 output: 
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -136,14 +137,14 @@ The way it will work is as follows:
 
 Here are the peer review assignments:
 
-```{r include=FALSE}
-#assignments <- read.csv("GroupAssignments.csv")
-```
 
-```{r results='asis', echo=FALSE}
+assignments <- read.csv("GroupAssignments.csv")
+
+
+
 #knitr::kable(assignments,caption="")
 
-```
+
 
 Bring your laptops to lab as usual so you can write, save and share your peer-review electronically with your classmates/instructors. 
 

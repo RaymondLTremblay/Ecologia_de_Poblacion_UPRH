@@ -460,9 +460,6 @@ div.tocify {
     <li>
       <a href="FINAL_PROJECTS.html">Final Projects!</a>
     </li>
-    <li>
-      <a href="EXTRA_CREDIT.html">Extra Credit!</a>
-    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -625,7 +622,6 @@ head(read.csv(&quot;simple_closed.csv&quot;))</code></pre>
 <p>NOTE: Program MARK is a Windows-based software. If you’re running MacOS, you can run MARK using a Windows partition or a Windows emulator. However, you don’t need to use Program MARK for this lab exercise – you can use R instead!</p>
 <p>The ‘marked’ package in R runs many of the same open-population models, and is much easier to use than Program MARK. Please install this package if haven’t already done so.</p>
 <p>These data should look like this! Here it is in R (just the first 15 lines)!</p>
-<pre><code>## mra (version 2.16.11)</code></pre>
 <pre><code>##    h1 h2 h3 h4 h5 h6 h7
 ## 1   1  1  1  1  1  1  0
 ## 2   1  1  1  1  1  0  0
@@ -647,12 +643,6 @@ head(read.csv(&quot;simple_closed.csv&quot;))</code></pre>
 <p>Program MARK wants a particular type of input file (.INP; just a text file with special formatting). For the dipper data, it should look something like <a href="ed_males.txt">this</a></p>
 <p>Save this <a href="ed_males.txt">text file</a> and re-name it with the extension “.inp” rather than the extension “.txt”</p>
 <p>Your INP file should look something like this:</p>
-<pre><code>## Warning: package &#39;marked&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Loading required package: lme4</code></pre>
-<pre><code>## Warning: package &#39;lme4&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Loading required package: Matrix</code></pre>
-<pre><code>## Loading required package: parallel</code></pre>
-<pre><code>## This is marked 1.2.6</code></pre>
 <pre><code>##         ch group
 ## 1  1111110    1;
 ## 2  1111000    1;
@@ -786,7 +776,7 @@ mod.Phit.pt &lt;- crm(dipper.proc,dipper.ddl,model.parameters=list(Phi=list(form
  Number of evaluations:  500  -2lnl: 315.4938468
  Number of evaluations:  600  -2lnl: 315.4685878</code></pre>
 <pre><code>## 
-## Elapsed time in minutes:  0.0075</code></pre>
+## Elapsed time in minutes:  0.0084</code></pre>
 <pre class="r"><code>mod.Phit.pt   # print out model</code></pre>
 <pre><code>## 
 ## crm Model Summary
@@ -819,7 +809,7 @@ mod.Phidot.pdot &lt;- crm(dipper.proc,dipper.ddl,model.parameters = list(Phi=lis
 <pre><code>## Starting optimization for 2 parameters...</code></pre>
 <pre><code>## Computing hessian...</code></pre>
 <pre><code>## 
-## Elapsed time in minutes:  0.002</code></pre>
+## Elapsed time in minutes:  0.004</code></pre>
 <pre class="r"><code>mod.Phidot.pdot</code></pre>
 <pre><code>## 
 ## crm Model Summary
@@ -856,7 +846,7 @@ allmodels &lt;- crm.wrapper(cml,data=dipper.proc, ddl=dipper.ddl,external=FALSE,
 <pre><code>## Starting optimization for 2 parameters...</code></pre>
 <pre><code>## Computing hessian...</code></pre>
 <pre><code>## 
-## Elapsed time in minutes:  0.0018</code></pre>
+## Elapsed time in minutes:  0.0031</code></pre>
 <pre><code>## Phi.dot.p.time</code></pre>
 <pre><code>## Computing initial parameter estimates</code></pre>
 <pre><code>## Starting optimization for 7 parameters...</code></pre>
@@ -887,7 +877,7 @@ allmodels &lt;- crm.wrapper(cml,data=dipper.proc, ddl=dipper.ddl,external=FALSE,
  Number of evaluations:  100  -2lnl: 316.1220471
  Number of evaluations:  200  -2lnl: 316.1169636</code></pre>
 <pre><code>## 
-## Elapsed time in minutes:  0.0037</code></pre>
+## Elapsed time in minutes:  0.0044</code></pre>
 <pre><code>## Phi.time.p.dot</code></pre>
 <pre><code>## Computing initial parameter estimates
 ## 
@@ -909,7 +899,7 @@ allmodels &lt;- crm.wrapper(cml,data=dipper.proc, ddl=dipper.ddl,external=FALSE,
  Number of evaluations:  100  -2lnl: 315.5145048
  Number of evaluations:  200  -2lnl: 315.5153169</code></pre>
 <pre><code>## 
-## Elapsed time in minutes:  0.0027</code></pre>
+## Elapsed time in minutes:  0.0037</code></pre>
 <pre><code>## Phi.time.p.time</code></pre>
 <pre><code>## Computing initial parameter estimates</code></pre>
 <pre><code>## Starting optimization for 12 parameters...</code></pre>
@@ -974,18 +964,13 @@ allmodels &lt;- crm.wrapper(cml,data=dipper.proc, ddl=dipper.ddl,external=FALSE,
  Number of evaluations:  500  -2lnl: 315.4938468
  Number of evaluations:  600  -2lnl: 315.4685878</code></pre>
 <pre><code>## 
-## Elapsed time in minutes:  0.006</code></pre>
+## Elapsed time in minutes:  0.0068</code></pre>
 <pre class="r"><code>allmodels</code></pre>
-<pre><code>##                model npar      AIC  DeltaAIC       weight  neg2lnl
-## 1       Phi(~1)p(~1)    2 322.4938  0.000000 0.9501710921 318.4938
-## 3    Phi(~time)p(~1)    7 329.4989  7.005072 0.0286200070 315.4989
-## 2    Phi(~1)p(~time)    7 330.1169  7.623055 0.0210124331 316.1169
-## 4 Phi(~time)p(~time)   12 339.4616 16.967798 0.0001964678 315.4616
-##   convergence
-## 1           0
-## 3           0
-## 2           0
-## 4           0</code></pre>
+<pre><code>##                model npar      AIC  DeltaAIC       weight  neg2lnl convergence
+## 1       Phi(~1)p(~1)    2 322.4938  0.000000 0.9501710921 318.4938           0
+## 3    Phi(~time)p(~1)    7 329.4989  7.005072 0.0286200070 315.4989           0
+## 2    Phi(~1)p(~time)    7 330.1169  7.623055 0.0210124331 316.1169           0
+## 4 Phi(~time)p(~time)   12 339.4616 16.967798 0.0001964678 315.4616           0</code></pre>
 <pre class="r"><code>#######
 # get parameter estimates and confidence intervals for best model
 
@@ -1009,17 +994,8 @@ predict(allmodels[[1]])$Phi</code></pre>
 ## 1   6 0.565868 0.03554077 0.495363 0.6338044</code></pre>
 <pre class="r"><code>Phi_by_year &lt;- predict(allmodels[[3]])$Phi    # predict Phi for all years (based on the best Phi(t) model)
 
-library(Hmisc)   #load Hmisc package- has a nice error bar function</code></pre>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## Loading required package: survival</code></pre>
-<pre><code>## Loading required package: Formula</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## 
-## Attaching package: &#39;Hmisc&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     format.pval, units</code></pre>
-<pre class="r"><code>plot(1:nrow(Phi_by_year),Phi_by_year$estimate,xlab=&quot;Year&quot;,ylab=&quot;Survival&quot;,ylim=c(0,1),main=&quot;Variability in Survival, dipper demo&quot;)
+library(Hmisc)   #load Hmisc package- has a nice error bar function
+plot(1:nrow(Phi_by_year),Phi_by_year$estimate,xlab=&quot;Year&quot;,ylab=&quot;Survival&quot;,ylim=c(0,1),main=&quot;Variability in Survival, dipper demo&quot;)
 errbar(1:nrow(Phi_by_year),Phi_by_year$estimate,Phi_by_year$ucl,Phi_by_year$lcl,add=T)</code></pre>
 <p><img src="LAB7_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>

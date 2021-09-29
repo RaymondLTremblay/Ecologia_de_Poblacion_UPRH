@@ -460,9 +460,6 @@ div.tocify {
     <li>
       <a href="FINAL_PROJECTS.html">Final Projects!</a>
     </li>
-    <li>
-      <a href="EXTRA_CREDIT.html">Extra Credit!</a>
-    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -990,7 +987,7 @@ abline(v=Init_N,col=&quot;green&quot;,lwd=2)</code></pre>
 <p>We could compute the probability of decline by computing <span class="math inline">\(\frac{number.declined}{total.simulations}\)</span></p>
 <pre class="r"><code>prob_decline &lt;- round(length(which(Default[nrow(Default),]&lt;Init_N))/ncol(Default),2)
 cat(&quot;the probability of decline is: &quot;, prob_decline)</code></pre>
-<pre><code>## the probability of decline is:  0.13</code></pre>
+<pre><code>## the probability of decline is:  0.17</code></pre>
 <p>What if our question is about the effect of flooding on extinction risk?</p>
 <p>Let’s imagine that the probability of flooding is not expected to change with climate change, but that the intensity of the flood damage is likely to increase substantially!</p>
 <p>Currently, floods generally result in a 10% population reduction. But climate change could increase this number to as much as 90%. Let’s look at how much this could increase extinction risk!</p>
