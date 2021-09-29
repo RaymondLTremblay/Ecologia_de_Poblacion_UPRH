@@ -37,7 +37,11 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-### Próximo examen parcial
+### Próximo examen parcial some date
+
+Test date in the future real soon
+
+No texto
 
 El 6 de octubre
 
