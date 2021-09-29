@@ -1,5 +1,5 @@
 ---
-title: "Lepanthes_rubripetala_4"
+title: "Lepanthes rubripetala"
 author: "BIOL4558"
 date: "Agosto 2021"
 output: 
@@ -70,6 +70,8 @@ Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este ma
 ), byrow=TRUE, ncol=4)
 
 Lrub1=R3
+
+Lrub1
 ```
 
 
@@ -134,7 +136,7 @@ par(mar=c(5,4,1,1))
 This one is biased towards adults.
 
 ```{r}
-n0 <- c(48, 16, 12, 10)
+n0 <- c(0, 0, 2, 0)
 
 ```
 
