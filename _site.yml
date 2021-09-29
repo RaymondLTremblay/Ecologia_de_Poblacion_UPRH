@@ -35,6 +35,10 @@ navbar:
           
         - text: "Modelos de población usando Matrices"
           href: LECTURE7.html
+        
+        - text: "Modelos matriciales de una orquidea"
+          href: Lepanthes_rubripetala_4.html  
+          
           
         - text: "Modelos Estochasticos de poblaciones"
           href: LECTURE8.html
