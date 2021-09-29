@@ -28,6 +28,7 @@ Se encontrará información sobre los invitados y un enlace para el articulo que
 
 
 ## 1. Martha Charitonidou
+mirecoles, el 20 de octubre, 2021
 
 Octubre 20, 2021
 
@@ -59,9 +60,13 @@ Octubre 20, 2021
 
 ### LEER EL SIGUIENTE ARTICULO
 
+<<<<<<< HEAD
 [Variación Temporal](Guest_Speakers/)
 
 
+=======
+[Variacion Temporal](Guest_Speakers/Temporal_variation_in_the_demography_of.pdf)
+>>>>>>> a9be4472f9417d41034dac9d382f8fd3f8f20e83
 
 
  
