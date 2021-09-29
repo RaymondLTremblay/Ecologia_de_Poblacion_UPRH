@@ -28,9 +28,9 @@ Se encontrará información sobre los invitados y un enlace para el articulo que
 
 
 ## 1. Martha Charitonidou
-mirecoles, el 20 de octubre, 2021
 
-Octubre 20, 2021
+
+### miercoles, el 20 de octubre, 2021
 
  - Candidata al PhD
  - Laboratory of Ecology
@@ -50,6 +50,8 @@ Octubre 20, 2021
  
 ## 2. Dra. Demetria Mondragón
 
+### Fecha para determinar
+
  - Especialista en plantas epifitas
  - Dinámica poblacional
  - Centro Interdisciplinario de Investigación para el Desarrollo Integral Regional, Unidad Oaxaca, México
@@ -60,20 +62,19 @@ Octubre 20, 2021
 
 ### LEER EL SIGUIENTE ARTICULO
 
-<<<<<<< HEAD
-[Variación Temporal](Guest_Speakers/)
 
-
-=======
 [Variacion Temporal](Guest_Speakers/Temporal_variation_in_the_demography_of.pdf)
->>>>>>> a9be4472f9417d41034dac9d382f8fd3f8f20e83
+
+
 
 
 ***
 
 ## 3. Dra. Nhora H. Ospina Calderon
 
-- Especialista en dinamica poblacional
+### Fecha para determinar
+
+- Especialista en dinámica poblacional
 - Conservación
 - Herbarium HUQ, Biology Program, University of Quindío, Armenia, Colombia.
 

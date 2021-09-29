@@ -7,7 +7,7 @@ navbar:
       href: index.html
     - text: "Calendario"
       href: schedule.html
-    - text: "Lectures"
+    - text: "Conferencias"
       menu:
         - text: "Introducción a BIOL4458"
           href: INTRO.html
