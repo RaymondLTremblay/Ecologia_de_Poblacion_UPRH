@@ -384,8 +384,6 @@ Comencemos con una población básica en crecimiento exponencial que se parece a
 
 3. Ahora use la herramienta "Comparar resultados" (en el menú "Herramientas" en la esquina superior derecha ...) para visualizar el rango de posibles trayectorias de crecimiento de la población que serían posibles dada nuestra * incertidumbre * (falta de conocimiento) sobre la tasa de natalidad. 
 
-> 3. Now use the "Compare Results" tool (under the "Tools" menu in the upper right corner...) to visualize the range of possible population growth trajectories that would be possible given our *uncertainty* (lack of knowledge) about birth rate. 
-
 **Q** ¿Cuál es el rango de posibles abundancias finales después de 10 años?
 
 **Q** ¿Deberíamos estudiar más este sistema si queremos saber si la población está creciendo o disminuyendo? 
@@ -394,11 +392,9 @@ Comencemos con una población básica en crecimiento exponencial que se parece a
 
 1. Vuelva a establecer la * Tasa de natalidad * en 0,4. Haga clic en "Simular" - ¡asegúrese de ver un crecimiento exponencial!
 
-> 1. Set *Birth rate* back to 0.4. Hit "Simulate"- make sure you still see exponential growth!
+
 
 2. Usaremos una * distribución binomial * para representar el número de muertes. Es decir, tiramos una moneda la misma cantidad de veces que hay individuos en la población. Si la moneda sale cara, el individuo muere. En este caso, estamos usando una moneda sesgada, ¡solo sale cara el 30% de las veces! La * distribución binomial * representa esencialmente el número de veces que aparecieron cabezas. Para hacer esto en InsightMaker, use la siguiente fórmula para el flujo * Muertes * (puede usar el menú "Funciones de números aleatorios" de la derecha para escribir automáticamente la sintaxis adecuada):
-
-> 2. We will use a *Binomial distribution* to represent the number of mortalities. That is, we _flip a coin the same number of times as there are individuals in the population_. If the coin comes up heads, then the individual dies. In this case we are using a biased coin- it only comes up heads 30% of the time! The *Binomial distribution* essentially represents the number of times heads came up. To do this in InsightMaker, use the following formula for the *Deaths* flow (you can use the right-hand "Random Number Functions" menu to auto-type the proper syntax):
 
 ```
 RandBinomial([Population], [Death rate])
@@ -424,19 +420,16 @@ RandPoisson(Lambda)
 ```
 En términos sencillos: el número de nacimientos (flujo [Nacimientos] en InsightMaker) es una extracción aleatoria de un generador de números aleatorios de Poisson con una media (Lambda) igual al número esperado de nacimientos ([Población] * [Tasa de natalidad]).
 
-> In plain English: the number of births ([Births] flow in InsightMaker) is a random draw from a Poisson random number generator with a mean (Lambda) equal to the expected number of births ([Population]*[Birth rate]).
 
 3. Ejecute la simulación. Cómo se ve?
 
-> 3. Run the simulation. What does it look like?
 
 4. Utilice la herramienta "Prueba de sensibilidad" (en el menú "Herramientas", esquina superior derecha) para ejecutar el modelo 50 veces. Elija [Población] como "Primitiva supervisada". NOTA: Recomiendo elegir el botón "Trazar cada ejecución", de esa forma podemos generar un "diagrama de espagueti".
 
-> 4. Use the "Sensitivity Testing" tool (in the "Tools" menu, upper right corner) to run the model 50 times. Choose [Population] as the "Monitored Primitive". NOTE: I recommend choosing the "Plot Each Run" button -- that way we can generate a "spaghetti plot". 
 
 5. Cambie la abundancia inicial a 500 y vuelva a ejecutar la herramienta "Prueba de sensibilidad".
 
-> 5. Change the initial abundance to 500 and re-run the "Sensitivity Testing" tool.
+
 
 **P ** ¿El efecto de la * estocasticidad demográfica * es mayor o menor en abundancias bajas o altas?
 
@@ -444,12 +437,11 @@ En términos sencillos: el número de nacimientos (flujo [Nacimientos] en Insigh
 
 1. Regrese *Nacimientos * a lo que era antes ([Población] x [Tasa de natalidad]), y haga lo mismo para *Muertes * ([Población] x [Tasa de mortalidad]).
 
-> 1. Set *Births* back to what it was before ([Population]x[Birth rate]), and do the same for *Deaths* ([Population]x[Death rate]).
 
 
 2. Usaremos una *distribución normal * para representar cómo cambia la tasa de natalidad per cápita cada año. Esto podría representar variabilidad climática: "años buenos" y "años malos". La * distribución normal * se usa comúnmente para este tipo de variabilidad; se caracteriza por un valor promedio (**media **) y una medida de variabilidad (**desviación estándar **). Para hacer esto en InsightMaker, use la siguiente fórmula para la variable *Tasa de natalidad *:
 
-> 2. We will use a *Normal distribution* to represent how the per-capita birth rate changes each year. This could represent climatic variablity -- "good years" and "bad years". The *Normal distribution* is commonly used for this type of variability- it is characterized by an average value (**mean**) and a variability measure (**standard deviation**). To do this in InsightMaker, use the following formula for the *Birth Rate* variable:
+
 
 ```
 RandNormal(0.4, 0.4)
@@ -458,7 +450,7 @@ RandNormal(0.4, 0.4)
 
 2. De manera similar, use la siguiente fórmula para la variable *Tasa de muerte *:
 
-> Similarly, use the following formula for the *Death Rate* variable:
+
 
 ```
 RandNormal(0.3, 0.3)
@@ -466,23 +458,23 @@ RandNormal(0.3, 0.3)
 
 4. Utilice la herramienta "Prueba de sensibilidad" (en el menú "Herramientas", esquina superior derecha) para ejecutar el modelo 50 veces. Elija [Población] como "Primitiva supervisada".
 
-> 4. Use the "Sensitivity Testing" tool (in the "Tools" menu, upper right corner) to run the model 50 times. Choose [Population] as the "Monitored Primitive".
+
 
 5. Cambie la abundancia inicial a 500 y vuelva a ejecutar la herramienta "Prueba de sensibilidad". 
 
-> 5. Change the initial abundance to 500 and re-run the "Sensitivity Testing" tool.
+
 
 
 **P ** ¿El efecto de la * estocasticidad ambiental * es mayor en abundancias bajas o altas?
 
 6. Tenga en cuenta que la distribución normal PUEDE ir por debajo de cero o por encima de 1, lo que no siempre es biológicamente realista. Sin embargo, como hemos visto antes, InsightMaker no permite que un [Flujo de entrada] se elimine de un [Stock] o un [Flujo de salida] para agregar a un [Stock], por lo que realmente no tenemos que preocuparnos por este problema. ! Es decir, InsightMaker *truncará * la distribución normal para nosotros. Alternativamente (si queremos ser muy explícitos) podríamos simplemente **truncar ** la distribución normal nosotros mismos. Es decir, si el número aleatorio que extrae sale por debajo de cero, ¡hágalo cero!
 
-> 6. Note that the normal distribution CAN go below zero or above 1, which is not always biologically realistic! However, as we have seen before, InsightMaker does not allow a [Flow In] to remove from a [Stock] or a [Flow Out] to add to a [Stock], so we don't really need to worry about this problem! That is, InsightMaker will *truncate* the normal distribution for us. Alternatively (if we want to be very explicit) we could just **truncate** the normal distribution ourselves. That is, if the random number you draw comes out below zero, just make it zero! 
+
 
 
 Para la variable [Tasa de natalidad] en InsightMaker, esto se puede hacer así:
 
-> For the [Birth Rate] variable in InsightMaker, this can be done like this:
+
 
 ```
 Max(0,RandNormal(0.4, 0.4))
@@ -512,6 +504,117 @@ A continuación, puede modificar su parámetro de fecundidad per cápita para te
 ```
 0.85+0.4*[forage quality]
 ```
+
+
+***
+
+## El mismo Ejercicio en Ingles
+
+#### _Parameter Uncertainty_    
+
+1. Set *Birth rate* equal to 0.4 and *Death rate* equal to 0.3. Set initial abundance to 10. Under the "Settings" menu, set the model to run for 10 years. Make sure your *Population* stock can not go negative (this is a setting in the configuration panel). Hit "Simulate"- you should see exponential growth! 
+
+2. **Parameter uncertainty:** What if we have imperfect knowledge about birth rate? The birth rate could be anything from 0.2 to 0.5. Run the model with the lowest and the highest possible birth rate. NOTE: you can give each results plot a title using the gear-shaped symbol at the top of your plot window- that way you can name your scenarios -- e.g., "min birth rate".
+
+3. Now use the "Compare Results" tool (under the "Tools" menu in the upper right corner...) to visualize the range of possible population growth trajectories that would be possible given our *uncertainty* (lack of knowledge) about birth rate. 
+
+**Q** What is the range of possible final abundances after 10 years? 
+
+**Q** Should we study this system more if we want to know whether the population is growing or declining?? 
+
+#### _Demographic Stochasticity_  
+
+1. Set *Birth rate* back to 0.4. Hit "Simulate"- make sure you still see exponential growth!
+
+2. We will use a *Binomial distribution* to represent the number of mortalities. That is, we _flip a coin the same number of times as there are individuals in the population_. If the coin comes up heads, then the individual dies. In this case we are using a biased coin- it only comes up heads 30% of the time! The *Binomial distribution* essentially represents the number of times heads came up. To do this in InsightMaker, use the following formula for the *Deaths* flow (you can use the right-hand "Random Number Functions" menu to auto-type the proper syntax):
+
+```
+RandBinomial([Population], [Death rate])
+```
+
+In plain English: the number of deaths each year is a random quantity determined by "coin-flipping" (Binomial distribution is the "coin flip" distribution). The total deaths is computed by flipping a coin for each individual in the population and killing off all individuals that come out 'heads' (where the probability of coming up 'heads' is the death rate). 
+
+For the total births, $B$ we will use the *Poisson* distribution. The Poisson distribution is often use to represent births, because it produces whole numbers, can't go negative, AND it has no hard upper limit (unlike the binomial distribution). 
+
+NOTE: there could feasibly be more births than there are individuals currently in the population (e.g., if all individuals have two offspring!). This would not be possible with a binomial distribution! That is, you can't get more "heads" (deaths) than the total number of coin flips (individuals in the population). 
+
+To do this in InsightMaker, use the following formula for the *Births* flow:
+
+```
+RandPoisson([Population]*[Birth rate])
+```
+
+-or-
+
+```
+Lambda <- [Population]*[Birth rate]
+RandPoisson(Lambda)
+```
+
+In plain English: the number of births ([Births] flow in InsightMaker) is a random draw from a Poisson random number generator with a mean (Lambda) equal to the expected number of births ([Population]*[Birth rate]).
+
+3. Run the simulation. What does it look like?
+
+4. Use the "Sensitivity Testing" tool (in the "Tools" menu, upper right corner) to run the model 50 times. Choose [Population] as the "Monitored Primitive". NOTE: I recommend choosing the "Plot Each Run" button -- that way we can generate a "spaghetti plot". 
+
+5. Change the initial abundance to 500 and re-run the "Sensitivity Testing" tool.
+
+**Q** Is the effect of *demographic stochasticity* larger or smaller at low or high abundances?
+
+#### _Environmental Stochasticity_  
+
+1. Set *Births* back to what it was before ([Population]x[Birth rate]), and do the same for *Deaths* ([Population]x[Death rate]).
+2. We will use a *Normal distribution* to represent how the per-capita birth rate changes each year. This could represent climatic variablity -- "good years" and "bad years". The *Normal distribution* is commonly used for this type of variability- it is characterized by an average value (**mean**) and a variability measure (**standard deviation**). To do this in InsightMaker, use the following formula for the *Birth Rate* variable:
+
+```
+RandNormal(0.4, 0.4)
+```
+
+Similarly, use the following formula for the *Death Rate* variable:
+
+```
+RandNormal(0.3, 0.3)
+```
+
+3. Use the "Sensitivity Testing" tool (in the "Tools" menu, upper right corner) to run the model 50 times. Choose [Population] as the "Monitored Primitive".
+
+5. Change the initial abundance to 500 and re-run the "Sensitivity Testing" tool.
+
+**Q** Is the effect of *environmental stochasticity* bigger at low or high abundances?
+
+6. Note that the normal distribution CAN go below zero or above 1, which is not always biologically realistic! However, as we have seen before, InsightMaker does not allow a [Flow In] to remove from a [Stock] or a [Flow Out] to add to a [Stock], so we don't really need to worry about this problem! That is, InsightMaker will *truncate* the normal distribution for us. Alternatively (if we want to be very explicit) we could just **truncate** the normal distribution ourselves. That is, if the random number you draw comes out below zero, just make it zero! 
+
+For the [Birth Rate] variable in InsightMaker, this can be done like this:
+
+```
+Max(0,RandNormal(0.4, 0.4))
+```
+
+**Q** Can you implement a **catastrophe** scenario? That is, make a scenario where there is a low probability of an event (e.g., flood, disease, drought) that causes very high mortality and/or very low birth rate?  
+
+A catastrophe can be implemented by using an IF-THEN-ELSE statement: if the random number is below some rare value (e.g., 0.05) then cause a catastrophe to occur (otherwise keep all vital rates at their normal values)! 
+
+Hint: The most basic (most commonly used) random number generator draws numbers from a *uniform* distribution with a minimum of 0 and a maximum of 1. To do this in InsightMaker, you can use this syntax:
+
+```
+Rand(0, 1)
+```
+
+
+**Q** What if environmental stochasticity influences survival and fecundity in the same manner? That is: what if a "good year" for births is also a good year for survival? Would this increase or decrease the effect of environmental stochasticity on population dynamics? In InsightMaker, try to implement a scenario where the environmental stochasticity in survival rate is perfectly **correlated** with environmental stochasticity in birth rate. 
+
+
+Hint: you will need another [variable] in your InsightMaker canvas- this variable could be named something like "Forage Quality", and should store a random draw from a Normal distribution with mean "0" and standard deviation "1":
+
+```
+RandNormal(0, 1)
+```
+
+Next, you can alter your per-capita fecundity parameter to have the following syntax, which would represent a mean fecundity of 0.85 with a standard deviation of 0.4
+
+```
+0.85+0.4*[forage quality]
+
 
 
 [--go to next lecture--](LECTURE9.html)
