@@ -330,7 +330,7 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Lectures
+    Conferencias
      
     <span class="caret"></span>
   </a>
@@ -538,7 +538,7 @@ library(popbio)</code></pre>
 <div id="lectura-para-lunes" class="section level2">
 <h2>Lectura para Lunes</h2>
 <p>Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este manuscrito.</p>
-<p><a href="PDF/When%20stable-stage%20equilibrium%20is%20unlikely-%20integrating%20transient%20population%20dynsmics.pdf">Tremblay, Raventos Ackerman</a></p>
+<p><a href="PDF/When%20stable-stage%20equilibrium%20is%20unlikely-%20integrating%20transient%20population%20dynsmics.pdf">Tremblay, Raventos Ackerman</a>. Habrá un quiz de comprobación de lectura al principio de la clase.</p>
 <hr />
 </div>
 <div id="lepanthes-rubripetala-population-3" class="section level1">
@@ -588,7 +588,7 @@ Lrub1</code></pre>
 <div id="section" class="section level75">
 <p class="heading"></p>
 <p>#FIGURE 1: POPULATION PROJECTION #</p>
-<p>#This figure is designed to be 3.5" by 3.5" #(Check size of plot window using ‘par(din)’). # # #Set margins: par(mar=c(5,4,1,1))</p>
+<p>#This figure is designed to be 3.5” by 3.5” #(Check size of plot window using ‘par(din)’). # # #Set margins: par(mar=c(5,4,1,1))</p>
 <p>#Create a population vector. This one is biased towards adults.</p>
 <pre class="r"><code>n0 &lt;- c(0, 0, 2, 0)</code></pre>
 </div>
@@ -642,7 +642,7 @@ w</code></pre>
 </div>
 <div id="section-2" class="section level1">
 <h1></h1>
-<p>Fig. 2a: Population-specific transient dynamics # This figure is designed to be 3.5" by 3.5" (Check size of plot window using ‘par(din)’).</p>
+<p>Fig. 2a: Population-specific transient dynamics # This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(10,4,1,1))</p>
 <p>Create 2 population vectors. One is adult- biased, and it amplifies. One is juvenile- biased and it attenuates.</p>
 <p>n0.amp &lt;- c(1000,1,1,1)</p>
@@ -657,7 +657,7 @@ w</code></pre>
 <p>Add points on the attenuation projection and label them points(c(1,maxatt<span class="math inline">\(t,31), c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1, firstep, expression(underline(P)[1]), adj=c(0,-0.6), col=“red”, cex=0.8) text(maxatt<span class="math inline">\(t, maxatt\)</span>maxatt, expression(underline(P)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8) text(31, lowinertia, expression(underline(P)[infinity]), adj=c(0.1,1.5), col=“red”, cex=0.8)</p>
 <p>Add in a dotted line at y=1 lines(c(0,50),c(1,1),lty=2)</p>
 <hr />
-<p>Fig. 2b: Transient bounds This figure is designed to be 3.5" by 3.5" (Check size of plot window using ‘par(din)’).</p>
+<p>Fig. 2b: Transient bounds This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(5,4,1,1))</p>
 <p>Transient bounds result from projections of the stage-biased dynamics of the model. When using the function ‘project’, the stage-biased model dynamics are projected automatically if no population vector is specified. We can do this for the orchid, using a standardised matrix like before: pr2 &lt;- project(Lrub1, standard.A=TRUE, time=156)</p>
 <p>Now we need to plot these population dynamics. The S3 method for projections automatically plots all stage-biased projections: plot(pr2, log=“y”, cex.axis=0.8, ylim=c(0.4,1.5))</p>
@@ -671,7 +671,7 @@ w</code></pre>
 <p>FIGURE 3: TRANSFER FUNCTIONS</p>
 <hr />
 <p>Fig. 3a: Transfer function of asymptotic growth</p>
-<p>This figure is designed to be 3.5" by 3.5" (Check size of plot window using ‘par(din)’).</p>
+<p>This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(5,4,1,1))</p>
 <p>Create a transfer function using ‘tfa’. The perturbation structure is determined by two vectors d and e. The matrix d%*%t(e) gives the structure, where nonzero elements in this matrix are the elements of the PPM to be perturbed. The relative size of entries in this matrix are the relative sizes of perturbation to those elements. In this case, we are perturbing element [5,4]. We are going to look at the effect of perturbing up to 0.25. The largest biologically reasonable perturbation is about 0.12. tf1 &lt;- tfa(Lrub1, d=c(1,0,0,0), e=c(0,0,1,0), prange=seq(0,0.25,0.01))</p>
 <p>Now we plot this using an S3 method for transfer functions (for information see ‘?plot.tfa’). plot(tf1, cex.axis=0.8)</p>
@@ -680,7 +680,7 @@ w</code></pre>
 <p>Now add in the line, specifying the correct intercept and slope: abline(lambda, sens1, lty=2, col=“red”)</p>
 <hr />
 <p>Fig. 3b: Transfer function of population inertia</p>
-<p>This figure is designed to be 3.5" by 3.5" (Check size of plot window using ‘par(din)’).</p>
+<p>This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(5,4,1,1))</p>
 <p>The process is very similar to above. We need to specify a PPM, perturbation structure and perturbation range. For inertia we either have to specify a population vector using the ‘vector’ argument, or the bound to be calculated using the ‘bound’ argument. Create a population vector: n0 &lt;- c(1,8,13,21)</p>
 <p>tf1 &lt;- tfa(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0), prange=seq(0,0.25,0.01))</p>
@@ -693,7 +693,7 @@ w</code></pre>
 <div id="section-4" class="section level73">
 <p class="heading"></p>
 <p>FIGURE 4: TRANSFER FUNCTION MATRIX</p>
-<p>This figure is designed to be 7" by 7" (Check size of plot window using ‘par(din)’).</p>
+<p>This figure is designed to be 7” by 7” (Check size of plot window using ‘par(din)’).</p>
 <p>This is a nice, easy plot because the function does it all for you. The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function for every PPM element. They are saved as arrays of values. The functions are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
 <p>Create the array for inertia, using a specific population vector: n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1, vector=n0)</p>
 <p>…and plot it! plot(tfmat)</p>

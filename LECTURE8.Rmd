@@ -451,7 +451,6 @@ RandNormal(0.4, 0.4)
 2. De manera similar, use la siguiente fórmula para la variable *Tasa de muerte *:
 
 
-
 ```
 RandNormal(0.3, 0.3)
 ```
@@ -459,9 +458,7 @@ RandNormal(0.3, 0.3)
 4. Utilice la herramienta "Prueba de sensibilidad" (en el menú "Herramientas", esquina superior derecha) para ejecutar el modelo 50 veces. Elija [Población] como "Primitiva supervisada".
 
 
-
 5. Cambie la abundancia inicial a 500 y vuelva a ejecutar la herramienta "Prueba de sensibilidad". 
-
 
 
 
