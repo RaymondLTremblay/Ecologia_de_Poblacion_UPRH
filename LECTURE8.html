@@ -330,7 +330,7 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Lectures
+    Conferencias
      
     <span class="caret"></span>
   </a>
@@ -681,7 +681,7 @@ distribution &lt;- c(5,3,5,4,3,6,4,5,5,1,6,5,4,3,6,6,4,2,8,4,4,5,2)     # make u
 hist(distribution,freq = F, ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;)  # visualize distribution</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>sample(distribution,1)  # take one random sample from this distribution!</code></pre>
-<pre><code>## [1] 5</code></pre>
+<pre><code>## [1] 4</code></pre>
 </div>
 <div id="ejercicio-en-clase-ajuste-una-distribución" class="section level3">
 <h3>Ejercicio en clase: ¡Ajuste una distribución!</h3>
@@ -722,11 +722,7 @@ curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T) 
 #### Una vez que encuentre los parámetros que mejor se ajusten, genere 5 números aleatorios a partir de esta distribución usando la función &quot;rlnorm ()&quot; en R. 
 
 rlnorm(5,meanlog=1.5,sdlog=0.39)    # ¡por ejemplo! (¡recuerde cambiar el parámetro &quot;meanlog&quot; por el valor que identificó anteriormente!)</code></pre>
-<<<<<<< Updated upstream
-<pre><code>## [1] 3.579538 3.633311 3.217337 9.419232 4.009160</code></pre>
-=======
 <pre><code>## [1] 5.189213 4.051672 3.330789 4.316999 3.642072</code></pre>
->>>>>>> Stashed changes
 <ol style="list-style-type: decimal">
 <li><p>Utilice prueba y error para encontrar el parámetro “meanlog” apropiado para la distribución logarítmica normal.</p></li>
 <li><p>Use su distribución ajustada para predecir el número promedio de crías por hembra durante los próximos 5 años. Para hacer esto, use la función “rlnorm ()” en R.</p></li>
