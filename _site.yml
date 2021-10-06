@@ -86,6 +86,12 @@ navbar:
     - 
       menu: 
         - 
+          href: Tarea_1_historia_vida.html
+          text: "Tarea 1: Historia de Vida"
+      text: Tareas
+    - 
+      menu: 
+        - 
           href: Invitados.html
           text: "Lecturas de los Invitados"
       text: Invitados
