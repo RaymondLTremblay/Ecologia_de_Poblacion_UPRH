@@ -41,6 +41,9 @@ navbar:
           href: Lepanthes_rubripetala_4.html
           text: "Modelos matriciales de una orquidea"
         - 
+          href: Tillandsia.html
+          text: "Modelos matriciales de TILLANDSIA"  
+        - 
           href: LECTURE8.html
           text: "Modelos Estochasticos de poblaciones"
         - 
