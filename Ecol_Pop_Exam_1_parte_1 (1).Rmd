@@ -1,0 +1,57 @@
+---
+title: "Ecol_Pop_Exam_1_parte_1"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Las preguntas del examen de esta parte proviene del capiyulo 1:
+
+
+1. In 1993, when the first edition of this book was written, the world's human population was expected to double in size in approximately 50 years. Assuming population growth is continuous, calculate r for the human population. 
+
+```{r}
+#t_double=ln((2)/r)
+
+#50=ln(2)/r
+
+r=log(2)/50
+r
+```
+
+
+2. If the population size in 1993 was 5.4 billion, what was the projected population size for the year 2021?
+
+
+3.  The future is here!. On August  2, 2000 the best estimate of the world population size was 6.087 billion - different than that projected by the model in 1993. To find out the current estimate of the world populaiton size, visit the website maintained by the US Census Bureau.
+
+[Census Population size website](https://www.census.gov/popclock/)
+
+4. What is today's date and how large is the population of the world today. By what percentage has it increased?
+
+5. Considering the present population size what is the observed growth rate of human population on the planet **per year**, use the population size of 1993 (5.538 billion). 
+
+```{r eval=FALSE, include=FALSE}
+r= (7.796-5.538)/(2021-1993)
+r
+```
+
+
+
+6. 
+
+
+
+

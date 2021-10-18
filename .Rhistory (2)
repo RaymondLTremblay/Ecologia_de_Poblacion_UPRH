@@ -1,0 +1,652 @@
+<<<<<<< HEAD
+=======
+numStages=5,
+ICs=list(matrix(0,nrow=5,ncol=1)),
+timeVec=seq(0,200,0.5),
+timeDependLoss=TRUE,
+timeDependDuration=FALSE,
+rateFunctions=blowFliesFunctions,
+solverOptions=solver.options,
+stageNames=list(c('eggs','larvae','pupae','juveniles','adults)),
+speciesNames=c('blowflies'),
+library(stagePop)
+#All the vectors are specified in the order of the life cycle
+#e.g. start with eggs and finish with reproducing adults
+solver.options=list(DDEsolver='deSolve', atol=1e-3, rtol=1e-3,
+hbsize=1e4)
+#solver.options=list(DDEsolver=’PBS’, tol=1e-7, hbsize=1e4, dt=0.01)
+blowFliesFunctions <- list(
+reproFunc=function(x,time,species,strain){
+A0=600
+q=8.5
+reprod=q*x$blowflies['adults',1] *
+exp(-x$blowflies['adults',1]/A0)
+return(reprod)
+},
+deathFunc=function(stage,x,time,species,strain){
+#per capita death rate (/d)
+a=c(0.07,0.004,0.003,0.0025,0.27)
+return(a[stage])
+},
+durationFunc=function(stage,x,time,species,strain){
+#duration of each stage in days
+a=c(0.6,5.0,5.9,4.1)
+return(a[stage])
+},
+immigrationFunc=function(stage,x,time,species,strain){
+v=0
+if (stage==5){
+if (time>=0 & time<=1){v=100}
+}
+return(v)
+},
+emigrationFunc=function(stage,x,time,species,strain){return(0)}
+)
+modelOutput = popModel(
+numSpecies=1,
+numStages=5,
+ICs=list(matrix(0,nrow=5,ncol=1)),
+timeVec=seq(0,200,0.5),
+timeDependLoss=TRUE,
+timeDependDuration=FALSE,
+rateFunctions=blowFliesFunctions,
+solverOptions=solver.options,
+stageNames=list(c('eggs','larvae','pupae','juveniles','adults')),
+speciesNames=c('blowflies'),
+saveFig=TRUE,
+figType='eps',
+figName='blowflies'
+)
+install.packages("xaringan")
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+lifetable <- read.csv("life_table.csv")
+knitr::kable(lifetable,caption="",col.names = c("x","S(x)","b(x)","l(x)","g(x)"))
+LT=tribble(
+~Age, ~ N(x), ~l(x), ~b(x), ~lxbx, ~mortality_rate_m(x), ~Survival_rate_S(x), ~Death_rate
+)
+library(tidyverse)
+library(tidyverse)
+LT=tribble(
+~Age, ~ N(x), ~l(x), ~b(x), ~lxbx, ~mortality_rate_m(x), ~Survival_rate_S(x), ~Death_rate
+)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x
+)
+LT
+library(tidyverse)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "", 0.76, 2, "", 0.3, .70, .23,
+)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "", 0.76, 2, "", 0.3, .70, .23
+)
+LT
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "", 0.76, 2, "", 0.3, 0.70, 0.23
+)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, , 0.76, 2, "", 0.3, 0.70, 0.23
+)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, , 0.76, 2, , 0.3, 0.70, 0.23
+)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,- , 0.76, 2, -, 0.3, 0.70, 0.23
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,"-" , 0.76, 2, "-", 0.3, 0.70, 0.23
+)
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "-", 0.24,
+1,"-" , 0.76, 2, "-", 0.3, 0.70, 0.23
+)
+LT
+LT=tribble(
+~Age, ~ N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,"" , 0.76, 2, "", 0.3, 0.70, 0.23
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,"" , 0.76, 2, "", 0.3, 0.70, 0.23
+)
+""
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "" , 0.76, 2, "", 0.3, 0.70, 0.23
+)
+LT
+>>>>>>> a75fbb3a72eef712ab1a869cbfbb4bc908e06c7f
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,1,1,1,1,1,1
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,1,1,1,1,1,1,1
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1,1,1,1,1,1,1,1,1
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, 1,   1, 1,  1, 1,  1, 1
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~Survival_rate_S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, 1,   1, 1,  1, 1,  1, 1
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~mortality_rate_m_x, ~S_x, ~Death_rate_d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, 1,   1, 1,  1, 1,  1, 1
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, 1,   1, 1,  1, 1,  1, 1
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+0, 956, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, 956, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "", 1, 0, 0, 0.24, "", 0.24
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "-", 1, 0, 0, 0.24, "", 0.24
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "?", 1, 0, 0, 0.24, "", 0.24
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, ?, 1, 0, 0, 0.24, "", 0.24
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "?", 1, 0, 0, 0.24, "", 0.24
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "?", 1, 0, 0, 0.24, "", 0.24
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, "NA", 1, 0, 0, 0.24, "", 0.24
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, "", 0.24,
+1, NA, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 1, 0, 0, 0.24, "", 0.24
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+5, 0,0,0,0,n/a, n/a, n/a
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+5, 0,0,0,0,-, -, -
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+5, 0,0,0,0,"-", "-", "-"
+)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+5, 0,0,0,0,No, No, No
+)
+LT
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+5, 0,0,0,0,NA, NA, NA
+)
+LT
+LT %>%
+gt()
+library(gt)
+LT=tribble(
+~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+0, 956, 1, 0, 0, 0.24, NA, 0.24,
+1, NA, 0.76, 2, NA, 0.3, 0.7, 0.23,
+2, 507, NA, 3, 1.59, 0.58, 0.42, .31,
+3, 213, 0.22, 1, .22, NA, 0.045, 0.21,
+4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+5, 0,0,0,0,NA, NA, NA
+)
+LT %>%
+gt()
+knitr::opts_chunk$set(echo = TRUE)
+library(stagePop)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+#########
+# Teasel example from Gotelli: summarizing a complex life history!
+teasel <- read.csv("teaselmatrix1.csv", header=T)      # read in the teasel transition matrix from Gotelli
+teasel <- teasel[,-1]                                  # remove the row names
+teasel_matrix <- as.matrix(teasel)                     # convert to a matrix (from a data frame)
+colnames(teasel_matrix) <- names(teasel)               # assign row and column names
+rownames(teasel_matrix) <- names(teasel)
+teasel_matrix                                          # print the matrix
+#############
+# Summarize initial age-structured abundance as a matrix with one column
+Initial_teasel <- matrix(c(1000,1500,200,300,600,25),ncol=1)         # initial population size (population vector; matrix with 1 column!)
+rownames(Initial_teasel) <- rownames(teasel_matrix)                  # add row and column names
+colnames(Initial_teasel) <- "Abundance"
+Initial_teasel
+R.version
+install.packages(c("ade4", "cpp11", "deSolve", "digest", "fastICA", "hms", "influenceR", "lattice", "libcoin", "lifecycle", "maps", "matrixStats", "mgcv", "pillar", "progressr", "psych", "R.utils", "RCurl", "recipes", "reticulate", "rgeos", "robustbase", "robustHD", "rrcov", "shiny", "styler", "TH.data", "XML"))
+knitr::opts_chunk$set(echo = TRUE)
+library(popbio)
+library(popdemo)
+grizzly
+calathea
+calathea
+knitr::opts_chunk$set(echo = TRUE)
+R3=matrix(c(
+0.43, 	0,	    0,	 0.14,
+0.38,	0.84, 	0,	0,
+0, 	    0,	    0.51,	0.15,
+0,      0.14,    0.43, 0.84
+), byrow=TRUE, ncol=4)
+Lrub1=R3
+is.matrix_ergodic(Lrub1, digits=12, return.eigvec=FALSE)
+library(popdemo)
+library(popbio)
+is.matrix_ergodic(Lrub1, digits=12, return.eigvec=FALSE)
+is.matrix_irreducible(Lrub1)
+is.matrix_primitive(Lrub1)
+isergodic(Lrub1, digits=12, return.eigvec=FALSE)
+is.matrix_ergodic(Lrub1, digits=12, return.eigvec=FALSE)
+is.matrix_irreducible(Lrub1)
+is.matrix_primitive(Lrub1)
+isErgodic(Lrub1, digits=12, return.eigvec=FALSE)
+is.matrix_irreducible(Lrub1)
+is.matrix_primitive(Lrub1)
+isErgodic(Lrub1, digits=12, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+is.matrix_primitive(Lrub1)
+isErgodic(Lrub1, digits=12, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+isErgodic(Lrub1, digits=12, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+isErgodic(Lrub1, digits=10, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+isErgodic(Lrub1, digits=10, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+pr1 <- project(Lrub1, vector=n0, time=24)
+n0 <- c(48, 16, 12, 10)
+pr1 <- project(Lrub1, vector=n0, time=24)
+#Plot the projection. This uses an S3 plotting
+#method for projections. For info, see '?plot.projection'.
+plot(pr1)
+eigs <- eigen(Lrub1)
+lambdamax <- Re(eigs$values[1])
+lambdamax
+eigs
+w <- abs(Re(eigs$vectors[,1]))
+w
+eigs <- eigen(Lrub1)
+eigs
+lambdamax <- Re(eigs$values[1])
+lambdamax
+w <- stable.stage(Lrub1)
+w
+install.packages(c("caret", "data.table", "desc", "emmeans", "fastICA", "fda", "fitdistrplus", "influenceR", "knitr", "libcoin", "maps", "mime", "rcmdcheck", "readr", "remotes", "robustbase", "rpf", "tidyr", "tinytex", "TMB", "visNetwork"))
+knitr::opts_chunk$set(echo = TRUE)
+pr1 <- project(Lrub1, vector=n0, time=24)
+knitr::opts_chunk$set(echo = TRUE)
+library(popdemo)
+library(popbio)
+R3=matrix(c(
+0.43, 	0,	    0,	 0.14,
+0.38,	0.84, 	0,	0,
+0, 	    0,	    0.51,	0.15,
+0,      0.14,    0.43, 0.84
+), byrow=TRUE, ncol=4)
+Lrub1=R3
+isErgodic(Lrub1, digits=10, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+n0 <- c(48, 16, 12, 10)
+pr1 <- project(Lrub1, vector=n0, time=24)
+#Plot the projection. This uses an S3 plotting
+#method for projections. For info, see '?plot.projection'.
+plot(pr1)
+eigs <- eigen(Lrub1)
+eigs
+lambdamax <- Re(eigs$values[1])
+lambdamax
+w <- stable.stage(Lrub1)
+w
+R3=matrix(c(
+0.43, 	0,	    0,	 0.14,
+0.38,	0.84, 	0,	0,
+0, 	    0,	    0.51,	0.15,
+0,      0.14,    0.43, 0.84
+), byrow=TRUE, ncol=4)
+Lrub1=R3
+Lrub1
+R3=matrix(c(
+0.43, 	0,	    0,	 0.14,
+0.38,	0.84, 	0,	0,
+0, 	    0,	    0.51,	0.15,
+0,      0.14,    0.43, 0.84
+), byrow=TRUE, ncol=4)
+Lrub1=R3
+Lrub1
+knitr::opts_chunk$set(echo = TRUE)
+n0 <- c(48, 16, 12, 10)
+n0 <- c(0, 0, 100, 0)
+pr1 <- project(Lrub1, vector=n0, time=24)
+library(popdemo)
+library(popbio)
+pr1 <- project(Lrub1, vector=n0, time=24)
+knitr::opts_chunk$set(echo = TRUE)
+library(popdemo)
+library(popbio)
+R3=matrix(c(
+0.43, 	0,	    0,	 0.14,
+0.38,	0.84, 	0,	0,
+0, 	    0,	    0.51,	0.15,
+0,      0.14,    0.43, 0.84
+), byrow=TRUE, ncol=4)
+Lrub1=R3
+Lrub1
+isErgodic(Lrub1, digits=10, return.eigvec=FALSE)
+isIrreducible(Lrub1)
+n0 <- c(0, 0, 100, 0)
+pr1 <- project(Lrub1, vector=n0, time=24)
+#Plot the projection. This uses an S3 plotting
+#method for projections. For info, see '?plot.projection'.
+plot(pr1)
+eigs <- eigen(Lrub1)
+eigs
+lambdamax <- Re(eigs$values[1])
+lambdamax
+w <- stable.stage(Lrub1)
+w
+n0 <- c(0, 0, 10, 0)
+pr1 <- project(Lrub1, vector=n0, time=24)
+#Plot the projection. This uses an S3 plotting
+#method for projections. For info, see '?plot.projection'.
+plot(pr1)
+n0 <- c(0, 0, 2, 0)
+pr1 <- project(Lrub1, vector=n0, time=24)
+#Plot the projection. This uses an S3 plotting
+#method for projections. For info, see '?plot.projection'.
+plot(pr1)
+install.packages("RevoUtilsMath")
+unlink("LECTURE11_cache", recursive = TRUE)
+unlink("LECTURE7_cache", recursive = TRUE)
+<<<<<<< Updated upstream
+=======
+R.version
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+#assignments <- read.csv("GroupAssignments.csv")
+#knitr::kable(assignments,caption="")
+#assignments <- read.csv("GroupAssignments.csv")
+#knitr::kable(assignments,caption="")
+assignments <- read.csv("GroupAssignments.csv")
+knitr::kable(assignments,caption="")
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+install.packages("mra")
+install.packages(c("caret", "data.table", "libcoin", "mime", "readr", "robustbase", "rpf", "tibble", "tidyr", "TMB"))
+install.packages(c("caret", "rpf", "tibble", "TMB"))
+>>>>>>> Stashed changes
+knitr::opts_chunk$set(echo = TRUE)
+Tis=matrix(c(
+0,0,0,0.007,0.017,0.036,0,.001,0.011,0.024,0.035,
+0.28,0.167,0,0,0,0,0,0,0,0,0,
+0,.33,.189,0,0,0,0,0,0,0,0,
+0,.103,.378,.134,0,0,0,0,0,0,0,
+0,0,.081,.179,.066,0,0,0,0,0,0,
+0,0,0.014,0,0.082,0,0,0,0,0,0,
+0.0039,0.108,.448,.754,.940,0,.300,0.570,0,0,0,
+0,0,0,0,0,0,.033,.57,0,0,0,
+0,0,0,0,0,0,.148,.183,.035,0,0,
+0,0,0,0,0,0,.18,.207,.193,.037,0,
+0,0,0,0,0,0,.115,.126,.175,.066,0
+), byrow=TRUE, ncol=11)
+Tis
+knitr::opts_chunk$set(echo = TRUE)
+library(popdemo)
+library(popbio)
+Tis=matrix(c(
+0,0,0,0.007,0.017,0.036,0,.001,0.011,0.024,0.035,
+0.28,0.167,0,0,0,0,0,0,0,0,0,
+0,.33,.189,0,0,0,0,0,0,0,0,
+0,.103,.378,.134,0,0,0,0,0,0,0,
+0,0,.081,.179,.066,0,0,0,0,0,0,
+0,0,0.014,0,0.082,0,0,0,0,0,0,
+0.0039,0.108,.448,.754,.940,0,.300,0.570,0,0,0,
+0,0,0,0,0,0,.033,.57,0,0,0,
+0,0,0,0,0,0,.148,.183,.035,0,0,
+0,0,0,0,0,0,.18,.207,.193,.037,0,
+0,0,0,0,0,0,.115,.126,.175,.066,0
+), byrow=TRUE, ncol=11)
+Tis
+isErgodic(Tis, digits=10, return.eigvec=FALSE)
+isIrreducible(Tis)
+eigs <- eigen(Tis)
+eigs
+lambdamax <- Re(eigs$values[1])
+lambdamax
+Tis=matrix(c(
+0,0,0,0.007,0.017,0.036,0,.001,0.011,0.024,0.035,
+0.28,0.167,0,0,0,0,0,0,0,0,0,
+0,.33,.189,0,0,0,0,0,0,0,0,
+0,.103,.378,.134,0,0,0,0,0,0,0,
+0,0,.081,.179,.066,0,0,0,0,0,0,
+0,0,0.014,0,0.082,0,0,0,0,0,0,
+0,.039,0.108,.448,.754,.940,0,.300,0.570,0,0,0,
+0,0,0,0,0,0,.033,.57,0,0,0,
+0,0,0,0,0,0,.148,.183,.035,0,0,
+0,0,0,0,0,0,.18,.207,.193,.037,0,
+0,0,0,0,0,0,.115,.126,.175,.066,0
+), byrow=TRUE, ncol=11)
+Tis
+isErgodic(Tis, digits=10, return.eigvec=FALSE)
+Tis=matrix(c(
+0,0,0,0.007,0.017,0.036,0,.001,0.011,0.024,0.035,
+0.28,0.167,0,0,0,0,0,0,0,0,0,
+0,.33,.189,0,0,0,0,0,0,0,0,
+0,.103,.378,.134,0,0,0,0,0,0,0,
+0,0,.081,.179,.066,0,0,0,0,0,0,
+0,0,0.014,0,0.082,0,0,0,0,0,0,
+0,.039,0.108,.448,.754,.940,0,.300,0.570,.985,1.243,
+0,0,0,0,0,0,.033,.57,0,0,0,
+0,0,0,0,0,0,.148,.183,.035,0,0,
+0,0,0,0,0,0,.18,.207,.193,.037,0,
+0,0,0,0,0,0,.115,.126,.175,.066,0
+), byrow=TRUE, ncol=11)
+Tis
+isErgodic(Tis, digits=10, return.eigvec=FALSE)
+isIrreducible(Tis)
+eigs <- eigen(Tis)
+eigs
+lambdamax <- Re(eigs$values[1])
+lambdamax
+lambda(Tis)
+w <- stable.stage(Tis)
+w
+w <- stable.stage(Tis)
+w
+v <- reproductive.value(Tis)
+v
+n0 <- c(48, 16, 12, 10)
+tfmat <- tfamatrix(Tis)
+...and plot it!
+n0 <- c(48, 16, 12, 10)
+tfmat <- tfamatrix(Tis)
+#...and plot it!
+plot(tfmat)
+n0.amp <- c(1000,1,1,1,1,1,1,1,1,1,1)
+n0.att <- c(1,1,1,1,1,1,1,1,1,1,1000)
+pr2.1 <- project(Tis, vector=n0.amp, time=156,
+standard.A=T, standard.vec=T)
+pr2.2 <- project(Tis, vector=n0.att, time=156,
+standard.A=T, standard.vec=T)
+plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
+text(52, pr2.1[51], "amplification",
+adj=c(1,-0.5), cex=0.8)
+maxamp(Tis, vector=n0.amp)
+plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
+text(52, pr2.1[51], "amplification",
+adj=c(1,-0.5), cex=0.8)
+#maxamp(Tis, vector=n0.amp)
+reactivity(Tis,vector=n0.amp)
+inertia(Tis,vector=n0.amp)
+plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
+text(52, pr2.1[51], "amplification",
+adj=c(1,-0.5), cex=0.8)
+#maxamp(Tis, vector=n0.amp)
+firststepatt(Tis,vector=n0.amp)
+inertia(Tis,vector=n0.amp)
+plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
+text(52, pr2.1[51], "amplification",
+adj=c(1,-0.5), cex=0.8)
+#maxamp(Tis, vector=n0.amp)
+reac(Tis,vector=n0.amp)
+inertia(Tis,vector=n0.amp)
+reac <- reactivity(Lrub1, vector=n0.amp)
+reac <- reactivity(Tis, vector=n0.amp)
+maxamp <- maxamp(Tis, vector=n0.amp, return.t=T)
+reac <- reactivity(Tis, vector=n0.amp)
+#maxamp <- maxamp(Tis, vector=n0.amp, return.t=T)
+upinertia <- inertia(Tis, vector=n0.amp)
+points(c(1,maxamp$t,31), c(reac,maxamp$maxamp,upinertia),
+pch=3, col="red")
+truelambda(Tis)
+points(c(1,maxamp$t,31), c(reac,,upinertia),
+pch=3, col="red")
+points(c(1,maxamp$t,31), c(reac,upinertia),
+pch=3, col="red")
+reac <- reac(Tis, vector=n0.amp)
+#maxamp <- maxamp(Tis, vector=n0.amp, return.t=T)
+upinertia <- inertia(Tis, vector=n0.amp)
+text(1, reac, expression(bar(P)[1]),
+adj=c(-0.3,0.5), col="red", cex=0.8)
+text(maxamp$t, maxamp$maxamp, expression(bar(P)[max]),
+adj=c(0.1,-0.5), col="red", cex=0.8)
+text(31, upinertia, expression(bar(P)[infinity]),
+adj=c(0.1,-0.5), col="red", cex=0.8)

@@ -1,0 +1,88 @@
+name: "BIOL 4458"
+output_dir: "."
+navbar:
+  title: " BIOL4458"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Calendario"
+      href: schedule.html
+    - text: "Conferencias"
+      menu:
+        - text: "Introducción a BIOL4458"
+          href: INTRO.html
+          
+        - text: "Un enfoque de sistemas holístico"
+          href: LECTURE1_2.html
+          
+        - text: "Introducción a la Ecología de Poblaciones"
+          href: LECTURE2.html
+          
+        - text: "Thomas Robert Malthus"
+          href: LECTURE3_2.html
+          
+        - text: "Regulación de Poblaciones"
+          href: LECTURE4.html
+          
+        - text: "Paloma Viajera"
+          href: LECTURE5.html
+          
+        - text: "Población estructurada por Edad"
+          href: LECTURE6.html
+          
+        - text: "Dinamica Poblacional en Orquideas"
+          href: LECTURE6a.html
+          
+        - text: "Modelos de población usando Matrices"
+          href: LECTURE7.html
+        
+        - text: "Modelos matriciales de una orquidea"
+          href: Lepanthes_rubripetala_4.html  
+          
+          
+        - text: "Modelos Estochasticos de poblaciones"
+          href: LECTURE8.html
+        - text: "El paradigma de pequeñas poblaciones"
+          href: LECTURE9.html
+        - text: "Modelos individuales"
+          href: LECTURE10.html
+        - text: "El paradigma de poblaciones en reducción"
+          href: LECTURE11.html
+        - text: "PVA = Population Viability Analysis"
+          href: LECTURE12.html
+        - text: "Metapopulations"
+          href: LECTURE13.html
+        - text: "PVA example: pdogs and ferrets"
+          href: LECTURE14.html
+        - text: "Estimados de parametros"
+          href: LECTURE15.html
+        - text: "Interaciones entre especies: competencia"
+          href: LECTURE16.html
+        - text: "Interaciones entre especies: presa-depredador"
+          href: LECTURE17.html
+        - text: "Wrap-up"
+          href: LECTURE18.html
+        - text: "NRES421: PVA basics"
+          href: PVA1_421.html
+        - text: "NRES421: grizzly PVA"
+          href: PVA2_421.html
+        - text: "NRES421: loggerhead PVA"
+          href: PVA3_421.html
+          
+    - text: "Tareas"
+      menu: 
+        - text: "Tarea 1: Historia de Vida"
+          href: Tarea_1_historia_vida.html
+    - text: "Invitados"
+      menu:
+        - text: "Lecturas de los Invitados"
+          href: Invitados.html
+
+    - text: "Ejemplos de proyecto de PVA"
+      menu:
+        - text: "PVA por los estudiantes"
+          href: PVA_Ejemplos.html          
+          
+    - text: "Links"
+      href: Links.html
+      

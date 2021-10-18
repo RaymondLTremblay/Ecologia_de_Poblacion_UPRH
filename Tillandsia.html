@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="BIOL4558" />
+
+
+<title>Tillandsia brachycaulos</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="site_libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Conferencias
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1_2.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">Paloma Viajera</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE6a.html">Dinamica Poblacional en Orquideas</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Invitados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Invitados.html">Lecturas de los Invitados</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Ejemplos de proyecto de PVA
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PVA_Ejemplos.html">PVA por los estudiantes</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Tillandsia brachycaulos</h1>
+<h4 class="author">BIOL4558</h4>
+<h4 class="date">Agosto 2021</h4>
+
+</div>
+
+
+<div id="appendix-s1" class="section level3">
+<h3>APPENDIX S1</h3>
+<ul>
+<li>R code for figures</li>
+<li>This appendix provides R code for producing the figures included in the main manuscript.</li>
+<li>Install the library using install.packages() or by downloading from <a href="http://cran.R-project.org" class="uri">http://cran.R-project.org</a></li>
+</ul>
+</div>
+<div id="load-the-library-some-minor-changes" class="section level3">
+<h3>Load the library ( some minor changes)</h3>
+<pre class="r"><code>library(popdemo)</code></pre>
+<pre><code>## Welcome to popdemo! This is version 1.3-0
+## Use ?popdemo for an intro, or browseVignettes(&#39;popdemo&#39;) for vignettes
+## Citation for popdemo is here: doi.org/10.1111/j.2041-210X.2012.00222.x
+## Development and legacy versions are here: github.com/iainmstott/popdemo</code></pre>
+<pre class="r"><code>library(popbio)</code></pre>
+</div>
+<div id="lectura" class="section level2">
+<h2>Lectura</h2>
+<p>Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este manuscrito.</p>
+<p><a href="Guest_Speakers/Temporal_variation_in_the_demography_of.pdf">Mondragón, Durán, Ramírez, Valverde</a>. Habrá un quiz de comprobación de lectura al principio de la clase.</p>
+<pre class="r"><code> Tis=matrix(c(
+0,0,0,0.007,0.017,0.036,0,.001,0.011,0.024,0.035,
+0.28,0.167,0,0,0,0,0,0,0,0,0,
+0,.33,.189,0,0,0,0,0,0,0,0,
+0,.103,.378,.134,0,0,0,0,0,0,0,
+0,0,.081,.179,.066,0,0,0,0,0,0,
+0,0,0.014,0,0.082,0,0,0,0,0,0,
+0,.039,0.108,.448,.754,.940,0,.300,0.570,.985,1.243,
+0,0,0,0,0,0,.033,.57,0,0,0,
+0,0,0,0,0,0,.148,.183,.035,0,0,
+0,0,0,0,0,0,.18,.207,.193,.037,0,
+0,0,0,0,0,0,.115,.126,.175,.066,0
+), byrow=TRUE, ncol=11)
+
+Tis</code></pre>
+<pre><code>##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10] [,11]
+##  [1,] 0.00 0.000 0.000 0.007 0.017 0.036 0.000 0.001 0.011 0.024 0.035
+##  [2,] 0.28 0.167 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+##  [3,] 0.00 0.330 0.189 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+##  [4,] 0.00 0.103 0.378 0.134 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+##  [5,] 0.00 0.000 0.081 0.179 0.066 0.000 0.000 0.000 0.000 0.000 0.000
+##  [6,] 0.00 0.000 0.014 0.000 0.082 0.000 0.000 0.000 0.000 0.000 0.000
+##  [7,] 0.00 0.039 0.108 0.448 0.754 0.940 0.000 0.300 0.570 0.985 1.243
+##  [8,] 0.00 0.000 0.000 0.000 0.000 0.000 0.033 0.570 0.000 0.000 0.000
+##  [9,] 0.00 0.000 0.000 0.000 0.000 0.000 0.148 0.183 0.035 0.000 0.000
+## [10,] 0.00 0.000 0.000 0.000 0.000 0.000 0.180 0.207 0.193 0.037 0.000
+## [11,] 0.00 0.000 0.000 0.000 0.000 0.000 0.115 0.126 0.175 0.066 0.000</code></pre>
+<p>Draw the life history of the matrix</p>
+<p>Use the package <strong>Rage</strong></p>
+<pre class="r"><code>library(Rage)</code></pre>
+<pre class="r"><code>plot_life_cycle(Tis)</code></pre>
+<div id="htmlwidget-32a9686c234b08f73f7d" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-32a9686c234b08f73f7d">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\"; \"2\"; \"3\"; \"4\"; \"5\"; \"6\"; \"7\"; \"8\"; \"9\"; \"10\"; \"11\"  \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\"; \"2\"; \"3\"; \"4\"; \"5\"; \"6\"; \"7\"; \"8\"; \"9\"; \"10\"; \"11\" } [style=invis] \"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.28\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.167\"]\n\"2\" -> \"3\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.33\"]\n\"2\" -> \"4\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.103\"]\n\"2\" -> \"7\"[minlen=15,fontsize=10,color=grey,xlabel=\" 0.039\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.189\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.378\"]\n\"3\" -> \"5\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.081\"]\n\"3\" -> \"6\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.014\"]\n\"3\" -> \"7\"[minlen=12,fontsize=10,color=grey,xlabel=\" 0.108\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.007\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.134\"]\n\"4\" -> \"5\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.179\"]\n\"4\" -> \"7\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.448\"]\n\"5\" -> \"1\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 0.017\"]\n\"5\" -> \"5\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.066\"]\n\"5\" -> \"6\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.082\"]\n\"5\" -> \"7\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.754\"]\n\"6\" -> \"1\"[minlen=-15,fontsize=10,color=grey,xlabel=\" 0.036\"]\n\"6\" -> \"7\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.94\"]\n\"7\" -> \"8\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.033\"]\n\"7\" -> \"9\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.148\"]\n\"7\" -> \"10\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.18\"]\n\"7\" -> \"11\"[minlen=12,fontsize=10,color=grey,xlabel=\" 0.115\"]\n\"8\" -> \"1\"[minlen=-21,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"8\" -> \"7\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"8\" -> \"8\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.57\"]\n\"8\" -> \"9\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.183\"]\n\"8\" -> \"10\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.207\"]\n\"8\" -> \"11\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.126\"]\n\"9\" -> \"1\"[minlen=-24,fontsize=10,color=grey,xlabel=\" 0.011\"]\n\"9\" -> \"7\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.57\"]\n\"9\" -> \"9\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.035\"]\n\"9\" -> \"10\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.193\"]\n\"9\" -> \"11\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.175\"]\n\"10\" -> \"1\"[minlen=-27,fontsize=10,color=grey,xlabel=\" 0.024\"]\n\"10\" -> \"7\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.985\"]\n\"10\" -> \"10\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.037\"]\n\"10\" -> \"11\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.066\"]\n\"11\" -> \"1\"[minlen=-30,fontsize=10,color=grey,xlabel=\" 0.035\"]\n\"11\" -> \"7\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 1.243\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>isErgodic(Tis, digits=10, return.eigvec=FALSE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>isIrreducible(Tis)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>eigs &lt;- eigen(Tis)
+eigs</code></pre>
+<pre><code>## eigen() decomposition
+## $values
+##  [1]  0.80280104+0.00000000i -0.50597134+0.00000000i  0.49541679+0.00000000i
+##  [4]  0.20710796+0.09680538i  0.20710796-0.09680538i  0.16083386+0.00000000i
+##  [7] -0.12932219+0.00000000i  0.01369206+0.09063629i  0.01369206-0.09063629i
+## [10] -0.05158780+0.00000000i -0.01577040+0.00000000i
+## 
+## $vectors
+##                  [,1]             [,2]            [,3]                    [,4]
+##  [1,] 0.0213778093+0i  2.199609e-02+0i -0.026611645+0i  0.01284490+0.01249956i
+##  [2,] 0.0094145593+0i -9.151807e-03+0i -0.022688427+0i  0.04399465-0.01892493i
+##  [3,] 0.0050615824+0i  4.345642e-03+0i -0.024434631+0i -0.03522731-0.15656289i
+##  [4,] 0.0043106658+0i -1.093825e-03+0i -0.032021751+0i -0.44576698-0.24590206i
+##  [5,] 0.0016036858+0i -2.730947e-04+0i -0.017957142+0i -0.58569126+0.00000000i
+##  [6,] 0.0002520729+0i -7.598299e-05+0i -0.003662715+0i -0.19632715+0.08118299i
+##  [7,] 0.8980480775+0i  9.399319e-01+0i -0.867840964+0i  0.14723168+0.19900789i
+##  [8,] 0.1273000602+0i -2.882768e-02+0i  0.383983903+0i -0.00799236-0.02022906i
+##  [9,] 0.2034472709+0i -2.473966e-01+0i -0.126345107+0i  0.15365587+0.06319600i
+## [10,] 0.2967677993+0i -2.126685e-01+0i -0.220566335+0i  0.35278354+0.05690204i
+## [11,] 0.2173705248+0i -9.314631e-02+0i -0.177804855+0i  0.32703217+0.01686758i
+##                          [,5]             [,6]            [,7]
+##  [1,]  0.01284490-0.01249956i -0.0000453397+0i  0.006658047+0i
+##  [2,]  0.04399465+0.01892493i  0.0020588443+0i -0.006291305+0i
+##  [3,] -0.03522731+0.15656289i -0.0241218240+0i  0.006522104+0i
+##  [4,] -0.44576698+0.24590206i -0.3318936463+0i -0.006901625+0i
+##  [5,] -0.58569126+0.00000000i -0.6470561119+0i  0.003620175+0i
+##  [6,] -0.19632715-0.08118299i -0.3319966694+0i -0.003001525+0i
+##  [7,]  0.14723168-0.19900789i  0.1339719239+0i -0.739477872+0i
+##  [8,] -0.00799236+0.02022906i -0.0108050816+0i  0.034894888+0i
+##  [9,]  0.15365587-0.06319600i  0.1418577991+0i  0.627163982+0i
+## [10,]  0.35278354-0.05690204i  0.3977655917+0i  0.029100907+0i
+## [11,]  0.32703217-0.01686758i  0.4049083558+0i -0.239952298+0i
+##                            [,8]                      [,9]          [,10]
+##  [1,]  0.071119011+0.013322706i  0.071119011-0.013322706i  0.11421734+0i
+##  [2,] -0.085589963-0.074933585i -0.085589963+0.074933585i -0.14630668+0i
+##  [3,]  0.069586877+0.177032359i  0.069586877-0.177032359i  0.20068018+0i
+##  [4,]  0.143758186-0.383768211i  0.143758186+0.383768211i -0.32754049+0i
+##  [5,] -0.599703404+0.000000000i -0.599703404+0.000000000i  0.36036606+0i
+##  [6,] -0.051811255+0.523985070i -0.051811255-0.523985070i -0.62727112+0i
+##  [7,] -0.061801463+0.042517465i -0.061801463-0.042517465i  0.19520792+0i
+##  [8,]  0.003971536-0.001875061i  0.003971536+0.001875061i -0.01036356+0i
+##  [9,]  0.082898608+0.073407980i  0.082898608-0.073407980i -0.31175569+0i
+## [10,]  0.206639886-0.115997988i  0.206639886+0.115997988i  0.30677677+0i
+## [11,]  0.141282490-0.216296225i  0.141282490+0.216296225i  0.25523237+0i
+##                 [,11]
+##  [1,]  0.002799353+0i
+##  [2,] -0.004288544+0i
+##  [3,]  0.006911250+0i
+##  [4,] -0.014493735+0i
+##  [5,]  0.024881465+0i
+##  [6,] -0.135509394+0i
+##  [7,] -0.112331807+0i
+##  [8,]  0.006328332+0i
+##  [9,]  0.304646450+0i
+## [10,] -0.755859400+0i
+## [11,]  0.551309967+0i</code></pre>
+<pre class="r"><code>lambdamax &lt;- Re(eigs$values[1])
+lambdamax</code></pre>
+<pre><code>## [1] 0.802801</code></pre>
+<pre class="r"><code>lambda(Tis)</code></pre>
+<pre><code>## [1] 0.802801</code></pre>
+<pre class="r"><code>truelambda(Tis)</code></pre>
+<pre><code>##           [,1]      [,2]
+##  [1,] 0.802801 0.8028011
+##  [2,] 0.802801 0.8028011
+##  [3,] 0.802801 0.8028011
+##  [4,] 0.802801 0.8028011
+##  [5,] 0.802801 0.8028011
+##  [6,] 0.802801 0.8028011
+##  [7,] 0.802801 0.8028011
+##  [8,] 0.802801 0.8028011
+##  [9,] 0.802801 0.8028011
+## [10,] 0.802801 0.8028011
+## [11,] 0.802801 0.8028011</code></pre>
+<hr />
+</div>
+<div id="stable-stage-distribution" class="section level2">
+<h2>Stable stage Distribution</h2>
+<p>The relative proportion of individuals represented in each age/stage of an exponentially increasing (or decreasing) population. Once the populaiton reaches a stable age/stage distribution, these proportion remainconstant through time. A stage age/stage distribution implies that a population is growing with fixed survivorship <em>lx</em> and fecundity <em>bx</em> schedules.</p>
+<pre class="r"><code>w &lt;- stable.stage(Tis)
+w</code></pre>
+<pre><code>##  [1] 0.0119766716 0.0052743985 0.0028356933 0.0024150009 0.0008984465
+##  [6] 0.0001412209 0.5031211018 0.0713183939 0.1139789925 0.1662607447
+## [11] 0.1217793353</code></pre>
+</div>
+<div id="reproductive-value-vx" class="section level2">
+<h2>Reproductive value, <em>vx</em></h2>
+<p>Reproductive value is the expected number of offspring that remain to be born to individuals of age/stage <strong>x</strong>. By definition the value of newborns <em>v0</em> is 1.0.</p>
+<pre class="r"><code>v &lt;- reproductive.value(Tis)
+v</code></pre>
+<pre><code>##  [1]  1.000000  2.867147  3.830711  3.916761  4.624162  4.709649  3.983948
+##  [8] 18.134366  5.818338  5.691014  6.212058</code></pre>
+</div>
+<div id="elasticities-and-sensitivity" class="section level2">
+<h2>Elasticities and Sensitivity</h2>
+<p>Both these tools lets you understand the importance of the effect of growth/persistence of the population, which of the parameters are most relevant.</p>
+<div id="using-the-elasticity-vs.-the-sensitivity." class="section level3">
+<h3>Using the elasticity vs. the sensitivity.</h3>
+<ul>
+<li><p>Elasticity assesses effect of a proportional change in the values such as lambda: In other words if you were able modify the parameter (increase of decrease survivorship or reproduction) what would be the proportional effect on the growth of the population. In this case the values of reproduction and survivorhsip and growth are comparible (same scale)</p></li>
+<li><p>sensitivities assess the effect of an additive change. Reproduction and survivorship and growth are on different scales.</p></li>
+</ul>
+<pre class="r"><code>sens(Tis)</code></pre>
+<pre><code>##              [,1]        [,2]        [,3]         [,4]         [,5]
+##  [1,] 0.000000000 0.000000000 0.000000000 0.0004225115 0.0001571858
+##  [2,] 0.006007686 0.002645721 0.000000000 0.0000000000 0.0000000000
+##  [3,] 0.000000000 0.003534870 0.001900465 0.0000000000 0.0000000000
+##  [4,] 0.000000000 0.003614275 0.001943155 0.0016548763 0.0000000000
+##  [5,] 0.000000000 0.000000000 0.002294106 0.0019537617 0.0007268529
+##  [6,] 0.000000000 0.000000000 0.002336517 0.0000000000 0.0007402901
+##  [7,] 0.000000000 0.003676273 0.001976488 0.0016832636 0.0006262202
+##  [8,] 0.000000000 0.000000000 0.000000000 0.0000000000 0.0000000000
+##  [9,] 0.000000000 0.000000000 0.000000000 0.0000000000 0.0000000000
+## [10,] 0.000000000 0.000000000 0.000000000 0.0000000000 0.0000000000
+## [11,] 0.000000000 0.000000000 0.000000000 0.0000000000 0.0000000000
+##               [,6]      [,7]       [,8]       [,9]     [,10]      [,11]
+##  [1,] 2.470702e-05 0.0000000 0.01247736 0.01994096 0.0290878 0.02130565
+##  [2,] 0.000000e+00 0.0000000 0.00000000 0.00000000 0.0000000 0.00000000
+##  [3,] 0.000000e+00 0.0000000 0.00000000 0.00000000 0.0000000 0.00000000
+##  [4,] 0.000000e+00 0.0000000 0.00000000 0.00000000 0.0000000 0.00000000
+##  [5,] 0.000000e+00 0.0000000 0.00000000 0.00000000 0.0000000 0.00000000
+##  [6,] 0.000000e+00 0.0000000 0.00000000 0.00000000 0.0000000 0.00000000
+##  [7,] 9.843146e-05 0.0000000 0.04970915 0.07944373 0.1158843 0.08488060
+##  [8,] 0.000000e+00 1.5962324 0.22626904 0.00000000 0.0000000 0.00000000
+##  [9,] 0.000000e+00 0.5121447 0.07259751 0.11602323 0.0000000 0.00000000
+## [10,] 0.000000e+00 0.5009373 0.07100884 0.11348427 0.1655391 0.00000000
+## [11,] 0.000000e+00 0.5468010 0.07751010 0.12387439 0.1806951 0.00000000</code></pre>
+<pre class="r"><code>elas(Tis)</code></pre>
+<pre><code>##              [,1]         [,2]         [,3]         [,4]         [,5]
+##  [1,] 0.000000000 0.0000000000 0.000000e+00 3.684076e-06 3.328545e-06
+##  [2,] 0.002095354 0.0005503672 0.000000e+00 0.000000e+00 0.000000e+00
+##  [3,] 0.000000000 0.0014530464 4.474182e-04 0.000000e+00 0.000000e+00
+##  [4,] 0.000000000 0.0004637143 9.149374e-04 2.762246e-04 0.000000e+00
+##  [5,] 0.000000000 0.0000000000 2.314678e-04 4.356289e-04 5.975614e-05
+##  [6,] 0.000000000 0.0000000000 4.074638e-05 0.000000e+00 7.561498e-05
+##  [7,] 0.000000000 0.0001785930 2.658948e-04 9.393387e-04 5.881532e-04
+##  [8,] 0.000000000 0.0000000000 0.000000e+00 0.000000e+00 0.000000e+00
+##  [9,] 0.000000000 0.0000000000 0.000000e+00 0.000000e+00 0.000000e+00
+## [10,] 0.000000000 0.0000000000 0.000000e+00 0.000000e+00 0.000000e+00
+## [11,] 0.000000000 0.0000000000 0.000000e+00 0.000000e+00 0.000000e+00
+##               [,6]       [,7]         [,8]         [,9]        [,10]      [,11]
+##  [1,] 1.107937e-06 0.00000000 1.554228e-05 0.0002732315 0.0008695894 0.00092887
+##  [2,] 0.000000e+00 0.00000000 0.000000e+00 0.0000000000 0.0000000000 0.00000000
+##  [3,] 0.000000e+00 0.00000000 0.000000e+00 0.0000000000 0.0000000000 0.00000000
+##  [4,] 0.000000e+00 0.00000000 0.000000e+00 0.0000000000 0.0000000000 0.00000000
+##  [5,] 0.000000e+00 0.00000000 0.000000e+00 0.0000000000 0.0000000000 0.00000000
+##  [6,] 0.000000e+00 0.00000000 0.000000e+00 0.0000000000 0.0000000000 0.00000000
+##  [7,] 1.152534e-04 0.00000000 1.857589e-02 0.0564061640 0.1421846942 0.13142307
+##  [8,] 0.000000e+00 0.06561485 1.606542e-01 0.0000000000 0.0000000000 0.00000000
+##  [9,] 0.000000e+00 0.09441619 1.654874e-02 0.0050583058 0.0000000000 0.00000000
+## [10,] 0.000000e+00 0.11231763 1.830943e-02 0.0272825547 0.0076294698 0.00000000
+## [11,] 0.000000e+00 0.07832839 1.216525e-02 0.0270029781 0.0148553353 0.00000000</code></pre>
+</div>
+</div>
+<div id="transient-dynamics" class="section level2">
+<h2>TRANSIENT DYNAMICS</h2>
+<hr />
+</div>
+<div id="section" class="section level1">
+<h1></h1>
+<p>Fig. 2a: Population-specific transient dynamics # This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
+<p>Set margins:</p>
+<pre class="r"><code>par(mar=c(10,4,1,1))</code></pre>
+<p>#Create 2 population vectors. One is adult- #biased, and it amplifies. One is juvenile- # biased and it attenuates.</p>
+<pre class="r"><code>n0.amp &lt;- c(1000,1,1,1,1,1,1,1,1,1,1)
+
+n0.att &lt;- c(1,1,1,1,1,1,1,1,1,1,1000)</code></pre>
+<p>Project these vectors using the project function. We are standardising the matrix using ‘standard.A=T’ to remove effects of asymptotic dynamics. This means that the projection has a long-term growth rate of unity, i.e. it does not grow or decline in the long-term. We also standardise the population vector to sum to 1 using ‘standard.vec=T’. These standardisations make it easier (and fairer) to compare between models with different population sizes, and different long-term growth rates.</p>
+<pre class="r"><code>pr2.1 &lt;- project(Tis, vector=n0.amp, time=156, 
+                 standard.A=T, standard.vec=T)
+pr2.2 &lt;- project(Tis, vector=n0.att, time=156, 
+                 standard.A=T, standard.vec=T)</code></pre>
+<p>Plot the amplification projection and label it</p>
+<pre class="r"><code>plot(pr2.1, ylim=c(0.4,1), log=&quot;y&quot;, cex.axis=0.8)
+text(52, pr2.1[51], &quot;amplification&quot;, 
+     adj=c(1,-0.5), cex=0.8)</code></pre>
+<p><img src="Tillandsia_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>#maxamp(Tis, vector=n0.amp)
+reac(Tis,vector=n0.amp)</code></pre>
+<pre><code>## [1] 0.3568064</code></pre>
+<pre class="r"><code>inertia(Tis,vector=n0.amp)</code></pre>
+<pre><code>## [1] 0.1835773</code></pre>
+<p>Calculate the transient dynamics of the amplification projection</p>
+<pre class="r"><code>reac &lt;- reac(Tis, vector=n0.amp)
+#maxamp &lt;- maxamp(Tis, vector=n0.amp, return.t=T)
+upinertia &lt;- inertia(Tis, vector=n0.amp)</code></pre>
+<p>Add points on the projection for amplification and label them</p>
+<pre class="r"><code>#points(c(1,maxamp$t,31), c(reac,upinertia), 
+#       pch=3, col=&quot;red&quot;)
+#text(1, reac, expression(bar(P)[1]), 
+#     adj=c(-0.3,0.5), col=&quot;red&quot;, cex=0.8)
+#text(maxamp$t, maxamp$maxamp, expression(bar(P)[max]), 
+ #    adj=c(0.1,-0.5), col=&quot;red&quot;, cex=0.8)
+#text(31, upinertia, expression(bar(P)[infinity]), 
+#     adj=c(0.1,-0.5), col=&quot;red&quot;, cex=0.8)</code></pre>
+<p>Add in the second projection using the ‘lines’ command and label it lines(0:50, pr2.2) text(52, pr2.2[51], “attenuation”, adj=c(1,1), cex=0.8)</p>
+<p>Calculate the transient dynamics of the attenuation projection firstep &lt;- firststepatt(Lrub1, vector=n0.att) maxatt &lt;- maxatt(Lrub1, vector=n0.att, return.t=T) lowinertia &lt;- inertia(Lrub1, vector=n0.att)</p>
+<p>firststepatt(Lrub1, vector=n0.att) maxatt(Lrub1, vector=n0.att, return.t=T) inertia(Lrub1, vector=n0.att)</p>
+<p>Add points on the attenuation projection and label them points(c(1,maxatt<span class="math inline">\(t,31), c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1, firstep, expression(underline(P)[1]), adj=c(0,-0.6), col=“red”, cex=0.8) text(maxatt<span class="math inline">\(t, maxatt\)</span>maxatt, expression(underline(P)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8) text(31, lowinertia, expression(underline(P)[infinity]), adj=c(0.1,1.5), col=“red”, cex=0.8)</p>
+<p>Add in a dotted line at y=1 lines(c(0,50),c(1,1),lty=2)</p>
+<div id="section-1" class="section level73">
+<p class="heading"></p>
+<p>FIGURE 4: TRANSFER FUNCTION MATRIX</p>
+<p>This figure is designed to be 7” by 7” (Check size of plot window using ‘par(din)’).</p>
+<p>This is a nice, easy plot because the function does it all for you. The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function for every PPM element. They are saved as arrays of values. The functions are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
+<p>Create the array for inertia, using a specific population vector: n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1, vector=n0)</p>
+<p>…and plot it! plot(tfmat)</p>
+<pre class="r"><code>n0 &lt;- c(48, 16, 12, 10)
+tfmat &lt;- tfamatrix(Tis)</code></pre>
+<pre><code>## Warning: &#39;tfamatrix&#39; has been renamed and is deprecated.
+## The old name will continue to work for now, but may be removed in later versions.
+## Use the new name &#39;tfam_lambda&#39; instead. See help(&quot;popdemo-deprecated&quot;) for more info.</code></pre>
+<pre class="r"><code>#...and plot it!
+plot(tfmat)</code></pre>
+<p><img src="Tillandsia_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

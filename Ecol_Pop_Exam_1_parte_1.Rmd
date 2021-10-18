@@ -1,0 +1,174 @@
+---
+title: "Ecol_Pop_Exam_1_parte_1"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Las preguntas del examen de esta parte proviene del capiyulo 1:
+
+
+1. In 1993, when the first edition of this book was written, the world's human population was expected to double in size in approximately 50 years. Assuming population growth is continuous, calculate r for the human population. 
+
+```{r eval=FALSE, include=FALSE}
+#t_double=ln(2)/r)
+
+#50=ln(2)/r
+
+r=log(2)/50
+r
+e=2.71828182845904523536028747135266249
+No=100
+t=50
+N=No*(e^(r*t))
+N
+```
+
+
+2. If the population size in 1993 was 5.4 billion, what was the projected population size for the year 2021 using the a growth  rate with doubling time of 50 years?
+
+
+```{r}
+r=log(2)/50
+r
+e=2.71828182845904523536028747135266249
+No=5.4
+t=(2021-1993)
+N=No*(e^(r*t))
+N
+```
+
+
+3.  The future is here!. On October  17, 2021 the best estimate of the world population size was 7.796 billion - different than that projected by the model in 1993. To find out the current estimate of the world populaion size, visit the website maintained by the US Census Bureau.
+
+[Census Population size website](https://www.census.gov/popclock/)
+
+4. What is today's date and how large is the population of the world today. What is the difference in nnu mber of humans on the planet as compared to that predicted?
+
+
+
+```{r}
+Diff=7.796-7.961
+Diff
+```
+
+
+5. Considering the present population size what is the observed growth rate of human population on the planet **per year**, use the population size of 5.538 billion for 1993. 
+
+```{r eval=FALSE, include=FALSE}
+r= (7.796-5.538)/(2021-1993)
+r
+```
+
+
+
+6. You are studying a population of beetles of size 3000.  During one month period, you record 400 births and 150 deaths in this population. Estimate r and project the population size in from month 1 to 6 months.
+
+
+```{r eval=FALSE, include=FALSE}
+e=2.7182818284590
+Nob=3000
+b=400/3000
+d=150/3000
+b
+d
+r=b-d
+r
+#dN/dt=(3250-3000)/(2-1)*Nob
+dN_1=r*Nob+Nob
+dN_1
+t=0
+Nt=Nob*e^(r*t)
+Nt
+
+t=1
+Nt=Nob*e^(r*t)
+Nt
+
+t=2
+Nt=Nob*e^(r*t)
+Nt
+
+t=3
+Nt=Nob*e^(r*t)
+Nt
+
+t=4
+Nt=Nob*e^(r*t)
+Nt
+
+t=5
+Nt=Nob*e^(r*t)
+Nt
+
+t=6
+Nt=Nob*e^(r*t)
+Nt
+
+```
+
+
+7. For five consecutive days you count the size of a growing population of flatworms as 100, 158, 315, 298, 794. Plot the logarithm (base e) of population size to estimate r.
+
+
+
+```{r}
+library(tidyverse)
+df=tribble(
+  ~day, ~N,
+  1, 100,
+  2, 158,
+  3, 315, 
+  4, 298,
+  5, 794
+  
+)
+
+df
+library(scales)
+ggplot(df, aes(day, N))+
+  geom_point()+
+  scale_y_continuous(
+    trans = "log2",
+    labels = scales::math_format(2^.x, format = log2))+
+  geom_smooth(method=lm)+
+  ylab("Natural Log of N")
+
+```
+
+
+8.  A population of annual grasses increases in size by 12% every year. This species was introduced as cow foder.  What is the approximate doubling time?
+
+
+```{r}
+#t_double=ln(2)/r
+Ng=100
+e=2.7182818284590
+r_g= 0.12
+t_double=log(2)/r_g
+t_double
+
+
+dN_1=r_g*Ng+Ng
+dN_1
+t=6
+Nt=Ng*e^(r_g*t)
+Nt
+
+```
+
+
+
+
