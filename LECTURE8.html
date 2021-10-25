@@ -610,7 +610,22 @@ mean = 7.1
 stdev = 1.9
 
 curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Normal distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" /> ### Nota que la distribución puede estar con valores negativos</p>
+<pre class="r"><code>#########
+# Distribución normal
+
+x=rnorm(1000000, 0,1 )
+x=as.tibble(x)</code></pre>
+<pre><code>## Warning: `as.tibble()` was deprecated in tibble 2.0.0.
+## Please use `as_tibble()` instead.
+## The signature and semantics have changed, see `?as_tibble`.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+<pre class="r"><code>#x
+
+ggplot(x, aes(value))+
+  geom_density()</code></pre>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Otra distribución continua que debe conocer se llama Distribución <strong>lognormal</strong>. Esta distribución tiene un límite inferior de cero y un límite superior de <span class="math inline">\(\infty\)</span>.</p>
 <p><strong>P</strong> ¿Qué parámetro de población podría ser útil para el modelado de la distribución logarítmica normal?</p>
 <pre class="r"><code>############
@@ -620,7 +635,7 @@ meanlog = 1.4
 stdevlog = 0.6
 
 curve(dlnorm(x,meanlog,stdevlog),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Lognormal distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Otra distribución continua que quizás desee conocer se llama <em>distribución Beta</em>. Esta distribución tiene un límite inferior de cero y un límite superior de 1.</p>
 <p><strong>P</strong> ¿Qué parámetro de población podría ser útil para modelar la distribución beta?</p>
 <pre class="r"><code>##########
@@ -630,7 +645,7 @@ shape1 = 10
 shape2 = 4
 
 curve(dbeta(x,shape1,shape2),0,1,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Beta distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="explore-las-distribuciones-en-r" class="section level3">
 <h3>Explore las distribuciones en R</h3>
@@ -676,9 +691,9 @@ rbeta(1,shape1=10,shape2=3)  # beta distribution is defined by &quot;shape1&quot
 
 distribution &lt;- c(5,3,5,4,3,6,4,5,5,1,6,5,4,3,6,6,4,2,8,4,4,5,2)     # make up a set of possibilities
 hist(distribution,freq = F, ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;)  # visualize distribution</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre class="r"><code>sample(distribution,1)  # take one random sample from this distribution!</code></pre>
-<pre><code>## [1] 4</code></pre>
+<pre><code>## [1] 5</code></pre>
 </div>
 <div id="ejercicio-en-clase-ajuste-una-distribución" class="section level3">
 <h3>Ejercicio en clase: ¡Ajuste una distribución!</h3>
@@ -697,7 +712,7 @@ hatch_perfem &lt;- c(3.05, 1.45, 0.99, 3.24, 1.49, 1.70, 1.66, 2.32, 0.83, 2.41,
 2.33, 1.68, 1.43, 2.74, 2.05, 3.13, 1.90, 3.69, 1.55, 2.79)
 
 hist(hatch_perfem)</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p><strong>P</strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]</p>
 <p>¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!</p>
 <p>Podríamos usar estadísticas para ajustar la distribución, ¡pero solo usaremos prueba y error por ahora! Aquí hay un código para ayudarlo a comenzar.</p>
@@ -713,13 +728,13 @@ hist(hatch_perfem,freq=F,main=&quot;Histogram of avg number hatched per female&q
 curve(dlnorm(x,meanlog=1.5,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T)
 
 curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T)    # try a different value...</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code>#### ¡Siga cambiando el valor de &#39;meanlog&#39; hasta que encuentre los mejores parámetros que se ajusten a los datos!
 
 #### Una vez que encuentre los parámetros que mejor se ajusten, genere 5 números aleatorios a partir de esta distribución usando la función &quot;rlnorm ()&quot; en R. 
 
 rlnorm(5,meanlog=1.5,sdlog=0.39)    # ¡por ejemplo! (¡recuerde cambiar el parámetro &quot;meanlog&quot; por el valor que identificó anteriormente!)</code></pre>
-<pre><code>## [1] 5.189213 4.051672 3.330789 4.316999 3.642072</code></pre>
+<pre><code>## [1] 3.795581 5.621093 4.929633 3.205789 4.953206</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Utilice prueba y error para encontrar el parámetro “meanlog” apropiado para la distribución logarítmica normal.</p></li>
 <li><p>Use su distribución ajustada para predecir el número promedio de crías por hembra durante los próximos 5 años. Para hacer esto, use la función “rlnorm ()” en R.</p></li>

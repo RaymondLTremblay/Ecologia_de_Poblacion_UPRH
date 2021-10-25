@@ -207,6 +207,22 @@ stdev = 1.9
 curve(dnorm(x,mean,stdev),0,15,ylab="Probability (density)",xlab="Possibilities",main="Normal distribution (continuous)")   # probability density
 
 ```
+### Nota que la distribución puede estar con valores negativos
+
+```{r}
+
+#########
+# Distribución normal
+
+x=rnorm(1000000, 0,1 )
+x=as.tibble(x)
+#x
+
+ggplot(x, aes(value))+
+  geom_density()
+
+```
+
 
 Otra distribución continua que debe conocer se llama  Distribución **lognormal**. Esta distribución tiene un límite inferior de cero y un límite superior de $\infty$.
 
