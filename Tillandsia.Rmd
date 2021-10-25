@@ -86,7 +86,7 @@ isIrreducible(Tis)
 ```{r}
 eigs <- eigen(Tis)
 eigs
-lambdamax <- Re(eigs$values[1])
+ lambdamax <- Re(eigs$values[1])
 lambdamax
 lambda(Tis)
 truelambda(Tis)
@@ -98,6 +98,12 @@ truelambda(Tis)
 ## Stable stage Distribution
 
 The relative proportion of individuals represented in each age/stage of an exponentially increasing (or decreasing) population.  Once the populaiton reaches a stable age/stage distribution, these proportion remainconstant through time.  A stage age/stage distribution implies that a population is growing with fixed survivorship *lx* and fecundity *bx* schedules.
+
+- What are the assumptions in regards to this concept?
+
+- Elaborate::::
+
+
 
 ```{r}
 
@@ -118,7 +124,7 @@ v
 
 ## Elasticities and Sensitivity
 
-Both these tools lets you understand the importance of the effect of growth/persistence of the population, which of the parameters are most relevant.
+Both of these tools let you understand the importance of the effect of growth/persistence of the population, and determine which of the parameters are most relevant to future growth.
 
 
 
@@ -133,6 +139,7 @@ Both these tools lets you understand the importance of the effect of growth/pers
 sens(Tis)
 ```
 
+## Elasticities
 
 ```{r}
 elas(Tis)

@@ -1,0 +1,87 @@
+---
+title: "Tarea_Ballena"
+author: "BIOL4558"
+date: "Agosto 2021"
+output:
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Esta Tarea es para practicar las funciones y los conceptos de dinámica poblacional con matrices de transiciones. 
+
+
+***
+
+Encontrarán 5 artículos revisado por pares donde usarón matrices para evaluar la dinamica poblacional de diferentes ballenas en diferentes circunstancias.
+
+[Beaked Whales](PDF/Beaked_Whale.pdf)
+
+[Right Whales](PDF/RighWhale.pdf)
+
+[North Atlantic Right Whales](PDF/Whales.pdf)
+
+[Killer Whales 1](PDF/Killer Whale.pdf)
+
+[Killer Whales 2](PDF/Killer_whales2.pdf)
+
+***
+
+Tarea para entregar (30 puntos)
+
+### Usando el paper de **Beaked Whales**
+
+Prepara un .rmd con la siguiente información
+
+1. Poner la matrix en un chunk
+
+2. Construir un diagrama de la historia de vida, con el paquete **Rage**
+
+3. Evaluar si la matrix es **Ergodic** e **Irriducible**?
+
+4. Calcular la **Stable Stage Distibution**
+
+5. Calcular la **Reproductive value**
+
+6. Calcular la **Elasticidad**
+
+EN adición contestar las siguientes preguntas.
+
+
+7. Busca información básica sobre esta ballena, describe su distribución, biología, tamaño, comida preferida y otros aspectos de su vida. Puede usar el paper asignado y otras referencias (*Recuerda citar correctamente!!!*)
+ 
+8.  Explica si la matrix es Ergodic y Irriducible, pq lo es (o no)?
+ 
+9. Explica lo que se observa con el análisis de **Stable Stage Distribution**. ¿Cual es la definición y la interpretación con respeto a la ballena?
+ 
+10. Explica lo que se observa con el análisis de **Reproductive Value**. ¿Cual es la definición y la interpretación con respeto a la ballena?
+ 
+11. Qué es la interpretación del análisis de **Elasticidad**. ¿Cual es la definición y la interpretación con respeto a la ballena?
+ 
+12. Ud es parte de un grupo de biólogos interesados en la conservación informando a la agencia que determina los parámetros sobre la caza de ballena al nivel mundial [IWC](https://iwc.int/home).  Con la información anterior que sugerencia tiene sobre la caza de esta ballena.  
+ 
+### Entrega:
+
+Se entregará un documento bien organizado en formato .html al portal de MSTeam, en una semana del momento que este posteado en MSTeam. 
+
+El trabajo es individual. Si tiene dudas TIENE que comunicarse conmigo....**NO Pueden discutir del trabajo con coleguas de esta clase o otras personas**. 
+
+  
+
+
+
+
+ 
+ 
+ 
+ 
+
+

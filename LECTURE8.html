@@ -366,9 +366,6 @@ div.tocify {
       <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
     </li>
     <li>
-      <a href="Tillandsia.html">Modelos matriciales de TILLANDSIA</a>
-    </li>
-    <li>
       <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
     </li>
     <li>
@@ -421,6 +418,9 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+    <li>
+      <a href="Tarea_Ballena.html">Tarea 2: Dinámica de Ballenas</a>
     </li>
   </ul>
 </li>
@@ -547,6 +547,33 @@ names(probs) &lt;- xvals
                
 barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Binomial distribution (discrete)&quot;)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="comprobamos-esta-distribución-con-un-ejercicio-en-clase" class="section level3">
+<h3>Comprobamos esta distribución con un ejercicio en clase</h3>
+<p>Cada estudiante tomará una moneda, y la tirará para y contará cuantos <strong>caras</strong> contabiliza de 10 tiradas. Que tipo de característica biologíaca podría representar una distribución binomial?</p>
+<pre class="r"><code>library(tidyverse)
+caras=c(1:10, 10)
+caras=as_tibble(caras)
+caras</code></pre>
+<pre><code>## # A tibble: 11 × 1
+##    value
+##    &lt;dbl&gt;
+##  1     1
+##  2     2
+##  3     3
+##  4     4
+##  5     5
+##  6     6
+##  7     7
+##  8     8
+##  9     9
+## 10    10
+## 11    10</code></pre>
+<pre class="r"><code>ggplot(caras, aes(value))+
+  geom_histogram(aes(y=..density..))</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para la modelización la distribución binomial?</p>
 <p>Otra distribución discreta que usaremos en esta clase es la <em>distribución de Poisson </em>:</p>
 <pre class="r"><code>#########
@@ -557,7 +584,7 @@ probs &lt;- dpois(xvals,lambda=2.2)     # P0isson distribution
 names(probs) &lt;- xvals
                
 barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Poisson distribution (discrete)&quot;)</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para modelar la distribución de Poisson?</p>
 <p>En <em>distribuciones continuas </em>, hay un número infinito de posibilidades entre dos posibilidades únicas.</p>
 <p>Consideremos la <em>distribución uniforme </em>:</p>
@@ -572,7 +599,7 @@ lower = 0
 upper = 10
 
 curve(dunif(x,lower,upper),0,10,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Uniform distribution (continuous)&quot;,ylim=c(0,1))   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Esta no es una distribución de aspecto muy interesante. Todos los números posibles del 0 al 10 son igualmente probables.</p>
 <p>Otra distribución continua que debe conocer se llama <em>Distribución normal </em>. Esta distribución (la clásica distribución en forma de campana) tiene un límite inferior de $-$ y un límite superior de $$.</p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil esta distribución para modelar?</p>
@@ -583,7 +610,7 @@ mean = 7.1
 stdev = 1.9
 
 curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Normal distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Otra distribución continua que debe conocer se llama Distribución lognormal *. Esta distribución tiene un límite inferior de cero y un límite superior de $$.</p>
 <p><strong>P</strong> ¿Qué parámetro de población podría ser útil para el modelado de la distribución logarítmica normal?</p>
 <pre class="r"><code>############
@@ -593,7 +620,7 @@ meanlog = 1.4
 stdevlog = 0.6
 
 curve(dlnorm(x,meanlog,stdevlog),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Lognormal distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Otra distribución continua que quizás desee conocer se llama <em>distribución Beta </em>. Esta distribución tiene un límite inferior de cero y un límite superior de 1.</p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para modelar la distribución beta?</p>
 <pre class="r"><code>##########
@@ -603,7 +630,7 @@ shape1 = 10
 shape2 = 4
 
 curve(dbeta(x,shape1,shape2),0,1,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Beta distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="explore-las-distribuciones-en-r" class="section level3">
 <h3>Explore las distribuciones en R</h3>
@@ -649,7 +676,7 @@ rbeta(1,shape1=10,shape2=3)  # beta distribution is defined by &quot;shape1&quot
 
 distribution &lt;- c(5,3,5,4,3,6,4,5,5,1,6,5,4,3,6,6,4,2,8,4,4,5,2)     # make up a set of possibilities
 hist(distribution,freq = F, ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;)  # visualize distribution</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>sample(distribution,1)  # take one random sample from this distribution!</code></pre>
 <pre><code>## [1] 4</code></pre>
 </div>
@@ -670,7 +697,7 @@ hatch_perfem &lt;- c(3.05, 1.45, 0.99, 3.24, 1.49, 1.70, 1.66, 2.32, 0.83, 2.41,
 2.33, 1.68, 1.43, 2.74, 2.05, 3.13, 1.90, 3.69, 1.55, 2.79)
 
 hist(hatch_perfem)</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p><strong>P </strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]</p>
 <p>¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!</p>
 <p>Podríamos usar estadísticas para ajustar la distribución, ¡pero solo usaremos prueba y error por ahora! Aquí hay un código para ayudarlo a comenzar.</p>
@@ -686,7 +713,7 @@ hist(hatch_perfem,freq=F,main=&quot;Histogram of avg number hatched per female&q
 curve(dlnorm(x,meanlog=1.5,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T)
 
 curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T)    # try a different value...</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <pre class="r"><code>#### ¡Siga cambiando el valor de &#39;meanlog&#39; hasta que encuentre los mejores parámetros que se ajusten a los datos!
 
 #### Una vez que encuentre los parámetros que mejor se ajusten, genere 5 números aleatorios a partir de esta distribución usando la función &quot;rlnorm ()&quot; en R. 

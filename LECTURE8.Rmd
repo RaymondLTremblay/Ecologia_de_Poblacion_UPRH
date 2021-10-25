@@ -128,6 +128,27 @@ barplot(probs,ylab="Probability",xlab="Possibilities",main="Binomial distributio
 
 ```
 
+***
+
+
+### Comprobamos esta distribución con un ejercicio en clase
+
+
+Cada estudiante tomará una moneda, y la tirará para y contará cuantos **caras** contabiliza de 10 tiradas.  Que tipo de característica biologíaca podría representar una distribución binomial?  
+
+```{r}
+library(tidyverse)
+caras=c(1:10, 10)
+caras=as_tibble(caras)
+caras
+
+ggplot(caras, aes(value))+
+  geom_histogram(aes(y=..density..))
+```
+
+
+
+
 **P ** ¿Qué parámetro de población podría ser útil para la modelización la distribución binomial?
 
 Otra distribución discreta que usaremos en esta clase es la *distribución de Poisson *:
