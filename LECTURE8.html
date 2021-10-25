@@ -514,7 +514,7 @@ div.tocify {
 <p><img src="figures/lottery1.png" /></p>
 <p>Cada generador de números aleatorios tiene una <strong>distribución </strong>. Esta es una forma de definir qué hay exactamente en el cuadro, lo que se puede visualizar como un diagrama de cuadro o histograma, con los valores posibles únicos representados en el eje X y las probabilidades asociadas con cada valor único representado en el eje Y.</p>
 <p>Si desea seguir esta lección en R, puede encontrar el guión de R <a href="LECTURE8.R">aquí</a>. Recomiendo hacer clic derecho en el enlace, guardar el script en una carpeta designada y cargar el script en RStudio.</p>
-<p>Por ejemplo, la caja puede tener 10 “unos”, 5 “dos” y 2 “tres”. En este caso, la distribución se ve así (<em>probabilidad </em> de cada <em>posibilidad </em>):</p>
+<p>Por ejemplo, la caja puede tener 10 “unos”, 5 “dos” y 2 “tres”. En este caso, la distribución se ve así (<em>probabilidad</em> de cada <em>posibilidad</em>):</p>
 <pre class="r"><code>#############
 # Generación de números aleatorios!
 
@@ -522,8 +522,8 @@ div.tocify {
 #####
 # define an arbitrary distribution
 
-box &lt;- c(rep(1,10),rep(2,5),rep(3,2))                                           # define what&#39;s in the lottery ball machine (10 &quot;1&quot; balls, 5 &quot;2&quot; balls and 2 &quot;3&quot; balls)
-barplot(table(box)/sum(table(box)),ylab=&quot;probability&quot;,xlab=&quot;possibility&quot;)       # visualize the distribution of possibilities</code></pre>
+box &lt;- c(rep(1,10),rep(2,5),rep(3,2))  # define what&#39;s in the lottery ball machine (10 &quot;1&quot; balls, 5 &quot;2&quot; balls and 2 &quot;3&quot; balls)
+barplot(table(box)/sum(table(box)),ylab=&quot;probability&quot;,xlab=&quot;possibility&quot;)  # visualize the distribution of possibilities</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Una distribución de probabilidad puede ser prácticamente cualquier cosa que desees. Sin embargo, hay varios tipos clave de distribución de probabilidad que surgen una y otra vez, ¡y deberíamos aprenderlos!</p>
 <div id="distribuciones-de-probabilidad" class="section level3">
@@ -531,7 +531,7 @@ barplot(table(box)/sum(table(box)),ylab=&quot;probability&quot;,xlab=&quot;possi
 </div>
 <div id="section" class="section level3">
 <h3></h3>
-<p>Discreto frente a continuo En <em>distribuciones discretas </em>, cada resultado único tiene una probabilidad específica (como la probabilidad de lanzar una moneda 10 veces y obtener 4 caras). Por ejemplo, consideremos una <em>distribución binomial </em></p>
+<p>Discreto frente a continuo En <em>distribuciones discretas</em>, cada resultado único tiene una probabilidad específica (como la probabilidad de lanzar una moneda 10 veces y obtener 4 caras). Por ejemplo, consideremos una <em>distribución binomial</em></p>
 <pre class="r"><code>################
 # Distribuciones discretas
 ################
@@ -551,7 +551,7 @@ barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&
 </div>
 <div id="comprobamos-esta-distribución-con-un-ejercicio-en-clase" class="section level3">
 <h3>Comprobamos esta distribución con un ejercicio en clase</h3>
-<p>Cada estudiante tomará una moneda, y la tirará para y contará cuantos <strong>caras</strong> contabiliza de 10 tiradas. Que tipo de característica biologíaca podría representar una distribución binomial?</p>
+<p>Cada estudiante tomará una moneda, y la tirará para y contará cuantos <strong>caras</strong> contabiliza de 10 tiradas. Que tipo de característica biologíaca podría representar una distribución binomial? Aqui para comenzar datos ficticios. Tendrán que poner los datos recopilado en la clase.</p>
 <pre class="r"><code>library(tidyverse)
 caras=c(1:10, 10)
 caras=as_tibble(caras)
@@ -575,7 +575,7 @@ caras</code></pre>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para la modelización la distribución binomial?</p>
-<p>Otra distribución discreta que usaremos en esta clase es la <em>distribución de Poisson </em>:</p>
+<p>Otra distribución discreta que usaremos en esta clase es la <em>distribución de Poisson</em>:</p>
 <pre class="r"><code>#########
 # Distribución de Poisson
 
@@ -586,8 +586,8 @@ names(probs) &lt;- xvals
 barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Poisson distribution (discrete)&quot;)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para modelar la distribución de Poisson?</p>
-<p>En <em>distribuciones continuas </em>, hay un número infinito de posibilidades entre dos posibilidades únicas.</p>
-<p>Consideremos la <em>distribución uniforme </em>:</p>
+<p>En <em>distribuciones continuas</em>, hay un número infinito de posibilidades entre dos posibilidades únicas.</p>
+<p>Consideremos la <em>distribución uniforme</em>:</p>
 <pre class="r"><code>################
 # DISTRIBUCIONES CONTINUAS
 #################
@@ -601,7 +601,7 @@ upper = 10
 curve(dunif(x,lower,upper),0,10,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Uniform distribution (continuous)&quot;,ylim=c(0,1))   # probability density</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Esta no es una distribución de aspecto muy interesante. Todos los números posibles del 0 al 10 son igualmente probables.</p>
-<p>Otra distribución continua que debe conocer se llama <em>Distribución normal </em>. Esta distribución (la clásica distribución en forma de campana) tiene un límite inferior de $-$ y un límite superior de $$.</p>
+<p>Otra distribución continua que debe conocer se llama <em>Distribución normal</em>. Esta distribución (la clásica distribución en forma de campana) tiene un límite inferior de <span class="math inline">\(-\infty\)</span> y un límite superior de <span class="math inline">\(\infty\)</span>.</p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil esta distribución para modelar?</p>
 <pre class="r"><code>#########
 # Distribución normal
@@ -611,7 +611,7 @@ stdev = 1.9
 
 curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Normal distribution (continuous)&quot;)   # probability density</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>Otra distribución continua que debe conocer se llama Distribución lognormal *. Esta distribución tiene un límite inferior de cero y un límite superior de $$.</p>
+<p>Otra distribución continua que debe conocer se llama Distribución <strong>lognormal</strong>. Esta distribución tiene un límite inferior de cero y un límite superior de <span class="math inline">\(\infty\)</span>.</p>
 <p><strong>P</strong> ¿Qué parámetro de población podría ser útil para el modelado de la distribución logarítmica normal?</p>
 <pre class="r"><code>############
 # Log-normal distribution
@@ -621,8 +621,8 @@ stdevlog = 0.6
 
 curve(dlnorm(x,meanlog,stdevlog),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Lognormal distribution (continuous)&quot;)   # probability density</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>Otra distribución continua que quizás desee conocer se llama <em>distribución Beta </em>. Esta distribución tiene un límite inferior de cero y un límite superior de 1.</p>
-<p><strong>P </strong> ¿Qué parámetro de población podría ser útil para modelar la distribución beta?</p>
+<p>Otra distribución continua que quizás desee conocer se llama <em>distribución Beta</em>. Esta distribución tiene un límite inferior de cero y un límite superior de 1.</p>
+<p><strong>P</strong> ¿Qué parámetro de población podría ser útil para modelar la distribución beta?</p>
 <pre class="r"><code>##########
 # Beta distribution
 
@@ -646,7 +646,7 @@ myresults &lt;- thisfunction([argument 1],[argument 2] ... )
 
 </code></pre>
 <p>El primer <em>argumento </em> (especificado entre paréntesis en una llamada de función) representa cuántos números aleatorios desea que R extraiga de la distribución especificada.</p>
-<p>Los argumentos posteriores representan los <em>parámetros </em> de la distribución aleatoria de la que desea extraer; puede modificar estos parámetros para adaptarlos a sus necesidades. Aquí hay algunos ejemplos (dibujando 1 número aleatorio a la vez):</p>
+<p>Los argumentos posteriores representan los <em>parámetros</em> de la distribución aleatoria de la que desea extraer; puede modificar estos parámetros para adaptarlos a sus necesidades. Aquí hay algunos ejemplos (dibujando 1 número aleatorio a la vez):</p>
 <pre class="r"><code>################
 # Random number generation!
 
@@ -698,7 +698,7 @@ hatch_perfem &lt;- c(3.05, 1.45, 0.99, 3.24, 1.49, 1.70, 1.66, 2.32, 0.83, 2.41,
 
 hist(hatch_perfem)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p><strong>P </strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]</p>
+<p><strong>P</strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]</p>
 <p>¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!</p>
 <p>Podríamos usar estadísticas para ajustar la distribución, ¡pero solo usaremos prueba y error por ahora! Aquí hay un código para ayudarlo a comenzar.</p>
 <p>Tenga en cuenta que la distribución logarítmica normal tiene dos parámetros: el primero (‘meanlog’) ayuda a definir la media y el otro (‘sdlog’) ayuda a determinar la variabilidad de la distribución.</p>

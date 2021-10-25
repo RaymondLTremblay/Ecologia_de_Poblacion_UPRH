@@ -81,7 +81,7 @@ Cada generador de números aleatorios tiene una **distribución **. Esta es una 
 
 Si desea seguir esta lección en R, puede encontrar el guión de R [aquí](LECTURE8.R). Recomiendo hacer clic derecho en el enlace, guardar el script en una carpeta designada y cargar el script en RStudio.
 
-Por ejemplo, la caja puede tener 10 "unos", 5 "dos" y 2 "tres". En este caso, la distribución se ve así (*probabilidad * de cada *posibilidad *):
+Por ejemplo, la caja puede tener 10 "unos", 5 "dos" y 2 "tres". En este caso, la distribución se ve así (*probabilidad* de cada *posibilidad*):
 
 ```{r}
 
@@ -92,8 +92,8 @@ Por ejemplo, la caja puede tener 10 "unos", 5 "dos" y 2 "tres". En este caso, la
 #####
 # define an arbitrary distribution
 
-box <- c(rep(1,10),rep(2,5),rep(3,2))                                           # define what's in the lottery ball machine (10 "1" balls, 5 "2" balls and 2 "3" balls)
-barplot(table(box)/sum(table(box)),ylab="probability",xlab="possibility")       # visualize the distribution of possibilities
+box <- c(rep(1,10),rep(2,5),rep(3,2))  # define what's in the lottery ball machine (10 "1" balls, 5 "2" balls and 2 "3" balls)
+barplot(table(box)/sum(table(box)),ylab="probability",xlab="possibility")  # visualize the distribution of possibilities
 
 ```
 
@@ -104,7 +104,7 @@ Una distribución de probabilidad puede ser prácticamente cualquier cosa que de
 
 ###
 Discreto frente a continuo
-En *distribuciones discretas *, cada resultado único tiene una probabilidad específica (como la probabilidad de lanzar una moneda 10 veces y obtener 4 caras). Por ejemplo, consideremos una *distribución binomial *
+En *distribuciones discretas*, cada resultado único tiene una probabilidad específica (como la probabilidad de lanzar una moneda 10 veces y obtener 4 caras). Por ejemplo, consideremos una *distribución binomial*
 
 
 ```{r}
@@ -134,7 +134,7 @@ barplot(probs,ylab="Probability",xlab="Possibilities",main="Binomial distributio
 ### Comprobamos esta distribución con un ejercicio en clase
 
 
-Cada estudiante tomará una moneda, y la tirará para y contará cuantos **caras** contabiliza de 10 tiradas.  Que tipo de característica biologíaca podría representar una distribución binomial?  
+Cada estudiante tomará una moneda, y la tirará para y contará cuantos **caras** contabiliza de 10 tiradas.  Que tipo de característica biologíaca podría representar una distribución binomial?  Aqui para comenzar datos ficticios. Tendrán que poner los datos recopilado en la clase. 
 
 ```{r}
 library(tidyverse)
@@ -151,7 +151,7 @@ ggplot(caras, aes(value))+
 
 **P ** ¿Qué parámetro de población podría ser útil para la modelización la distribución binomial?
 
-Otra distribución discreta que usaremos en esta clase es la *distribución de Poisson *:
+Otra distribución discreta que usaremos en esta clase es la *distribución de Poisson*:
 
 ```{r}
 
@@ -170,9 +170,9 @@ barplot(probs,ylab="Probability",xlab="Possibilities",main="Poisson distribution
 
 **P ** ¿Qué parámetro de población podría ser útil para modelar la distribución de Poisson?
 
-En *distribuciones continuas *, hay un número infinito de posibilidades entre dos posibilidades únicas.
+En *distribuciones continuas*, hay un número infinito de posibilidades entre dos posibilidades únicas.
 
-Consideremos la *distribución uniforme *:
+Consideremos la *distribución uniforme*:
 
 ```{r}
 
@@ -192,7 +192,7 @@ curve(dunif(x,lower,upper),0,10,ylab="Probability (density)",xlab="Possibilities
 
 Esta no es una distribución de aspecto muy interesante. Todos los números posibles del 0 al 10 son igualmente probables.
 
-Otra distribución continua que debe conocer se llama *Distribución normal *. Esta distribución (la clásica distribución en forma de campana) tiene un límite inferior de $-\infty $ y un límite superior de $\infty $.
+Otra distribución continua que debe conocer se llama *Distribución normal*. Esta distribución (la clásica distribución en forma de campana) tiene un límite inferior de $-\infty$ y un límite superior de $\infty$.
 
 **P ** ¿Qué parámetro de población podría ser útil esta distribución para modelar?
 
@@ -208,7 +208,7 @@ curve(dnorm(x,mean,stdev),0,15,ylab="Probability (density)",xlab="Possibilities"
 
 ```
 
-Otra distribución continua que debe conocer se llama  Distribución lognormal *. Esta distribución tiene un límite inferior de cero y un límite superior de $\infty $.
+Otra distribución continua que debe conocer se llama  Distribución **lognormal**. Esta distribución tiene un límite inferior de cero y un límite superior de $\infty$.
 
 
 **P** ¿Qué parámetro de población podría ser útil para el modelado de la distribución logarítmica normal?
@@ -225,9 +225,9 @@ curve(dlnorm(x,meanlog,stdevlog),0,15,ylab="Probability (density)",xlab="Possibi
 
 ```
 
-Otra distribución continua que quizás desee conocer se llama *distribución Beta *. Esta distribución tiene un límite inferior de cero y un límite superior de 1.
+Otra distribución continua que quizás desee conocer se llama *distribución Beta*. Esta distribución tiene un límite inferior de cero y un límite superior de 1.
 
-**P ** ¿Qué parámetro de población podría ser útil para modelar la distribución beta?
+**P** ¿Qué parámetro de población podría ser útil para modelar la distribución beta?
 
 ```{r}
 
@@ -264,7 +264,7 @@ myresults <- thisfunction([argument 1],[argument 2] ... )
 
 El primer *argumento * (especificado entre paréntesis en una llamada de función) representa cuántos números aleatorios desea que R extraiga de la distribución especificada.
 
-Los argumentos posteriores representan los *parámetros * de la distribución aleatoria de la que desea extraer; puede modificar estos parámetros para adaptarlos a sus necesidades. Aquí hay algunos ejemplos (dibujando 1 número aleatorio a la vez): 
+Los argumentos posteriores representan los *parámetros* de la distribución aleatoria de la que desea extraer; puede modificar estos parámetros para adaptarlos a sus necesidades. Aquí hay algunos ejemplos (dibujando 1 número aleatorio a la vez): 
 
 ```{r eval=F}
 
@@ -342,7 +342,7 @@ hist(hatch_perfem)
 
 ```
 
-**P **: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]
+**P**: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]
 
 ¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!
 
