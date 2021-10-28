@@ -212,6 +212,9 @@ Flood_prob <- 0.05      # 5% probabilidad de una gran inundación
 Flood_lambda <- 0.25    # 25% de la población puede sobrevivir a una inundación
 
 ```
+```{r}
+#remotes::install_github('yihui/tinytex')
+```
 
 
 ### Step 3: estructura espacial

@@ -608,6 +608,7 @@ Ricker &lt;- function(prev_abund){       # esta es una función para calcular la
 
 Flood_prob &lt;- 0.05      # 5% probabilidad de una gran inundación
 Flood_lambda &lt;- 0.25    # 25% de la población puede sobrevivir a una inundación</code></pre>
+<pre class="r"><code>#remotes::install_github(&#39;yihui/tinytex&#39;)</code></pre>
 </div>
 <div id="step-3-estructura-espacial" class="section level3">
 <h3>Step 3: estructura espacial</h3>
@@ -678,7 +679,7 @@ PlotCloud &lt;- function(simdata){
 }
 
 PlotCloud(Default)</code></pre>
-<p><img src="LECTURE12_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="LECTURE12_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Bien, ¿qué aprendemos de esto? Realmente, es un desastre !!!</p>
 <p>Si nuestra pregunta es sobre el riesgo de extinción, tal vez queramos trazar el riesgo de extinción por tiempo …</p>
 <pre class="r"><code># Visualice las tasas de extinción a lo largo del tiempo
@@ -689,14 +690,14 @@ Extinction_byyear &lt;- function(simdata){
 
 plot(c(1:101),Extinction_byyear(Default),type=&quot;l&quot;,lwd=2,xlab=&quot;year&quot;,ylab=&quot;extinction risk&quot;)
 abline(h=0.05,col=&quot;red&quot;,lwd=2)</code></pre>
-<p><img src="LECTURE12_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="LECTURE12_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Quizás nuestra pregunta sea sobre la probabilidad de declive en 100 años …</p>
 <p>En ese caso quizás deberíamos presentar un histograma de abundancias finales …</p>
 <pre class="r"><code># visualizar la abundancia final después de 100 años en relación con la abundancia inicial
 
 hist(Default[nrow(Default),],xlab=&quot;Final abundance after 100 years&quot;,ylab=&quot;Number of replicates&quot;,main=&quot;&quot;)
 abline(v=Init_N,col=&quot;green&quot;,lwd=2)</code></pre>
-<p><img src="LECTURE12_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="LECTURE12_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>O podríamos graficar el grado de disminución frente a la probabilidad de caer por debajo de ese umbral en el año 100.</p>
 <pre class="r"><code># plot probabilities of different severities of declinegraficar las probabilidades de diferentes grados de declive
 
@@ -710,7 +711,7 @@ for(s in 1:length(declines)){
 plot(declines,declineprob,type=&quot;l&quot;,lwd=2,xlab=&quot;Decline threshold (percent)&quot;,ylab=&quot;Probability of falling below threshold&quot;)
 
 abline(v=25,col=&quot;red&quot;,lwd=2)</code></pre>
-<p><img src="LECTURE12_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="LECTURE12_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>¿Y si nuestra pregunta es sobre el efecto de las inundaciones en el riesgo de extinción? Imaginemos que no se espera que la probabilidad de inundaciones cambie con el cambio climático, ¡pero es probable que la intensidad de los daños por inundaciones aumente sustancialmente!</p>
 <p>Actualmente, las inundaciones generalmente resultan en una reducción de la población del 10%. Pero el cambio climático podría aumentar este número hasta en un 90%. ¡Veamos cuánto podría aumentar esto el riesgo de extinción!</p>
 <pre class="r"><code># Grafique el riesgo de extinción en función de la gravedad de las inundaciones
@@ -729,7 +730,7 @@ for(scenario in 1:length(flood_lambdas)){
 
 plot(flood_lambdas,all_scenarios,type=&quot;p&quot;,cex=2,xlab=&quot;flood impact (lambda in flood year)&quot;,ylab=&quot;extinction risk&quot;)
 abline(h=0.05,col=&quot;red&quot;,lwd=2)</code></pre>
-<p><img src="LECTURE12_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="LECTURE12_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p><a href="LECTURE13.html">–go to next lecture–</a></p>
 </div>
 </div>
