@@ -366,9 +366,6 @@ div.tocify {
       <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
     </li>
     <li>
-      <a href="Tillandsia.html">Modelos matriciales de TILLANDSIA</a>
-    </li>
-    <li>
       <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
     </li>
     <li>
@@ -421,6 +418,9 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+    <li>
+      <a href="Tarea_Ballena.html">Tarea 2: Dinámica de Ballenas</a>
     </li>
   </ul>
 </li>
@@ -519,21 +519,21 @@ div.tocify {
 <h2>Modelos de metapoblación “clásicos”</h2>
 <p>El tipo más simple de modelo de población estructurado espacialmente es el modelo de metapoblación “clásico”.</p>
 <p>El concepto de metapoblación fue introducido por primera vez por el ecologista <a href="https://en.wikipedia.org/wiki/Richard_Levins">Richard Levins</a> en 1969, y desarrollado por <a href="https://en.wikipedia.org/wiki/Ilkka_Hanski">Ilkka Hanski</a> entre otros.</p>
-<p>En una metapoblación clásica, los parches están <strong>ocupados </strong> (codificados como 1) o <strong>desocupados </strong> (codificados como 0) en cualquier momento dado. No consideramos la abundancia ($N $) en estos modelos; solo hacemos un seguimiento de si cada parche está ocupado o no, y cuántos parches ocupados totales tenemos en nuestra metapoblación en cada paso de tiempo.</p>
+<p>En una metapoblación clásica, los parches están <strong>ocupados</strong> (codificados como 1) o <strong>desocupados</strong> (codificados como 0) en cualquier momento dado. No consideramos la abundancia ($N $) en estos modelos; solo hacemos un seguimiento de si cada parche está ocupado o no, y cuántos parches ocupados totales tenemos en nuestra metapoblación en cada paso de tiempo.</p>
 <p>That is, the [Stock] we are studying now is NOT the total number of individuals but instead it is the total number of occupied patches (or the fraction of patches occupied)!</p>
 <p>En lugar de investigar la dinámica de la población, estamos investigando la * dinámica de ocupación de la metapoblación *. Es decir, cómo cambia el número de parches ocupados (o la fracción de parches ocupados) con el tiempo.</p>
 <p>Bajo el modelo clásico, NO es una metapoblación a menos que algunos parches estén desocupados en algún momento.</p>
-<p><strong>P </strong>: ¿cómo crece una metapoblación?</p>
-<p><strong>P </strong>: ¿cómo se reduce una metapoblación?</p>
-<p><strong>P </strong>: ¿cuál es el equivalente de la estocasticidad demográfica en un modelo de metapoblación? [Edmodo]</p>
+<p><strong>P</strong>: ¿cómo crece una metapoblación?</p>
+<p><strong>P</strong>: ¿cómo se reduce una metapoblación?</p>
+<p><strong>P</strong>: ¿cuál es el equivalente de la estocasticidad demográfica en un modelo de metapoblación? [Edmodo]</p>
 <p>[pause video and answer TopHat question]</p>
-<p>La <strong>colonización </strong> es el proceso de transición de un parche de desocupado a ocupado.</p>
-<p>¿Cómo se puede colonizar un parche? La respuesta es <strong>inmigración </strong>, por supuesto. ¡Esa parte de la ecuación “BIDE” que hemos estado ignorando hasta ahora!</p>
-<p><strong>extirpación </strong> (o extinción) es el proceso de transición de un parche de ocupado a desocupado.</p>
-<p><strong>extinción regional (o global) </strong> representa la extinción (extirpación) de todos los parches en la metapoblación.</p>
+<p>La <strong>colonización</strong> es el proceso de transición de un parche de desocupado a ocupado.</p>
+<p>¿Cómo se puede colonizar un parche? La respuesta es <strong>inmigración</strong>, por supuesto. ¡Esa parte de la ecuación “BIDE” que hemos estado ignorando hasta ahora!</p>
+<p><strong>extirpación</strong> (o extinción) es el proceso de transición de un parche de ocupado a desocupado.</p>
+<p><strong>extinción regional (o global)</strong> representa la extinción (extirpación) de todos los parches en la metapoblación.</p>
 <p>Más formalmente, aquí hay algunos términos que consideraremos:</p>
-<p>$f_t $ es la fracción, o proporción, de parches que están ocupados en el momento $ t $. Esto también se conoce como ** tasa de ocupación **. Este es el [Stock] primario que modelamos en un modelo de metapoblación clásico.</p>
-<p>$I $ es la fracción total de parcelas colonizadas por inmigrantes por período de tiempo (tasa de colonización o tasa de “inmigración”).</p>
+<p><span class="math inline">\(f_t\)</span> es la fracción, o proporción, de parches que están ocupados en el momento $ t $. Esto también se conoce como ** tasa de ocupación **. Este es el [Stock] primario que modelamos en un modelo de metapoblación clásico.</p>
+<p><span class="math inline">\(I\)</span> es la fracción total de parcelas colonizadas por inmigrantes por período de tiempo (tasa de colonización o tasa de “inmigración”).</p>
 <p>$E $ es la fracción total de parches que se extirpan por período de tiempo (tasa de extirpación).</p>
 <p>Por tanto, el cambio de ocupación se puede expresar como:</p>
 <p><span class="math inline">\(\Delta f = I - E\)</span></p>
@@ -740,15 +740,8 @@ random code
 */</code></pre>
 <p>This will force 50% of the source population to try to move to the sink habitat each year! Nearly all individuals that are in the sink habitat will attempt to stay there.</p>
 <p>Also, change the lambda for the nearby sink to 0.25, (meaning 75% of the sink population dies each year due to predation). To do this, replace the [lambda bad] term in the births/deaths flow for the nearby sink with the number “0.25”. Open the equation editor for this flow- after you change, it should look something like this:</p>
-<pre><code>growth &lt;- [nearby sink]*Ln(0.25)
-
-totalexp &lt;- [nearby sink]+growth   # expected population size
-newexp &lt;- 0
-If totalexp&gt;0.5 Then
-  newexp &lt;- RandPoisson(totalexp)
-End If
-newexp-[nearby sink]
-</code></pre>
+<p>growth &lt;- [nearby sink]*Ln(0.25)</p>
+<p>totalexp &lt;- [nearby sink]+growth # expected population size newexp &lt;- 0 If totalexp&gt;0.5 Then newexp &lt;- RandPoisson(totalexp) End If newexp-[nearby sink]</p>
 <ol start="9" style="list-style-type: decimal">
 <li>Run the model with the nearby sink as an ecological trap, and try to address the following questions:</li>
 </ol>

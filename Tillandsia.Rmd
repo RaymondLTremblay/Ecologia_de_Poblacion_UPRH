@@ -2,14 +2,12 @@
 title: "Tillandsia brachycaulos"
 author: "BIOL4558"
 date: "Agosto 2021"
-output:
+output: 
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
     code_folding: hide
-  pdf_document:
-    toc: yes
 ---
 
 ```{r setup, include=FALSE}

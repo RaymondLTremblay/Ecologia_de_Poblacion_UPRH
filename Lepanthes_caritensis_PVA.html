@@ -467,8 +467,13 @@ div.tocify {
 
 
 <p>##example of projection calculations for sub-population 1</p>
-<pre class="r"><code>library(&#39;popbio&#39;)
-library(&#39;popdemo&#39;)</code></pre>
+<pre class="r"><code>library(&#39;popbio&#39;)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;popbio&#39;</code></pre>
+<pre><code>## The following object is masked _by_ &#39;.GlobalEnv&#39;:
+## 
+##     teasel</code></pre>
+<pre class="r"><code>library(&#39;popdemo&#39;)</code></pre>
 <pre><code>## Welcome to popdemo! This is version 1.3-0
 ## Use ?popdemo for an intro, or browseVignettes(&#39;popdemo&#39;) for vignettes
 ## Citation for popdemo is here: doi.org/10.1111/j.2041-210X.2012.00222.x
@@ -586,10 +591,10 @@ cat(&#39;lambda\n&#39;)</code></pre>
 ## [1] 1.017915
 ## 
 ## $sim
-## [1] 1.018132
+## [1] 1.017814
 ## 
 ## $sim.CI
-## [1] 1.017128 1.019136</code></pre>
+## [1] 1.016816 1.018813</code></pre>
 <pre class="r"><code>#Runs the projections. nreps is the number of replications. Takes awhile to run
 popProject  = stoch.projection(matrices=transMat, n0=popState, tmax=240, nmax=1000, nreps=1e4, prob=rep(1/24, length=24), verbose=FALSE)
 totPopSize  = apply(popProject, 1, sum)

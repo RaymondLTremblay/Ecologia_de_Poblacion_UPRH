@@ -2,14 +2,12 @@
 title: "Metapoblaciones: Metapopulations"
 author: "BIOL4558"
 date: "Agosto 2021"
-output:
+output: 
   html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
     code_folding: hide
-  pdf_document:
-    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -83,7 +81,7 @@ El tipo más simple de modelo de población estructurado espacialmente es el mod
 
 El concepto de metapoblación fue introducido por primera vez por el ecologista [Richard Levins](https://en.wikipedia.org/wiki/Richard_Levins) en 1969, y desarrollado por [Ilkka Hanski](https://en.wikipedia.org/wiki/Ilkka_Hanski) entre otros.    
 
-En una metapoblación clásica, los parches están **ocupados ** (codificados como 1) o **desocupados ** (codificados como 0) en cualquier momento dado. No consideramos la abundancia ($N $) en estos modelos; solo hacemos un seguimiento de si cada parche está ocupado o no, y cuántos parches ocupados totales tenemos en nuestra metapoblación en cada paso de tiempo.
+En una metapoblación clásica, los parches están **ocupados** (codificados como 1) o **desocupados** (codificados como 0) en cualquier momento dado. No consideramos la abundancia ($N $) en estos modelos; solo hacemos un seguimiento de si cada parche está ocupado o no, y cuántos parches ocupados totales tenemos en nuestra metapoblación en cada paso de tiempo.
 
 That is, the [Stock] we are studying now is NOT the total number of individuals but instead it is the total number of occupied patches (or the fraction of patches occupied)!
 
@@ -91,27 +89,27 @@ En lugar de investigar la dinámica de la población, estamos investigando la * 
 
 Bajo el modelo clásico, NO es una metapoblación a menos que algunos parches estén desocupados en algún momento.
 
-**P **: ¿cómo crece una metapoblación?
+**P**: ¿cómo crece una metapoblación?
 
-**P **: ¿cómo se reduce una metapoblación?
+**P**: ¿cómo se reduce una metapoblación?
 
-**P **: ¿cuál es el equivalente de la estocasticidad demográfica en un modelo de metapoblación? [Edmodo]
+**P**: ¿cuál es el equivalente de la estocasticidad demográfica en un modelo de metapoblación? [Edmodo]
 
 [pause video and answer TopHat question]
 
-La **colonización ** es el proceso de transición de un parche de desocupado a ocupado.
+La **colonización** es el proceso de transición de un parche de desocupado a ocupado.
 
-¿Cómo se puede colonizar un parche? La respuesta es **inmigración **, por supuesto. ¡Esa parte de la ecuación "BIDE" que hemos estado ignorando hasta ahora!
+¿Cómo se puede colonizar un parche? La respuesta es **inmigración**, por supuesto. ¡Esa parte de la ecuación "BIDE" que hemos estado ignorando hasta ahora!
 
-**extirpación ** (o extinción) es el proceso de transición de un parche de ocupado a desocupado.
+**extirpación** (o extinción) es el proceso de transición de un parche de ocupado a desocupado.
 
-**extinción regional (o global) ** representa la extinción (extirpación) de todos los parches en la metapoblación.
+**extinción regional (o global)** representa la extinción (extirpación) de todos los parches en la metapoblación.
 
 Más formalmente, aquí hay algunos términos que consideraremos:
 
-$f_t $ es la fracción, o proporción, de parches que están ocupados en el momento $ t $. Esto también se conoce como ** tasa de ocupación **. Este es el [Stock] primario que modelamos en un modelo de metapoblación clásico.
+$f_t$ es la fracción, o proporción, de parches que están ocupados en el momento $ t $. Esto también se conoce como ** tasa de ocupación **. Este es el [Stock] primario que modelamos en un modelo de metapoblación clásico.
 
-$I $ es la fracción total de parcelas colonizadas por inmigrantes por período de tiempo (tasa de colonización o tasa de "inmigración").
+$I$ es la fracción total de parcelas colonizadas por inmigrantes por período de tiempo (tasa de colonización o tasa de "inmigración").
 
 $E $ es la fracción total de parches que se extirpan por período de tiempo (tasa de extirpación).
 
@@ -411,7 +409,7 @@ This will force 50% of the source population to try to move to the sink habitat 
 
 Also, change the lambda for the nearby sink to 0.25, (meaning 75% of the sink population dies each year due to predation). To do this, replace the [lambda bad] term in the births/deaths flow for the nearby sink with the number "0.25". Open the equation editor for this flow- after you change, it should look something like this:
 
-```
+
 growth <- [nearby sink]*Ln(0.25)
 
 totalexp <- [nearby sink]+growth   # expected population size
@@ -421,7 +419,7 @@ If totalexp>0.5 Then
 End If
 newexp-[nearby sink]
 
-```
+
 
 
 
