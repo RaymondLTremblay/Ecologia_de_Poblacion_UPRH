@@ -173,7 +173,7 @@ Para simplificar, ignoremos la estructura de edades por ahora: ¡esto es solo un
 Aquí está la parametrización básica del modelo:
 
 ```{r}
-
+#install.packages(c('tinytex', dependencies=T))
 ##############
 # Demostración PVA
 ##############

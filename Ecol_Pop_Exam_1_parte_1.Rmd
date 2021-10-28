@@ -40,7 +40,7 @@ N
 2. If the population size in 1993 was 5.4 billion, what was the projected population size for the year 2021 using the a growth  rate with doubling time of 50 years?
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 r=log(2)/50
 r
 e=2.71828182845904523536028747135266249
@@ -59,7 +59,7 @@ N
 
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 Diff=7.796-7.961
 Diff
 ```
@@ -124,7 +124,7 @@ Nt
 
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 library(tidyverse)
 df=tribble(
   ~day, ~N,
@@ -152,7 +152,7 @@ ggplot(df, aes(day, N))+
 8.  A population of annual grasses increases in size by 12% every year. This species was introduced as cow foder.  What is the approximate doubling time?
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 #t_double=ln(2)/r
 Ng=100
 e=2.7182818284590
