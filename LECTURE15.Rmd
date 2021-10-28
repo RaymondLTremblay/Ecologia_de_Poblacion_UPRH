@@ -8,8 +8,7 @@ output:
     toc: yes
     toc_float: yes
     code_folding: hide
-  pdf_document:
-    toc: yes
+
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ####  Estimación de Parametros                          ####
 ############################################################
 
-
+library(tinytex)
 ```
 
 # Estimación de parámetros para modelos de población de vida silvestre.
