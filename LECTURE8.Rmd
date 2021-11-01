@@ -359,7 +359,7 @@ hist(hatch_perfem)
 
 ```
 
-**P**: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]
+**P**: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre?
 
 ¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!
 
@@ -379,7 +379,9 @@ hist(hatch_perfem,freq=F,main="Histogram of avg number hatched per female",xlab=
 
 curve(dlnorm(x,meanlog=1.5,sdlog=0.39),col="green",lty=2,lwd=2,add=T)
 
-curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col="green",lty=2,lwd=2,add=T)    # try a different value...
+curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col="green",lty=2,lwd=2,add=T) 
+
+curve(dlnorm(x,meanlog=2.0,sdlog=0.39),col="red",lty=2,lwd=2,add=T) # try a different value...
 
 #### ¡Siga cambiando el valor de 'meanlog' hasta que encuentre los mejores parámetros que se ajusten a los datos!
 
@@ -389,19 +391,80 @@ rlnorm(5,meanlog=1.5,sdlog=0.39)    # ¡por ejemplo! (¡recuerde cambiar el par�
 
 ```
 
+## Función para encontrar los parámetros de una distribución
+
 ```{r echo=FALSE, eval=FALSE}
 
 library(MASS)
+library(fitdistrplus)
 fitdistr(hatch_perfem,"log-normal")
 
 ```
 
 
-1) Utilice prueba y error para encontrar el parámetro "meanlog" apropiado para la distribución logarítmica normal.
+1) Utilice una función para determinar cual los mejores parámetros de tendencia central y dispersión para encontrar el parámetro "meanlog" apropiado para la distribución logarítmica normal.
+
 
 2) Use su distribución ajustada para predecir el número promedio de crías por hembra durante los próximos 5 años. Para hacer esto, use la función "rlnorm ()" en R.
 
-**P **: ¿Cuál es el valor de mejor ajuste para "meanlog"?  [Edmodo]
+```{r eval=FALSE, include=FALSE}
+
+hatch_5_years=hatch_perfem/5
+fitdistr(hatch_5_years,"log-normal")
+data=rlnorm(1000, -0.92822498, 0.38756090)
+exp(data)  # USe exp to convert he values from lognotmal to numbers again.  
+
+
+#c=log(2)
+#exp(c)
+```
+
+
+
+**P **: ¿Cuál es el valor de mejor ajuste para "meanlog"? 
+
+
+Segundo ejemplo:
+
+Asume que evaluaste 10 poblaciones de mariposas en un año especifico, y que encontraste que los individuos inmaduros (las larvas) tienen la siguiente supervivencias en las 10 poblaciones que evaluaste.  Usa los siguientes datos para calcular el promedio y su dispersión con la función adecuada.  
+
+Calculando los momentos de una beta distibución con los datos orginales
+
+```{r eval=FALSE, include=FALSE}
+beta_mom <- function(x) {
+
+  m_x <- mean(x, na.rm = TRUE)
+  s_x <- sd(x, na.rm = TRUE)
+
+  alpha <- m_x*((m_x*(1 - m_x)/s_x^2) - 1)
+  beta <- (1 - m_x)*((m_x*(1 - m_x)/s_x^2) - 1)
+
+  return(list(alpha = alpha, beta = beta))
+
+}
+
+```
+
+
+
+
+```{r eval=FALSE, include=FALSE}
+Larva_supevivencia=c(0.184, 0.113, 0.355, 0.344, 0.295, 0.226, 0.207, 0.178, 0.171, 0.257)
+beta_mom(Larva_supevivencia)
+
+```
+
+
+
+```{r eval=FALSE, include=FALSE}
+library(fitdistrplus)
+fit=fitdist(Larva_supevivencia,"beta")
+fit
+plot(fit, las=1)
+```
+
+
+
 
 
 

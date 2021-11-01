@@ -723,7 +723,7 @@ hatch_perfem &lt;- c(3.05, 1.45, 0.99, 3.24, 1.49, 1.70, 1.66, 2.32, 0.83, 2.41,
 
 hist(hatch_perfem)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p><strong>P</strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre? [Edmodo]</p>
+<p><strong>P</strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre?</p>
 <p>¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!</p>
 <p>Podríamos usar estadísticas para ajustar la distribución, ¡pero solo usaremos prueba y error por ahora! Aquí hay un código para ayudarlo a comenzar.</p>
 <p>Tenga en cuenta que la distribución logarítmica normal tiene dos parámetros: el primero (‘meanlog’) ayuda a definir la media y el otro (‘sdlog’) ayuda a determinar la variabilidad de la distribución.</p>
@@ -737,7 +737,9 @@ hist(hatch_perfem,freq=F,main=&quot;Histogram of avg number hatched per female&q
 
 curve(dlnorm(x,meanlog=1.5,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T)
 
-curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T)    # try a different value...</code></pre>
+curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T) 
+
+curve(dlnorm(x,meanlog=2.0,sdlog=0.39),col=&quot;red&quot;,lty=2,lwd=2,add=T) # try a different value...</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code>#### ¡Siga cambiando el valor de &#39;meanlog&#39; hasta que encuentre los mejores parámetros que se ajusten a los datos!
 
@@ -745,12 +747,18 @@ curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col=&quot;green&quot;,lty=2,lwd=2,add=T) 
 
 rlnorm(5,meanlog=1.5,sdlog=0.39)    # ¡por ejemplo! (¡recuerde cambiar el parámetro &quot;meanlog&quot; por el valor que identificó anteriormente!)</code></pre>
 <pre><code>## [1] 3.795581 5.621093 4.929633 3.205789 4.953206</code></pre>
+</div>
+</div>
+<div id="función-para-encontrar-los-parámetros-de-una-distribución" class="section level2">
+<h2>Función para encontrar los parámetros de una distribución</h2>
 <ol style="list-style-type: decimal">
-<li><p>Utilice prueba y error para encontrar el parámetro “meanlog” apropiado para la distribución logarítmica normal.</p></li>
+<li><p>Utilice una función para determinar cual los mejores parámetros de tendencia central y dispersión para encontrar el parámetro “meanlog” apropiado para la distribución logarítmica normal.</p></li>
 <li><p>Use su distribución ajustada para predecir el número promedio de crías por hembra durante los próximos 5 años. Para hacer esto, use la función “rlnorm ()” en R.</p></li>
 </ol>
-<p><strong>P </strong>: ¿Cuál es el valor de mejor ajuste para “meanlog”? [Edmodo]</p>
-</div>
+<p><strong>P </strong>: ¿Cuál es el valor de mejor ajuste para “meanlog”?</p>
+<p>Segundo ejemplo:</p>
+<p>Asume que evaluaste 10 poblaciones de mariposas en un año especifico, y que encontraste que los individuos inmaduros (las larvas) tienen la siguiente supervivencias en las 10 poblaciones que evaluaste. Usa los siguientes datos para calcular el promedio y su dispersión con la función adecuada.</p>
+<p>Calculando los momentos de una beta distibución con los datos orginales</p>
 <div id="ejercicio-en-clase-2-estocasticidad-e-incertidumbre-en-insightmaker" class="section level3">
 <h3>Ejercicio en clase 2: estocasticidad e incertidumbre en InsightMaker</h3>
 <p>Estos conceptos (como todo en esta clase) se entienden mejor construyendo modelos.</p>

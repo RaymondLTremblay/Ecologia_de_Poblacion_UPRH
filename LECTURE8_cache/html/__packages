@@ -19,3 +19,5 @@ dplyr
 stringr
 forcats
 gt
+MASS
+fitdistrplus
