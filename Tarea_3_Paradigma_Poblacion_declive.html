@@ -12,12 +12,12 @@
 <meta name="author" content="Raymond L. Tremblay" />
 
 
-<title>Tarea_Poblacion_declive</title>
+<title>Tarea Población en declive</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -30,7 +30,11 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
@@ -216,7 +220,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -226,6 +296,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -384,17 +464,27 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">Tarea_Poblacion_declive</h1>
+
+<h1 class="title toc-ignore">Tarea Población en declive</h1>
 <h4 class="author">Raymond L. Tremblay</h4>
 <h4 class="date">11/6/2021</h4>
 
 </div>
 
 
+<hr />
 <div id="puntuación-total-25-puntos" class="section level2">
 <h2>Puntuación total 25 puntos</h2>
+<hr />
 </div>
 <div id="las-siguientes-preguntas-son-basado-en-la-información-del-paradigma-de-población-en-declive" class="section level2">
 <h2>Las siguientes preguntas son basado en la información del <strong>Paradigma de población en declive</strong></h2>
@@ -405,7 +495,8 @@ $(document).ready(function () {
 <li><p>Cual es el Paradigma de población en declive: define claramente con ejemplos <em>(2 puntos)</em></p></li>
 <li><p>Cual son los dos vertiende de estudio para evaluar las población en declive? <em>(2 puntos)</em></p></li>
 </ol>
-<p><strong>Las proximas preguntas son de modelaje usando “InsightMaker”. Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.</strong> Siempre correr múltiple simulaciones para observar la variación</p>
+<hr />
+<p><strong>Las próximas preguntas son de modelaje usando “InsightMaker”. Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.</strong> Siempre correr múltiple simulaciones para observar la variación</p>
 <ol start="5" style="list-style-type: decimal">
 <li>Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y normalmente distribuida - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en el modelo para lograr este rango.</li>
 </ol>
@@ -415,8 +506,9 @@ $(document).ready(function () {
 <ul>
 <li>Explica con figuras (Screenshots de unos modelos) lo que observaste en los modelos y como los interpretas <em>(5 puntos)</em></li>
 </ul>
+<hr />
 <ol start="6" style="list-style-type: decimal">
-<li>Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd) con una población al principio de 200.</li>
+<li>Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd=0) con una población al principio de 200.</li>
 </ol>
 <p>6a. Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat), sin cambio en tiempo (SD frac hl = 0). <em>(4 puntos)</em> - Que occure con la población a los 50 años? - Que quiere decir que hay 10% de pérdida fraccional de hábitat?</p>
 <p>6b ¿Parece realista la reducción de K a lo largo del tiempo? ¿Puedes imaginar otras formas plausibles para esta curva? Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional) Y 10% de recolección (recolección fraccionada y pérdida de hábitat fraccional). <em>(3 puntos)</em></p>
@@ -424,6 +516,8 @@ $(document).ready(function () {
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -455,7 +549,41 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

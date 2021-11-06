@@ -1,8 +1,13 @@
 ---
-title: "Tarea_Poblacion_declive"
+title: "Tarea Población en declive"
 author: "Raymond L. Tremblay"
 date: "11/6/2021"
-output: html_document
+output: 
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +15,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+***
+
 ## Puntuación total 25 puntos
+
+***
+
 
 ## Las siguientes preguntas son basado en la información del **Paradigma de población en declive**
 
@@ -25,7 +35,9 @@ Se respondrá las preguntas en MSTeam. La plataforma sera abierta con tiempos li
 
 4. Cual son los dos vertiende de estudio para evaluar las población en declive? *(2 puntos)*
 
-**Las proximas preguntas son de modelaje usando "InsightMaker". Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.**  Siempre correr múltiple simulaciones para observar la variación
+***
+
+**Las próximas preguntas son de modelaje usando "InsightMaker". Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.**  Siempre correr múltiple simulaciones para observar la variación
 
 
 5. Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y normalmente distribuida - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en el modelo para lograr este rango.
@@ -40,8 +52,10 @@ Se respondrá las preguntas en MSTeam. La plataforma sera abierta con tiempos li
   - cuando la tasa de cosecha es del 40% y la variación (desviación estándar en la tasa de cosecha es del 25%)? 
   
   - Explica con figuras (Screenshots de unos modelos) lo que observaste en los modelos y como los interpretas *(5 puntos)*
+  
+***  
 
-6. Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd) con una población al principio de 200.
+6. Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd=0) con una población al principio de 200.
 
 6a. Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat), sin cambio en tiempo (SD frac hl = 0). *(4 puntos)*
    - Que occure con la población a los 50 años?
