@@ -1,0 +1,54 @@
+---
+title: "Tarea_Poblacion_declive"
+author: "Raymond L. Tremblay"
+date: "11/6/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Puntuación total 25 puntos
+
+## Las siguientes preguntas son basado en la información del **Paradigma de población en declive**
+
+Se respondrá las preguntas en MSTeam. La plataforma sera abierta con tiempos limitados.  Ven las preguntas aqui y responden la antes de abrir el documento en MSTeam
+
+
+1. Cual es la diferencia entre **amenazas estocásticas** y **amenazas deterimnisticas**? *(2 puntos)*
+
+2. Buscar un ejemplo en la literatura citado por pares (usa Google Scholar o Rsearch Date) de los dos tipos de anenazas, y describe lo que encontrarón en un paragrafo.  (menciona la información del articulo, añadir el DOI). *(4 puntos/ 2 por cada tipo de amenazas)*.
+
+3. Cual es el Paradigma de población en declive: define claramente con ejemplos *(2 puntos)*
+
+4. Cual son los dos vertiende de estudio para evaluar las población en declive? *(2 puntos)*
+
+**Las proximas preguntas son de modelaje usando "InsightMaker". Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.**  Siempre correr múltiple simulaciones para observar la variación
+
+
+5. Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y normalmente distribuida - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en el modelo para lograr este rango.
+
+5a.  ¿Qué valor usó para la desviación estándar de la distribución normal? *(2 puntos)*
+
+5b. ¿Se considera mejor esta variación en la tasa de cosecha como un tipo de estocasticidad demográfica o un tipo de estocasticidad ambiental ? *(1 puntos)*
+
+5c. ¿Qué pasa si cambia la tasa de cosecha, la hace aún más extrema? Comenzando con una abundancia de 200, ¿cuál es la abundancia final esperada (después de 50 años) 
+  - cuando la cosecha es de 10% sin variación tiempo (SD =0)
+  - cuando la cosecha es de 10% y variación en cosecha en tiempo de .20. 
+  - cuando la tasa de cosecha es del 40% y la variación (desviación estándar en la tasa de cosecha es del 25%)? 
+  
+  - Explica con figuras (Screenshots de unos modelos) lo que observaste en los modelos y como los interpretas *(5 puntos)*
+
+6. Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd) con una población al principio de 200.
+
+6a. Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat), sin cambio en tiempo (SD frac hl = 0). *(4 puntos)*
+   - Que occure con la población a los 50 años?
+   - Que quiere decir que hay 10% de pérdida fraccional de hábitat?  
+    
+6b  ¿Parece realista la reducción de K a lo largo del tiempo? 
+    ¿Puedes imaginar otras formas plausibles para esta curva?
+Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional) Y 10% de recolección (recolección fraccionada y pérdida de hábitat fraccional). *(3 puntos)*
+
+

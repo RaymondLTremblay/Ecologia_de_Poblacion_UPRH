@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Raymond L. Tremblay" />
+
+
+<title>Tarea_Poblacion_declive</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Conferencias
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1_2.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">Paloma Viajera</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE6a.html">Dinamica Poblacional en Orquideas</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+    <li>
+      <a href="Tarea_Ballena.html">Tarea 2: Dinámica de Ballenas</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Invitados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Invitados.html">Lecturas de los Invitados</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Ejemplos de proyecto de PVA
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PVA_Ejemplos.html">PVA por los estudiantes</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Tarea_Poblacion_declive</h1>
+<h4 class="author">Raymond L. Tremblay</h4>
+<h4 class="date">11/6/2021</h4>
+
+</div>
+
+
+<div id="puntuación-total-25-puntos" class="section level2">
+<h2>Puntuación total 25 puntos</h2>
+</div>
+<div id="las-siguientes-preguntas-son-basado-en-la-información-del-paradigma-de-población-en-declive" class="section level2">
+<h2>Las siguientes preguntas son basado en la información del <strong>Paradigma de población en declive</strong></h2>
+<p>Se respondrá las preguntas en MSTeam. La plataforma sera abierta con tiempos limitados. Ven las preguntas aqui y responden la antes de abrir el documento en MSTeam</p>
+<ol style="list-style-type: decimal">
+<li><p>Cual es la diferencia entre <strong>amenazas estocásticas</strong> y <strong>amenazas deterimnisticas</strong>? <em>(2 puntos)</em></p></li>
+<li><p>Buscar un ejemplo en la literatura citado por pares (usa Google Scholar o Rsearch Date) de los dos tipos de anenazas, y describe lo que encontrarón en un paragrafo. (menciona la información del articulo, añadir el DOI). <em>(4 puntos/ 2 por cada tipo de amenazas)</em>.</p></li>
+<li><p>Cual es el Paradigma de población en declive: define claramente con ejemplos <em>(2 puntos)</em></p></li>
+<li><p>Cual son los dos vertiende de estudio para evaluar las población en declive? <em>(2 puntos)</em></p></li>
+</ol>
+<p><strong>Las proximas preguntas son de modelaje usando “InsightMaker”. Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.</strong> Siempre correr múltiple simulaciones para observar la variación</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y normalmente distribuida - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en el modelo para lograr este rango.</li>
+</ol>
+<p>5a. ¿Qué valor usó para la desviación estándar de la distribución normal? <em>(2 puntos)</em></p>
+<p>5b. ¿Se considera mejor esta variación en la tasa de cosecha como un tipo de estocasticidad demográfica o un tipo de estocasticidad ambiental ? <em>(1 puntos)</em></p>
+<p>5c. ¿Qué pasa si cambia la tasa de cosecha, la hace aún más extrema? Comenzando con una abundancia de 200, ¿cuál es la abundancia final esperada (después de 50 años) - cuando la cosecha es de 10% sin variación tiempo (SD =0) - cuando la cosecha es de 10% y variación en cosecha en tiempo de .20. - cuando la tasa de cosecha es del 40% y la variación (desviación estándar en la tasa de cosecha es del 25%)?</p>
+<ul>
+<li>Explica con figuras (Screenshots de unos modelos) lo que observaste en los modelos y como los interpretas <em>(5 puntos)</em></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd) con una población al principio de 200.</li>
+</ol>
+<p>6a. Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat), sin cambio en tiempo (SD frac hl = 0). <em>(4 puntos)</em> - Que occure con la población a los 50 años? - Que quiere decir que hay 10% de pérdida fraccional de hábitat?</p>
+<p>6b ¿Parece realista la reducción de K a lo largo del tiempo? ¿Puedes imaginar otras formas plausibles para esta curva? Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional) Y 10% de recolección (recolección fraccionada y pérdida de hábitat fraccional). <em>(3 puntos)</em></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

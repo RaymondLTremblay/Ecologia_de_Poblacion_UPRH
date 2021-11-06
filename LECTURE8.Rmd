@@ -160,7 +160,7 @@ Otra distribución discreta que usaremos en esta clase es la *distribución de P
 # Distribución de Poisson
 
 xvals <- seq(0,10,1)
-probs <- dpois(xvals,lambda=2.2)     # P0isson distribution
+probs <- dpois(xvals,lambda=2.2)     # Poisson distribution
 names(probs) <- xvals
                
 barplot(probs,ylab="Probability",xlab="Possibilities",main="Poisson distribution (discrete)")
@@ -306,6 +306,13 @@ rlnorm(1,meanlog=0.5,sdlog=0.2)    # lognormal distribution is defined by "meanl
 
 ### beta random number generator (bounded between 0 and 1- just like survival rate!)
 rbeta(1,shape1=10,shape2=3)  # beta distribution is defined by "shape1" and "shape2", which together define the mean and spread within the range from 0 to 1.
+
+## Para información sobr ela distribución beta vea los sigyuientes enlaces
+
+# 1. https://keisan.casio.com/exec/system/1180573226
+# 2. https://stats.stackexchange.com/questions/376634/how-to-pick-starting-parameters-for-massfitdist-with-the-beta-distribution
+
+
 
 
 ```
