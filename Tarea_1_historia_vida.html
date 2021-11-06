@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="BIOL4558" />
+
+
+<title>Tarea_1_Historia_de_Vida</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Conferencias
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1_2.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">Paloma Viajera</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE6a.html">Dinamica Poblacional en Orquideas</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+    <li>
+      <a href="Tarea_Ballena.html">Tarea 2: Dinámica de Ballenas</a>
+    </li>
+    <li>
+      <a href="Tarea_3_Paradigma_Poblacion_declive.html">Tarea 3: Paradigma de población en declive</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Invitados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Invitados.html">Lecturas de los Invitados</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Ejemplos de proyecto de PVA
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PVA_Ejemplos.html">PVA por los estudiantes</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Tarea_1_Historia_de_Vida</h1>
+<h4 class="author">BIOL4558</h4>
+<h4 class="date">Agosto 2021</h4>
+
+</div>
+
+
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## Warning in (function (kind = NULL, normal.kind = NULL, sample.kind = NULL) :
+## non-uniform &#39;Rounding&#39; sampler used</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
+## ✓ readr   2.0.2     ✓ forcats 0.5.1</code></pre>
+<pre><code>## Warning in (function (kind = NULL, normal.kind = NULL, sample.kind = NULL) :
+## non-uniform &#39;Rounding&#39; sampler used</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter()     masks stats::filter()
+## x dplyr::group_rows() masks kableExtra::group_rows()
+## x dplyr::lag()        masks stats::lag()</code></pre>
+<pre class="r"><code>library(gt)
+#library(kableExtra)</code></pre>
+<div id="ejercicios" class="section level2">
+<h2>Ejercicios</h2>
+<p>En este Ejercicio, Ud. podrá en practica los métodos de análisis aprendido en el capitulo 3, las paginas 50-71. Los datos provienen de dos especies de herbáceas de Noruega, <em>Dactylorhiza lapponica</em> y <em>Gymnadenia conopsea</em>. Los datos fueron recolectado de parcelas permanentes del 1982 al 2000. El articulo se encuentra en este enlace <a href="PDF/Oien.pdf">here</a>.</p>
+<p><strong>P1</strong> Con los datos de la tabla 4 en el articulo. Produzca una gráfica similar a la figura 1.6 en el libro de Gotelli. Añadir ambas secuencias (ambas especies) en la misma gráfica. Asegurar que los ejes esten bien identificados (Subir la grafica a Edmodo)</p>
+<pre class="r"><code>Number_Ind= tribble(
+~Species, ~Year, ~N,
+ &quot;Dl&quot;, 1982, 36,
+ &quot;Dl&quot;, 1983, 18,
+&quot;Dl&quot;,1984, 71,
+&quot;Dl&quot;, 1985, 23,
+&quot;Dl&quot;,1986, 29,
+&quot;Dl&quot;,1987, 21,
+&quot;Dl&quot;,1988, 5,
+&quot;Dl&quot;, 1989, 72,
+&quot;Dl&quot;, 1990, 74,
+&quot;Dl&quot;, 1991, 39,
+&quot;Dl&quot;, 1992, 72,
+&quot;Dl&quot;, 1993, 35,
+&quot;Dl&quot;,1994, 43,
+&quot;Dl&quot;, 1995, 34,
+&quot;Dl&quot;,1996, 45,
+&quot;Dl&quot;, 1997, 42,
+&quot;Dl&quot;, 1998, 78,
+&quot;Dl&quot;, 1999, 30,
+&quot;Dl&quot;, 2000, 35,
+  &quot;Gc&quot;, 1982, 2,
+ &quot;Gc&quot;, 1983, 5,
+&quot;Gc&quot;,1984, 19,
+&quot;Gc&quot;, 1985, 16,
+&quot;Gc&quot;,1986, 10,
+&quot;Gc&quot;,1987, 9,
+&quot;Gc&quot;,1988, 10,
+&quot;Gc&quot;, 1989, 16,
+&quot;Gc&quot;, 1990, 22,
+&quot;Gc&quot;, 1991, 25,
+&quot;Gc&quot;, 1992, 25,
+&quot;Gc&quot;, 1993, 7,
+&quot;Gc&quot;,1994, 31,
+&quot;Gc&quot;, 1995, 18,
+&quot;Gc&quot;,1996, 25,
+&quot;Gc&quot;, 1997, 71,
+&quot;Gc&quot;, 1998, 51,
+&quot;Gc&quot;, 1999, 27,
+&quot;Gc&quot;, 2000, 24,
+)</code></pre>
+<pre class="r"><code>Number_Ind</code></pre>
+<pre><code>## # A tibble: 38 × 3
+##    Species  Year     N
+##    &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 Dl       1982    36
+##  2 Dl       1983    18
+##  3 Dl       1984    71
+##  4 Dl       1985    23
+##  5 Dl       1986    29
+##  6 Dl       1987    21
+##  7 Dl       1988     5
+##  8 Dl       1989    72
+##  9 Dl       1990    74
+## 10 Dl       1991    39
+## # … with 28 more rows</code></pre>
+<pre class="r"><code>Number_Ind %&gt;% 
+  ggplot(aes(Year, N, color=Species)) +
+  geom_point()+
+  geom_line() +
+  scale_x_continuous(breaks = seq(1982, 2000, by = 1))+
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5, hjust=.5))+
+  ylab(&quot;Cantidad de individuos \n en flor en cada año&quot;)</code></pre>
+<p><img src="Tarea_1_historia_vida_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><strong>P2</strong> Usando el resultado de la gráfica anterior (contestar en EDMODO) - Determina si el crecimiento poblacional es exponencial.<br />
+- Explica su interpretación. - De por lo menos dos razones ecológicas que limitaría el crecimiento exponencial</p>
+<p><strong>P3</strong> Con los datos abajo que estan representado en la tabla 6 del articulo, incluyo aqui informacióin ficticia sobre la fecundidad.<br />
+- Haga los siguientes cálculos ANTES contestar las preguntas. Presenta una tabla similar Gotelli (Table 3.1) con los datos.</p>
+<ul>
+<li>Calcula <strong>gx</strong></li>
+<li>Calcula <strong>Ro</strong></li>
+</ul>
+</div>
+<div id="razón-de-mortandad" class="section level1">
+<h1>Razón de mortandad</h1>
+<ul>
+<li>Calcula <strong>qx</strong>, explica como se calcula este indice</li>
+</ul>
+</div>
+<div id="largo-de-una-generación" class="section level1">
+<h1>Largo de una generación</h1>
+<ul>
+<li>Calcula <strong>G</strong></li>
+</ul>
+<p>Asegurate de contestar <strong>TODAS</strong> la preguntas.</p>
+<p>Contestar en Edmodo</p>
+<ul>
+<li>Cual es la edad que la supervivencia es más alta (para ambas situación, synthed and unscythed)</li>
+<li>Cual es la edad que la supervivencia es más baja (para ambas situación, synthed and unscythed)</li>
+<li>Basado en esta formula anterior, cual es la edad que hay mayor probabilidad de morir y cual es el la razón para plantes en el ambiente unsynthed?</li>
+<li>Cual es la edad donde hay menor probabilidad de morir?</li>
+<li>Cual es el largo de una “Generación” (para ambas situación, synthed and unscythed)</li>
+<li>Cual es el estimado de <strong>r</strong> (para ambas situación, synthed and unscythed).</li>
+<li>Que efecto tiene el manejo del sitio (unscythed and scythed) sobre la supervivencia de los individuos de este especies.</li>
+</ul>
+<p>Aquí están los datos. NOTA que en el articulo no hay datos de fecundidad por consecuencia se añadió aquí unos datos ficticios. Los datos don para <em>Dactylorhiza lapponica</em> (Unscythed), y <em>D. lapponica</em> (Scythed)</p>
+<pre class="r"><code>Life_Table = tribble(
+ ~Species, ~Treatment, ~Year_after_first_flowering, ~N, ~lx, ~bx,
+  &quot;Dl&quot;, &quot;Unscythes&quot;, 0, 142, 1.00, 1,
+&quot;Dl&quot;, &quot;Unscythes&quot;, 1, 111, 0.78,1,
+&quot;Dl&quot;, &quot;Unscythes&quot;,2,  94, 0.66,1,
+&quot;Dl&quot;, &quot;Unscythes&quot;,3,  86, 0.61,1,
+&quot;Dl&quot;, &quot;Unscythes&quot;,4,  77, 0.54,1,
+&quot;Dl&quot;, &quot;Unscythes&quot;,5,  72, 0.51,1,
+&quot;Dl&quot;, &quot;Unscythes&quot;,6,  70, 0.49,1,
+&quot;Dl&quot;, &quot;Unscythes&quot;,7,  63, 0.44,.9,
+&quot;Dl&quot;, &quot;Unscythes&quot;,8,  59, 0.42,.7,
+&quot;Dl&quot;, &quot;Unscythes&quot;,9,  58,0.41,.5,
+&quot;Dl&quot;, &quot;Unscythes&quot;,10, 49,0.35,.1,
+)
+
+gt(Life_Table)</code></pre>
+<div id="nnggssdjjh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#nnggssdjjh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nnggssdjjh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nnggssdjjh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nnggssdjjh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nnggssdjjh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nnggssdjjh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nnggssdjjh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nnggssdjjh .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nnggssdjjh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nnggssdjjh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nnggssdjjh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nnggssdjjh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nnggssdjjh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#nnggssdjjh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nnggssdjjh .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nnggssdjjh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nnggssdjjh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#nnggssdjjh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#nnggssdjjh .gt_left {
+  text-align: left;
+}
+
+#nnggssdjjh .gt_center {
+  text-align: center;
+}
+
+#nnggssdjjh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nnggssdjjh .gt_font_normal {
+  font-weight: normal;
+}
+
+#nnggssdjjh .gt_font_bold {
+  font-weight: bold;
+}
+
+#nnggssdjjh .gt_font_italic {
+  font-style: italic;
+}
+
+#nnggssdjjh .gt_super {
+  font-size: 65%;
+}
+
+#nnggssdjjh .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Treatment</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Year_after_first_flowering</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">N</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">lx</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">bx</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">142</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">111</td>
+<td class="gt_row gt_right">0.78</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_right">94</td>
+<td class="gt_row gt_right">0.66</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_right">86</td>
+<td class="gt_row gt_right">0.61</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">77</td>
+<td class="gt_row gt_right">0.54</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_right">72</td>
+<td class="gt_row gt_right">0.51</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">0.49</td>
+<td class="gt_row gt_right">1.0</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">0.44</td>
+<td class="gt_row gt_right">0.9</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">0.42</td>
+<td class="gt_row gt_right">0.7</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">0.41</td>
+<td class="gt_row gt_right">0.5</td></tr>
+    <tr><td class="gt_row gt_left">Dl</td>
+<td class="gt_row gt_left">Unscythes</td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_right">49</td>
+<td class="gt_row gt_right">0.35</td>
+<td class="gt_row gt_right">0.1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

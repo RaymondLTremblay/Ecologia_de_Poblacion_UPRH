@@ -92,9 +92,8 @@ navbar:
           href: Tarea_Ballena.html
           text: "Tarea 2: Dinámica de Ballenas" 
         - 
-          href: Tarea_3_Paradigma_poblacion_declive.html
+          href: Tarea_3_Paradigma_Poblacion_declive.html
           text: "Tarea 3: Paradigma de población en declive"         
-          
           
       text: Tareas
     - 
