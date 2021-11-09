@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
 
-La extinción final de una población suele ser probabilística. Es decir, una vez que la población se vuelve lo suficientemente pequeña, *estocasticidad demográfica *, *deriva genética * y *depresión endogámica * pueden, en conjunto, dar la sentencia de muerte final a una población. En biología de la conservación, el estudio de los procesos que influyen de manera desproporcionada en poblaciones pequeñas se denomina *paradigma de poblaciones pequeñas *.
+La extinción final de una población suele ser probabilística. Es decir, una vez que la población se vuelve lo suficientemente pequeña, *estocasticidad demográfica *, *deriva genética * y la *depresión endogámica * pueden, en conjunto, dar la sentencia de muerte final a una población. En biología de la conservación, el estudio de los procesos que influyen de manera desproporcionada en poblaciones pequeñas se denomina *paradigma de poblaciones pequeñas *.
 
 Es decir: el paradigma de la pequeña población se refiere a la tendencia en **biología de la conservación ** a estudiar aquellos factores en gran parte *estocásticos * que pueden resultar en la extinción o degradación de pequeñas poblaciones. 
 
@@ -27,9 +27,9 @@ El simple hecho es: _¡es mucho más probable que los 10 individuos de una pobla
 
 Esto ilustra el concepto muy importante de que las poblaciones pequeñas pueden extinguirse debido únicamente a la **estocasticidad demográfica**, mientras que esta posibilidad es extremadamente pequeña para las poblaciones grandes.
 
-La moraleja de la historia de la estocasticidad demográfica es: ¡pueden suceder cosas extrañas y dramáticas (por ejemplo, la extinción) en poblaciones pequeñas sin otra razón que la de que la población es pequeña!
+La historia de la estocasticidad demográfica es: ¡pueden suceder cosas extrañas y dramáticas (por ejemplo, la extinción) en poblaciones pequeñas sin otra razón que la de que la población es pequeña!
 
-Cosas extrañas y dramáticas como la extinción aleatoria **nunca sucederían ** en poblaciones grandes debido a procesos de apareamiento, nacimiento y mortalidad aleatorios (asumiendo un ambiente estable y favorable y sin eventos catastróficos en todo el rango).
+Cosas extrañas y dramáticas como la extinción aleatoria **nunca sucederían** en poblaciones grandes debido a procesos de apareamiento, nacimiento y mortalidad aleatorios (asumiendo un ambiente estable y favorable y sin eventos catastróficos en todo el rango). Pero si pudiese ocurir por otras causas como el efecto de un volcán que destruye todas los organismos en una isla vea el siguiente enlace [Krakatao](https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa)
 
 
 ¡Lo mismo ocurre con la *deriva genética *! ¡La deriva genética es un _fenómeno de población pequeña_!
@@ -37,13 +37,13 @@ Cosas extrañas y dramáticas como la extinción aleatoria **nunca sucederían *
 
 ### Deriva Genetica
 
-En poblaciones grandes, las fuerzas aleatorias simplemente no son lo suficientemente fuertes como para erradicar una variante genética relativamente común (alelo) de una población (esto podría suceder por selección natural, pero no a través de procesos reproductivos aleatorios). En poblaciones pequeñas, el azar puede ser el principal impulsor del cambio genético a lo largo del tiempo.
+En poblaciones grandes, las fuerzas aleatorias simplemente no son lo suficientementes como para erradicar una variante genética relativamente común (alelo) de una población (esto podría suceder por selección natural, pero no a través de procesos reproductivos aleatorios). En poblaciones pequeñas, el azar puede ser el principal impulsor del cambio genético a lo largo del tiempo.
 
 ![](figures/geneticdrift1.png)
 
 Imaginemos que las bolas de los frascos de la figura anterior son individuos. Los puntos negros indican cuántos descendientes tendrá ese individuo (transmitiendo así sus genes). Las bolas de diferentes colores representan diferentes variantes genéticas. Cada frasco, de izquierda a derecha, representa una generación diferente (que no se superpone).
 
-¿Te suena familiar? Por casualidad, algunos individuos se reproducirán y otros no. Por casualidad, algunos individuos tendrán más descendientes que sobrevivan. La deriva genética es simplemente una consecuencia de la **estocasticidad demográfica **.
+¿Te suena familiar? Por casualidad, algunos individuos se reproducirán y otros no. Por casualidad, algunos individuos tendrán más descendientes que sobrevivan. La deriva genética es una consecuencia de la **estocasticidad demográfica **.
 
 Finalmente, imaginemos que las bolas rojas representan individuos que tienen más probabilidades de sobrevivir a una sequía rara (pero que no tienen ventaja o desventaja selectiva en circunstancias normales). Por casualidad, los individuos azules se aparean y reproducen con éxito más que los individuos rojos: la variante azul se vuelve **fija ** en la población y las variantes rojas se extinguen. *No hay selección natural involucrada en este escenario, ¡solo estocasticidad! *
 
@@ -92,9 +92,9 @@ Como administradores de vida silvestre, a menudo deseamos saber: "¿qué tan peq
 
 Cuando hablamos de [Efectos de Allee](LECTURE5.html), vimos un caso en el que un modelo poblacional determinista podría tener un tamaño de población mínimo viable: por debajo de un cierto umbral crítico, la población estaba condenada a la extinción y por encima del umbral el la población aumentaría determinísticamente hasta la capacidad de carga.
 
-Sin embargo, el concepto de MVP se deriva de * biología de la conservación * y no de la biología teórica de poblaciones. La biología de la conservación se ocupa de los sistemas del mundo real que son confusos, variables e inciertos. Por lo tanto, el concepto de MVP se suele cuantificar mediante modelos de población estocásticos.
+Sin embargo, el concepto de MVP se deriva de *biología de la conservación * y no de la biología teórica de poblaciones. La biología de la conservación se ocupa de los sistemas del mundo real que son confusos, variables e inciertos. Por lo tanto, el concepto de MVP se suele cuantificar mediante modelos de población estocásticos.
 
-La definición general más satisfactoria de MVP (en mi opinión) se relaciona directamente con el concepto de vórtice de extinción: el tamaño mínimo de la población viable (MVP) es ese *tamaño de población por encima del cual el vórtice de extinción puede evitarse con seguridad *.
+La definición general más satisfactoria de MVP se relaciona directamente con el concepto de vórtice de extinción: el tamaño mínimo de la población viable (MVP) es ese *tamaño de población por encima del cual el vórtice de extinción puede evitarse con seguridad *.
 
 Sin embargo, la definición anterior no es estrictamente cuantificable para la mayoría de las especies. Además, MVP se define a menudo en relación con modelos de población, muchos de los cuales no tienen un componente genético explícito (¡porque a menudo no sabemos exactamente cuántos alelos recesivos deletéreos hay en una población!). La definición operativa cuantitativa que usaremos en este curso es:
 
@@ -120,7 +120,7 @@ La serpiente de cascabel de la isla de Aruba, como era de esperar, ocurre solo e
 
 ![](figures/aruba1.png)
 
-La serpiente de cascabel de Aruba está catalogada como * En peligro crítico * por la UICN, y tiene varios atributos que la hacen particularmente susceptible a caer en el vórtice de extinción:
+La serpiente de cascabel de Aruba está catalogada como *En peligro crítico * por la IUCN, y tiene varios atributos que la hacen particularmente susceptible a caer en el vórtice de extinción:
 
 Vea [Lab 5](LAB5.html) para una actividad de MVP.  
 
@@ -128,7 +128,7 @@ Vea [Lab 5](LAB5.html) para una actividad de MVP.
 **Q** ¿Por qué las especies endémicas de la isla como la serpiente de cascabel de Aruba son tan vulnerables a la extinción? [Edmodo]
 
 **Q** 
-¿Son las especies confinadas a áreas pequeñas (como la serpiente de cascabel de Aruba) más vulnerables a la * estocasticidad ambiental * que las especies que ocupan áreas geográficas más amplias? [Edmodo]
+¿Son las especies confinadas a áreas pequeñas (como la serpiente de cascabel de Aruba) más vulnerables a la *estocasticidad ambiental * que las especies que ocupan áreas geográficas más amplias? [Edmodo]
 
 
 
