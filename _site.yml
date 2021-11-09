@@ -101,6 +101,11 @@ navbar:
         - 
           href: Invitados.html
           text: "Lecturas de los Invitados"
+               - 
+          href: FINAL_PROJECTS.html
+          text: "Proyecto Final"   
+          
+          
       text: Invitados
     - 
       menu: 
