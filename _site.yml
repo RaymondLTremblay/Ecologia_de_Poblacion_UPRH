@@ -93,7 +93,10 @@ navbar:
           text: "Tarea 2: Dinámica de Ballenas" 
         - 
           href: Tarea_3_Paradigma_Poblacion_declive.html
-          text: "Tarea 3: Paradigma de población en declive"         
+          text: "Tarea 3: Paradigma de población en declive" 
+        - 
+          href: FINAL_PROJECTS.html
+          text: "Proyecto Final" 
           
       text: Tareas
     - 
@@ -101,9 +104,7 @@ navbar:
         - 
           href: Invitados.html
           text: "Lecturas de los Invitados"
-               - 
-          href: FINAL_PROJECTS.html
-          text: "Proyecto Final"   
+  
           
           
       text: Invitados
