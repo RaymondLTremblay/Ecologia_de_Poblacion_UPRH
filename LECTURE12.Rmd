@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 Un aviso sobre [final projects](FINAL_PROJECTS.html). 
 ¡Su PVA de trabajo y un documento que justifica sus decisiones de modelado se vencio!
 
-Tiene que comunicarse y hacer una cita en hora de consulta 
+En la próxima clase o hora de consulta favor llegar con su plan de trabajo.  
 
 lunes 8:30 a 10:30
 martes 8:30 a 10:30
