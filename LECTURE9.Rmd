@@ -60,11 +60,15 @@ Finalmente, imaginemos que las bolas rojas representan individuos que tienen má
 
 La depresión endogámica es otro problema peculiar de las poblaciones pequeñas.
 
-La mayoría de las poblaciones diploides tienen algunas variantes genéticas "malas" (alelos) en su acervo genético. Estos a menudo se denominan **alelos deletéreos **. Estos alelos nocivos generalmente no causan problemas porque en general son **recesivos **, es decir, el efecto negativo solo es aparente si un individuo tiene _dos copias de ese alelo_. Y dado que estos alelos son raros, ¡es extremadamente improbable que obtenga dos copias del mismo alelo malo!
+La mayoría de las poblaciones diploides tienen algunas variantes genéticas "malas" (alelos) en su acervo genético. Estos a menudo se denominan **alelos deletéreos **. Estos alelos nocivos generalmente no causan problemas porque en general son **recesivos **, es decir, el efecto negativo solo es aparente si un individuo tiene _dos copias de ese alelo_. Y dado que estos alelos son raros, ¡la probabilidad es pequeña que obtenga dos copias del mismo alelo *malo*!
 
-A menos que ... tus dos padres sean parientes cercanos. Si sus padres son parientes cercanos, ambos tienen una probabilidad relativamente alta de heredar al menos una de las mismas variantes genéticas "malas" de un único ancestro común.
+A menos que ... tus dos padres sean parientes cercanos. Si sus padres son parientes cercanos o de una población/grupos pequeños, ambos tienen una probabilidad relativamente alta de heredar al menos una de las mismas variantes genéticas *malas* de un único ancestro común.
 
 **P **: ¿Por qué es más probable que sus dos padres sean parientes cercanos si vive en una población pequeña?
+
+**P ** Cual son algunos de los efectos más comín de "Extreme Inbreeding" en humanos.  Vea el siguyiente articulo [Extreme Imbreeding](https://www.nature.com/articles/s41467-019-11724-6). VEA la figura #4 para un buen gráfico del impacto de **Inbreeding Depression**
+
+**P ** Encuentra de la literatura citada por pares un ejemplo de "Endogamia" **Inbreeding depression** y explicalo en un párafo. 
 
 ![](figures/inbreeding2.jpg)
 

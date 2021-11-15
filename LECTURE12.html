@@ -486,7 +486,9 @@ div.tocify {
 
 <div id="final-projects" class="section level3">
 <h3>Final projects:</h3>
-<p>Un aviso sobre <a href="FINAL_PROJECTS.html">final projects</a>. ¡Su PVA de trabajo y un documento que justifica sus decisiones de modelado vencen <em>el viernes 9 de abril </em>!</p>
+<p>Un aviso sobre <a href="FINAL_PROJECTS.html">final projects</a>. ¡Su PVA de trabajo y un documento que justifica sus decisiones de modelado se vencio!</p>
+<p>Tiene que comunicarse y hacer una cita en hora de consulta</p>
+<p>lunes 8:30 a 10:30 martes 8:30 a 10:30</p>
 </div>
 <div id="análisis-de-viabilidad-poblacional-pva" class="section level2">
 <h2>Análisis de viabilidad poblacional (PVA)</h2>
@@ -505,7 +507,16 @@ div.tocify {
 <p>Por ejemplo, después de ejecutar su modelo (paso 4) y observar los resultados (paso 5), es posible que se dé cuenta de que el modelo es totalmente irreal. Esto podría pedirle que retroceda y cambie su modelo conceptual de la historia de vida (paso 1) y vuelva a parametrizar su modelo (paso 2).</p>
 <div id="paso-1-historia-de-vida" class="section level4">
 <h4>Paso 1: historia de vida</h4>
-<p>Clase 1: pensamiento sistémico Clase 2: retroalimentación Clase 3: crecimiento exponencial Clase 4: dependencia de la densidad Clase 5: efectos allee Clase 6: poblaciones estructuradas por edad Clase 7: modelos matriciales de población Clase 8: estocasticidad Laboratorios 1,2,3,4,5</p>
+<ul>
+<li><p>Clase 1: pensamiento sistémico</p></li>
+<li><p>Clase 2: retroalimentación</p></li>
+<li><p>Clase 3: crecimiento exponencial</p></li>
+<li><p>Clase 4: dependencia de la densidad</p></li>
+<li><p>Clase 5: efectos allee</p></li>
+<li><p>Clase 6: poblaciones estructuradas por edad</p></li>
+<li><p>Clase 7: modelos matriciales de población</p></li>
+<li><p>Clase 8: estocasticidad</p></li>
+</ul>
 <p>El primer paso es conceptualizar la historia de vida de su especie de interés. Aquí es donde puede armar un diagrama de historia de vida y pensar en las siguientes preguntas:</p>
 <ul>
 <li>¿Cuántas etapas de la vida debo incluir?</li>
@@ -520,7 +531,13 @@ div.tocify {
 </div>
 <div id="paso-2-parametrizar-el-modelo-demográfico" class="section level4">
 <h4>Paso 2: ¡Parametrizar el modelo demográfico!</h4>
-<p>Clase 3: crecimiento exponencial Clase 4: dependencia de la densidad Clase 5: efecto allee Clase 7: modelos matriciales de población Clase 8: estocasticidad e incertidumbre Laboratorios 1,2,3,4,5,7</p>
+<ul>
+<li><p>Clase 3: crecimiento exponencial</p></li>
+<li><p>Clase 4: dependencia de la densidad</p></li>
+<li><p>Clase 5: efecto allee</p></li>
+<li><p>Clase 7: modelos matriciales de población</p></li>
+<li><p>Clase 8: estocasticidad e incertidumbre</p></li>
+</ul>
 <p>Aquí es donde se adjuntan números reales a las existencias y flujos en su diagrama de historia de vida conceptual. Recuerde que estos parámetros son más que solo supervivencia y fecundidad. Es también:</p>
 <ul>
 <li>Variación anual de supervivencia y fecundidad (estocasticidad ambiental)</li>
@@ -531,9 +548,11 @@ div.tocify {
 <li>Efectos de las acciones de gestión</li>
 <li>Y más…</li>
 </ul>
-<p>[¡analogía de la sopa de piedra con la parametrización del modelo!]</p>
 <p>Paso 3: ¡Estructura espacial!</p>
-<p>Clase 13: modelos de metapoblación Clase 14: dinámica fuente-sumidero Laboratorio 6: modelos de metapoblación</p>
+<ul>
+<li>Clase 13: modelos de metapoblación</li>
+<li>Clase 14: dinámica fuente-sumidero</li>
+</ul>
 <p>Si desea hacer preguntas espaciales, su modelo debe ser espacialmente explícito, o al menos considerar la estructura espacial de alguna manera. Los tipos de preguntas en las que podría pensar incluyen:</p>
 <ul>
 <li>¿Cuántas poblaciones discretas hay en su metapoblación?</li>
@@ -547,7 +566,7 @@ div.tocify {
 <div id="paso-4-simular" class="section level4">
 <h4>Paso 4: ¡Simular!</h4>
 <p>En los ejercicios de clase, todos los laboratorios</p>
-<p>Ya sabe cómo simular poblaciones; puede elegir si tiene sentido utilizar R, InsightMaker, Vortex o algún otro software o plataforma de programación para sus simulaciones.</p>
+<p>Ya sabe cómo simular poblaciones; puede elegir si tiene sentido utilizar R, InsightMaker, Vortex (no se enseño este año) o algún otro software o plataforma de programación para sus simulaciones.</p>
 <p>De cualquier manera, puede ser creativo: configure las simulaciones para que puedan ayudarlo a responder sus preguntas clave de investigación. Usted tiene el control: ¡puede configurar las simulaciones para que le brinden los tipos de datos que necesita!</p>
 <ul>
 <li>¿Qué escenarios quieres probar?</li>
@@ -664,8 +683,8 @@ PVAdemo &lt;- function(nreps,nyears,Init_N,R_max,K,Flood_prob,Flood_lambda){
 
 Default &lt;- PVAdemo(nreps,nyears,Init_N,R_max,K,Flood_prob,Flood_lambda)</code></pre>
 </div>
-<div id="step-5-results" class="section level3">
-<h3>Step 5: results!</h3>
+<div id="step-5-resultados" class="section level3">
+<h3>Step 5: resultados!</h3>
 <p>¡Ahora podemos realizar visualizaciones gráficas y estadísticas que responden a nuestras preguntas originales!</p>
 <div id="visualización-gráfica" class="section level4">
 <h4>Visualización gráfica</h4>

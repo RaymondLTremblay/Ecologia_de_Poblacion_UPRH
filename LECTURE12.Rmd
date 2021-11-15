@@ -36,7 +36,12 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ### Final projects:
 
 Un aviso sobre [final projects](FINAL_PROJECTS.html). 
-¡Su PVA de trabajo y un documento que justifica sus decisiones de modelado vencen *el viernes 9 de abril *!
+¡Su PVA de trabajo y un documento que justifica sus decisiones de modelado se vencio!
+
+Tiene que comunicarse y hacer una cita en hora de consulta 
+
+lunes 8:30 a 10:30
+martes 8:30 a 10:30
 
 
 ## Análisis de viabilidad poblacional (PVA)
@@ -69,15 +74,17 @@ Por ejemplo, después de ejecutar su modelo (paso 4) y observar los resultados (
 
 #### Paso 1: historia de vida
 
-Clase 1: pensamiento sistémico
-Clase 2: retroalimentación
-Clase 3: crecimiento exponencial
-Clase 4: dependencia de la densidad
-Clase 5: efectos allee
-Clase 6: poblaciones estructuradas por edad
-Clase 7: modelos matriciales de población
-Clase 8: estocasticidad
-Laboratorios 1,2,3,4,5   
+- Clase 1: pensamiento sistémico
+
+- Clase 2: retroalimentación
+
+- Clase 3: crecimiento exponencial
+- Clase 4: dependencia de la densidad
+- Clase 5: efectos allee
+- Clase 6: poblaciones estructuradas por edad
+- Clase 7: modelos matriciales de población
+- Clase 8: estocasticidad
+  
 
 El primer paso es conceptualizar la historia de vida de su especie de interés. Aquí es donde puede armar un diagrama de historia de vida y pensar en las siguientes preguntas:
 
@@ -93,12 +100,13 @@ El primer paso es conceptualizar la historia de vida de su especie de interés. 
 
 #### Paso 2: ¡Parametrizar el modelo demográfico!
 
-Clase 3: crecimiento exponencial
-Clase 4: dependencia de la densidad
-Clase 5: efecto allee
-Clase 7: modelos matriciales de población
-Clase 8: estocasticidad e incertidumbre
-Laboratorios 1,2,3,4,5,7  
+- Clase 3: crecimiento exponencial
+
+- Clase 4: dependencia de la densidad
+- Clase 5: efecto allee
+- Clase 7: modelos matriciales de población
+- Clase 8: estocasticidad e incertidumbre
+ 
 
 
 Aquí es donde se adjuntan números reales a las existencias y flujos en su diagrama de historia de vida conceptual. Recuerde que estos parámetros son más que solo supervivencia y fecundidad. Es también:
@@ -111,13 +119,12 @@ Aquí es donde se adjuntan números reales a las existencias y flujos en su diag
 - Efectos de las acciones de gestión
 - Y más... 
 
-[¡analogía de la sopa de piedra con la parametrización del modelo!]
 
 Paso 3: ¡Estructura espacial!
 
-Clase 13: modelos de metapoblación
-Clase 14: dinámica fuente-sumidero
-Laboratorio 6: modelos de metapoblación 
+ - Clase 13: modelos de metapoblación
+ - Clase 14: dinámica fuente-sumidero
+
 
 
 Si desea hacer preguntas espaciales, su modelo debe ser espacialmente explícito, o al menos considerar la estructura espacial de alguna manera. Los tipos de preguntas en las que podría pensar incluyen:
@@ -133,7 +140,7 @@ Si desea hacer preguntas espaciales, su modelo debe ser espacialmente explícito
 
 En los ejercicios de clase, todos los laboratorios
 
-Ya sabe cómo simular poblaciones; puede elegir si tiene sentido utilizar R, InsightMaker, Vortex o algún otro software o plataforma de programación para sus simulaciones.
+Ya sabe cómo simular poblaciones; puede elegir si tiene sentido utilizar R, InsightMaker, Vortex (no se enseño este año) o algún otro software o plataforma de programación para sus simulaciones.
 
 De cualquier manera, puede ser creativo: configure las simulaciones para que puedan ayudarlo a responder sus preguntas clave de investigación. Usted tiene el control: ¡puede configurar las simulaciones para que le brinden los tipos de datos que necesita!
 
@@ -270,7 +277,7 @@ Default <- PVAdemo(nreps,nyears,Init_N,R_max,K,Flood_prob,Flood_lambda)
 ```
 
 
-### Step 5: results!
+### Step 5: resultados!
 
 ¡Ahora podemos realizar visualizaciones gráficas y estadísticas que responden a nuestras preguntas originales!
 
