@@ -586,11 +586,11 @@ div.tocify {
 <pre class="r"><code>pe=.15 # probabilidad de extincción en un año
 1-pe #  Probabilidad de persistencia</code></pre>
 <pre><code>## [1] 0.85</code></pre>
-<pre class="r"><code>1-((1-pe)^10) # Probabilidad que la metapoblación vaya a la extinción</code></pre>
+<pre class="r"><code>1-((1-pe)^10) # Probabilidad que un parche vaya a la extinción</code></pre>
 <pre><code>## [1] 0.8031256</code></pre>
 <pre class="r"><code>.8*.8*.8*.8   # Probabilidad de la extinción de la metapoblación si tiene 4 parches</code></pre>
 <pre><code>## [1] 0.4096</code></pre>
-<pre class="r"><code>(1-((1-pe)^10))^10 # Probabilidad de la metapoblación si tiene 10 parches</code></pre>
+<pre class="r"><code>(1-((1-pe)^10))^10 # Probabilidad de la metapoblación ir la extincción si tiene 10 parches</code></pre>
 <pre><code>## [1] 0.1116438</code></pre>
 <p>que resulta ser alrededor del 80%. ¡Existe una probabilidad sustancial de extinción regional en algún momento durante los próximos 10 años!</p>
 <p>¿Y si hubiera dos parches en lugar de solo uno?</p>
