@@ -166,6 +166,19 @@ Consideremos un sistema en el que una especie ocupa un solo parche, y hay una pr
 
 La probabilidad de persistencia durante 1 año es $1-p_e$, por lo que la probabilidad de persistencia durante 10 años es $(1-p_e) ^ {10}$ y la probabilidad de extinción regional es $$1 - ((1-p_e) ^ { 10})$$
 
+
+## Ejemplos 
+```{r}
+pe=.15 # probabilidad de extincción en un año
+1-pe #  Probabilidad de persistencia
+
+1-((1-pe)^10) # Probabilidad que la metapoblación vaya a la extinción
+
+.8*.8*.8*.8   # Probabilidad de la extinción de la metapoblación si tiene 4 parches
+
+(1-((1-pe)^10))^10 # Probabilidad de la metapoblación si tiene 10 parches
+```
+
 que resulta ser alrededor del 80%. ¡Existe una probabilidad sustancial de extinción regional en algún momento durante los próximos 10 años!
 
 ¿Y si hubiera dos parches en lugar de solo uno?

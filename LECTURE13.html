@@ -579,6 +579,19 @@ div.tocify {
 <p>Consideremos un sistema en el que una especie ocupa un solo parche, y hay una probabilidad de extinción <span class="math inline">\(p_e\)</span> de 0.15 por parche por año.</p>
 <p><strong>P </strong>: ¿Cuál es la probabilidad de extinción regional en algún momento de los próximos 10 años?</p>
 <p>La probabilidad de persistencia durante 1 año es <span class="math inline">\(1-p_e\)</span>, por lo que la probabilidad de persistencia durante 10 años es <span class="math inline">\((1-p_e) ^ {10}\)</span> y la probabilidad de extinción regional es <span class="math display">\[1 - ((1-p_e) ^ { 10})\]</span></p>
+</div>
+</div>
+<div id="ejemplos" class="section level2">
+<h2>Ejemplos</h2>
+<pre class="r"><code>pe=.15 # probabilidad de extincción en un año
+1-pe #  Probabilidad de persistencia</code></pre>
+<pre><code>## [1] 0.85</code></pre>
+<pre class="r"><code>1-((1-pe)^10) # Probabilidad que la metapoblación vaya a la extinción</code></pre>
+<pre><code>## [1] 0.8031256</code></pre>
+<pre class="r"><code>.8*.8*.8*.8   # Probabilidad de la extinción de la metapoblación si tiene 4 parches</code></pre>
+<pre><code>## [1] 0.4096</code></pre>
+<pre class="r"><code>(1-((1-pe)^10))^10 # Probabilidad de la metapoblación si tiene 10 parches</code></pre>
+<pre><code>## [1] 0.1116438</code></pre>
 <p>que resulta ser alrededor del 80%. ¡Existe una probabilidad sustancial de extinción regional en algún momento durante los próximos 10 años!</p>
 <p>¿Y si hubiera dos parches en lugar de solo uno?</p>
 <p>Supongamos que el riesgo de extinción de los dos parches es <strong>independiente</strong>, es decir, ¡la extinción de un parche no influye en si el otro parche se extingue o no!</p>
@@ -593,7 +606,6 @@ div.tocify {
 <p><em>Esto resulta ser alrededor del 3%; hemos distribuido efectivamente el riesgo, de modo que a pesar de un riesgo de extinción relativamente alto a nivel de parche, es poco probable que la metapoblación experimente una extinción global.</em></p>
 <p><strong>P </strong>: si incluyéramos la dispersión entre parches, ¿la dispersión serviría para reducir aún más el riesgo de extinción global? ¿Por qué o por qué no?</p>
 <p><strong>P </strong>: ¿Qué pasaría si la extinción de un parche estuviera <em>perfectamente correlacionada </em> con la extinción de todos los demás parches? Si uno se extingue, todos se extinguen.</p>
-</div>
 </div>
 <div id="fuentes-y-sumideros-sources-and-sinks" class="section level2">
 <h2>Fuentes y sumideros: Sources and sinks!</h2>
