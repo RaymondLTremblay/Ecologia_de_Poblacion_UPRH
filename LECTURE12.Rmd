@@ -192,8 +192,8 @@ Aquí está la parametrización básica del modelo:
 ####
 
 R_max <- 1.15       # Tasa máxima de crecimiento
-Init_N <- 51        # Abundancia inicial
-K <- 175            # CCapacidad de carga
+Init_N <- 500        # Abundancia inicial
+K <- 500            # Capacidad de carga
 
 ####
 # Estocasticidad ambiental
