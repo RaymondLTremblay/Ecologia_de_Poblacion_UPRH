@@ -115,27 +115,27 @@ Ahora que tenemos los términos básicos definidos, ¡podemos construir un model
 ### Supuestos del modelo clásico de metapoblación:
 
 - Parches homogéneos (todos los parches se consideran iguales e intercambiables; no difieren en tamaño o calidad; se ignoran las diferencias en la calidad del hábitat o el contexto espacial dentro de los parches).
-- La extinción y la colonización son insensibles al contexto espacial (el contexto espacial, o "efectos de vecindad", no afectan a $p_e $ y $p_i $).
-- Sin demoras (el crecimiento de la metapoblación responde instantáneamente a cualquier cambio en $f $).
-- Gran cantidad de parches (incluso cuando la fracción de parches ocupados $f $ es muy pequeña, ¡la metapoblación clásica aún persiste!). Es decir, ¡la extinción global no es posible!
+- La extinción y la colonización son insensibles al contexto espacial, el contexto espacial, o "efectos de vecindad", no afectan a $p_e$ y $p_i$.
+- Sin demoras el crecimiento de la metapoblación responde instantáneamente a cualquier cambio en $f$.
+- Gran cantidad de parches incluso cuando la fracción de parches ocupados $f$ es muy pequeña, ¡la metapoblación clásica aún persiste!. Es decir, ¡la extinción global no es posible!
 
 Claramente, este no es un modelo muy realista, pero es un punto de partida útil. Entonces ... comenzaremos haciendo estas suposiciones, ¡pero luego "relajaremos" algunas de ellas!
 
 #### Variant #1: modelo isla-continente: island-mainland model
 
-La colonización se produce a través de la inmigración de una fuente externa constante: una constante ** lluvia de propágulos **.
+La colonización se produce a través de la inmigración de una fuente externa constante: una constante **lluvia de propágulos **.
 
-Este es el modelo de metapoblación más simple. $ p_i $ y $ p_e $ son constantes.
+Este es el modelo de metapoblación más simple, $p_i$ y $p_e$ son constantes.
 
 #### Variant #2: colonización interna: internal colonization
 
 Ahora, la colonización solo puede ocurrir a través de la inmigración desde dentro de la propia metapoblación. Entonces, cuando se coloniza una pequeña fracción de parcelas, la probabilidad de colonización es baja debido a la falta de inmigrantes potenciales dentro de la metapoblación.
 
-$p_i = i\cdot f$
+$$p_i = i\cdot f$$
 
-$i $ representa la fuerza de la inmigración interna (cuánto aumenta la probabilidad de colonización con cada nuevo parche ocupado en la metapoblación.
+Donde $i$ representa la fuerza de la inmigración interna cuánto aumenta la probabilidad de colonización con cada nuevo parche ocupado en la metapoblación.
 
-Otra forma de pensar en $i $ en este modelo es la tasa máxima de colonización exitosa de un parche desocupado cuando casi todos los parches de la metapoblación están ocupados.
+Otra forma de pensar en $i$ en este modelo es la tasa máxima de colonización exitosa de un parche desocupado cuando casi todos los parches de la metapoblación están ocupados.
 
 #### Variant #3: efecto de rescate: rescue effect. 
 
@@ -144,35 +144,35 @@ Otra forma de pensar en $i $ en este modelo es la tasa máxima de colonización 
 
 **P **: ¿tiene sentido esto? ¿Cómo funciona el efecto rescate? 
 
-$p_e = e(1-f)$
+$$p_e = e(1-f)$$
 
-$e $ representa la fuerza del efecto de rescate. Más concretamente, $ e $ representa la tasa máxima de extinción (cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante). $ e $ representa la fuerza del efecto de rescate. Más concretamente, $ e $ representa la tasa máxima de extinción (cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante).
+Donde $e$ representa la fuerza del efecto de rescate. Más concretamente, $e$ representa la tasa máxima de extinción cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante. Y $e$ representa la fuerza del efecto de rescate. Más concretamente, $e$ representa la tasa máxima de extinción cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante.
 
 ### Estabilidad 'dinámica': 'Dynamic' stability
 
 
-En el modelo clásico de metapoblación, la extinción no es necesariamente infrecuente. Los parches se extinguen: ¡los parches pequeños pueden ser altamente vulnerables a la estocasiticidad demográfica, como sabemos! - pero mientras los parches puedan volver a colonizarse, podemos alcanzar un equilibrio, donde las extinciones y colonizaciones se anulan mutuamente. En un modelo de metapoblación clásico, se trata de un *equilibrio estable *, y una metapoblación estable en la que son posibles las extinciones locales ($ p_e> 0 $) se denomina **dinámicamente estable **. Es decir, cualquier parche dado podría extinguirse en un momento dado, pero en general, el tamaño de la metapoblación (parches totales ocupados) es relativamente estable y no está en riesgo de **extinción regional (o global) **.
+En el modelo clásico de metapoblación, la extinción no es necesariamente infrecuente. Los parches se extinguen: ¡los parches pequeños pueden ser altamente vulnerables a la estocasiticidad demográfica, como sabemos! - pero mientras los parches puedan volver a colonizarse, podemos alcanzar un equilibrio, donde las extinciones y colonizaciones se anulan mutuamente. En un modelo de metapoblación clásico, se trata de un *equilibrio estable*, y una metapoblación estable en la que son posibles las extinciones locales,  $p_e> 0$ se denomina **dinámicamente estable**. Es decir, cualquier parche dado podría extinguirse en un momento dado, pero en general, el tamaño de la metapoblación  o sea los parches totales ocupados es relativamente estable y no está en riesgo de **extinción regional o global **.
 
 El concepto de estabilidad dinámica de la metapoblación, en el que se equilibran las extinciones y las colonizaciones, tiene mucho en común con la estabilidad dinámica de una sola población a la capacidad de carga, en la que cualquier individuo podría morir en cualquier momento, pero las muertes y los nacimientos se equilibran aproximadamente!
 
 ### ¡Distribuyendo el riesgo!
 
-En los modelos clásicos de metapoblación, asumimos una gran cantidad de parches, por lo que no había ninguna posibilidad real de extinción regional / global. Pero la mayoría de las metapoblaciones reales son lo suficientemente pequeñas como para que a menudo debamos considerar el riesgo de extinción global.
+En los modelos clásicos de metapoblación, asumimos una gran cantidad de parches, por lo que no había ninguna posibilidad real de extinción regional/global. Pero la mayoría de las metapoblaciones reales son lo suficientemente pequeñas como para que a menudo debamos considerar el riesgo de extinción global.
 
-Consideremos un sistema en el que una especie ocupa un solo parche, y hay una probabilidad de extinción $p_e $ de 0.15 por parche por año. 
+Consideremos un sistema en el que una especie ocupa un solo parche, y hay una probabilidad de extinción $p_e$ de 0.15 por parche por año. 
 
 
 **P **: ¿Cuál es la probabilidad de extinción regional en algún momento de los próximos 10 años?
 
-La probabilidad de persistencia durante 1 año es $ 1-p_e $, por lo que la probabilidad de persistencia durante 10 años es $ (1-p_e) ^ {10} $ y la probabilidad de extinción regional es $ 1 - ((1-p_e) ^ { 10}) $
+La probabilidad de persistencia durante 1 año es $1-p_e$, por lo que la probabilidad de persistencia durante 10 años es $(1-p_e) ^ {10}$ y la probabilidad de extinción regional es $$1 - ((1-p_e) ^ { 10})$$
 
 que resulta ser alrededor del 80%. ¡Existe una probabilidad sustancial de extinción regional en algún momento durante los próximos 10 años!
 
 ¿Y si hubiera dos parches en lugar de solo uno?
 
-Supongamos que el riesgo de extinción de los dos parches es ** independiente **, es decir, ¡la extinción de un parche no influye en si el otro parche se extingue o no!
+Supongamos que el riesgo de extinción de los dos parches es **independiente**, es decir, ¡la extinción de un parche no influye en si el otro parche se extingue o no!
 
-Si la probabilidad de extinción de un parche durante los próximos 10 años es 0,8, entonces la probabilidad de que ambos parches se extingan en algún momento durante los próximos 10 años es 0,8 * 0,8 = 0,64
+Si la probabilidad de extinción de un parche durante los próximos 10 años es 0,8, entonces la probabilidad de que ambos parches se extingan en algún momento durante los próximos 10 años es $0,8 * 0,8 = 0,64$
 
 ¡¡Entonces la posibilidad de extirpación regional es algo reducida con dos poblaciones !!
 
@@ -192,7 +192,7 @@ _Esto resulta ser alrededor del 3%; hemos distribuido efectivamente el riesgo, d
 
 **P **: si incluyéramos la dispersión entre parches, ¿la dispersión serviría para reducir aún más el riesgo de extinción global? ¿Por qué o por qué no?
 
-**P **: ¿Qué pasaría si la extinción de un parche estuviera * perfectamente correlacionada * con la extinción de todos los demás parches? Si uno se extingue, todos se extinguen. 
+**P **: ¿Qué pasaría si la extinción de un parche estuviera *perfectamente correlacionada * con la extinción de todos los demás parches? Si uno se extingue, todos se extinguen. 
 
 ## Fuentes y sumideros: Sources and sinks!
 
@@ -204,21 +204,21 @@ En el mundo real, los parches varían en tamaño y calidad. Es decir, es poco pr
 
 Al igual que con una población estructurada por edad, donde las tasas vitales y la abundancia de equilibrio pueden variar según la edad o la clase de tamaño, las tasas vitales y las abundancias pueden variar en el espacio. ¡Algunas áreas pueden tener un mejor hábitat, con mayores tasas de crecimiento de la población general! Por otro lado, algunas áreas pueden tener un hábitat pobre, y estas áreas pueden estar asociadas con tasas vitales más bajas ...
 
-De hecho, algunos parches pueden tener tan pocos recursos o brindar una protección tan mala contra los depredadores que el crecimiento de la población es negativo (es decir, $ r $ por debajo de cero, o $ \ lambda $ menos de 1). Otros parches pueden representar las condiciones perfectas para el crecimiento de la población (al menos si el hábitat no está demasiado poblado).
+De hecho, algunos parches pueden tener tan pocos recursos o brindar una protección tan mala contra los depredadores que el crecimiento de la población es negativo, es decir, $r$ por debajo de cero, o $\lambda$ menos de 1. Otros parches pueden representar las condiciones perfectas para el crecimiento de la población (al menos si el hábitat no está demasiado poblado).
 
-Una ** población de origen ** se define como un parche que proporciona una * donación neta de inmigrantes ** a parches cercanos con hábitat de menor calidad (es decir, poblaciones sumideros o poblaciones pseudo-sumideros). Una población de origen debe persistir indefinidamente, incluso aislada.
+Una **población de origen** se define como un parche que proporciona una **donación neta de inmigrantes** a parches cercanos con hábitat de menor calidad (es decir, poblaciones sumideros o poblaciones pseudo-sumideros). Una población de origen debe persistir indefinidamente, incluso aislada.
 
-Una ** población sumidero ** se define como un parche que * se extinguiría * si no fuera por la entrada constante de inmigrantes de ** poblaciones de origen ** cercanas.
+Una **población sumidero** se define como un parche que **se extinguiría** si no fuera por la entrada constante de inmigrantes de **poblaciones de origen ** cercanas.
 
-** P **: ¿Cómo se relaciona el concepto de población sumidero con el * efecto de rescate *?
+**P **:¿Cómo se relaciona el concepto de población sumidero con el efecto de rescate ?
 
-Una ** población pseudo-sumidero ** se define como un parche * aumentado artificialmente * por inmigrantes de poblaciones de origen cercanas. De forma aislada (en ausencia de una población fuente cercana), un pseudo-sumidero no se extinguiría (¡un verdadero sumidero se extinguiría!), Sino que se asentaría en una abundancia de equilibrio mucho menor (capacidad de carga). Es decir, un pseudo-sumidero * mantiene una abundancia de equlibrium por encima de su capacidad de carga debido a la afluencia de inmigrantes de una o más poblaciones de origen cercanas *.
+Una **población pseudo-sumidero** se define como un parche *aumentado artificialmente* por inmigrantes de poblaciones de origen cercanas. De forma aislada (en ausencia de una población fuente cercana), un pseudo-sumidero no se extinguiría (¡un verdadero sumidero se extinguiría!), Sino que se asentaría en una abundancia de equilibrio mucho menor (capacidad de carga). Es decir, un pseudo-sumidero *mantiene una abundancia de equlibrium por encima de su capacidad de carga debido a la afluencia de inmigrantes de una o más poblaciones de origen cercanas*.
 
 ## Ejercicio en clase: ¡fuentes y sumideros!
 
 En este ejercicio, exploraremos la dinámica fuente-sumidero.
 
-1. Primero haga clic en este [enlace](https://insightmaker.com/insight/107587/Source-Sink-2) y clone este *modelo de fuente-receptor basado en la población * en InsightMaker. Este modelo representa una metapoblación de cuatro parches con una población fuente grande y tres poblaciones sumideros más pequeñas. Las poblaciones de sumideros están ubicadas a diferentes distancias de la población de origen. Aquí está la *configuración espacial * aproximada de esta metapoblación:
+1. Primero haga clic en este [enlace](https://insightmaker.com/insight/107587/Source-Sink-2) y clone este *modelo de fuente-receptor basado en la población* en InsightMaker. Este modelo representa una metapoblación de cuatro parches con una población fuente grande y tres poblaciones sumideros más pequeñas. Las poblaciones de sumideros están ubicadas a diferentes distancias de la población de origen. Aquí está la *configuración espacial * aproximada de esta metapoblación:
 
 
 
