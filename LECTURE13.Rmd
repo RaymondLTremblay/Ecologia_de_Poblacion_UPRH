@@ -245,8 +245,8 @@ En este ejercicio, exploraremos la dinámica fuente-sumidero.
 - Abundancia inicial en sumidero de rango medio: 10
 - Abundancia inicial en sumidero distante: 10
 - K para la población de origen: 100
-- K para lavabo cercano: 50
-- K para *sink* de gama media: 25
+- K para *sink* (Población de sumideros) cercano: 50
+- K para *sink* (Población de sumideros) de gama media: 25
 - K para sumidero distante: 15
 - Tasa máxima de dispersión: 10% anual (0,1)
 - Lambda (tasa de crecimiento discreta) para poblaciones sumideros [lambda malo]: 0,8
@@ -293,7 +293,7 @@ NOTA: la tasa de dispersión máxima (en este modelo) es la tasa de dispersión 
 
 NOTA: es posible que desee clonar su modelo ahora para que pueda ir y venir fácilmente entre el modelo de "trampa ecológica" y el modelo de "fuente-sumidero".
 
-> ¡La población "sink" cercano es ahora extremadamente atractivo para nuestra especie focal, ya que contiene abundantes recursos alimenticios y lo que parece un buen refugio! Sin embargo, en este hábitat también hay un nuevo depredador introducido que la especie no puede detectar. Por lo tanto, las tasas de dispersión al hábitat del sumidero son muy altas, pero las tasas de mortalidad también son muy altas.
+> ¡La población "sink" (Población de sumideros) cercano es ahora extremadamente atractivo para nuestra especie focal, ya que contiene abundantes recursos alimenticios y lo que parece un buen refugio! Sin embargo, en este hábitat también hay un nuevo depredador introducido que la especie no puede detectar. Por lo tanto, las tasas de dispersión al hábitat del sumidero son muy altas, pero las tasas de mortalidad también son muy altas.
 
 Para forzar a un número desproporcionado de personas a ingresar al sumidero cercano, abra el editor de ecuaciones para el flujo desde la fuente al sumidero cercano. Cambie la primera línea para que lea:
 
@@ -332,7 +332,7 @@ newexp-[nearby sink]
 
 ```
 
-9. Ejecute el modelo con el "Sink patch"  cercano como trampa ecológica e intente abordar las siguientes preguntas:
+9. Ejecute el modelo con el "Sink patch" (Población de sumideros) cercano como trampa ecológica e intente abordar las siguientes preguntas:
 
 ** P **: 
 
@@ -362,7 +362,7 @@ ______________________
 
 
 
-## In-class exercise: sources and sinks!
+## In-class exercise: sources and sinks (Población sumideros)!
 
 In this exercise, we will explore source-sink dynamics!
 
