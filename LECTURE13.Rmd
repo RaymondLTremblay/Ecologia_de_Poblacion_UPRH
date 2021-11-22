@@ -240,35 +240,52 @@ En este ejercicio, exploraremos la dinámica fuente-sumidero.
 
 2. Asegúrese de que los parámetros del modelo estén en los valores predeterminados. Los parámetros predeterminados deben ser:
 
-Abundancia inicial en fuente: 100
-Abundancia inicial en sumidero cercano: 10
-Abundancia inicial en sumidero de rango medio: 10
-Abundancia inicial en sumidero distante: 10
-K para la población de origen: 100
-K para lavabo cercano: 50
-K para fregadero de gama media: 25
-K para sumidero distante: 15
-Tasa máxima de dispersión: 10% anual (0,1)
-Lambda (tasa de crecimiento discreta) para poblaciones sumideros [lambda malo]: 0,8
-Lambda para la población de origen [lambda buena]: 2.1
+ - Abundancia inicial en fuente: 100
+ -  Abundancia inicial en sumidero cercano: 10
+- Abundancia inicial en sumidero de rango medio: 10
+- Abundancia inicial en sumidero distante: 10
+- K para la población de origen: 100
+- K para lavabo cercano: 50
+- K para fregadero de gama media: 25
+- K para sumidero distante: 15
+- Tasa máxima de dispersión: 10% anual (0,1)
+- Lambda (tasa de crecimiento discreta) para poblaciones sumideros [lambda malo]: 0,8
+- Lambda para la población de origen [lambda buena]: 2.1
 
 NOTA: la tasa de dispersión máxima (en este modelo) es la tasa de dispersión entre parches vecinos. Los parches que se encuentran más separados tienen tasas de dispersión que se calculan como una fracción de la tasa máxima.
 
 3. Ejecute el modelo, vea los resultados y asegúrese de comprender cómo funciona.
 
-** Q **: en este escenario, una fracción constante de cada población se dispersa a cada parche vecino cada año. ¿Es esto realista? ¿Puedes pensar en escenarios del mundo real que conducirían a diferentes patrones de dispersión?
+** Q **: en este escenario, una fracción constante de cada población se dispersa a cada parche vecino cada año. 
+
+- ¿Es esto realista? 
+- ¿Puedes pensar en escenarios del mundo real que conducirían a diferentes patrones de dispersión?
 
 ** P **: ¿Qué fuentes de datos podrían ser útiles para comprender las tasas de dispersión en una metapoblación?
 
-4. Cambie la tasa de dispersión a cero y ejecute el modelo. ¿Lo que sucede? ¿Esto tiene sentido?
+4. Cambie la tasa de dispersión a cero y ejecute el modelo. 
 
-5. Cambie la tasa de dispersión a 0.01 (1%). ¿Que pasa ahora? ¿El sumidero distante sigue funcionando como población sumidero? Es decir, ¿está ocupado de forma continua? Si no es así, ¿cuál es la tasa de dispersión mínima que generalmente asegura que el sumidero distante esté constantemente ocupado (continuamente) (asegúrese de que el límite inferior de la región del 95% para la abundancia en este parche sea superior a 2 para todos los años)? 
+ - ¿Lo que sucede? 
+ -¿Esto tiene sentido?
 
-6. Vuelva a cambiar la tasa de dispersión al 10%. Ahora reduzca la tasa de crecimiento de la población en la población de origen ("lambda buena") a 1,1. ¿Que pasa ahora? ¿La población fuente todavía opera como una fuente efectiva (es decir, apoya la ocupación constante de todos los sumideros)? ¿Qué sucede si establece la tasa de crecimiento máxima en el parche de origen en 1? ¿Podría una población así servir alguna vez como una población fuente eficaz?
+5. Cambie la tasa de dispersión a 0.01 (1%). 
+
+ - ¿Que pasa ahora? ¿El sumidero distante sigue funcionando como población sumidero? 
+ - Es decir, ¿está ocupado de forma continua? Si no es así, ¿cuál es la tasa de dispersión mínima que generalmente asegura que el sumidero distante esté constantemente ocupado (continuamente) (asegúrese de que el límite inferior de la región del 95% para la abundancia en este parche sea superior a 2 para todos los años)? 
+
+6. Vuelva a cambiar la tasa de dispersión al 10%. Ahora reduzca la tasa de crecimiento de la población en la población de origen ("lambda buena") a 1,1.
+
+ - ¿Que pasa ahora? ¿La población fuente todavía opera como una fuente efectiva (es decir, apoya la ocupación constante de todos los sumideros)? 
+ - ¿Qué sucede si establece la tasa de crecimiento máxima en el parche de origen en 1? 
+ - ¿Podría una población así servir alguna vez como una población fuente eficaz?
 
 #### ¡Un pseudo-sumidero!
 
-7. Vuelva a cambiar la lambda de origen a 2.1. Ahora cambie la lambda del sumidero a 1.1 y la tasa de dispersión máxima al 25%. ¿Cuál es la abundancia de equilibrio aproximada del sumidero distante? ¿Cómo se relaciona esto con su capacidad de carga? Genere una figura (utilizando InsightMaker) que ilustre la abundancia del sumidero distante frente a la capacidad de carga (a lo largo del tiempo). ¿Cómo ilustra esta figura el concepto de **pseudo-sumidero **?
+7. Vuelva a cambiar la lambda de origen a 2.1. Ahora cambie la lambda del sumidero a 1.1 y la tasa de dispersión máxima al 25%. 
+
+- ¿Cuál es la abundancia de equilibrio aproximada del sumidero distante? 
+- ¿Cómo se relaciona esto con su capacidad de carga? Genere una figura (utilizando InsightMaker) que ilustre la abundancia del sumidero distante frente a la capacidad de carga (a lo largo del tiempo). 
+- ¿Cómo ilustra esta figura el concepto de **pseudo-sumidero **?
 
 #### ¡Una trampa ecológica!
 
@@ -317,9 +334,14 @@ newexp-[nearby sink]
 
 9. Ejecute el modelo con el fregadero cercano como trampa ecológica e intente abordar las siguientes preguntas:
 
-** P **: ¿de qué manera el sumidero cercano es ahora una * trampa ecológica *? ¿Son todas las poblaciones de sumideros realmente * trampas ecológicas *?
+** P **: 
+ - ¿de qué manera el sumidero cercano es ahora una *trampa ecológica *? 
+ - ¿Son todas las poblaciones de sumideros realmente *trampas ecológicas *?
 
-** P **: ¿Están mejor las metapoblaciones sin poblaciones sumideros? ¿Podría ser * deseable * eliminar una población sumidero para mejorar el estado de conservación de una metapoblación? ¿Bajo que circunstancias? ¿Cómo se relaciona esto con el concepto de * dependencia de la densidad?
+** P **: ¿Están mejor las metapoblaciones sin poblaciones sumideros? 
+ - ¿Podría ser *deseable * eliminar una población sumidero para mejorar el estado de conservación de una metapoblación? 
+ - ¿Bajo que circunstancias? 
+ - ¿Cómo se relaciona esto con el concepto de *dependencia de la densidad?
 
 
 #### ¡Beneficios de las poblaciones de sumideros!
