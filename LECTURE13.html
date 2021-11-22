@@ -636,7 +636,7 @@ div.tocify {
 <li>Abundancia inicial en sumidero distante: 10</li>
 <li>K para la población de origen: 100</li>
 <li>K para lavabo cercano: 50</li>
-<li>K para fregadero de gama media: 25</li>
+<li>K para <em>sink</em> de gama media: 25</li>
 <li>K para sumidero distante: 15</li>
 <li>Tasa máxima de dispersión: 10% anual (0,1)</li>
 <li>Lambda (tasa de crecimiento discreta) para poblaciones sumideros [lambda malo]: 0,8</li>
@@ -691,7 +691,7 @@ div.tocify {
 </ol>
 <p>NOTA: es posible que desee clonar su modelo ahora para que pueda ir y venir fácilmente entre el modelo de “trampa ecológica” y el modelo de “fuente-sumidero”.</p>
 <blockquote>
-<p>¡El fregadero cercano es ahora extremadamente atractivo para nuestra especie focal, ya que contiene abundantes recursos alimenticios y lo que parece un buen refugio! Sin embargo, en este hábitat también hay un nuevo depredador introducido que la especie no puede detectar. Por lo tanto, las tasas de dispersión al hábitat del sumidero son muy altas, pero las tasas de mortalidad también son muy altas.</p>
+<p>¡La población “sink” cercano es ahora extremadamente atractivo para nuestra especie focal, ya que contiene abundantes recursos alimenticios y lo que parece un buen refugio! Sin embargo, en este hábitat también hay un nuevo depredador introducido que la especie no puede detectar. Por lo tanto, las tasas de dispersión al hábitat del sumidero son muy altas, pero las tasas de mortalidad también son muy altas.</p>
 </blockquote>
 <p>Para forzar a un número desproporcionado de personas a ingresar al sumidero cercano, abra el editor de ecuaciones para el flujo desde la fuente al sumidero cercano. Cambie la primera línea para que lea:</p>
 <pre><code>0.01*[nearby sink] - 0.5*[SOURCE]</code></pre>
@@ -715,10 +715,19 @@ End If
 newexp-[nearby sink]
 </code></pre>
 <ol start="9" style="list-style-type: decimal">
-<li>Ejecute el modelo con el fregadero cercano como trampa ecológica e intente abordar las siguientes preguntas:</li>
+<li>Ejecute el modelo con el “Sink patch” cercano como trampa ecológica e intente abordar las siguientes preguntas:</li>
 </ol>
-<p>** P **: - ¿de qué manera el sumidero cercano es ahora una <em>trampa ecológica </em>? - ¿Son todas las poblaciones de sumideros realmente <em>trampas ecológicas </em>?</p>
-<p>** P **: ¿Están mejor las metapoblaciones sin poblaciones sumideros? - ¿Podría ser <em>deseable </em> eliminar una población sumidero para mejorar el estado de conservación de una metapoblación? - ¿Bajo que circunstancias? - ¿Cómo se relaciona esto con el concepto de *dependencia de la densidad?</p>
+<p>** P **:</p>
+<ul>
+<li>¿de qué manera el sumidero cercano es ahora una <em>trampa ecológica </em>?</li>
+<li>¿Son todas las poblaciones de sumideros realmente <em>trampas ecológicas </em>?</li>
+</ul>
+<p>** P **: ¿Están mejor las metapoblaciones sin poblaciones sumideros?</p>
+<ul>
+<li>¿Podría ser <em>deseable </em> eliminar una población sumidero para mejorar el estado de conservación de una metapoblación?</li>
+<li>¿Bajo que circunstancias?</li>
+<li>¿Cómo se relaciona esto con el concepto de *dependencia de la densidad?</li>
+</ul>
 </div>
 <div id="beneficios-de-las-poblaciones-de-sumideros" class="section level4">
 <h4>¡Beneficios de las poblaciones de sumideros!</h4>
