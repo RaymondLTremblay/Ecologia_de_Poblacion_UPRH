@@ -14,7 +14,7 @@
 
 <title>Estocasticidad y Incertidumbre</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -487,40 +491,119 @@ div.tocify {
 <p><img src="figures/uncertainty2.jpg" /></p>
 <div id="incertidumbre" class="section level2">
 <h2>Incertidumbre!</h2>
-<p>Todos los sistemas ecológicos están llenos de incertidumbre. Todos lo sabemos intuitivamente. Pero, ¿qué es exactamente lo que queremos decir con eso? ¿Y cómo podemos tomarlo en cuenta? ¿Cómo incorporarlo a nuestros modelos?</p>
-<p>Este es uno de los módulos más importantes de este curso. Pero <em>no está en el libro de Gotelli </em>, ni está destacado en la mayoría de los libros de texto de ecología básica.</p>
+<p>Todos los sistemas ecológicos están llenos de incertidumbre. Todos lo
+sabemos intuitivamente. Pero, ¿qué es exactamente lo que queremos decir
+con eso? ¿Y cómo podemos tomarlo en cuenta? ¿Cómo incorporarlo a
+nuestros modelos?</p>
+<p>Este es uno de los módulos más importantes de este curso. Pero <em>no
+está en el libro de Gotelli </em>, ni está destacado en la mayoría de
+los libros de texto de ecología básica.</p>
 <div id="la-taxonomía-de-incertidumbre" class="section level3">
 <h3>La taxonomía de incertidumbre</h3>
-<p>Hay dos razones principales por las que podemos estar inseguros. O <em>carecemos de conocimientos suficientes</em> o el <em>sistema en sí es variable e impredecible</em>. Exploremos estos dos tipos de incertidumbre.</p>
+<p>Hay dos razones principales por las que podemos estar inseguros. O
+<em>carecemos de conocimientos suficientes</em> o el <em>sistema en sí
+es variable e impredecible</em>. Exploremos estos dos tipos de
+incertidumbre.</p>
 <ul>
-<li><p><strong>Falta el conocimiento suficiente </strong>. Esto también se conoce como <em>incertidumbre de muestreo </em>, incertidumbre de parámetros, incertidumbre estructural y más. <em>En términos prácticos: si recopilara más datos, podría (en principio) hacer un mejor modelo que represente más de cerca la realidad.</em></p></li>
-<li><p><strong>El sistema es inherentemente variable e impredecible</strong>. En la ecología de poblaciones y el modelado de sistemas, esto también se conoce como <strong>estocasticidad </strong>. <em>En términos prácticos: no importa cuánto estudiemos y entendamos un sistema natural, nunca seremos capaces de predecir el futuro con certeza</em>. Los sistemas ecológicos son inherentemente variables e impredecibles. No podemos saber con certeza si un individuo se apareará o morirá. ¡Ni siquiera podemos estar seguros de si las condiciones ambientales (por ejemplo, el clima) serán favorables o desfavorables para la producción de crías o la mortalidad!</p></li>
+<li><p><strong>Falta el conocimiento suficiente </strong>. Esto también
+se conoce como <em>incertidumbre de muestreo </em>, incertidumbre de
+parámetros, incertidumbre estructural y más. <em>En términos prácticos:
+si recopilara más datos, podría (en principio) hacer un mejor modelo que
+represente más de cerca la realidad.</em></p></li>
+<li><p><strong>El sistema es inherentemente variable e
+impredecible</strong>. En la ecología de poblaciones y el modelado de
+sistemas, esto también se conoce como <strong>estocasticidad </strong>.
+<em>En términos prácticos: no importa cuánto estudiemos y entendamos un
+sistema natural, nunca seremos capaces de predecir el futuro con
+certeza</em>. Los sistemas ecológicos son inherentemente variables e
+impredecibles. No podemos saber con certeza si un individuo se apareará
+o morirá. ¡Ni siquiera podemos estar seguros de si las condiciones
+ambientales (por ejemplo, el clima) serán favorables o desfavorables
+para la producción de crías o la mortalidad!</p></li>
 </ul>
 </div>
 </div>
 <div id="cómo-lidiar-con-la-incertidumbre" class="section level2">
 <h2>Cómo lidiar con la incertidumbre</h2>
-<p>Como ecologistas de población aplicados, debemos <strong>abrazar la incertidumbre</strong>. Contamos con dos herramientas principales para ayudarnos a gestionar y dar cuenta de la incertidumbre en nuestros sistemas de estudio: <em>análisis de incertidumbre</em> y <em>modelos estocásticos</em></p>
+<p>Como ecologistas de población aplicados, debemos <strong>abrazar la
+incertidumbre</strong>. Contamos con dos herramientas principales para
+ayudarnos a gestionar y dar cuenta de la incertidumbre en nuestros
+sistemas de estudio: <em>análisis de incertidumbre</em> y <em>modelos
+estocásticos</em></p>
 <div id="análisis-de-incertidumbre" class="section level3">
 <h3>Análisis de incertidumbre</h3>
-<p>¿Qué pasa si simplemente no tenemos suficientes datos para construir un modelo perfecto? Este es un ejemplo de <em>falta de conocimientos suficientes</em>. En este caso, la herramienta que utilizamos se llama <strong>análisis de incertidumbre </strong>. Básicamente, probamos un rango de valores posibles para un parámetro (generalmente una tasa vital per cápita, a menudo modelada como [Variables] en InsightMaker) sobre la que no estamos seguros (por ejemplo, la tasa de supervivencia de adultos podría ser 0.6 o 0.7) y ver qué sucede. a nuestro sistema de estudio (por ejemplo, dada la incertidumbre que tenemos sobre el verdadero valor del parámetro, ¿es plausible que la población se extinga? ¿Es plausible que disminuya?).</p>
+<p>¿Qué pasa si simplemente no tenemos suficientes datos para construir
+un modelo perfecto? Este es un ejemplo de <em>falta de conocimientos
+suficientes</em>. En este caso, la herramienta que utilizamos se llama
+<strong>análisis de incertidumbre </strong>. Básicamente, probamos un
+rango de valores posibles para un parámetro (generalmente una tasa vital
+per cápita, a menudo modelada como [Variables] en InsightMaker) sobre la
+que no estamos seguros (por ejemplo, la tasa de supervivencia de adultos
+podría ser 0.6 o 0.7) y ver qué sucede. a nuestro sistema de estudio
+(por ejemplo, dada la incertidumbre que tenemos sobre el verdadero valor
+del parámetro, ¿es plausible que la población se extinga? ¿Es plausible
+que disminuya?).</p>
 </div>
-<div id="modelos-estocásticos-estocasticidad-demográfica-y-ambiental" class="section level3">
+<div id="modelos-estocásticos-estocasticidad-demográfica-y-ambiental"
+class="section level3">
 <h3>Modelos estocásticos (estocasticidad demográfica y ambiental)</h3>
 <ol style="list-style-type: decimal">
-<li><p>En segundo lugar, generalmente no podemos predecir si un individuo vivirá o morirá, se reproducirá o no se reproducirá, etc. Todo lo que podemos saber es la <em>probabilidad </em> de apareamiento, o la <em>probabilidad </em> de morir, o el valor per cápita. <em>tasa </em> de producción de descendencia, o la probabilidad de que una descendencia determinada sea hembra. Pero cuando se trata de proyectar exactamente qué individuos viven o mueren (¡si un individuo tendrá suerte, por así decirlo!), Quién da a luz y quién no, y cuántas hembras nacen, simplemente <em>no podemos saberlo con certeza</em>. Este es un ejemplo de un sistema que es intrínsecamente impredecible. En ecología de poblaciones, esto se denomina <strong>estocasticidad demográfica </strong>. En este caso, <strong>variamos aleatoriamente el total de nacimientos y muertes </strong> (los [Flujos] en InsightMaker) para representar la imprevisibilidad inherente de los destinos individuales dentro de una población.</p></li>
-<li><p>En tercer lugar, por lo general no podemos predecir si el próximo año o el siguiente será favorable o desfavorable para el crecimiento de la población, es decir, si las tasas vitales per cápita (p. Ej., <span class="math inline">\(B\)</span>, <span class="math inline">\(d\)</span> o <span class="math inline">\(r\)</span>) será más o menos óptimo en un momento futuro (si una <em>población</em> “tendrá suerte”, por así decirlo). Este es otro ejemplo de un sistema que es <em>intrínsecamente impredecible</em>. En ecología de poblaciones, esto se denomina <strong>estocasticidad ambiental</strong>. En este caso, <strong>variamos aleatoriamente las tasas vitales per cápita</strong> (representadas como [Variables] en InsightMaker) para representar la imprevisibilidad inherente de las condiciones ambientales.</p></li>
+<li><p>En segundo lugar, generalmente no podemos predecir si un
+individuo vivirá o morirá, se reproducirá o no se reproducirá, etc. Todo
+lo que podemos saber es la <em>probabilidad </em> de apareamiento, o la
+<em>probabilidad </em> de morir, o el valor per cápita. <em>tasa </em>
+de producción de descendencia, o la probabilidad de que una descendencia
+determinada sea hembra. Pero cuando se trata de proyectar exactamente
+qué individuos viven o mueren (¡si un individuo tendrá suerte, por así
+decirlo!), Quién da a luz y quién no, y cuántas hembras nacen,
+simplemente <em>no podemos saberlo con certeza</em>. Este es un ejemplo
+de un sistema que es intrínsecamente impredecible. En ecología de
+poblaciones, esto se denomina <strong>estocasticidad demográfica
+</strong>. En este caso, <strong>variamos aleatoriamente el total de
+nacimientos y muertes </strong> (los [Flujos] en InsightMaker) para
+representar la imprevisibilidad inherente de los destinos individuales
+dentro de una población.</p></li>
+<li><p>En tercer lugar, por lo general no podemos predecir si el próximo
+año o el siguiente será favorable o desfavorable para el crecimiento de
+la población, es decir, si las tasas vitales per cápita (p. Ej., <span
+class="math inline">\(B\)</span>, <span class="math inline">\(d\)</span>
+o <span class="math inline">\(r\)</span>) será más o menos óptimo en un
+momento futuro (si una <em>población</em> “tendrá suerte”, por así
+decirlo). Este es otro ejemplo de un sistema que es <em>intrínsecamente
+impredecible</em>. En ecología de poblaciones, esto se denomina
+<strong>estocasticidad ambiental</strong>. En este caso,
+<strong>variamos aleatoriamente las tasas vitales per cápita</strong>
+(representadas como [Variables] en InsightMaker) para representar la
+imprevisibilidad inherente de las condiciones ambientales.</p></li>
 </ol>
 <p><img src="figures/dice1.png" /></p>
 </div>
 </div>
 <div id="generación-de-números-aleatorios" class="section level2">
 <h2>Generación de números aleatorios</h2>
-<p>Para incorporar la incertidumbre y la aleatoriedad en nuestros modelos, a menudo incluimos componentes <em>estocásticos</em> para que cada modelo ejecutado (replicado), o cada año de cada modelo ejecutado, sea diferente entre sí (los resultados son variables). Es decir, ¡necesitamos incluir al menos un <strong>generador de números aleatorios</strong> en nuestros modelos! ¡Un generador de números aleatorios es como una máquina de bolas de lotería! Cada vez que queremos un número nuevo, buscamos y sacamos otro número, registramos el número, lo volvemos a colocar y lo agitamos nuevamente.</p>
+<p>Para incorporar la incertidumbre y la aleatoriedad en nuestros
+modelos, a menudo incluimos componentes <em>estocásticos</em> para que
+cada modelo ejecutado (replicado), o cada año de cada modelo ejecutado,
+sea diferente entre sí (los resultados son variables). Es decir,
+¡necesitamos incluir al menos un <strong>generador de números
+aleatorios</strong> en nuestros modelos! ¡Un generador de números
+aleatorios es como una máquina de bolas de lotería! Cada vez que
+queremos un número nuevo, buscamos y sacamos otro número, registramos el
+número, lo volvemos a colocar y lo agitamos nuevamente.</p>
 <p><img src="figures/lottery1.png" /></p>
-<p>Cada generador de números aleatorios tiene una <strong>distribución </strong>. Esta es una forma de definir qué hay exactamente en el cuadro, lo que se puede visualizar como un diagrama de cuadro o histograma, con los valores posibles únicos representados en el eje X y las probabilidades asociadas con cada valor único representado en el eje Y.</p>
-<p>Si desea seguir esta lección en R, puede encontrar el guión de R <a href="LECTURE8.R">aquí</a>. Recomiendo hacer clic derecho en el enlace, guardar el script en una carpeta designada y cargar el script en RStudio.</p>
-<p>Por ejemplo, la caja puede tener 10 “unos”, 5 “dos” y 2 “tres”. En este caso, la distribución se ve así (<em>probabilidad</em> de cada <em>posibilidad</em>):</p>
+<p>Cada generador de números aleatorios tiene una <strong>distribución
+</strong>. Esta es una forma de definir qué hay exactamente en el
+cuadro, lo que se puede visualizar como un diagrama de cuadro o
+histograma, con los valores posibles únicos representados en el eje X y
+las probabilidades asociadas con cada valor único representado en el eje
+Y.</p>
+<p>Si desea seguir esta lección en R, puede encontrar el guión de R <a
+href="LECTURE8.R">aquí</a>. Recomiendo hacer clic derecho en el enlace,
+guardar el script en una carpeta designada y cargar el script en
+RStudio.</p>
+<p>Por ejemplo, la caja puede tener 10 “unos”, 5 “dos” y 2 “tres”. En
+este caso, la distribución se ve así (<em>probabilidad</em> de cada
+<em>posibilidad</em>):</p>
 <pre class="r"><code>#############
 # Generación de números aleatorios!
 
@@ -531,13 +614,18 @@ div.tocify {
 box &lt;- c(rep(1,10),rep(2,5),rep(3,2))  # define what&#39;s in the lottery ball machine (10 &quot;1&quot; balls, 5 &quot;2&quot; balls and 2 &quot;3&quot; balls)
 barplot(table(box)/sum(table(box)),ylab=&quot;probability&quot;,xlab=&quot;possibility&quot;)  # visualize the distribution of possibilities</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Una distribución de probabilidad puede ser prácticamente cualquier cosa que desees. Sin embargo, hay varios tipos clave de distribución de probabilidad que surgen una y otra vez, ¡y deberíamos aprenderlos!</p>
+<p>Una distribución de probabilidad puede ser prácticamente cualquier
+cosa que desees. Sin embargo, hay varios tipos clave de distribución de
+probabilidad que surgen una y otra vez, ¡y deberíamos aprenderlos!</p>
 <div id="distribuciones-de-probabilidad" class="section level3">
 <h3>Distribuciones de probabilidad</h3>
 </div>
 <div id="section" class="section level3">
 <h3></h3>
-<p>Discreto frente a continuo En <em>distribuciones discretas</em>, cada resultado único tiene una probabilidad específica (como la probabilidad de lanzar una moneda 10 veces y obtener 4 caras). Por ejemplo, consideremos una <em>distribución binomial</em></p>
+<p>Discreto frente a continuo En <em>distribuciones discretas</em>, cada
+resultado único tiene una probabilidad específica (como la probabilidad
+de lanzar una moneda 10 veces y obtener 4 caras). Por ejemplo,
+consideremos una <em>distribución binomial</em></p>
 <pre class="r"><code>################
 # Distribuciones discretas
 ################
@@ -555,9 +643,14 @@ barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <hr />
 </div>
-<div id="comprobamos-esta-distribución-con-un-ejercicio-en-clase" class="section level3">
+<div id="comprobamos-esta-distribución-con-un-ejercicio-en-clase"
+class="section level3">
 <h3>Comprobamos esta distribución con un ejercicio en clase</h3>
-<p>Cada estudiante tomará una moneda, y la tirará para y contará cuantos <strong>caras</strong> contabiliza de 10 tiradas. Que tipo de característica biologíaca podría representar una distribución binomial? Aqui para comenzar datos ficticios. Tendrán que poner los datos recopilado en la clase.</p>
+<p>Cada estudiante tomará una moneda, y la tirará para y contará cuantos
+<strong>caras</strong> contabiliza de 10 tiradas. Que tipo de
+característica biologíaca podría representar una distribución binomial?
+Aqui para comenzar datos ficticios. Tendrán que poner los datos
+recopilado en la clase.</p>
 <pre class="r"><code>library(tidyverse)
 caras=c(4,7, 6, 8, 5, 4,3,7,7,2,
         9, 3, 5,4, 5, 4, 4,2,6,5)
@@ -590,8 +683,10 @@ caras</code></pre>
   geom_histogram(aes(y=..density..))</code></pre>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p><strong>P </strong> ¿Qué parámetro de población podría ser útil para la modelización la distribución binomial?</p>
-<p>Otra distribución discreta que usaremos en esta clase es la <em>distribución de Poisson</em>:</p>
+<p><strong>P </strong> ¿Qué parámetro de población podría ser útil para
+la modelización la distribución binomial?</p>
+<p>Otra distribución discreta que usaremos en esta clase es la
+<em>distribución de Poisson</em>:</p>
 <pre class="r"><code>#########
 # Distribución de Poisson
 
@@ -601,8 +696,10 @@ names(probs) &lt;- xvals
                
 barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Poisson distribution (discrete)&quot;)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p><strong>P </strong> ¿Qué parámetro de población podría ser útil para modelar la distribución de Poisson?</p>
-<p>En <em>distribuciones continuas</em>, hay un número infinito de posibilidades entre dos posibilidades únicas.</p>
+<p><strong>P </strong> ¿Qué parámetro de población podría ser útil para
+modelar la distribución de Poisson?</p>
+<p>En <em>distribuciones continuas</em>, hay un número infinito de
+posibilidades entre dos posibilidades únicas.</p>
 <p>Consideremos la <em>distribución uniforme</em>:</p>
 <pre class="r"><code>################
 # DISTRIBUCIONES CONTINUAS
@@ -616,9 +713,15 @@ upper = 10
 
 curve(dunif(x,lower,upper),0,10,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Uniform distribution (continuous)&quot;,ylim=c(0,1))   # probability density</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Esta no es una distribución de aspecto muy interesante. Todos los números posibles del 0 al 10 son igualmente probables.</p>
-<p>Otra distribución continua que debe conocer se llama <em>Distribución normal</em>. Esta distribución (la clásica distribución en forma de campana) tiene un límite inferior de <span class="math inline">\(-\infty\)</span> y un límite superior de <span class="math inline">\(\infty\)</span>.</p>
-<p><strong>P </strong> ¿Qué parámetro de población podría ser útil esta distribución para modelar?</p>
+<p>Esta no es una distribución de aspecto muy interesante. Todos los
+números posibles del 0 al 10 son igualmente probables.</p>
+<p>Otra distribución continua que debe conocer se llama <em>Distribución
+normal</em>. Esta distribución (la clásica distribución en forma de
+campana) tiene un límite inferior de <span
+class="math inline">\(-\infty\)</span> y un límite superior de <span
+class="math inline">\(\infty\)</span>.</p>
+<p><strong>P </strong> ¿Qué parámetro de población podría ser útil esta
+distribución para modelar?</p>
 <pre class="r"><code>#########
 # Distribución normal
 
@@ -626,7 +729,8 @@ mean = 7.1
 stdev = 1.9
 
 curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Normal distribution (continuous)&quot;)   # probability density</code></pre>
-<p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" /> ### Nota que la distribución puede estar con valores negativos</p>
+<p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+### Nota que la distribución puede estar con valores negativos</p>
 <pre class="r"><code>#########
 # Distribución normal
 
@@ -642,8 +746,12 @@ x=as.tibble(x)</code></pre>
 ggplot(x, aes(value))+
   geom_density()</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>Otra distribución continua que debe conocer se llama Distribución <strong>lognormal</strong>. Esta distribución tiene un límite inferior de cero y un límite superior de <span class="math inline">\(\infty\)</span>.</p>
-<p><strong>P</strong> ¿Qué parámetro de población podría ser útil para el modelado de la distribución logarítmica normal?</p>
+<p>Otra distribución continua que debe conocer se llama Distribución
+<strong>lognormal</strong>. Esta distribución tiene un límite inferior
+de cero y un límite superior de <span
+class="math inline">\(\infty\)</span>.</p>
+<p><strong>P</strong> ¿Qué parámetro de población podría ser útil para
+el modelado de la distribución logarítmica normal?</p>
 <pre class="r"><code>############
 # Log-normal distribution
 
@@ -652,8 +760,11 @@ stdevlog = 0.6
 
 curve(dlnorm(x,meanlog,stdevlog),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Lognormal distribution (continuous)&quot;)   # probability density</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p>Otra distribución continua que quizás desee conocer se llama <em>distribución Beta</em>. Esta distribución tiene un límite inferior de cero y un límite superior de 1.</p>
-<p><strong>P</strong> ¿Qué parámetro de población podría ser útil para modelar la distribución beta?</p>
+<p>Otra distribución continua que quizás desee conocer se llama
+<em>distribución Beta</em>. Esta distribución tiene un límite inferior
+de cero y un límite superior de 1.</p>
+<p><strong>P</strong> ¿Qué parámetro de población podría ser útil para
+modelar la distribución beta?</p>
 <pre class="r"><code>##########
 # Beta distribution
 
@@ -666,18 +777,29 @@ curve(dbeta(x,shape1,shape2),0,1,ylab=&quot;Probability (density)&quot;,xlab=&qu
 <div id="explore-las-distribuciones-en-r" class="section level3">
 <h3>Explore las distribuciones en R</h3>
 <p>Juguemos un poco con las distribuciones usando R.</p>
-<p>Tenga en cuenta que todas estas distribuciones también están disponibles en InsightMaker.</p>
+<p>Tenga en cuenta que todas estas distribuciones también están
+disponibles en InsightMaker.</p>
 <p>¡Aquí hay algo de sintaxis R para ti!</p>
-<p>Tenga en cuenta que todos los generadores de números aleatorios R son <strong>funciones </strong> que comienzan con la letra “r”, que significa “aleatorio”.</p>
-<p>Los generadores de números aleatorios son <em>funciones </em> (“máquinas” que toman entradas y transforman las entradas (argumentos) en salidas útiles; en R, eso significa que utilizará la siguiente sintaxis:</p>
+<p>Tenga en cuenta que todos los generadores de números aleatorios R son
+<strong>funciones </strong> que comienzan con la letra “r”, que
+significa “aleatorio”.</p>
+<p>Los generadores de números aleatorios son <em>funciones </em>
+(“máquinas” que toman entradas y transforman las entradas (argumentos)
+en salidas útiles; en R, eso significa que utilizará la siguiente
+sintaxis:</p>
 <pre><code>
 thisfunction([argument 1],[argument 2] ... )
 
 myresults &lt;- thisfunction([argument 1],[argument 2] ... )
 
 </code></pre>
-<p>El primer <em>argumento </em> (especificado entre paréntesis en una llamada de función) representa cuántos números aleatorios desea que R extraiga de la distribución especificada.</p>
-<p>Los argumentos posteriores representan los <em>parámetros</em> de la distribución aleatoria de la que desea extraer; puede modificar estos parámetros para adaptarlos a sus necesidades. Aquí hay algunos ejemplos (dibujando 1 número aleatorio a la vez):</p>
+<p>El primer <em>argumento </em> (especificado entre paréntesis en una
+llamada de función) representa cuántos números aleatorios desea que R
+extraiga de la distribución especificada.</p>
+<p>Los argumentos posteriores representan los <em>parámetros</em> de la
+distribución aleatoria de la que desea extraer; puede modificar estos
+parámetros para adaptarlos a sus necesidades. Aquí hay algunos ejemplos
+(dibujando 1 número aleatorio a la vez):</p>
 <pre class="r"><code>################
 # Random number generation!
 
@@ -704,8 +826,12 @@ rbeta(1,shape1=10,shape2=3)  # beta distribution is defined by &quot;shape1&quot
 
 # 1. https://keisan.casio.com/exec/system/1180573226
 # 2. https://stats.stackexchange.com/questions/376634/how-to-pick-starting-parameters-for-massfitdist-with-the-beta-distribution</code></pre>
-<p>¿Puede cambiar una de las funciones anteriores para producir más de 1 número aleatorio?</p>
-<p>¿Intentar cambiar uno de los otros parámetros y generar 100 números aleatorios? Para visualizar la distribución, puede usar la función “hist ()” para producir un histograma de la distribución aleatoria que acaba de generar.</p>
+<p>¿Puede cambiar una de las funciones anteriores para producir más de 1
+número aleatorio?</p>
+<p>¿Intentar cambiar uno de los otros parámetros y generar 100 números
+aleatorios? Para visualizar la distribución, puede usar la función “hist
+()” para producir un histograma de la distribución aleatoria que acaba
+de generar.</p>
 <p>¡Incluso puede crear su propia distribución si lo desea!</p>
 <pre class="r"><code>########
 # muestra de una distribución arbitraria
@@ -716,11 +842,16 @@ hist(distribution,freq = F, ylab=&quot;Probability&quot;,xlab=&quot;Possibilitie
 <pre class="r"><code>sample(distribution,1)  # take one random sample from this distribution!</code></pre>
 <pre><code>## [1] 5</code></pre>
 </div>
-<div id="ejercicio-en-clase-ajuste-una-distribución" class="section level3">
+<div id="ejercicio-en-clase-ajuste-una-distribución"
+class="section level3">
 <h3>Ejercicio en clase: ¡Ajuste una distribución!</h3>
 <p><img src="figures/canvasback1.jpg" /></p>
-<p>Imaginemos que hemos estudiado una gran población de <strong>canvas back duck</strong> durante un período de 20 años y hemos estimado el número promedio de huevos eclosionados con éxito por hembra (tasa de natalidad per cápita) para cada uno de los 20 años consecutivos.</p>
-<p>Primero ingresamos estos números en R y visualizamos la distribución:</p>
+<p>Imaginemos que hemos estudiado una gran población de <strong>canvas
+back duck</strong> durante un período de 20 años y hemos estimado el
+número promedio de huevos eclosionados con éxito por hembra (tasa de
+natalidad per cápita) para cada uno de los 20 años consecutivos.</p>
+<p>Primero ingresamos estos números en R y visualizamos la
+distribución:</p>
 <pre class="r"><code>#############
 # Demostración: ¡use datos para determinar una distribución!
 #############
@@ -734,10 +865,20 @@ hatch_perfem &lt;- c(3.05, 1.45, 0.99, 3.24, 1.49, 1.70, 1.66, 2.32, 0.83, 2.41,
 
 hist(hatch_perfem)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p><strong>P</strong>: ¿Qué tipo de incertidumbre representa más probablemente este conjunto de valores? ¿Qué generador de números aleatorios podría utilizar para representar esta incertidumbre?</p>
-<p>¡Ahora intentemos ajustar una distribución a estos datos! Podríamos usar una distribución normal (que estaría perfectamente bien), pero debido a que el número total per cápita de huevos eclosionados con éxito no puede bajar de cero (pero no tiene un límite superior definido), ¡es aún más apropiado usar una distribución logarítmica normal!</p>
-<p>Podríamos usar estadísticas para ajustar la distribución, ¡pero solo usaremos prueba y error por ahora! Aquí hay un código para ayudarlo a comenzar.</p>
-<p>Tenga en cuenta que la distribución logarítmica normal tiene dos parámetros: el primero (‘meanlog’) ayuda a definir la media y el otro (‘sdlog’) ayuda a determinar la variabilidad de la distribución.</p>
+<p><strong>P</strong>: ¿Qué tipo de incertidumbre representa más
+probablemente este conjunto de valores? ¿Qué generador de números
+aleatorios podría utilizar para representar esta incertidumbre?</p>
+<p>¡Ahora intentemos ajustar una distribución a estos datos! Podríamos
+usar una distribución normal (que estaría perfectamente bien), pero
+debido a que el número total per cápita de huevos eclosionados con éxito
+no puede bajar de cero (pero no tiene un límite superior definido), ¡es
+aún más apropiado usar una distribución logarítmica normal!</p>
+<p>Podríamos usar estadísticas para ajustar la distribución, ¡pero solo
+usaremos prueba y error por ahora! Aquí hay un código para ayudarlo a
+comenzar.</p>
+<p>Tenga en cuenta que la distribución logarítmica normal tiene dos
+parámetros: el primero (‘meanlog’) ayuda a definir la media y el otro
+(‘sdlog’) ayuda a determinar la variabilidad de la distribución.</p>
 <pre class="r"><code>############
 # Trate de identificar una distribución logarítmica normal de números aleatorios para representar la &#39;canvasback duck&#39; data
 
@@ -760,83 +901,198 @@ rlnorm(5,meanlog=1.5,sdlog=0.39)    # ¡por ejemplo! (¡recuerde cambiar el par�
 <pre><code>## [1] 3.795581 5.621093 4.929633 3.205789 4.953206</code></pre>
 </div>
 </div>
-<div id="función-para-encontrar-los-parámetros-de-una-distribución" class="section level2">
+<div id="función-para-encontrar-los-parámetros-de-una-distribución"
+class="section level2">
 <h2>Función para encontrar los parámetros de una distribución</h2>
 <ol style="list-style-type: decimal">
-<li><p>Utilice una función para determinar cual los mejores parámetros de tendencia central y dispersión para encontrar el parámetro “meanlog” apropiado para la distribución logarítmica normal.</p></li>
-<li><p>Use su distribución ajustada para predecir el número promedio de crías por hembra durante los próximos 5 años. Para hacer esto, use la función “rlnorm ()” en R.</p></li>
+<li><p>Utilice una función para determinar cual los mejores parámetros
+de tendencia central y dispersión para encontrar el parámetro “meanlog”
+apropiado para la distribución logarítmica normal.</p></li>
+<li><p>Use su distribución ajustada para predecir el número promedio de
+crías por hembra durante los próximos 5 años. Para hacer esto, use la
+función “rlnorm ()” en R.</p></li>
 </ol>
-<p><strong>P </strong>: ¿Cuál es el valor de mejor ajuste para “meanlog”?</p>
+<p><strong>P </strong>: ¿Cuál es el valor de mejor ajuste para
+“meanlog”?</p>
 <p>Segundo ejemplo:</p>
-<p>Asume que evaluaste 10 poblaciones de mariposas en un año especifico, y que encontraste que los individuos inmaduros (las larvas) tienen la siguiente supervivencias en las 10 poblaciones que evaluaste. Usa los siguientes datos para calcular el promedio y su dispersión con la función adecuada.</p>
-<p>Calculando los momentos de una beta distibución con los datos orginales</p>
-<div id="ejercicio-en-clase-2-estocasticidad-e-incertidumbre-en-insightmaker" class="section level3">
-<h3>Ejercicio en clase 2: estocasticidad e incertidumbre en InsightMaker</h3>
-<p>Estos conceptos (como todo en esta clase) se entienden mejor construyendo modelos.</p>
-<p>Comencemos con una población básica en crecimiento exponencial que se parece a esto:</p>
+<p>Asume que evaluaste 10 poblaciones de mariposas en un año especifico,
+y que encontraste que los individuos inmaduros (las larvas) tienen la
+siguiente supervivencias en las 10 poblaciones que evaluaste. Usa los
+siguientes datos para calcular el promedio y su dispersión con la
+función adecuada.</p>
+<p>Calculando los momentos de una beta distibución con los datos
+orginales</p>
+<div
+id="ejercicio-en-clase-2-estocasticidad-e-incertidumbre-en-insightmaker"
+class="section level3">
+<h3>Ejercicio en clase 2: estocasticidad e incertidumbre en
+InsightMaker</h3>
+<p>Estos conceptos (como todo en esta clase) se entienden mejor
+construyendo modelos.</p>
+<p>Comencemos con una población básica en crecimiento exponencial que se
+parece a esto:</p>
 <p><img src="figures/IM10.jpg" /></p>
 <div id="parametros-de-incertidumbres" class="section level4">
 <h4><em>Parametros de Incertidumbres</em></h4>
 <ol style="list-style-type: decimal">
-<li><p>Establezca <em>Tasa de natalidad </em> igual a 0.4 y <em>Tasa de mortalidad </em> igual a 0.3. Establezca la abundancia inicial en 10. En el menú “Configuración”, configure el modelo para que se ejecute durante 10 años. Asegúrese de que su stock de <em>Población </em> no pueda volverse negativo (esta es una configuración en el panel de configuración). Pulse “Simular” - ¡debería ver un crecimiento exponencial!</p></li>
-<li><p><strong>Incertidumbre de los parámetros:</strong> ¿Qué pasa si tenemos un conocimiento imperfecto sobre la tasa de natalidad? La tasa de natalidad puede oscilar entre 0,2 y 0,5. Ejecute el modelo con la tasa de natalidad más baja y más alta posible. NOTA: puede asignar un título a cada gráfico de resultados utilizando el símbolo en forma de engranaje en la parte superior de la ventana del gráfico; de esa manera, puede nombrar sus escenarios, por ejemplo, “tasa de natalidad mínima”.</p></li>
-<li><p>Ahora use la herramienta “Comparar resultados” (en el menú “Herramientas” en la esquina superior derecha …) para visualizar el rango de posibles trayectorias de crecimiento de la población que serían posibles dada nuestra * incertidumbre * (falta de conocimiento) sobre la tasa de natalidad.</p></li>
+<li><p>Establezca <em>Tasa de natalidad </em> igual a 0.4 y <em>Tasa de
+mortalidad </em> igual a 0.3. Establezca la abundancia inicial en 10. En
+el menú “Configuración”, configure el modelo para que se ejecute durante
+10 años. Asegúrese de que su stock de <em>Población </em> no pueda
+volverse negativo (esta es una configuración en el panel de
+configuración). Pulse “Simular” - ¡debería ver un crecimiento
+exponencial!</p></li>
+<li><p><strong>Incertidumbre de los parámetros:</strong> ¿Qué pasa si
+tenemos un conocimiento imperfecto sobre la tasa de natalidad? La tasa
+de natalidad puede oscilar entre 0,2 y 0,5. Ejecute el modelo con la
+tasa de natalidad más baja y más alta posible. NOTA: puede asignar un
+título a cada gráfico de resultados utilizando el símbolo en forma de
+engranaje en la parte superior de la ventana del gráfico; de esa manera,
+puede nombrar sus escenarios, por ejemplo, “tasa de natalidad
+mínima”.</p></li>
+<li><p>Ahora use la herramienta “Comparar resultados” (en el menú
+“Herramientas” en la esquina superior derecha …) para visualizar el
+rango de posibles trayectorias de crecimiento de la población que serían
+posibles dada nuestra * incertidumbre * (falta de conocimiento) sobre la
+tasa de natalidad.</p></li>
 </ol>
-<p><strong>Q</strong> ¿Cuál es el rango de posibles abundancias finales después de 10 años?</p>
-<p><strong>Q</strong> ¿Deberíamos estudiar más este sistema si queremos saber si la población está creciendo o disminuyendo?</p>
+<p><strong>Q</strong> ¿Cuál es el rango de posibles abundancias finales
+después de 10 años?</p>
+<p><strong>Q</strong> ¿Deberíamos estudiar más este sistema si queremos
+saber si la población está creciendo o disminuyendo?</p>
 </div>
 <div id="demographic-stochasticity" class="section level4">
 <h4><em>Demographic Stochasticity</em></h4>
 <ol style="list-style-type: decimal">
-<li><p>Vuelva a establecer la * Tasa de natalidad * en 0,4. Haga clic en “Simular” - ¡asegúrese de ver un crecimiento exponencial!</p></li>
-<li><p>Usaremos una * distribución binomial * para representar el número de muertes. Es decir, tiramos una moneda la misma cantidad de veces que hay individuos en la población. Si la moneda sale cara, el individuo muere. En este caso, estamos usando una moneda sesgada, ¡solo sale cara el 30% de las veces! La * distribución binomial * representa esencialmente el número de veces que aparecieron cabezas. Para hacer esto en InsightMaker, use la siguiente fórmula para el flujo * Muertes * (puede usar el menú “Funciones de números aleatorios” de la derecha para escribir automáticamente la sintaxis adecuada):</p></li>
+<li><p>Vuelva a establecer la * Tasa de natalidad * en 0,4. Haga clic en
+“Simular” - ¡asegúrese de ver un crecimiento exponencial!</p></li>
+<li><p>Usaremos una * distribución binomial * para representar el número
+de muertes. Es decir, tiramos una moneda la misma cantidad de veces que
+hay individuos en la población. Si la moneda sale cara, el individuo
+muere. En este caso, estamos usando una moneda sesgada, ¡solo sale cara
+el 30% de las veces! La * distribución binomial * representa
+esencialmente el número de veces que aparecieron cabezas. Para hacer
+esto en InsightMaker, use la siguiente fórmula para el flujo * Muertes *
+(puede usar el menú “Funciones de números aleatorios” de la derecha para
+escribir automáticamente la sintaxis adecuada):</p></li>
 </ol>
 <pre><code>RandBinomial([Population], [Death rate])</code></pre>
-<p>En términos sencillos: el número de muertes cada año es una cantidad aleatoria determinada por el “lanzamiento de una moneda” (la distribución binomial es la distribución del “lanzamiento de una moneda”). El total de muertes se calcula lanzando una moneda por cada individuo de la población y matando a todos los individuos que salen “cara” (donde la probabilidad de que salga “cara” es la tasa de mortalidad).</p>
-<p>Para el total de nacimientos, $B $ usaremos la distribución <em>Poisson </em>. La distribución de Poisson se usa a menudo para representar nacimientos, porque produce números enteros, no puede volverse negativa Y no tiene un límite superior estricto (a diferencia de la distribución binomial).</p>
-<p>NOTA: es posible que haya más nacimientos que individuos actualmente en la población (por ejemplo, ¡si todos los individuos tienen dos descendientes!). ¡Esto no sería posible con una distribución binomial! Es decir, no se pueden obtener más “caras” (muertes) que el número total de lanzamientos de monedas (individuos en la población).</p>
-<p>Para hacer esto en InsightMaker, use la siguiente fórmula para el flujo <em>Nacimientos </em>:</p>
+<p>En términos sencillos: el número de muertes cada año es una cantidad
+aleatoria determinada por el “lanzamiento de una moneda” (la
+distribución binomial es la distribución del “lanzamiento de una
+moneda”). El total de muertes se calcula lanzando una moneda por cada
+individuo de la población y matando a todos los individuos que salen
+“cara” (donde la probabilidad de que salga “cara” es la tasa de
+mortalidad).</p>
+<p>Para el total de nacimientos, $B $ usaremos la distribución
+<em>Poisson </em>. La distribución de Poisson se usa a menudo para
+representar nacimientos, porque produce números enteros, no puede
+volverse negativa Y no tiene un límite superior estricto (a diferencia
+de la distribución binomial).</p>
+<p>NOTA: es posible que haya más nacimientos que individuos actualmente
+en la población (por ejemplo, ¡si todos los individuos tienen dos
+descendientes!). ¡Esto no sería posible con una distribución binomial!
+Es decir, no se pueden obtener más “caras” (muertes) que el número total
+de lanzamientos de monedas (individuos en la población).</p>
+<p>Para hacer esto en InsightMaker, use la siguiente fórmula para el
+flujo <em>Nacimientos </em>:</p>
 <pre><code>RandPoisson([Population]*[Birth rate])</code></pre>
 <p>-or-</p>
 <pre><code>Lambda &lt;- [Population]*[Birth rate]
 RandPoisson(Lambda)</code></pre>
-<p>En términos sencillos: el número de nacimientos (flujo [Nacimientos] en InsightMaker) es una extracción aleatoria de un generador de números aleatorios de Poisson con una media (Lambda) igual al número esperado de nacimientos ([Población] * [Tasa de natalidad]).</p>
+<p>En términos sencillos: el número de nacimientos (flujo [Nacimientos]
+en InsightMaker) es una extracción aleatoria de un generador de números
+aleatorios de Poisson con una media (Lambda) igual al número esperado de
+nacimientos ([Población] * [Tasa de natalidad]).</p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Ejecute la simulación. Cómo se ve?</p></li>
-<li><p>Utilice la herramienta “Prueba de sensibilidad” (en el menú “Herramientas”, esquina superior derecha) para ejecutar el modelo 50 veces. Elija [Población] como “Primitiva supervisada”. NOTA: Recomiendo elegir el botón “Trazar cada ejecución”, de esa forma podemos generar un “diagrama de espagueti”.</p></li>
-<li><p>Cambie la abundancia inicial a 500 y vuelva a ejecutar la herramienta “Prueba de sensibilidad”.</p></li>
+<li><p>Utilice la herramienta “Prueba de sensibilidad” (en el menú
+“Herramientas”, esquina superior derecha) para ejecutar el modelo 50
+veces. Elija [Población] como “Primitiva supervisada”. NOTA: Recomiendo
+elegir el botón “Trazar cada ejecución”, de esa forma podemos generar un
+“diagrama de espagueti”.</p></li>
+<li><p>Cambie la abundancia inicial a 500 y vuelva a ejecutar la
+herramienta “Prueba de sensibilidad”.</p></li>
 </ol>
-<p><strong>P </strong> ¿El efecto de la * estocasticidad demográfica * es mayor o menor en abundancias bajas o altas?</p>
+<p><strong>P </strong> ¿El efecto de la * estocasticidad demográfica *
+es mayor o menor en abundancias bajas o altas?</p>
 </div>
 <div id="estocasticidad-ambiental" class="section level4">
 <h4><em>Estocasticidad ambiental</em></h4>
 <ol style="list-style-type: decimal">
-<li><p>Regrese <em>Nacimientos </em> a lo que era antes ([Población] x [Tasa de natalidad]), y haga lo mismo para <em>Muertes </em> ([Población] x [Tasa de mortalidad]).</p></li>
-<li><p>Usaremos una <em>distribución normal </em> para representar cómo cambia la tasa de natalidad per cápita cada año. Esto podría representar variabilidad climática: “años buenos” y “años malos”. La * distribución normal * se usa comúnmente para este tipo de variabilidad; se caracteriza por un valor promedio (<strong>media </strong>) y una medida de variabilidad (<strong>desviación estándar </strong>). Para hacer esto en InsightMaker, use la siguiente fórmula para la variable <em>Tasa de natalidad </em>:</p></li>
+<li><p>Regrese <em>Nacimientos </em> a lo que era antes ([Población] x
+[Tasa de natalidad]), y haga lo mismo para <em>Muertes </em>
+([Población] x [Tasa de mortalidad]).</p></li>
+<li><p>Usaremos una <em>distribución normal </em> para representar cómo
+cambia la tasa de natalidad per cápita cada año. Esto podría representar
+variabilidad climática: “años buenos” y “años malos”. La * distribución
+normal * se usa comúnmente para este tipo de variabilidad; se
+caracteriza por un valor promedio (<strong>media </strong>) y una medida
+de variabilidad (<strong>desviación estándar </strong>). Para hacer esto
+en InsightMaker, use la siguiente fórmula para la variable <em>Tasa de
+natalidad </em>:</p></li>
 </ol>
 <pre><code>RandNormal(0.4, 0.4)</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>De manera similar, use la siguiente fórmula para la variable <em>Tasa de muerte </em>:</li>
+<li>De manera similar, use la siguiente fórmula para la variable
+<em>Tasa de muerte </em>:</li>
 </ol>
 <pre><code>RandNormal(0.3, 0.3)</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Utilice la herramienta “Prueba de sensibilidad” (en el menú “Herramientas”, esquina superior derecha) para ejecutar el modelo 50 veces. Elija [Población] como “Primitiva supervisada”.</p></li>
-<li><p>Cambie la abundancia inicial a 500 y vuelva a ejecutar la herramienta “Prueba de sensibilidad”.</p></li>
+<li><p>Utilice la herramienta “Prueba de sensibilidad” (en el menú
+“Herramientas”, esquina superior derecha) para ejecutar el modelo 50
+veces. Elija [Población] como “Primitiva supervisada”.</p></li>
+<li><p>Cambie la abundancia inicial a 500 y vuelva a ejecutar la
+herramienta “Prueba de sensibilidad”.</p></li>
 </ol>
-<p><strong>P </strong> ¿El efecto de la * estocasticidad ambiental * es mayor en abundancias bajas o altas?</p>
+<p><strong>P </strong> ¿El efecto de la * estocasticidad ambiental * es
+mayor en abundancias bajas o altas?</p>
 <ol start="6" style="list-style-type: decimal">
-<li>Tenga en cuenta que la distribución normal PUEDE ir por debajo de cero o por encima de 1, lo que no siempre es biológicamente realista. Sin embargo, como hemos visto antes, InsightMaker no permite que un [Flujo de entrada] se elimine de un [Stock] o un [Flujo de salida] para agregar a un [Stock], por lo que realmente no tenemos que preocuparnos por este problema. ! Es decir, InsightMaker <em>truncará </em> la distribución normal para nosotros. Alternativamente (si queremos ser muy explícitos) podríamos simplemente <strong>truncar </strong> la distribución normal nosotros mismos. Es decir, si el número aleatorio que extrae sale por debajo de cero, ¡hágalo cero!</li>
+<li>Tenga en cuenta que la distribución normal PUEDE ir por debajo de
+cero o por encima de 1, lo que no siempre es biológicamente realista.
+Sin embargo, como hemos visto antes, InsightMaker no permite que un
+[Flujo de entrada] se elimine de un [Stock] o un [Flujo de salida] para
+agregar a un [Stock], por lo que realmente no tenemos que preocuparnos
+por este problema. ! Es decir, InsightMaker <em>truncará </em> la
+distribución normal para nosotros. Alternativamente (si queremos ser muy
+explícitos) podríamos simplemente <strong>truncar </strong> la
+distribución normal nosotros mismos. Es decir, si el número aleatorio
+que extrae sale por debajo de cero, ¡hágalo cero!</li>
 </ol>
-<p>Para la variable [Tasa de natalidad] en InsightMaker, esto se puede hacer así:</p>
+<p>Para la variable [Tasa de natalidad] en InsightMaker, esto se puede
+hacer así:</p>
 <pre><code>Max(0,RandNormal(0.4, 0.4))</code></pre>
-<p><strong>P </strong> ¿Puede implementar un escenario de <strong>catástrofe </strong>? Es decir, crear un escenario en el que exista una baja probabilidad de que un evento (por ejemplo, inundación, enfermedad, sequía) cause una mortalidad muy alta y / o una tasa de natalidad muy baja.</p>
-<p>Se puede implementar una catástrofe usando una declaración IF-THEN_ELSE: si el número aleatorio está por debajo de algún valor raro (por ejemplo, 0.05), entonces provocará una catástrofe (de lo contrario, mantenga todas las tasas vitales en sus valores normales).</p>
-<p>Sugerencia: el generador de números aleatorios más básico (el más utilizado) extrae números de una distribución * uniforme * con un mínimo de 0 y un máximo de 1. Para hacer esto en InsightMaker, puede usar esta sintaxis:</p>
+<p><strong>P </strong> ¿Puede implementar un escenario de
+<strong>catástrofe </strong>? Es decir, crear un escenario en el que
+exista una baja probabilidad de que un evento (por ejemplo, inundación,
+enfermedad, sequía) cause una mortalidad muy alta y / o una tasa de
+natalidad muy baja.</p>
+<p>Se puede implementar una catástrofe usando una declaración
+IF-THEN_ELSE: si el número aleatorio está por debajo de algún valor raro
+(por ejemplo, 0.05), entonces provocará una catástrofe (de lo contrario,
+mantenga todas las tasas vitales en sus valores normales).</p>
+<p>Sugerencia: el generador de números aleatorios más básico (el más
+utilizado) extrae números de una distribución * uniforme * con un mínimo
+de 0 y un máximo de 1. Para hacer esto en InsightMaker, puede usar esta
+sintaxis:</p>
 <pre><code>Rand(0, 1)</code></pre>
-<p><strong>P </strong> ¿Qué pasa si la estocasticidad ambiental influye en la supervivencia y la fecundidad de la misma manera? Es decir: ¿qué pasa si un “buen año” para los nacimientos es también un buen año para la supervivencia? ¿Esto aumentaría o disminuiría el efecto de la estocasticidad ambiental sobre la dinámica de la población? En InsightMaker, intente implementar un escenario en el que la estocasticidad ambiental en la tasa de supervivencia esté perfectamente <strong>correlacionada </strong> con la estocasticidad ambiental en la tasa de natalidad.</p>
-<p>Sugerencia: necesitará otra [variable] en su lienzo de InsightMaker; esta variable podría llamarse algo así como “Calidad del forraje” y debería almacenar un sorteo aleatorio de una distribución Normal con media “0” y desviación estándar “1”:</p>
+<p><strong>P </strong> ¿Qué pasa si la estocasticidad ambiental influye
+en la supervivencia y la fecundidad de la misma manera? Es decir: ¿qué
+pasa si un “buen año” para los nacimientos es también un buen año para
+la supervivencia? ¿Esto aumentaría o disminuiría el efecto de la
+estocasticidad ambiental sobre la dinámica de la población? En
+InsightMaker, intente implementar un escenario en el que la
+estocasticidad ambiental en la tasa de supervivencia esté perfectamente
+<strong>correlacionada </strong> con la estocasticidad ambiental en la
+tasa de natalidad.</p>
+<p>Sugerencia: necesitará otra [variable] en su lienzo de InsightMaker;
+esta variable podría llamarse algo así como “Calidad del forraje” y
+debería almacenar un sorteo aleatorio de una distribución Normal con
+media “0” y desviación estándar “1”:</p>
 <pre><code>RandNormal(0, 1)</code></pre>
-<p>A continuación, puede modificar su parámetro de fecundidad per cápita para tener la siguiente sintaxis, que representaría una fecundidad media de 0,85 con una desviación estándar de 0,4.</p>
+<p>A continuación, puede modificar su parámetro de fecundidad per cápita
+para tener la siguiente sintaxis, que representaría una fecundidad media
+de 0,85 con una desviación estándar de 0,4.</p>
 <pre><code>0.85+0.4*[forage quality]</code></pre>
 <hr />
 </div>
@@ -847,63 +1103,152 @@ RandPoisson(Lambda)</code></pre>
 <div id="parameter-uncertainty" class="section level4">
 <h4><em>Parameter Uncertainty</em></h4>
 <ol style="list-style-type: decimal">
-<li><p>Set <em>Birth rate</em> equal to 0.4 and <em>Death rate</em> equal to 0.3. Set initial abundance to 10. Under the “Settings” menu, set the model to run for 10 years. Make sure your <em>Population</em> stock can not go negative (this is a setting in the configuration panel). Hit “Simulate”- you should see exponential growth!</p></li>
-<li><p><strong>Parameter uncertainty:</strong> What if we have imperfect knowledge about birth rate? The birth rate could be anything from 0.2 to 0.5. Run the model with the lowest and the highest possible birth rate. NOTE: you can give each results plot a title using the gear-shaped symbol at the top of your plot window- that way you can name your scenarios – e.g., “min birth rate”.</p></li>
-<li><p>Now use the “Compare Results” tool (under the “Tools” menu in the upper right corner…) to visualize the range of possible population growth trajectories that would be possible given our <em>uncertainty</em> (lack of knowledge) about birth rate.</p></li>
+<li><p>Set <em>Birth rate</em> equal to 0.4 and <em>Death rate</em>
+equal to 0.3. Set initial abundance to 10. Under the “Settings” menu,
+set the model to run for 10 years. Make sure your <em>Population</em>
+stock can not go negative (this is a setting in the configuration
+panel). Hit “Simulate”- you should see exponential growth!</p></li>
+<li><p><strong>Parameter uncertainty:</strong> What if we have imperfect
+knowledge about birth rate? The birth rate could be anything from 0.2 to
+0.5. Run the model with the lowest and the highest possible birth rate.
+NOTE: you can give each results plot a title using the gear-shaped
+symbol at the top of your plot window- that way you can name your
+scenarios – e.g., “min birth rate”.</p></li>
+<li><p>Now use the “Compare Results” tool (under the “Tools” menu in the
+upper right corner…) to visualize the range of possible population
+growth trajectories that would be possible given our
+<em>uncertainty</em> (lack of knowledge) about birth rate.</p></li>
 </ol>
-<p><strong>Q</strong> What is the range of possible final abundances after 10 years?</p>
-<p><strong>Q</strong> Should we study this system more if we want to know whether the population is growing or declining??</p>
+<p><strong>Q</strong> What is the range of possible final abundances
+after 10 years?</p>
+<p><strong>Q</strong> Should we study this system more if we want to
+know whether the population is growing or declining??</p>
 </div>
 <div id="demographic-stochasticity-1" class="section level4">
 <h4><em>Demographic Stochasticity</em></h4>
 <ol style="list-style-type: decimal">
-<li><p>Set <em>Birth rate</em> back to 0.4. Hit “Simulate”- make sure you still see exponential growth!</p></li>
-<li><p>We will use a <em>Binomial distribution</em> to represent the number of mortalities. That is, we <em>flip a coin the same number of times as there are individuals in the population</em>. If the coin comes up heads, then the individual dies. In this case we are using a biased coin- it only comes up heads 30% of the time! The <em>Binomial distribution</em> essentially represents the number of times heads came up. To do this in InsightMaker, use the following formula for the <em>Deaths</em> flow (you can use the right-hand “Random Number Functions” menu to auto-type the proper syntax):</p></li>
+<li><p>Set <em>Birth rate</em> back to 0.4. Hit “Simulate”- make sure
+you still see exponential growth!</p></li>
+<li><p>We will use a <em>Binomial distribution</em> to represent the
+number of mortalities. That is, we <em>flip a coin the same number of
+times as there are individuals in the population</em>. If the coin comes
+up heads, then the individual dies. In this case we are using a biased
+coin- it only comes up heads 30% of the time! The <em>Binomial
+distribution</em> essentially represents the number of times heads came
+up. To do this in InsightMaker, use the following formula for the
+<em>Deaths</em> flow (you can use the right-hand “Random Number
+Functions” menu to auto-type the proper syntax):</p></li>
 </ol>
 <pre><code>RandBinomial([Population], [Death rate])</code></pre>
-<p>In plain English: the number of deaths each year is a random quantity determined by “coin-flipping” (Binomial distribution is the “coin flip” distribution). The total deaths is computed by flipping a coin for each individual in the population and killing off all individuals that come out ‘heads’ (where the probability of coming up ‘heads’ is the death rate).</p>
-<p>For the total births, <span class="math inline">\(B\)</span> we will use the <em>Poisson</em> distribution. The Poisson distribution is often use to represent births, because it produces whole numbers, can’t go negative, AND it has no hard upper limit (unlike the binomial distribution).</p>
-<p>NOTE: there could feasibly be more births than there are individuals currently in the population (e.g., if all individuals have two offspring!). This would not be possible with a binomial distribution! That is, you can’t get more “heads” (deaths) than the total number of coin flips (individuals in the population).</p>
-<p>To do this in InsightMaker, use the following formula for the <em>Births</em> flow:</p>
+<p>In plain English: the number of deaths each year is a random quantity
+determined by “coin-flipping” (Binomial distribution is the “coin flip”
+distribution). The total deaths is computed by flipping a coin for each
+individual in the population and killing off all individuals that come
+out ‘heads’ (where the probability of coming up ‘heads’ is the death
+rate).</p>
+<p>For the total births, <span class="math inline">\(B\)</span> we will
+use the <em>Poisson</em> distribution. The Poisson distribution is often
+use to represent births, because it produces whole numbers, can’t go
+negative, AND it has no hard upper limit (unlike the binomial
+distribution).</p>
+<p>NOTE: there could feasibly be more births than there are individuals
+currently in the population (e.g., if all individuals have two
+offspring!). This would not be possible with a binomial distribution!
+That is, you can’t get more “heads” (deaths) than the total number of
+coin flips (individuals in the population).</p>
+<p>To do this in InsightMaker, use the following formula for the
+<em>Births</em> flow:</p>
 <pre><code>RandPoisson([Population]*[Birth rate])</code></pre>
 <p>-or-</p>
 <pre><code>Lambda &lt;- [Population]*[Birth rate]
 RandPoisson(Lambda)</code></pre>
-<p>In plain English: the number of births ([Births] flow in InsightMaker) is a random draw from a Poisson random number generator with a mean (Lambda) equal to the expected number of births ([Population]*[Birth rate]).</p>
+<p>In plain English: the number of births ([Births] flow in
+InsightMaker) is a random draw from a Poisson random number generator
+with a mean (Lambda) equal to the expected number of births
+([Population]*[Birth rate]).</p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Run the simulation. What does it look like?</p></li>
-<li><p>Use the “Sensitivity Testing” tool (in the “Tools” menu, upper right corner) to run the model 50 times. Choose [Population] as the “Monitored Primitive”. NOTE: I recommend choosing the “Plot Each Run” button – that way we can generate a “spaghetti plot”.</p></li>
-<li><p>Change the initial abundance to 500 and re-run the “Sensitivity Testing” tool.</p></li>
+<li><p>Use the “Sensitivity Testing” tool (in the “Tools” menu, upper
+right corner) to run the model 50 times. Choose [Population] as the
+“Monitored Primitive”. NOTE: I recommend choosing the “Plot Each Run”
+button – that way we can generate a “spaghetti plot”.</p></li>
+<li><p>Change the initial abundance to 500 and re-run the “Sensitivity
+Testing” tool.</p></li>
 </ol>
-<p><strong>Q</strong> Is the effect of <em>demographic stochasticity</em> larger or smaller at low or high abundances?</p>
+<p><strong>Q</strong> Is the effect of <em>demographic
+stochasticity</em> larger or smaller at low or high abundances?</p>
 </div>
 <div id="environmental-stochasticity" class="section level4">
 <h4><em>Environmental Stochasticity</em></h4>
 <ol style="list-style-type: decimal">
-<li>Set <em>Births</em> back to what it was before ([Population]x[Birth rate]), and do the same for <em>Deaths</em> ([Population]x[Death rate]).</li>
-<li>We will use a <em>Normal distribution</em> to represent how the per-capita birth rate changes each year. This could represent climatic variablity – “good years” and “bad years”. The <em>Normal distribution</em> is commonly used for this type of variability- it is characterized by an average value (<strong>mean</strong>) and a variability measure (<strong>standard deviation</strong>). To do this in InsightMaker, use the following formula for the <em>Birth Rate</em> variable:</li>
+<li>Set <em>Births</em> back to what it was before ([Population]x[Birth
+rate]), and do the same for <em>Deaths</em> ([Population]x[Death
+rate]).</li>
+<li>We will use a <em>Normal distribution</em> to represent how the
+per-capita birth rate changes each year. This could represent climatic
+variablity – “good years” and “bad years”. The <em>Normal
+distribution</em> is commonly used for this type of variability- it is
+characterized by an average value (<strong>mean</strong>) and a
+variability measure (<strong>standard deviation</strong>). To do this in
+InsightMaker, use the following formula for the <em>Birth Rate</em>
+variable:</li>
 </ol>
 <pre><code>RandNormal(0.4, 0.4)</code></pre>
-<p>Similarly, use the following formula for the <em>Death Rate</em> variable:</p>
+<p>Similarly, use the following formula for the <em>Death Rate</em>
+variable:</p>
 <pre><code>RandNormal(0.3, 0.3)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Use the “Sensitivity Testing” tool (in the “Tools” menu, upper right corner) to run the model 50 times. Choose [Population] as the “Monitored Primitive”.</p></li>
-<li><p>Change the initial abundance to 500 and re-run the “Sensitivity Testing” tool.</p></li>
+<li><p>Use the “Sensitivity Testing” tool (in the “Tools” menu, upper
+right corner) to run the model 50 times. Choose [Population] as the
+“Monitored Primitive”.</p></li>
+<li><p>Change the initial abundance to 500 and re-run the “Sensitivity
+Testing” tool.</p></li>
 </ol>
-<p><strong>Q</strong> Is the effect of <em>environmental stochasticity</em> bigger at low or high abundances?</p>
+<p><strong>Q</strong> Is the effect of <em>environmental
+stochasticity</em> bigger at low or high abundances?</p>
 <ol start="6" style="list-style-type: decimal">
-<li>Note that the normal distribution CAN go below zero or above 1, which is not always biologically realistic! However, as we have seen before, InsightMaker does not allow a [Flow In] to remove from a [Stock] or a [Flow Out] to add to a [Stock], so we don’t really need to worry about this problem! That is, InsightMaker will <em>truncate</em> the normal distribution for us. Alternatively (if we want to be very explicit) we could just <strong>truncate</strong> the normal distribution ourselves. That is, if the random number you draw comes out below zero, just make it zero!</li>
+<li>Note that the normal distribution CAN go below zero or above 1,
+which is not always biologically realistic! However, as we have seen
+before, InsightMaker does not allow a [Flow In] to remove from a [Stock]
+or a [Flow Out] to add to a [Stock], so we don’t really need to worry
+about this problem! That is, InsightMaker will <em>truncate</em> the
+normal distribution for us. Alternatively (if we want to be very
+explicit) we could just <strong>truncate</strong> the normal
+distribution ourselves. That is, if the random number you draw comes out
+below zero, just make it zero!</li>
 </ol>
-<p>For the [Birth Rate] variable in InsightMaker, this can be done like this:</p>
+<p>For the [Birth Rate] variable in InsightMaker, this can be done like
+this:</p>
 <pre><code>Max(0,RandNormal(0.4, 0.4))</code></pre>
-<p><strong>Q</strong> Can you implement a <strong>catastrophe</strong> scenario? That is, make a scenario where there is a low probability of an event (e.g., flood, disease, drought) that causes very high mortality and/or very low birth rate?</p>
-<p>A catastrophe can be implemented by using an IF-THEN-ELSE statement: if the random number is below some rare value (e.g., 0.05) then cause a catastrophe to occur (otherwise keep all vital rates at their normal values)!</p>
-<p>Hint: The most basic (most commonly used) random number generator draws numbers from a <em>uniform</em> distribution with a minimum of 0 and a maximum of 1. To do this in InsightMaker, you can use this syntax:</p>
+<p><strong>Q</strong> Can you implement a <strong>catastrophe</strong>
+scenario? That is, make a scenario where there is a low probability of
+an event (e.g., flood, disease, drought) that causes very high mortality
+and/or very low birth rate?</p>
+<p>A catastrophe can be implemented by using an IF-THEN-ELSE statement:
+if the random number is below some rare value (e.g., 0.05) then cause a
+catastrophe to occur (otherwise keep all vital rates at their normal
+values)!</p>
+<p>Hint: The most basic (most commonly used) random number generator
+draws numbers from a <em>uniform</em> distribution with a minimum of 0
+and a maximum of 1. To do this in InsightMaker, you can use this
+syntax:</p>
 <pre><code>Rand(0, 1)</code></pre>
-<p><strong>Q</strong> What if environmental stochasticity influences survival and fecundity in the same manner? That is: what if a “good year” for births is also a good year for survival? Would this increase or decrease the effect of environmental stochasticity on population dynamics? In InsightMaker, try to implement a scenario where the environmental stochasticity in survival rate is perfectly <strong>correlated</strong> with environmental stochasticity in birth rate.</p>
-<p>Hint: you will need another [variable] in your InsightMaker canvas- this variable could be named something like “Forage Quality”, and should store a random draw from a Normal distribution with mean “0” and standard deviation “1”:</p>
+<p><strong>Q</strong> What if environmental stochasticity influences
+survival and fecundity in the same manner? That is: what if a “good
+year” for births is also a good year for survival? Would this increase
+or decrease the effect of environmental stochasticity on population
+dynamics? In InsightMaker, try to implement a scenario where the
+environmental stochasticity in survival rate is perfectly
+<strong>correlated</strong> with environmental stochasticity in birth
+rate.</p>
+<p>Hint: you will need another [variable] in your InsightMaker canvas-
+this variable could be named something like “Forage Quality”, and should
+store a random draw from a Normal distribution with mean “0” and
+standard deviation “1”:</p>
 <pre><code>RandNormal(0, 1)</code></pre>
-<p>Next, you can alter your per-capita fecundity parameter to have the following syntax, which would represent a mean fecundity of 0.85 with a standard deviation of 0.4</p>
+<p>Next, you can alter your per-capita fecundity parameter to have the
+following syntax, which would represent a mean fecundity of 0.85 with a
+standard deviation of 0.4</p>
 <p>``` 0.85+0.4*[forage quality]</p>
 <p><a href="LECTURE9.html">–go to next lecture–</a></p>
 </div>

@@ -14,7 +14,7 @@
 
 <title>Metapoblaciones: Metapopulations</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -486,99 +490,250 @@ div.tocify {
 
 <div id="metapoblaciones" class="section level2">
 <h2>Metapoblaciones</h2>
-<p>Ahora que estamos pensando en animales/plantas que viven en áreas particulares del espacio, ¡debemos empezar a pensar en <strong>ecología de movimiento </strong> además de <strong>ecología de población </strong>! Los parches de una metapoblación se conectan mediante <strong>dispersión </strong>. Si no hubiera <em>conectividad </em> (dispersión entre parches), no sería realmente una metapoblación, sino un conjunto de poblaciones aisladas que podría modelar de forma independiente.</p>
-<p>Incluir un proceso de dispersión nos permite (¡finalmente!) Pensar en toda la ecuación “BIDE”.</p>
+<p>Ahora que estamos pensando en animales/plantas que viven en áreas
+particulares del espacio, ¡debemos empezar a pensar en <strong>ecología
+de movimiento </strong> además de <strong>ecología de población
+</strong>! Los parches de una metapoblación se conectan mediante
+<strong>dispersión </strong>. Si no hubiera <em>conectividad </em>
+(dispersión entre parches), no sería realmente una metapoblación, sino
+un conjunto de poblaciones aisladas que podría modelar de forma
+independiente.</p>
+<p>Incluir un proceso de dispersión nos permite (¡finalmente!) Pensar en
+toda la ecuación “BIDE”.</p>
 <p><span class="math inline">\(\Delta N = B + I - D - E\)</span></p>
-<p>Pero, de hecho, muchos modelos de metapoblaciones (‘metapoblaciones clásicas’, cubiertas en esta conferencia y en el Capítulo 4 de Gotelli) ¡no consideran a los individuos en absoluto!</p>
+<p>Pero, de hecho, muchos modelos de metapoblaciones (‘metapoblaciones
+clásicas’, cubiertas en esta conferencia y en el Capítulo 4 de Gotelli)
+¡no consideran a los individuos en absoluto!</p>
 </div>
 <div id="qué-es-una-metapoblación" class="section level2">
 <h2>¿Qué es una metapoblación?</h2>
-<p>En <em>ecología de metapoblaciones </em>, generalmente estamos considerando un <strong>paisaje </strong> con un cierto número de <strong>parches </strong> de hábitat potencialmente habitables.</p>
-<p>Una metapoblación es simplemente una <em>población de parches </em>, cada uno de los cuales puede o no estar <em>ocupado </em> por una especie de interés en un momento dado. Se pueden ocupar diferentes conjuntos de parches en diferentes momentos.</p>
+<p>En <em>ecología de metapoblaciones </em>, generalmente estamos
+considerando un <strong>paisaje </strong> con un cierto número de
+<strong>parches </strong> de hábitat potencialmente habitables.</p>
+<p>Una metapoblación es simplemente una <em>población de parches </em>,
+cada uno de los cuales puede o no estar <em>ocupado </em> por una
+especie de interés en un momento dado. Se pueden ocupar diferentes
+conjuntos de parches en diferentes momentos.</p>
 <p><img src="figures/MP2.jpg" /></p>
 <p><img src="figures/patch1.jpg" /></p>
 <ul>
-<li><p>Para simplificar, a menudo asumimos que todas las áreas fuera de un parche son completamente inadecuadas (es decir, NO son un hábitat).</p></li>
-<li><p>A menudo también asumimos que todos los parches son similares (calidad de hábitat, área y conectividad similares a los parches vecinos) y, por lo tanto, son más o menos intercambiables.</p></li>
-<li><p>En lugar de realizar un seguimiento de las personas en cada parche (<span class="math inline">\(N\)</span>), a menudo solo hacemos un seguimiento de la fracción de parches ocupados en nuestro paisaje (<span class="math inline">\(f\)</span>).</p></li>
-<li><p>En lugar de realizar un seguimiento de la dispersión de individuos entre parches, solo consideramos la <em>colonización </em> de parches desocupados (vacíos) a través de la inmigración ($I $) y el <em>efecto de rescate </em> (inmigración que previene la extinción de un parche; ver más abajo).</p></li>
+<li><p>Para simplificar, a menudo asumimos que todas las áreas fuera de
+un parche son completamente inadecuadas (es decir, NO son un
+hábitat).</p></li>
+<li><p>A menudo también asumimos que todos los parches son similares
+(calidad de hábitat, área y conectividad similares a los parches
+vecinos) y, por lo tanto, son más o menos intercambiables.</p></li>
+<li><p>En lugar de realizar un seguimiento de las personas en cada
+parche (<span class="math inline">\(N\)</span>), a menudo solo hacemos
+un seguimiento de la fracción de parches ocupados en nuestro paisaje
+(<span class="math inline">\(f\)</span>).</p></li>
+<li><p>En lugar de realizar un seguimiento de la dispersión de
+individuos entre parches, solo consideramos la <em>colonización </em> de
+parches desocupados (vacíos) a través de la inmigración ($I $) y el
+<em>efecto de rescate </em> (inmigración que previene la extinción de un
+parche; ver más abajo).</p></li>
 </ul>
-<p>El concepto de la ecología de Metapoblación cubre una amplia gama de escenarios,</p>
+<p>El concepto de la ecología de Metapoblación cubre una amplia gama de
+escenarios,</p>
 <ul>
 <li>siempre que haya parches de hábitat distintos en un paisaje, y</li>
-<li>siempre que haya alguna dispersión entre parches, entonces es un tipo de metapoblación.</li>
+<li>siempre que haya alguna dispersión entre parches, entonces es un
+tipo de metapoblación.</li>
 </ul>
-<p>Cuando hay una tasa muy alta de dispersión (y apareamiento) entre parches, la metapoblación se describe como “panmíctica” (conectividad genética perfecta).</p>
-<p>NOTA: en algunas definiciones (incluso para metapoblaciones ‘clásicas’), una “metapoblación” se define de manera más estricta como un conjunto de parches con conectividad limitada con al menos algunos parches desocupados en algunos momentos. ¡Prefiero la definición más inclusiva!</p>
+<p>Cuando hay una tasa muy alta de dispersión (y apareamiento) entre
+parches, la metapoblación se describe como “panmíctica” (conectividad
+genética perfecta).</p>
+<p>NOTA: en algunas definiciones (incluso para metapoblaciones
+‘clásicas’), una “metapoblación” se define de manera más estricta como
+un conjunto de parches con conectividad limitada con al menos algunos
+parches desocupados en algunos momentos. ¡Prefiero la definición más
+inclusiva!</p>
 <p><img src="figures/MP1.jpg" /></p>
-<p>Aunque el término “metapoblación” se utiliza a menudo para referirse a modelos en los que no nos importa la abundancia (solo consideramos ** ocupación de parches **, como los modelos del Capítulo 4 de Gotelli), podemos realizar un seguimiento de la abundancia de parches en un modelo de metapoblación si realmente queremos! De hecho, si queremos, cada parche puede contener una población dependiente de la densidad estructurada por etapas. O puede contener un conjunto de individuos, como en un modelo basado en individuos.</p>
-<p>Aunque no los heremos en esta clase pueden tener la oportunidad de usar un modelo de metapoblación en el laboratorio 6 que es mucho más complejo que los modelos del capítulo 4 de Gotelli en el website de Shoemaker!</p>
-<p><a href="https://insightmaker.com/insight/74948/Agent-based-metapopulation-model">Link to metapopulation model with explicit abundance</a></p>
+<p>Aunque el término “metapoblación” se utiliza a menudo para referirse
+a modelos en los que no nos importa la abundancia (solo consideramos **
+ocupación de parches **, como los modelos del Capítulo 4 de Gotelli),
+podemos realizar un seguimiento de la abundancia de parches en un modelo
+de metapoblación si realmente queremos! De hecho, si queremos, cada
+parche puede contener una población dependiente de la densidad
+estructurada por etapas. O puede contener un conjunto de individuos,
+como en un modelo basado en individuos.</p>
+<p>Aunque no los heremos en esta clase pueden tener la oportunidad de
+usar un modelo de metapoblación en el laboratorio 6 que es mucho más
+complejo que los modelos del capítulo 4 de Gotelli en el website de
+Shoemaker!</p>
+<p><a
+href="https://insightmaker.com/insight/74948/Agent-based-metapopulation-model">Link
+to metapopulation model with explicit abundance</a></p>
 </div>
 <div id="modelos-de-metapoblación-clásicos" class="section level2">
 <h2>Modelos de metapoblación “clásicos”</h2>
-<p>El tipo más simple de modelo de población estructurado espacialmente es el modelo de metapoblación “clásico”.</p>
-<p>El concepto de metapoblación fue introducido por primera vez por el ecologista <a href="https://en.wikipedia.org/wiki/Richard_Levins">Richard Levins</a> en 1969 (June 1, 1930 – January 19, 2016), y desarrollado por <a href="https://en.wikipedia.org/wiki/Ilkka_Hanski">Ilkka Hanski</a>(14 February 1953 – 10 May 2016) entre otros.</p>
-<p>En una metapoblación clásica, los parches están <strong>ocupados</strong> (codificados como 1) o <strong>desocupados</strong> (codificados como 0) en cualquier momento dado. No consideramos la abundancia, <span class="math inline">\(N\)</span> en estos modelos; solo hacemos un seguimiento de si cada parche está ocupado o no, y cuántos parches ocupados totales tenemos en nuestra metapoblación en cada paso de tiempo.</p>
-<p>That is, the [Stock] we are studying now is NOT the total number of individuals but instead it is the total number of occupied patches (or the fraction of patches occupied)!</p>
-<p>En lugar de investigar la dinámica de la población, estamos investigando la <em>dinámica de ocupación de la metapoblación</em>. Es decir, cómo cambia el número de parches ocupados (o la fracción de parches ocupados) con el tiempo.</p>
-<p>Bajo el modelo clásico, NO es una metapoblación a menos que algunos parches estén desocupados en algún momento.</p>
+<p>El tipo más simple de modelo de población estructurado espacialmente
+es el modelo de metapoblación “clásico”.</p>
+<p>El concepto de metapoblación fue introducido por primera vez por el
+ecologista <a
+href="https://en.wikipedia.org/wiki/Richard_Levins">Richard Levins</a>
+en 1969 (June 1, 1930 – January 19, 2016), y desarrollado por <a
+href="https://en.wikipedia.org/wiki/Ilkka_Hanski">Ilkka Hanski</a>(14
+February 1953 – 10 May 2016) entre otros.</p>
+<p>En una metapoblación clásica, los parches están
+<strong>ocupados</strong> (codificados como 1) o
+<strong>desocupados</strong> (codificados como 0) en cualquier momento
+dado. No consideramos la abundancia, <span
+class="math inline">\(N\)</span> en estos modelos; solo hacemos un
+seguimiento de si cada parche está ocupado o no, y cuántos parches
+ocupados totales tenemos en nuestra metapoblación en cada paso de
+tiempo.</p>
+<p>That is, the [Stock] we are studying now is NOT the total number of
+individuals but instead it is the total number of occupied patches (or
+the fraction of patches occupied)!</p>
+<p>En lugar de investigar la dinámica de la población, estamos
+investigando la <em>dinámica de ocupación de la metapoblación</em>. Es
+decir, cómo cambia el número de parches ocupados (o la fracción de
+parches ocupados) con el tiempo.</p>
+<p>Bajo el modelo clásico, NO es una metapoblación a menos que algunos
+parches estén desocupados en algún momento.</p>
 <p><strong>P</strong>: ¿cómo crece una metapoblación?</p>
 <p><strong>P</strong>: ¿cómo se reduce una metapoblación?</p>
-<p><strong>P</strong>: ¿cuál es el equivalente de la estocasticidad demográfica en un modelo de metapoblación? [Edmodo]</p>
-<p>La <strong>colonización</strong> es el proceso de transición de un parche de desocupado a ocupado.</p>
-<p>¿Cómo se puede colonizar un parche? La respuesta es <strong>inmigración</strong>, por supuesto. ¡Esa parte de la ecuación “BIDE” que hemos estado ignorando hasta ahora!</p>
-<p><strong>extirpación</strong> (o extinción) es el proceso de transición de un parche de ocupado a desocupado.</p>
-<p><strong>extinción regional (o global)</strong> representa la extinción (extirpación) de todos los parches en la metapoblación.</p>
+<p><strong>P</strong>: ¿cuál es el equivalente de la estocasticidad
+demográfica en un modelo de metapoblación? [Edmodo]</p>
+<p>La <strong>colonización</strong> es el proceso de transición de un
+parche de desocupado a ocupado.</p>
+<p>¿Cómo se puede colonizar un parche? La respuesta es
+<strong>inmigración</strong>, por supuesto. ¡Esa parte de la ecuación
+“BIDE” que hemos estado ignorando hasta ahora!</p>
+<p><strong>extirpación</strong> (o extinción) es el proceso de
+transición de un parche de ocupado a desocupado.</p>
+<p><strong>extinción regional (o global)</strong> representa la
+extinción (extirpación) de todos los parches en la metapoblación.</p>
 <p>Más formalmente, aquí hay algunos términos que consideraremos:</p>
-<p><span class="math inline">\(f_t\)</span> es la fracción, o proporción, de parches que están ocupados en el momento <span class="math inline">\(t\)</span>. Esto también se conoce como <strong>tasa de ocupación </strong>. Este es el [Stock] primario que modelamos en un modelo de metapoblación clásico.</p>
-<p><span class="math inline">\(I\)</span> es la fracción total de parcelas colonizadas por inmigrantes por período de tiempo (tasa de colonización o tasa de “inmigración”).</p>
-<p>$E $ es la fracción total de parches que se extirpan por período de tiempo (tasa de extirpación).</p>
+<p><span class="math inline">\(f_t\)</span> es la fracción, o
+proporción, de parches que están ocupados en el momento <span
+class="math inline">\(t\)</span>. Esto también se conoce como
+<strong>tasa de ocupación </strong>. Este es el [Stock] primario que
+modelamos en un modelo de metapoblación clásico.</p>
+<p><span class="math inline">\(I\)</span> es la fracción total de
+parcelas colonizadas por inmigrantes por período de tiempo (tasa de
+colonización o tasa de “inmigración”).</p>
+<p>$E $ es la fracción total de parches que se extirpan por período de
+tiempo (tasa de extirpación).</p>
 <p>Por tanto, el cambio de ocupación se puede expresar como:</p>
 <p><span class="math inline">\(\Delta f = I - E\)</span></p>
-<p><span class="math inline">\(p_i\)</span> es la probabilidad de colonización de cualquier parche ocupado a un parche no ocupado.</p>
-<p><span class="math inline">\(p_e\)</span> es la probabilidad de extinción de cualquier parche ocupado</p>
-<p>Ahora que tenemos los términos básicos definidos, ¡podemos construir un modelo básico de dinámica de metapoblaciones! Haremos esto en el laboratorio; consulte el <a href="LAB6.html">metapopulation lab</a> for more details!</p>
-<div id="supuestos-del-modelo-clásico-de-metapoblación" class="section level3">
+<p><span class="math inline">\(p_i\)</span> es la probabilidad de
+colonización de cualquier parche ocupado a un parche no ocupado.</p>
+<p><span class="math inline">\(p_e\)</span> es la probabilidad de
+extinción de cualquier parche ocupado</p>
+<p>Ahora que tenemos los términos básicos definidos, ¡podemos construir
+un modelo básico de dinámica de metapoblaciones! Haremos esto en el
+laboratorio; consulte el <a href="LAB6.html">metapopulation lab</a> for
+more details!</p>
+<div id="supuestos-del-modelo-clásico-de-metapoblación"
+class="section level3">
 <h3>Supuestos del modelo clásico de metapoblación:</h3>
 <ul>
-<li>Parches homogéneos (todos los parches se consideran iguales e intercambiables; no difieren en tamaño o calidad; se ignoran las diferencias en la calidad del hábitat o el contexto espacial dentro de los parches).</li>
-<li>La extinción y la colonización son insensibles al contexto espacial, el contexto espacial, o “efectos de vecindad”, no afectan a <span class="math inline">\(p_e\)</span> y <span class="math inline">\(p_i\)</span>.</li>
-<li>Sin demoras el crecimiento de la metapoblación responde instantáneamente a cualquier cambio en <span class="math inline">\(f\)</span>.</li>
-<li>Gran cantidad de parches incluso cuando la fracción de parches ocupados <span class="math inline">\(f\)</span> es muy pequeña, ¡la metapoblación clásica aún persiste!. Es decir, ¡la extinción global no es posible!</li>
+<li>Parches homogéneos (todos los parches se consideran iguales e
+intercambiables; no difieren en tamaño o calidad; se ignoran las
+diferencias en la calidad del hábitat o el contexto espacial dentro de
+los parches).</li>
+<li>La extinción y la colonización son insensibles al contexto espacial,
+el contexto espacial, o “efectos de vecindad”, no afectan a <span
+class="math inline">\(p_e\)</span> y <span
+class="math inline">\(p_i\)</span>.</li>
+<li>Sin demoras el crecimiento de la metapoblación responde
+instantáneamente a cualquier cambio en <span
+class="math inline">\(f\)</span>.</li>
+<li>Gran cantidad de parches incluso cuando la fracción de parches
+ocupados <span class="math inline">\(f\)</span> es muy pequeña, ¡la
+metapoblación clásica aún persiste!. Es decir, ¡la extinción global no
+es posible!</li>
 </ul>
-<p>Claramente, este no es un modelo muy realista, pero es un punto de partida útil. Entonces … comenzaremos haciendo estas suposiciones, ¡pero luego “relajaremos” algunas de ellas!</p>
-<div id="variant-1-modelo-isla-continente-island-mainland-model" class="section level4">
+<p>Claramente, este no es un modelo muy realista, pero es un punto de
+partida útil. Entonces … comenzaremos haciendo estas suposiciones, ¡pero
+luego “relajaremos” algunas de ellas!</p>
+<div id="variant-1-modelo-isla-continente-island-mainland-model"
+class="section level4">
 <h4>Variant #1: modelo isla-continente: island-mainland model</h4>
-<p>La colonización se produce a través de la inmigración de una fuente externa constante: una constante <strong>lluvia de propágulos </strong>.</p>
-<p>Este es el modelo de metapoblación más simple, <span class="math inline">\(p_i\)</span> y <span class="math inline">\(p_e\)</span> son constantes.</p>
+<p>La colonización se produce a través de la inmigración de una fuente
+externa constante: una constante <strong>lluvia de propágulos
+</strong>.</p>
+<p>Este es el modelo de metapoblación más simple, <span
+class="math inline">\(p_i\)</span> y <span
+class="math inline">\(p_e\)</span> son constantes.</p>
 </div>
-<div id="variant-2-colonización-interna-internal-colonization" class="section level4">
+<div id="variant-2-colonización-interna-internal-colonization"
+class="section level4">
 <h4>Variant #2: colonización interna: internal colonization</h4>
-<p>Ahora, la colonización solo puede ocurrir a través de la inmigración desde dentro de la propia metapoblación. Entonces, cuando se coloniza una pequeña fracción de parcelas, la probabilidad de colonización es baja debido a la falta de inmigrantes potenciales dentro de la metapoblación.</p>
+<p>Ahora, la colonización solo puede ocurrir a través de la inmigración
+desde dentro de la propia metapoblación. Entonces, cuando se coloniza
+una pequeña fracción de parcelas, la probabilidad de colonización es
+baja debido a la falta de inmigrantes potenciales dentro de la
+metapoblación.</p>
 <p><span class="math display">\[p_i = i\cdot f\]</span></p>
-<p>Donde <span class="math inline">\(i\)</span> representa la fuerza de la inmigración interna cuánto aumenta la probabilidad de colonización con cada nuevo parche ocupado en la metapoblación.</p>
-<p>Otra forma de pensar en <span class="math inline">\(i\)</span> en este modelo es la tasa máxima de colonización exitosa de un parche desocupado cuando casi todos los parches de la metapoblación están ocupados.</p>
+<p>Donde <span class="math inline">\(i\)</span> representa la fuerza de
+la inmigración interna cuánto aumenta la probabilidad de colonización
+con cada nuevo parche ocupado en la metapoblación.</p>
+<p>Otra forma de pensar en <span class="math inline">\(i\)</span> en
+este modelo es la tasa máxima de colonización exitosa de un parche
+desocupado cuando casi todos los parches de la metapoblación están
+ocupados.</p>
 </div>
-<div id="variant-3-efecto-de-rescate-rescue-effect." class="section level4">
+<div id="variant-3-efecto-de-rescate-rescue-effect."
+class="section level4">
 <h4>Variant #3: efecto de rescate: rescue effect.</h4>
-<p>¡Ahora, la tasa de extinción puede reducirse mediante la inmigración de otras poblaciones en la metapoblación!</p>
-<p><strong>P </strong>: ¿tiene sentido esto? ¿Cómo funciona el efecto rescate?</p>
+<p>¡Ahora, la tasa de extinción puede reducirse mediante la inmigración
+de otras poblaciones en la metapoblación!</p>
+<p><strong>P </strong>: ¿tiene sentido esto? ¿Cómo funciona el efecto
+rescate?</p>
 <p><span class="math display">\[p_e = e(1-f)\]</span></p>
-<p>Donde <span class="math inline">\(e\)</span> representa la fuerza del efecto de rescate. Más concretamente, <span class="math inline">\(e\)</span> representa la tasa máxima de extinción cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante. Y <span class="math inline">\(e\)</span> representa la fuerza del efecto de rescate. Más concretamente, <span class="math inline">\(e\)</span> representa la tasa máxima de extinción cuando casi todos los parches están vacíos, por lo que el efecto de rescate es insignificante.</p>
+<p>Donde <span class="math inline">\(e\)</span> representa la fuerza del
+efecto de rescate. Más concretamente, <span
+class="math inline">\(e\)</span> representa la tasa máxima de extinción
+cuando casi todos los parches están vacíos, por lo que el efecto de
+rescate es insignificante. Y <span class="math inline">\(e\)</span>
+representa la fuerza del efecto de rescate. Más concretamente, <span
+class="math inline">\(e\)</span> representa la tasa máxima de extinción
+cuando casi todos los parches están vacíos, por lo que el efecto de
+rescate es insignificante.</p>
 </div>
 </div>
 <div id="estabilidad-dinámica-dynamic-stability" class="section level3">
 <h3>Estabilidad ‘dinámica’: ‘Dynamic’ stability</h3>
-<p>En el modelo clásico de metapoblación, la extinción no es necesariamente infrecuente. Los parches se extinguen: ¡los parches pequeños pueden ser altamente vulnerables a la estocasiticidad demográfica, como sabemos! - pero mientras los parches puedan volver a colonizarse, podemos alcanzar un equilibrio, donde las extinciones y colonizaciones se anulan mutuamente. En un modelo de metapoblación clásico, se trata de un <em>equilibrio estable</em>, y una metapoblación estable en la que son posibles las extinciones locales, <span class="math inline">\(p_e&gt; 0\)</span> se denomina <strong>dinámicamente estable</strong>. Es decir, cualquier parche dado podría extinguirse en un momento dado, pero en general, el tamaño de la metapoblación o sea los parches totales ocupados es relativamente estable y no está en riesgo de <strong>extinción regional o global </strong>.</p>
-<p>El concepto de estabilidad dinámica de la metapoblación, en el que se equilibran las extinciones y las colonizaciones, tiene mucho en común con la estabilidad dinámica de una sola población a la capacidad de carga, en la que cualquier individuo podría morir en cualquier momento, pero las muertes y los nacimientos se equilibran aproximadamente!</p>
+<p>En el modelo clásico de metapoblación, la extinción no es
+necesariamente infrecuente. Los parches se extinguen: ¡los parches
+pequeños pueden ser altamente vulnerables a la estocasiticidad
+demográfica, como sabemos! - pero mientras los parches puedan volver a
+colonizarse, podemos alcanzar un equilibrio, donde las extinciones y
+colonizaciones se anulan mutuamente. En un modelo de metapoblación
+clásico, se trata de un <em>equilibrio estable</em>, y una metapoblación
+estable en la que son posibles las extinciones locales, <span
+class="math inline">\(p_e&gt; 0\)</span> se denomina
+<strong>dinámicamente estable</strong>. Es decir, cualquier parche dado
+podría extinguirse en un momento dado, pero en general, el tamaño de la
+metapoblación o sea los parches totales ocupados es relativamente
+estable y no está en riesgo de <strong>extinción regional o global
+</strong>.</p>
+<p>El concepto de estabilidad dinámica de la metapoblación, en el que se
+equilibran las extinciones y las colonizaciones, tiene mucho en común
+con la estabilidad dinámica de una sola población a la capacidad de
+carga, en la que cualquier individuo podría morir en cualquier momento,
+pero las muertes y los nacimientos se equilibran aproximadamente!</p>
 </div>
 <div id="distribuyendo-el-riesgo" class="section level3">
 <h3>¡Distribuyendo el riesgo!</h3>
-<p>En los modelos clásicos de metapoblación, asumimos una gran cantidad de parches, por lo que no había ninguna posibilidad real de extinción regional/global. Pero la mayoría de las metapoblaciones reales son lo suficientemente pequeñas como para que a menudo debamos considerar el riesgo de extinción global.</p>
-<p>Consideremos un sistema en el que una especie ocupa un solo parche, y hay una probabilidad de extinción <span class="math inline">\(p_e\)</span> de 0.15 por parche por año.</p>
-<p><strong>P </strong>: ¿Cuál es la probabilidad de extinción regional en algún momento de los próximos 10 años?</p>
-<p>La probabilidad de persistencia durante 1 año es <span class="math inline">\(1-p_e\)</span>, por lo que la probabilidad de persistencia durante 10 años es <span class="math inline">\((1-p_e) ^ {10}\)</span> y la probabilidad de extinción regional es <span class="math display">\[1 - ((1-p_e) ^ { 10})\]</span></p>
+<p>En los modelos clásicos de metapoblación, asumimos una gran cantidad
+de parches, por lo que no había ninguna posibilidad real de extinción
+regional/global. Pero la mayoría de las metapoblaciones reales son lo
+suficientemente pequeñas como para que a menudo debamos considerar el
+riesgo de extinción global.</p>
+<p>Consideremos un sistema en el que una especie ocupa un solo parche, y
+hay una probabilidad de extinción <span
+class="math inline">\(p_e\)</span> de 0.15 por parche por año.</p>
+<p><strong>P </strong>: ¿Cuál es la probabilidad de extinción regional
+en algún momento de los próximos 10 años?</p>
+<p>La probabilidad de persistencia durante 1 año es <span
+class="math inline">\(1-p_e\)</span>, por lo que la probabilidad de
+persistencia durante 10 años es <span class="math inline">\((1-p_e) ^
+{10}\)</span> y la probabilidad de extinción regional es <span
+class="math display">\[1 - ((1-p_e) ^ { 10})\]</span></p>
 </div>
 </div>
 <div id="ejemplos" class="section level2">
@@ -592,42 +747,101 @@ div.tocify {
 <pre><code>## [1] 0.4096</code></pre>
 <pre class="r"><code>(1-((1-pe)^10))^10 # Probabilidad de la metapoblación ir la extincción si tiene 10 parches</code></pre>
 <pre><code>## [1] 0.1116438</code></pre>
-<p>que resulta ser alrededor del 80%. ¡Existe una probabilidad sustancial de extinción regional en algún momento durante los próximos 10 años!</p>
+<p>que resulta ser alrededor del 80%. ¡Existe una probabilidad
+sustancial de extinción regional en algún momento durante los próximos
+10 años!</p>
 <p>¿Y si hubiera dos parches en lugar de solo uno?</p>
-<p>Supongamos que el riesgo de extinción de los dos parches es <strong>independiente</strong>, es decir, ¡la extinción de un parche no influye en si el otro parche se extingue o no!</p>
-<p>Si la probabilidad de extinción de un parche durante los próximos 10 años es 0,8, entonces la probabilidad de que ambos parches se extingan en algún momento durante los próximos 10 años es <span class="math inline">\(0,8 * 0,8 = 0,64\)</span></p>
-<p>¡¡Entonces la posibilidad de extirpación regional es algo reducida con dos poblaciones !!</p>
-<p>Esto es un ejemplo de <strong>Distribuyendo el riesgo</strong> : <strong>spreading the risk</strong>.</p>
-<p>¿Qué pasa si hay 5 poblaciones independientes en lugar de dos? Entonces, ¿cuál es la probabilidad de extirpación regional en 10 años?</p>
+<p>Supongamos que el riesgo de extinción de los dos parches es
+<strong>independiente</strong>, es decir, ¡la extinción de un parche no
+influye en si el otro parche se extingue o no!</p>
+<p>Si la probabilidad de extinción de un parche durante los próximos 10
+años es 0,8, entonces la probabilidad de que ambos parches se extingan
+en algún momento durante los próximos 10 años es <span
+class="math inline">\(0,8 * 0,8 = 0,64\)</span></p>
+<p>¡¡Entonces la posibilidad de extirpación regional es algo reducida
+con dos poblaciones !!</p>
+<p>Esto es un ejemplo de <strong>Distribuyendo el riesgo</strong> :
+<strong>spreading the risk</strong>.</p>
+<p>¿Qué pasa si hay 5 poblaciones independientes en lugar de dos?
+Entonces, ¿cuál es la probabilidad de extirpación regional en 10
+años?</p>
 <p><span class="math inline">\([1-(1-p_e)^{10}]^5\)</span></p>
 <p><em>Esto resulta ser alrededor del 33%</em></p>
-<p>¿Qué pasa si hay 15 poblaciones independientes en lugar de cinco? Entonces, ¿cuál es la probabilidad de extirpación regional en 10 años?</p>
+<p>¿Qué pasa si hay 15 poblaciones independientes en lugar de cinco?
+Entonces, ¿cuál es la probabilidad de extirpación regional en 10
+años?</p>
 <p><span class="math inline">\([1-(1-p_e)^{10}]^5\)</span></p>
-<p><em>Esto resulta ser alrededor del 3%; hemos distribuido efectivamente el riesgo, de modo que a pesar de un riesgo de extinción relativamente alto a nivel de parche, es poco probable que la metapoblación experimente una extinción global.</em></p>
-<p><strong>P </strong>: si incluyéramos la dispersión entre parches, ¿la dispersión serviría para reducir aún más el riesgo de extinción global? ¿Por qué o por qué no?</p>
-<p><strong>P </strong>: ¿Qué pasaría si la extinción de un parche estuviera <em>perfectamente correlacionada </em> con la extinción de todos los demás parches? Si uno se extingue, todos se extinguen.</p>
+<p><em>Esto resulta ser alrededor del 3%; hemos distribuido
+efectivamente el riesgo, de modo que a pesar de un riesgo de extinción
+relativamente alto a nivel de parche, es poco probable que la
+metapoblación experimente una extinción global.</em></p>
+<p><strong>P </strong>: si incluyéramos la dispersión entre parches, ¿la
+dispersión serviría para reducir aún más el riesgo de extinción global?
+¿Por qué o por qué no?</p>
+<p><strong>P </strong>: ¿Qué pasaría si la extinción de un parche
+estuviera <em>perfectamente correlacionada </em> con la extinción de
+todos los demás parches? Si uno se extingue, todos se extinguen.</p>
 </div>
 <div id="fuentes-y-sumideros-sources-and-sinks" class="section level2">
 <h2>Fuentes y sumideros: Sources and sinks!</h2>
-<p>Un concepto importante y prácticamente útil relacionado con las metapoblaciones es el de <strong>dinámica fuente-sumidero </strong></p>
+<p>Un concepto importante y prácticamente útil relacionado con las
+metapoblaciones es el de <strong>dinámica fuente-sumidero </strong></p>
 <p><img src="figures/sourcesink1.jpg" /></p>
-<p>En el mundo real, los parches varían en tamaño y calidad. Es decir, es poco probable que se cumpla el supuesto de homogeneidad de los parches (inherente al marco clásico de la metapoblación) en la mayoría de las metapoblaciones reales.</p>
-<p>Al igual que con una población estructurada por edad, donde las tasas vitales y la abundancia de equilibrio pueden variar según la edad o la clase de tamaño, las tasas vitales y las abundancias pueden variar en el espacio. ¡Algunas áreas pueden tener un mejor hábitat, con mayores tasas de crecimiento de la población general! Por otro lado, algunas áreas pueden tener un hábitat pobre, y estas áreas pueden estar asociadas con tasas vitales más bajas …</p>
-<p>De hecho, algunos parches pueden tener tan pocos recursos o brindar una protección tan mala contra los depredadores que el crecimiento de la población es negativo, es decir, <span class="math inline">\(r\)</span> por debajo de cero, o <span class="math inline">\(\lambda\)</span> menos de 1. Otros parches pueden representar las condiciones perfectas para el crecimiento de la población (al menos si el hábitat no está demasiado poblado).</p>
-<p>Una <strong>población de origen</strong> se define como un parche que proporciona una <strong>donación neta de inmigrantes</strong> a parches cercanos con hábitat de menor calidad (es decir, poblaciones sumideros o poblaciones pseudo-sumideros). Una población de origen debe persistir indefinidamente, incluso aislada.</p>
-<p>Una <strong>población sumidero</strong> se define como un parche que <strong>se extinguiría</strong> si no fuera por la entrada constante de inmigrantes de <strong>poblaciones de origen </strong> cercanas.</p>
-<p><strong>P </strong>:¿Cómo se relaciona el concepto de población sumidero con el efecto de rescate ?</p>
-<p>Una <strong>población pseudo-sumidero</strong> se define como un parche <em>aumentado artificialmente</em> por inmigrantes de poblaciones de origen cercanas. De forma aislada (en ausencia de una población fuente cercana), un pseudo-sumidero no se extinguiría (¡un verdadero sumidero se extinguiría!), Sino que se asentaría en una abundancia de equilibrio mucho menor (capacidad de carga). Es decir, un pseudo-sumidero <em>mantiene una abundancia de equlibrium por encima de su capacidad de carga debido a la afluencia de inmigrantes de una o más poblaciones de origen cercanas</em>.</p>
+<p>En el mundo real, los parches varían en tamaño y calidad. Es decir,
+es poco probable que se cumpla el supuesto de homogeneidad de los
+parches (inherente al marco clásico de la metapoblación) en la mayoría
+de las metapoblaciones reales.</p>
+<p>Al igual que con una población estructurada por edad, donde las tasas
+vitales y la abundancia de equilibrio pueden variar según la edad o la
+clase de tamaño, las tasas vitales y las abundancias pueden variar en el
+espacio. ¡Algunas áreas pueden tener un mejor hábitat, con mayores tasas
+de crecimiento de la población general! Por otro lado, algunas áreas
+pueden tener un hábitat pobre, y estas áreas pueden estar asociadas con
+tasas vitales más bajas …</p>
+<p>De hecho, algunos parches pueden tener tan pocos recursos o brindar
+una protección tan mala contra los depredadores que el crecimiento de la
+población es negativo, es decir, <span class="math inline">\(r\)</span>
+por debajo de cero, o <span class="math inline">\(\lambda\)</span> menos
+de 1. Otros parches pueden representar las condiciones perfectas para el
+crecimiento de la población (al menos si el hábitat no está demasiado
+poblado).</p>
+<p>Una <strong>población de origen</strong> se define como un parche que
+proporciona una <strong>donación neta de inmigrantes</strong> a parches
+cercanos con hábitat de menor calidad (es decir, poblaciones sumideros o
+poblaciones pseudo-sumideros). Una población de origen debe persistir
+indefinidamente, incluso aislada.</p>
+<p>Una <strong>población sumidero</strong> se define como un parche que
+<strong>se extinguiría</strong> si no fuera por la entrada constante de
+inmigrantes de <strong>poblaciones de origen </strong> cercanas.</p>
+<p><strong>P </strong>:¿Cómo se relaciona el concepto de población
+sumidero con el efecto de rescate ?</p>
+<p>Una <strong>población pseudo-sumidero</strong> se define como un
+parche <em>aumentado artificialmente</em> por inmigrantes de poblaciones
+de origen cercanas. De forma aislada (en ausencia de una población
+fuente cercana), un pseudo-sumidero no se extinguiría (¡un verdadero
+sumidero se extinguiría!), Sino que se asentaría en una abundancia de
+equilibrio mucho menor (capacidad de carga). Es decir, un
+pseudo-sumidero <em>mantiene una abundancia de equlibrium por encima de
+su capacidad de carga debido a la afluencia de inmigrantes de una o más
+poblaciones de origen cercanas</em>.</p>
 </div>
 <div id="ejercicio-en-clase-fuentes-y-sumideros" class="section level2">
 <h2>Ejercicio en clase: ¡fuentes y sumideros!</h2>
 <p>En este ejercicio, exploraremos la dinámica fuente-sumidero.</p>
 <ol style="list-style-type: decimal">
-<li>Primero haga clic en este <a href="https://insightmaker.com/insight/107587/Source-Sink-2">enlace</a> y clone este <em>modelo de fuente-receptor basado en la población</em> en InsightMaker. Este modelo representa una metapoblación de cuatro parches con una población fuente grande y tres poblaciones sumideros más pequeñas. Las poblaciones de sumideros están ubicadas a diferentes distancias de la población de origen. Aquí está la <em>configuración espacial </em> aproximada de esta metapoblación:</li>
+<li>Primero haga clic en este <a
+href="https://insightmaker.com/insight/107587/Source-Sink-2">enlace</a>
+y clone este <em>modelo de fuente-receptor basado en la población</em>
+en InsightMaker. Este modelo representa una metapoblación de cuatro
+parches con una población fuente grande y tres poblaciones sumideros más
+pequeñas. Las poblaciones de sumideros están ubicadas a diferentes
+distancias de la población de origen. Aquí está la <em>configuración
+espacial </em> aproximada de esta metapoblación:</li>
 </ol>
 <p><img src="figures/sourcesink1.png" /></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Asegúrese de que los parámetros del modelo estén en los valores predeterminados. Los parámetros predeterminados deben ser:</li>
+<li>Asegúrese de que los parámetros del modelo estén en los valores
+predeterminados. Los parámetros predeterminados deben ser:</li>
 </ol>
 <ul>
 <li>Abundancia inicial en fuente: 100</li>
@@ -639,19 +853,27 @@ div.tocify {
 <li>K para <em>sink</em> (Población de sumideros) de gama media: 25</li>
 <li>K para sumidero distante: 15</li>
 <li>Tasa máxima de dispersión: 10% anual (0,1)</li>
-<li>Lambda (tasa de crecimiento discreta) para poblaciones sumideros [lambda malo]: 0,8</li>
+<li>Lambda (tasa de crecimiento discreta) para poblaciones sumideros
+[lambda malo]: 0,8</li>
 <li>Lambda para la población de origen [lambda buena]: 2.1</li>
 </ul>
-<p>NOTA: la tasa de dispersión máxima (en este modelo) es la tasa de dispersión entre parches vecinos. Los parches que se encuentran más separados tienen tasas de dispersión que se calculan como una fracción de la tasa máxima.</p>
+<p>NOTA: la tasa de dispersión máxima (en este modelo) es la tasa de
+dispersión entre parches vecinos. Los parches que se encuentran más
+separados tienen tasas de dispersión que se calculan como una fracción
+de la tasa máxima.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Ejecute el modelo, vea los resultados y asegúrese de comprender cómo funciona.</li>
+<li>Ejecute el modelo, vea los resultados y asegúrese de comprender cómo
+funciona.</li>
 </ol>
-<p>** Q **: en este escenario, una fracción constante de cada población se dispersa a cada parche vecino cada año.</p>
+<p>** Q **: en este escenario, una fracción constante de cada población
+se dispersa a cada parche vecino cada año.</p>
 <ul>
 <li>¿Es esto realista?</li>
-<li>¿Puedes pensar en escenarios del mundo real que conducirían a diferentes patrones de dispersión?</li>
+<li>¿Puedes pensar en escenarios del mundo real que conducirían a
+diferentes patrones de dispersión?</li>
 </ul>
-<p>** P **: ¿Qué fuentes de datos podrían ser útiles para comprender las tasas de dispersión en una metapoblación?</p>
+<p>** P **: ¿Qué fuentes de datos podrían ser útiles para comprender las
+tasas de dispersión en una metapoblación?</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Cambie la tasa de dispersión a cero y ejecute el modelo.</li>
 </ol>
@@ -662,40 +884,71 @@ div.tocify {
 <li>Cambie la tasa de dispersión a 0.01 (1%).</li>
 </ol>
 <ul>
-<li>¿Que pasa ahora? ¿El sumidero distante sigue funcionando como población sumidero?</li>
-<li>Es decir, ¿está ocupado de forma continua? Si no es así, ¿cuál es la tasa de dispersión mínima que generalmente asegura que el sumidero distante esté constantemente ocupado (continuamente) (asegúrese de que el límite inferior de la región del 95% para la abundancia en este parche sea superior a 2 para todos los años)?</li>
+<li>¿Que pasa ahora? ¿El sumidero distante sigue funcionando como
+población sumidero?</li>
+<li>Es decir, ¿está ocupado de forma continua? Si no es así, ¿cuál es la
+tasa de dispersión mínima que generalmente asegura que el sumidero
+distante esté constantemente ocupado (continuamente) (asegúrese de que
+el límite inferior de la región del 95% para la abundancia en este
+parche sea superior a 2 para todos los años)?</li>
 </ul>
 <ol start="6" style="list-style-type: decimal">
-<li>Vuelva a cambiar la tasa de dispersión al 10%. Ahora reduzca la tasa de crecimiento de la población en la población de origen (“lambda buena”) a 1,1.</li>
+<li>Vuelva a cambiar la tasa de dispersión al 10%. Ahora reduzca la tasa
+de crecimiento de la población en la población de origen (“lambda
+buena”) a 1,1.</li>
 </ol>
 <ul>
-<li>¿Que pasa ahora? ¿La población fuente todavía opera como una fuente efectiva (es decir, apoya la ocupación constante de todos los sumideros)?</li>
-<li>¿Qué sucede si establece la tasa de crecimiento máxima en el parche de origen en 1?</li>
-<li>¿Podría una población así servir alguna vez como una población fuente eficaz?</li>
+<li>¿Que pasa ahora? ¿La población fuente todavía opera como una fuente
+efectiva (es decir, apoya la ocupación constante de todos los
+sumideros)?</li>
+<li>¿Qué sucede si establece la tasa de crecimiento máxima en el parche
+de origen en 1?</li>
+<li>¿Podría una población así servir alguna vez como una población
+fuente eficaz?</li>
 </ul>
 <div id="un-pseudo-sumidero" class="section level4">
 <h4>¡Un pseudo-sumidero!</h4>
 <ol start="7" style="list-style-type: decimal">
-<li>Vuelva a cambiar la lambda de origen a 2.1. Ahora cambie la lambda del sumidero a 1.1 y la tasa de dispersión máxima al 25%.</li>
+<li>Vuelva a cambiar la lambda de origen a 2.1. Ahora cambie la lambda
+del sumidero a 1.1 y la tasa de dispersión máxima al 25%.</li>
 </ol>
 <ul>
-<li>¿Cuál es la abundancia de equilibrio aproximada del sumidero distante?</li>
-<li>¿Cómo se relaciona esto con su capacidad de carga? Genere una figura (utilizando InsightMaker) que ilustre la abundancia del sumidero distante frente a la capacidad de carga (a lo largo del tiempo).</li>
-<li>¿Cómo ilustra esta figura el concepto de <strong>pseudo-sumidero </strong>?</li>
+<li>¿Cuál es la abundancia de equilibrio aproximada del sumidero
+distante?</li>
+<li>¿Cómo se relaciona esto con su capacidad de carga? Genere una figura
+(utilizando InsightMaker) que ilustre la abundancia del sumidero
+distante frente a la capacidad de carga (a lo largo del tiempo).</li>
+<li>¿Cómo ilustra esta figura el concepto de <strong>pseudo-sumidero
+</strong>?</li>
 </ul>
 </div>
 <div id="una-trampa-ecológica" class="section level4">
 <h4>¡Una trampa ecológica!</h4>
 <ol start="8" style="list-style-type: decimal">
-<li>Vuelva a cambiar todos los parámetros a sus valores predeterminados. Ahora considere el siguiente escenario:</li>
+<li>Vuelva a cambiar todos los parámetros a sus valores predeterminados.
+Ahora considere el siguiente escenario:</li>
 </ol>
-<p>NOTA: es posible que desee clonar su modelo ahora para que pueda ir y venir fácilmente entre el modelo de “trampa ecológica” y el modelo de “fuente-sumidero”.</p>
+<p>NOTA: es posible que desee clonar su modelo ahora para que pueda ir y
+venir fácilmente entre el modelo de “trampa ecológica” y el modelo de
+“fuente-sumidero”.</p>
 <blockquote>
-<p>¡La población “sink” (Población de sumideros) cercano es ahora extremadamente atractivo para nuestra especie focal, ya que contiene abundantes recursos alimenticios y lo que parece un buen refugio! Sin embargo, en este hábitat también hay un nuevo depredador introducido que la especie no puede detectar. Por lo tanto, las tasas de dispersión al hábitat del sumidero son muy altas, pero las tasas de mortalidad también son muy altas.</p>
+<p>¡La población “sink” (Población de sumideros) cercano es ahora
+extremadamente atractivo para nuestra especie focal, ya que contiene
+abundantes recursos alimenticios y lo que parece un buen refugio! Sin
+embargo, en este hábitat también hay un nuevo depredador introducido que
+la especie no puede detectar. Por lo tanto, las tasas de dispersión al
+hábitat del sumidero son muy altas, pero las tasas de mortalidad también
+son muy altas.</p>
 </blockquote>
-<p>Para forzar a un número desproporcionado de personas a ingresar al sumidero cercano, abra el editor de ecuaciones para el flujo desde la fuente al sumidero cercano. Cambie la primera línea para que lea:</p>
+<p>Para forzar a un número desproporcionado de personas a ingresar al
+sumidero cercano, abra el editor de ecuaciones para el flujo desde la
+fuente al sumidero cercano. Cambie la primera línea para que lea:</p>
 <pre><code>0.01*[nearby sink] - 0.5*[SOURCE]</code></pre>
-<p>NOTA: puede “comentar” lo que estaba anteriormente en el editor de ecuaciones para este flujo. Para hacer esto, puede usar símbolos de almohadilla como lo hemos hecho en el pasado (¡y como R!) O podemos poner entre corchetes un bloque completo de código usando la siguiente sintaxis:</p>
+<p>NOTA: puede “comentar” lo que estaba anteriormente en el editor de
+ecuaciones para este flujo. Para hacer esto, puede usar símbolos de
+almohadilla como lo hemos hecho en el pasado (¡y como R!) O podemos
+poner entre corchetes un bloque completo de código usando la siguiente
+sintaxis:</p>
 <pre><code>/ *
 algunos al azar
 codificar aquí
@@ -703,8 +956,16 @@ y
 algo mas
 codigo aleatorio
 * /</code></pre>
-<p>¡Esto obligará al 50% de la población de origen a intentar trasladarse al hábitat del sumidero cada año! Casi todos los individuos que se encuentran en el hábitat del sumidero intentarán permanecer allí.</p>
-<p>Además, cambie la lambda para el sumidero cercano a 0.25, (lo que significa que el 75% de la población de sumideros muere cada año debido a la depredación). Para hacer esto, reemplace el término [lambda malo] en el flujo de nacimientos / muertes para el sumidero cercano con el número “0.25”. Abra el editor de ecuaciones para este flujo; después de cambiar, debería verse así:</p>
+<p>¡Esto obligará al 50% de la población de origen a intentar
+trasladarse al hábitat del sumidero cada año! Casi todos los individuos
+que se encuentran en el hábitat del sumidero intentarán permanecer
+allí.</p>
+<p>Además, cambie la lambda para el sumidero cercano a 0.25, (lo que
+significa que el 75% de la población de sumideros muere cada año debido
+a la depredación). Para hacer esto, reemplace el término [lambda malo]
+en el flujo de nacimientos / muertes para el sumidero cercano con el
+número “0.25”. Abra el editor de ecuaciones para este flujo; después de
+cambiar, debería verse así:</p>
 <pre><code>growth &lt;- [nearby sink]*Ln(0.25)
 
 totalexp &lt;- [nearby sink]+growth   # expected population size
@@ -715,38 +976,63 @@ End If
 newexp-[nearby sink]
 </code></pre>
 <ol start="9" style="list-style-type: decimal">
-<li>Ejecute el modelo con el “Sink patch” (Población de sumideros) cercano como trampa ecológica e intente abordar las siguientes preguntas:</li>
+<li>Ejecute el modelo con el “Sink patch” (Población de sumideros)
+cercano como trampa ecológica e intente abordar las siguientes
+preguntas:</li>
 </ol>
 <p>** P **:</p>
 <ul>
-<li>¿de qué manera el sumidero cercano es ahora una <em>trampa ecológica </em>?</li>
-<li>¿Son todas las poblaciones de sumideros realmente <em>trampas ecológicas </em>?</li>
+<li>¿de qué manera el sumidero cercano es ahora una <em>trampa ecológica
+</em>?</li>
+<li>¿Son todas las poblaciones de sumideros realmente <em>trampas
+ecológicas </em>?</li>
 </ul>
-<p>** P **: ¿Están mejor las metapoblaciones sin poblaciones sumideros?</p>
+<p>** P **: ¿Están mejor las metapoblaciones sin poblaciones
+sumideros?</p>
 <ul>
-<li>¿Podría ser <em>deseable </em> eliminar una población sumidero para mejorar el estado de conservación de una metapoblación?</li>
+<li>¿Podría ser <em>deseable </em> eliminar una población sumidero para
+mejorar el estado de conservación de una metapoblación?</li>
 <li>¿Bajo que circunstancias?</li>
-<li>¿Cómo se relaciona esto con el concepto de *dependencia de la densidad?</li>
+<li>¿Cómo se relaciona esto con el concepto de *dependencia de la
+densidad?</li>
 </ul>
 </div>
-<div id="beneficios-de-las-poblaciones-de-sumideros" class="section level4">
+<div id="beneficios-de-las-poblaciones-de-sumideros"
+class="section level4">
 <h4>¡Beneficios de las poblaciones de sumideros!</h4>
-<p>¡Es posible que las poblaciones de sumideros no siempre sean tan malas para la conservación! Considere el siguiente escenario:</p>
+<p>¡Es posible que las poblaciones de sumideros no siempre sean tan
+malas para la conservación! Considere el siguiente escenario:</p>
 <blockquote>
-<p>Una gran población de origen puede mantener un conjunto de 3 poblaciones satélite, cada una de las cuales no persistiría en ausencia de dispersión de la población de origen. Ocasionalmente (por ejemplo, una vez cada 100 años), un incendio catastrófico erradica la población fuente. Sin embargo, la población de origen es colonizada por individuos que migran de las poblaciones satélites (sumideros). ¡En ausencia de las poblaciones de sumideros, es casi seguro que toda la metapoblación se extinguiría! #### ¡Beneficios de las poblaciones de sumideros!</p>
+<p>Una gran población de origen puede mantener un conjunto de 3
+poblaciones satélite, cada una de las cuales no persistiría en ausencia
+de dispersión de la población de origen. Ocasionalmente (por ejemplo,
+una vez cada 100 años), un incendio catastrófico erradica la población
+fuente. Sin embargo, la población de origen es colonizada por individuos
+que migran de las poblaciones satélites (sumideros). ¡En ausencia de las
+poblaciones de sumideros, es casi seguro que toda la metapoblación se
+extinguiría! #### ¡Beneficios de las poblaciones de sumideros!</p>
 </blockquote>
 <hr />
 </div>
 </div>
-<div id="in-class-exercise-sources-and-sinks-población-sumideros" class="section level2">
+<div id="in-class-exercise-sources-and-sinks-población-sumideros"
+class="section level2">
 <h2>In-class exercise: sources and sinks (Población sumideros)!</h2>
 <p>In this exercise, we will explore source-sink dynamics!</p>
 <ol style="list-style-type: decimal">
-<li>First click on this <a href="https://insightmaker.com/insight/107587/Source-Sink-2">link</a> and clone this <em>population-based source-sink model</em> in InsightMaker. This model represents a four-patch metapopulation with one large source population and three smaller sink populations. The sink populations are located at varying distances from the source population. Here is the approximate <em>spatial configuration</em> of this metapopulation:</li>
+<li>First click on this <a
+href="https://insightmaker.com/insight/107587/Source-Sink-2">link</a>
+and clone this <em>population-based source-sink model</em> in
+InsightMaker. This model represents a four-patch metapopulation with one
+large source population and three smaller sink populations. The sink
+populations are located at varying distances from the source population.
+Here is the approximate <em>spatial configuration</em> of this
+metapopulation:</li>
 </ol>
 <p><img src="figures/sourcesink1.png" /></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Make sure the model parameters are at default values. The default parameters should be:</li>
+<li>Make sure the model parameters are at default values. The default
+parameters should be:</li>
 </ol>
 <p>Initial abundance in source: 100<br />
 Initial abundance in nearby sink: 10<br />
@@ -757,37 +1043,76 @@ K for nearby sink: 50<br />
 K for mid-range sink: 25<br />
 K for distant sink: 15<br />
 Maximum dispersal rate: 10% per year (0.1)<br />
-Lambda (discrete growth rate) for sink populations [lambda bad]: 0.8<br />
+Lambda (discrete growth rate) for sink populations [lambda bad]:
+0.8<br />
 Lambda for source population [lambda good]: 2.1</p>
-<p>NOTE: maximum dispersal rate (in this model) is the rate of dispersal between neighboring patches. Patches that are located farther apart have dispersal rates that are computed as a fraction of the maximum rate.</p>
+<p>NOTE: maximum dispersal rate (in this model) is the rate of dispersal
+between neighboring patches. Patches that are located farther apart have
+dispersal rates that are computed as a fraction of the maximum rate.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Run the model, view the results and make sure you understand how the model works.</li>
+<li>Run the model, view the results and make sure you understand how the
+model works.</li>
 </ol>
-<p><strong>Q</strong>: in this scenario, a constant fraction of each population disperses to each neighboring patch each year. Is this realistic? Can you think of real-world scenarios that would lead to different dispersal patterns?</p>
-<p><strong>Q</strong>: what data sources might be helpful in understanding dispersal rates in a metapopulation?</p>
+<p><strong>Q</strong>: in this scenario, a constant fraction of each
+population disperses to each neighboring patch each year. Is this
+realistic? Can you think of real-world scenarios that would lead to
+different dispersal patterns?</p>
+<p><strong>Q</strong>: what data sources might be helpful in
+understanding dispersal rates in a metapopulation?</p>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Change the dispersal rate to zero and run the model. What happens? Does this make sense?</p></li>
-<li><p>Change the dispersal rate to 0.01 (1%). What happens now? Does the distant sink still function as a sink population? That is, is it occupied continuously? If not, what is the minimum dispersal rate that generally ensures that the distant sink is consistently (continuously) occupied (make sure the lower bound of the 95% region for abundance in this patch is above 2 for all years)? [tophat]</p></li>
-<li><p>Change the dispersal rate back to 10%. Now reduce the population growth rate in the source population (“lambda good”) to 1.1. What happens now? Does the source population still operate as an effective source (that is, does it support consistent occupation of all the sinks)? What happens if you set the maximum growth rate in the source patch to 1? Could such a population ever serve as an effective source population?</p></li>
+<li><p>Change the dispersal rate to zero and run the model. What
+happens? Does this make sense?</p></li>
+<li><p>Change the dispersal rate to 0.01 (1%). What happens now? Does
+the distant sink still function as a sink population? That is, is it
+occupied continuously? If not, what is the minimum dispersal rate that
+generally ensures that the distant sink is consistently (continuously)
+occupied (make sure the lower bound of the 95% region for abundance in
+this patch is above 2 for all years)? [tophat]</p></li>
+<li><p>Change the dispersal rate back to 10%. Now reduce the population
+growth rate in the source population (“lambda good”) to 1.1. What
+happens now? Does the source population still operate as an effective
+source (that is, does it support consistent occupation of all the
+sinks)? What happens if you set the maximum growth rate in the source
+patch to 1? Could such a population ever serve as an effective source
+population?</p></li>
 </ol>
 <div id="a-pseudo-sink" class="section level4">
 <h4>A pseudo-sink!</h4>
 <ol start="7" style="list-style-type: decimal">
-<li>Change the source lambda back to 2.1. Now change the sink lambda to 1.1 and the max dispersal rate to 25%. What is the approximate equilibrium abundance of the distant sink? How does this relate to its carrying capacity? Generate a figure (using InsightMaker) that illustrates the abundance of the distant sink vs. carrying capacity (over time). How does this figure illustrate the concept of a <strong>pseudo-sink</strong>.</li>
+<li>Change the source lambda back to 2.1. Now change the sink lambda to
+1.1 and the max dispersal rate to 25%. What is the approximate
+equilibrium abundance of the distant sink? How does this relate to its
+carrying capacity? Generate a figure (using InsightMaker) that
+illustrates the abundance of the distant sink vs. carrying capacity
+(over time). How does this figure illustrate the concept of a
+<strong>pseudo-sink</strong>.</li>
 </ol>
 </div>
 <div id="an-ecological-trap" class="section level4">
 <h4>An ecological trap!</h4>
 <ol start="8" style="list-style-type: decimal">
-<li>Change all params back to their default values. Now consider the following scenario:</li>
+<li>Change all params back to their default values. Now consider the
+following scenario:</li>
 </ol>
-<p>NOTE: you may want to clone your model now to enable you to easily go back and forth between the “ecological trap” model and the “source-sink” model.</p>
+<p>NOTE: you may want to clone your model now to enable you to easily go
+back and forth between the “ecological trap” model and the “source-sink”
+model.</p>
 <blockquote>
-<p>The nearby sink patch is now extremely attractive to our focal species- since it contains abundant food resources and what seems like good shelter! However, in this habitat there is also a novel, introduced predator that the species is unable to detect. Therefore, dispersal rates to the sink habitat are very high, but mortality rates are also very high.</p>
+<p>The nearby sink patch is now extremely attractive to our focal
+species- since it contains abundant food resources and what seems like
+good shelter! However, in this habitat there is also a novel, introduced
+predator that the species is unable to detect. Therefore, dispersal
+rates to the sink habitat are very high, but mortality rates are also
+very high.</p>
 </blockquote>
-<p>To force a disproportionate number of individuals into the nearby sink, open the equation editor for the flow from the source to the nearby sink. Change the first line to read:</p>
+<p>To force a disproportionate number of individuals into the nearby
+sink, open the equation editor for the flow from the source to the
+nearby sink. Change the first line to read:</p>
 <pre><code>0.01*[nearby sink] - 0.5*[SOURCE]</code></pre>
-<p>NOTE: you can “comment out” what was previously in the equation editor for this flow. To do this, you can either use pound symbols like we have done in the past (and like R!) or we can bracket a whole block of code using the following syntax:</p>
+<p>NOTE: you can “comment out” what was previously in the equation
+editor for this flow. To do this, you can either use pound symbols like
+we have done in the past (and like R!) or we can bracket a whole block
+of code using the following syntax:</p>
 <pre><code>/*  
 some random
 code here
@@ -795,21 +1120,43 @@ and
 some more
 random code
 */</code></pre>
-<p>This will force 50% of the source population to try to move to the sink habitat each year! Nearly all individuals that are in the sink habitat will attempt to stay there.</p>
-<p>Also, change the lambda for the nearby sink to 0.25, (meaning 75% of the sink population dies each year due to predation). To do this, replace the [lambda bad] term in the births/deaths flow for the nearby sink with the number “0.25”. Open the equation editor for this flow- after you change, it should look something like this:</p>
+<p>This will force 50% of the source population to try to move to the
+sink habitat each year! Nearly all individuals that are in the sink
+habitat will attempt to stay there.</p>
+<p>Also, change the lambda for the nearby sink to 0.25, (meaning 75% of
+the sink population dies each year due to predation). To do this,
+replace the [lambda bad] term in the births/deaths flow for the nearby
+sink with the number “0.25”. Open the equation editor for this flow-
+after you change, it should look something like this:</p>
 <p>growth &lt;- [nearby sink]*Ln(0.25)</p>
-<p>totalexp &lt;- [nearby sink]+growth # expected population size newexp &lt;- 0 If totalexp&gt;0.5 Then newexp &lt;- RandPoisson(totalexp) End If newexp-[nearby sink]</p>
+<p>totalexp &lt;- [nearby sink]+growth # expected population size newexp
+&lt;- 0 If totalexp&gt;0.5 Then newexp &lt;- RandPoisson(totalexp) End
+If newexp-[nearby sink]</p>
 <ol start="9" style="list-style-type: decimal">
-<li>Run the model with the nearby sink as an ecological trap, and try to address the following questions:</li>
+<li>Run the model with the nearby sink as an ecological trap, and try to
+address the following questions:</li>
 </ol>
-<p><strong>Q</strong>: in what way is the nearby sink now an <em>ecological trap</em>? Are all sink populations really <em>ecological traps</em>?</p>
-<p><strong>Q</strong>: are metapopulations better off without sink populations? Could it ever be <em>desirable</em> to remove a sink population to improve the conservation status of a metapopulation? Under what circumstances? How does this relate to the concept of *density-dependence?</p>
+<p><strong>Q</strong>: in what way is the nearby sink now an
+<em>ecological trap</em>? Are all sink populations really <em>ecological
+traps</em>?</p>
+<p><strong>Q</strong>: are metapopulations better off without sink
+populations? Could it ever be <em>desirable</em> to remove a sink
+population to improve the conservation status of a metapopulation? Under
+what circumstances? How does this relate to the concept of
+*density-dependence?</p>
 </div>
 <div id="benefits-of-sink-populations" class="section level4">
 <h4>Benefits of sink populations!</h4>
-<p>Sink populations may not always be so bad for conservation! Consider the following scenario:</p>
+<p>Sink populations may not always be so bad for conservation! Consider
+the following scenario:</p>
 <blockquote>
-<p>A large source population is able to maintain a set of 3 satellite populations, each of which would not persist in the absence of dispersal from the source population. Occasionally (e.g., once per 100 years), a catastrophic fire eradicates the source population. However, the source population is then colonized by individuals migrating from the satellite (sink) populations. In the absence of the sink populations, the entire metapopulation would almost certainly go extinct!</p>
+<p>A large source population is able to maintain a set of 3 satellite
+populations, each of which would not persist in the absence of dispersal
+from the source population. Occasionally (e.g., once per 100 years), a
+catastrophic fire eradicates the source population. However, the source
+population is then colonized by individuals migrating from the satellite
+(sink) populations. In the absence of the sink populations, the entire
+metapopulation would almost certainly go extinct!</p>
 </blockquote>
 <p><a href="LECTURE15.html">–go to next lecture–</a></p>
 </div>

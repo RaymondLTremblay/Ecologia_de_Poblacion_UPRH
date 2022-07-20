@@ -13,7 +13,7 @@
 
 <title>Intro a BIOL4458</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -64,6 +64,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -84,6 +85,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -312,7 +316,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -328,7 +332,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -409,7 +413,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -430,7 +434,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -442,7 +446,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -467,7 +471,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -484,7 +488,16 @@ div.tocify {
 <p><img src="figures/prairie_dogs2.jpg" /></p>
 <div id="resumen" class="section level2">
 <h2>Resumen</h2>
-<p>En esta clase exploraremos cómo los conceptos de <em>Ecología de poblaciones</em> se pueden aplicar a sistemas del mundo real para apoyar y mejorar la conservación y el manejo de la vida silvestre. Para tomar este curso, ya debe tener una base básica en el campo de la ecología (por ejemplo, Ecología General). BIOL4458 está destinado a ser un puente entre Ecología General y el curso de Ecología de Comunidades. Esta clase está estrechamente relacionada con la Biología de la conservación, ya que aprendemos y aplicamos una de las herramientas más importantes utilizadas por los biólogos de la conservación y los administradores de la vida silvestre: ¡modelos cuantitativos de población!</p>
+<p>En esta clase exploraremos cómo los conceptos de <em>Ecología de
+poblaciones</em> se pueden aplicar a sistemas del mundo real para apoyar
+y mejorar la conservación y el manejo de la vida silvestre. Para tomar
+este curso, ya debe tener una base básica en el campo de la ecología
+(por ejemplo, Ecología General). BIOL4458 está destinado a ser un puente
+entre Ecología General y el curso de Ecología de Comunidades. Esta clase
+está estrechamente relacionada con la Biología de la conservación, ya
+que aprendemos y aplicamos una de las herramientas más importantes
+utilizadas por los biólogos de la conservación y los administradores de
+la vida silvestre: ¡modelos cuantitativos de población!</p>
 </div>
 <div id="syllabus" class="section level2">
 <h2>Syllabus:</h2>
@@ -494,34 +507,77 @@ div.tocify {
 </div>
 <div id="libros" class="section level2">
 <h2>Libros</h2>
-<p>Te animo a que recojas una copia del libro de texto; puedes comprar el libro de texto nuevo o usado en <a href="https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1484867155&amp;sr=1-1&amp;keywords=a+primer+of+ecology">Amazon</a>. Las ediciones previas (especialmente 3rd edition) son aceptable. Todas las demás lecturas se publicarán en Edmodo.</p>
+<p>Te animo a que recojas una copia del libro de texto; puedes comprar
+el libro de texto nuevo o usado en <a
+href="https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1484867155&amp;sr=1-1&amp;keywords=a+primer+of+ecology">Amazon</a>.
+Las ediciones previas (especialmente 3rd edition) son aceptable. Todas
+las demás lecturas se publicarán en Edmodo.</p>
 </div>
 <div id="software" class="section level2">
 <h2>Software</h2>
-<p>Las habilidades con software especializado y programación de computadoras son críticas en la biología de la conservación y el manejo de la vida silvestre de hoy en día. En esta clase, se familiarizará con el uso de algunas herramientas especializadas. (e.g., <a href="http://www.phidot.org/software/mark/index.html">Program MARK</a>) y algo de programación informática (e.g., <a href="https://insightmaker.com/">InsightMaker</a>, <a href="https://cran.r-project.org/">R</a>) y espero que al final de esta clase comprendan lo poderoso y útiles que pueden ser estas herramientas, ¡y no solo para la ecología de poblaciones!</p>
-<p>Ver el <a href="Links.html">links page</a> para obtener algunas referencias útiles (publicaré más enlaces en breve, ¡incluidos algunos tutoriales de R!).</p>
-<p>##Actividades en clase Este semestre proporcionaré materiales de conferencias, videos y lecturas antes de nuestras reuniones de clase. La mayoría de los períodos de clase se dedicarán a debates y ejercicios prácticos de modelado (mini laboratorios) para que todos tengan la oportunidad de aplicar los conceptos de ecología de poblaciones de los que hablamos en la conferencia. Muchos períodos de clase también incluirán preguntas breves (preguntas de discusión, opción múltiple, etc.), principalmente para darme retro alimentación sobre qué conceptos podrían necesitar más refuerzo. Sus respuestas a estas preguntas también ayudarán a informar su puntaje de participación.</p>
+<p>Las habilidades con software especializado y programación de
+computadoras son críticas en la biología de la conservación y el manejo
+de la vida silvestre de hoy en día. En esta clase, se familiarizará con
+el uso de algunas herramientas especializadas. (e.g., <a
+href="http://www.phidot.org/software/mark/index.html">Program MARK</a>)
+y algo de programación informática (e.g., <a
+href="https://insightmaker.com/">InsightMaker</a>, <a
+href="https://cran.r-project.org/">R</a>) y espero que al final de esta
+clase comprendan lo poderoso y útiles que pueden ser estas herramientas,
+¡y no solo para la ecología de poblaciones!</p>
+<p>Ver el <a href="Links.html">links page</a> para obtener algunas
+referencias útiles (publicaré más enlaces en breve, ¡incluidos algunos
+tutoriales de R!).</p>
+<p>##Actividades en clase Este semestre proporcionaré materiales de
+conferencias, videos y lecturas antes de nuestras reuniones de clase. La
+mayoría de los períodos de clase se dedicarán a debates y ejercicios
+prácticos de modelado (mini laboratorios) para que todos tengan la
+oportunidad de aplicar los conceptos de ecología de poblaciones de los
+que hablamos en la conferencia. Muchos períodos de clase también
+incluirán preguntas breves (preguntas de discusión, opción múltiple,
+etc.), principalmente para darme retro alimentación sobre qué conceptos
+podrían necesitar más refuerzo. Sus respuestas a estas preguntas también
+ayudarán a informar su puntaje de participación.</p>
 </div>
 <div id="actividades-fuera-de-clase" class="section level2">
 <h2>Actividades fuera de clase</h2>
-<p>Para aprovechar al máximo este curso, deberá dedicar una cantidad significativa de tiempo fuera de clase a:</p>
+<p>Para aprovechar al máximo este curso, deberá dedicar una cantidad
+significativa de tiempo fuera de clase a:</p>
 <ol style="list-style-type: decimal">
-<li>Estudiar las lecturas asignadas (consulte <a href="schedule.html">EL CALENDARIO</a>) y los materiales de las conferencias en línea.</li>
-<li>Terminar cualquier problema / ejercicio que no completó durante la clase o el laboratorio</li>
+<li>Estudiar las lecturas asignadas (consulte <a href="schedule.html">EL
+CALENDARIO</a>) y los materiales de las conferencias en línea.</li>
+<li>Terminar cualquier problema / ejercicio que no completó durante la
+clase o el laboratorio</li>
 <li>Trabajando en sus proyectos finales grupales.</li>
 </ol>
 </div>
 <div id="proyecto-de-pva" class="section level2">
 <h2>Proyecto de PVA</h2>
-<p>Nunca es demasiado pronto para empezar a pensar en las ideas y conjuntos de datos del proyecto final. Para los proyectos finales, trabajará en grupos pequeños para realizar un análisis de viabilidad de la población (PVA) para evaluar las acciones de conservación o manejo para una especie de interés de conservación (¡especie de su elección!). Recopilaré una lista de bases de datos en línea que podrían ser útiles para sus proyectos y la publicaré en el sitio web del curso. Mientras tanto, ¡comience a pensar en qué especies podría interesarle modelar y qué estrategias de conservación y manejo podría querer probar!</p>
+<p>Nunca es demasiado pronto para empezar a pensar en las ideas y
+conjuntos de datos del proyecto final. Para los proyectos finales,
+trabajará en grupos pequeños para realizar un análisis de viabilidad de
+la población (PVA) para evaluar las acciones de conservación o manejo
+para una especie de interés de conservación (¡especie de su elección!).
+Recopilaré una lista de bases de datos en línea que podrían ser útiles
+para sus proyectos y la publicaré en el sitio web del curso. Mientras
+tanto, ¡comience a pensar en qué especies podría interesarle modelar y
+qué estrategias de conservación y manejo podría querer probar!</p>
 </div>
 <div id="trabajo" class="section level2">
 <h2>Trabajo</h2>
-<p>Las conferencias y los ejercicios se publicarán en línea con suficiente detalle para completar y estudiar en su propio tiempo. PERO, gran parte del beneficio de este curso vendrá de las interacciones con los compañeros y el instructor durante los períodos de clase y laboratorio, y espero que participe plenamente en esta clase. Por favor avíseme con anticipación si necesita faltar a clases por cualquier motivo.</p>
+<p>Las conferencias y los ejercicios se publicarán en línea con
+suficiente detalle para completar y estudiar en su propio tiempo. PERO,
+gran parte del beneficio de este curso vendrá de las interacciones con
+los compañeros y el instructor durante los períodos de clase y
+laboratorio, y espero que participe plenamente en esta clase. Por favor
+avíseme con anticipación si necesita faltar a clases por cualquier
+motivo.</p>
 </div>
 <div id="por-favor-ayude-a-mejorar-esta-clase" class="section level2">
 <h2>¡Por favor ayude a mejorar esta clase!</h2>
-<p>Necesito sus comentarios frecuentes y honestos para asegurarme de que el nivel y el ritmo sean los adecuados. ¡No dude en brindar sugerencias constructivas para mejorar esta clase!</p>
+<p>Necesito sus comentarios frecuentes y honestos para asegurarme de que
+el nivel y el ritmo sean los adecuados. ¡No dude en brindar sugerencias
+constructivas para mejorar esta clase!</p>
 </div>
 <div id="preguntas" class="section level2">
 <h2>¿Preguntas?</h2>
@@ -529,11 +585,23 @@ div.tocify {
 </div>
 <div id="nota-importante" class="section level2">
 <h2>NOTA IMPORTANTE:</h2>
-<p>La gran mayoria de la información de este website proviene de un curso preparado y organizado por el Dr. Ken Shoemaker <a href="https://github.com/kevintshoemaker/NRES-470">https://github.com/kevintshoemaker/NRES-470</a>. El Dr. Shoemaker dio su aprobación que se podría utilizar y traducir su website al español. Hay cambio de información y de temas en diferentes paginas. Cualquier error de traduccion/conceptos o conflicto el presente autor (RLT) es responsable. Se añadio ejemplo en diferentes modulos relevante al Tropico y al Caribe.</p>
+<p>La gran mayoria de la información de este website proviene de un
+curso preparado y organizado por el Dr. Ken Shoemaker <a
+href="https://github.com/kevintshoemaker/NRES-470">https://github.com/kevintshoemaker/NRES-470</a>.
+El Dr. Shoemaker dio su aprobación que se podría utilizar y traducir su
+website al español. Hay cambio de información y de temas en diferentes
+paginas. Cualquier error de traduccion/conceptos o conflicto el presente
+autor (RLT) es responsable. Se añadio ejemplo en diferentes modulos
+relevante al Tropico y al Caribe.</p>
 </div>
 <div id="important-note" class="section level2">
 <h2>IMPORTANT NOTE:</h2>
-<p>The majority of the information on this website is a translation of a site develelopped and organizaed by Dr. Kevin Shoemaker <a href="https://github.com/kevintshoemaker/NRES-470">https://github.com/kevintshoemaker/NRES-470</a>. Dr. Shoemaker generously agreed that I translate his website and add perosnal touch as needed for students studying Population Ecology with examples that would be relevant to the Tropics and the Caribbean.</p>
+<p>The majority of the information on this website is a translation of a
+site develelopped and organizaed by Dr. Kevin Shoemaker <a
+href="https://github.com/kevintshoemaker/NRES-470">https://github.com/kevintshoemaker/NRES-470</a>.
+Dr. Shoemaker generously agreed that I translate his website and add
+perosnal touch as needed for students studying Population Ecology with
+examples that would be relevant to the Tropics and the Caribbean.</p>
 </div>
 
 

@@ -14,7 +14,7 @@
 
 <title>El paradigma de poblaciones pequeñas</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -484,73 +488,198 @@ div.tocify {
 </div>
 
 
-<p>La extinción final de una población suele ser probabilística. Es decir, una vez que la población se vuelve lo suficientemente pequeña, <em>estocasticidad demográfica </em>, <em>deriva genética </em> y la <em>depresión endogámica </em> pueden, en conjunto, dar la sentencia de muerte final a una población. En biología de la conservación, el estudio de los procesos que influyen de manera desproporcionada en poblaciones pequeñas se denomina <em>paradigma de poblaciones pequeñas </em>.</p>
-<p>Es decir: el paradigma de la pequeña población se refiere a la tendencia en <strong>biología de la conservación </strong> a estudiar aquellos factores en gran parte <em>estocásticos </em> que pueden resultar en la extinción o degradación de pequeñas poblaciones.</p>
+<p>La extinción final de una población suele ser probabilística. Es
+decir, una vez que la población se vuelve lo suficientemente pequeña,
+<em>estocasticidad demográfica </em>, <em>deriva genética </em> y la
+<em>depresión endogámica </em> pueden, en conjunto, dar la sentencia de
+muerte final a una población. En biología de la conservación, el estudio
+de los procesos que influyen de manera desproporcionada en poblaciones
+pequeñas se denomina <em>paradigma de poblaciones pequeñas </em>.</p>
+<p>Es decir: el paradigma de la pequeña población se refiere a la
+tendencia en <strong>biología de la conservación </strong> a estudiar
+aquellos factores en gran parte <em>estocásticos </em> que pueden
+resultar en la extinción o degradación de pequeñas poblaciones.</p>
 <div id="estocasticidad-demográfica" class="section level3">
 <h3>Estocasticidad demográfica</h3>
-<p>¡Ya hemos explorado este concepto, que es fundamental para el paradigma de la pequeña población!</p>
-<p>El simple hecho es: <em>¡es mucho más probable que los 10 individuos de una población tengan <strong>mala suerte </strong> en un año dado que los 1000 individuos de una población que tengan <strong>mala suerte </strong> en un año dado! </em> - así como es muy poco probable que todas las monedas lanzadas de 1000 salgan cara …</p>
-<p>Esto ilustra el concepto muy importante de que las poblaciones pequeñas pueden extinguirse debido únicamente a la <strong>estocasticidad demográfica</strong>, mientras que esta posibilidad es extremadamente pequeña para las poblaciones grandes.</p>
-<p>La historia de la estocasticidad demográfica es: ¡pueden suceder cosas extrañas y dramáticas (por ejemplo, la extinción) en poblaciones pequeñas sin otra razón que la de que la población es pequeña!</p>
-<p>Cosas extrañas y dramáticas como la extinción aleatoria <strong>nunca sucederían</strong> en poblaciones grandes debido a procesos de apareamiento, nacimiento y mortalidad aleatorios (asumiendo un ambiente estable y favorable y sin eventos catastróficos en todo el rango). Pero si pudiese ocurir por otras causas como el efecto de un volcán que destruye todas los organismos en una isla vea el siguiente enlace <a href="https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa">Krakatao</a></p>
-<p>¡Lo mismo ocurre con la <em>deriva genética </em>! ¡La deriva genética es un <em>fenómeno de población pequeña</em>!</p>
+<p>¡Ya hemos explorado este concepto, que es fundamental para el
+paradigma de la pequeña población!</p>
+<p>El simple hecho es: <em>¡es mucho más probable que los 10 individuos
+de una población tengan <strong>mala suerte </strong> en un año dado que
+los 1000 individuos de una población que tengan <strong>mala suerte
+</strong> en un año dado! </em> - así como es muy poco probable que
+todas las monedas lanzadas de 1000 salgan cara …</p>
+<p>Esto ilustra el concepto muy importante de que las poblaciones
+pequeñas pueden extinguirse debido únicamente a la
+<strong>estocasticidad demográfica</strong>, mientras que esta
+posibilidad es extremadamente pequeña para las poblaciones grandes.</p>
+<p>La historia de la estocasticidad demográfica es: ¡pueden suceder
+cosas extrañas y dramáticas (por ejemplo, la extinción) en poblaciones
+pequeñas sin otra razón que la de que la población es pequeña!</p>
+<p>Cosas extrañas y dramáticas como la extinción aleatoria <strong>nunca
+sucederían</strong> en poblaciones grandes debido a procesos de
+apareamiento, nacimiento y mortalidad aleatorios (asumiendo un ambiente
+estable y favorable y sin eventos catastróficos en todo el rango). Pero
+si pudiese ocurir por otras causas como el efecto de un volcán que
+destruye todas los organismos en una isla vea el siguiente enlace <a
+href="https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa">Krakatao</a></p>
+<p>¡Lo mismo ocurre con la <em>deriva genética </em>! ¡La deriva
+genética es un <em>fenómeno de población pequeña</em>!</p>
 </div>
 <div id="deriva-genetica" class="section level3">
 <h3>Deriva Genetica</h3>
-<p>En poblaciones grandes, las fuerzas aleatorias simplemente no son lo suficientementes como para erradicar una variante genética relativamente común (alelo) de una población (esto podría suceder por selección natural, pero no a través de procesos reproductivos aleatorios). En poblaciones pequeñas, el azar puede ser el principal impulsor del cambio genético a lo largo del tiempo.</p>
+<p>En poblaciones grandes, las fuerzas aleatorias simplemente no son lo
+suficientementes como para erradicar una variante genética relativamente
+común (alelo) de una población (esto podría suceder por selección
+natural, pero no a través de procesos reproductivos aleatorios). En
+poblaciones pequeñas, el azar puede ser el principal impulsor del cambio
+genético a lo largo del tiempo.</p>
 <p><img src="figures/geneticdrift1.png" /></p>
-<p>Imaginemos que las bolas de los frascos de la figura anterior son individuos. Los puntos negros indican cuántos descendientes tendrá ese individuo (transmitiendo así sus genes). Las bolas de diferentes colores representan diferentes variantes genéticas. Cada frasco, de izquierda a derecha, representa una generación diferente (que no se superpone).</p>
-<p>¿Te suena familiar? Por casualidad, algunos individuos se reproducirán y otros no. Por casualidad, algunos individuos tendrán más descendientes que sobrevivan. La deriva genética es una consecuencia de la <strong>estocasticidad demográfica </strong>.</p>
-<p>Finalmente, imaginemos que las bolas rojas representan individuos que tienen más probabilidades de sobrevivir a una sequía rara (pero que no tienen ventaja o desventaja selectiva en circunstancias normales). Por casualidad, los individuos azules se aparean y reproducen con éxito más que los individuos rojos: la variante azul se vuelve <strong>fija </strong> en la población y las variantes rojas se extinguen. <em>No hay selección natural involucrada en este escenario, ¡solo estocasticidad! </em></p>
-<p>¡Y ahora, por casualidad, esta población es ahora más susceptible a la sequía que antes!</p>
-<p><strong>P </strong>: ¿Es una población pequeña o una población grande más susceptible a la deriva genética (p. Ej., Pérdida de variación debido al azar)?</p>
+<p>Imaginemos que las bolas de los frascos de la figura anterior son
+individuos. Los puntos negros indican cuántos descendientes tendrá ese
+individuo (transmitiendo así sus genes). Las bolas de diferentes colores
+representan diferentes variantes genéticas. Cada frasco, de izquierda a
+derecha, representa una generación diferente (que no se superpone).</p>
+<p>¿Te suena familiar? Por casualidad, algunos individuos se
+reproducirán y otros no. Por casualidad, algunos individuos tendrán más
+descendientes que sobrevivan. La deriva genética es una consecuencia de
+la <strong>estocasticidad demográfica </strong>.</p>
+<p>Finalmente, imaginemos que las bolas rojas representan individuos que
+tienen más probabilidades de sobrevivir a una sequía rara (pero que no
+tienen ventaja o desventaja selectiva en circunstancias normales). Por
+casualidad, los individuos azules se aparean y reproducen con éxito más
+que los individuos rojos: la variante azul se vuelve <strong>fija
+</strong> en la población y las variantes rojas se extinguen. <em>No hay
+selección natural involucrada en este escenario, ¡solo estocasticidad!
+</em></p>
+<p>¡Y ahora, por casualidad, esta población es ahora más susceptible a
+la sequía que antes!</p>
+<p><strong>P </strong>: ¿Es una población pequeña o una población grande
+más susceptible a la deriva genética (p. Ej., Pérdida de variación
+debido al azar)?</p>
 </div>
 <div id="inbreeding-depression" class="section level3">
 <h3>Inbreeding depression</h3>
 <p><img src="figures/inbreeding1.jpg" /> ### Depresión Endogámica</p>
-<p>La depresión endogámica es otro problema peculiar de las poblaciones pequeñas.</p>
-<p>La mayoría de las poblaciones diploides tienen algunas variantes genéticas “malas” (alelos) en su acervo genético. Estos a menudo se denominan <strong>alelos deletéreos </strong>. Estos alelos nocivos generalmente no causan problemas porque en general son <strong>recesivos </strong>, es decir, el efecto negativo solo es aparente si un individuo tiene <em>dos copias de ese alelo</em>. Y dado que estos alelos son raros, ¡la probabilidad es pequeña que obtenga dos copias del mismo alelo <em>malo</em>!</p>
-<p>A menos que … tus dos padres sean parientes cercanos. Si sus padres son parientes cercanos o de una población/grupos pequeños, ambos tienen una probabilidad relativamente alta de heredar al menos una de las mismas variantes genéticas <em>malas</em> de un único ancestro común.</p>
-<p><strong>P </strong>: ¿Por qué es más probable que sus dos padres sean parientes cercanos si vive en una población pequeña?</p>
-<p><strong>P </strong> Cual son algunos de los efectos más comín de “Extreme Inbreeding” en humanos. Vea el siguyiente articulo <a href="https://www.nature.com/articles/s41467-019-11724-6">Extreme Imbreeding</a>. VEA la figura #4 para un buen gráfico del impacto de <strong>Inbreeding Depression</strong></p>
-<p><strong>P </strong> Encuentra de la literatura citada por pares un ejemplo de “Endogamia” <strong>Inbreeding depression</strong> y explicalo en un párafo.</p>
+<p>La depresión endogámica es otro problema peculiar de las poblaciones
+pequeñas.</p>
+<p>La mayoría de las poblaciones diploides tienen algunas variantes
+genéticas “malas” (alelos) en su acervo genético. Estos a menudo se
+denominan <strong>alelos deletéreos </strong>. Estos alelos nocivos
+generalmente no causan problemas porque en general son <strong>recesivos
+</strong>, es decir, el efecto negativo solo es aparente si un individuo
+tiene <em>dos copias de ese alelo</em>. Y dado que estos alelos son
+raros, ¡la probabilidad es pequeña que obtenga dos copias del mismo
+alelo <em>malo</em>!</p>
+<p>A menos que … tus dos padres sean parientes cercanos. Si sus padres
+son parientes cercanos o de una población/grupos pequeños, ambos tienen
+una probabilidad relativamente alta de heredar al menos una de las
+mismas variantes genéticas <em>malas</em> de un único ancestro
+común.</p>
+<p><strong>P </strong>: ¿Por qué es más probable que sus dos padres sean
+parientes cercanos si vive en una población pequeña?</p>
+<p><strong>P </strong> Cual son algunos de los efectos más comín de
+“Extreme Inbreeding” en humanos. Vea el siguyiente articulo <a
+href="https://www.nature.com/articles/s41467-019-11724-6">Extreme
+Imbreeding</a>. VEA la figura #4 para un buen gráfico del impacto de
+<strong>Inbreeding Depression</strong></p>
+<p><strong>P </strong> Encuentra de la literatura citada por pares un
+ejemplo de “Endogamia” <strong>Inbreeding depression</strong> y
+explicalo en un párafo.</p>
 <p><img src="figures/inbreeding2.jpg" /></p>
-<p>La imagen de arriba es de <a href="https://en.wikipedia.org/wiki/Charles_II_of_Spain">Charles II of Spain</a>, quien ilustra trágicamente algunos de los problemas que pueden surgir con la endogamia severa.</p>
+<p>La imagen de arriba es de <a
+href="https://en.wikipedia.org/wiki/Charles_II_of_Spain">Charles II of
+Spain</a>, quien ilustra trágicamente algunos de los problemas que
+pueden surgir con la endogamia severa.</p>
 </div>
 <div id="el-vórtice-de-extinción" class="section level2">
 <h2>El Vórtice de extinción</h2>
 <p><img src="figures/vortex1.jpg" /></p>
-<p>Una de las ideas centrales que surge del paradigma de la pequeña población es el concepto de <strong>vórtice de extinción </strong>. Este concepto se ilustra en la figura anterior.</p>
-<p>Una vez que una población se vuelve lo suficientemente pequeña, se vuelve sujeta a disminuciones catastróficas debido a la estocasticidad demográfica (y ambiental), lo que lleva a la endogamia y la pérdida aleatoria de genes útiles, lo que lleva a tasas vitales reducidas, lo que lleva a tamaños de población más pequeños, lo que lleva a una mayor degradación genética conduciendo a una mayor posibilidad de caídas catastróficas debido a la estocasticidad demográfica, conduciendo inevitablemente a la extinción …</p>
-<p>En general, la extinción a menudo es causada por procesos estocásticos, ¡pero es poco probable que los procesos estocásticos sean la razón por la que la población se redujo en primer lugar!</p>
+<p>Una de las ideas centrales que surge del paradigma de la pequeña
+población es el concepto de <strong>vórtice de extinción </strong>. Este
+concepto se ilustra en la figura anterior.</p>
+<p>Una vez que una población se vuelve lo suficientemente pequeña, se
+vuelve sujeta a disminuciones catastróficas debido a la estocasticidad
+demográfica (y ambiental), lo que lleva a la endogamia y la pérdida
+aleatoria de genes útiles, lo que lleva a tasas vitales reducidas, lo
+que lleva a tamaños de población más pequeños, lo que lleva a una mayor
+degradación genética conduciendo a una mayor posibilidad de caídas
+catastróficas debido a la estocasticidad demográfica, conduciendo
+inevitablemente a la extinción …</p>
+<p>En general, la extinción a menudo es causada por procesos
+estocásticos, ¡pero es poco probable que los procesos estocásticos sean
+la razón por la que la población se redujo en primer lugar!</p>
 </div>
-<div id="poblaciones-viables-mínimas-minimum-viable-populations-mvp" class="section level2">
+<div id="poblaciones-viables-mínimas-minimum-viable-populations-mvp"
+class="section level2">
 <h2>Poblaciones viables mínimas = Minimum Viable Populations (MVP)</h2>
-<p>Como administradores de vida silvestre, a menudo deseamos saber: “¿qué tan pequeña debe ser una población antes de que tengamos que comenzar a preocuparnos por las consecuencias adversas como la extinción, la erosión genética y la endogamia?”</p>
-<p>Cuando hablamos de <a href="LECTURE5.html">Efectos de Allee</a>, vimos un caso en el que un modelo poblacional determinista podría tener un tamaño de población mínimo viable: por debajo de un cierto umbral crítico, la población estaba condenada a la extinción y por encima del umbral el la población aumentaría determinísticamente hasta la capacidad de carga.</p>
-<p>Sin embargo, el concepto de MVP se deriva de <em>biología de la conservación </em> y no de la biología teórica de poblaciones. La biología de la conservación se ocupa de los sistemas del mundo real que son confusos, variables e inciertos. Por lo tanto, el concepto de MVP se suele cuantificar mediante modelos de población estocásticos.</p>
-<p>La definición general más satisfactoria de MVP se relaciona directamente con el concepto de vórtice de extinción: el tamaño mínimo de la población viable (MVP) es ese <em>tamaño de población por encima del cual el vórtice de extinción puede evitarse con seguridad </em>.</p>
-<p>Sin embargo, la definición anterior no es estrictamente cuantificable para la mayoría de las especies. Además, MVP se define a menudo en relación con modelos de población, muchos de los cuales no tienen un componente genético explícito (¡porque a menudo no sabemos exactamente cuántos alelos recesivos deletéreos hay en una población!). La definición operativa cuantitativa que usaremos en este curso es:</p>
+<p>Como administradores de vida silvestre, a menudo deseamos saber:
+“¿qué tan pequeña debe ser una población antes de que tengamos que
+comenzar a preocuparnos por las consecuencias adversas como la
+extinción, la erosión genética y la endogamia?”</p>
+<p>Cuando hablamos de <a href="LECTURE5.html">Efectos de Allee</a>,
+vimos un caso en el que un modelo poblacional determinista podría tener
+un tamaño de población mínimo viable: por debajo de un cierto umbral
+crítico, la población estaba condenada a la extinción y por encima del
+umbral el la población aumentaría determinísticamente hasta la capacidad
+de carga.</p>
+<p>Sin embargo, el concepto de MVP se deriva de <em>biología de la
+conservación </em> y no de la biología teórica de poblaciones. La
+biología de la conservación se ocupa de los sistemas del mundo real que
+son confusos, variables e inciertos. Por lo tanto, el concepto de MVP se
+suele cuantificar mediante modelos de población estocásticos.</p>
+<p>La definición general más satisfactoria de MVP se relaciona
+directamente con el concepto de vórtice de extinción: el tamaño mínimo
+de la población viable (MVP) es ese <em>tamaño de población por encima
+del cual el vórtice de extinción puede evitarse con seguridad </em>.</p>
+<p>Sin embargo, la definición anterior no es estrictamente cuantificable
+para la mayoría de las especies. Además, MVP se define a menudo en
+relación con modelos de población, muchos de los cuales no tienen un
+componente genético explícito (¡porque a menudo no sabemos exactamente
+cuántos alelos recesivos deletéreos hay en una población!). La
+definición operativa cuantitativa que usaremos en este curso es:</p>
 <blockquote>
-<p><em>MVP: la abundancia más pequeña que satisface un umbral de riesgo de extinción especificado (por ejemplo, la abundancia inicial más pequeña de manera que el riesgo de extinción en 50 años sea inferior al 5%) </em></p>
+<p><em>MVP: la abundancia más pequeña que satisface un umbral de riesgo
+de extinción especificado (por ejemplo, la abundancia inicial más
+pequeña de manera que el riesgo de extinción en 50 años sea inferior al
+5%) </em></p>
 </blockquote>
 </div>
 <div id="análisis-de-viabilidad-poblacional-pva" class="section level2">
 <h2>Análisis de viabilidad poblacional (PVA)</h2>
-<p>El Análisis de Viabilidad de la Población (PVA) se utiliza a menudo para modelar los procesos involucrados en el vórtice de extinción (el concepto central del paradigma de la pequeña población). Esto puede incluir deriva genética y depresión por endogamia. Sin embargo, en este curso, no entraremos en el modelado de la genética (a menos que realmente lo desee, ¡me complace mostrarle cómo hacer esto en Vortex!)</p>
-<p>El software PVA más utilizado, <a href="http://www.vortex10.org/Vortex10.aspx">Vortex</a>, recibe su nombre del concepto de vórtice de extinción. Vortex permite el modelado explícito de la endogamia y la pérdida de diversidad genética en poblaciones pequeñas.</p>
+<p>El Análisis de Viabilidad de la Población (PVA) se utiliza a menudo
+para modelar los procesos involucrados en el vórtice de extinción (el
+concepto central del paradigma de la pequeña población). Esto puede
+incluir deriva genética y depresión por endogamia. Sin embargo, en este
+curso, no entraremos en el modelado de la genética (a menos que
+realmente lo desee, ¡me complace mostrarle cómo hacer esto en
+Vortex!)</p>
+<p>El software PVA más utilizado, <a
+href="http://www.vortex10.org/Vortex10.aspx">Vortex</a>, recibe su
+nombre del concepto de vórtice de extinción. Vortex permite el modelado
+explícito de la endogamia y la pérdida de diversidad genética en
+poblaciones pequeñas.</p>
 <p><img src="figures/Vortex10.jpg" /></p>
 </div>
 <div id="example-aruba-island-rattlesnake" class="section level2">
 <h2>Example: Aruba island rattlesnake</h2>
-<p>La serpiente de cascabel de la isla de Aruba, o Cascabel (<em>Crotalus durissus unicolor </em>), es el principal depredador de la isla de Aruba y consume principalmente roedores.</p>
+<p>La serpiente de cascabel de la isla de Aruba, o Cascabel
+(<em>Crotalus durissus unicolor </em>), es el principal depredador de la
+isla de Aruba y consume principalmente roedores.</p>
 <p><img src="figures/aruba_rattlesnake1.jpg" /></p>
-<p>La serpiente de cascabel de la isla de Aruba, como era de esperar, ocurre solo en la isla de Aruba.</p>
+<p>La serpiente de cascabel de la isla de Aruba, como era de esperar,
+ocurre solo en la isla de Aruba.</p>
 <p><img src="figures/aruba1.png" /></p>
-<p>La serpiente de cascabel de Aruba está catalogada como <em>En peligro crítico </em> por la IUCN, y tiene varios atributos que la hacen particularmente susceptible a caer en el vórtice de extinción:</p>
+<p>La serpiente de cascabel de Aruba está catalogada como <em>En peligro
+crítico </em> por la IUCN, y tiene varios atributos que la hacen
+particularmente susceptible a caer en el vórtice de extinción:</p>
 <p>Vea <a href="LAB5.html">Lab 5</a> para una actividad de MVP.</p>
-<p><strong>Q</strong> ¿Por qué las especies endémicas de la isla como la serpiente de cascabel de Aruba son tan vulnerables a la extinción? [Edmodo]</p>
-<p><strong>Q</strong> ¿Son las especies confinadas a áreas pequeñas (como la serpiente de cascabel de Aruba) más vulnerables a la <em>estocasticidad ambiental </em> que las especies que ocupan áreas geográficas más amplias? [Edmodo]</p>
+<p><strong>Q</strong> ¿Por qué las especies endémicas de la isla como la
+serpiente de cascabel de Aruba son tan vulnerables a la extinción?
+[Edmodo]</p>
+<p><strong>Q</strong> ¿Son las especies confinadas a áreas pequeñas
+(como la serpiente de cascabel de Aruba) más vulnerables a la
+<em>estocasticidad ambiental </em> que las especies que ocupan áreas
+geográficas más amplias? [Edmodo]</p>
 <p><a href="LECTURE10.html">–go to next lecture–</a></p>
 </div>
 

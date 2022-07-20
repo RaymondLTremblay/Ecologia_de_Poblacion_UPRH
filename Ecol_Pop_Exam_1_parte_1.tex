@@ -1,0 +1,128 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Ecol\_Pop\_Exam\_1\_parte\_1},
+  pdfauthor={BIOL4558},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Ecol\_Pop\_Exam\_1\_parte\_1}
+\author{BIOL4558}
+\date{Agosto 2021}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{las-preguntas-del-examen-de-esta-parte-proviene-del-capiyulo-1}{%
+\subsection{Las preguntas del examen de esta parte proviene del capiyulo
+1:}\label{las-preguntas-del-examen-de-esta-parte-proviene-del-capiyulo-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In 1993, when the first edition of this book was written, the world's
+  human population was expected to double in size in approximately 50
+  years. Assuming population growth is continuous, calculate r for the
+  human population.
+\item
+  If the population size in 1993 was 5.4 billion, what was the projected
+  population size for the year 2021 using the a growth rate with
+  doubling time of 50 years?
+\item
+  The future is here!. On October 17, 2021 the best estimate of the
+  world population size was 7.796 billion - different than that
+  projected by the model in 1993. To find out the current estimate of
+  the world populaion size, visit the website maintained by the US
+  Census Bureau.
+\end{enumerate}
+
+\href{https://www.census.gov/popclock/}{Census Population size website}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  What is today's date and how large is the population of the world
+  today. What is the difference in nnu mber of humans on the planet as
+  compared to that predicted?
+\item
+  Considering the present population size what is the observed growth
+  rate of human population on the planet \textbf{per year}, use the
+  population size of 5.538 billion for 1993.
+\item
+  You are studying a population of beetles of size 3000. During one
+  month period, you record 400 births and 150 deaths in this population.
+  Estimate r and project the population size in from month 1 to 6
+  months.
+\item
+  For five consecutive days you count the size of a growing population
+  of flatworms as 100, 158, 315, 298, 794. Plot the logarithm (base e)
+  of population size to estimate r.
+\item
+  A population of annual grasses increases in size by 12\% every year.
+  This species was introduced as cow foder. What is the approximate
+  doubling time?
+\end{enumerate}
+
+\end{document}

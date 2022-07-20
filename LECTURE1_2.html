@@ -14,7 +14,7 @@
 
 <title>Un enfoque de sistemas holistico para la ecología de poblaciones</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -477,7 +481,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Un enfoque de sistemas holistico para la ecología de poblaciones</h1>
+<h1 class="title toc-ignore">Un enfoque de sistemas holistico para la
+ecología de poblaciones</h1>
 <h4 class="author">BIOL4558</h4>
 <h4 class="date">Agosto 2021</h4>
 
@@ -485,66 +490,178 @@ div.tocify {
 
 
 <p><img src="figures/FoodWeb1.jpg" /></p>
-<div id="ecología-de-sistemas-una-forma-de-pensar" class="section level2">
+<div id="ecología-de-sistemas-una-forma-de-pensar"
+class="section level2">
 <h2>Ecología de Sistemas: una forma de pensar</h2>
-<p>La ecología es desordenada. Cuando trabajamos en entornos naturales, estamos tratando con sistemas intrínsecamente complejos. Todos los elementos de un sistema natural están conectados, llenos de interacciones dinámicas. Interacciones entre organismos, entre organismos y sus entornos: estos vínculos son los que hacen que la ecología sea complicada, pero también infinitamente fascinante.</p>
-<p>Podemos pensar en los humanos como un elemento más en estos complejos sistemas. Y la conservación y el manejo de la vida silvestre es la tarea de manipular estos vínculos para cumplir con los objetivos sociales de los sistemas naturales.</p>
+<p>La ecología es desordenada. Cuando trabajamos en entornos naturales,
+estamos tratando con sistemas intrínsecamente complejos. Todos los
+elementos de un sistema natural están conectados, llenos de
+interacciones dinámicas. Interacciones entre organismos, entre
+organismos y sus entornos: estos vínculos son los que hacen que la
+ecología sea complicada, pero también infinitamente fascinante.</p>
+<p>Podemos pensar en los humanos como un elemento más en estos complejos
+sistemas. Y la conservación y el manejo de la vida silvestre es la tarea
+de manipular estos vínculos para cumplir con los objetivos sociales de
+los sistemas naturales.</p>
 <p>¡Esta no es una clase de ecología de sistemas!</p>
-<p>PERO, el pensamiento sistémico proporciona un marco para comprender las poblaciones naturales y comprender cómo los vínculos (entornos abióticos y bióticos) podrían afectarlas y cómo gestionar las poblaciones naturales de manera eficaz.</p>
+<p>PERO, el pensamiento sistémico proporciona un marco para comprender
+las poblaciones naturales y comprender cómo los vínculos (entornos
+abióticos y bióticos) podrían afectarlas y cómo gestionar las
+poblaciones naturales de manera eficaz.</p>
 </div>
 <div id="propiedades-emergentes" class="section level2">
 <h2>Propiedades emergentes</h2>
-<p>Esta es una de las ideas más poderosas en el pensamiento de sistemas completos: cuando se juntan muchas partes vinculadas e interactivas, los sistemas a menudo se comportan de maneras interesantes e inesperadas.</p>
+<p>Esta es una de las ideas más poderosas en el pensamiento de sistemas
+completos: cuando se juntan muchas partes vinculadas e interactivas, los
+sistemas a menudo se comportan de maneras interesantes e
+inesperadas.</p>
 <p>Tome un sistema clásico de depredador-presa …</p>
-<p><a href="https://insightmaker.com/insight/68437/">Insightmaker Ejemplo Lynx-Conejo</a></p>
-<p>Este es un ejemplo clásico en ecología de poblaciones, que revisaremos más adelante en este curso, pero por ahora sirve como un ejemplo de un sistema de interacción que exhibe una <em>propiedad emergente</em> – oscilaciones regulares.</p>
-<p>Y aquí hay un ejemplo más abstracto que ilustra algunas propiedades emergentes realmente interesantes y complejas.</p>
-<p><a href="https://insightmaker.com/insight/1829/Lorenz-Attractor">Lorenz attractor</a></p>
+<p><a href="https://insightmaker.com/insight/68437/">Insightmaker
+Ejemplo Lynx-Conejo</a></p>
+<p>Este es un ejemplo clásico en ecología de poblaciones, que
+revisaremos más adelante en este curso, pero por ahora sirve como un
+ejemplo de un sistema de interacción que exhibe una <em>propiedad
+emergente</em> – oscilaciones regulares.</p>
+<p>Y aquí hay un ejemplo más abstracto que ilustra algunas propiedades
+emergentes realmente interesantes y complejas.</p>
+<p><a
+href="https://insightmaker.com/insight/1829/Lorenz-Attractor">Lorenz
+attractor</a></p>
 </div>
-<div id="insightmaker-a-modeling-framework-for-systems-thinking" class="section level2">
-<h2><em>InsightMaker</em>: a modeling framework for systems thinking!</h2>
-<p><a href="insightmaker.com">InsightMaker</a> es un software flexible basado en la web para definir sistemas que interactúan y para modelar el comportamiento de sistemas interconectados.</p>
+<div id="insightmaker-a-modeling-framework-for-systems-thinking"
+class="section level2">
+<h2><em>InsightMaker</em>: a modeling framework for systems
+thinking!</h2>
+<p><a href="insightmaker.com">InsightMaker</a> es un software flexible
+basado en la web para definir sistemas que interactúan y para modelar el
+comportamiento de sistemas interconectados.</p>
 <p>Los dos ejemplos anteriores se crearon en InsightMaker.</p>
-<p>Haremos un uso extensivo de InsightMaker, tanto durante la clase como en el laboratorio, ¡esto le dará la oportunidad de jugar con sistemas complejos y dinámicos sin necesidad de tener experiencia en programación de computadoras!</p>
+<p>Haremos un uso extensivo de InsightMaker, tanto durante la clase como
+en el laboratorio, ¡esto le dará la oportunidad de jugar con sistemas
+complejos y dinámicos sin necesidad de tener experiencia en programación
+de computadoras!</p>
 </div>
-<div id="programación-informática-y-pensamiento-sistémico" class="section level2">
+<div id="programación-informática-y-pensamiento-sistémico"
+class="section level2">
 <h2>Programación informática y pensamiento sistémico</h2>
-<p>Las computadoras modernas han reducido o eliminado muchas de las barreras para comprender cómo se comportan los sistemas complejos y, cual es el resultado, con el ayuda de <strong>los programados (software) especializado y la programación de computadoras</strong> son un componente crítico para el análisis moderno de sistemas completos, incluidos los análisis de ecosistemas. Armados con una facilidad básica con la programación de computadoras, los ecólogos y los profesionales de los recursos naturales pueden formalizar su comprensión de los sistemas naturales en los que trabajan, teniendo en cuenta las complejas realidades biológicas que podrían haberse ignorado si estas herramientas no estuvieran disponibles. <strong>En este curso, aprenderemos a aprovechar el poder de las simulaciones por computadora para comprender y administrar las poblaciones naturales</strong></p>
-<p>Al final de este curso, los estudiantes tendrán la capacidad de programar sus propios modelos de sistemas completos en InsightMaker y utilizar software especializado para parametrizar estos modelos (por ejemplo, Programa MARK, R )</p>
-<p><strong>El lema del curso</strong>: <em>¡GET MESSY!</em> Esto puede sonar divertido para una clase basada en computadora. Pero así como los sistemas ecológicos son complejos y desordenados, los modelos a veces se vuelven desordenados. No tenga miedo de modelar sistemas desordenados. Y, sobre todo, <strong>no tengas miedo de equivocarte</strong> (especialmente al principio): ¡esa actitud es enemiga de la programación informática exitosa y de la buena gestión de la vida silvestre! Cuando construimos nuestros propios algoritmos, podemos estar entrando en un territorio inexplorado. Y esto puede ser difícil y peligroso, ¡pero en última instancia gratificante! ¡Sigue intentándolo y mantén una actitud positiva!</p>
-<p>Por supuesto, <strong>ensuciarse: getting messy</strong> significa no solo leer y escuchar conferencias, <em>¡significa aprender haciendo</em>! Las conferencias dirigidas por un instructor serán breves y pasaremos una cantidad significativa de tiempo de clase (y casi todo el tiempo de laboratorio) en nuestras computadoras o el campo, resolviendo problemas.</p>
+<p>Las computadoras modernas han reducido o eliminado muchas de las
+barreras para comprender cómo se comportan los sistemas complejos y,
+cual es el resultado, con el ayuda de <strong>los programados (software)
+especializado y la programación de computadoras</strong> son un
+componente crítico para el análisis moderno de sistemas completos,
+incluidos los análisis de ecosistemas. Armados con una facilidad básica
+con la programación de computadoras, los ecólogos y los profesionales de
+los recursos naturales pueden formalizar su comprensión de los sistemas
+naturales en los que trabajan, teniendo en cuenta las complejas
+realidades biológicas que podrían haberse ignorado si estas herramientas
+no estuvieran disponibles. <strong>En este curso, aprenderemos a
+aprovechar el poder de las simulaciones por computadora para comprender
+y administrar las poblaciones naturales</strong></p>
+<p>Al final de este curso, los estudiantes tendrán la capacidad de
+programar sus propios modelos de sistemas completos en InsightMaker y
+utilizar software especializado para parametrizar estos modelos (por
+ejemplo, Programa MARK, R )</p>
+<p><strong>El lema del curso</strong>: <em>¡GET MESSY!</em> Esto puede
+sonar divertido para una clase basada en computadora. Pero así como los
+sistemas ecológicos son complejos y desordenados, los modelos a veces se
+vuelven desordenados. No tenga miedo de modelar sistemas desordenados.
+Y, sobre todo, <strong>no tengas miedo de equivocarte</strong>
+(especialmente al principio): ¡esa actitud es enemiga de la programación
+informática exitosa y de la buena gestión de la vida silvestre! Cuando
+construimos nuestros propios algoritmos, podemos estar entrando en un
+territorio inexplorado. Y esto puede ser difícil y peligroso, ¡pero en
+última instancia gratificante! ¡Sigue intentándolo y mantén una actitud
+positiva!</p>
+<p>Por supuesto, <strong>ensuciarse: getting messy</strong> significa no
+solo leer y escuchar conferencias, <em>¡significa aprender
+haciendo</em>! Las conferencias dirigidas por un instructor serán breves
+y pasaremos una cantidad significativa de tiempo de clase (y casi todo
+el tiempo de laboratorio) en nuestras computadoras o el campo,
+resolviendo problemas.</p>
 </div>
 <div id="ejercicio-en-clase-insightmaker" class="section level2">
 <h2>Ejercicio en clase: InsightMaker</h2>
 <ul>
-<li><p>Un [stock] de material aumenta con el tiempo a través de lo que [fluye]. ¡Imagina que nuestro stock representa <em>Moose</em>! <em>Moose Births</em> sería la entrada [Flujo] de la población de <em>Moose</em> a lo largo del tiempo.</p></li>
-<li><p>Un [stock] de material disminuye con el tiempo a través de lo que [fluye]. Por ejemplo, <em>Moose Death</em> podría representar el [Flujo] de la población de <em>Moose</em>.</p></li>
-<li><p>Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el [Stock] aumenta con el tiempo.</p></li>
-<li><p>Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el [Stock] disminuye con el tiempo.</p></li>
-<li><p>Si el [Flujo] de entrada es igual al [Flujo] de salida, la cantidad de [Stock] no cambiará con el tiempo.</p></li>
-<li><p>La conclusión importante es que una [Acción] representa una cantidad de algo. El [Stock] solo cambia con el tiempo a través de [Flujos de entrada] o [Flujos de salida]. Una [acción] no cambia instantáneamente, con agitar las manos, magia o humo y espejos.</p></li>
+<li><p>Un [stock] de material aumenta con el tiempo a través de lo que
+[fluye]. ¡Imagina que nuestro stock representa <em>Moose</em>! <em>Moose
+Births</em> sería la entrada [Flujo] de la población de <em>Moose</em> a
+lo largo del tiempo.</p></li>
+<li><p>Un [stock] de material disminuye con el tiempo a través de lo que
+[fluye]. Por ejemplo, <em>Moose Death</em> podría representar el [Flujo]
+de la población de <em>Moose</em>.</p></li>
+<li><p>Si el [Flujo] de entrada es mayor que el [Flujo] de salida, el
+[Stock] aumenta con el tiempo.</p></li>
+<li><p>Si el [Flujo] de salida es mayor que el [Flujo] de entrada, el
+[Stock] disminuye con el tiempo.</p></li>
+<li><p>Si el [Flujo] de entrada es igual al [Flujo] de salida, la
+cantidad de [Stock] no cambiará con el tiempo.</p></li>
+<li><p>La conclusión importante es que una [Acción] representa una
+cantidad de algo. El [Stock] solo cambia con el tiempo a través de
+[Flujos de entrada] o [Flujos de salida]. Una [acción] no cambia
+instantáneamente, con agitar las manos, magia o humo y espejos.</p></li>
 </ul>
 </div>
-<div id="ahora-un-primer-ejemplo-con-insight-maker" class="section level2">
+<div id="ahora-un-primer-ejemplo-con-insight-maker"
+class="section level2">
 <h2>Ahora un primer ejemplo con <strong>Insight Maker</strong></h2>
 <ol style="list-style-type: decimal">
-<li><p>Abra <a href="https://insightmaker.com/">InsightMaker</a>. Si nunca lo ha usado antes, primero debe registrarse con un nombre de usuario y contraseña. <em>¡InsightMaker es gratis!</em></p></li>
-<li><p>Cree un nuevo Insight (¡el botón para hacer esto debería ser obvio!) Y borre el modelo de demostración.</p></li>
-<li><p>Haga clic derecho en el centro de la pantalla y seleccione <strong>Crear stock</strong> en la ventana emergente. Observe que el nombre es <strong>Stock nuevo</strong> y está seleccionado. Escriba un nombre para lo que es una acumulación. Tenga en cuenta que el <strong>Panel de configuración</strong> a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el <strong>Valor inicial</strong> en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!</p></li>
-<li><p>Seleccione [Flujo] en la esquina superior izquierda de su pantalla en [Conexiones]. Ahora observe que cuando pasa el mouse sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un [Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón <strong>Invertir</strong> en el menú <strong>Conexiones</strong>. Por favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el <strong>Panel de configuración</strong> configure <strong>Flow Rate</strong> = 1.</p></li>
-<li><p>Ahora haga clic en <strong>Ejecutar simulación</strong> y acaba de terminar su primer modelo de simulación.</p></li>
-<li><p>¿Puede averiguar cómo cambiar la configuración para ejecutar el modelo durante 50 años? Pruebe esto y haga clic en <strong>Ejecutar simulación</strong>.</p></li>
-<li><p>Utilice los mismos métodos que en el <strong>paso 4</strong> para crear un [Flujo de salida], que representa la muerte de los alces. Vuelva a ejecutar el modelo. ¿La población está aumentando o disminuyendo? ¿Por qué?</p></li>
-<li><p>Cambie el <strong>Panel de configuración</strong> para [Stock] y para [Flujo de entrada] y [Flujo de salida] de modo que “Mostrar control deslizante de valor” se establezca en “Sí”. Puede cambiar la parametrización del modelo fácilmente usando estos controles deslizantes. Pruébelo un par de veces y vuelva a ejecutar la simulación después de cada cambio.</p></li>
+<li><p>Abra <a href="https://insightmaker.com/">InsightMaker</a>. Si
+nunca lo ha usado antes, primero debe registrarse con un nombre de
+usuario y contraseña. <em>¡InsightMaker es gratis!</em></p></li>
+<li><p>Cree un nuevo Insight (¡el botón para hacer esto debería ser
+obvio!) Y borre el modelo de demostración.</p></li>
+<li><p>Haga clic derecho en el centro de la pantalla y seleccione
+<strong>Crear stock</strong> en la ventana emergente. Observe que el
+nombre es <strong>Stock nuevo</strong> y está seleccionado. Escriba un
+nombre para lo que es una acumulación. Tenga en cuenta que el
+<strong>Panel de configuración</strong> a la derecha ahora es para un
+[Stock]. En el panel de configuración, establezca el <strong>Valor
+inicial</strong> en 50. ¡Es decir, habrá 50 alces al comienzo de la
+simulación!</p></li>
+<li><p>Seleccione [Flujo] en la esquina superior izquierda de su
+pantalla en [Conexiones]. Ahora observe que cuando pasa el mouse sobre
+[Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la
+flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda
+de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un
+[Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón
+<strong>Invertir</strong> en el menú <strong>Conexiones</strong>. Por
+favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el
+<strong>Panel de configuración</strong> configure <strong>Flow
+Rate</strong> = 1.</p></li>
+<li><p>Ahora haga clic en <strong>Ejecutar simulación</strong> y acaba
+de terminar su primer modelo de simulación.</p></li>
+<li><p>¿Puede averiguar cómo cambiar la configuración para ejecutar el
+modelo durante 50 años? Pruebe esto y haga clic en <strong>Ejecutar
+simulación</strong>.</p></li>
+<li><p>Utilice los mismos métodos que en el <strong>paso 4</strong> para
+crear un [Flujo de salida], que representa la muerte de los alces.
+Vuelva a ejecutar el modelo. ¿La población está aumentando o
+disminuyendo? ¿Por qué?</p></li>
+<li><p>Cambie el <strong>Panel de configuración</strong> para [Stock] y
+para [Flujo de entrada] y [Flujo de salida] de modo que “Mostrar control
+deslizante de valor” se establezca en “Sí”. Puede cambiar la
+parametrización del modelo fácilmente usando estos controles
+deslizantes. Pruébelo un par de veces y vuelva a ejecutar la simulación
+después de cada cambio.</p></li>
 </ol>
-<p><strong>Q</strong>: ¿Es este modelo de realista? ¿Qué es lo primero que le gustaría cambiar para que el modelo sea más realista?</p>
+<p><strong>Q</strong>: ¿Es este modelo de realista? ¿Qué es lo primero
+que le gustaría cambiar para que el modelo sea más realista?</p>
 <ol start="9" style="list-style-type: decimal">
-<li>Tómese unos minutos para consultar las “Estadísticas” realizadas por otros mediante el enlace “Explorar información” en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!</li>
+<li>Tómese unos minutos para consultar las “Estadísticas” realizadas por
+otros mediante el enlace “Explorar información” en la parte superior de
+la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y
+lo haremos) agregar a esta base de datos como parte de esta clase!</li>
 </ol>
-<p><strong>Q</strong> ¿Pudiese pensar en como adaptar este ejemplo a Coquis? Aqui un enlace que tiene información basíca sobre <a href="https://www.ctahr.hawaii.edu/coqui/life.asp">Coqui</a></p>
-<p>Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!</p>
-<p><a href="https://www.youtube.com/watch?v=iu4RdmBVdps">Lorenz attractor video!</a></p>
-<p>Para otros ejemplos de uso básico de InsightMaker vea el enlace de <a href="https://insightmaker.com/find?search=Denny">Denny Fernández</a>.</p>
+<p><strong>Q</strong> ¿Pudiese pensar en como adaptar este ejemplo a
+Coquis? Aqui un enlace que tiene información basíca sobre <a
+href="https://www.ctahr.hawaii.edu/coqui/life.asp">Coqui</a></p>
+<p>Finalmente, por diversión, aquí hay un video genial del Atractor de
+Lorenz, ¡que vimos antes!</p>
+<p><a href="https://www.youtube.com/watch?v=iu4RdmBVdps">Lorenz
+attractor video!</a></p>
+<p>Para otros ejemplos de uso básico de InsightMaker vea el enlace de <a
+href="https://insightmaker.com/find?search=Denny">Denny
+Fernández</a>.</p>
 <p><a href="LECTURE2.html">–go to next lecture–</a></p>
 </div>
 

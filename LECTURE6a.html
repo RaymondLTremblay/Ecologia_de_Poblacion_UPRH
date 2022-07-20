@@ -14,7 +14,7 @@
 
 <title>LECTURE6a</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -486,26 +490,34 @@ div.tocify {
 
 <div id="dinámica-poblacional-en-plantas" class="section level1">
 <h1>Dinámica poblacional en plantas</h1>
-<p>En este modulo encontrarán una serie presentaciones sobre como evaluar la dinámica de especies por</p>
+<p>En este modulo encontrarán una serie presentaciones sobre como
+evaluar la dinámica de especies por</p>
 <ul>
 <li>Edad</li>
 <li>Etapas</li>
 <li>Edad y Etapas (modelos estructurados por Edad y Etapas, Mixto)</li>
 </ul>
 <blockquote>
-<p>La presentaciones incluido aqui fueron presentado en un taller sobre dinámica poblacional a estudiantes graduados en un taller en Lodz, Polonia del 24 - 28 de septiembre, 2019. El taller titulado “International Orchid Conference &amp; Workshops for Young Scientist organizada por la Dra. Marta Kolanowska (University of Lodz).</p>
+<p>La presentaciones incluido aqui fueron presentado en un taller sobre
+dinámica poblacional a estudiantes graduados en un taller en Lodz,
+Polonia del 24 - 28 de septiembre, 2019. El taller titulado
+“International Orchid Conference &amp; Workshops for Young Scientist
+organizada por la Dra. Marta Kolanowska (University of Lodz).</p>
 </blockquote>
 <div id="parte-1" class="section level3">
 <h3>Parte 1:</h3>
-<p><a href="POP_DYN%20_PDF_Workshops/Population_Dynamics.pdf">Parte 1</a></p>
+<p><a href="POP_DYN%20_PDF_Workshops/Population_Dynamics.pdf">Parte
+1</a></p>
 </div>
 <div id="parte-2" class="section level3">
 <h3>Parte 2</h3>
-<p><a href="POP_DYN%20_PDF_Workshops/Population_Dynamics_2.pdf">Parte 2</a></p>
+<p><a href="POP_DYN%20_PDF_Workshops/Population_Dynamics_2.pdf">Parte
+2</a></p>
 </div>
 <div id="parte-3" class="section level3">
 <h3>Parte 3</h3>
-<p><a href="POP_DYN%20_PDF_Workshops/Population_Dynamics_3.pdf">Parte 3</a></p>
+<p><a href="POP_DYN%20_PDF_Workshops/Population_Dynamics_3.pdf">Parte
+3</a></p>
 <p>Aquí tres fotos de Lodz, para se anime a viajar</p>
 <div class="figure">
 <img src="figures/Hotel_Lodz.png" style="width:50.0%" alt="" />
@@ -516,8 +528,10 @@ div.tocify {
 <p class="caption">Una iglesia del periodo medieval</p>
 </div>
 <div class="figure">
-<img src="figures/Nazi_train_Bunker_Lodz.png" style="width:50.0%" alt="" />
-<p class="caption">Un Garaje donde los Nazi escondia los trenes antes de atacar a Rusia, Myosotis T, El profe, y la Dra. Tiiu Kull de Estonia</p>
+<img src="figures/Nazi_train_Bunker_Lodz.png" style="width:50.0%"
+alt="" />
+<p class="caption">Un Garaje donde los Nazi escondia los trenes antes de
+atacar a Rusia, Myosotis T, El profe, y la Dra. Tiiu Kull de Estonia</p>
 </div>
 </div>
 </div>

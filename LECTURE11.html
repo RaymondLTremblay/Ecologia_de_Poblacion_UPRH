@@ -14,7 +14,7 @@
 
 <title>Paradigma de población en declive</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -484,15 +488,41 @@ div.tocify {
 </div>
 
 
-<p><strong>P </strong>: ¿Es la tasa intrínseca de crecimiento <span class="math inline">\(r_{max}\)</span> positiva o negativa para la mayoría de las especies de la tierra? ¿¿¿Por qué???</p>
-<p><strong>P </strong>: Dado que la mayoría de las especies son capaces de crecer de forma sostenida y alcanzar un gran tamaño de población en condiciones favorables, ¿cómo se reducen las poblaciones en primer lugar? ¿Por qué están disminuyendo muchas poblaciones a pesar de su capacidad intrínseca de crecer? ¿Es todo aleatorio o es más sistemático?</p>
+<p><strong>P </strong>: ¿Es la tasa intrínseca de crecimiento <span
+class="math inline">\(r_{max}\)</span> positiva o negativa para la
+mayoría de las especies de la tierra? ¿¿¿Por qué???</p>
+<p><strong>P </strong>: Dado que la mayoría de las especies son capaces
+de crecer de forma sostenida y alcanzar un gran tamaño de población en
+condiciones favorables, ¿cómo se reducen las poblaciones en primer
+lugar? ¿Por qué están disminuyendo muchas poblaciones a pesar de su
+capacidad intrínseca de crecer? ¿Es todo aleatorio o es más
+sistemático?</p>
 <div id="amenazas-a-las-poblaciones" class="section level2">
 <h2>Amenazas a las poblaciones</h2>
-<p>La respuesta, por supuesto, es que la capacidad intrínseca de crecer en condiciones ideales no es toda la historia. Las poblaciones son existencias con entradas y salidas, y si la mortalidad excede los nacimientos <em>en las condiciones actuales </em>, la población disminuirá hasta que se inviertan estas condiciones desfavorables.</p>
-<p>En la conferencia del “paradigma de la pequeña población”, discutimos varias <strong>amenazas estocásticas </strong> para las poblaciones, incluida la pérdida de diversidad genética (deriva genética), la estocasticidad demográfica y los eventos ambientales catastróficos. Estas amenazas solo afectan realmente a poblaciones pequeñas. Las grandes poblaciones son en su mayoría resistentes a las amenazas estocásticas.</p>
-<p>¡Sin embargo, las grandes poblaciones también pueden verse amenazadas! Los factores que amenazan a grandes poblaciones generalmente se denominan <strong>amenazas deterministas </strong>.</p>
-<p>El <strong>paradigma de la población en declive </strong> se centra en los factores que hacen que las grandes poblaciones sean pequeñas, es decir, es el <em>estudio de los procesos deterministas que provocan el declive de la población (que inclinan la balanza y provocan que las muertes superen los nacimientos), y cómo estos procesos pueden revertirse mediante una gestión de conservación eficaz</em>.</p>
-<p>¿Cuáles son algunos de los factores que pueden <em>inclinar la balanza</em> por así decirlo, de modo que las poblaciones en crecimiento o estables se conviertan en poblaciones en declive?</p>
+<p>La respuesta, por supuesto, es que la capacidad intrínseca de crecer
+en condiciones ideales no es toda la historia. Las poblaciones son
+existencias con entradas y salidas, y si la mortalidad excede los
+nacimientos <em>en las condiciones actuales </em>, la población
+disminuirá hasta que se inviertan estas condiciones desfavorables.</p>
+<p>En la conferencia del “paradigma de la pequeña población”, discutimos
+varias <strong>amenazas estocásticas </strong> para las poblaciones,
+incluida la pérdida de diversidad genética (deriva genética), la
+estocasticidad demográfica y los eventos ambientales catastróficos.
+Estas amenazas solo afectan realmente a poblaciones pequeñas. Las
+grandes poblaciones son en su mayoría resistentes a las amenazas
+estocásticas.</p>
+<p>¡Sin embargo, las grandes poblaciones también pueden verse
+amenazadas! Los factores que amenazan a grandes poblaciones generalmente
+se denominan <strong>amenazas deterministas </strong>.</p>
+<p>El <strong>paradigma de la población en declive </strong> se centra
+en los factores que hacen que las grandes poblaciones sean pequeñas, es
+decir, es el <em>estudio de los procesos deterministas que provocan el
+declive de la población (que inclinan la balanza y provocan que las
+muertes superen los nacimientos), y cómo estos procesos pueden
+revertirse mediante una gestión de conservación eficaz</em>.</p>
+<p>¿Cuáles son algunos de los factores que pueden <em>inclinar la
+balanza</em> por así decirlo, de modo que las poblaciones en crecimiento
+o estables se conviertan en poblaciones en declive?</p>
 <div id="cosecha-excesiva" class="section level3">
 <h3>Cosecha excesiva</h3>
 <p><img src="figures/overharvest1.jpg" /></p>
@@ -508,7 +538,9 @@ div.tocify {
 <div id="cambio-climático" class="section level3">
 <h3>Cambio climático</h3>
 <p><img src="figures/climatechange1.jpg" /></p>
-<p>Este mapa muestra la diferencia (anomalía) entre las temperaturas actuales y las temperaturas medias (normales) registradas desde 1880.</p>
+<p>Este mapa muestra la diferencia (anomalía) entre las temperaturas
+actuales y las temperaturas medias (normales) registradas desde
+1880.</p>
 </div>
 <div id="especies-exóticas-invasoras" class="section level3">
 <h3>Especies exóticas invasoras</h3>
@@ -522,52 +554,111 @@ div.tocify {
 <div id="section" class="section level2">
 <h2></h2>
 <p>¡El debate en Biología de la Conservación!</p>
-<p>Entonces, ¿cuál es más importante para la conservación? ¿El paradigma de la población en declive o el paradigma de la pequeña población?</p>
-<p>Esta “controversia” fue iniciada por un <a href="caughley1.pdf">artículo muy influyente de Graeme Caughley</a> en <em>Journal of Animal Ecology </em> en 1994.</p>
+<p>Entonces, ¿cuál es más importante para la conservación? ¿El paradigma
+de la población en declive o el paradigma de la pequeña población?</p>
+<p>Esta “controversia” fue iniciada por un <a
+href="caughley1.pdf">artículo muy influyente de Graeme Caughley</a> en
+<em>Journal of Animal Ecology </em> en 1994.</p>
 <p><img src="figures/caughley1.jpg" /></p>
-<p>En este artículo, Caughley acuñó los términos ‘paradigma de población pequeña’ y ‘paradigma de población en declive’, y expresó un fuerte sesgo hacia un paradigma y contra el otro …</p>
-<p><em>La biología de la conservación tiene dos hilos: el paradigma de la pequeña población, que se ocupa del efecto de la pequeñez en la persistencia de una población, y el paradigma de la población en declive, que se ocupa de la causa de la pequeñez y su cura.</em></p>
+<p>En este artículo, Caughley acuñó los términos ‘paradigma de población
+pequeña’ y ‘paradigma de población en declive’, y expresó un fuerte
+sesgo hacia un paradigma y contra el otro …</p>
+<p><em>La biología de la conservación tiene dos hilos: el paradigma de
+la pequeña población, que se ocupa del efecto de la pequeñez en la
+persistencia de una población, y el paradigma de la población en
+declive, que se ocupa de la causa de la pequeñez y su cura.</em></p>
 <blockquote>
-<p>Conservation biology has two threads: the small-population paradigm which deals with the effect of smallness on the persistence of a population, and the declining- population paradigm which deals with the cause of smallness and its cure.</p>
+<p>Conservation biology has two threads: the small-population paradigm
+which deals with the effect of smallness on the persistence of a
+population, and the declining- population paradigm which deals with the
+cause of smallness and its cure.</p>
 </blockquote>
-<p><strong>Q</strong>: ¿Puedes detectar el sesgo de Caughley en la cita anterior?</p>
-<p><strong>Q</strong>:¿Qué piensas? ¿Estás de acuerdo con Caughley? ¡Tómese un momento para revisar el documento y comente en Edmodo!</p>
-<div id="ejercicio-en-clase-amenazas-deterministas" class="section level3">
+<p><strong>Q</strong>: ¿Puedes detectar el sesgo de Caughley en la cita
+anterior?</p>
+<p><strong>Q</strong>:¿Qué piensas? ¿Estás de acuerdo con Caughley?
+¡Tómese un momento para revisar el documento y comente en Edmodo!</p>
+<div id="ejercicio-en-clase-amenazas-deterministas"
+class="section level3">
 <h3>Ejercicio en clase: amenazas deterministas</h3>
-<p>Probemos con un ejemplo trabajado para ilustrar los puntos anteriores.</p>
-<p>Comencemos con una población escalar y dependiente de la densidad mejorada; debería verse así:</p>
-<p>Puede clonar este modelo haciendo clic en <a href="https://insightmaker.com/insight/74417/declining-population-paradigm">here</a></p>
+<p>Probemos con un ejemplo trabajado para ilustrar los puntos
+anteriores.</p>
+<p>Comencemos con una población escalar y dependiente de la densidad
+mejorada; debería verse así:</p>
+<p>Puede clonar este modelo haciendo clic en <a
+href="https://insightmaker.com/insight/74417/declining-population-paradigm">here</a></p>
 <p><img src="figures/IM5.PNG" /></p>
-<p>Debería ver un crecimiento logístico (con estocasticidad demográfica) si presiona el botón de simulación. Tómese un minuto para ejecutar el modelo base y asegúrese de comprender cómo funciona.</p>
-<p>Para este ejercicio, cambiemos la población inicial a 200 (la mitad de K).</p>
-<p>Además, asegúrese de que el intervalo de tiempo sea de 1 año y que el modelo deba funcionar durante 50 años.</p>
+<p>Debería ver un crecimiento logístico (con estocasticidad demográfica)
+si presiona el botón de simulación. Tómese un minuto para ejecutar el
+modelo base y asegúrese de comprender cómo funciona.</p>
+<p>Para este ejercicio, cambiemos la población inicial a 200 (la mitad
+de K).</p>
+<p>Además, asegúrese de que el intervalo de tiempo sea de 1 año y que el
+modelo deba funcionar durante 50 años.</p>
 <p><strong>Agreguemos un proceso de cosecha!</strong></p>
 <ul>
-<li>Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y <em>normalmente distribuida</em> - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en el modelo para lograr este rango.</li>
+<li>Suponga que aproximadamente el 10% de la población se cosecha cada
+año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha
+es estocástica y <em>normalmente distribuida</em> - ocasionalmente la
+cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de
+especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en
+el modelo para lograr este rango.</li>
 </ul>
-<p><strong>Q</strong>: ¿Qué valor usó para la desviación estándar de la distribución normal?</p>
-<p><strong>Q</strong>: ¿Se considera mejor esta variación en la tasa de cosecha como un tipo de <em>estocasticidad demográfica </em> o un tipo de <em>estocasticidad ambiental </em>?</p>
-<p><strong>Q</strong>: ¿Por qué la población no desciende hasta la extinción? ¿Qué ha hecho el proceso de cosecha en este caso?</p>
-<p><strong>Q</strong>: ¿Qué pasa si cambia la tasa de cosecha, la hace aún más extrema? Comenzando con una abundancia de 200, ¿cuál es la abundancia final esperada (después de 50 años) si la tasa de cosecha es del 40% y la variación (desviación estándar) en la tasa de cosecha es del 20%? [Edmodo]</p>
+<p><strong>Q</strong>: ¿Qué valor usó para la desviación estándar de la
+distribución normal?</p>
+<p><strong>Q</strong>: ¿Se considera mejor esta variación en la tasa de
+cosecha como un tipo de <em>estocasticidad demográfica </em> o un tipo
+de <em>estocasticidad ambiental </em>?</p>
+<p><strong>Q</strong>: ¿Por qué la población no desciende hasta la
+extinción? ¿Qué ha hecho el proceso de cosecha en este caso?</p>
+<p><strong>Q</strong>: ¿Qué pasa si cambia la tasa de cosecha, la hace
+aún más extrema? Comenzando con una abundancia de 200, ¿cuál es la
+abundancia final esperada (después de 50 años) si la tasa de cosecha es
+del 40% y la variación (desviación estándar) en la tasa de cosecha es
+del 20%? [Edmodo]</p>
 <p><strong>¡Agreguemos un proceso de pérdida de hábitat!</strong></p>
-<p>Tenga en cuenta que estamos modelando la pérdida de hábitat como una disminución en la capacidad de carga. Para hacer esto, imponemos términos de dependencia de densidad más amplios sobre la supervivencia y la fecundidad: debido a que hay menos hábitat, los efectos del hacinamiento son más pronunciados.</p>
+<p>Tenga en cuenta que estamos modelando la pérdida de hábitat como una
+disminución en la capacidad de carga. Para hacer esto, imponemos
+términos de dependencia de densidad más amplios sobre la supervivencia y
+la fecundidad: debido a que hay menos hábitat, los efectos del
+hacinamiento son más pronunciados.</p>
 <ul>
-<li><p>Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0)</p></li>
-<li><p>Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat).</p></li>
-<li><p>¡Ejecute la simulación para realizar un seguimiento visual de K junto con la dinámica de la población!</p></li>
+<li><p>Elimine cualquier proceso de cosecha fraccional por ahora
+(establezca los términos de cosecha fraccionada en 0)</p></li>
+<li><p>Primero modelemos el caso donde el 10% de K se pierde cada año
+(pérdida fraccional de hábitat).</p></li>
+<li><p>¡Ejecute la simulación para realizar un seguimiento visual de K
+junto con la dinámica de la población!</p></li>
 </ul>
-<p><strong>P </strong>: ¿Parece realista la reducción de K a lo largo del tiempo? ¿Puedes imaginar otras formas plausibles para esta curva?</p>
+<p><strong>P </strong>: ¿Parece realista la reducción de K a lo largo
+del tiempo? ¿Puedes imaginar otras formas plausibles para esta
+curva?</p>
 <ul>
-<li>Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional) Y 10% de recolección (recolección fraccionada y pérdida de hábitat fraccional).</li>
+<li>Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida
+de hábitat fraccional) Y 10% de recolección (recolección fraccionada y
+pérdida de hábitat fraccional).</li>
 </ul>
-<p><strong>P </strong>: ¿Los resultados son diferentes a los que esperaba?</p>
+<p><strong>P </strong>: ¿Los resultados son diferentes a los que
+esperaba?</p>
 <ul>
-<li><p>Intente cambiar el proceso de cosecha para que sea de 35 <em>individuos </em> por año (tasa de cosecha absoluta). ¿Lo que sucede? Regrese la cosecha absoluta a cero.</p></li>
-<li><p>Intente cambiar el proceso de pérdida de hábitat para que sea de 5 <em>individuos </em> por año (pérdida absoluta de hábitat). ¿Lo que sucede?</p></li>
-<li><p>Intente cambiar el proceso de pérdida de hábitat para que sea de 5 <em>individuos </em> por año (pérdida absoluta de hábitat) Y el proceso de recolección para que sea de 35 <em>individuos </em> por año (tasa de recolección absoluta). ¿Lo que sucede? [Edmodo]</p></li>
+<li><p>Intente cambiar el proceso de cosecha para que sea de 35
+<em>individuos </em> por año (tasa de cosecha absoluta). ¿Lo que sucede?
+Regrese la cosecha absoluta a cero.</p></li>
+<li><p>Intente cambiar el proceso de pérdida de hábitat para que sea de
+5 <em>individuos </em> por año (pérdida absoluta de hábitat). ¿Lo que
+sucede?</p></li>
+<li><p>Intente cambiar el proceso de pérdida de hábitat para que sea de
+5 <em>individuos </em> por año (pérdida absoluta de hábitat) Y el
+proceso de recolección para que sea de 35 <em>individuos </em> por año
+(tasa de recolección absoluta). ¿Lo que sucede? [Edmodo]</p></li>
 </ul>
-<p><strong>P </strong>: Pruebe diferentes combinaciones de amenazas deterministas (¡amenazas en competencia!). ¿Puede identificar algunas combinaciones que sean <em>sinérgicas </em>, es decir, que afecten la disminución de la población o el riesgo de extinción más que simplemente agregar los efectos de cada amenaza de forma aislada?</p>
-<p><strong>P </strong>: ¿Importa más la estocasticidad en las tasas de aprovechamiento que la estocasticidad en la pérdida de hábitat? ¿O viceversa?</p>
+<p><strong>P </strong>: Pruebe diferentes combinaciones de amenazas
+deterministas (¡amenazas en competencia!). ¿Puede identificar algunas
+combinaciones que sean <em>sinérgicas </em>, es decir, que afecten la
+disminución de la población o el riesgo de extinción más que simplemente
+agregar los efectos de cada amenaza de forma aislada?</p>
+<p><strong>P </strong>: ¿Importa más la estocasticidad en las tasas de
+aprovechamiento que la estocasticidad en la pérdida de hábitat? ¿O
+viceversa?</p>
 <p><a href="LECTURE12.html">–go to next lecture–</a></p>
 </div>
 </div>

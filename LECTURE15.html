@@ -14,7 +14,7 @@
 
 <title>Estimando los Parametros</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -484,40 +488,62 @@ div.tocify {
 </div>
 
 
-<div id="estimación-de-parámetros-para-modelos-de-población-de-vida-silvestre." class="section level1">
-<h1>Estimación de parámetros para modelos de población de vida silvestre.</h1>
-<p>Ahora hemos pasado por la mecánica básica del modelado de poblaciones. ¡Pero apenas hemos discutido de dónde provienen las estimaciones de los parámetros!</p>
+<div
+id="estimación-de-parámetros-para-modelos-de-población-de-vida-silvestre."
+class="section level1">
+<h1>Estimación de parámetros para modelos de población de vida
+silvestre.</h1>
+<p>Ahora hemos pasado por la mecánica básica del modelado de
+poblaciones. ¡Pero apenas hemos discutido de dónde provienen las
+estimaciones de los parámetros!</p>
 <p>¡Este es el tema central de la conferencia actual!</p>
 <div id="requerimientos-de-datos" class="section level2">
 <h2>Requerimientos de datos</h2>
-<div id="modelos-escalares-sin-estructura-de-edad" class="section level3">
+<div id="modelos-escalares-sin-estructura-de-edad"
+class="section level3">
 <h3>Modelos escalares (sin estructura de edad)</h3>
 <ul>
 <li>Abundancia inicial (<span class="math inline">\(N_0\)</span>)</li>
-<li>Tasa media de crecimiento de la población (<span class="math inline">\(r\)</span> or <span class="math inline">\(r_{max}\)</span>)</li>
-<li>Variación en la tasa de crecimiento de la población (desviación estándar de una distribución normal que representa la estocasticidad ambiental)</li>
-<li>Capacidad de carga (accareo) de la población (<span class="math inline">\(K\)</span>; abundancia de equilibrio del modelo logístico)</li>
+<li>Tasa media de crecimiento de la población (<span
+class="math inline">\(r\)</span> or <span
+class="math inline">\(r_{max}\)</span>)</li>
+<li>Variación en la tasa de crecimiento de la población (desviación
+estándar de una distribución normal que representa la estocasticidad
+ambiental)</li>
+<li>Capacidad de carga (accareo) de la población (<span
+class="math inline">\(K\)</span>; abundancia de equilibrio del modelo
+logístico)</li>
 </ul>
 </div>
-<div id="modelos-estructurados-por-etapas-historia-de-vida" class="section level3">
+<div id="modelos-estructurados-por-etapas-historia-de-vida"
+class="section level3">
 <h3>Modelos estructurados por etapas (historia de vida)</h3>
 <ul>
-<li>Abundancia inicial(<span class="math inline">\(\mathbf{N_0}\)</span>) (vector de abundancias iniciales para todas las etapas)</li>
-<li>Tasas vitales específicas de la etapa (fecundidad, supervivencia; complete una matriz de transición)</li>
-<li>Variación temporal en las tasas vitales específicas de la etapa (estocasticidad ambiental)</li>
-<li>Dependencia de las tasas vitales de la densidad (p. Ej., Cómo disminuye la fecundidad a medida que la población se vuelve más poblada)</li>
+<li>Abundancia inicial(<span
+class="math inline">\(\mathbf{N_0}\)</span>) (vector de abundancias
+iniciales para todas las etapas)</li>
+<li>Tasas vitales específicas de la etapa (fecundidad, supervivencia;
+complete una matriz de transición)</li>
+<li>Variación temporal en las tasas vitales específicas de la etapa
+(estocasticidad ambiental)</li>
+<li>Dependencia de las tasas vitales de la densidad (p. Ej., Cómo
+disminuye la fecundidad a medida que la población se vuelve más
+poblada)</li>
 <li>¿Qué tasas vitales dependen de la densidad?</li>
 </ul>
 </div>
 <div id="modelos-de-metapoblación-espaciales" class="section level3">
 <h3>Modelos de metapoblación (espaciales)</h3>
 <ul>
-<li>Distribuciones espaciales de parches de hábitat adecuados (definir parches)</li>
-<li>Variación espacial en las tasas vitales (por ejemplo, variación en la calidad del hábitat entre diferentes parches)</li>
+<li>Distribuciones espaciales de parches de hábitat adecuados (definir
+parches)</li>
+<li>Variación espacial en las tasas vitales (por ejemplo, variación en
+la calidad del hábitat entre diferentes parches)</li>
 <li>Correlación en estocasticidad ambiental entre parches.</li>
 <li>Tasas de dispersión entre parcelas de hábitat.</li>
 <li>Requisitos de hábitat de diferentes etapas de la vida.</li>
-<li>Para modelos de metapoblación “clásicos”: tasas de colonización y extinción en parcelas de hábitat</li>
+<li>Para modelos de metapoblación “clásicos”: tasas de colonización y
+extinción en parcelas de hábitat</li>
 </ul>
 </div>
 </div>
@@ -525,8 +551,21 @@ div.tocify {
 <h2>¡Fuentes de datos!</h2>
 <div id="tablas-de-vida" class="section level3">
 <h3>Tablas de vida</h3>
-<p>Como recordará, las tablas de vida clásicas representan un solo cohorte que se ha seguido a lo largo del tiempo hasta que la última ha muerto.</p>
-<p>NOTA: en la práctica, es casi imposible seguir uno solo cohorte a lo largo del tiempo en la naturaleza (aunque las tablas de vida están comúnmente disponibles para las poblaciones en cautiverio). Por lo tanto, en la práctica, la mayoría de las tablas de vida publicadas para las poblaciones silvestres utilizan la <strong>tabla de vida estática </strong>, que compara el tamaño de la población de múltiples cohortes diferentes (en todo el rango de edades), en un solo punto en el tiempo. Las tablas de vida estáticas asumen que la población tiene una estructura de edad estable, es decir, la proporción de individuos en cada clase de edad no cambia de generación en generación. Este supuesto a menudo se viola en poblaciones naturales, pero en ausencia de mejores datos, ¡este método puede ser mejor que nada!</p>
+<p>Como recordará, las tablas de vida clásicas representan un solo
+cohorte que se ha seguido a lo largo del tiempo hasta que la última ha
+muerto.</p>
+<p>NOTA: en la práctica, es casi imposible seguir uno solo cohorte a lo
+largo del tiempo en la naturaleza (aunque las tablas de vida están
+comúnmente disponibles para las poblaciones en cautiverio). Por lo
+tanto, en la práctica, la mayoría de las tablas de vida publicadas para
+las poblaciones silvestres utilizan la <strong>tabla de vida estática
+</strong>, que compara el tamaño de la población de múltiples cohortes
+diferentes (en todo el rango de edades), en un solo punto en el tiempo.
+Las tablas de vida estáticas asumen que la población tiene una
+estructura de edad estable, es decir, la proporción de individuos en
+cada clase de edad no cambia de generación en generación. Este supuesto
+a menudo se viola en poblaciones naturales, pero en ausencia de mejores
+datos, ¡este método puede ser mejor que nada!</p>
 <table>
 <thead>
 <tr class="header">
@@ -577,66 +616,108 @@ div.tocify {
 </table>
 <p><strong>PROS</strong></p>
 <ul>
-<li>Resumen de los programas de supervivencia y fecundidad, a menudo disponible en la literatura. ¡Tenga cuidado al utilizar datos de poblaciones cautivas!</li>
+<li>Resumen de los programas de supervivencia y fecundidad, a menudo
+disponible en la literatura. ¡Tenga cuidado al utilizar datos de
+poblaciones cautivas!</li>
 </ul>
-<p><strong>CONS</strong> - Hace suposiciones poco realistas (especialmente el método * tabla de vida estática *). - No se puede utilizar para estimar la estocasticidad ambiental. - No se puede utilizar para estimar la dependencia de la densidad - Ignora la <strong> detección imperfecta </strong> y el hecho de que algunas clases de edad son menos detectables que otras - Recuerde, no siempre es perfectamente sencillo traducirlo en un modelo de población basado en matrices (estructurado por edad), ¡pero se puede hacer!</p>
+<p><strong>CONS</strong> - Hace suposiciones poco realistas
+(especialmente el método * tabla de vida estática *). - No se puede
+utilizar para estimar la estocasticidad ambiental. - No se puede
+utilizar para estimar la dependencia de la densidad - Ignora la <strong>
+detección imperfecta </strong> y el hecho de que algunas clases de edad
+son menos detectables que otras - Recuerde, no siempre es perfectamente
+sencillo traducirlo en un modelo de población basado en matrices
+(estructurado por edad), ¡pero se puede hacer!</p>
 </div>
 <div id="datos-del-censo" class="section level3">
 <h3>¡Datos del censo!</h3>
-<p>¡Los datos del censo son, en última instancia, lo que todos ** deseamos ** tener! Significa que seguimos una población a lo largo del tiempo y sabemos exactamente cuántos individuos de cada etapa hay en la población cada año. Tenemos * detección perfecta !!!! *</p>
-<p>En este caso, calcular la supervivencia y la fecundidad (y la variación de estos parámetros y la dependencia de la densidad) es relativamente sencillo.</p>
+<p>¡Los datos del censo son, en última instancia, lo que todos **
+deseamos ** tener! Significa que seguimos una población a lo largo del
+tiempo y sabemos exactamente cuántos individuos de cada etapa hay en la
+población cada año. Tenemos * detección perfecta !!!! *</p>
+<p>En este caso, calcular la supervivencia y la fecundidad (y la
+variación de estos parámetros y la dependencia de la densidad) es
+relativamente sencillo.</p>
 <p><img src="figures/census1.png" /></p>
 <p><img src="figures/census2.png" /></p>
 <p><img src="figures/census3.png" /></p>
-<p><strong>PROS</strong> - Puede estimar la supervivencia y la fecundidad, env. estocasticidad, dependencia de la densidad, ¡prácticamente todo lo que queremos para un modelo de población!</p>
+<p><strong>PROS</strong> - Puede estimar la supervivencia y la
+fecundidad, env. estocasticidad, dependencia de la densidad,
+¡prácticamente todo lo que queremos para un modelo de población!</p>
 <ul>
 <li>Muy raramente (si es que alguna vez) disponible !!</li>
-<li>Ignora la ** detección imperfecta ** (asume una detección perfecta), que casi siempre no es realista.</li>
+<li>Ignora la ** detección imperfecta ** (asume una detección perfecta),
+que casi siempre no es realista.</li>
 </ul>
 </div>
 <div id="capture-mark-recapture-cmr" class="section level3">
 <h3>Capture-mark-recapture (CMR)</h3>
-<p><strong>PROS</strong> - Puede estimar supervivencia, variación en supervivencia, lambda, reclutamiento, tasas de dispersión. - ¡Probablemente la fuente de datos más utilizada para modelos de población!</p>
-<p><strong>CONS</strong> - Pocas desventajas, aunque las técnicas analíticas pueden ser difíciles de dominar - Montar un estudio CMR adecuado puede resultar muy costoso y requerir muchos años de datos. - La estimación de los movimientos a escala del paisaje puede requerir un estudio aún más costoso y que requiere más tiempo. - En muchos casos, la emigración y la supervivencia pueden ser difíciles de separar.</p>
-<p>¡Vea más abajo para más! Además, este es el enfoque principal del curso de Dinámica de la población (NRES 488, ¡el próximo curso en la secuencia de Ecología y Conservación de la Vida Silvestre!)</p>
+<p><strong>PROS</strong> - Puede estimar supervivencia, variación en
+supervivencia, lambda, reclutamiento, tasas de dispersión. -
+¡Probablemente la fuente de datos más utilizada para modelos de
+población!</p>
+<p><strong>CONS</strong> - Pocas desventajas, aunque las técnicas
+analíticas pueden ser difíciles de dominar - Montar un estudio CMR
+adecuado puede resultar muy costoso y requerir muchos años de datos. -
+La estimación de los movimientos a escala del paisaje puede requerir un
+estudio aún más costoso y que requiere más tiempo. - En muchos casos, la
+emigración y la supervivencia pueden ser difíciles de separar.</p>
+<p>¡Vea más abajo para más! Además, este es el enfoque principal del
+curso de Dinámica de la población (NRES 488, ¡el próximo curso en la
+secuencia de Ecología y Conservación de la Vida Silvestre!)</p>
 </div>
-<div id="datos-sobre-estructura-espacial-hábitat" class="section level3">
+<div id="datos-sobre-estructura-espacial-hábitat"
+class="section level3">
 <h3>Datos sobre estructura espacial / hábitat</h3>
 <ul>
-<li>Vea <a href="FINAL_PROJECTS.html">links</a> en la página de proyectos finales</li>
+<li>Vea <a href="FINAL_PROJECTS.html">links</a> en la página de
+proyectos finales</li>
 </ul>
 </div>
 <div id="qué-pasa-si-no-hay-datos" class="section level3">
 <h3>¿Qué pasa si “no hay datos”?</h3>
-<p>Recuerda el <a href="https://en.wikipedia.org/wiki/Stone_Soup">“Stone Soup” analogy!</a> - incluso cuando crea que no hay datos, ¡probablemente haya más de los que parece inicialmente!</p>
+<p>Recuerda el <a href="https://en.wikipedia.org/wiki/Stone_Soup">“Stone
+Soup” analogy!</a> - incluso cuando crea que no hay datos,
+¡probablemente haya más de los que parece inicialmente!</p>
 <ul>
-<li>Usar álgebra para construir una matriz de transición estructurada por edades completa a partir de la información disponible.
+<li>Usar álgebra para construir una matriz de transición estructurada
+por edades completa a partir de la información disponible.
 <ul>
-<li>Por ejemplo, nos falta información sobre la supervivencia de las crías. Solo sabemos:
+<li>Por ejemplo, nos falta información sobre la supervivencia de las
+crías. Solo sabemos:
 <ul>
 <li>Tasas de supervivencia de jóvenes y adultos</li>
 <li>Éxito de anidación</li>
 <li>El crecimiento de la población (lambda) es 1.09</li>
 <li>¡Ahora podemos resolver la supervivencia de las crías!</li>
-<li>Para un ejemplo de esto, ver [Congdon et al 1993] (congdon et al 1993.pdf)</li>
+<li>Para un ejemplo de esto, ver [Congdon et al 1993] (congdon et al
+1993.pdf)</li>
 </ul></li>
 </ul></li>
-<li>¡Simplifica! (Los modelos son siempre representaciones simplificadas de la realidad)
+<li>¡Simplifica! (Los modelos son siempre representaciones simplificadas
+de la realidad)
 <ul>
-<li>¿Ignora la estructura de edad? (es decir, use el modelo escalar)</li>
+<li>¿Ignora la estructura de edad? (es decir, use el modelo
+escalar)</li>
 <li>¿Ignora la dependencia de la densidad?</li>
-<li>Ignore las interacciones tróficas (¡generalmente hacemos esta simplificación de todos modos!)</li>
-<li>Ignorar la abundancia por completo (por ejemplo, utilizar el modelo de metapoblación clásico)</li>
+<li>Ignore las interacciones tróficas (¡generalmente hacemos esta
+simplificación de todos modos!)</li>
+<li>Ignorar la abundancia por completo (por ejemplo, utilizar el modelo
+de metapoblación clásico)</li>
 </ul></li>
 <li>Estrategias conservadoras (use * el peor de los casos *)!
 <ul>
-<li>El modelo independiente de la densidad es conservador, por lo que si no tiene datos en D-D, ¡tal vez simplemente ignórelo!</li>
-<li>Con incertidumbre de los parámetros, utilice el peor de los casos</li>
+<li>El modelo independiente de la densidad es conservador, por lo que si
+no tiene datos en D-D, ¡tal vez simplemente ignórelo!</li>
+<li>Con incertidumbre de los parámetros, utilice el peor de los
+casos</li>
 <li>Bajo tendencias de declive, use el peor de los casos</li>
 </ul></li>
 <li>¡Utilice datos de especies similares!
 <ul>
-<li>Por ejemplo, las especies de tamarinos tienen historias de vida similares, así que utilice datos sobre titíes león dorado para modelar los titíes león con cabeza dorada.</li>
+<li>Por ejemplo, las especies de tamarinos tienen historias de vida
+similares, así que utilice datos sobre titíes león dorado para modelar
+los titíes león con cabeza dorada.</li>
 </ul></li>
 <li>Opinión experta
 <ul>
@@ -644,124 +725,186 @@ div.tocify {
 </ul></li>
 <li>Bases de datos nacionales
 <ul>
-<li>Vea <a href="FINAL_PROJECTS.html">links</a> en la página de proyectos finales</li>
+<li>Vea <a href="FINAL_PROJECTS.html">links</a> en la página de
+proyectos finales</li>
 </ul></li>
-<li><a href="https://www.astronomyclub.xyz/maternal-effect/does-ecology-have-laws.html">Allometries</a>
+<li><a
+href="https://www.astronomyclub.xyz/maternal-effect/does-ecology-have-laws.html">Allometries</a>
 <ul>
 <li>por ejemplo, la alometría de Fenchel</li>
-<li>Este tipo de pensamiento (que busca patrones amplios entre especies) a menudo se denomina “macroecología”.</li>
+<li>Este tipo de pensamiento (que busca patrones amplios entre especies)
+a menudo se denomina “macroecología”.</li>
 </ul></li>
 </ul>
 <p><img src="figures/allometry2.jpg" /></p>
 <p><img src="figures/allometry1.jpg" /></p>
 </div>
 </div>
-<div id="aparte-se-puede-utilizar-la-opinión-de-un-experto" class="section level2">
+<div id="aparte-se-puede-utilizar-la-opinión-de-un-experto"
+class="section level2">
 <h2>Aparte, ¿se puede utilizar la opinión de un experto?</h2>
 <ul>
-<li>No es ideal, porque es difícil o imposible de validar y difícil de documentar, pero …</li>
+<li>No es ideal, porque es difícil o imposible de validar y difícil de
+documentar, pero …</li>
 <li>¡Eso es lo que se hará en cualquier caso!</li>
 <li>Y es mejor usarlo que no hacer nada</li>
-<li>Y es mejor documentar que se utilizó la opinión de expertos que proceder con la planificación de la conservación en ausencia de fuentes y supuestos establecidos.</li>
+<li>Y es mejor documentar que se utilizó la opinión de expertos que
+proceder con la planificación de la conservación en ausencia de fuentes
+y supuestos establecidos.</li>
 <li>Es un punto de partida (y a veces uno razonable)</li>
 </ul>
 </div>
-<div id="análisis-de-captura-marca-recaptura-cmr-capture-mark-recapture-cmr-analysis" class="section level2">
-<h2>Análisis de captura-marca-recaptura (CMR): Capture-mark-recapture (CMR) analysis</h2>
+<div
+id="análisis-de-captura-marca-recaptura-cmr-capture-mark-recapture-cmr-analysis"
+class="section level2">
+<h2>Análisis de captura-marca-recaptura (CMR): Capture-mark-recapture
+(CMR) analysis</h2>
 <p><img src="figures/statistics1.png" /></p>
-<div id="parámetros-pva-estimables-a-partir-de-datos-cmr" class="section level3">
+<div id="parámetros-pva-estimables-a-partir-de-datos-cmr"
+class="section level3">
 <h3>Parámetros PVA estimables a partir de datos CMR</h3>
 <ul>
-<li>Tasa de supervivencia (posiblemente estructurada por edad o tamaño)</li>
+<li>Tasa de supervivencia (posiblemente estructurada por edad o
+tamaño)</li>
 <li>Fecundidad (entrada de nuevos individuos en la población)</li>
-<li>Reclutamiento (ingreso de nuevos individuos a la población adulta)</li>
+<li>Reclutamiento (ingreso de nuevos individuos a la población
+adulta)</li>
 <li>abundancia</li>
 <li>Lambda (tasa de crecimiento finita)</li>
-<li>Influencias ambientales en las tasas de supervivencia y fecundidad.</li>
+<li>Influencias ambientales en las tasas de supervivencia y
+fecundidad.</li>
 <li>Varianza del proceso temporal (estocasticidad env.)</li>
 <li>Tasas de dispersión</li>
 </ul>
 </div>
-<div id="los-datos-necesarios-para-el-análisis-cmr-historiales-de-captura" class="section level3">
-<h3>Los datos necesarios para el análisis CMR: historiales de captura</h3>
-<p>Considere un proyecto diseñado para monitorear una población de caimanes. Estos caimanes fueron monitoreados durante cuatro años, desde 1976 hasta 1979.</p>
-<p>Cada fila de la siguiente tabla representa un historial de capturas posible único:</p>
-<p>Un “1” indica que un animal fue capturado con éxito en un año determinado y posteriormente liberado.</p>
-<p>Un “0” indica que un animal no fue capturado con éxito en un año determinado.</p>
-<p>Un “2” indica que un animal fue capturado con éxito en un año determinado, pero no fue devuelto a la población (probablemente murió debido a la manipulación o captura).</p>
+<div
+id="los-datos-necesarios-para-el-análisis-cmr-historiales-de-captura"
+class="section level3">
+<h3>Los datos necesarios para el análisis CMR: historiales de
+captura</h3>
+<p>Considere un proyecto diseñado para monitorear una población de
+caimanes. Estos caimanes fueron monitoreados durante cuatro años, desde
+1976 hasta 1979.</p>
+<p>Cada fila de la siguiente tabla representa un historial de capturas
+posible único:</p>
+<p>Un “1” indica que un animal fue capturado con éxito en un año
+determinado y posteriormente liberado.</p>
+<p>Un “0” indica que un animal no fue capturado con éxito en un año
+determinado.</p>
+<p>Un “2” indica que un animal fue capturado con éxito en un año
+determinado, pero no fue devuelto a la población (probablemente murió
+debido a la manipulación o captura).</p>
 <p><img src="figures/caphist1.png" /></p>
 </div>
 <div id="dos-tipos-principales-de-análisis-cmr" class="section level3">
 <h3>Dos tipos principales de análisis CMR</h3>
 <div id="modelos-poblacionales-cerrados" class="section level4">
 <h4>Modelos poblacionales cerrados</h4>
-<p>Suponemos que la población está cerrada (¡sin procesos BIDE!). Es decir, ¡la abundancia no cambia! ¡Intentamos estimar la abundancia!</p>
+<p>Suponemos que la población está cerrada (¡sin procesos BIDE!). Es
+decir, ¡la abundancia no cambia! ¡Intentamos estimar la abundancia!</p>
 <ul>
 <li>Sin mortalidad</li>
 <li>Sin nacimientos</li>
 <li>Sin inmigración</li>
 <li>Sin emigración</li>
-<li>Todos los individuos son observables (pero no necesariamente observados …)</li>
+<li>Todos los individuos son observables (pero no necesariamente
+observados …)</li>
 </ul>
 <p><img src="figures/peterson1.png" /></p>
 <p>Parámetros estimados:</p>
 <ul>
 <li>abundancia</li>
 </ul>
-<p>M = el número de individuos marcados en la primera muestra C = número total de individuos capturados en la segunda muestra R = número de individuos en la segunda muestra que están marcados</p>
-<p>Podemos usar la siguiente fórmula para estimar la abundancia (el <strong>estimador lincoln-peterson </strong>):</p>
+<p>M = el número de individuos marcados en la primera muestra C = número
+total de individuos capturados en la segunda muestra R = número de
+individuos en la segunda muestra que están marcados</p>
+<p>Podemos usar la siguiente fórmula para estimar la abundancia (el
+<strong>estimador lincoln-peterson </strong>):</p>
 <p><span class="math inline">\(N = \frac{M \times C}{R}\)</span></p>
 </div>
 <div id="modelos-de-población-abiertos" class="section level4">
 <h4>Modelos de población abiertos</h4>
-<p>Suponemos que la población está abierta a uno o más de los procesos BIDE. Es decir, ¡la abundancia PUEDE cambiar! Intentamos estimar los procesos que impulsan el cambio de abundancia (a menudo, tasas de supervivencia)</p>
+<p>Suponemos que la población está abierta a uno o más de los procesos
+BIDE. Es decir, ¡la abundancia PUEDE cambiar! Intentamos estimar los
+procesos que impulsan el cambio de abundancia (a menudo, tasas de
+supervivencia)</p>
 <ul>
-<li>Poblaciones abiertas al nacimiento, la muerte y posiblemente incluso la migración (la abundancia puede cambiar durante el estudio).</li>
-<li>Permite la estimación de los impulsores de la dinámica de la población durante períodos de tiempo prolongados</li>
+<li>Poblaciones abiertas al nacimiento, la muerte y posiblemente incluso
+la migración (la abundancia puede cambiar durante el estudio).</li>
+<li>Permite la estimación de los impulsores de la dinámica de la
+población durante períodos de tiempo prolongados</li>
 <li>A menudo de gran interés para ecologistas y gestores.</li>
 </ul>
 </div>
 </div>
-<div id="máxima-verosimilitud-un-marco-para-la-inferencia-estadística" class="section level3">
+<div id="máxima-verosimilitud-un-marco-para-la-inferencia-estadística"
+class="section level3">
 <h3>Máxima verosimilitud: ¡un marco para la inferencia estadística!</h3>
-<p><strong>PARA ANÁLISIS CMR </strong>: - ¿Qué valor de supervivencia maximiza la probabilidad de generar los historiales de captura observados?</p>
+<p><strong>PARA ANÁLISIS CMR </strong>: - ¿Qué valor de supervivencia
+maximiza la probabilidad de generar los historiales de captura
+observados?</p>
 <p>EJEMPLO:</p>
 <p>Considere el siguiente historial de captura de una sola persona:</p>
 <pre><code>1 0 1 1</code></pre>
-<p>Este individuo fue marcado y liberado en la captura inicial. No se capturó en la siguiente encuesta, pero luego se capturó en cada una de las siguientes dos encuestas posteriores.</p>
+<p>Este individuo fue marcado y liberado en la captura inicial. No se
+capturó en la siguiente encuesta, pero luego se capturó en cada una de
+las siguientes dos encuestas posteriores.</p>
 <p>¿Cuál es la probabilidad de observar este historial de capturas?</p>
 <blockquote>
-<p>[(Probabilidad de sobrevivir del tiempo 1 al 2) X (Probabilidad de no ser visto en el momento 2)] X [(Probabilidad de sobrevivir del tiempo 2 al 3) X (Probabilidad de ser visto en el momento 3)] X [(Probabilidad de sobrevivir del tiempo 3 al 4) X (Probabilidad de ser visto en el tiempo 4)]</p>
+<p>[(Probabilidad de sobrevivir del tiempo 1 al 2) X (Probabilidad de no
+ser visto en el momento 2)] X [(Probabilidad de sobrevivir del tiempo 2
+al 3) X (Probabilidad de ser visto en el momento 3)] X [(Probabilidad de
+sobrevivir del tiempo 3 al 4) X (Probabilidad de ser visto en el tiempo
+4)]</p>
 </blockquote>
-<p>-&gt; [(Probability of surviving from time 1 to 2) X (Probability of not being seen at time 2)] X [(Probability of surviving from time 2 to 3) X (Probability of being seen at time 3)] X [(Probability of surviving from time 3 to 4) X (Probability of being seen at time 4)]</p>
+<p>-&gt; [(Probability of surviving from time 1 to 2) X (Probability of
+not being seen at time 2)] X [(Probability of surviving from time 2 to
+3) X (Probability of being seen at time 3)] X [(Probability of surviving
+from time 3 to 4) X (Probability of being seen at time 4)]</p>
 <p>Esto se puede escribir:</p>
-<p><span class="math inline">\(L_1 = \phi_1(1-p_2) \cdot \phi_2p_3 \cdot \phi_3p_4\)</span></p>
+<p><span class="math inline">\(L_1 = \phi_1(1-p_2) \cdot \phi_2p_3 \cdot
+\phi_3p_4\)</span></p>
 <p>¿Qué tal el siguiente historial de captura para una sola persona?</p>
 <pre><code>1 0 1 0</code></pre>
 <p>¿Cuál es la probabilidad de observar este historial de capturas?</p>
 <blockquote>
-<p>[(Probabilidad de sobrevivir del tiempo 1 al 2) X (Probabilidad de no ser visto en el momento 2)] X [(Probabilidad de sobrevivir del tiempo 2 al 3) X (Probabilidad de ser visto en el momento 3)] X</p>
+<p>[(Probabilidad de sobrevivir del tiempo 1 al 2) X (Probabilidad de no
+ser visto en el momento 2)] X [(Probabilidad de sobrevivir del tiempo 2
+al 3) X (Probabilidad de ser visto en el momento 3)] X</p>
 </blockquote>
-<p>-&gt; [(Probability of surviving from time 1 to 2) X (Probability of not being seen at time 2)] X [(Probability of surviving from time 2 to 3) X (Probability of being seen at time 3)] X</p>
+<p>-&gt; [(Probability of surviving from time 1 to 2) X (Probability of
+not being seen at time 2)] X [(Probability of surviving from time 2 to
+3) X (Probability of being seen at time 3)] X</p>
 <p>– either –</p>
 <blockquote>
-<p>[(Probability of surviving from time 3 to 4) X (Probability of not being seen at time 4)]</p>
+<p>[(Probability of surviving from time 3 to 4) X (Probability of not
+being seen at time 4)]</p>
 </blockquote>
 <p>– or –</p>
 <blockquote>
 <p>[(Probability of NOT surviving from time 3 to 4)</p>
 </blockquote>
 <p>Esto se puede escribir:</p>
-<p><span class="math inline">\(L_1 = \phi_1(1-p_2) \cdot \phi_2p_3 \cdot \left \{(1-\phi_3)+\phi_3(1-p_4) \right \}\)</span></p>
-<p><strong>P </strong>: si la supervivencia fuera del 100% y la probabilidad de captura fuera del 100%, ¿cuál es la probabilidad de observar los historiales de captura anteriores?</p>
-<p><strong>P </strong>: ¿y si la supervivencia fuera del 100% y la probabilidad de captura fuera del 75%?</p>
-<p>La estimación de máxima verosimilitud es el proceso de encontrar los valores de los parámetros $  phi $ y $ p $ que serían más * probables * para generar los historiales de captura observados.</p>
-<p>Este modelo se conoce como el modelo <em>Cormack-Jolly-Seber </em> (CJS) y es el análisis más común realizado por el programa MARK.</p>
-<p>*P **: ¿Por qué $  phi $ también se conoce como supervivencia “aparente”? ¿Por qué no es la “verdadera” supervivencia ???</p>
+<p><span class="math inline">\(L_1 = \phi_1(1-p_2) \cdot \phi_2p_3 \cdot
+\left \{(1-\phi_3)+\phi_3(1-p_4) \right \}\)</span></p>
+<p><strong>P </strong>: si la supervivencia fuera del 100% y la
+probabilidad de captura fuera del 100%, ¿cuál es la probabilidad de
+observar los historiales de captura anteriores?</p>
+<p><strong>P </strong>: ¿y si la supervivencia fuera del 100% y la
+probabilidad de captura fuera del 75%?</p>
+<p>La estimación de máxima verosimilitud es el proceso de encontrar los
+valores de los parámetros $  phi $ y $ p $ que serían más * probables *
+para generar los historiales de captura observados.</p>
+<p>Este modelo se conoce como el modelo <em>Cormack-Jolly-Seber </em>
+(CJS) y es el análisis más común realizado por el programa MARK.</p>
+<p>*P **: ¿Por qué $  phi $ también se conoce como supervivencia
+“aparente”? ¿Por qué no es la “verdadera” supervivencia ???</p>
 <div id="supuestos-clave-del-modelo-cjs" class="section level4">
 <h4>Supuestos clave del modelo CJS</h4>
 <ul>
-<li>Todos los individuos de la población son igualmente detectables en cada ocasión de muestreo (cada sesión de captura representa una muestra totalmente aleatoria de la población)</li>
+<li>Todos los individuos de la población son igualmente detectables en
+cada ocasión de muestreo (cada sesión de captura representa una muestra
+totalmente aleatoria de la población)</li>
 <li>Los topógrafos no pierden ni pierden las marcas</li>
 <li>Toda emigración es permanente (equivalente a una mortalidad)</li>
 </ul>
@@ -769,15 +912,25 @@ div.tocify {
 </div>
 <div id="program-mark" class="section level3">
 <h3>Program MARK</h3>
-<p>MARK es un motor numérico de máxima verosimilitud diseñado para el análisis de marcado-recaptura. Ingresa un conjunto de datos del historial de captura y MARK generará resultados como la tasa de supervivencia y la probabilidad de captura.</p>
+<p>MARK es un motor numérico de máxima verosimilitud diseñado para el
+análisis de marcado-recaptura. Ingresa un conjunto de datos del
+historial de captura y MARK generará resultados como la tasa de
+supervivencia y la probabilidad de captura.</p>
 </div>
 </div>
-<div id="ejemplo-de-un-análisis-de-marcado-recaptura-de-población-abierta" class="section level2">
-<h2>¡Ejemplo de un análisis de marcado-recaptura de población abierta!</h2>
-<p>¡Repasemos un análisis CJS en R! Para seguir adelante, por favor <a href="LECTURE15.R">guarde este script y cárguelo en Rstudio</a>.</p>
-<p>NOTA: este análisis incluye tanto hombres como mujeres (a diferencia del ejemplo del laboratorio 7), por lo que los resultados se verán algo diferentes.</p>
+<div
+id="ejemplo-de-un-análisis-de-marcado-recaptura-de-población-abierta"
+class="section level2">
+<h2>¡Ejemplo de un análisis de marcado-recaptura de población
+abierta!</h2>
+<p>¡Repasemos un análisis CJS en R! Para seguir adelante, por favor <a
+href="LECTURE15.R">guarde este script y cárguelo en Rstudio</a>.</p>
+<p>NOTA: este análisis incluye tanto hombres como mujeres (a diferencia
+del ejemplo del laboratorio 7), por lo que los resultados se verán algo
+diferentes.</p>
 <p><img src="figures/dipper1.png" /></p>
-<p>Los datos del cazo europeo son EL ejemplo clásico de un conjunto de datos CMR. ¡Veámos!</p>
+<p>Los datos del cazo europeo son EL ejemplo clásico de un conjunto de
+datos CMR. ¡Veámos!</p>
 <pre class="r"><code>###########
 # Cormack-Jolly-Seber (CJS) model in R
 ###########
@@ -796,7 +949,8 @@ head(dipper,10)</code></pre>
 ## 8  0000001 Female
 ## 9  0000001 Female
 ## 10 0000001 Female</code></pre>
-<p>Aquí usamos el paquete “marked” en R (en lugar de MARK) para hacer la estimación del parámetro ML.</p>
+<p>Aquí usamos el paquete “marked” en R (en lugar de MARK) para hacer la
+estimación del parámetro ML.</p>
 <pre class="r"><code>##########
 # load data!
 
@@ -1012,8 +1166,10 @@ sd(Phi_by_year$estimate)</code></pre>
 <pre><code>## [1] 0.1066587</code></pre>
 <div id="program-mark-1" class="section level3">
 <h3>Program MARK!</h3>
-<p>MARK es un software gratuito y se puede descargar desde<a href="http://warnercnr.colostate.edu/~gwhite/mark/mark.htm">here</a></p>
-<p>La demostración de Lab 7 se puede encontrar <a href="LAB7.html#open-population_models">here</a></p>
+<p>MARK es un software gratuito y se puede descargar desde<a
+href="http://warnercnr.colostate.edu/~gwhite/mark/mark.htm">here</a></p>
+<p>La demostración de Lab 7 se puede encontrar <a
+href="LAB7.html#open-population_models">here</a></p>
 <p><a href="LECTURE16.html">–go to next lecture–</a></p>
 </div>
 </div>

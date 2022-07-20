@@ -14,7 +14,7 @@
 
 <title>PVA_Shoemaker</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -485,19 +489,27 @@ div.tocify {
 
 
 <p>Los siguientes trabajos son del laboratorio del Dr. K. Shoemaker.</p>
-<p>El objetivo de poner estos ejemplos aui es que pueden apreciar lo que uno puede lograr con un cursos introductorio en Ecología de Población enfocado en la conservación. Estos ejemplos deberian darle una idea de como se construye su trabajo final de la clase.</p>
-<p>Los proyectos siguientes fueron preparado por estudiantes de las clases del Dr. Shoemaker en la Universidad de Reno, Nevada.</p>
+<p>El objetivo de poner estos ejemplos aui es que pueden apreciar lo que
+uno puede lograr con un cursos introductorio en Ecología de Población
+enfocado en la conservación. Estos ejemplos deberian darle una idea de
+como se construye su trabajo final de la clase.</p>
+<p>Los proyectos siguientes fueron preparado por estudiantes de las
+clases del Dr. Shoemaker en la Universidad de Reno, Nevada.</p>
 <div id="ejemplo-1" class="section level2">
 <h2>Ejemplo 1:</h2>
-<p><a href="PVA_Ejemplos/falcon.pdf">Determining Resilience of Recovering North American Peregrine Falcons</a></p>
+<p><a href="PVA_Ejemplos/falcon.pdf">Determining Resilience of
+Recovering North American Peregrine Falcons</a></p>
 </div>
 <div id="ejemplo-2" class="section level2">
 <h2>Ejemplo 2:</h2>
-<p><a href="PVA_Ejemplos/Paddlefish.pdf">A Synopsis on Paddlefish Populations in the Mississippi Basin and Factors Affecting their Viability</a></p>
+<p><a href="PVA_Ejemplos/Paddlefish.pdf">A Synopsis on Paddlefish
+Populations in the Mississippi Basin and Factors Affecting their
+Viability</a></p>
 </div>
 <div id="ejemplo-3" class="section level2">
 <h2>Ejemplo 3</h2>
-<p><a href="PVA_Ejemplos/Polar_bear.pdf">Southern Beaufort Sea Polar Bear, <em>Ursus arctos maritimus</em></a></p>
+<p><a href="PVA_Ejemplos/Polar_bear.pdf">Southern Beaufort Sea Polar
+Bear, <em>Ursus arctos maritimus</em></a></p>
 </div>
 
 

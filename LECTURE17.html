@@ -14,7 +14,7 @@
 
 <title>Interacciones de especies: presa-depredador</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -477,7 +481,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Interacciones de especies: presa-depredador</h1>
+<h1 class="title toc-ignore">Interacciones de especies:
+presa-depredador</h1>
 <h4 class="author">BIOL4558</h4>
 <h4 class="date">Agosto 2021</h4>
 
@@ -488,39 +493,82 @@ div.tocify {
 <h2>Depredador</h2>
 <p><img src="figures/predation1.jpg" /></p>
 <p><img src="figures/predation2.jpg" /></p>
-<p>En el caso de la competencia, vimos que cada especie influía negativamente en la otra. En el caso de las interacciones presa-depredador, una de las dos especies se beneficia enormemente de la interacción, ¡y la otra pierde!</p>
-<p>Casi todos los modelos de presa-depredador, incluso los más avanzados y complejos, comparten este marco común:</p>
-<p><span class="math inline">\(\Delta V = rV^* - f(V,P) \cdot P\)</span></p>
+<p>En el caso de la competencia, vimos que cada especie influía
+negativamente en la otra. En el caso de las interacciones
+presa-depredador, una de las dos especies se beneficia enormemente de la
+interacción, ¡y la otra pierde!</p>
+<p>Casi todos los modelos de presa-depredador, incluso los más avanzados
+y complejos, comparten este marco común:</p>
+<p><span class="math inline">\(\Delta V = rV^* - f(V,P) \cdot
+P\)</span></p>
 <p>y</p>
-<p><span class="math inline">\(\Delta P = f(V,P)*conversion.factor \cdot P - qP^*\)</span></p>
+<p><span class="math inline">\(\Delta P = f(V,P)*conversion.factor \cdot
+P - qP^*\)</span></p>
 <p>y</p>
 <p>$V $ es la abundancia total de presas (¡V para las víctimas!), Y</p>
 <p>$P $ es la abundancia total de depredadores, y</p>
-<p>$rV^* $ representa el crecimiento de la población de presas <em>en ausencia de depredadores</em>; por lo general, esta es una forma de los modelos estándar de crecimiento de la población de una sola especie que hemos considerado durante la mayor parte de este curso (posiblemente dependiente de la densidad) ,</p>
-<p>$qP^* $ representa el crecimiento de la población de depredadores <em>en ausencia de presas</em> - ¡por lo general esto es simplemente una disminución exponencial!</p>
+<p>$rV^* $ representa el crecimiento de la población de presas <em>en
+ausencia de depredadores</em>; por lo general, esta es una forma de los
+modelos estándar de crecimiento de la población de una sola especie que
+hemos considerado durante la mayor parte de este curso (posiblemente
+dependiente de la densidad) ,</p>
+<p>$qP^* $ representa el crecimiento de la población de depredadores
+<em>en ausencia de presas</em> - ¡por lo general esto es simplemente una
+disminución exponencial!</p>
 <p>Y</p>
-<p><span class="math inline">\(f(V,P)\)</span> se conoce como la <strong>respuesta funcional</strong>, es decir, la tasa per cápita de consumo de presas, generalmente una función de la densidad (disponibilidad) de presas, pero a veces una función de ambas densidades de depredadores y presas.</p>
+<p><span class="math inline">\(f(V,P)\)</span> se conoce como la
+<strong>respuesta funcional</strong>, es decir, la tasa per cápita de
+consumo de presas, generalmente una función de la densidad
+(disponibilidad) de presas, pero a veces una función de ambas densidades
+de depredadores y presas.</p>
 <p>Y</p>
-<p>$ f(V,P)conversion.factor$ (alternativamente representado como <span class="math inline">\(g(V,P)\)</span>) se conoce como la <strong>respuesta numérica</strong>, es decir, el aumento en el crecimiento de la población de depredadores per cápita debido al consumo de presas.</p>
-<p>Hay muchos tipos diferentes de posibles curvas de respuesta funcional y numérica. ¡Empecemos de forma sencilla!</p>
+<p>$ f(V,P)conversion.factor$ (alternativamente representado como <span
+class="math inline">\(g(V,P)\)</span>) se conoce como la
+<strong>respuesta numérica</strong>, es decir, el aumento en el
+crecimiento de la población de depredadores per cápita debido al consumo
+de presas.</p>
+<p>Hay muchos tipos diferentes de posibles curvas de respuesta funcional
+y numérica. ¡Empecemos de forma sencilla!</p>
 <div id="el-modelo-clásico-presa-depredador" class="section level3">
 <h3>El modelo clásico presa-depredador</h3>
-<p>Veamos la depredación matemáticamente, comenzando con el modelo más simple posible …</p>
+<p>Veamos la depredación matemáticamente, comenzando con el modelo más
+simple posible …</p>
 <div id="las-victimas" class="section level4">
 <h4>Las victimas…</h4>
 <p>Consideraremos primero la presa o “víctimas”:</p>
-<p>En ausencia de depredadores, supongamos que la población de víctimas crece de acuerdo con la ecuación básica de crecimiento exponencial:</p>
+<p>En ausencia de depredadores, supongamos que la población de víctimas
+crece de acuerdo con la ecuación básica de crecimiento exponencial:</p>
 <p><span class="math inline">\(\Delta V = rV\)</span></p>
-<p>¡Asumiremos que la tasa intrínseca de crecimiento, $ r $, es positiva! En ausencia de depredadores, la población crece exponencialmente.</p>
-<p>Si hay depredadores, el crecimiento de la población de las víctimas se ralentizará …</p>
-<p>¿Qué expresión podría definir la velocidad a la que los depredadores consumen las presas?</p>
-<p>En primer lugar, supongamos que los depredadores y las presas caminan al azar a través de su entorno común, chocando unos con otros al azar. Cada vez que el depredador choca con un objeto de presa, el depredador tiene alguna posibilidad de consumir ese objeto de presa.</p>
-<p>Esto es análogo a las moléculas que se mueven al azar en una solución, provocando ocasionalmente reacciones cada vez que chocan con otras moléculas de la manera correcta.</p>
-<p>En tales circunstancias, los depredadores NO interfieren entre sí y nunca se llenan. Cada depredador consume un número fijo de presas en un período de tiempo determinado, dependiendo solo de la disponibilidad de presas.</p>
-<p>Considere el caso donde hay $ V $ presas y solo un depredador en un sistema hipotético presa-depredador.</p>
-<p><strong>P</strong>: Imagina que hay 100 presas y solo un depredador. Se consumen un total de 3 presas en un solo día. ¿Cuál es la tasa diaria de consumo de presas por depredador en este ejemplo ($  alpha $)?</p>
-<p>En este caso, el depredador encuentra y consume con éxito el 3% (0.03) de las presas todos los días. Si hubiera 1000 presas en el paisaje, el depredador capturaría y consumiría 30 presas. Y si hubiera 1 millón de presas, el depredador capturaría y consumiría 30000 presas por día. (¿realista?)</p>
-<p><strong>P</strong> ¿cuál es la forma de la respuesta funcional en este caso?</p>
+<p>¡Asumiremos que la tasa intrínseca de crecimiento, $ r $, es
+positiva! En ausencia de depredadores, la población crece
+exponencialmente.</p>
+<p>Si hay depredadores, el crecimiento de la población de las víctimas
+se ralentizará …</p>
+<p>¿Qué expresión podría definir la velocidad a la que los depredadores
+consumen las presas?</p>
+<p>En primer lugar, supongamos que los depredadores y las presas caminan
+al azar a través de su entorno común, chocando unos con otros al azar.
+Cada vez que el depredador choca con un objeto de presa, el depredador
+tiene alguna posibilidad de consumir ese objeto de presa.</p>
+<p>Esto es análogo a las moléculas que se mueven al azar en una
+solución, provocando ocasionalmente reacciones cada vez que chocan con
+otras moléculas de la manera correcta.</p>
+<p>En tales circunstancias, los depredadores NO interfieren entre sí y
+nunca se llenan. Cada depredador consume un número fijo de presas en un
+período de tiempo determinado, dependiendo solo de la disponibilidad de
+presas.</p>
+<p>Considere el caso donde hay $ V $ presas y solo un depredador en un
+sistema hipotético presa-depredador.</p>
+<p><strong>P</strong>: Imagina que hay 100 presas y solo un depredador.
+Se consumen un total de 3 presas en un solo día. ¿Cuál es la tasa diaria
+de consumo de presas por depredador en este ejemplo ($  alpha $)?</p>
+<p>En este caso, el depredador encuentra y consume con éxito el 3%
+(0.03) de las presas todos los días. Si hubiera 1000 presas en el
+paisaje, el depredador capturaría y consumiría 30 presas. Y si hubiera 1
+millón de presas, el depredador capturaría y consumiría 30000 presas por
+día. (¿realista?)</p>
+<p><strong>P</strong> ¿cuál es la forma de la respuesta funcional en
+este caso?</p>
 <p><span class="math inline">\(f(V)=\alpha \cdot V\)</span></p>
 <pre class="r"><code>#######
 # simple functional response
@@ -531,35 +579,70 @@ LVfuncresp &lt;- function(V,alpha){
 
 curve(LVfuncresp(x,0.03),0,200,xlab=&quot;Victim abundance&quot;,ylab=&quot;Total prey eaten per predator&quot;,col=&quot;red&quot;,lwd=3)</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Tenga en cuenta la intersección: ¿la respuesta funcional debe tener una intersección de cero?</p>
-<p>… ¡Por supuesto, este término <em>alfa </em> tiene un significado diferente del <em>alfa </em> en los modelos de competición L-V! ¡Lo siento!</p>
-<p>Ahora considere el caso en el que hay más de un depredador, es decir, hay depredadores $P $ y presas $V $. Recuerde que cada depredador <em>no influye </em> en las tasas de consumo de otros depredadores. Los depredadores son como moléculas que chocan aleatoriamente con moléculas de presa.</p>
+<p>Tenga en cuenta la intersección: ¿la respuesta funcional debe tener
+una intersección de cero?</p>
+<p>… ¡Por supuesto, este término <em>alfa </em> tiene un significado
+diferente del <em>alfa </em> en los modelos de competición L-V! ¡Lo
+siento!</p>
+<p>Ahora considere el caso en el que hay más de un depredador, es decir,
+hay depredadores $P $ y presas $V $. Recuerde que cada depredador <em>no
+influye </em> en las tasas de consumo de otros depredadores. Los
+depredadores son como moléculas que chocan aleatoriamente con moléculas
+de presa.</p>
 <p>The <em>total rate of predation</em> now is:</p>
 <p><span class="math inline">\(f(V) \cdot P = \alpha VP\)</span></p>
 <p>¿Esto tiene sentido?</p>
-<p>El término $ alpha $ también se conoce como <strong>eficiencia de captura </strong>. ¿Esto tiene sentido? Considere un caso en el que cada depredador “choca” con todas las presas en el paisaje en cada paso de tiempo, pero solo consume el 3% de esas presas. Ahora considere un depredador que consume el 50% de esas presas por paso de tiempo. ¿Qué depredador es más <em>eficiente </em>?</p>
-<p><strong>P </strong> ¿Cuáles son las unidades de <em>alfa </em>? [Edmodo]</p>
-<p>Ahora, la tasa de crecimiento de la presa (instantánea) se puede definir mediante la siguiente ecuación:</p>
+<p>El término $ alpha $ también se conoce como <strong>eficiencia de
+captura </strong>. ¿Esto tiene sentido? Considere un caso en el que cada
+depredador “choca” con todas las presas en el paisaje en cada paso de
+tiempo, pero solo consume el 3% de esas presas. Ahora considere un
+depredador que consume el 50% de esas presas por paso de tiempo. ¿Qué
+depredador es más <em>eficiente </em>?</p>
+<p><strong>P </strong> ¿Cuáles son las unidades de <em>alfa </em>?
+[Edmodo]</p>
+<p>Ahora, la tasa de crecimiento de la presa (instantánea) se puede
+definir mediante la siguiente ecuación:</p>
 <p><span class="math inline">\(\Delta V = rV - \alpha VP\)</span></p>
-<p>En ausencia de depredadores, la población de presas crece exponencialmente. Sin embargo, con suficientes depredadores en el paisaje, la población disminuirá.</p>
-<p>Este modelo es la mitad de lo que se conoce como el modelo presa-depredador ** Lotka-Volterra **.</p>
-<p>¡La otra mitad es el modelo de crecimiento de la población de depredadores, por supuesto!</p>
+<p>En ausencia de depredadores, la población de presas crece
+exponencialmente. Sin embargo, con suficientes depredadores en el
+paisaje, la población disminuirá.</p>
+<p>Este modelo es la mitad de lo que se conoce como el modelo
+presa-depredador ** Lotka-Volterra **.</p>
+<p>¡La otra mitad es el modelo de crecimiento de la población de
+depredadores, por supuesto!</p>
 </div>
 <div id="los-depredadores" class="section level4">
 <h4>Los depredadores</h4>
-<p>En ausencia de presas, supongamos que la población de depredadores crece como podríamos imaginar que crece: ¡MALO!</p>
+<p>En ausencia de presas, supongamos que la población de depredadores
+crece como podríamos imaginar que crece: ¡MALO!</p>
 <p><span class="math inline">\(\Delta P = -qP\)</span></p>
-<p>En ausencia de presas, la población de depredadores disminuye exponencialmente.</p>
-<p>Si hay suficientes presas, la tasa de crecimiento de la población de los depredadores aumentará …</p>
-<p>Recuerde que (en este modelo simple) los depredadores y las presas caminan al azar a través de su entorno común, chocando entre sí al azar. Cada depredador consume un porcentaje fijo de la población de presas. Es decir, la respuesta funcional es:</p>
+<p>En ausencia de presas, la población de depredadores disminuye
+exponencialmente.</p>
+<p>Si hay suficientes presas, la tasa de crecimiento de la población de
+los depredadores aumentará …</p>
+<p>Recuerde que (en este modelo simple) los depredadores y las presas
+caminan al azar a través de su entorno común, chocando entre sí al azar.
+Cada depredador consume un porcentaje fijo de la población de presas. Es
+decir, la respuesta funcional es:</p>
 <p><span class="math inline">\(f(V) = \alpha V\)</span></p>
-<p>La <em>respuesta numérica </em> es el aumento en la tasa de crecimiento fraccional de <em>depredadores </em> por unidad de presa consumida. La respuesta numérica está relacionada con la respuesta funcional. Mientras que la respuesta funcional describe el consumo de presas por depredador, la respuesta numérica describe cómo ese consumo de presas se traduce en el crecimiento de la población de depredadores. <span class="math inline">\(g(V) = some.function(f(V))\)</span></p>
-<p>La respuesta numérica más simple es que el crecimiento de la población de depredadores aumenta como una función lineal del consumo de presas per cápita:</p>
-<p><span class="math inline">\(g(V) = \gamma (\alpha \cdot V)\)</span></p>
-<p>Donde $$ es la eficiencia de conversión y $ alpha $ es la eficiencia de captura y $ alphaV $ es la presa total consumida por depredador.</p>
+<p>La <em>respuesta numérica </em> es el aumento en la tasa de
+crecimiento fraccional de <em>depredadores </em> por unidad de presa
+consumida. La respuesta numérica está relacionada con la respuesta
+funcional. Mientras que la respuesta funcional describe el consumo de
+presas por depredador, la respuesta numérica describe cómo ese consumo
+de presas se traduce en el crecimiento de la población de depredadores.
+<span class="math inline">\(g(V) = some.function(f(V))\)</span></p>
+<p>La respuesta numérica más simple es que el crecimiento de la
+población de depredadores aumenta como una función lineal del consumo de
+presas per cápita:</p>
+<p><span class="math inline">\(g(V) = \gamma (\alpha \cdot
+V)\)</span></p>
+<p>Donde $$ es la eficiencia de conversión y $ alpha $ es la eficiencia
+de captura y $ alphaV $ es la presa total consumida por depredador.</p>
 <p>O, dicho de manera más simple:</p>
 <p><span class="math inline">\(g(V)=\beta \cdot V\)</span></p>
-<p><strong>P </strong> ¿cuál es la forma de la ** respuesta numérica ** en este caso?</p>
+<p><strong>P </strong> ¿cuál es la forma de la ** respuesta numérica **
+en este caso?</p>
 <pre class="r"><code>######
 # Numerical response
 
@@ -569,41 +652,86 @@ LVnumresp &lt;- function(V,beta){
 
 curve(LVnumresp(x,0.001),0,200,xlab=&quot;Victim abundance&quot;,ylab=&quot;Increase in r for predator population&quot;,col=&quot;blue&quot;,lwd=3)</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Tenga en cuenta la intersección: ¿la respuesta numérica debe tener una intersección de cero?</p>
-<p>El <em>aumento en el total de depredadores debido al consumo de presas</em> ahora es:</p>
-<p><span class="math inline">\(g(V) \cdot P = \beta V \cdot P\)</span></p>
+<p>Tenga en cuenta la intersección: ¿la respuesta numérica debe tener
+una intersección de cero?</p>
+<p>El <em>aumento en el total de depredadores debido al consumo de
+presas</em> ahora es:</p>
+<p><span class="math inline">\(g(V) \cdot P = \beta V \cdot
+P\)</span></p>
 <p>¿Esto tiene sentido?</p>
-<p>El término $ beta $ está relacionado con la <strong>eficiencia de conversión </strong> del depredador (cuán eficientemente el depredador convierte su alimento en la producción de nuevos depredadores). Considere un caso en el que cada depredador consume 100 presas por paso de tiempo ($ alpha V = 100 $), pero el crecimiento de la población de depredadores aumenta solo en 0.01 en relación con un escenario sin presas. Ahora considere un depredador que consume 1 presa por paso de tiempo, y el crecimiento aumenta en 0.1 … ¿Qué depredador es más <em>eficiente </em> para convertir la biomasa de presas en crecimiento de la población de depredadores (creando nuevos depredadores)?</p>
+<p>El término $ beta $ está relacionado con la <strong>eficiencia de
+conversión </strong> del depredador (cuán eficientemente el depredador
+convierte su alimento en la producción de nuevos depredadores).
+Considere un caso en el que cada depredador consume 100 presas por paso
+de tiempo ($ alpha V = 100 $), pero el crecimiento de la población de
+depredadores aumenta solo en 0.01 en relación con un escenario sin
+presas. Ahora considere un depredador que consume 1 presa por paso de
+tiempo, y el crecimiento aumenta en 0.1 … ¿Qué depredador es más
+<em>eficiente </em> para convertir la biomasa de presas en crecimiento
+de la población de depredadores (creando nuevos depredadores)?</p>
 <p>** P ** ¿Cuáles son las unidades de * beta *?</p>
-<p>Ahora, la tasa de crecimiento (instantánea) del DEPREDADOR se puede definir mediante la siguiente ecuación:</p>
+<p>Ahora, la tasa de crecimiento (instantánea) del DEPREDADOR se puede
+definir mediante la siguiente ecuación:</p>
 <p><span class="math inline">\(\Delta P = \beta VP - qP\)</span></p>
-<p>Este modelo es la otra mitad de lo que se conoce como el modelo presa-depredador <strong>Lotka-Volterra </strong>.</p>
-<p>Tomados en conjunto, el modelo se puede describir de la siguiente manera:</p>
+<p>Este modelo es la otra mitad de lo que se conoce como el modelo
+presa-depredador <strong>Lotka-Volterra </strong>.</p>
+<p>Tomados en conjunto, el modelo se puede describir de la siguiente
+manera:</p>
 <p><span class="math inline">\(\Delta P = \beta VP - qP\)</span></p>
 <p><span class="math inline">\(\Delta V = rV - \alpha VP\)</span></p>
 </div>
 </div>
-<div id="l-v-modelo-de-depredación-en-insightmaker" class="section level3">
+<div id="l-v-modelo-de-depredación-en-insightmaker"
+class="section level3">
 <h3>L-V modelo de depredación en InsightMaker</h3>
-<p>Antes de profundizar en el modelo de depredación, simulemos el crecimiento de la población de presas y depredadores bajo el modelo de depredación L-V.</p>
-<p><strong>Step 1</strong>: Primero, clonar <a href="https://insightmaker.com/insight/78356/Base-prey-predator-model">this Insight</a>, que proporciona el esqueleto para un modelo básico de presa-depredador</p>
-<p><strong>Step 2</strong>: Configure correctamente las ecuaciones para las variables “respuesta funcional” “y” respuesta numérica “.</p>
-<p><strong>Step 3</strong>: Configure correctamente las ecuaciones de flujo para “presa total consumida” y “crecimiento de depredadores”, que se refieren a la presa perdida y los depredadores ganados por paso de tiempo, respectivamente.</p>
-<p><strong>Step 4</strong>: En el menú de configuración, cambie la duración de la simulación a 200 y asegúrese de que su algoritmo de análisis esté configurado en “Preciso (RK4)” (esto hace que InsightMaker se comporte más como un modelo de crecimiento continuo).</p>
-<p><strong>Step 5</strong>: Establezca la abundancia inicial de presas y depredadores en 100 y 50, respectivamente. Establezca los términos alfa y beta en 0,001 y establezca los términos r_prey y q_pred en 0,1. Ejecute el modelo y visualice la serie temporal de presas y depredadores.</p>
-<p><strong>Step 6</strong>: Agregue una nueva pantalla para representar el <strong>plano de fase</strong>: Elija el tipo de “diagrama de dispersión”, y en “Datos” seleccione <em>Prey </em> primero, luego <em>Predator </em>. ¿Cómo se ve este sistema en el plano de fase?</p>
-<p><strong>P </strong> ¿Qué sucede si cambia las abundancias iniciales?</p>
-<p><strong>P </strong> ¿Qué sucede si cambia la abundancia inicial de ambas especies a 100? ¿Es esto un <strong>equilibrio </strong>? Si es así, ¿es <strong>estable </strong>?</p>
-<p><strong>Step 7 </strong>: Pruebe otros valores de parámetros para alfa, beta, r y q …</p>
-<p><strong>P </strong> ¿Se extingue alguna vez la presa o el depredador?</p>
-<p><strong>P </strong> ¿Puede encontrar algunos ajustes que produzcan oscilaciones muy lentas?</p>
-<p><strong>P </strong> ¿Puede encontrar algunos ajustes que produzcan oscilaciones muy rápidas?</p>
-<p><strong>P </strong> ¿Puede encontrar algunos ajustes que produzcan oscilaciones muy superficiales?</p>
+<p>Antes de profundizar en el modelo de depredación, simulemos el
+crecimiento de la población de presas y depredadores bajo el modelo de
+depredación L-V.</p>
+<p><strong>Step 1</strong>: Primero, clonar <a
+href="https://insightmaker.com/insight/78356/Base-prey-predator-model">this
+Insight</a>, que proporciona el esqueleto para un modelo básico de
+presa-depredador</p>
+<p><strong>Step 2</strong>: Configure correctamente las ecuaciones para
+las variables “respuesta funcional” “y” respuesta numérica “.</p>
+<p><strong>Step 3</strong>: Configure correctamente las ecuaciones de
+flujo para “presa total consumida” y “crecimiento de depredadores”, que
+se refieren a la presa perdida y los depredadores ganados por paso de
+tiempo, respectivamente.</p>
+<p><strong>Step 4</strong>: En el menú de configuración, cambie la
+duración de la simulación a 200 y asegúrese de que su algoritmo de
+análisis esté configurado en “Preciso (RK4)” (esto hace que InsightMaker
+se comporte más como un modelo de crecimiento continuo).</p>
+<p><strong>Step 5</strong>: Establezca la abundancia inicial de presas y
+depredadores en 100 y 50, respectivamente. Establezca los términos alfa
+y beta en 0,001 y establezca los términos r_prey y q_pred en 0,1.
+Ejecute el modelo y visualice la serie temporal de presas y
+depredadores.</p>
+<p><strong>Step 6</strong>: Agregue una nueva pantalla para representar
+el <strong>plano de fase</strong>: Elija el tipo de “diagrama de
+dispersión”, y en “Datos” seleccione <em>Prey </em> primero, luego
+<em>Predator </em>. ¿Cómo se ve este sistema en el plano de fase?</p>
+<p><strong>P </strong> ¿Qué sucede si cambia las abundancias
+iniciales?</p>
+<p><strong>P </strong> ¿Qué sucede si cambia la abundancia inicial de
+ambas especies a 100? ¿Es esto un <strong>equilibrio </strong>? Si es
+así, ¿es <strong>estable </strong>?</p>
+<p><strong>Step 7 </strong>: Pruebe otros valores de parámetros para
+alfa, beta, r y q …</p>
+<p><strong>P </strong> ¿Se extingue alguna vez la presa o el
+depredador?</p>
+<p><strong>P </strong> ¿Puede encontrar algunos ajustes que produzcan
+oscilaciones muy lentas?</p>
+<p><strong>P </strong> ¿Puede encontrar algunos ajustes que produzcan
+oscilaciones muy rápidas?</p>
+<p><strong>P </strong> ¿Puede encontrar algunos ajustes que produzcan
+oscilaciones muy superficiales?</p>
 </div>
 </div>
-<div id="modelos-prey-depredator-en-el-plano-de-fase" class="section level2">
+<div id="modelos-prey-depredator-en-el-plano-de-fase"
+class="section level2">
 <h2>¡Modelos Prey-depredator en el plano de fase!</h2>
-<p>Si desea seguir en R, haga clic en <a href="LECTURE17.R">here</a> para el script R!</p>
+<p>Si desea seguir en R, haga clic en <a href="LECTURE17.R">here</a>
+para el script R!</p>
 <pre class="r"><code>##### LOTKA VOLTERRA PREDATION EXAMPLE (on phase plane)
 
 ## Params
@@ -629,12 +757,15 @@ doYear &lt;- function(prevyear){
 for(i in 1:(Nyears*10+1)){
   System[1+i,] &lt;- doYear(System[i,])
 }</code></pre>
-<p>Ahora visualicemos este sistema básico L-V en <em>espacio de fase/Phase Plane</em>:</p>
+<p>Ahora visualicemos este sistema básico L-V en <em>espacio de
+fase/Phase Plane</em>:</p>
 <pre class="r"><code>plot(1,1,pch=&quot;&quot;,ylim=c(0,200),xlim=c(0,200),xlab=&quot;prey&quot;,ylab=&quot;predators&quot;)
 points(System[seq(1,1000,10),],col=&quot;green&quot;,type=&quot;p&quot;,pch=20,cex=0.85)
 points(System[1,],col=&quot;blue&quot;,pch=20,cex=3)</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>De acuerdo, a medida que las presas se vuelven más abundantes, los depredadores comienzan a aumentar, pero a medida que aumentan los depredadores, la abundancia de presas disminuye. ¡Y repetir!</p>
+<p>De acuerdo, a medida que las presas se vuelven más abundantes, los
+depredadores comienzan a aumentar, pero a medida que aumentan los
+depredadores, la abundancia de presas disminuye. ¡Y repetir!</p>
 <p>Aquí hay otro ejemplo …</p>
 <pre class="r"><code>##### LOTKA VOLTERRA PREDATION EXAMPLE
 
@@ -667,13 +798,17 @@ plot(1,1,pch=&quot;&quot;,ylim=c(0,200),xlim=c(0,200),xlab=&quot;prey&quot;,ylab
 points(System[seq(1,1000,10),],col=&quot;green&quot;,type=&quot;p&quot;,pch=20,cex=0.85)
 points(System[1,],col=&quot;blue&quot;,pch=20,cex=3)</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Con algo de <em>jittering</em> podemos visualizar la cantidad de tiempo que el sistema pasa en varias partes del espacio de fase …</p>
+<p>Con algo de <em>jittering</em> podemos visualizar la cantidad de
+tiempo que el sistema pasa en varias partes del espacio de fase …</p>
 <pre class="r"><code>plot(1,1,pch=&quot;&quot;,ylim=c(0,200),xlim=c(0,200),xlab=&quot;Prey&quot;,ylab=&quot;Predators&quot;)
 points(jitter(System[,1],200),jitter(System[,2],200),col=&quot;brown&quot;,pch=20,cex=0.3)</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>#abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)</code></pre>
-<p>¡Puede ver que este sistema pasa mucho más tiempo cerca del origen, donde las abundancias son bajas tanto para las presas como para los depredadores!</p>
-<p>Finalmente, consideremos múltiples puntos de partida y veamos cómo se comporta el sistema.</p>
+<p>¡Puede ver que este sistema pasa mucho más tiempo cerca del origen,
+donde las abundancias son bajas tanto para las presas como para los
+depredadores!</p>
+<p>Finalmente, consideremos múltiples puntos de partida y veamos cómo se
+comporta el sistema.</p>
 <pre class="r"><code>##### LOTKA VOLTERRA PREDATION EXAMPLE
 
 ## Params
@@ -703,7 +838,8 @@ System3 &lt;- data.frame(n1 = rep(InitN1,(Nyears*10+1)),n2 = InitN2)
 for(i in 1:(Nyears*10+1)){
   System3[1+i,] &lt;- doYear(System3[i,])
 }</code></pre>
-<p>Ahora, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:</p>
+<p>Ahora, el espacio de fase se ve así (con jittering para indicar la
+concentración de puntos:</p>
 <pre class="r"><code>plot(1,1,pch=&quot;&quot;,ylim=c(0,400),xlim=c(0,400),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(jitter(System[,1],500),jitter(System[,2],500),col=&quot;brown&quot;,pch=20,cex=0.3)
 points(jitter(System1[,1],500),jitter(System1[,2],500),col=&quot;green&quot;,pch=20,cex=0.3)
@@ -711,9 +847,12 @@ points(jitter(System2[,1],500),jitter(System2[,2],500),col=&quot;red&quot;,pch=2
 points(jitter(System3[,1],500),jitter(System3[,2],500),col=&quot;blue&quot;,pch=20,cex=0.3)</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <pre class="r"><code>#abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)</code></pre>
-<p><strong>P </strong>: ¿Tiene este sistema depredador-presa un equilibrio estable?</p>
-<p><strong>P </strong>: ¿Este sistema depredador-presa tiene un equilibrio?</p>
-<p><strong>P </strong>: ¿Cómo se ven estas dinámicas cuando se visualizan como series de tiempo?</p>
+<p><strong>P </strong>: ¿Tiene este sistema depredador-presa un
+equilibrio estable?</p>
+<p><strong>P </strong>: ¿Este sistema depredador-presa tiene un
+equilibrio?</p>
+<p><strong>P </strong>: ¿Cómo se ven estas dinámicas cuando se
+visualizan como series de tiempo?</p>
 <pre class="r"><code>plot(seq(1,100,length=nrow(System)), System[,1], xlab=&quot;Time&quot;, ylab=&quot;Abundance&quot;,type=&quot;l&quot;,col=&quot;orange&quot;,lwd=2,ylim=c(0,160),xlim=c(0,95))
 points(seq(1,100,length=nrow(System)), System[,2], xlab=&quot;Time&quot;, ylab=&quot;Abundance&quot;,type=&quot;l&quot;,col=&quot;green&quot;,lwd=2,lty=2)
 legend(&quot;top&quot;,lwd=c(2,2),lty=c(1,2),col=c(&quot;orange&quot;,&quot;green&quot;),legend=c(&quot;prey&quot;,&quot;predator&quot;),bty=&quot;n&quot;)</code></pre>
@@ -721,7 +860,9 @@ legend(&quot;top&quot;,lwd=c(2,2),lty=c(1,2),col=c(&quot;orange&quot;,&quot;gree
 <div id="section" class="section level3">
 <h3></h3>
 <p>¡Más con el espacio de fase L-V depredador-presa!</p>
-<p>Al igual que antes, dibujemos flechas a lo largo del espacio de fase, que representan a dónde se espera que vaya el sistema desde cada punto en el espacio de fase.</p>
+<p>Al igual que antes, dibujemos flechas a lo largo del espacio de fase,
+que representan a dónde se espera que vaya el sistema desde cada punto
+en el espacio de fase.</p>
 <pre class="r"><code>#######################################################################################
 ## SPECIFY MODEL AND INITIALIZE
 #
@@ -763,13 +904,22 @@ phasearrows.draw(new)</code></pre>
 </div>
 <div id="isoclines" class="section level3">
 <h3>Isoclines!</h3>
-<p>Una vez más, puede ser útil trazar las isoclinas en el espacio de fase, es decir, las condiciones en las que las poblaciones de depredadores y presas NO crecen.</p>
-<p>Si establecemos la ecuación de crecimiento de presas L-V en cero, encontramos que la población de víctimas es estable bajo las siguientes condiciones en el espacio de fase:</p>
+<p>Una vez más, puede ser útil trazar las isoclinas en el espacio de
+fase, es decir, las condiciones en las que las poblaciones de
+depredadores y presas NO crecen.</p>
+<p>Si establecemos la ecuación de crecimiento de presas L-V en cero,
+encontramos que la población de víctimas es estable bajo las siguientes
+condiciones en el espacio de fase:</p>
 <p><span class="math inline">\(\hat{P} =\frac{r}{\alpha}\)</span></p>
-<p>Si establecemos la ecuación del depredador L-V en cero, encontramos que la población de depredadores es estable en las siguientes condiciones en el espacio de fase:</p>
+<p>Si establecemos la ecuación del depredador L-V en cero, encontramos
+que la población de depredadores es estable en las siguientes
+condiciones en el espacio de fase:</p>
 <p><span class="math inline">\(\hat{V} =\frac{q}{\beta}\)</span></p>
-<p>Es decir, la población de presas es estable solo si hay suficientes depredadores para chocar (y luego devorar) cualquier exceso de individuos producidos cada año.</p>
-<p>Y la población de depredadores es estable solo si hay presas suficientes para compensar la mortalidad natural.</p>
+<p>Es decir, la población de presas es estable solo si hay suficientes
+depredadores para chocar (y luego devorar) cualquier exceso de
+individuos producidos cada año.</p>
+<p>Y la población de depredadores es estable solo si hay presas
+suficientes para compensar la mortalidad natural.</p>
 <p>Visualicemos esto en el espacio de fase.</p>
 <pre class="r"><code>plot(1,1,pch=&quot;&quot;,xlim=xlim,ylim=ylim,xlab=&quot;Prey&quot;,ylab=&quot;Predators&quot;)
 phasearrows.draw(new)
@@ -778,17 +928,20 @@ abline(v=q/Beta,col=&quot;blue&quot;,lwd=3)   # pred</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 </div>
-<div id="supuestos-del-modelo-l-v-presa-depredador" class="section level2">
+<div id="supuestos-del-modelo-l-v-presa-depredador"
+class="section level2">
 <h2>Supuestos del modelo L-V presa-depredador</h2>
 <ul>
 <li>La población de víctimas está regulada solo por la depredación</li>
 <li>El depredador se alimenta solo de una especie de presa</li>
-<li>Los depredadores individuales pueden consumir presas infinitas por paso de tiempo teóricamente</li>
+<li>Los depredadores individuales pueden consumir presas infinitas por
+paso de tiempo teóricamente</li>
 <li>Sin interferencia entre depredadores</li>
 <li>Las víctimas no tienen refugio de los depredadores.</li>
 </ul>
 </div>
-<div id="modelos-de-presa-depredador-más-realistas" class="section level2">
+<div id="modelos-de-presa-depredador-más-realistas"
+class="section level2">
 <h2>Modelos de presa-depredador más realistas</h2>
 <p>¡Veamos qué pasa si relajamos algunas de estas suposiciones!</p>
 <ul>
@@ -797,7 +950,9 @@ abline(v=q/Beta,col=&quot;blue&quot;,lwd=3)   # pred</code></pre>
 <li>¡Agrega un refugio para las presas!</li>
 <li>¡Agregue una capacidad de carga de depredadores!</li>
 </ul>
-<p>Podemos jugar con estos escenarios en InsightMaker. Pero puede ser instructivo visualizar primero en el espacio de fase. Por ejemplo, incorporemos una capacidad de carga para víctimas.</p>
+<p>Podemos jugar con estos escenarios en InsightMaker. Pero puede ser
+instructivo visualizar primero en el espacio de fase. Por ejemplo,
+incorporemos una capacidad de carga para víctimas.</p>
 <div id="víctima-k-en-el-espacio-de-fase" class="section level3">
 <h3>Víctima K en el espacio de fase</h3>
 <pre class="r"><code>#######################################################################################
@@ -847,7 +1002,8 @@ phasearrows.draw(new)</code></pre>
 <pre class="r"><code>abline((r/Alpha),-(c/Alpha),col=&quot;red&quot;,lwd=3)   # prey
 abline(v=q/Beta,col=&quot;blue&quot;,lwd=3)   # pred</code></pre>
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p>Follow the arrows. What do you think the system dynamics will look like?</p>
+<p>Follow the arrows. What do you think the system dynamics will look
+like?</p>
 <pre class="r"><code>## Params
 
 Alpha &lt;- 0.001
@@ -923,9 +1079,15 @@ legend(&quot;top&quot;,lwd=c(2,2),lty=c(1,2),col=c(&quot;orange&quot;,&quot;gree
 </div>
 <div id="respuestas-funcionales-alternativas" class="section level3">
 <h3>Respuestas funcionales alternativas</h3>
-<p>El modelo L-V presa-depredador asume que el consumo de presas por depredador aumenta linealmente con un aumento en la abundancia de presas. Siguiendo a C.S. “Buzz” Holling, esto se conoce como una <strong>respuesta funcional “Tipo I” </strong>.</p>
-<p>La respuesta funcional de Tipo I hace varias suposiciones poco realistas, por ejemplo, ¡que los depredadores nunca se llenan y dejan de comer!</p>
-<p>Como hemos visto antes, ¡la respuesta funcional de tipo I se parece a esto!</p>
+<p>El modelo L-V presa-depredador asume que el consumo de presas por
+depredador aumenta linealmente con un aumento en la abundancia de
+presas. Siguiendo a C.S. “Buzz” Holling, esto se conoce como una
+<strong>respuesta funcional “Tipo I” </strong>.</p>
+<p>La respuesta funcional de Tipo I hace varias suposiciones poco
+realistas, por ejemplo, ¡que los depredadores nunca se llenan y dejan de
+comer!</p>
+<p>Como hemos visto antes, ¡la respuesta funcional de tipo I se parece a
+esto!</p>
 <p><span class="math inline">\(f(V)=\alpha \cdot V\)</span></p>
 <pre class="r"><code>TypeIfuncresp &lt;- function(V,alpha){
   alpha*V
@@ -935,13 +1097,22 @@ curve(TypeIfuncresp(x,0.1),0,500,xlab=&quot;Victim abundance&quot;,ylab=&quot;To
 <p><img src="LECTURE17_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <div id="type-ii-functional-response" class="section level4">
 <h4>Type II functional response</h4>
-<p>La <strong>respuesta funcional Tipo II </strong> toma en cuenta la saturación de presas: los depredadores consumirán más presas con densidades de presas crecientes, ¡pero solo hasta cierto punto!</p>
-<p>La respuesta funcional de tipo II se describe matemáticamente como:</p>
-<p><span class="math inline">\(f(V,P) = \frac{\alpha V}{1+\alpha hV}\)</span>,</p>
-<p>donde * f (V, P) * es la respuesta funcional (presa consumida por depredador).</p>
-<p>Similar a la respuesta funcional de Tipo I, $ alpha $ es la “tasa de ataque” (tasa a la que los encuentros depredador-presa aumentan a medida que aumentan las densidades de presas)</p>
-<p>El nuevo término, <em>h </em>, describe el tiempo de manipulación (tiempo promedio que un depredador pasa procesando una sola presa).</p>
-<p>¡El término <em>h </em> probablemente se entiende mejor como <em>inverso de la tasa máxima de consumo de presas </em>!</p>
+<p>La <strong>respuesta funcional Tipo II </strong> toma en cuenta la
+saturación de presas: los depredadores consumirán más presas con
+densidades de presas crecientes, ¡pero solo hasta cierto punto!</p>
+<p>La respuesta funcional de tipo II se describe matemáticamente
+como:</p>
+<p><span class="math inline">\(f(V,P) = \frac{\alpha V}{1+\alpha
+hV}\)</span>,</p>
+<p>donde * f (V, P) * es la respuesta funcional (presa consumida por
+depredador).</p>
+<p>Similar a la respuesta funcional de Tipo I, $ alpha $ es la “tasa de
+ataque” (tasa a la que los encuentros depredador-presa aumentan a medida
+que aumentan las densidades de presas)</p>
+<p>El nuevo término, <em>h </em>, describe el tiempo de manipulación
+(tiempo promedio que un depredador pasa procesando una sola presa).</p>
+<p>¡El término <em>h </em> probablemente se entiende mejor como
+<em>inverso de la tasa máxima de consumo de presas </em>!</p>
 <p>¡Visualicémoslo!</p>
 <pre class="r"><code>TypeIIfuncresp &lt;- function(V,alpha,h){
   (alpha*V)/(1+alpha*h*V)
@@ -952,14 +1123,28 @@ curve(TypeIIfuncresp(x,0.1,0.1),0,500,xlab=&quot;Victim abundance&quot;,ylab=&qu
 </div>
 <div id="type-iii-functional-response" class="section level4">
 <h4>Type III functional response</h4>
-<p>La <strong>respuesta funcional Tipo III </strong> toma en cuenta el aprendizaje de los depredadores: a medida que las presas se vuelven más abundantes (en relación con otras presas potenciales), los depredadores desarrollarán una * imagen de búsqueda * y la eficiencia de captura aumentará con el aumento de la abundancia de presas hasta un cierto punto.</p>
-<p>Por el contrario, a medida que la densidad de presas sea realmente baja, los depredadores dejarán de molestarse en buscar a la presa, por lo que la eficiencia de captura disminuirá.</p>
-<p>La respuesta funcional de tipo III se puede describir matemáticamente como:</p>
-<p><span class="math inline">\(f(V,P) = \frac{\alpha V}{1+\alpha hV}\)</span>,</p>
-<p>donde * f (V, P) * es la respuesta funcional (presa consumida por depredador).</p>
-<p>Similar a la respuesta funcional de Tipo I, $ alpha $ es la “tasa de ataque” (la tasa a la que un depredador-presa se encuentra aumenta a medida que aumenta la densidad de presas)</p>
-<p>El nuevo término, * h *, describe el tiempo de manipulación (tiempo promedio que un depredador pasa procesando una sola presa).</p>
-<p>¡El término h * probablemente se entiende mejor como <em>inverso de la tasa máxima de consumo de presas </em>!</p>
+<p>La <strong>respuesta funcional Tipo III </strong> toma en cuenta el
+aprendizaje de los depredadores: a medida que las presas se vuelven más
+abundantes (en relación con otras presas potenciales), los depredadores
+desarrollarán una * imagen de búsqueda * y la eficiencia de captura
+aumentará con el aumento de la abundancia de presas hasta un cierto
+punto.</p>
+<p>Por el contrario, a medida que la densidad de presas sea realmente
+baja, los depredadores dejarán de molestarse en buscar a la presa, por
+lo que la eficiencia de captura disminuirá.</p>
+<p>La respuesta funcional de tipo III se puede describir matemáticamente
+como:</p>
+<p><span class="math inline">\(f(V,P) = \frac{\alpha V}{1+\alpha
+hV}\)</span>,</p>
+<p>donde * f (V, P) * es la respuesta funcional (presa consumida por
+depredador).</p>
+<p>Similar a la respuesta funcional de Tipo I, $ alpha $ es la “tasa de
+ataque” (la tasa a la que un depredador-presa se encuentra aumenta a
+medida que aumenta la densidad de presas)</p>
+<p>El nuevo término, * h *, describe el tiempo de manipulación (tiempo
+promedio que un depredador pasa procesando una sola presa).</p>
+<p>¡El término h * probablemente se entiende mejor como <em>inverso de
+la tasa máxima de consumo de presas </em>!</p>
 <p>¡Visualicémoslo!</p>
 <pre class="r"><code>TypeIIIfuncresp &lt;- function(V,alpha,h,k){
   (alpha*V^k)/(1+alpha*h*V^k)
@@ -970,15 +1155,33 @@ curve(TypeIIIfuncresp(x,0.0005,0.1,1.6),0,1000,xlab=&quot;Victim abundance&quot;
 </div>
 </div>
 </div>
-<div id="final-insightmaker-activity-on-your-own" class="section level2">
+<div id="final-insightmaker-activity-on-your-own"
+class="section level2">
 <h2>Final InsightMaker activity (on your own)!!</h2>
-<p><strong>Paso 1 </strong> Agregue la dependencia de la densidad de presas a su modelo básico de depredador-presa, utilizando su conocimiento de modelado de la dependencia de la densidad (o simplemente use las ecuaciones del capítulo 6 del libro de Gotelli). Visualice la dinámica como series de tiempo y en espacio de fase. ¿Alguna vez ha visto oscilaciones con dependencia de la densidad de presas? ¿Es este modelo más estable que el modelo base L-V?</p>
-<p><strong>Paso 2 </strong> Cambie la respuesta funcional a una respuesta funcional de tipo II. Visualice la dinámica como series de tiempo y en espacio de fase. ¿Alguna vez ha visto oscilaciones con este modelo? ¿Es este modelo más estable que el modelo base L-V?</p>
-<p><strong>Paso 3 </strong> Cambie el modelo para tener en cuenta los refugios de presas. Es decir, hay un segmento de la población de presas que no es accesible para los depredadores. ¿Cómo cambia esto la dinámica del sistema?</p>
-<p><strong>Paso 4 </strong> Cambiar el modelo para incluir una respuesta funcional de tipo II Y dependencia de la densidad de presas. ¿Cómo cambia esto la dinámica del sistema? ¿Es este sistema estable? ¿Bajo que condiciones?</p>
-<p><strong>Paso 5 </strong> Evalúe la siguiente declaración (del Libro de Gotelli):</p>
+<p><strong>Paso 1 </strong> Agregue la dependencia de la densidad de
+presas a su modelo básico de depredador-presa, utilizando su
+conocimiento de modelado de la dependencia de la densidad (o simplemente
+use las ecuaciones del capítulo 6 del libro de Gotelli). Visualice la
+dinámica como series de tiempo y en espacio de fase. ¿Alguna vez ha
+visto oscilaciones con dependencia de la densidad de presas? ¿Es este
+modelo más estable que el modelo base L-V?</p>
+<p><strong>Paso 2 </strong> Cambie la respuesta funcional a una
+respuesta funcional de tipo II. Visualice la dinámica como series de
+tiempo y en espacio de fase. ¿Alguna vez ha visto oscilaciones con este
+modelo? ¿Es este modelo más estable que el modelo base L-V?</p>
+<p><strong>Paso 3 </strong> Cambie el modelo para tener en cuenta los
+refugios de presas. Es decir, hay un segmento de la población de presas
+que no es accesible para los depredadores. ¿Cómo cambia esto la dinámica
+del sistema?</p>
+<p><strong>Paso 4 </strong> Cambiar el modelo para incluir una respuesta
+funcional de tipo II Y dependencia de la densidad de presas. ¿Cómo
+cambia esto la dinámica del sistema? ¿Es este sistema estable? ¿Bajo que
+condiciones?</p>
+<p><strong>Paso 5 </strong> Evalúe la siguiente declaración (del Libro
+de Gotelli):</p>
 <blockquote>
-<p>“Cuanto más independientes sean el depredador y la presa, más estable será la interacción”</p>
+<p>“Cuanto más independientes sean el depredador y la presa, más estable
+será la interacción”</p>
 </blockquote>
 <p><a href="LECTURE18.html">–go to next lecture–</a></p>
 </div>

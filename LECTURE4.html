@@ -14,7 +14,7 @@
 
 <title>Regulación de Poblaciones</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -486,42 +490,101 @@ div.tocify {
 
 <div id="qué-es-la-densidad-denpendiente-d-d" class="section level2">
 <h2>¿Qué es la densidad denpendiente (D-D)?</h2>
-<p>La semana pasada pasamos por las matemáticas del crecimiento exponencial. Esta semana exploraremos modelos básicos de <strong>dependencia de la densidad</strong>. El crecimiento exponencial, como ha visto, conduce a la locura. No es sostenible. Como señaló Malthus, los recursos son finitos y, tarde o temprano, las poblaciones en crecimiento exponencial encontrarán sus límites.</p>
-<p><strong>Densidad </strong>: En D-D, * densidad * se refiere básicamente al número de individuos con los que estás compitiendo por alimentos y otros recursos. ¡Cuanto más compita con otros de su propia especie, menos favorables serán sus <strong>tasas vitale </strong> (por ejemplo, tasa de mortalidad per cápita, <em>d</em>, aumentos o tasa de natalidad per cápita, <em>b</em>, disminuciones)! A medida que sube <em>N</em>, las tasas vitales empeoran.</p>
+<p>La semana pasada pasamos por las matemáticas del crecimiento
+exponencial. Esta semana exploraremos modelos básicos de
+<strong>dependencia de la densidad</strong>. El crecimiento exponencial,
+como ha visto, conduce a la locura. No es sostenible. Como señaló
+Malthus, los recursos son finitos y, tarde o temprano, las poblaciones
+en crecimiento exponencial encontrarán sus límites.</p>
+<p><strong>Densidad </strong>: En D-D, * densidad * se refiere
+básicamente al número de individuos con los que estás compitiendo por
+alimentos y otros recursos. ¡Cuanto más compita con otros de su propia
+especie, menos favorables serán sus <strong>tasas vitale </strong> (por
+ejemplo, tasa de mortalidad per cápita, <em>d</em>, aumentos o tasa de
+natalidad per cápita, <em>b</em>, disminuciones)! A medida que sube
+<em>N</em>, las tasas vitales empeoran.</p>
 </div>
 <div id="regulación" class="section level2">
 <h2>Regulación!</h2>
-<p>En primer lugar, mencionamos en nuestra discusión sobre ecología de sistemas que las retroalimentaciones positivas no son sostenibles, porque los aumentos significan aumentos más rápidos, significan aumentos más rápidos, etc. (un círculo vicioso). La dependencia de la densidad es un tipo de retroalimentación, pero NO es una retroalimentación positiva. Así es, ¡es un <em>comentario negativo</em>! Lo que también se conoce como <em>retroalimentación estabilizadora</em>. Como discutimos antes, las retroalimentaciones negativas son esenciales para sistemas bien regulados. Recuerde el ejemplo de la homeostasis en la biología de los organismos. Si el nivel de azúcar en sangre sube, el cuerpo trabajará para reducirlo y viceversa.</p>
-<p>Lo mismo ocurre con las poblaciones. En una población regulada, un aumento en la abundancia provocará una disminución en la tasa de crecimiento de la población y una disminución en la abundancia provocará un aumento en la tasa de crecimiento de la población. En ecología de poblaciones (y especialmente en ciencias pesqueras), esta última a menudo se denomina <em>crecimiento compensatorio</em>. No se puede tener una población regulada sin algún tipo de retroalimentación negativa.</p>
-<p><strong>Q</strong>: ¿Cuáles son algunos posibles mecanismos de dependencia de la densidad? Es decir, ¿por qué las tasas vitales podrían volverse menos favorables a densidades más altas?</p>
-<p><strong>Q</strong>: ¿Están reguladas todas las poblaciones silvestres? ¿Es la regulación de la población dependiente de la densidad una “ley de la naturaleza”?</p>
+<p>En primer lugar, mencionamos en nuestra discusión sobre ecología de
+sistemas que las retroalimentaciones positivas no son sostenibles,
+porque los aumentos significan aumentos más rápidos, significan aumentos
+más rápidos, etc. (un círculo vicioso). La dependencia de la densidad es
+un tipo de retroalimentación, pero NO es una retroalimentación positiva.
+Así es, ¡es un <em>comentario negativo</em>! Lo que también se conoce
+como <em>retroalimentación estabilizadora</em>. Como discutimos antes,
+las retroalimentaciones negativas son esenciales para sistemas bien
+regulados. Recuerde el ejemplo de la homeostasis en la biología de los
+organismos. Si el nivel de azúcar en sangre sube, el cuerpo trabajará
+para reducirlo y viceversa.</p>
+<p>Lo mismo ocurre con las poblaciones. En una población regulada, un
+aumento en la abundancia provocará una disminución en la tasa de
+crecimiento de la población y una disminución en la abundancia provocará
+un aumento en la tasa de crecimiento de la población. En ecología de
+poblaciones (y especialmente en ciencias pesqueras), esta última a
+menudo se denomina <em>crecimiento compensatorio</em>. No se puede tener
+una población regulada sin algún tipo de retroalimentación negativa.</p>
+<p><strong>Q</strong>: ¿Cuáles son algunos posibles mecanismos de
+dependencia de la densidad? Es decir, ¿por qué las tasas vitales podrían
+volverse menos favorables a densidades más altas?</p>
+<p><strong>Q</strong>: ¿Están reguladas todas las poblaciones
+silvestres? ¿Es la regulación de la población dependiente de la densidad
+una “ley de la naturaleza”?</p>
 </div>
 <div id="logistic-growth" class="section level2">
 <h2>Logistic growth</h2>
-<p>El crecimiento logístico se puede describir matemáticamente mediante la siguiente ecuación:</p>
-<p><span class="math inline">\(\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K} \right )\)</span></p>
-<p>Esta es probablemente la <em>segunda ecología más importante de la ecología de la población</em> (¡después del crecimiento exponencial básico!).</p>
-<p>Entraremos en más detalles en el laboratorio, pero analicemos un poco esta ecuación.</p>
+<p>El crecimiento logístico se puede describir matemáticamente mediante
+la siguiente ecuación:</p>
+<p><span class="math inline">\(\Delta N = r \cdot N_t \cdot \left ( 1 -
+\frac{N}{K} \right )\)</span></p>
+<p>Esta es probablemente la <em>segunda ecología más importante de la
+ecología de la población</em> (¡después del crecimiento exponencial
+básico!).</p>
+<p>Entraremos en más detalles en el laboratorio, pero analicemos un poco
+esta ecuación.</p>
 <p>La primera parte de esta ecuación parece familiar, ¿verdad?</p>
 <p><span class="math inline">\(\Delta N = r \cdot N_t\)</span></p>
 <p>¿Qué pasa con la segunda parte?</p>
-<p><span class="math inline">\(\left ( 1 - \frac{N}{K} \right )\)</span></p>
-<p>Puede pensar en <span class="math inline">\(\frac{N}{K}\)</span> como la <em>porción utilizada de la capacidad de accereo</em></p>
-<p>Del mismo modo, puedes pensar en <span class="math inline">\(\left ( 1 - \frac{N}{K} \right )\)</span> como la <em>porción no utilizada de la capacidad de carga</em></p>
-<p>Cuando la capacidad de carga no se utiliza en su mayor parte, <em>el crecimiento de la población se parece al crecimiento exponencial básico</em>!</p>
-<p>Cuando la capacidad de carga se agota en su mayor parte, <em>el crecimiento de la población se parece</em>, bueno …, <em>no hay crecimiento en absoluto</em>!</p>
-<p><strong>Q:</strong> Dadas las dos afirmaciones anteriores, ¿puede averiguar cómo debería ser la dinámica de la población con un crecimiento logístico, comenzando con una población muy pequeña?</p>
+<p><span class="math inline">\(\left ( 1 - \frac{N}{K} \right
+)\)</span></p>
+<p>Puede pensar en <span class="math inline">\(\frac{N}{K}\)</span> como
+la <em>porción utilizada de la capacidad de accereo</em></p>
+<p>Del mismo modo, puedes pensar en <span class="math inline">\(\left (
+1 - \frac{N}{K} \right )\)</span> como la <em>porción no utilizada de la
+capacidad de carga</em></p>
+<p>Cuando la capacidad de carga no se utiliza en su mayor parte, <em>el
+crecimiento de la población se parece al crecimiento exponencial
+básico</em>!</p>
+<p>Cuando la capacidad de carga se agota en su mayor parte, <em>el
+crecimiento de la población se parece</em>, bueno …, <em>no hay
+crecimiento en absoluto</em>!</p>
+<p><strong>Q:</strong> Dadas las dos afirmaciones anteriores, ¿puede
+averiguar cómo debería ser la dinámica de la población con un
+crecimiento logístico, comenzando con una población muy pequeña?</p>
 <p><img src="figures/Kbucket.png" /></p>
 </div>
-<div id="la-capacidad-de-carga-es-un-punto-de-equilibrio." class="section level2">
+<div id="la-capacidad-de-carga-es-un-punto-de-equilibrio."
+class="section level2">
 <h2>La capacidad de carga es un punto de equilibrio.!</h2>
-<p>Un sistema de stock-flujo está en un punto de <strong>equilibrio</strong> cuando [Flujos de entrada] son iguales a [Flujos de salida]. Es decir, si las fuerzas opuestas se anulan entre sí.</p>
-<p>Como muestra Gotelli, y lo repasaremos en detalle, puede derivar la ecuación de crecimiento logístico haciendo que <em>b</em> y <em>d</em> (a partir de la ecuación estándar de crecimiento de la población) sean ambos linealmente dependientes de la densidad:</p>
+<p>Un sistema de stock-flujo está en un punto de
+<strong>equilibrio</strong> cuando [Flujos de entrada] son iguales a
+[Flujos de salida]. Es decir, si las fuerzas opuestas se anulan entre
+sí.</p>
+<p>Como muestra Gotelli, y lo repasaremos en detalle, puede derivar la
+ecuación de crecimiento logístico haciendo que <em>b</em> y <em>d</em>
+(a partir de la ecuación estándar de crecimiento de la población) sean
+ambos linealmente dependientes de la densidad:</p>
 <p><span class="math inline">\(b=b_{max}-a*[Density]\)</span></p>
-<p>donde <span class="math inline">\(b_{max}\)</span> es la tasa de natalidad máxima o ideal per cápita y <span class="math inline">\(a\)</span> es el término de dependencia de la densidad.</p>
+<p>donde <span class="math inline">\(b_{max}\)</span> es la tasa de
+natalidad máxima o ideal per cápita y <span
+class="math inline">\(a\)</span> es el término de dependencia de la
+densidad.</p>
 <p>Igualmente,</p>
 <p><span class="math inline">\(d=d_{min}+c*[Density]\)</span></p>
-<p>donde <span class="math inline">\(d_ {min}\)</span> es la tasa de mortalidad per cápita mínima o ideal (1-tasa de supervivencia máxima) y <span class="math inline">\(c\)</span> es el término de dependencia de la densidad.</p>
+<p>donde <span class="math inline">\(d_ {min}\)</span> es la tasa de
+mortalidad per cápita mínima o ideal (1-tasa de supervivencia máxima) y
+<span class="math inline">\(c\)</span> es el término de dependencia de
+la densidad.</p>
 <p>Podemos trazar estas ecuaciones en R:</p>
 <pre class="r"><code>Density &lt;- seq (0,500,1) # crea una secuencia de números del 0 al 500, que representa un rango de densidades de población
 
@@ -543,23 +606,42 @@ axis(4,at=seq(0,1,0.2))
 legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1),legend=c(&quot;per-capita birth rate&quot;,&quot;per-capita mortality&quot;),bty=&quot;n&quot;)</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<p><strong>Q</strong>: ¿Cuál es el punto de equilibrio en este sistema? Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que el crecimiento de la población es igual a cero?</p>
-<p>Este equilibrio se conoce como <strong>K</strong> o <strong>capacidad de carga</strong>?</p>
+<p><strong>Q</strong>: ¿Cuál es el punto de equilibrio en este sistema?
+Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que
+el crecimiento de la población es igual a cero?</p>
+<p>Este equilibrio se conoce como <strong>K</strong> o <strong>capacidad
+de carga</strong>?</p>
 <p><img src="figures/gstab.png" /></p>
 </div>
 <div id="equilibrios-estables-y-no-estables" class="section level2">
 <h2>Equilibrios estables y no estables</h2>
-<p>Un <strong>Equilibrio estable</strong>, es cuando con perturbación la población regresa a su punto de equilibrio.</p>
-<p>Un <strong>Equilibrio no-estable</strong>, es cuando con perturbación la población <em>NO</em> regresa a su punto de equilibrio.</p>
+<p>Un <strong>Equilibrio estable</strong>, es cuando con perturbación la
+población regresa a su punto de equilibrio.</p>
+<p>Un <strong>Equilibrio no-estable</strong>, es cuando con perturbación
+la población <em>NO</em> regresa a su punto de equilibrio.</p>
 <p>¿Es la imagen de la izquierda un equilibrio estable o no estable?</p>
 <p>¿Qué pasa con la imagen de la derecha?</p>
-<p>¿Qué pasa con <strong>K</strong> o <strong>capacidad de carga</strong>?</p>
+<p>¿Qué pasa con <strong>K</strong> o <strong>capacidad de
+carga</strong>?</p>
 <p>¡Vamos a averiguar!</p>
 </div>
-<div id="ejercicio-en-clase-crecimiento-logístico" class="section level2">
+<div id="ejercicio-en-clase-crecimiento-logístico"
+class="section level2">
 <h2>Ejercicio en clase: crecimiento logístico</h2>
-<p>En primer lugar, de ahora en adelante, intente comenzar a guardar sus modelos de InsightMaker que funcionan, ya que a menudo construiremos a partir de modelos anteriores (¡para que no tengamos que comenzar desde cero en todas las clases!). Para construir a partir de un Insight anterior, abra un Insight anterior (p. Ej., Su modelo de crecimiento exponencial básico, o clone [este modelo] (<a href="https://insightmaker.com/insight/68236/Basic-population" class="uri">https://insightmaker.com/insight/68236/Basic-population</a>)) y elija “Clonar Insight”en la esquina superior derecha para crear una copia que pueda editar.</p>
-<p>Este es el escenario que modelaremos: tanto <em>b</em> como <em>d</em> son <strong>dependientes de la densidad</strong>. Replicaremos el modelo del código R y la figura anterior, ¡esta vez en InsightMaker!</p>
+<p>En primer lugar, de ahora en adelante, intente comenzar a guardar sus
+modelos de InsightMaker que funcionan, ya que a menudo construiremos a
+partir de modelos anteriores (¡para que no tengamos que comenzar desde
+cero en todas las clases!). Para construir a partir de un Insight
+anterior, abra un Insight anterior (p. Ej., Su modelo de crecimiento
+exponencial básico, o clone [este modelo] (<a
+href="https://insightmaker.com/insight/68236/Basic-population"
+class="uri">https://insightmaker.com/insight/68236/Basic-population</a>))
+y elija “Clonar Insight”en la esquina superior derecha para crear una
+copia que pueda editar.</p>
+<p>Este es el escenario que modelaremos: tanto <em>b</em> como
+<em>d</em> son <strong>dependientes de la densidad</strong>.
+Replicaremos el modelo del código R y la figura anterior, ¡esta vez en
+InsightMaker!</p>
 <pre><code>CONSTANTS
 - [Maximum per-capita birth rate] = 0.8 individuals per individual per year   
 - [Minimum per-capita death rate] = 0.3 individuals per individual per year    
@@ -568,105 +650,178 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 <pre><code>EQUATIONS
 - [Per-capita birth rate] = [Maximum per-capita birth rate] - [Density dependence on fecundity] * [Turtles] 
 - [Per-capita death rate] = [Minimum per-capita death rate] - [Density dependence on mortality] * [Turtles] </code></pre>
-<div id="cómo-podemos-hacer-esto-en-insightmaker" class="section level3">
+<div id="cómo-podemos-hacer-esto-en-insightmaker"
+class="section level3">
 <h3>¿Cómo podemos hacer esto en InsightMaker?</h3>
 <ol style="list-style-type: decimal">
-<li>Cargue un modelo básico de crecimiento exponencial. Cambie el nombre de [Stock] <em>Box Turtles</em> principal. Este [Stock] debe tener dos [Flujos], uno [Flujo de entrada] llamado <em>Nacimientos</em> y uno [Flujo de salida] llamado <em>Muertes</em>. Tanto <em>Nacimientos</em> como <em>Defunciones</em> deben definirse como el producto de <em>tortugas</em> y tasas per cápita, respectivamente llamadas <em>Nacimientos per cápita </em> y <em>Defunciones per cápita</em> (cada una definida en el lienzo como [Variables]). ¡Este modelo debería ser muy familiar!</li>
+<li>Cargue un modelo básico de crecimiento exponencial. Cambie el nombre
+de [Stock] <em>Box Turtles</em> principal. Este [Stock] debe tener dos
+[Flujos], uno [Flujo de entrada] llamado <em>Nacimientos</em> y uno
+[Flujo de salida] llamado <em>Muertes</em>. Tanto <em>Nacimientos</em>
+como <em>Defunciones</em> deben definirse como el producto de
+<em>tortugas</em> y tasas per cápita, respectivamente llamadas
+<em>Nacimientos per cápita </em> y <em>Defunciones per cápita</em> (cada
+una definida en el lienzo como [Variables]). ¡Este modelo debería ser
+muy familiar!</li>
 </ol>
 <ul>
 <li><ol style="list-style-type: decimal">
-<li>Load a basic exponential-growth model. Rename the main [Stock] <em>Box Turtles</em>. This [Stock] should have two [Flows], one [Flow In] named <em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both <em>Births</em> and <em>Deaths</em> should be defined as the product of <em>turtles</em> and per-capita rates, respectively called <em>Births per capita</em> and <em>Deaths per capita</em> (each defined on the canvas as [Variables]). This model should be very familiar!!</li>
+<li>Load a basic exponential-growth model. Rename the main [Stock]
+<em>Box Turtles</em>. This [Stock] should have two [Flows], one [Flow
+In] named <em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both
+<em>Births</em> and <em>Deaths</em> should be defined as the product of
+<em>turtles</em> and per-capita rates, respectively called <em>Births
+per capita</em> and <em>Deaths per capita</em> (each defined on the
+canvas as [Variables]). This model should be very familiar!!</li>
 </ol></li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Inicialice la población de <em>Tortugas</em> a 5 (muy por debajo de la capacidad de carga).</li>
+<li>Inicialice la población de <em>Tortugas</em> a 5 (muy por debajo de
+la capacidad de carga).</li>
 </ol>
 <ul>
 <li><ol start="2" style="list-style-type: decimal">
-<li>Initialize the population of <em>Turtles</em> to 5 (way below carrying capacity).</li>
+<li>Initialize the population of <em>Turtles</em> to 5 (way below
+carrying capacity).</li>
 </ol></li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>Haga cuatro nuevas [Variables] en el lienzo, para representar las cuatro constantes en nuestro modelo.</li>
+<li>Haga cuatro nuevas [Variables] en el lienzo, para representar las
+cuatro constantes en nuestro modelo.</li>
 </ol>
 <ul>
 <li><ol start="3" style="list-style-type: decimal">
-<li>Make four new [Variables] on the canvas, to represent the four constants in our model.</li>
+<li>Make four new [Variables] on the canvas, to represent the four
+constants in our model.</li>
 </ol></li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
-<li>Establezca la <em>Tasa máxima de natalidad per cápita</em> en 0.8 (tortugas producidas por tortuga por año). Establezca la <em>Tasa mínima de mortalidad per cápita</em> en 0,3. Establezca la <em>Dependencia de la densidad de la fecundidad</em> en 0,001. Establezca la <em>Dependencia de la densidad de la mortalidad</em> en 0,0005.</li>
+<li>Establezca la <em>Tasa máxima de natalidad per cápita</em> en 0.8
+(tortugas producidas por tortuga por año). Establezca la <em>Tasa mínima
+de mortalidad per cápita</em> en 0,3. Establezca la <em>Dependencia de
+la densidad de la fecundidad</em> en 0,001. Establezca la
+<em>Dependencia de la densidad de la mortalidad</em> en 0,0005.</li>
 </ol>
 <ul>
 <li><ol start="4" style="list-style-type: decimal">
-<li>Set the <em>Maximum per-capita birth rate</em> to 0.8 (turtles produced per turtle per year). Set the <em>Minimum per-capita Death rate</em> to 0.3. Set the <em>Density dependence on fecundity</em> to 0.001. Set the <em>Density dependence on mortality</em> to 0.0005.</li>
+<li>Set the <em>Maximum per-capita birth rate</em> to 0.8 (turtles
+produced per turtle per year). Set the <em>Minimum per-capita Death
+rate</em> to 0.3. Set the <em>Density dependence on fecundity</em> to
+0.001. Set the <em>Density dependence on mortality</em> to 0.0005.</li>
 </ol></li>
 </ul>
 <ol start="5" style="list-style-type: decimal">
-<li>Realice las conexiones adecuadas, como en la figura anterior, y use la ventana de ecuaciones para asegurarse de que las ecuaciones sean correctas.</li>
+<li>Realice las conexiones adecuadas, como en la figura anterior, y use
+la ventana de ecuaciones para asegurarse de que las ecuaciones sean
+correctas.</li>
 </ol>
 <ul>
 <li><ol start="5" style="list-style-type: decimal">
-<li>Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.</li>
+<li>Make the appropriate connections, as in the figure above, and use
+the equation window to make sure the equations are correct.</li>
 </ol></li>
 </ul>
 <ol start="6" style="list-style-type: decimal">
-<li>Cambie la configuración para que la simulación se ejecute durante 100 años.</li>
+<li>Cambie la configuración para que la simulación se ejecute durante
+100 años.</li>
 </ol>
 <ul>
 <li><ol start="6" style="list-style-type: decimal">
 <li>Change the settings so that the simulation runs for 100 years.</li>
 </ol></li>
 </ul>
-<p>¡Tu modelo debería verse así! (Si aún no tiene un modelo como este, clone <a href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">este modelo</a>)</p>
+<p>¡Tu modelo debería verse así! (Si aún no tiene un modelo como este,
+clone <a
+href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">este
+modelo</a>)</p>
 <p><img src="figures/IM5.jpg" /></p>
 <ol start="7" style="list-style-type: decimal">
-<li>Ejecute este modelo. ¿El modelo se comporta como cabría esperar?</li>
+<li>Ejecute este modelo. ¿El modelo se comporta como cabría
+esperar?</li>
 </ol>
-<p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza <em>en</em> la capacidad de carga? [Edmodo]</p>
-<p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza <em>por encima</em> de la capacidad de carga? [Edmodo]<br />
+<p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza
+<em>en</em> la capacidad de carga? [Edmodo]</p>
+<p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza
+<em>por encima</em> de la capacidad de carga? [Edmodo]<br />
 <strong>Q:</strong> ¿Es este un equilibrio estable? [Edmodo]<br />
-<strong>Q:</strong> ¿Puede una población silvestre estar alguna vez en un equilibrio no estable? ¿Qué pasa con un equilibrio estable? ¿Por qué es importante conocer los equilibrios no estables?</p>
+<strong>Q:</strong> ¿Puede una población silvestre estar alguna vez en
+un equilibrio no estable? ¿Qué pasa con un equilibrio estable? ¿Por qué
+es importante conocer los equilibrios no estables?</p>
 <ol start="8" style="list-style-type: decimal">
 <li>Considere la ecuación básica de crecimiento logístico:</li>
 </ol>
-<p><span class="math inline">\(\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K} \right )\)</span></p>
-<p>Abra su modelo InsightMaker para un crecimiento logístico básico con un término <span class="math inline">\(r_ {max}\)</span> (flecha de dos puntas). O puede clonarlo desde <a href="https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax">aquí</a>. Debería verse algo como esto:</p>
+<p><span class="math inline">\(\Delta N = r \cdot N_t \cdot \left ( 1 -
+\frac{N}{K} \right )\)</span></p>
+<p>Abra su modelo InsightMaker para un crecimiento logístico básico con
+un término <span class="math inline">\(r_ {max}\)</span> (flecha de dos
+puntas). O puede clonarlo desde <a
+href="https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax">aquí</a>.
+Debería verse algo como esto:</p>
 <p><img src="figures/IM6.jpg" /></p>
-<p>Haga que el tamaño de su población inicial sea muy pequeño en comparación con la capacidad de carga.</p>
-<p><strong>Q:</strong> ¿Qué sucede si <span class="math inline">\(r\)</span> es cero? ¿Qué pasa con la capacidad de carga?<br />
-<strong>Q:</strong> ¿Qué población es más probable que se encuentre en la naturaleza o cerca de K? ¿Una población con <span class="math inline">\(r\)</span> muy grandes o <span class="math inline">\(r\)</span> muy pequeños?<br />
-<strong>Q:</strong> ¿Cómo se relaciona esta discusión con el concepto de especies “seleccionadas por r” y “seleccionadas por K”?</p>
-<p><strong>Q:</strong> ¿Un valor alto de <span class="math inline">\(r\)</span> es bueno o malo para la conservación?</p>
+<p>Haga que el tamaño de su población inicial sea muy pequeño en
+comparación con la capacidad de carga.</p>
+<p><strong>Q:</strong> ¿Qué sucede si <span
+class="math inline">\(r\)</span> es cero? ¿Qué pasa con la capacidad de
+carga?<br />
+<strong>Q:</strong> ¿Qué población es más probable que se encuentre en
+la naturaleza o cerca de K? ¿Una población con <span
+class="math inline">\(r\)</span> muy grandes o <span
+class="math inline">\(r\)</span> muy pequeños?<br />
+<strong>Q:</strong> ¿Cómo se relaciona esta discusión con el concepto de
+especies “seleccionadas por r” y “seleccionadas por K”?</p>
+<p><strong>Q:</strong> ¿Un valor alto de <span
+class="math inline">\(r\)</span> es bueno o malo para la
+conservación?</p>
 <hr />
 </div>
 <div id="proyecto-de-esta-semana" class="section level3">
 <h3>Proyecto de esta semana</h3>
 <p><img src="figures/Cyclura.jpg" /></p>
-<p>Foto del Nuevo Dia la siguiente <a href="https://www.indicepr.com/noticias/2017/06/07/action/70906/upr-ayuda-en-la-restauracion-del-habitat-de-la-iguana-de-mona/">pagina</a></p>
-<p>Considerando la estructura los dos modelos anteriores, busca información sobre la Iguana de la Mona, <em>Cyclura stejnegeri</em> de fuentes como wikipedia y articulos revisados por pares, y construye modelos sencillo de crecimiento poblacional.</p>
+<p>Foto del Nuevo Dia la siguiente <a
+href="https://www.indicepr.com/noticias/2017/06/07/action/70906/upr-ayuda-en-la-restauracion-del-habitat-de-la-iguana-de-mona/">pagina</a></p>
+<p>Considerando la estructura los dos modelos anteriores, busca
+información sobre la Iguana de la Mona, <em>Cyclura stejnegeri</em> de
+fuentes como wikipedia y articulos revisados por pares, y construye
+modelos sencillo de crecimiento poblacional.</p>
 <ul>
 <li>deberia defender por que uso estos los parametros</li>
 <li>considerar cual con alternativas, y como afecta el crecimiento</li>
-<li>cual son parametros incierto o que falta para construir un modelo más realista.</li>
+<li>cual son parametros incierto o que falta para construir un modelo
+más realista.</li>
 </ul>
 <hr />
 </div>
 </div>
-<div id="los-supuestos-del-crecimiento-logistico" class="section level2">
+<div id="los-supuestos-del-crecimiento-logistico"
+class="section level2">
 <h2>Los supuestos del crecimiento logistico</h2>
 <div id="la-capacidad-acerreo-es-constante" class="section level3">
 <h3>La capacidad acerreo es constante:</h3>
-<p>Para lograr is curva en forma de S, o sea una curva logística se asume que K es consistente en tiempo. En otra palabra los recursos y su interaciones con sus depredadores etc no varia en el tiempo.</p>
+<p>Para lograr is curva en forma de S, o sea una curva logística se
+asume que K es consistente en tiempo. En otra palabra los recursos y su
+interaciones con sus depredadores etc no varia en el tiempo.</p>
 </div>
-<div id="la-crecimiento-denso-dependiente-es-lineal" class="section level3">
+<div id="la-crecimiento-denso-dependiente-es-lineal"
+class="section level3">
 <h3>La crecimiento denso dependiente es lineal:</h3>
-<p>El modelo logistico asume que cada individuo que se añade a una población tiene un efecto negativo sobre la razón de crecimiento per capita. Esto se observa con la el crecimiento per capita de la población <span class="math inline">\(\frac{1}{N}*\frac{dN}{dt}\)</span> donde el crecimiento depende del tamaño poblacional y la capacidad de acerreo.</p>
+<p>El modelo logistico asume que cada individuo que se añade a una
+población tiene un efecto negativo sobre la razón de crecimiento per
+capita. Esto se observa con la el crecimiento per capita de la población
+<span class="math inline">\(\frac{1}{N}*\frac{dN}{dt}\)</span> donde el
+crecimiento depende del tamaño poblacional y la capacidad de
+acerreo.</p>
 <ul>
-<li>El crecimiento es maximo cuando <span class="math inline">\((b-d)=r\)</span> cuando N es cerca de zero, despues el crecimiento reduce hasta llegar a zero y entonces llega a K.<br />
+<li>El crecimiento es maximo cuando <span
+class="math inline">\((b-d)=r\)</span> cuando N es cerca de zero,
+despues el crecimiento reduce hasta llegar a zero y entonces llega a
+K.<br />
 </li>
 <li>Si N es mayor K, la porblación se va a reducir</li>
-<li>Nota que aunque <span class="math inline">\(b\)</span> y <span class="math inline">\(d\)</span> son constantes, el razón de de mortandad <span class="math inline">\(b&#39;\)</span> y natalidad <span class="math inline">\(n&#39;\)</span> cambia con el tamaño poblacional.</li>
+<li>Nota que aunque <span class="math inline">\(b\)</span> y <span
+class="math inline">\(d\)</span> son constantes, el razón de de
+mortandad <span class="math inline">\(b&#39;\)</span> y natalidad <span
+class="math inline">\(n&#39;\)</span> cambia con el tamaño
+poblacional.</li>
 </ul>
 </div>
 </div>
@@ -674,22 +829,50 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 <h2>Variación sobre el modelo básico</h2>
 <div id="retrasos-en-tiempo-time-lag" class="section level3">
 <h3>Retrasos en tiempo / <em>Time Lag</em></h3>
-<p>El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es imediato. Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.</p>
-<p>Ejemplos: - Plantas anuales no tienen time lag (asumiendo que no hay banco de semillas) - Los elefantes comienzan a reproducirse solamente despues de 14-15 años - Los coquis se pueden reproducir a la edad de ± 8 meses - El árbol de “Brazil Nuts”, <em>Bertholletia excelsa</em> necesita más de 120 años antes de producir flores. - La Caoba, <em>Swietenia mahogani</em> tienen que tener 50 años antes de comenzar a reproducrise</p>
-<p>Para considerar el efecto de retraso en tiempo, se puede incluir la información en el modelo de la siguiente forma</p>
-<p><span class="math display">\[\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})\]</span> por consecuencia el efecto sobre el crecimiento esta atrasado por el tiempo <span class="math inline">\(t\)</span>, donde la <span class="math inline">\(i\)</span> representa el tiempo. El comportamiento de los que es una <strong>ecuación differencial de retardo</strong> depende de 2 factores.</p>
+<p>El modelo básico asume que cuando individuos se añaden a la
+población, el efecto sobre la razón de crecimiento es imediato. Pero en
+muchas especies el efecto se puede ser postergado a un momento en el
+futuro.</p>
+<p>Ejemplos: - Plantas anuales no tienen time lag (asumiendo que no hay
+banco de semillas) - Los elefantes comienzan a reproducirse solamente
+despues de 14-15 años - Los coquis se pueden reproducir a la edad de ± 8
+meses - El árbol de “Brazil Nuts”, <em>Bertholletia excelsa</em>
+necesita más de 120 años antes de producir flores. - La Caoba,
+<em>Swietenia mahogani</em> tienen que tener 50 años antes de comenzar a
+reproducrise</p>
+<p>Para considerar el efecto de retraso en tiempo, se puede incluir la
+información en el modelo de la siguiente forma</p>
+<p><span
+class="math display">\[\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})\]</span>
+por consecuencia el efecto sobre el crecimiento esta atrasado por el
+tiempo <span class="math inline">\(t\)</span>, donde la <span
+class="math inline">\(i\)</span> representa el tiempo. El comportamiento
+de los que es una <strong>ecuación differencial de retardo</strong>
+depende de 2 factores.</p>
 <ol style="list-style-type: decimal">
-<li>el tiempo del tiempo de retardo, <span class="math inline">\(\tau\)</span> (se dice <em>tau</em>),</li>
-<li>el tiempo de repuesta de una población, que es inversamente proporcional.</li>
+<li>el tiempo del tiempo de retardo, <span
+class="math inline">\(\tau\)</span> (se dice <em>tau</em>),</li>
+<li>el tiempo de repuesta de una población, que es inversamente
+proporcional.</li>
 </ol>
-<p>La razón de <span class="math inline">\(\tau\)</span> al tiempo de respuesta <span class="math inline">\(\frac{1}{r}\)</span> o <span class="math inline">\(r\tau\)</span> controla para el crecimiento de la población.</p>
+<p>La razón de <span class="math inline">\(\tau\)</span> al tiempo de
+respuesta <span class="math inline">\(\frac{1}{r}\)</span> o <span
+class="math inline">\(r\tau\)</span> controla para el crecimiento de la
+población.</p>
 <p>Si <span class="math inline">\(r\tau\)</span></p>
 <ul>
-<li><em>pequeño</em>, <span class="math inline">\((0 &lt; r\tau &lt; 0.368)\)</span>, la población aumenta de forma gradual a K</li>
-<li><em>mediano</em>, <span class="math inline">\((0.368 &lt; r\tau &lt; 1.570)\)</span>, la población sobre pasa K, despues va por debajo, y con tiempo con una oscilación amortiguada se estabiliza a K.</li>
-<li><em>grande</em> <span class="math inline">\((r\tau &gt; 1.570)\)</span>, la población entra en una oscilación continua sin llegar (Stable Limit Cycle) a estabilizarse a K.</li>
+<li><em>pequeño</em>, <span class="math inline">\((0 &lt; r\tau &lt;
+0.368)\)</span>, la población aumenta de forma gradual a K</li>
+<li><em>mediano</em>, <span class="math inline">\((0.368 &lt; r\tau &lt;
+1.570)\)</span>, la población sobre pasa K, despues va por debajo, y con
+tiempo con una oscilación amortiguada se estabiliza a K.</li>
+<li><em>grande</em> <span class="math inline">\((r\tau &gt;
+1.570)\)</span>, la población entra en una oscilación continua sin
+llegar (Stable Limit Cycle) a estabilizarse a K.</li>
 </ul>
-<p>Lo importante no son tanto los valores que reconocer que debido a la razon de <span class="math inline">\(r\tau\)</span>, la población actua de forma muy diferentes.</p>
+<p>Lo importante no son tanto los valores que reconocer que debido a la
+razon de <span class="math inline">\(r\tau\)</span>, la población actua
+de forma muy diferentes.</p>
 </div>
 <div id="gráficos-logistico" class="section level3">
 <h3>Gráficos Logistico</h3>
@@ -725,8 +908,10 @@ p + stat_function(fun = damped, n = 50) </code></pre>
 <pre><code>## Warning: Computation failed in `stat_function()`:
 ## could not find function &quot;N&quot;</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>See this website for visualizing change in time of a simple logistic model</p>
-<p><a href="http://virtualbiologylab.org/population-ecology/">Logistic model</a></p>
+<p>See this website for visualizing change in time of a simple logistic
+model</p>
+<p><a href="http://virtualbiologylab.org/population-ecology/">Logistic
+model</a></p>
 <p><a href="LECTURE5.html">–go to next lecture–</a></p>
 </div>
 </div>

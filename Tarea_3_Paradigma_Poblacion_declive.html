@@ -14,7 +14,7 @@
 
 <title>Tarea Población en declive</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -489,32 +493,72 @@ div.tocify {
 <h2>Puntuación total 25 puntos</h2>
 <hr />
 </div>
-<div id="las-siguientes-preguntas-son-basado-en-la-información-del-paradigma-de-población-en-declive" class="section level2">
-<h2>Las siguientes preguntas son basado en la información del <strong>Paradigma de población en declive</strong></h2>
-<p>Se respondrá las preguntas en MSTeam. La plataforma sera abierta con tiempos limitados. Ven las preguntas aqui y responden la antes de abrir el documento en MSTeam</p>
+<div
+id="las-siguientes-preguntas-son-basado-en-la-información-del-paradigma-de-población-en-declive"
+class="section level2">
+<h2>Las siguientes preguntas son basado en la información del
+<strong>Paradigma de población en declive</strong></h2>
+<p>Se respondrá las preguntas en MSTeam. La plataforma sera abierta con
+tiempos limitados. Ven las preguntas aqui y responden la antes de abrir
+el documento en MSTeam</p>
 <ol style="list-style-type: decimal">
-<li><p>Cual es la diferencia entre <strong>amenazas estocásticas</strong> y <strong>amenazas deterimnisticas</strong>? <em>(2 puntos)</em></p></li>
-<li><p>Buscar un ejemplo en la literatura citado por pares (usa Google Scholar o Rsearch Date) de los dos tipos de anenazas, y describe lo que encontrarón en un paragrafo. (menciona la información del articulo, añadir el DOI). <em>(4 puntos/ 2 por cada tipo de amenazas)</em>.</p></li>
-<li><p>Cual es el Paradigma de población en declive: define claramente con ejemplos <em>(2 puntos)</em></p></li>
-<li><p>Cual son los dos vertiende de estudio para evaluar las población en declive? <em>(2 puntos)</em></p></li>
+<li><p>Cual es la diferencia entre <strong>amenazas
+estocásticas</strong> y <strong>amenazas deterimnisticas</strong>?
+<em>(2 puntos)</em></p></li>
+<li><p>Buscar un ejemplo en la literatura citado por pares (usa Google
+Scholar o Rsearch Date) de los dos tipos de anenazas, y describe lo que
+encontrarón en un paragrafo. (menciona la información del articulo,
+añadir el DOI). <em>(4 puntos/ 2 por cada tipo de
+amenazas)</em>.</p></li>
+<li><p>Cual es el Paradigma de población en declive: define claramente
+con ejemplos <em>(2 puntos)</em></p></li>
+<li><p>Cual son los dos vertiende de estudio para evaluar las población
+en declive? <em>(2 puntos)</em></p></li>
 </ol>
 <hr />
-<p><strong>Las próximas preguntas son de modelaje usando “InsightMaker”. Tendrá que evaluar los cambios poblacional basado en cambios en los parametros del modelos.</strong> Siempre correr múltiple simulaciones para observar la variación</p>
+<p><strong>Las próximas preguntas son de modelaje usando “InsightMaker”.
+Tendrá que evaluar los cambios poblacional basado en cambios en los
+parametros del modelos.</strong> Siempre correr múltiple simulaciones
+para observar la variación</p>
 <ol start="5" style="list-style-type: decimal">
-<li>Suponga que aproximadamente el 10% de la población se cosecha cada año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha es estocástica y normalmente distribuida - ocasionalmente la cosecha llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en el modelo para lograr este rango.</li>
+<li>Suponga que aproximadamente el 10% de la población se cosecha cada
+año (una cosecha fraccionada). Sin embargo, la verdadera tasa de cosecha
+es estocástica y normalmente distribuida - ocasionalmente la cosecha
+llega hasta el 15% y ocasionalmente hasta el 5%. Asegúrese de
+especificar los parámetros de ‘cosecha fraccionada’ (media y stdev) en
+el modelo para lograr este rango.</li>
 </ol>
-<p>5a. ¿Qué valor usó para la desviación estándar de la distribución normal? <em>(2 puntos)</em></p>
-<p>5b. ¿Se considera mejor esta variación en la tasa de cosecha como un tipo de estocasticidad demográfica o un tipo de estocasticidad ambiental ? <em>(1 puntos)</em></p>
-<p>5c. ¿Qué pasa si cambia la tasa de cosecha, la hace aún más extrema? Comenzando con una abundancia de 200, ¿cuál es la abundancia final esperada (después de 50 años) - cuando la cosecha es de 10% sin variación tiempo (SD =0) - cuando la cosecha es de 10% y variación en cosecha en tiempo de .20. - cuando la tasa de cosecha es del 40% y la variación (desviación estándar en la tasa de cosecha es del 25%)?</p>
+<p>5a. ¿Qué valor usó para la desviación estándar de la distribución
+normal? <em>(2 puntos)</em></p>
+<p>5b. ¿Se considera mejor esta variación en la tasa de cosecha como un
+tipo de estocasticidad demográfica o un tipo de estocasticidad ambiental
+? <em>(1 puntos)</em></p>
+<p>5c. ¿Qué pasa si cambia la tasa de cosecha, la hace aún más extrema?
+Comenzando con una abundancia de 200, ¿cuál es la abundancia final
+esperada (después de 50 años) - cuando la cosecha es de 10% sin
+variación tiempo (SD =0) - cuando la cosecha es de 10% y variación en
+cosecha en tiempo de .20. - cuando la tasa de cosecha es del 40% y la
+variación (desviación estándar en la tasa de cosecha es del 25%)?</p>
 <ul>
-<li>Explica con figuras (Screenshots de unos modelos) lo que observaste en los modelos y como los interpretas <em>(5 puntos)</em></li>
+<li>Explica con figuras (Screenshots de unos modelos) lo que observaste
+en los modelos y como los interpretas <em>(5 puntos)</em></li>
 </ul>
 <hr />
 <ol start="6" style="list-style-type: decimal">
-<li>Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier proceso de cosecha fraccional por ahora (establezca los términos de cosecha fraccionada en 0 y su sd=0) con una población al principio de 200.</li>
+<li>Ahora evaluamos el efecto de perdida de hábitat. Elimine cualquier
+proceso de cosecha fraccional por ahora (establezca los términos de
+cosecha fraccionada en 0 y su sd=0) con una población al principio de
+200.</li>
 </ol>
-<p>6a. Primero modelemos el caso donde el 10% de K se pierde cada año (pérdida fraccional de hábitat), sin cambio en tiempo (SD frac hl = 0). <em>(4 puntos)</em> - Que occure con la población a los 50 años? - Que quiere decir que hay 10% de pérdida fraccional de hábitat?</p>
-<p>6b ¿Parece realista la reducción de K a lo largo del tiempo? ¿Puedes imaginar otras formas plausibles para esta curva? Intente ejecutar el modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional) Y 10% de recolección (recolección fraccionada y pérdida de hábitat fraccional). <em>(3 puntos)</em></p>
+<p>6a. Primero modelemos el caso donde el 10% de K se pierde cada año
+(pérdida fraccional de hábitat), sin cambio en tiempo (SD frac hl = 0).
+<em>(4 puntos)</em> - Que occure con la población a los 50 años? - Que
+quiere decir que hay 10% de pérdida fraccional de hábitat?</p>
+<p>6b ¿Parece realista la reducción de K a lo largo del tiempo? ¿Puedes
+imaginar otras formas plausibles para esta curva? Intente ejecutar el
+modelo con un 10% de pérdida de hábitat (pérdida de hábitat fraccional)
+Y 10% de recolección (recolección fraccionada y pérdida de hábitat
+fraccional). <em>(3 puntos)</em></p>
 </div>
 
 

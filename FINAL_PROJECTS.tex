@@ -1,0 +1,631 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Final projects!},
+  pdfauthor={BIOL4558},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Final projects!}
+\author{BIOL4558}
+\date{Noviembre 2021}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{proyecto-final-biol-4558}{%
+\subsection{Proyecto Final BIOL 4558}\label{proyecto-final-biol-4558}}
+
+Los estudiantes trabajarán en grupos de \textasciitilde{} 2-3 personas
+para realizar un análisis de viabilidad de la población (PVA) para
+clasificar las acciones de conservación o manejo para una especie de
+interés de conservación (¡especie de su elección!). La calificación se
+basará en los productos terminados (presentaciones escritas y orales),
+así como en la participación y evaluaciones de pares.
+
+\hypertarget{puntos-importante}{%
+\subsection{Puntos importante}\label{puntos-importante}}
+
+\begin{itemize}
+\item
+  Seleccionar una especie y una pregunta de interés.
+\item
+  Realice una revisión exhaustiva de la literatura sobre su especie de
+  interés; recopile toda la información que pueda sobre el historial de
+  vida, las tasas vitales clave y su variabilidad.
+\item
+  Construir un modelo PVA, parametrizado utilizando la mejor información
+  disponible de la literatura (plataformas de software PVA gratuitas:
+  InsightMaker o R).
+\item
+  Utilice su modelo PVA para abordar una pregunta de conservación o
+  manejo y \emph{escriba los resultados}.
+\item
+  ¡Presenta tus resultados a la clase!
+\end{itemize}
+
+\hypertarget{cronologuxeda}{%
+\subsection{Cronología}\label{cronologuxeda}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{PROPUESTA: } ¡Vence el Lunes 15 de noviembre!
+\item
+  \textbf{PVA INICIAL } Vence el Lunes 22 de noviembre: descripción de
+  cómo funciona su modelo PVA y de dónde provienen las estimaciones de
+  los parámetros.
+\item
+  ** ENVIAR EL BORRADOR PARA REVISIÓN POR PARES ** Vence el 24 de
+  noviembre a las 5 p.m. (para revisión por pares el 26 de noviembre)
+\item
+  \textbf{BORRADOR DEL DOCUMENTO FINAL: } Se vence el miércoles 1 de
+  diciembre a las 5 p.m.
+\item
+  \textbf{DOCUMENTO FINAL FINAL: } ¡El ultimo dia de clase!
+\item
+  \textbf{PRESENTACIONES FINALES: } ¡Los dos últimos días de las clases!
+\end{itemize}
+
+\hypertarget{primera-asignaciuxf3n-relacionada-con-el-proyecto-la-propuesta}{%
+\subsection{Primera asignación relacionada con el proyecto: ¡la
+propuesta!}\label{primera-asignaciuxf3n-relacionada-con-el-proyecto-la-propuesta}}
+
+Su propuesta de proyecto (aproximadamente 1 pg) consistirá en:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Título }: debe indicar qué especie está modelando y al menos
+  insinuar qué pregunta se abordará
+\item
+  \textbf{Participantes del proyecto }: proporcione los nombres de todos
+  los participantes (2-3).
+\item
+  \textbf{Pregunta (s) de investigación }: proporcione una o más
+  preguntas comprobables y relevantes para la gestión que planea abordar
+  utilizando su modelo de población.
+\item
+  \textbf{Justificación del proyecto }: Describa la justificación para
+  elegir esta especie y la cuestión de gestión/conservación. ¡Sea lo más
+  específico posible! ¡Convence a tus instructores de que tu proyecto es
+  ** interesante **!
+\item
+  \textbf{Fuentes de datos }: Describa una o más fuentes de datos /
+  información que planea usar para guiar la construcción y
+  parametrización de PVA (¡queremos asegurarnos de que su proyecto sea
+  \textbf{posible }!)
+\end{enumerate}
+
+\textbf{NOTA sobre las fuentes de datos:} - Los parámetros más
+importantes que necesita para un modelo PVA son \emph{tasas de
+supervivencia } (generalmente estructuradas por edad), \emph{tasas de
+fecundidad } (a menudo también estructuradas por edad),
+\emph{estocasticidad } (cantidad de variabilidad aleatoria en esas tasas
+vitales), \emph{abundancia inicial }, \emph{tasas de dispersión } y
+\emph{capacidad de carga (K) }. - Ya hemos repasado muchos de estos
+conceptos en clase: ¡PVA es solo una forma de unir todos estos conceptos
+en un solo modelo! Puede obtener estas estimaciones de parámetros
+directamente de la literatura publicada (o informes no publicados), o
+puede estimar estos parámetros usted mismo utilizando datos sin procesar
+(que aún no hemos revisado en clase). Si todo lo demás falla, puede usar
+registros publicados para especies similares (asumiendo que las tasas
+vitales son aproximadamente las mismas).
+
+\hypertarget{segunda-asignaciuxf3n-relacionada-con-el-proyecto-el-pva-inicial}{%
+\subsection{Segunda asignación relacionada con el proyecto: ¡el PVA
+inicial!}\label{segunda-asignaciuxf3n-relacionada-con-el-proyecto-el-pva-inicial}}
+
+Su PVA inicial parametrizado consistirá en:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Un modelo PVA listo para ejecutar, en cualquier marco de software que
+  esté utilizando (InsightMaker, R). Este modelo no necesita ser el
+  modelo ``final'', pero debería funcionar (por ejemplo, producir
+  resultados) y las estimaciones de los parámetros deberían ser
+  razonables y estar respaldadas por pruebas (ver más abajo).
+\item
+  Una justificación/evidencia escrita para cada una de sus estimaciones
+  de parámetros y otras decisiones clave de modelado.
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii}.}
+  \tightlist
+  \item
+    Para cada decisión importante que tomó al construir el modelo,
+    describa la información que utilizó para respaldar su decisión (y
+    la(s) fuente(s) de esta información). Las decisiones incluyen:
+    cuántas poblaciones, abundancia(s) inicial(es), cuántas etapas, cómo
+    opera la dependencia de la densidad para su especie (por ejemplo,
+    qué tasas vitales dependen de la densidad), efectos Allee, tasas de
+    supervivencia y fecundidad, estocasticidad ambiental, catástrofes,
+    etc. Cuando sea apropiado, siéntase libre de incrustar figuras,
+    mapas, etc. de sus fuentes de información.
+  \end{enumerate}
+
+  B. ¿Qué escenarios planea probar (por ejemplo, escenarios de manejo,
+  cambio climático, cosecha, etc.) y cómo estos escenarios lo ayudarán a
+  abordar sus preguntas de investigación?
+
+  C. Literatura citada (el formato no es importante, siempre que incluya
+  toda la información clave).
+\end{enumerate}
+
+\hypertarget{tercera-tarea-relacionada-con-el-proyecto-el-proyecto-escrito-borrador}{%
+\subsection{Tercera tarea relacionada con el proyecto: ¡el proyecto
+escrito
+(borrador)!}\label{tercera-tarea-relacionada-con-el-proyecto-el-proyecto-escrito-borrador}}
+
+Se espera que su trabajo final escrito tenga el estilo de un
+\textbf{manuscrito científico }. Es decir, debe tener secciones de
+\emph{introducción }, \emph{métodos }, \emph{resultados } y
+\emph{discusión }, y debe citar la literatura relevante.
+
+\textbf{No hay pautas de formato ni límites de página }. Sea lo más
+conciso posible sin dejar de cubrir todos los elementos clave de la
+rúbrica. Puede utilizar cualquier formato estándar para sus referencias,
+¡todo lo que le pedimos es que sea coherente!
+
+\hypertarget{introducciuxf3n}{%
+\subsubsection{Introducción}\label{introducciuxf3n}}
+
+Aquí es donde presenta el tema y describe por qué es importante. También
+debe incluir aquí sus preguntas de investigación, junto con cualquier
+hipótesis que esté probando. ¡Puede reciclar y dar cuerpo al material de
+su propuesta! Debe tener al menos 2-3 párrafos.
+
+\hypertarget{muxe9todos}{%
+\subsubsection{Métodos}\label{muxe9todos}}
+
+Aquí es donde usted describe su PVA con suficiente detalle como para que
+\emph{¡otro investigador de vida silvestre lo pueda replicar }!Puede
+reciclar gran parte de su asignación de ``PVA inicial'' aquí.
+
+Recuerde justificar todas sus decisiones en términos de parametrización.
+
+Además, debe describir cómo abordó las preguntas de investigación que
+presentó en la sección de introducción (arriba)
+
+\begin{itemize}
+\item
+  ¿Qué diferentes escenarios corriste?
+\item
+  ¿Cómo utilizó los resultados de la simulación para abordar sus
+  preguntas?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ¿Cómo visualizó los resultados?
+  \item
+    ¿Realizó algún análisis estadístico?
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{resultados}{%
+\subsubsection{Resultados}\label{resultados}}
+
+Aquí es donde describe y presenta los resultados relevantes de su modelo
+(la mayoría se puede reciclar de su asignación de `PVA final').
+Proporcione figuras y tablas para resumir sus resultados
+\emph{relevantes }. Debe incluir al menos 2-3 cifras como parte de su
+sección de resultados. Cada figura debe tener una leyenda informativa
+colocada directamente debajo de la figura.
+
+Con PVA puede ser difícil decidir qué presentar y qué no presentar.
+Pregúntese siempre: ¿es * relevante * para sus preguntas principales??
+
+\hypertarget{discusiuxf3n}{%
+\subsubsection{Discusión}\label{discusiuxf3n}}
+
+Aquí es donde usted describe lo que realmente nos dicen sus resultados
+con respecto a sus preguntas principales.
+
+Además, en su discusión debe incluir:
+
+\begin{itemize}
+\tightlist
+\item
+  Describa cualquier pregunta nueva que surgió en el proceso de
+  construcción y ejecución de su PVA.
+\item
+  Describe cualquier defecto potencial de tu PVA y cómo podrías
+  mejorarlo en el futuro.
+\item
+  Describa cualquier investigación futura que pueda ser útil para
+  abordar sus principales preguntas.
+\end{itemize}
+
+Se puede encontrar una rúbrica para la presentación escrita final.
+\href{WrittenProject_rubric.docx}{here}.
+
+\hypertarget{cuarta-tarea-relacionada-con-el-proyecto-la-presentaciuxf3n-oral}{%
+\subsection{Cuarta tarea relacionada con el proyecto: ¡la presentación
+oral!}\label{cuarta-tarea-relacionada-con-el-proyecto-la-presentaciuxf3n-oral}}
+
+La presentación de su grupo debe tener el estilo de una presentación
+oral en una conferencia. ¡Consulte a continuación para obtener
+orientación sobre cómo dar una buena presentación oral!
+
+Las presentaciones se llevarán a cabo durante nuestros dos últimos
+períodos de laboratorio.
+
+Tendrá 15 minutos para realizar sus presentaciones, con al menos 3
+minutos adicionales para preguntas.
+
+Le entregaremos un formulario simple de revisión por pares para que
+pueda dar su opinión a sus compañeros.
+
+\hypertarget{se-puede-encontrar-una-ruxfabrica-para-las-presentaciones.-here}{%
+\section{\texorpdfstring{Se puede encontrar una rúbrica para las
+presentaciones.
+\href{presentationProject_rubric.docx}{here}}{Se puede encontrar una rúbrica para las presentaciones. here}}\label{se-puede-encontrar-una-ruxfabrica-para-las-presentaciones.-here}}
+
+\hypertarget{consejos-para-una-gran-presentaciuxf3n}{%
+\subsubsection{¡Consejos para una gran
+presentación!}\label{consejos-para-una-gran-presentaciuxf3n}}
+
+Aquí hay algunas notas generales sobre cómo preparar y realizar una gran
+presentación: - Para todas las diapositivas: \emph{¡Menos palabras, más
+imágenes }! Las diapositivas llenas de palabras a menudo hacen que las
+personas dejen de prestar atención. Todos ustedes están trabajando con
+especies carismáticas, por lo que no deberían tener problemas para
+encontrar buenas imágenes que capten la atención de las personas. En
+cuanto a las palabras, ¡3-5 puntos como máximo! NO se necesitan
+oraciones completas en una presentación. Utilice una fuente como por
+ejemplo \emph{sans-serif} grande para mejorar la legibilidad.
+
+Nota: asegúrese de dar el crédito adecuado a todas las imágenes (por
+ejemplo, ¿de qué sitio web proviene?)
+
+\begin{itemize}
+\item
+  La emoción es contagiosa: asegúrese de transmitir su entusiasmo por el
+  proyecto. Todos trabajaron muy duro y deberían estar orgullosos de lo
+  que pudieron hacer. ¡Ahora puede compartir esta emoción con sus
+  colegas! Muchos presentadores sin experiencia cometen el error de
+  destacar solo lo que no pudieron lograr. Trate de evitar este escollo;
+  las deficiencias deben limitarse a una sola diapositiva en la sección
+  de discusión de la presentación.
+\item
+  Una buena presentación debe \emph{contar una historia }. Tiene un
+  principio, un medio y un final. Cada diapositiva fluye lógicamente de
+  lo que vino antes.
+\item
+  Hágalo simple, no use jerga, acrónimos, etc. excesivos. Buenas
+  habilidades de comunicación significan transmitir sus puntos de la
+  manera más simple y clara posible.
+\item
+  Cada presentación es una actuación. ¡El rendimiento requiere práctica!
+  El trabajo real viene antes de la actuación: armar las diapositivas y
+  practicar la presentación. Cuando llegue el momento de dar la
+  actuación, relájese y diviértase, ¡el trabajo duro ha terminado!
+\end{itemize}
+
+Nota: no utilice fondos elegantes, mantenga las diapositivas lo más
+limpias posible. Las animaciones pueden ser útiles, ¡pero la animación
+excesiva es solo una distracción!
+
+\hypertarget{diapositiva-de-tuxedtulo}{%
+\paragraph{Diapositiva de título}\label{diapositiva-de-tuxedtulo}}
+
+\begin{itemize}
+\tightlist
+\item
+  ¡Haz un título interesante!
+\item
+  Incluya los nombres y afiliaciones de todos los coautores.
+\end{itemize}
+
+\hypertarget{introducciuxf3n-1}{%
+\paragraph{Introducción}\label{introducciuxf3n-1}}
+
+\begin{itemize}
+\item
+  ¡Dile a tu audiencia por qué debería importarles! Todos ustedes están
+  trabajando con especies interesantes y todos están haciendo preguntas
+  interesantes. Toda su audiencia está interesada en la conservación y
+  el manejo de la vida silvestre. ¡No hay absolutamente ninguna razón
+  por la que no puedas convencer a tu audiencia de que se preocupe por
+  lo que tienes que decir!
+\item
+  Cite investigaciones anteriores al configurar su pregunta de
+  investigación. Convéncenos de que su investigación llena un vacío de
+  conocimiento clave. ¿Cuál es el contexto general de su investigación?
+\item
+  Una vez que haya enmarcado el problema, \emph{¡establezca claramente
+  sus preguntas de investigación }!
+\end{itemize}
+
+\hypertarget{muxe9todos-1}{%
+\paragraph{Métodos}\label{muxe9todos-1}}
+
+\begin{itemize}
+\item
+  Proporcione un resumen muy abreviado de su modelo PVA. ¡No tiene
+  tiempo para proporcionar todos los detalles que se encuentran en su
+  sección de Métodos escrita! Así que intente destilar los elementos
+  clave de sus métodos. ¡Tenga cuidado de no dedicar demasiado tiempo a
+  esta sección! Los detalles que proporcione aquí deben ser claramente
+  relevantes para sus preguntas de investigación. Todo lo que necesita
+  hacer es convencer a sus compañeros de que sus métodos fueron
+  apropiados para abordar sus preguntas.
+\item
+  Puede incluir diapositivas complementarias que brinden más detalles
+  sobre sus métodos (después de la última diapositiva ``real''). ¡Puede
+  ser útil consultar las diapositivas complementarias si alguien hace
+  una pregunta sobre sus métodos!
+\end{itemize}
+
+\hypertarget{resultados-1}{%
+\paragraph{Resultados}\label{resultados-1}}
+
+\begin{itemize}
+\item
+  Incluir graficos claves que se relacionen con las preguntas
+  principales.
+\item
+  ¡Para todos los gráficos, asegúrese de explicar qué representan los
+  ejes! Además, asegúrese de que las etiquetas de los ejes sean lo
+  suficientemente grandes para que se puedan leer desde la parte
+  posterior de la sala.
+\end{itemize}
+
+\hypertarget{discusiuxf3n-1}{%
+\paragraph{Discusión}\label{discusiuxf3n-1}}
+
+\begin{itemize}
+\item
+  Resuma sus hallazgos clave: ¿qué aprendió?
+\item
+  Implicaciones de manejo: ¿cómo podrían los administradores de vida
+  silvestre actuar sobre sus hallazgos?
+\item
+  Solo una diapositiva que analiza las deficiencias de su proyecto y
+  cómo mejoraría su modelo y diseño si tuviera tiempo adicional.
+\item
+  Describa lo que usted u otros investigadores podrían hacer para
+  ampliar sus hallazgos. ¿Cuáles son los próximos pasos?
+\end{itemize}
+
+\hypertarget{agradecimientos}{%
+\paragraph{Agradecimientos}\label{agradecimientos}}
+
+\begin{itemize}
+\tightlist
+\item
+  Su diapositiva final debe reconocer a las personas que lo ayudaron con
+  su proyecto pero que no figuran como coautores.
+\end{itemize}
+
+\hypertarget{enlaces-potencialmente-uxfatiles}{%
+\subsection{Enlaces potencialmente
+útiles!}\label{enlaces-potencialmente-uxfatiles}}
+
+Conjuntos de datos disponibles públicamente, potencialmente para el
+proyecto final \ldots{} (muchos enlaces cortesía de Tom Langen)
+
+\hypertarget{biodiversity-data-clearinghouses-archives}{%
+\subsubsection{BIODIVERSITY DATA CLEARINGHOUSES
+/ARCHIVES}\label{biodiversity-data-clearinghouses-archives}}
+
+\href{http://www.iucnredlist.org/}{International Union for the
+Conservation of Nature (IUCN) Redlist} (Searchable list of the world's
+threatened and endangered plants and animal species on the IUCN
+Redlist.)
+
+\href{http://www.biodiversityhotspots.org/Pages/default.aspx}{Conservation
+International Global Biodiversity Hotspots} (Detailed data on the
+attributes and threats to the world's global biodiversity hotspots.)
+
+\href{http://www.nbii.gov/}{National Biological Information
+Infrastructure} (Data archive and clearinghouse for biological data from
+the US. Also provides standards for metadata.)
+
+\href{http://www.ice.ucdavis.edu/bioinventory/bioinventory.html}{Biological
+Inventories of the World's Protected Areas} (Searchable species
+occurrence records and species lists for over 1,400 protected areas
+around the globe.)
+
+\href{http://data.gbif.org/welcome.htm}{Global Biodiversity Information
+Facility} (An enormous clearinghouse of biodiversity data)
+
+\href{https://migbirdapps.fws.gov/mbdc/databases/db_selection.html}{USGS
+avian data portal}
+
+\href{http://www3.imperial.ac.uk/cpb/research/patternsandprocesses/gpdd}{Global
+Population Dynamics Data Base(GPDD)} (5000 population size time series
+for 1400 species, most of which have at least ten years of data. There
+are data on the natural history of the organism and the location \&
+method of sampling.)
+
+\href{https://www.imperial.ac.uk/cpb/gpdd2/secure/login.aspx}{GPDD,
+alternative link}
+
+\href{http://www.pwrc.usgs.gov/BBS/}{USGS Breeding Bird Survey}
+(Breeding bird survey data back to 1966)
+
+\href{http://www.pwrc.usgs.gov/point/}{Bird Point Count Database}
+(Depository of bird point-count data from across the US.)
+
+\href{http://www.bsc-eoc.org/birdmon/default/main.jsp}{Bird Studies
+Canada Nature Counts} (Bird survey data archive for Canada, includes
+point counts and many other types of surveys.)
+
+\href{http://www.avianknowledge.net/content/datasets}{Avian Knowledge
+Network} (Archive of aggregated bird surveys from many organizations and
+studies across throughout the western hemisphere, including Latin
+America.)
+
+\href{http://www.natureserve.org/getData/index.jsp}{NatureServe} (Data
+on species of plants and animals in the Western Hemisphere, including
+detailed range maps)
+
+\href{https://my.usgs.gov/bpd/}{USGS bat data portal}
+
+\href{https://compadredb.wordpress.com/2015/10/05/introducing-the-comadre-animal-matrix-database/}{Comadre
+and Compadre matrix demography database}
+
+\hypertarget{government-agency-data-portals}{%
+\subsubsection{GOVERNMENT AGENCY DATA
+PORTALS}\label{government-agency-data-portals}}
+
+\href{http://www.nationalatlas.gov/}{National Atlas} (Geospatial data on
+the environment, economy, and people of the US).
+
+\href{http://www.agcensus.usda.gov/}{US Department of Agriculture Census
+of Agricultural Data} (Authoritative data on all aspects of agriculture
+in the US.)
+
+\href{http://www.cdc.gov/datastatistics/}{Centers for Disease Control \&
+Prevention Data \& Statistics} (Comprehensive data on all aspects of
+disease epidemiology.)
+
+\href{http://waterdata.usgs.gov/nwis}{USGS Water Data for the Nation}
+(Hydrological and water-quality data from across the US.)
+
+\href{http://diseasemaps.usgs.gov/index.html}{USGS Survey Disease Maps}
+(US County-scale maps of incidence patterns of various mosquito-vectored
+diseases)
+
+\href{http://www.mrlc.gov/}{The Multi-resolution Land Characteristics
+Consortium (MRLC) National Land Cover Database} (Land cover or land use,
+canopy cover, and impermeable surface area of the entire US, at a
+resolution of 30 m x 30 m, based on remote sensing data from satellite
+imagery.)
+
+\href{http://www.fws.gov/wetlands/}{US Fish \& Wildlife Service National
+Wetlands Inventory} (Wetlands greater than 1 acre are mapped and
+classified throughout the US, Puerto Rico and US territories. Data can
+be examined using the
+\href{http://www.fws.gov/wetlands/Data/Mapper.html}{Wetland Mapper} and
+then downloaded for use by a GIS application, or can by inspected
+directly using
+\href{http://www.fws.gov/wetlands/Data/GoogleEarth.html}{Google Earth})
+
+\href{http://fia.fs.fed.us/}{USDA Forest Inventory and Analysis National
+Program} \href{http://fia.fs.fed.us/tools-data/default.asp}{Forest
+Inventory Data Online (FIDO)} (Highly-detailed periodic surveys of
+forest composition at sites throughout the US.)
+
+\href{http://www.usgs.gov/}{US Geological Survey} (Reports, data
+analysis, maps, and raw data on a diversity of topics related to
+environmental science, including biodiversity and emerging diseases.)
+
+\href{http://www.ncdc.noaa.gov/oa/ncdc.html}{NOAA National Climate Data
+Center} (Extensive data archives of climate data, including
+paleoclimate.)
+
+\hypertarget{environmental-data-clearinghouses}{%
+\subsubsection{ENVIRONMENTAL DATA
+CLEARINGHOUSES}\label{environmental-data-clearinghouses}}
+
+\href{http://www.ecotrends.info/EcoTrends/}{Ecotrends} (Data archive and
+data visualization tools for ecological data at sites distributed around
+the US.)
+
+\href{http://gcmd.nasa.gov/index.html}{NASA Global Change Master
+Directory} (Data on all aspects of global change, includes data on
+climate, land use, biodiversity and human dimensions.)
+
+\href{http://daac.ornl.gov/index.shtml}{Oak Ridge National Laboratory
+Distributed Active Archive Center for Biogeochemical Dynamics(ORNL
+DAAC)} (A NASA-sponsored source for biogeochemical and ecological data
+and models useful in environmental research.)
+
+\href{http://www.p2erls.net/}{Pole to Pole Ecological Research Lattice
+of Sites (P2ERLS)} (Portal to research stations and research networks,
+including their data archives.)
+
+\href{http://weatherspark.com/}{Weatherspark} (Visualized time-series
+data on local climate at sites around the globe.)
+
+\href{http://www.lternet.edu/}{Long Term Ecological Research (LTER)
+Network} (Network of research stations that have standardized monitoring
+programs as well as site-specific research. Sites are mandated to make
+data publicly available on the web.)
+
+\hypertarget{research-project-data-archives}{%
+\subsubsection{RESEARCH PROJECT DATA
+ARCHIVES}\label{research-project-data-archives}}
+
+\href{http://datadryad.org/}{Dryad} (Data archives for bioscience data
+from peer-reviewed journal articles from a large consortium of journals)
+
+\href{http://esapubs.org/archive/archive_D.htm}{Ecological Society of
+America (ESA) Data Registry} Archive of ecological and environmental
+data from ESA publications)
+
+\href{http://knb.ecoinformatics.org/knb/style/skins/nceas/index.jsp}{National
+Center for Ecological Assessment \& Synthesis (NCEAS) Data Repository}
+(Data archive of contributed data sets of all types of ecological data.)
+
+\href{http://www.nceas.ucsb.edu/scicomp/}{NCEAS Scientific Computing
+Database} (Clearinghouse of climatological, geospatial, and other data.
+Also has shareware software for analysis.)
+
+\end{document}

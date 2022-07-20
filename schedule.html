@@ -14,7 +14,7 @@
 
 <title>Calendario, Agosto 2021</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -67,6 +67,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -87,6 +88,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -315,7 +319,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -331,7 +335,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -412,7 +416,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -433,7 +437,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -445,7 +449,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -470,7 +474,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -487,7 +491,14 @@ div.tocify {
 
 
 <p>¡Compruebe las actualizaciones con frecuencia!</p>
-<p>NOTA: en 2021 estamos en línea, los materiales del curso están disponibles para que trabaje a su propio ritmo, y debe asistir a todas las ‘conferencias’ (lunes o miércoles). Por lo tanto, seguiremos principalmente el programa que se enumera a continuación, pero los elementos etiquetados como ‘CONFERENCIA’ están disponibles en línea (de forma asincrónica). ¡Espero que esto tenga sentido!</p>
+<p>NOTA: en 2021 estamos en línea, los materiales del curso están
+disponibles para que trabaje a su propio ritmo, y debe asistir a todas
+las ‘conferencias’ (lunes o miércoles). Por lo tanto, seguiremos
+principalmente el programa que se enumera a continuación, pero los
+elementos etiquetados como ‘CONFERENCIA’ están disponibles en línea (de
+forma asincrónica). ¡Espero que esto tenga sentido!</p>
+<pre><code>## Warning in !is.null(rmarkdown::metadata$output) &amp;&amp; rmarkdown::metadata$output
+## %in% : &#39;length(x) = 2 &gt; 1&#39; in coercion to &#39;logical(1)&#39;</code></pre>
 <table>
 <caption>
 </caption>
@@ -540,7 +551,8 @@ Gotelli Chapter 1
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-Hands_on_1: Introduccion a modelar en Ecol. Poblacion con Excel, InsightMaker y R
+Hands_on_1: Introduccion a modelar en Ecol. Poblacion con Excel,
+InsightMaker y R
 </td>
 <td style="text-align:left;">
 Gotelli Chapter 1
@@ -615,7 +627,8 @@ CONFERENCIA: Paloma viajera/El Efecto Allee
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-Hands_on_2: Crecimiento denso-dependiente en InsightMaker; rendimiento maximo sostenible (maximum sustainable yield (MSY)) y mas
+Hands_on_2: Crecimiento denso-dependiente en InsightMaker; rendimiento
+maximo sostenible (maximum sustainable yield (MSY)) y mas
 </td>
 <td style="text-align:left;">
 </td>
@@ -1009,7 +1022,9 @@ CONFERENCIA: Interacciones de especies: competencia
 11/10/21
 </td>
 <td style="text-align:left;">
-CONFERENCIA: Species interactions: predator-prey (final project: complete drafts Interacciones de especies: depredador-presa (proyecto final: anteproyecto completo)
+CONFERENCIA: Species interactions: predator-prey (final project:
+complete drafts Interacciones de especies: depredador-presa (proyecto
+final: anteproyecto completo)
 </td>
 <td style="text-align:left;">
 Gotelli Chapter 6

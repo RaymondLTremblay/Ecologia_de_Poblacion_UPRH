@@ -14,7 +14,7 @@
 
 <title>Tillandsia brachycaulos</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
 <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="site_libs/viz-1.8.2/viz.js"></script>
 <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="site_libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<script src="site_libs/grViz-binding-1.0.9/grViz.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -69,6 +69,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -89,6 +90,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -317,7 +321,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -333,7 +337,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -414,7 +418,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -435,7 +439,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -447,7 +451,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -472,7 +476,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -492,8 +496,11 @@ div.tocify {
 <h3>APPENDIX S1</h3>
 <ul>
 <li>R code for figures</li>
-<li>This appendix provides R code for producing the figures included in the main manuscript.</li>
-<li>Install the library using install.packages() or by downloading from <a href="http://cran.R-project.org" class="uri">http://cran.R-project.org</a></li>
+<li>This appendix provides R code for producing the figures included in
+the main manuscript.</li>
+<li>Install the library using install.packages() or by downloading from
+<a href="http://cran.R-project.org"
+class="uri">http://cran.R-project.org</a></li>
 </ul>
 </div>
 <div id="load-the-library-some-minor-changes" class="section level3">
@@ -503,8 +510,12 @@ library(popbio)</code></pre>
 </div>
 <div id="lectura" class="section level2">
 <h2>Lectura</h2>
-<p>Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este manuscrito.</p>
-<p><a href="Guest_Speakers/Temporal_variation_in_the_demography_of.pdf">Mondragón, Durán, Ramírez, Valverde</a>. Habrá un quiz de comprobación de lectura al principio de la clase.</p>
+<p>Deben leer el siguiente manuscrito para lunes, habrá prueba corta
+sobre este manuscrito.</p>
+<p><a
+href="Guest_Speakers/Temporal_variation_in_the_demography_of.pdf">Mondragón,
+Durán, Ramírez, Valverde</a>. Habrá un quiz de comprobación de lectura
+al principio de la clase.</p>
 <pre class="r"><code> Tis=matrix(c(
 0,0,0,0.007,0.017,0.036,0,.001,0.011,0.024,0.035,
 0.28,0.167,0,0,0,0,0,0,0,0,0,
@@ -622,7 +633,12 @@ lambdamax</code></pre>
 </div>
 <div id="stable-stage-distribution" class="section level2">
 <h2>Stable stage Distribution</h2>
-<p>The relative proportion of individuals represented in each age/stage of an exponentially increasing (or decreasing) population. Once the populaiton reaches a stable age/stage distribution, these proportion remainconstant through time. A stage age/stage distribution implies that a population is growing with fixed survivorship <em>lx</em> and fecundity <em>bx</em> schedules.</p>
+<p>The relative proportion of individuals represented in each age/stage
+of an exponentially increasing (or decreasing) population. Once the
+populaiton reaches a stable age/stage distribution, these proportion
+remainconstant through time. A stage age/stage distribution implies that
+a population is growing with fixed survivorship <em>lx</em> and
+fecundity <em>bx</em> schedules.</p>
 <ul>
 <li><p>What are the assumptions in regards to this concept?</p></li>
 <li><p>Elaborate::::</p></li>
@@ -635,7 +651,9 @@ w</code></pre>
 </div>
 <div id="reproductive-value-vx" class="section level2">
 <h2>Reproductive value, <em>vx</em></h2>
-<p>Reproductive value is the expected number of offspring that remain to be born to individuals of age/stage <strong>x</strong>. By definition the value of newborns <em>v0</em> is 1.0.</p>
+<p>Reproductive value is the expected number of offspring that remain to
+be born to individuals of age/stage <strong>x</strong>. By definition
+the value of newborns <em>v0</em> is 1.0.</p>
 <pre class="r"><code>v &lt;- reproductive.value(Tis)
 v</code></pre>
 <pre><code>##  [1]  1.000000  2.867147  3.830711  3.916761  4.624162  4.709649  3.983948
@@ -643,12 +661,22 @@ v</code></pre>
 </div>
 <div id="elasticities-and-sensitivity" class="section level2">
 <h2>Elasticities and Sensitivity</h2>
-<p>Both of these tools let you understand the importance of the effect of growth/persistence of the population, and determine which of the parameters are most relevant to future growth.</p>
-<div id="using-the-elasticity-vs.-the-sensitivity." class="section level3">
+<p>Both of these tools let you understand the importance of the effect
+of growth/persistence of the population, and determine which of the
+parameters are most relevant to future growth.</p>
+<div id="using-the-elasticity-vs.-the-sensitivity."
+class="section level3">
 <h3>Using the elasticity vs. the sensitivity.</h3>
 <ul>
-<li><p>Elasticity assesses effect of a proportional change in the values such as lambda: In other words if you were able modify the parameter (increase of decrease survivorship or reproduction) what would be the proportional effect on the growth of the population. In this case the values of reproduction and survivorhsip and growth are comparible (same scale)</p></li>
-<li><p>sensitivities assess the effect of an additive change. Reproduction and survivorship and growth are on different scales.</p></li>
+<li><p>Elasticity assesses effect of a proportional change in the values
+such as lambda: In other words if you were able modify the parameter
+(increase of decrease survivorship or reproduction) what would be the
+proportional effect on the growth of the population. In this case the
+values of reproduction and survivorhsip and growth are comparible (same
+scale)</p></li>
+<li><p>sensitivities assess the effect of an additive change.
+Reproduction and survivorship and growth are on different
+scales.</p></li>
 </ul>
 <pre class="r"><code>sens(Tis)</code></pre>
 <pre><code>##              [,1]        [,2]        [,3]         [,4]         [,5]
@@ -711,14 +739,24 @@ v</code></pre>
 </div>
 <div id="section" class="section level1">
 <h1></h1>
-<p>Fig. 2a: Population-specific transient dynamics # This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
+<p>Fig. 2a: Population-specific transient dynamics # This figure is
+designed to be 3.5” by 3.5” (Check size of plot window using
+‘par(din)’).</p>
 <p>Set margins:</p>
 <pre class="r"><code>par(mar=c(10,4,1,1))</code></pre>
-<p>#Create 2 population vectors. One is adult- #biased, and it amplifies. One is juvenile- # biased and it attenuates.</p>
+<p>#Create 2 population vectors. One is adult- #biased, and it
+amplifies. One is juvenile- # biased and it attenuates.</p>
 <pre class="r"><code>n0.amp &lt;- c(1000,1,1,1,1,1,1,1,1,1,1)
 
 n0.att &lt;- c(1,1,1,1,1,1,1,1,1,1,1000)</code></pre>
-<p>Project these vectors using the project function. We are standardising the matrix using ‘standard.A=T’ to remove effects of asymptotic dynamics. This means that the projection has a long-term growth rate of unity, i.e. it does not grow or decline in the long-term. We also standardise the population vector to sum to 1 using ‘standard.vec=T’. These standardisations make it easier (and fairer) to compare between models with different population sizes, and different long-term growth rates.</p>
+<p>Project these vectors using the project function. We are
+standardising the matrix using ‘standard.A=T’ to remove effects of
+asymptotic dynamics. This means that the projection has a long-term
+growth rate of unity, i.e. it does not grow or decline in the long-term.
+We also standardise the population vector to sum to 1 using
+‘standard.vec=T’. These standardisations make it easier (and fairer) to
+compare between models with different population sizes, and different
+long-term growth rates.</p>
 <pre class="r"><code>pr2.1 &lt;- project(Tis, vector=n0.amp, time=156, 
                  standard.A=T, standard.vec=T)
 pr2.2 &lt;- project(Tis, vector=n0.att, time=156, 
@@ -746,17 +784,36 @@ upinertia &lt;- inertia(Tis, vector=n0.amp)</code></pre>
  #    adj=c(0.1,-0.5), col=&quot;red&quot;, cex=0.8)
 #text(31, upinertia, expression(bar(P)[infinity]), 
 #     adj=c(0.1,-0.5), col=&quot;red&quot;, cex=0.8)</code></pre>
-<p>Add in the second projection using the ‘lines’ command and label it lines(0:50, pr2.2) text(52, pr2.2[51], “attenuation”, adj=c(1,1), cex=0.8)</p>
-<p>Calculate the transient dynamics of the attenuation projection firstep &lt;- firststepatt(Lrub1, vector=n0.att) maxatt &lt;- maxatt(Lrub1, vector=n0.att, return.t=T) lowinertia &lt;- inertia(Lrub1, vector=n0.att)</p>
-<p>firststepatt(Lrub1, vector=n0.att) maxatt(Lrub1, vector=n0.att, return.t=T) inertia(Lrub1, vector=n0.att)</p>
-<p>Add points on the attenuation projection and label them points(c(1,maxatt<span class="math inline">\(t,31), c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1, firstep, expression(underline(P)[1]), adj=c(0,-0.6), col=“red”, cex=0.8) text(maxatt<span class="math inline">\(t, maxatt\)</span>maxatt, expression(underline(P)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8) text(31, lowinertia, expression(underline(P)[infinity]), adj=c(0.1,1.5), col=“red”, cex=0.8)</p>
+<p>Add in the second projection using the ‘lines’ command and label it
+lines(0:50, pr2.2) text(52, pr2.2[51], “attenuation”, adj=c(1,1),
+cex=0.8)</p>
+<p>Calculate the transient dynamics of the attenuation projection
+firstep &lt;- firststepatt(Lrub1, vector=n0.att) maxatt &lt;-
+maxatt(Lrub1, vector=n0.att, return.t=T) lowinertia &lt;- inertia(Lrub1,
+vector=n0.att)</p>
+<p>firststepatt(Lrub1, vector=n0.att) maxatt(Lrub1, vector=n0.att,
+return.t=T) inertia(Lrub1, vector=n0.att)</p>
+<p>Add points on the attenuation projection and label them
+points(c(1,maxatt<span class="math inline">\(t,31),
+c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1,
+firstep, expression(underline(P)[1]), adj=c(0,-0.6), col=“red”, cex=0.8)
+text(maxatt<span class="math inline">\(t, maxatt\)</span>maxatt,
+expression(underline(P)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8)
+text(31, lowinertia, expression(underline(P)[infinity]), adj=c(0.1,1.5),
+col=“red”, cex=0.8)</p>
 <p>Add in a dotted line at y=1 lines(c(0,50),c(1,1),lty=2)</p>
 <div id="section-1" class="section level73">
 <p class="heading"></p>
 <p>FIGURE 4: TRANSFER FUNCTION MATRIX</p>
-<p>This figure is designed to be 7” by 7” (Check size of plot window using ‘par(din)’).</p>
-<p>This is a nice, easy plot because the function does it all for you. The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function for every PPM element. They are saved as arrays of values. The functions are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
-<p>Create the array for inertia, using a specific population vector: n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1, vector=n0)</p>
+<p>This figure is designed to be 7” by 7” (Check size of plot window
+using ‘par(din)’).</p>
+<p>This is a nice, easy plot because the function does it all for you.
+The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function
+for every PPM element. They are saved as arrays of values. The functions
+are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
+<p>Create the array for inertia, using a specific population vector: n0
+&lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1,
+vector=n0)</p>
 <p>…and plot it! plot(tfmat)</p>
 <pre class="r"><code>n0 &lt;- c(48, 16, 12, 10)
 tfmat &lt;- tfamatrix(Tis)</code></pre>

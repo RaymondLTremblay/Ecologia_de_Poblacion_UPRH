@@ -14,7 +14,7 @@
 
 <title>Intro a modelos a base individuales (IBM)</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -477,118 +481,235 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Intro a modelos a base individuales (IBM)</h1>
+<h1 class="title toc-ignore">Intro a modelos a base individuales
+(IBM)</h1>
 <h4 class="author">BIOL4558</h4>
 <h4 class="date">Agosto 2021</h4>
 
 </div>
 
 
-<p>NOTA: ¡Muchas gracias a Elizabeth Hunter (Georgia Southern Univerisity) por ayudar a desarrollar la demostración al final de esta conferencia!</p>
+<p>NOTA: ¡Muchas gracias a Elizabeth Hunter (Georgia Southern
+Univerisity) por ayudar a desarrollar la demostración al final de esta
+conferencia!</p>
 <p><img src="figures/birds1.jpg" /></p>
-<p>Hasta ahora en esta clase hemos considerado la ** población ** como la unidad fundamental que nos interesa modelar. La población es un [Stock] y todos los procesos que pueden cambiar el tamaño de la población son [Flujos]. Se supone que todos los individuos dentro de cualquier [Stock] son ​​intercambiables (idénticos en todos los sentidos) y no se modelan explícitamente.</p>
-<p>¡El hecho de que modelemos poblaciones como nuestra unidad fundamental de interés tiene sentido para una clase de ecología de poblaciones! PERO también somos conscientes (por supuesto) de que las poblaciones consisten en ** individuos ** que son semiautónomos. A veces, las preguntas que queremos hacer en ecología y biología de la conservación requieren que nos acerquemos a los procesos que están ocurriendo a nivel * individual *.</p>
-<p>De alguna manera, una población es difícil de definir; puede ser un concepto algo artificial o abstracto. ¿Dónde exactamente comienza y termina una población?</p>
-<p>Sin embargo, el individuo es (¡generalmente!) Un concepto sencillo y biológicamente significativo.</p>
-<div id="el-flujo-de-trabajo-de-modelado-general" class="section level2">
+<p>Hasta ahora en esta clase hemos considerado la ** población ** como
+la unidad fundamental que nos interesa modelar. La población es un
+[Stock] y todos los procesos que pueden cambiar el tamaño de la
+población son [Flujos]. Se supone que todos los individuos dentro de
+cualquier [Stock] son ​​intercambiables (idénticos en todos los sentidos)
+y no se modelan explícitamente.</p>
+<p>¡El hecho de que modelemos poblaciones como nuestra unidad
+fundamental de interés tiene sentido para una clase de ecología de
+poblaciones! PERO también somos conscientes (por supuesto) de que las
+poblaciones consisten en ** individuos ** que son semiautónomos. A
+veces, las preguntas que queremos hacer en ecología y biología de la
+conservación requieren que nos acerquemos a los procesos que están
+ocurriendo a nivel * individual *.</p>
+<p>De alguna manera, una población es difícil de definir; puede ser un
+concepto algo artificial o abstracto. ¿Dónde exactamente comienza y
+termina una población?</p>
+<p>Sin embargo, el individuo es (¡generalmente!) Un concepto sencillo y
+biológicamente significativo.</p>
+<div id="el-flujo-de-trabajo-de-modelado-general"
+class="section level2">
 <h2>El flujo de trabajo de modelado general</h2>
-<p>Antes de definir en qué se diferencian los modelos basados ​​en individuos de los modelos de flujo de existencias a nivel de población que ya hemos estado usando, primero señalemos las similitudes.</p>
-<p>En primer lugar, el flujo de trabajo de modelado básico SIEMPRE es el mismo, ¡sin importar qué tipo de modelo queramos usar!</p>
+<p>Antes de definir en qué se diferencian los modelos basados ​​en
+individuos de los modelos de flujo de existencias a nivel de población
+que ya hemos estado usando, primero señalemos las similitudes.</p>
+<p>En primer lugar, el flujo de trabajo de modelado básico SIEMPRE es el
+mismo, ¡sin importar qué tipo de modelo queramos usar!</p>
 <p><img src="figures/model_wkflow1.jpg" /></p>
-<p>Todos los modelos son una forma de <strong>formalizar nuestra comprensión sobre nuestro sistema de estudio </strong>.</p>
-<p><strong>Los modelos basados en la población </strong> (PBM; es decir, modelos de $N $) son el tipo principal de modelo que consideramos en esta clase: con todos los individuos en una [población] considerados intercambiables, $N $ (posiblemente edad -estructurado) es nuestra principal variable de interés. $N $ está a su vez controlado por factores endógenos (fuerzas que provienen del interior de la población, por ejemplo, dependencia de la densidad, estocasticidad demográfica) y factores exógenos (fuerzas que provienen de fuera de la población, por ejemplo, estocasticidad ambiental, cosecha).</p>
-<p><strong>PBM estructuradas por edad / etapa </strong> y <strong>PBM estructuradas por sexo </strong> (es decir, modelos de $ $, es decir, modelos de población matricial) son tipos de PBM en los que los individuos se agrupan de acuerdo con rasgos importantes como el sexo y la edad, con tasas vitales poblacionales distintas asignadas a cada grupo.</p>
-<p><strong>Los modelos basados en individuos </strong> (Individual Based models = IBM; también conocidos como modelos “basados en agentes”) son una forma de modelar poblaciones de manera que todos los individuos se consideran explícitamente. Ya no necesitamos agrupar a los individuos en [Stocks] - ¡cada individuo puede tener potencialmente una probabilidad de supervivencia diferente, o posibilidad de reproducirse, o propensión a moverse! Estas diferencias pueden ser el resultado de (por ejemplo) el contexto espacial o la variación genética entre individuos.</p>
-<p>En este caso, no modelamos $N $ directamente en absoluto; de hecho, $ N $ (en un marco de IBM) es una <strong>propiedad emergente </strong> de organismos individuales que interactúan entre sí, que viven o mueren en el contexto de interacciones con depredadores, competidores y su entorno abiótico.</p>
-<div id="qué-estructura-de-modelo-debo-utilizar-ibm-o-pbm" class="section level3">
+<p>Todos los modelos son una forma de <strong>formalizar nuestra
+comprensión sobre nuestro sistema de estudio </strong>.</p>
+<p><strong>Los modelos basados en la población </strong> (PBM; es decir,
+modelos de $N $) son el tipo principal de modelo que consideramos en
+esta clase: con todos los individuos en una [población] considerados
+intercambiables, $N $ (posiblemente edad -estructurado) es nuestra
+principal variable de interés. $N $ está a su vez controlado por
+factores endógenos (fuerzas que provienen del interior de la población,
+por ejemplo, dependencia de la densidad, estocasticidad demográfica) y
+factores exógenos (fuerzas que provienen de fuera de la población, por
+ejemplo, estocasticidad ambiental, cosecha).</p>
+<p><strong>PBM estructuradas por edad / etapa </strong> y <strong>PBM
+estructuradas por sexo </strong> (es decir, modelos de $ $, es decir,
+modelos de población matricial) son tipos de PBM en los que los
+individuos se agrupan de acuerdo con rasgos importantes como el sexo y
+la edad, con tasas vitales poblacionales distintas asignadas a cada
+grupo.</p>
+<p><strong>Los modelos basados en individuos </strong> (Individual Based
+models = IBM; también conocidos como modelos “basados en agentes”) son
+una forma de modelar poblaciones de manera que todos los individuos se
+consideran explícitamente. Ya no necesitamos agrupar a los individuos en
+[Stocks] - ¡cada individuo puede tener potencialmente una probabilidad
+de supervivencia diferente, o posibilidad de reproducirse, o propensión
+a moverse! Estas diferencias pueden ser el resultado de (por ejemplo) el
+contexto espacial o la variación genética entre individuos.</p>
+<p>En este caso, no modelamos $N $ directamente en absoluto; de hecho, $
+N $ (en un marco de IBM) es una <strong>propiedad emergente </strong> de
+organismos individuales que interactúan entre sí, que viven o mueren en
+el contexto de interacciones con depredadores, competidores y su entorno
+abiótico.</p>
+<div id="qué-estructura-de-modelo-debo-utilizar-ibm-o-pbm"
+class="section level3">
 <h3>¿Qué estructura de modelo debo utilizar? IBM o PBM?</h3>
-<p>En general, los modelos son herramientas; debe utilizar la estructura del modelo que mejor se adapte a las preguntas que está formulando y a su comprensión del sistema de estudio.</p>
-<p>Y también, si dos estructuras de modelo diferentes son igualmente apropiadas, ¡normalmente debería utilizar el <strong>enfoque más simple </strong>! Esta idea a menudo se denomina <em>Principio de parsimonia </em> (o <em>Navaja de Occam </em>). _Principle of Parsimony (or, Occam’s Razor*)_.</p>
-<p><img src="figures/occam1.jpg" /> Tanto IBM como PBM se pueden utilizar para abordar preguntas a nivel de población o metapoblación.</p>
+<p>En general, los modelos son herramientas; debe utilizar la estructura
+del modelo que mejor se adapte a las preguntas que está formulando y a
+su comprensión del sistema de estudio.</p>
+<p>Y también, si dos estructuras de modelo diferentes son igualmente
+apropiadas, ¡normalmente debería utilizar el <strong>enfoque más simple
+</strong>! Esta idea a menudo se denomina <em>Principio de parsimonia
+</em> (o <em>Navaja de Occam </em>). _Principle of Parsimony (or,
+Occam’s Razor*)_.</p>
+<p><img src="figures/occam1.jpg" /> Tanto IBM como PBM se pueden
+utilizar para abordar preguntas a nivel de población o
+metapoblación.</p>
 <div id="rules-of-thumb" class="section level4">
 <h4>Rules of thumb</h4>
-<p><strong>Q </strong>: Todas las poblaciones están compuestas por individuos. Entonces, ¿por qué no siempre modelamos poblaciones utilizando modelos basados ​​en individuos?</p>
+<p><strong>Q </strong>: Todas las poblaciones están compuestas por
+individuos. Entonces, ¿por qué no siempre modelamos poblaciones
+utilizando modelos basados ​​en individuos?</p>
 <ul>
-<li><p>En general, debe utilizar IBM si sus <em>fuentes de información primarias (datos) están a nivel individual </em> (por ejemplo, datos de telemetría), lo que le permite construir modelos informados de cómo los individuos interactúan con miembros de su propia especie, especies y con su entorno local, en cuyo caso el principio de parsimonia dicta que se deben construir modelos a nivel individual. Es decir, hace menos suposiciones si modela este sistema como IBM.</p></li>
-<li><p>Debe usar PBM si su <em>información primaria está a nivel de población </em> (por ejemplo, <em>los resultados de la mayoría de los análisis de marca-recaptura</em>), en cuyo caso el principio de parsimonia dicta que debe construir modelos a nivel de población.</p></li>
+<li><p>En general, debe utilizar IBM si sus <em>fuentes de información
+primarias (datos) están a nivel individual </em> (por ejemplo, datos de
+telemetría), lo que le permite construir modelos informados de cómo los
+individuos interactúan con miembros de su propia especie, especies y con
+su entorno local, en cuyo caso el principio de parsimonia dicta que se
+deben construir modelos a nivel individual. Es decir, hace menos
+suposiciones si modela este sistema como IBM.</p></li>
+<li><p>Debe usar PBM si su <em>información primaria está a nivel de
+población </em> (por ejemplo, <em>los resultados de la mayoría de los
+análisis de marca-recaptura</em>), en cuyo caso el principio de
+parsimonia dicta que debe construir modelos a nivel de
+población.</p></li>
 </ul>
-<p><strong>Q</strong>: ¿Cuáles son algunas preguntas de ecología de poblaciones que podrían abordarse mejor utilizando <strong>individual-based models (IBM)</strong>?</p>
-<p><strong>Q</strong>: ¿Cuáles son algunas preguntas de ecología de poblaciones que podrían abordarse mejor utilizando <strong>population-based models (PBM)</strong>?</p>
-<p><em>Los modelos individuales son poderosos, ¡pero el poder conlleva una gran responsabilidad!</em></p>
+<p><strong>Q</strong>: ¿Cuáles son algunas preguntas de ecología de
+poblaciones que podrían abordarse mejor utilizando
+<strong>individual-based models (IBM)</strong>?</p>
+<p><strong>Q</strong>: ¿Cuáles son algunas preguntas de ecología de
+poblaciones que podrían abordarse mejor utilizando
+<strong>population-based models (PBM)</strong>?</p>
+<p><em>Los modelos individuales son poderosos, ¡pero el poder conlleva
+una gran responsabilidad!</em></p>
 </div>
 </div>
 </div>
 <div id="demo-modelos-individuales" class="section level2">
 <h2>Demo: ¡Modelos individuales!</h2>
-<p>El objetivo de esta actividad es construir un modelo mecanicista basado en el individuo (IBM) de un sistema ecológico (¡completamente real)</p>
+<p>El objetivo de esta actividad es construir un modelo mecanicista
+basado en el individuo (IBM) de un sistema ecológico (¡completamente
+real)</p>
 <div id="el-escenario" class="section level3">
 <h3>El Escenario</h3>
-<p>El archipiélago de la * isla Laphlag * es famoso por sus espectaculares pendientes, su exuberante hierba verde y su oveja nativa, el cimarrón de la isla laphlag. Hace unos 50 años, la población nativa de lobos isleños fue cazada hasta la extinción por los ganaderos para evitar la depredación del ganado.</p>
-<p>Sin embargo, sin los lobos, las poblaciones de ovejas se dispararon y la famosa y exuberante hierba verde laflagiana se está perdiendo rápidamente debido al sobrepastoreo de las ovejas nativas.</p>
-<p>Los lugareños ahora se dan cuenta: para restaurar el equilibrio ecológico en las islas * ¡Deben reintroducir lobos *!</p>
-<p>La agencia de gestión de recursos naturales de Laphlag está a punto de iniciar una reintroducción experimental de lobos en una isla muy pequeña del archipiélago (como prueba), pero quieren saber cómo proceder.</p>
-<p>Usted ha sido contratado como ecólogo investigador para ayudar a abordar las siguientes preguntas:</p>
+<p>El archipiélago de la * isla Laphlag * es famoso por sus
+espectaculares pendientes, su exuberante hierba verde y su oveja nativa,
+el cimarrón de la isla laphlag. Hace unos 50 años, la población nativa
+de lobos isleños fue cazada hasta la extinción por los ganaderos para
+evitar la depredación del ganado.</p>
+<p>Sin embargo, sin los lobos, las poblaciones de ovejas se dispararon y
+la famosa y exuberante hierba verde laflagiana se está perdiendo
+rápidamente debido al sobrepastoreo de las ovejas nativas.</p>
+<p>Los lugareños ahora se dan cuenta: para restaurar el equilibrio
+ecológico en las islas * ¡Deben reintroducir lobos *!</p>
+<p>La agencia de gestión de recursos naturales de Laphlag está a punto
+de iniciar una reintroducción experimental de lobos en una isla muy
+pequeña del archipiélago (como prueba), pero quieren saber cómo
+proceder.</p>
+<p>Usted ha sido contratado como ecólogo investigador para ayudar a
+abordar las siguientes preguntas:</p>
 <ul>
-<li><p>¿Cómo es probable que los lobos reintroducidos afecten la biomasa y la distribución de las gramíneas?</p></li>
-<li><p>¿Cuántos lobos deberían introducirse para producir el efecto ecológico deseado (exuberantes alfombras de hierba verde)? ¿Cuánto tiempo llevará lograr este efecto deseado?</p></li>
+<li><p>¿Cómo es probable que los lobos reintroducidos afecten la biomasa
+y la distribución de las gramíneas?</p></li>
+<li><p>¿Cuántos lobos deberían introducirse para producir el efecto
+ecológico deseado (exuberantes alfombras de hierba verde)? ¿Cuánto
+tiempo llevará lograr este efecto deseado?</p></li>
 </ul>
-<p>Los biólogos de la agencia le brindan información para que adivine y le prometen que podrá venir a estudiar este sistema natural una vez que se realicen las reintroducciones.</p>
+<p>Los biólogos de la agencia le brindan información para que adivine y
+le prometen que podrá venir a estudiar este sistema natural una vez que
+se realicen las reintroducciones.</p>
 <p><img src="figures/sheep1.png" /></p>
 </div>
 <div id="los-detalles" class="section level3">
 <h3>Los detalles!</h3>
-<p>La reintroducción se inicia inmediatamente después de la temporada de reproducción y el experimento se lleva a cabo durante 365 días.</p>
+<p>La reintroducción se inicia inmediatamente después de la temporada de
+reproducción y el experimento se lleva a cabo durante 365 días.</p>
 <div id="ovejas" class="section level4">
 <h4>Ovejas</h4>
 <ul>
 <li>Hay un total de 50 ovejas en el lugar de liberación.</li>
-<li>Cada oveja come 0,5 “unidades” de hierba por día (consulte la sección sobre hierba a continuación)</li>
-<li>Cada oveja da a luz a ca. 1-2 corderos aproximadamente cada 50-100 días del experimento (¡fecundidad muy alta!).</li>
-<li>Las ovejas tienden a permanecer en su lugar a menos que se queden sin comida para comer o que haya un lobo en las cercanías.</li>
+<li>Cada oveja come 0,5 “unidades” de hierba por día (consulte la
+sección sobre hierba a continuación)</li>
+<li>Cada oveja da a luz a ca. 1-2 corderos aproximadamente cada 50-100
+días del experimento (¡fecundidad muy alta!).</li>
+<li>Las ovejas tienden a permanecer en su lugar a menos que se queden
+sin comida para comer o que haya un lobo en las cercanías.</li>
 </ul>
 </div>
 <div id="lobos" class="section level4">
 <h4>Lobos</h4>
 <ul>
-<li>Hay un total de 5 lobos liberados al comienzo del “experimento”.</li>
-<li>Los lobos son cazadores solitarios, ¡al menos en esta isla (¡no imaginaria!).</li>
-<li>Los lobos tienen un 50% de probabilidad de encontrar y matar cualquier oveja dentro de los 500 m de su ubicación en un día determinado.</li>
+<li>Hay un total de 5 lobos liberados al comienzo del
+“experimento”.</li>
+<li>Los lobos son cazadores solitarios, ¡al menos en esta isla (¡no
+imaginaria!).</li>
+<li>Los lobos tienen un 50% de probabilidad de encontrar y matar
+cualquier oveja dentro de los 500 m de su ubicación en un día
+determinado.</li>
 <li>Cada lobo puede matar un máximo de una oveja por día.</li>
-<li>Los lobos tienden a moverse aproximadamente 500 m por día en promedio.</li>
+<li>Los lobos tienden a moverse aproximadamente 500 m por día en
+promedio.</li>
 <li>Los lobos dan a luz con una probabilidad del 2% por día.</li>
 </ul>
 </div>
 <div id="graminea" class="section level4">
 <h4>Graminea</h4>
 <ul>
-<li>El sitio de liberación es esencialmente una gran pradera cubierta de hierba. Para los propósitos de este ejercicio, modelaremos este sitio de liberación pastoral como una cuadrícula de 100 parcelas funcionalmente equivalentes. Cada parcela comienza con 10 “unidades” “de hierba (cada” unidad “de hierba puede soportar exactamente 1 oveja).</li>
-<li>Cada parcela de césped puede tener un máximo de 50 unidades de césped.</li>
-<li>Cada parcela puede crecer aproximadamente 0,7 unidades de hierba por día.</li>
+<li>El sitio de liberación es esencialmente una gran pradera cubierta de
+hierba. Para los propósitos de este ejercicio, modelaremos este sitio de
+liberación pastoral como una cuadrícula de 100 parcelas funcionalmente
+equivalentes. Cada parcela comienza con 10 “unidades” “de hierba (cada”
+unidad “de hierba puede soportar exactamente 1 oveja).</li>
+<li>Cada parcela de césped puede tener un máximo de 50 unidades de
+césped.</li>
+<li>Cada parcela puede crecer aproximadamente 0,7 unidades de hierba por
+día.</li>
 </ul>
 </div>
 </div>
 <div id="ejercicio-en-clase" class="section level3">
 <h3>Ejercicio en Clase:</h3>
-<p>Primero, vaya a InsightMaker y clone el modelo de demostración individual. <a href="https://insightmaker.com/insight/162354/Sheep-model-Individual-based-demo">Here is the link!</a>.</p>
+<p>Primero, vaya a InsightMaker y clone el modelo de demostración
+individual. <a
+href="https://insightmaker.com/insight/162354/Sheep-model-Individual-based-demo">Here
+is the link!</a>.</p>
 <ol style="list-style-type: decimal">
-<li><p>Asegúrese de que puede ejecutar el modelo e interpretar las cifras resultantes. &gt; 1) Make sure you can run the model and interpret the resulting figures.</p></li>
-<li><p>¿El modelo se comporta de manera realista? ¡Pruébalo! ¿Qué pasa si empiezas con muchas ovejas y sin lobos? ¿Qué pasa si empiezas sin ovejas y con un montón de lobos?</p></li>
+<li><p>Asegúrese de que puede ejecutar el modelo e interpretar las
+cifras resultantes. &gt; 1) Make sure you can run the model and
+interpret the resulting figures.</p></li>
+<li><p>¿El modelo se comporta de manera realista? ¡Pruébalo! ¿Qué pasa
+si empiezas con muchas ovejas y sin lobos? ¿Qué pasa si empiezas sin
+ovejas y con un montón de lobos?</p></li>
 </ol>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
-<li>Does the model behave realistically? Test it! What happens if you start with lots of sheep and no wolves? What happens if you start with no sheep, and a bunch of wolves?</li>
+<li>Does the model behave realistically? Test it! What happens if you
+start with lots of sheep and no wolves? What happens if you start with
+no sheep, and a bunch of wolves?</li>
 </ol>
 </blockquote>
 <ol start="3" style="list-style-type: decimal">
-<li>¿Es posible que la parcela experimental sostenga ovejas, lobos y pasto indefinidamente?</li>
+<li>¿Es posible que la parcela experimental sostenga ovejas, lobos y
+pasto indefinidamente?</li>
 </ol>
 <blockquote>
 <ol start="3" style="list-style-type: decimal">
-<li>Is it possible for the experimental plot to support sheep, wolves, and grass indefinitely?</li>
+<li>Is it possible for the experimental plot to support sheep, wolves,
+and grass indefinitely?</li>
 </ol>
 </blockquote>
 <ol start="4" style="list-style-type: decimal">
-<li>Intente ajustar el número de ovejas y lobos para cumplir con sus objetivos de gestión: [Edmodo]
+<li>Intente ajustar el número de ovejas y lobos para cumplir con sus
+objetivos de gestión: [Edmodo]
 <ul>
 <li>Mantener poblaciones viables tanto de ovejas como de lobos.</li>
 <li>¡Mantenga una hierba exuberante!</li>
@@ -596,7 +717,8 @@ div.tocify {
 </ol>
 <blockquote>
 <ol start="4" style="list-style-type: decimal">
-<li>Try to adjust the number of sheep and wolves to meet your management goals: [tophat]<br />
+<li>Try to adjust the number of sheep and wolves to meet your management
+goals: [tophat]<br />
 </li>
 </ol>
 <ul>
@@ -606,30 +728,44 @@ div.tocify {
 </ul>
 </blockquote>
 <ol start="5" style="list-style-type: decimal">
-<li>¿Qué pasaría si los lobos fueran más eficientes para matar ovejas? Intente duplicar la variable “Prob of kill” y vea si cambia su respuesta y cómo cambia.</li>
+<li>¿Qué pasaría si los lobos fueran más eficientes para matar ovejas?
+Intente duplicar la variable “Prob of kill” y vea si cambia su respuesta
+y cómo cambia.</li>
 </ol>
 <blockquote>
 <ol start="5" style="list-style-type: decimal">
-<li>What if wolves were more efficient at killing sheep? Try doubling the “Prob of kill” variable and see if/how your answer changes.</li>
+<li>What if wolves were more efficient at killing sheep? Try doubling
+the “Prob of kill” variable and see if/how your answer changes.</li>
 </ol>
 </blockquote>
 <ol start="6" style="list-style-type: decimal">
-<li>¿Y si la hierba fuera más productiva? Intente duplicar la “Tasa de crecimiento del pasto” y vea si se pueden mantener más ovejas de manera sostenible.</li>
+<li>¿Y si la hierba fuera más productiva? Intente duplicar la “Tasa de
+crecimiento del pasto” y vea si se pueden mantener más ovejas de manera
+sostenible.</li>
 </ol>
 <blockquote>
 <ol start="6" style="list-style-type: decimal">
-<li>What if grass were more productive? Try doubling the “Grass Growth Rate” and see if more sheep can be supported sustainably.</li>
+<li>What if grass were more productive? Try doubling the “Grass Growth
+Rate” and see if more sheep can be supported sustainably.</li>
 </ol>
 </blockquote>
 <ol start="7" style="list-style-type: decimal">
-<li>¿Qué pasa si los lobos en realidad no matan a las ovejas, sino que las asustan (hacen que se muevan continuamente)? ¿Podría la presencia de lobos afectar el crecimiento de la hierba en este caso? ¿Puedes pensar en una forma de probar esto usando este IBM?</li>
+<li>¿Qué pasa si los lobos en realidad no matan a las ovejas, sino que
+las asustan (hacen que se muevan continuamente)? ¿Podría la presencia de
+lobos afectar el crecimiento de la hierba en este caso? ¿Puedes pensar
+en una forma de probar esto usando este IBM?</li>
 </ol>
 <blockquote>
 <ol start="7" style="list-style-type: decimal">
-<li>What if the wolves don’t actually kill the sheep, but just scare them (make them move continuously)?? Could the presence of wolves affect grass growth in this case? Can you think of a way to test this using this IBM?</li>
+<li>What if the wolves don’t actually kill the sheep, but just scare
+them (make them move continuously)?? Could the presence of wolves affect
+grass growth in this case? Can you think of a way to test this using
+this IBM?</li>
 </ol>
 </blockquote>
-<p><strong>P </strong>: ¿Hay alguna estocasticidad en este modelo? Si es así, ¿qué tipo de estocasticidad existe? ¡Haz unos supuestos fundamentada! [Edmodo]</p>
+<p><strong>P </strong>: ¿Hay alguna estocasticidad en este modelo? Si es
+así, ¿qué tipo de estocasticidad existe? ¡Haz unos supuestos
+fundamentada! [Edmodo]</p>
 <p><a href="LECTURE11.html">–go to next lecture–</a></p>
 </div>
 </div>

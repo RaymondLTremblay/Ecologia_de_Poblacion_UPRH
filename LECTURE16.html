@@ -14,7 +14,7 @@
 
 <title>Interacciones de especies: competencia!</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -477,7 +481,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Interacciones de especies: competencia!</h1>
+<h1 class="title toc-ignore">Interacciones de especies:
+competencia!</h1>
 <h4 class="author">BIOL4558</h4>
 <h4 class="date">Agosto 2021</h4>
 
@@ -486,90 +491,167 @@ div.tocify {
 
 <div id="interacciones-de-especies" class="section level2">
 <h2>Interacciones de especies</h2>
-<p>El PVA, como recordará, tiende a estar muy centrado en una sola especie.</p>
-<p>PERO la ecología de la población no tiene que estar centrada en una sola especie. Hay muchos casos en los que haríamos bien en pensar específicamente en las interacciones de las especies.</p>
-<p>Desde el punto de vista del modelado, aquí es donde las cosas se ponen realmente interesantes: con las interacciones de las especies, ¡comenzamos a ver algunas propiedades emergentes realmente impredecibles!</p>
-<p>Las interacciones de las especies se pueden clasificar según el efecto de la interacción en cada especie: (+, +), (+, -), (+, 0), (-, -), (-, 0), (0,0 )</p>
-<p><strong>P </strong>: ¿Puede nombrar cada una de las clases de interacción anteriores? [Edmodo]</p>
+<p>El PVA, como recordará, tiende a estar muy centrado en una sola
+especie.</p>
+<p>PERO la ecología de la población no tiene que estar centrada en una
+sola especie. Hay muchos casos en los que haríamos bien en pensar
+específicamente en las interacciones de las especies.</p>
+<p>Desde el punto de vista del modelado, aquí es donde las cosas se
+ponen realmente interesantes: con las interacciones de las especies,
+¡comenzamos a ver algunas propiedades emergentes realmente
+impredecibles!</p>
+<p>Las interacciones de las especies se pueden clasificar según el
+efecto de la interacción en cada especie: (+, +), (+, -), (+, 0), (-,
+-), (-, 0), (0,0 )</p>
+<p><strong>P </strong>: ¿Puede nombrar cada una de las clases de
+interacción anteriores? [Edmodo]</p>
 </div>
 <div id="competencia" class="section level2">
 <h2>Competencia</h2>
 <div id="qué-es-la-competencia" class="section level3">
 <h3>¿Qué es la competencia?</h3>
-<p>La competencia se define como un tipo de interacción entre especies mediante la cual <em>las tasas vitales de población de cada especie se ven influenciadas negativamente por la presencia de la otra </em>.</p>
-<p>¡No hay mucha diferencia esencial entre la competencia dentro de las especies (uno de los mecanismos principales para la regulación de la población dependiente de la densidad) y la competencia entre especies por los recursos!</p>
+<p>La competencia se define como un tipo de interacción entre especies
+mediante la cual <em>las tasas vitales de población de cada especie se
+ven influenciadas negativamente por la presencia de la otra </em>.</p>
+<p>¡No hay mucha diferencia esencial entre la competencia dentro de las
+especies (uno de los mecanismos principales para la regulación de la
+población dependiente de la densidad) y la competencia entre especies
+por los recursos!</p>
 <div id="explotación" class="section level4">
 <h4>Explotación</h4>
-<p>Este es el tipo de competencia en la que probablemente pensamos primero: todos los individuos compiten por los recursos y todos tienen habilidades competitivas similares. Es gratis para todos: ¡todos reciben una porción de un pastel limitado!</p>
-<p>La competencia por los recursos dentro de las especies es a menudo el mecanismo detrás de los procesos dependientes de la densidad que ya hemos discutido en esta clase. Dentro de una sola especie, esto a menudo se denomina “* competencia de revueltas *“.</p>
+<p>Este es el tipo de competencia en la que probablemente pensamos
+primero: todos los individuos compiten por los recursos y todos tienen
+habilidades competitivas similares. Es gratis para todos: ¡todos reciben
+una porción de un pastel limitado!</p>
+<p>La competencia por los recursos dentro de las especies es a menudo el
+mecanismo detrás de los procesos dependientes de la densidad que ya
+hemos discutido en esta clase. Dentro de una sola especie, esto a menudo
+se denomina “* competencia de revueltas *“.</p>
 </div>
 <div id="interferencia" class="section level4">
 <h4>Interferencia</h4>
-<p>A veces, el efecto negativo de un actor (individuo de la misma u otra especie) sobre otro actor se debe a la exclusión conductual directa. Este es el caso de las aves que mantienen territorios y mantienen a otras aves fuera del territorio.</p>
-<p>Algunas plantas participan en una competencia de interferencia en un proceso llamado “alelopatía”.</p>
+<p>A veces, el efecto negativo de un actor (individuo de la misma u otra
+especie) sobre otro actor se debe a la exclusión conductual directa.
+Este es el caso de las aves que mantienen territorios y mantienen a
+otras aves fuera del territorio.</p>
+<p>Algunas plantas participan en una competencia de interferencia en un
+proceso llamado “alelopatía”.</p>
 <p><img src="figuures/allelopathy.jpg" /></p>
 </div>
 </div>
-<div id="competencia-de-modelado-extendiendo-las-ecuaciones-de-crecimiento-logístico-a-más-de-una-especie" class="section level3">
-<h3>Competencia de modelado: ¡extendiendo las ecuaciones de crecimiento logístico a más de una especie!</h3>
-<p>Si * competencia entre especies * y * competencia entre especies * son esencialmente lo mismo, ¡quizás podamos modelar estos procesos de la misma manera!</p>
+<div
+id="competencia-de-modelado-extendiendo-las-ecuaciones-de-crecimiento-logístico-a-más-de-una-especie"
+class="section level3">
+<h3>Competencia de modelado: ¡extendiendo las ecuaciones de crecimiento
+logístico a más de una especie!</h3>
+<p>Si * competencia entre especies * y * competencia entre especies *
+son esencialmente lo mismo, ¡quizás podamos modelar estos procesos de la
+misma manera!</p>
 <ol style="list-style-type: decimal">
 <li>¡Recuerde la ecuación de crecimiento logístico!</li>
 </ol>
-<p><span class="math inline">\(\Delta N = r\cdot N_t \cdot (1-\frac{N}{K})\)</span></p>
+<p><span class="math inline">\(\Delta N = r\cdot N_t \cdot
+(1-\frac{N}{K})\)</span></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Ahora considere el caso en el que tenemos dos especies cuya dinámica se puede describir mediante ecuaciones de crecimiento logístico:</li>
+<li>Ahora considere el caso en el que tenemos dos especies cuya dinámica
+se puede describir mediante ecuaciones de crecimiento logístico:</li>
 </ol>
-<p>Especie 1: <span class="math inline">\(\Delta N1 = r\cdot N1_t \cdot (1-\frac{N1}{K1})\)</span></p>
-<p>Especie 2: <span class="math inline">\(\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2}{K2})\)</span></p>
+<p>Especie 1: <span class="math inline">\(\Delta N1 = r\cdot N1_t \cdot
+(1-\frac{N1}{K1})\)</span></p>
+<p>Especie 2: <span class="math inline">\(\Delta N2 = r\cdot N2_t \cdot
+(1-\frac{N2}{K2})\)</span></p>
 <ol start="3" style="list-style-type: decimal">
-<li>¡Ahora imagina que el crecimiento de la población de cada especie se deprime aún más por la presencia de la otra! Podemos imaginar un escenario en el que (por ejemplo,) la presencia de una especie ayude a * llenar * la capacidad de carga de las otras especies, ¡y viceversa!</li>
+<li>¡Ahora imagina que el crecimiento de la población de cada especie se
+deprime aún más por la presencia de la otra! Podemos imaginar un
+escenario en el que (por ejemplo,) la presencia de una especie ayude a *
+llenar * la capacidad de carga de las otras especies, ¡y viceversa!</li>
 </ol>
-<p>Especie 1: <span class="math inline">\(\Delta N1 = r\cdot N1_t \cdot (1-\frac{N1+\alpha N2}{K1})\)</span></p>
-<p>Especie 2: <span class="math inline">\(\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2+\beta N1}{K2})\)</span></p>
-<p>Las constante <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> son medidas del efecto de una especie sobre el crecimiento de las otras especies.</p>
+<p>Especie 1: <span class="math inline">\(\Delta N1 = r\cdot N1_t \cdot
+(1-\frac{N1+\alpha N2}{K1})\)</span></p>
+<p>Especie 2: <span class="math inline">\(\Delta N2 = r\cdot N2_t \cdot
+(1-\frac{N2+\beta N1}{K2})\)</span></p>
+<p>Las constante <span class="math inline">\(\alpha\)</span> y <span
+class="math inline">\(\beta\)</span> son medidas del efecto de una
+especie sobre el crecimiento de las otras especies.</p>
 <p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a 1?</p>
 <p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a 5?</p>
-<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a $  frac {1} {5} $?</p>
-<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a cero?</p>
+<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a $  frac
+{1} {5} $?</p>
+<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a
+cero?</p>
 </div>
-<div id="exploremos-este-modelo-juntos-en-insightmaker" class="section level3">
+<div id="exploremos-este-modelo-juntos-en-insightmaker"
+class="section level3">
 <h3>Exploremos este modelo juntos en InsightMaker!</h3>
-<p><strong>Paso 1 </strong>: clone un modelo básico de dos especies (que no interactúe) [aquí] (<a href="https://insightmaker.com/insight/77729/Base-2-species-model" class="uri">https://insightmaker.com/insight/77729/Base-2-species-model</a>). Pruebe algunos ajustes de parámetros diferentes para asegurarse de que el modelo está haciendo lo que espera.</p>
-<p><strong>Paso 2 </strong>: Ahora agregue los términos “alfa” y “beta” para representar el grado en que la especie 1 compite con la especie 2, y viceversa. * ¿A qué deberían enlazar “alfa” y “beta”? *</p>
-<p><strong>Paso 3 </strong>: Cambie los valores de los parámetros y vea cómo se comporta el modelo.</p>
-<p>¡Este modelo se conoce como * competición Lotka-Volterra *! El modelo lleva el nombre de los matemáticos Alfred Lotka y Vito Volterra.</p>
+<p><strong>Paso 1 </strong>: clone un modelo básico de dos especies (que
+no interactúe) [aquí] (<a
+href="https://insightmaker.com/insight/77729/Base-2-species-model"
+class="uri">https://insightmaker.com/insight/77729/Base-2-species-model</a>).
+Pruebe algunos ajustes de parámetros diferentes para asegurarse de que
+el modelo está haciendo lo que espera.</p>
+<p><strong>Paso 2 </strong>: Ahora agregue los términos “alfa” y “beta”
+para representar el grado en que la especie 1 compite con la especie 2,
+y viceversa. * ¿A qué deberían enlazar “alfa” y “beta”? *</p>
+<p><strong>Paso 3 </strong>: Cambie los valores de los parámetros y vea
+cómo se comporta el modelo.</p>
+<p>¡Este modelo se conoce como * competición Lotka-Volterra *! El modelo
+lleva el nombre de los matemáticos Alfred Lotka y Vito Volterra.</p>
 <blockquote>
 <blockquote>
-<p><strong>Step 1</strong>: clone a basic (non-interacting) two-species model <a href="https://insightmaker.com/insight/77729/Base-2-species-model">here</a>. Try some different parameter settings, to make sure the model is doing what you expect!</p>
+<p><strong>Step 1</strong>: clone a basic (non-interacting) two-species
+model <a
+href="https://insightmaker.com/insight/77729/Base-2-species-model">here</a>.
+Try some different parameter settings, to make sure the model is doing
+what you expect!</p>
 </blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
-<p><strong>Step 2</strong>: Now add the “alpha” and “beta” terms to represent the degree to which species 1 competes with species 2, and vice versa. <em>What should “alpha” and “beta” link to??</em></p>
+<p><strong>Step 2</strong>: Now add the “alpha” and “beta” terms to
+represent the degree to which species 1 competes with species 2, and
+vice versa. <em>What should “alpha” and “beta” link to??</em></p>
 </blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
-<p><strong>Step 3</strong>: Change the parameter values around and see how the model behaves.</p>
+<p><strong>Step 3</strong>: Change the parameter values around and see
+how the model behaves.</p>
 </blockquote>
 </blockquote>
-<p>This model is known as <em>Lotka-Volterra competition</em>! The model is named after mathematicians Alfred Lotka and Vito Volterra</p>
+<p>This model is known as <em>Lotka-Volterra competition</em>! The model
+is named after mathematicians Alfred Lotka and Vito Volterra</p>
 <hr />
-<p><strong>P</strong>: Qué sucede si una especie es un competidor superior? ¿Qué significa ser un competidor superior? ¿Puede una especie extinguirse?</p>
-<p><strong>P </strong>: ¿Qué condiciones son necesarias para la convivencia en este modelo? [sombrero de copa]</p>
-<p><strong>P </strong>: imagina que la especie 1 es una especie exótica, un posible invasor de un ecosistema dominado por la especie 2 (que está en capacidad de carga). ¿Bajo qué condiciones la especie 1 tiene éxito en la invasión? ¿En qué condiciones el invasor provoca la extinción de las especies nativas?</p>
-<p><strong>P </strong>: ¿puede identificar alguna condición de equilibrio (estable o inestable)?</p>
+<p><strong>P</strong>: Qué sucede si una especie es un competidor
+superior? ¿Qué significa ser un competidor superior? ¿Puede una especie
+extinguirse?</p>
+<p><strong>P </strong>: ¿Qué condiciones son necesarias para la
+convivencia en este modelo? [sombrero de copa]</p>
+<p><strong>P </strong>: imagina que la especie 1 es una especie exótica,
+un posible invasor de un ecosistema dominado por la especie 2 (que está
+en capacidad de carga). ¿Bajo qué condiciones la especie 1 tiene éxito
+en la invasión? ¿En qué condiciones el invasor provoca la extinción de
+las especies nativas?</p>
+<p><strong>P </strong>: ¿puede identificar alguna condición de
+equilibrio (estable o inestable)?</p>
 </div>
 </div>
 <div id="la-fase-plana" class="section level2">
 <h2>La fase plana!</h2>
-<p>En el estudio de sistemas dinámicos (como el modelo de competición Lotka-Volterra) puede resultar muy útil visualizar el sistema en el <strong>la fase plana</strong>.</p>
-<p>Para hacer esto, visualizamos la abundancia de cada especie que interactúa como una coordenada en un plano cartesiano, con una especie como eje y y la otra especie como eje x. Esta superficie 2-D se llama plano de fase.</p>
-<p>Luego, para cada paso de tiempo en el modelo, graficamos dónde estamos en el plano de fase (grafica las abundancias de la especie 1 y la especie 2 como un punto en la superficie cartesiana bidimensional).</p>
+<p>En el estudio de sistemas dinámicos (como el modelo de competición
+Lotka-Volterra) puede resultar muy útil visualizar el sistema en el
+<strong>la fase plana</strong>.</p>
+<p>Para hacer esto, visualizamos la abundancia de cada especie que
+interactúa como una coordenada en un plano cartesiano, con una especie
+como eje y y la otra especie como eje x. Esta superficie 2-D se llama
+plano de fase.</p>
+<p>Luego, para cada paso de tiempo en el modelo, graficamos dónde
+estamos en el plano de fase (grafica las abundancias de la especie 1 y
+la especie 2 como un punto en la superficie cartesiana
+bidimensional).</p>
 <p>Por ejemplo:</p>
 <p>Construyamos el modelo básico de competencia Lotka-Volterra en R.</p>
-<p>Si desea seguir, puede descargar el guión <a href="LECTURE16.R">aquí</a></p>
+<p>Si desea seguir, puede descargar el guión <a
+href="LECTURE16.R">aquí</a></p>
 <pre class="r"><code>##### EJEMPLO DE COMPETICIÓN DE LOTKA VOLTERRA
 
 ## Params
@@ -608,13 +690,18 @@ points(System[1,],col=&quot;green&quot;,pch=20,cex=2)</code></pre>
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(System[1:6,],col=&quot;green&quot;,pch=20,cex=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>Tenga en cuenta que cada punto en el plano de fase tiene una ubicación y una * dirección * (piense en el plano de fase como un campo magnético) en cada punto del plano de fase, el sistema es atraído o repelido de ir en ciertas direcciones.</p>
+<p>Tenga en cuenta que cada punto en el plano de fase tiene una
+ubicación y una * dirección * (piense en el plano de fase como un campo
+magnético) en cada punto del plano de fase, el sistema es atraído o
+repelido de ir en ciertas direcciones.</p>
 <p>¿Y toda la simulación?</p>
 <pre class="r"><code># and many years!
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(System,col=&quot;green&quot;,pch=20,cex=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Bien, entonces la especie 1 está superando a la especie 2. ¡A medida que aumenta la abundancia de la especie 1, la abundancia de la especie 2 disminuye y terminamos con solo la especie 1!</p>
+<p>Bien, entonces la especie 1 está superando a la especie 2. ¡A medida
+que aumenta la abundancia de la especie 1, la abundancia de la especie 2
+disminuye y terminamos con solo la especie 1!</p>
 <p>Aquí hay otro ejemplo …</p>
 <pre class="r"><code>##### EJEMPLO DE COMPETICIÓN DE LOTKA VOLTERRA # 2
 
@@ -642,15 +729,18 @@ doYear &lt;- function(prevyear){
 for(i in 1:(Nyears+1)){
   System[1+i,] &lt;- doYear(System[i,])
 }</code></pre>
-<p>Con estos nuevos parámetros, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:</p>
+<p>Con estos nuevos parámetros, el espacio de fase se ve así (con
+jittering para indicar la concentración de puntos:</p>
 <pre class="r"><code># visualizar en el plano de fase
 
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(jitter(System[,1],500),jitter(System[,2],500),col=&quot;brown&quot;,pch=20,cex=0.3)
 abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>Puede ver que este sistema ha llegado a un equilibrio al final, justo por debajo de la capacidad de carga de la especie 1.</p>
-<p>Finalmente, consideremos múltiples puntos de partida y veamos cómo se comporta el sistema.!</p>
+<p>Puede ver que este sistema ha llegado a un equilibrio al final, justo
+por debajo de la capacidad de carga de la especie 1.</p>
+<p>Finalmente, consideremos múltiples puntos de partida y veamos cómo se
+comporta el sistema.!</p>
 <pre class="r"><code>##### EJEMPLO DE COMPETICIÓN DE LOTKA VOLTERRA # 3: múltiples puntos de partida
 
 ## Parametros
@@ -680,7 +770,8 @@ System3 &lt;- data.frame(n1 = rep(InitN1,(Nyears+1)),n2 = InitN2)
 for(i in 1:(Nyears+1)){
   System3[1+i,] &lt;- doYear(System3[i,])
 }</code></pre>
-<p>Ahora, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:</p>
+<p>Ahora, el espacio de fase se ve así (con jittering para indicar la
+concentración de puntos:</p>
 <pre class="r"><code># visualizar en el plano de fase
 
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
@@ -691,15 +782,25 @@ points(jitter(System3[,1],500),jitter(System3[,2],500),col=&quot;blue&quot;,pch=
 
 abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p><strong>P </strong>: ¿Tiene este sistema de dos especies un equilibrio estable?</p>
+<p><strong>P </strong>: ¿Tiene este sistema de dos especies un
+equilibrio estable?</p>
 <div id="trabajando-en-el-plano-de-fase" class="section level3">
 <h3>¡Trabajando en el plano de fase!</h3>
-<p>Hay mucho que puede aprender sobre un sistema de dos especies que interactúan trabajando con el plano de fase.</p>
-<p>En primer lugar, es útil imaginar que cada punto en el espacio de fase está asociado con una flecha, que indica hacia dónde se espera que vaya el sistema desde ese punto en el espacio de fase (cada punto tiene una dirección asociada).</p>
-<p>Entonces, imagina que comenzamos con la abundancia inicial en las figuras anteriores. ¿Dónde apunta la flecha en el espacio de fase?</p>
-<p>La * longitud * de la flecha representa la velocidad a la que el sistema se moverá en la dirección de la flecha (el grado de * repulsión * desde ese punto en el espacio de fase).</p>
-<p>Ahora imagine que dibujamos flechas a lo largo del espacio de fase, que representan hacia dónde se espera que vaya el sistema.</p>
-<p>Nota: este ejemplo usa código R de <a href="http://www.pauljhurtado.com/">Paul Hurtado</a></p>
+<p>Hay mucho que puede aprender sobre un sistema de dos especies que
+interactúan trabajando con el plano de fase.</p>
+<p>En primer lugar, es útil imaginar que cada punto en el espacio de
+fase está asociado con una flecha, que indica hacia dónde se espera que
+vaya el sistema desde ese punto en el espacio de fase (cada punto tiene
+una dirección asociada).</p>
+<p>Entonces, imagina que comenzamos con la abundancia inicial en las
+figuras anteriores. ¿Dónde apunta la flecha en el espacio de fase?</p>
+<p>La * longitud * de la flecha representa la velocidad a la que el
+sistema se moverá en la dirección de la flecha (el grado de * repulsión
+* desde ese punto en el espacio de fase).</p>
+<p>Ahora imagine que dibujamos flechas a lo largo del espacio de fase,
+que representan hacia dónde se espera que vaya el sistema.</p>
+<p>Nota: este ejemplo usa código R de <a
+href="http://www.pauljhurtado.com/">Paul Hurtado</a></p>
 <pre class="r"><code>##########
 # ¡Visualice el plano de fase con flechas!
 ##########
@@ -742,13 +843,18 @@ phasearrows.draw(new)</code></pre>
 <pre class="r"><code>#
 ## END MODEL SPECIFICATION AND INITIALIZATION
 #######################################################################################</code></pre>
-<p>Tome cualquier punto de partida arbitrario. Ahora podemos rastrear la trayectoria que tomará el sistema en el espacio de fase.</p>
+<p>Tome cualquier punto de partida arbitrario. Ahora podemos rastrear la
+trayectoria que tomará el sistema en el espacio de fase.</p>
 <p>¡¡Intentalo!!</p>
-<p>Verá que hay algunos umbrales clave en el espacio de fase que debemos considerar. Por ejemplo, las flechas pueden invertir la dirección.</p>
+<p>Verá que hay algunos umbrales clave en el espacio de fase que debemos
+considerar. Por ejemplo, las flechas pueden invertir la dirección.</p>
 </div>
 <div id="isoclinas" class="section level3">
 <h3>Isoclinas!</h3>
-<p>Las isoclinas ayudan a delinear esas características clave en el espacio de fase, algo así como las cimas de las montañas. ¡El lugar más allá del cual las flechas hacia arriba se convierten en flechas hacia abajo!</p>
+<p>Las isoclinas ayudan a delinear esas características clave en el
+espacio de fase, algo así como las cimas de las montañas. ¡El lugar más
+allá del cual las flechas hacia arriba se convierten en flechas hacia
+abajo!</p>
 <p>He aquí un ejemplo:</p>
 <div id="especie-1-isoclina" class="section level4">
 <h4>Especie 1 isoclina …</h4>
@@ -759,15 +865,20 @@ phasearrows.draw(new)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=3)   # species 1</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<p>La línea roja representa las condiciones bajo las cuales la tasa de crecimiento de la especie 1 es cero.</p>
-<p><strong>P </strong>: ¿bajo qué condiciones se “agota” la capacidad de carga para la especie 1?</p>
+<p>La línea roja representa las condiciones bajo las cuales la tasa de
+crecimiento de la especie 1 es cero.</p>
+<p><strong>P </strong>: ¿bajo qué condiciones se “agota” la capacidad de
+carga para la especie 1?</p>
 <p>Por debajo de la línea roja, la especie 1 tenderá a aumentar.</p>
 <p>Por encima de la línea roja, la especie 1 tenderá a disminuir.</p>
-<p>¡La línea azul (isoclina) representa las condiciones bajo las cuales se agota la capacidad de carga de la especie 2!</p>
-<p><strong>P </strong>: ¿bajo qué condiciones se “agota” la capacidad de carga para la especie 2?</p>
+<p>¡La línea azul (isoclina) representa las condiciones bajo las cuales
+se agota la capacidad de carga de la especie 2!</p>
+<p><strong>P </strong>: ¿bajo qué condiciones se “agota” la capacidad de
+carga para la especie 2?</p>
 <p>Por debajo de la línea azul, la especie 2 tenderá a aumentar.</p>
 <p>Por encima de la línea azul, la especie 2 tenderá a disminuir.</p>
-<p><strong>Q </strong>: considere el punto donde se cruzan las dos isoclinas. ¿Qué representa este punto? [Edmodo]</p>
+<p><strong>Q </strong>: considere el punto donde se cruzan las dos
+isoclinas. ¿Qué representa este punto? [Edmodo]</p>
 <p>Consideremos el siguiente caso …</p>
 <pre class="r"><code>##########
 # Another example
@@ -793,11 +904,19 @@ phasearrows.draw(new)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=3)   # species 2</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>Siga las trayectorias desde cualquier punto en este espacio de fase. ¿Cuál es el resultado aquí?</p>
-<p><strong>P </strong>: ¿Existe un equilibrio en todo el sistema? [sombrero de copa]</p>
-<p><strong>P </strong>: ¿Hay algún punto en este espacio de fase en el que el crecimiento de la población sea negativo para la especie 1 (K1 agotado) y positivo para la especie 2 (parte del K2 sin uso)?</p>
-<p><strong>P </strong>: ¿Qué sucede con la especie 1 cuando la capacidad de carga se agota para la especie 2? ¿Hay espacio para la invasión de la especie 1?</p>
-<p><strong>P </strong>: ¿Qué sucede con la especie 2 cuando la capacidad de carga se agota para la especie 1? ¿Hay espacio para la invasión de la especie 2?</p>
+<p>Siga las trayectorias desde cualquier punto en este espacio de fase.
+¿Cuál es el resultado aquí?</p>
+<p><strong>P </strong>: ¿Existe un equilibrio en todo el sistema?
+[sombrero de copa]</p>
+<p><strong>P </strong>: ¿Hay algún punto en este espacio de fase en el
+que el crecimiento de la población sea negativo para la especie 1 (K1
+agotado) y positivo para la especie 2 (parte del K2 sin uso)?</p>
+<p><strong>P </strong>: ¿Qué sucede con la especie 1 cuando la capacidad
+de carga se agota para la especie 2? ¿Hay espacio para la invasión de la
+especie 1?</p>
+<p><strong>P </strong>: ¿Qué sucede con la especie 2 cuando la capacidad
+de carga se agota para la especie 1? ¿Hay espacio para la invasión de la
+especie 2?</p>
 <p>¿Qué tal este ejemplo?</p>
 <pre class="r"><code>#########
 # And another example!
@@ -823,7 +942,8 @@ phasearrows.draw(new)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=3)   # species 2</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>Siga las trayectorias desde cualquier punto en este espacio de fase. ¿Cuál es el resultado aquí?</p>
+<p>Siga las trayectorias desde cualquier punto en este espacio de fase.
+¿Cuál es el resultado aquí?</p>
 <p>** P **: ¿Existe un equilibrio en todo el sistema?</p>
 <p>¿Qué pasa con este caso (volviendo al ejemplo anterior …):</p>
 <pre class="r"><code>########
@@ -854,7 +974,9 @@ abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=2)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=2)   # species 2</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p>** P **: ¿En qué parte de esta figura se “mueve” el sistema más rápido? (Analogía del campo magnético: atracción y repulsión más fuertes)</p>
+<p>** P **: ¿En qué parte de esta figura se “mueve” el sistema más
+rápido? (Analogía del campo magnético: atracción y repulsión más
+fuertes)</p>
 <p>Finalmente, considere este ejemplo:</p>
 <pre class="r"><code>########
 # And finally...
@@ -880,25 +1002,44 @@ phasearrows.draw(new)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=3)   # species 2</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<p><strong>P </strong>: ¿es el punto donde las dos isoclinas cruzan un * equilibrio *?</p>
-<p><strong>P </strong>: ¿es el punto donde las dos isoclinas cruzan un * equilibrio estable *?</p>
-<p><strong>P </strong>: ¿qué pasaría si la especie 1 estuviera en K y la especie 2 intentara invadir? ¿Y viceversa?</p>
-<p><strong>P </strong>: ¿qué pasaría si ambas especies intentaran invadir un hábitat vacío al mismo tiempo?</p>
+<p><strong>P </strong>: ¿es el punto donde las dos isoclinas cruzan un *
+equilibrio *?</p>
+<p><strong>P </strong>: ¿es el punto donde las dos isoclinas cruzan un *
+equilibrio estable *?</p>
+<p><strong>P </strong>: ¿qué pasaría si la especie 1 estuviera en K y la
+especie 2 intentara invadir? ¿Y viceversa?</p>
+<p><strong>P </strong>: ¿qué pasaría si ambas especies intentaran
+invadir un hábitat vacío al mismo tiempo?</p>
 </div>
 </div>
 <div id="phase-space-in-insightmaker" class="section level3">
 <h3>Phase space in InsightMaker</h3>
-<p>You can visualize populations moving through the phase plane in InsightMaker! To do this, just click on “Add Display” in the graphics window (which comes up automatically when you hit “Simulate”) and create a “Scatter Plot”. For the “Data” field, select the two stocks (species abundances).</p>
-<p>If you don’t already have a working L-V competition model you can load up the basic L-V competition model <a href="https://insightmaker.com/insight/77730/Competition-1#">here</a></p>
-<p><strong>Step 1</strong>: Set the key parameters (alpha, beta, K1, K2) to arbitrary values</p>
-<p><strong>Step 2</strong>: Draw out the phase plane with isoclines for both competing species.. Also draw out the expected direction of growth in each quadrant/region of the phase plane.</p>
-<p><strong>Step 3</strong>: Pick an arbitrary starting value. What do you think the trajectory is going to look like?</p>
-<p><strong>Step 4</strong>: Run this model in InsightMaker. Does the system behave as expected?</p>
-<p><strong>Step 5</strong>: Evaluate the following statement (from the Gotelli Book):</p>
+<p>You can visualize populations moving through the phase plane in
+InsightMaker! To do this, just click on “Add Display” in the graphics
+window (which comes up automatically when you hit “Simulate”) and create
+a “Scatter Plot”. For the “Data” field, select the two stocks (species
+abundances).</p>
+<p>If you don’t already have a working L-V competition model you can
+load up the basic L-V competition model <a
+href="https://insightmaker.com/insight/77730/Competition-1#">here</a></p>
+<p><strong>Step 1</strong>: Set the key parameters (alpha, beta, K1, K2)
+to arbitrary values</p>
+<p><strong>Step 2</strong>: Draw out the phase plane with isoclines for
+both competing species.. Also draw out the expected direction of growth
+in each quadrant/region of the phase plane.</p>
+<p><strong>Step 3</strong>: Pick an arbitrary starting value. What do
+you think the trajectory is going to look like?</p>
+<p><strong>Step 4</strong>: Run this model in InsightMaker. Does the
+system behave as expected?</p>
+<p><strong>Step 5</strong>: Evaluate the following statement (from the
+Gotelli Book):</p>
 <blockquote>
-<p>“the more similar species are in their use of shared resources, the more precarious their coexistence”</p>
+<p>“the more similar species are in their use of shared resources, the
+more precarious their coexistence”</p>
 </blockquote>
-<p><strong>Q</strong>: Does <span class="math inline">\(r_{max}\)</span> have any role to play in determining system stability for the lotka-volterra competition model?</p>
+<p><strong>Q</strong>: Does <span class="math inline">\(r_{max}\)</span>
+have any role to play in determining system stability for the
+lotka-volterra competition model?</p>
 <p><a href="LECTURE17.html">–go to next lecture–</a></p>
 </div>
 </div>

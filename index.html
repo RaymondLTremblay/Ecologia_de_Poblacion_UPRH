@@ -14,7 +14,7 @@
 
 <title>Bienvenido a BIOL4458</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -67,6 +67,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -87,6 +88,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -315,7 +319,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -331,7 +335,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -412,7 +416,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -433,7 +437,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -445,7 +449,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -470,7 +474,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -481,17 +485,19 @@ div.tocify {
 
 <h1 class="title toc-ignore">Bienvenido a BIOL4458</h1>
 <h4 class="author">Ecología de Población Aplicada</h4>
-<h4 class="date">Agosto 2021</h4>
+<h4 class="date">Agosto 2022</h4>
 
 </div>
 
 
 <p><strong>Instructor:</strong> Raymond L. Tremblay</p>
-<p><strong>Website</strong>: <a href="https://raymondltremblay.github.io/Ecologia_de_Poblacion_Humacao/index.html">https://github.com/RaymondLTremblay?tab=repositories</a><br />
+<p><strong>Website</strong>: <a
+href="https://raymondltremblay.github.io/Ecologia_de_Poblacion_Humacao/index.html">https://github.com/RaymondLTremblay?tab=repositories</a><br />
 <strong>Email</strong>: raymondtremblay_at_upr.edu</p>
 <div id="horario-de-la-clase" class="section level3">
 <h3>Horario de la Clase</h3>
-<p><strong>Lectures</strong>: L, W a las 11:00am hasta las 12:20 pm (120 mins) en el Vagon de Biología.</p>
+<p><strong>Lectures</strong>: L, W a las 11:00am hasta las 12:20 pm (120
+mins) en el Vagon de Biología.</p>
 <p><strong>Hora de Consulta</strong>:</p>
 <ul>
 <li>Tremblay:
@@ -505,19 +511,25 @@ div.tocify {
 <div id="libros" class="section level3">
 <h3>Libros</h3>
 <ul>
-<li><a href="https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182">Gotelli, N. J. A primer of ecology</a><br />
+<li><a
+href="https://www.amazon.com/Primer-Ecology-Fourth-Nicholas-Gotelli/dp/0878933182">Gotelli,
+N. J. A primer of ecology</a><br />
 </li>
-<li><a href="http://beyondconnectingthedots.com/">Beyond Connecting the Dots</a> (free download)<br />
+<li><a href="http://beyondconnectingthedots.com/">Beyond Connecting the
+Dots</a> (free download)<br />
 </li>
-<li>Se asignarán lecturas adicionales de la literatura primaria para discusión periódicamente.</li>
+<li>Se asignarán lecturas adicionales de la literatura primaria para
+discusión periódicamente.</li>
 </ul>
 </div>
 <div id="software" class="section level3">
 <h3>Software</h3>
 <ul>
-<li><a href="https://insightmaker.com/">InsightMaker- free web-based systems modeling tool</a>(no installation needed)<br />
+<li><a href="https://insightmaker.com/">InsightMaker- free web-based
+systems modeling tool</a>(no installation needed)<br />
 </li>
-<li><a href="https://cran.r-project.org/">R- free statistical programming language</a><br />
+<li><a href="https://cran.r-project.org/">R- free statistical
+programming language</a><br />
 </li>
 <li>MS Excel</li>
 </ul>
@@ -530,18 +542,43 @@ div.tocify {
 </div>
 <div id="descripción-de-la-clase" class="section level3">
 <h3>Descripción de la cLase</h3>
-<p>Esta clase explorará cómo se pueden usar los conceptos de ecología de poblaciones para informar la conservación y el manejo de poblaciones naturales y ecosistemas. Enfatizaremos enfoques prácticos para la resolución de problemas en ecología, conservación y manejo de la vida silvestre a través de la aplicación creativa de la teoría de la ecología de poblaciones utilizando modelos de simulación y estadísticas. Los temas incluirán análisis de viabilidad de la población (PVA), modelos de sostenibilidad de hábitat, modelos de metapoblación, modelos de interacción de especies, amenazas a la viabilidad de la población, gestión de la población de vida silvestre y más. Los ejercicios de laboratorio proporcionarán a los estudiantes experiencia práctica con modelos ecológicos y sus aplicaciones prácticas en la conservación y gestión de poblaciones silvestres.</p>
+<p>Esta clase explorará cómo se pueden usar los conceptos de ecología de
+poblaciones para informar la conservación y el manejo de poblaciones
+naturales y ecosistemas. Enfatizaremos enfoques prácticos para la
+resolución de problemas en ecología, conservación y manejo de la vida
+silvestre a través de la aplicación creativa de la teoría de la ecología
+de poblaciones utilizando modelos de simulación y estadísticas. Los
+temas incluirán análisis de viabilidad de la población (PVA), modelos de
+sostenibilidad de hábitat, modelos de metapoblación, modelos de
+interacción de especies, amenazas a la viabilidad de la población,
+gestión de la población de vida silvestre y más. Los ejercicios de
+laboratorio proporcionarán a los estudiantes experiencia práctica con
+modelos ecológicos y sus aplicaciones prácticas en la conservación y
+gestión de poblaciones silvestres.</p>
 </div>
 <div id="objetivos-de-aprendizaje" class="section level3">
 <h3>Objetivos de aprendizaje</h3>
 <p>Los estudiantes podrán:</p>
 <ol style="list-style-type: decimal">
-<li>Identificar las principales clases de modelos utilizados por los ecologistas (por ejemplo, estadísticos o mecanicistas, cuantitativos o heurísticos, estocásticos o deterministas) y explicar cómo y por qué los ecologistas utilizan estos modelos.</li>
-<li>Aplicar herramientas como el análisis de viabilidad poblacional (PVA) y modelos de metapoblación para abordar la conservación y manejo de poblaciones naturales.</li>
-<li>Realice estadísticas básicas, visualización de datos, modelado de simulación y validación de modelos con Excel, el lenguaje de cálculo estadístico ‘R’ y el software basado en web, InsightMaker.</li>
-<li>Evaluar críticamente la fuerza de las inferencias extraídas de los modelos de simulación ecológica utilizando herramientas como el análisis de sensibilidad.</li>
-<li>Explique cómo las interacciones entre especies pueden influir en la dinámica de la población (por ejemplo, predicciones de cambios en el rango de especies).</li>
-<li>Comunicar la investigación original en población aplicada y ecología comunitaria a través de presentaciones orales y escritas de estilo profesional.</li>
+<li>Identificar las principales clases de modelos utilizados por los
+ecologistas (por ejemplo, estadísticos o mecanicistas, cuantitativos o
+heurísticos, estocásticos o deterministas) y explicar cómo y por qué los
+ecologistas utilizan estos modelos.</li>
+<li>Aplicar herramientas como el análisis de viabilidad poblacional
+(PVA) y modelos de metapoblación para abordar la conservación y manejo
+de poblaciones naturales.</li>
+<li>Realice estadísticas básicas, visualización de datos, modelado de
+simulación y validación de modelos con Excel, el lenguaje de cálculo
+estadístico ‘R’ y el software basado en web, InsightMaker.</li>
+<li>Evaluar críticamente la fuerza de las inferencias extraídas de los
+modelos de simulación ecológica utilizando herramientas como el análisis
+de sensibilidad.</li>
+<li>Explique cómo las interacciones entre especies pueden influir en la
+dinámica de la población (por ejemplo, predicciones de cambios en el
+rango de especies).</li>
+<li>Comunicar la investigación original en población aplicada y ecología
+comunitaria a través de presentaciones orales y escritas de estilo
+profesional.</li>
 </ol>
 </div>
 <div id="puntación" class="section level3">
@@ -624,11 +661,23 @@ Examen final (fecha por determinar)
 </div>
 <div id="examenes" class="section level3">
 <h3>Examenes:</h3>
-<p>Habrá un examen parcial y un examen final (acumulativo). Estos consistirán en preguntas de opción múltiple, de respuesta corta y preguntas de ensayo que requieren síntesis de ideas y pensamiento crítico. El exámen parcial y final serán acumulativos y se basarán en toda la información presentada durante la semanas anterior al examen.</p>
+<p>Habrá un examen parcial y un examen final (acumulativo). Estos
+consistirán en preguntas de opción múltiple, de respuesta corta y
+preguntas de ensayo que requieren síntesis de ideas y pensamiento
+crítico. El exámen parcial y final serán acumulativos y se basarán en
+toda la información presentada durante la semanas anterior al
+examen.</p>
 </div>
 <div id="lectures" class="section level3">
 <h3>Lectures</h3>
-<p>Las calificaciones de las conferencias se basarán principalmente en la participación y en las pruebas breves. La participación es esencial para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta clase). El aprendizaje no es un proceso pasivo. Se espera que los estudiantes se involucren con el material en clase en lugar de simplemente escuchar y tomar notas. Debe estar preparado en clase para hacer preguntas, responder preguntas de otros estudiantes y participar en actividades de resolución de problemas en clase.</p>
+<p>Las calificaciones de las conferencias se basarán principalmente en
+la participación y en las pruebas breves. La participación es esencial
+para el proceso de aprendizaje (y para nuestro mutuo disfrute de esta
+clase). El aprendizaje no es un proceso pasivo. Se espera que los
+estudiantes se involucren con el material en clase en lugar de
+simplemente escuchar y tomar notas. Debe estar preparado en clase para
+hacer preguntas, responder preguntas de otros estudiantes y participar
+en actividades de resolución de problemas en clase.</p>
 </div>
 <div id="labs" class="section level3">
 <h3>Labs</h3>
@@ -636,34 +685,84 @@ Examen final (fecha por determinar)
 </div>
 <div id="proyecto-de-pva" class="section level3">
 <h3>Proyecto de PVA</h3>
-<p>Los estudiantes trabajarán en grupos de ~ 2 para realizar un análisis de viabilidad de la población (PVA) para clasificar las acciones de conservación o manejo para una especie de interés de conservación (¡especie de su elección!). La calificación se basará en los productos terminados (presentaciones escritas y orales), así como en la participación y evaluaciones de pares.</p>
+<p>Los estudiantes trabajarán en grupos de ~ 2 para realizar un análisis
+de viabilidad de la población (PVA) para clasificar las acciones de
+conservación o manejo para una especie de interés de conservación
+(¡especie de su elección!). La calificación se basará en los productos
+terminados (presentaciones escritas y orales), así como en la
+participación y evaluaciones de pares.</p>
 </div>
 <div id="proyecto-de-grupal-de-un-tema" class="section level3">
 <h3>Proyecto de grupal de un tema</h3>
 </div>
-<div id="política-de-recuperación-y-trabajo-tardío" class="section level3">
+<div id="política-de-recuperación-y-trabajo-tardío"
+class="section level3">
 <h3>Política de recuperación y trabajo tardío:</h3>
-<p>Los exámenes y laboratorios perdidos no se pueden recuperar, excepto en el caso de emergencias. Si se pierde una reunión de la clase, es su responsabilidad hablar con uno de sus compañeros de clase sobre lo que se perdió. Si se pierde una reunión de laboratorio, aún es responsable de completar las actividades de laboratorio y escribir en su propio tiempo. Siempre que sea posible, avíseme con anticipación si va a faltar a clases o al laboratorio.</p>
+<p>Los exámenes y laboratorios perdidos no se pueden recuperar, excepto
+en el caso de emergencias. Si se pierde una reunión de la clase, es su
+responsabilidad hablar con uno de sus compañeros de clase sobre lo que
+se perdió. Si se pierde una reunión de laboratorio, aún es responsable
+de completar las actividades de laboratorio y escribir en su propio
+tiempo. Siempre que sea posible, avíseme con anticipación si va a faltar
+a clases o al laboratorio.</p>
 </div>
-<div id="derechos-de-estudiantes-con-impedimiento" class="section level3">
+<div id="derechos-de-estudiantes-con-impedimiento"
+class="section level3">
 <h3>Derechos de Estudiantes con Impedimiento</h3>
-<p>La UPR-Humacao cumple con las leyes ADA (Americans with Disabilities Act) y 51 (Servicios Educativos Integrales para Personas con Impedimentos) para garantizar igualdad en el acceso a la educación y servicios. Estudiantes con impedimentos: informe al (la) profesor(a) de cada curso sobre sus necesidades especiales y/o de acomodo razonable para el curso, en la tarjeta de información de la primera semana y visite la Oficina de Servicios para la Población con Impedimentos (SERPI) a la brevedad posible. Se mantendrá la confidencialidad.</p>
+<p>La UPR-Humacao cumple con las leyes ADA (Americans with Disabilities
+Act) y 51 (Servicios Educativos Integrales para Personas con
+Impedimentos) para garantizar igualdad en el acceso a la educación y
+servicios. Estudiantes con impedimentos: informe al (la) profesor(a) de
+cada curso sobre sus necesidades especiales y/o de acomodo razonable
+para el curso, en la tarjeta de información de la primera semana y
+visite la Oficina de Servicios para la Población con Impedimentos
+(SERPI) a la brevedad posible. Se mantendrá la confidencialidad.</p>
 </div>
 <div id="la-integridad-academica" class="section level3">
 <h3>La integridad Academica</h3>
-<p>La Universidad de Puerto Rico promueve los más altos estándares de integridad académica y científica. El Artículo 6.2 del Reglamento General de Estudiantes de la Universidad de Puerto Rico (Certificación Núm. 13, 2009-2010, de la Junta de Síndicos) establece que la deshonestidad académica incluye, pero no se limita a: acciones fraudulentas, la obtención de notas o grados académicos valiéndose de falsas o fraudulentas simulaciones, copiar total o parcialmente la labor académica de otra persona, plagiar total o parcialmente el trabajo de otra persona, copiar total o parcialmente las respuestas de otra persona a las preguntas de un examen, haciendo o consiguiendo que otro tome en su nombre cualquier prueba o examen oral o escrito, así como la ayuda o facilitación para que otra persona incurra en la referida conducta. Cualquiera de estas acciones estará sujeta a sanciones disciplinarias en conformidad con el procedimiento disciplinario establecido en el Reglamento General de Estudiantes de la UPR vigente.</p>
+<p>La Universidad de Puerto Rico promueve los más altos estándares de
+integridad académica y científica. El Artículo 6.2 del Reglamento
+General de Estudiantes de la Universidad de Puerto Rico (Certificación
+Núm. 13, 2009-2010, de la Junta de Síndicos) establece que la
+deshonestidad académica incluye, pero no se limita a: acciones
+fraudulentas, la obtención de notas o grados académicos valiéndose de
+falsas o fraudulentas simulaciones, copiar total o parcialmente la labor
+académica de otra persona, plagiar total o parcialmente el trabajo de
+otra persona, copiar total o parcialmente las respuestas de otra persona
+a las preguntas de un examen, haciendo o consiguiendo que otro tome en
+su nombre cualquier prueba o examen oral o escrito, así como la ayuda o
+facilitación para que otra persona incurra en la referida conducta.
+Cualquiera de estas acciones estará sujeta a sanciones disciplinarias en
+conformidad con el procedimiento disciplinario establecido en el
+Reglamento General de Estudiantes de la UPR vigente.</p>
 </div>
-<div id="comentario-sobre-grabar-videos-yo-audio-de-las-clases" class="section level3">
+<div id="comentario-sobre-grabar-videos-yo-audio-de-las-clases"
+class="section level3">
 <h3>Comentario sobre grabar videos y/o audio de las clases</h3>
-<p>Los estudiantes no PUEDEN grabar la clase por forma de video o audio sin el permiso del profesor. Algunos estudiantes con necesidades especiales pueden hablar con el profesor para pedir el permiso. La solicitud y aprobación del permiso tiene que ser por escrito (por ejemplo por email).</p>
+<p>Los estudiantes no PUEDEN grabar la clase por forma de video o audio
+sin el permiso del profesor. Algunos estudiantes con necesidades
+especiales pueden hablar con el profesor para pedir el permiso. La
+solicitud y aprobación del permiso tiene que ser por escrito (por
+ejemplo por email).</p>
 </div>
 <div id="espacio-libre-de-acoso-sexual" class="section level3">
 <h3>Espacio libre de acoso sexual</h3>
-<p>La Universidad de Puerto Rico prohíbe el descrimen por razón de sexo y género en todas sus modalidades, incluyendo el hostigamiento sexual. Según la Política Institucional contra el hostigamiento sexual, en la Universidad de Puerto Rico, Cert. Núm. 130 (2014-2015) de la Junta de Gobierno, si un(a) estudiante está siendo o fue afectado por conductas relacionadas a hostigamiento sexual, puede acudir ante la Oficina del Procurador Estudiantil, el Decanato de Estudiantes o el Coordinador de Cumplimiento con Título IX para una orientación o presentar una querella.</p>
+<p>La Universidad de Puerto Rico prohíbe el descrimen por razón de sexo
+y género en todas sus modalidades, incluyendo el hostigamiento sexual.
+Según la Política Institucional contra el hostigamiento sexual, en la
+Universidad de Puerto Rico, Cert. Núm. 130 (2014-2015) de la Junta de
+Gobierno, si un(a) estudiante está siendo o fue afectado por conductas
+relacionadas a hostigamiento sexual, puede acudir ante la Oficina del
+Procurador Estudiantil, el Decanato de Estudiantes o el Coordinador de
+Cumplimiento con Título IX para una orientación o presentar una
+querella.</p>
 </div>
 <div id="protocolo-de-la-clase" class="section level3">
 <h3>Protocolo de la Clase</h3>
-<p>Los teléfonos celulares serán apagado durante la clase. Si necesita una calculadora traerla al salón. El teléfono no debería esta visible durante la clase al menos que pide permiso al instructor. Recuerda que que se usara computadoras portátiles en cada sesión.</p>
+<p>Los teléfonos celulares serán apagado durante la clase. Si necesita
+una calculadora traerla al salón. El teléfono no debería esta visible
+durante la clase al menos que pide permiso al instructor. Recuerda que
+que se usara computadoras portátiles en cada sesión.</p>
 </div>
 
 

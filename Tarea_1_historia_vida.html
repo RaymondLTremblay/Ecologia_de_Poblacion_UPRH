@@ -14,7 +14,7 @@
 
 <title>Tarea_1_Historia_de_Vida</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -485,25 +489,29 @@ div.tocify {
 
 
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## Warning in (function (kind = NULL, normal.kind = NULL, sample.kind = NULL) :
-## non-uniform &#39;Rounding&#39; sampler used</code></pre>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.0.2     ✓ forcats 0.5.1</code></pre>
-<pre><code>## Warning in (function (kind = NULL, normal.kind = NULL, sample.kind = NULL) :
-## non-uniform &#39;Rounding&#39; sampler used</code></pre>
+<pre><code>## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter()     masks stats::filter()
-## x dplyr::group_rows() masks kableExtra::group_rows()
-## x dplyr::lag()        masks stats::lag()</code></pre>
+## ✖ dplyr::filter()     masks stats::filter()
+## ✖ dplyr::group_rows() masks kableExtra::group_rows()
+## ✖ dplyr::lag()        masks stats::lag()</code></pre>
 <pre class="r"><code>library(gt)
 #library(kableExtra)</code></pre>
 <div id="ejercicios" class="section level2">
 <h2>Ejercicios</h2>
-<p>En este Ejercicio, Ud. podrá en practica los métodos de análisis aprendido en el capitulo 3, las paginas 50-71. Los datos provienen de dos especies de herbáceas de Noruega, <em>Dactylorhiza lapponica</em> y <em>Gymnadenia conopsea</em>. Los datos fueron recolectado de parcelas permanentes del 1982 al 2000. El articulo se encuentra en este enlace <a href="PDF/Oien.pdf">here</a>.</p>
-<p><strong>P1</strong> Con los datos de la tabla 4 en el articulo. Produzca una gráfica similar a la figura 1.6 en el libro de Gotelli. Añadir ambas secuencias (ambas especies) en la misma gráfica. Asegurar que los ejes esten bien identificados (Subir la grafica a Edmodo)</p>
+<p>En este Ejercicio, Ud. podrá en practica los métodos de análisis
+aprendido en el capitulo 3, las paginas 50-71. Los datos provienen de
+dos especies de herbáceas de Noruega, <em>Dactylorhiza lapponica</em> y
+<em>Gymnadenia conopsea</em>. Los datos fueron recolectado de parcelas
+permanentes del 1982 al 2000. El articulo se encuentra en este enlace <a
+href="PDF/Oien.pdf">here</a>.</p>
+<p><strong>P1</strong> Con los datos de la tabla 4 en el articulo.
+Produzca una gráfica similar a la figura 1.6 en el libro de Gotelli.
+Añadir ambas secuencias (ambas especies) en la misma gráfica. Asegurar
+que los ejes esten bien identificados (Subir la grafica a Edmodo)</p>
 <pre class="r"><code>Number_Ind= tribble(
 ~Species, ~Year, ~N,
  &quot;Dl&quot;, 1982, 36,
@@ -568,10 +576,16 @@ div.tocify {
   theme(axis.text.x = element_text(angle = 75, vjust = 0.5, hjust=.5))+
   ylab(&quot;Cantidad de individuos \n en flor en cada año&quot;)</code></pre>
 <p><img src="Tarea_1_historia_vida_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p><strong>P2</strong> Usando el resultado de la gráfica anterior (contestar en EDMODO) - Determina si el crecimiento poblacional es exponencial.<br />
-- Explica su interpretación. - De por lo menos dos razones ecológicas que limitaría el crecimiento exponencial</p>
-<p><strong>P3</strong> Con los datos abajo que estan representado en la tabla 6 del articulo, incluyo aqui informacióin ficticia sobre la fecundidad.<br />
-- Haga los siguientes cálculos ANTES contestar las preguntas. Presenta una tabla similar Gotelli (Table 3.1) con los datos.</p>
+<p><strong>P2</strong> Usando el resultado de la gráfica anterior
+(contestar en EDMODO) - Determina si el crecimiento poblacional es
+exponencial.<br />
+- Explica su interpretación. - De por lo menos dos razones ecológicas
+que limitaría el crecimiento exponencial</p>
+<p><strong>P3</strong> Con los datos abajo que estan representado en la
+tabla 6 del articulo, incluyo aqui informacióin ficticia sobre la
+fecundidad.<br />
+- Haga los siguientes cálculos ANTES contestar las preguntas. Presenta
+una tabla similar Gotelli (Table 3.1) con los datos.</p>
 <ul>
 <li>Calcula <strong>gx</strong></li>
 <li>Calcula <strong>Ro</strong></li>
@@ -580,7 +594,8 @@ div.tocify {
 <div id="razón-de-mortandad" class="section level1">
 <h1>Razón de mortandad</h1>
 <ul>
-<li>Calcula <strong>qx</strong>, explica como se calcula este indice</li>
+<li>Calcula <strong>qx</strong>, explica como se calcula este
+indice</li>
 </ul>
 </div>
 <div id="largo-de-una-generación" class="section level1">
@@ -591,15 +606,25 @@ div.tocify {
 <p>Asegurate de contestar <strong>TODAS</strong> la preguntas.</p>
 <p>Contestar en Edmodo</p>
 <ul>
-<li>Cual es la edad que la supervivencia es más alta (para ambas situación, synthed and unscythed)</li>
-<li>Cual es la edad que la supervivencia es más baja (para ambas situación, synthed and unscythed)</li>
-<li>Basado en esta formula anterior, cual es la edad que hay mayor probabilidad de morir y cual es el la razón para plantes en el ambiente unsynthed?</li>
+<li>Cual es la edad que la supervivencia es más alta (para ambas
+situación, synthed and unscythed)</li>
+<li>Cual es la edad que la supervivencia es más baja (para ambas
+situación, synthed and unscythed)</li>
+<li>Basado en esta formula anterior, cual es la edad que hay mayor
+probabilidad de morir y cual es el la razón para plantes en el ambiente
+unsynthed?</li>
 <li>Cual es la edad donde hay menor probabilidad de morir?</li>
-<li>Cual es el largo de una “Generación” (para ambas situación, synthed and unscythed)</li>
-<li>Cual es el estimado de <strong>r</strong> (para ambas situación, synthed and unscythed).</li>
-<li>Que efecto tiene el manejo del sitio (unscythed and scythed) sobre la supervivencia de los individuos de este especies.</li>
+<li>Cual es el largo de una “Generación” (para ambas situación, synthed
+and unscythed)</li>
+<li>Cual es el estimado de <strong>r</strong> (para ambas situación,
+synthed and unscythed).</li>
+<li>Que efecto tiene el manejo del sitio (unscythed and scythed) sobre
+la supervivencia de los individuos de este especies.</li>
 </ul>
-<p>Aquí están los datos. NOTA que en el articulo no hay datos de fecundidad por consecuencia se añadió aquí unos datos ficticios. Los datos don para <em>Dactylorhiza lapponica</em> (Unscythed), y <em>D. lapponica</em> (Scythed)</p>
+<p>Aquí están los datos. NOTA que en el articulo no hay datos de
+fecundidad por consecuencia se añadió aquí unos datos ficticios. Los
+datos don para <em>Dactylorhiza lapponica</em> (Unscythed), y <em>D.
+lapponica</em> (Scythed)</p>
 <pre class="r"><code>Life_Table = tribble(
  ~Species, ~Treatment, ~Year_after_first_flowering, ~N, ~lx, ~bx,
   &quot;Dl&quot;, &quot;Unscythes&quot;, 0, 142, 1.00, 1,
@@ -664,6 +689,8 @@ gt(Life_Table)</code></pre>
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
@@ -674,6 +701,8 @@ gt(Life_Table)</code></pre>
   font-weight: initial;
   padding-top: 0;
   padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
@@ -752,7 +781,10 @@ gt(Life_Table)</code></pre>
 }
 
 #nnggssdjjh .gt_group_heading {
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -824,7 +856,26 @@ gt(Life_Table)</code></pre>
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
-  padding-left: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nnggssdjjh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nnggssdjjh .gt_row_group_first td {
+  border-top-width: 2px;
 }
 
 #nnggssdjjh .gt_summary_row {
@@ -838,13 +889,22 @@ gt(Life_Table)</code></pre>
 }
 
 #nnggssdjjh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nnggssdjjh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nnggssdjjh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
 }
 
 #nnggssdjjh .gt_grand_summary_row {
@@ -897,7 +957,10 @@ gt(Life_Table)</code></pre>
 #nnggssdjjh .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #nnggssdjjh .gt_sourcenotes {
@@ -916,7 +979,10 @@ gt(Life_Table)</code></pre>
 
 #nnggssdjjh .gt_sourcenote {
   font-size: 90%;
-  padding: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #nnggssdjjh .gt_left {
@@ -948,10 +1014,43 @@ gt(Life_Table)</code></pre>
   font-size: 65%;
 }
 
+#nnggssdjjh .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
 #nnggssdjjh .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
-  font-size: 65%;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#nnggssdjjh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nnggssdjjh .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#nnggssdjjh .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#nnggssdjjh .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
 }
 </style>
 <table class="gt_table">

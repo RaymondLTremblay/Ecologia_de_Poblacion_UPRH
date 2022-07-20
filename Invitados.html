@@ -14,7 +14,7 @@
 
 <title>BIOL4458</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -81,6 +82,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -233,7 +237,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -249,7 +253,7 @@ $(document).ready(function () {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -330,7 +334,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -351,7 +355,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -363,7 +367,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -398,8 +402,11 @@ $(document).ready(function () {
 
 <div id="invitados" class="section level1">
 <h1>Invitados</h1>
-<p>En este documentos encontrarán información los invitados que trabaja en dinamica poblacional, conservación y PVA.</p>
-<p>Se encontrará información sobre los invitados y un enlace para el articulo que DEBEN leer antes del dia. Se le estará haciendo pregunta sobre los articulos leido.</p>
+<p>En este documentos encontrarán información los invitados que trabaja
+en dinamica poblacional, conservación y PVA.</p>
+<p>Se encontrará información sobre los invitados y un enlace para el
+articulo que DEBEN leer antes del dia. Se le estará haciendo pregunta
+sobre los articulos leido.</p>
 <hr />
 <div id="martha-charitonidou" class="section level2">
 <h2>1. Martha Charitonidou</h2>
@@ -412,11 +419,13 @@ $(document).ready(function () {
 <li>UNIVERSITY OF IOANNINA, GREECE.</li>
 </ul>
 <p>VEA EL SIGUIENTE ENLACE</p>
-<p><a href="https://www.researchgate.net/profile/Martha-Charitonidou">M_CHARITONIDOU</a></p>
+<p><a
+href="https://www.researchgate.net/profile/Martha-Charitonidou">M_CHARITONIDOU</a></p>
 </div>
 <div id="leer-el-siguiente-articulo" class="section level3">
 <h3>LEER EL SIGUIENTE ARTICULO</h3>
-<p><a href="Guest_Speakers/Charitonidou,%20Kougioumoutzis,%20Halley%20-%202021.pdf">OPRHYS</a></p>
+<p><a
+href="Guest_Speakers/Charitonidou,%20Kougioumoutzis,%20Halley%20-%202021.pdf">OPRHYS</a></p>
 <hr />
 </div>
 </div>
@@ -427,14 +436,18 @@ $(document).ready(function () {
 <ul>
 <li>Especialista en plantas epifitas</li>
 <li>Dinámica poblacional</li>
-<li>Centro Interdisciplinario de Investigación para el Desarrollo Integral Regional, Unidad Oaxaca, México</li>
+<li>Centro Interdisciplinario de Investigación para el Desarrollo
+Integral Regional, Unidad Oaxaca, México</li>
 </ul>
 <p>VEA EL SIGUIENTE ENLACE</p>
-<p><a href="https://www.researchgate.net/profile/Demetria-Mondragon">D_Mondragón</a></p>
+<p><a
+href="https://www.researchgate.net/profile/Demetria-Mondragon">D_Mondragón</a></p>
 </div>
 <div id="leer-el-siguiente-articulo-1" class="section level3">
 <h3>LEER EL SIGUIENTE ARTICULO</h3>
-<p><a href="Guest_Speakers/Temporal_variation_in_the_demography_of.pdf">Variación Temporal</a></p>
+<p><a
+href="Guest_Speakers/Temporal_variation_in_the_demography_of.pdf">Variación
+Temporal</a></p>
 <hr />
 </div>
 </div>
@@ -445,14 +458,18 @@ $(document).ready(function () {
 <ul>
 <li>Especialista en dinámica poblacional</li>
 <li>Conservación</li>
-<li>Herbarium HUQ, Biology Program, University of Quindío, Armenia, Colombia.</li>
+<li>Herbarium HUQ, Biology Program, University of Quindío, Armenia,
+Colombia.</li>
 </ul>
-<p><a href="https://www.researchgate.net/profile/Nhora-Ospina-Calderon">H Ospina</a></p>
+<p><a
+href="https://www.researchgate.net/profile/Nhora-Ospina-Calderon">H
+Ospina</a></p>
 </div>
 <div id="leer-el-siguiente-documento" class="section level3">
 <h3>LEER EL SIGUIENTE Documento</h3>
 <ol style="list-style-type: decimal">
-<li><a href="PDF/Nhora__Opsina_ICCB_Poster_2017.pdf">Gustavia speciosa</a></li>
+<li><a href="PDF/Nhora__Opsina_ICCB_Poster_2017.pdf">Gustavia
+speciosa</a></li>
 <li><a href="PDF/DEMOGRAFIA_Nectandra.pdf">Nectandra reticulada</a></li>
 </ol>
 </div>

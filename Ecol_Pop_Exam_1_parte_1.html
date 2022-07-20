@@ -14,7 +14,7 @@
 
 <title>Ecol_Pop_Exam_1_parte_1</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -484,20 +488,42 @@ div.tocify {
 </div>
 
 
-<div id="las-preguntas-del-examen-de-esta-parte-proviene-del-capiyulo-1" class="section level2">
+<div id="las-preguntas-del-examen-de-esta-parte-proviene-del-capiyulo-1"
+class="section level2">
 <h2>Las preguntas del examen de esta parte proviene del capiyulo 1:</h2>
 <ol style="list-style-type: decimal">
-<li><p>In 1993, when the first edition of this book was written, the world’s human population was expected to double in size in approximately 50 years. Assuming population growth is continuous, calculate r for the human population.</p></li>
-<li><p>If the population size in 1993 was 5.4 billion, what was the projected population size for the year 2021 using the a growth rate with doubling time of 50 years?</p></li>
-<li><p>The future is here!. On October 17, 2021 the best estimate of the world population size was 7.796 billion - different than that projected by the model in 1993. To find out the current estimate of the world populaion size, visit the website maintained by the US Census Bureau.</p></li>
+<li><p>In 1993, when the first edition of this book was written, the
+world’s human population was expected to double in size in approximately
+50 years. Assuming population growth is continuous, calculate r for the
+human population.</p></li>
+<li><p>If the population size in 1993 was 5.4 billion, what was the
+projected population size for the year 2021 using the a growth rate with
+doubling time of 50 years?</p></li>
+<li><p>The future is here!. On October 17, 2021 the best estimate of the
+world population size was 7.796 billion - different than that projected
+by the model in 1993. To find out the current estimate of the world
+populaion size, visit the website maintained by the US Census
+Bureau.</p></li>
 </ol>
-<p><a href="https://www.census.gov/popclock/">Census Population size website</a></p>
+<p><a href="https://www.census.gov/popclock/">Census Population size
+website</a></p>
 <ol start="4" style="list-style-type: decimal">
-<li><p>What is today’s date and how large is the population of the world today. What is the difference in nnu mber of humans on the planet as compared to that predicted?</p></li>
-<li><p>Considering the present population size what is the observed growth rate of human population on the planet <strong>per year</strong>, use the population size of 5.538 billion for 1993.</p></li>
-<li><p>You are studying a population of beetles of size 3000. During one month period, you record 400 births and 150 deaths in this population. Estimate r and project the population size in from month 1 to 6 months.</p></li>
-<li><p>For five consecutive days you count the size of a growing population of flatworms as 100, 158, 315, 298, 794. Plot the logarithm (base e) of population size to estimate r.</p></li>
-<li><p>A population of annual grasses increases in size by 12% every year. This species was introduced as cow foder. What is the approximate doubling time?</p></li>
+<li><p>What is today’s date and how large is the population of the world
+today. What is the difference in nnu mber of humans on the planet as
+compared to that predicted?</p></li>
+<li><p>Considering the present population size what is the observed
+growth rate of human population on the planet <strong>per year</strong>,
+use the population size of 5.538 billion for 1993.</p></li>
+<li><p>You are studying a population of beetles of size 3000. During one
+month period, you record 400 births and 150 deaths in this population.
+Estimate r and project the population size in from month 1 to 6
+months.</p></li>
+<li><p>For five consecutive days you count the size of a growing
+population of flatworms as 100, 158, 315, 298, 794. Plot the logarithm
+(base e) of population size to estimate r.</p></li>
+<li><p>A population of annual grasses increases in size by 12% every
+year. This species was introduced as cow foder. What is the approximate
+doubling time?</p></li>
 </ol>
 </div>
 

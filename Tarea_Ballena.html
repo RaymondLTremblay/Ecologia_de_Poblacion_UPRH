@@ -14,7 +14,7 @@
 
 <title>Tarea_Ballena</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -484,10 +488,15 @@ div.tocify {
 </div>
 
 
-<div id="esta-tarea-es-para-practicar-las-funciones-y-los-conceptos-de-dinámica-poblacional-con-matrices-de-transiciones." class="section level2">
-<h2>Esta Tarea es para practicar las funciones y los conceptos de dinámica poblacional con matrices de transiciones.</h2>
+<div
+id="esta-tarea-es-para-practicar-las-funciones-y-los-conceptos-de-dinámica-poblacional-con-matrices-de-transiciones."
+class="section level2">
+<h2>Esta Tarea es para practicar las funciones y los conceptos de
+dinámica poblacional con matrices de transiciones.</h2>
 <hr />
-<p>Encontrarán 5 artículos revisado por pares donde usarón matrices para evaluar la dinamica poblacional de diferentes ballenas en diferentes circunstancias.</p>
+<p>Encontrarán 5 artículos revisado por pares donde usarón matrices para
+evaluar la dinamica poblacional de diferentes ballenas en diferentes
+circunstancias.</p>
 <p><a href="PDF/Beaked_Whale.pdf">Beaked Whales</a></p>
 <p><a href="PDF/RighWhale.pdf">Right Whales</a></p>
 <p><a href="PDF/Whales.pdf">North Atlantic Right Whales</a></p>
@@ -500,26 +509,45 @@ div.tocify {
 <p>Prepara un .rmd con la siguiente información</p>
 <ol style="list-style-type: decimal">
 <li><p>Poner la matrix en un chunk</p></li>
-<li><p>Construir un diagrama de la historia de vida, con el paquete <strong>Rage</strong></p></li>
-<li><p>Evaluar si la matrix es <strong>Ergodic</strong> e <strong>Irriducible</strong>?</p></li>
+<li><p>Construir un diagrama de la historia de vida, con el paquete
+<strong>Rage</strong></p></li>
+<li><p>Evaluar si la matrix es <strong>Ergodic</strong> e
+<strong>Irriducible</strong>?</p></li>
 <li><p>Calcular la <strong>Stable Stage Distibution</strong></p></li>
 <li><p>Calcular la <strong>Reproductive value</strong></p></li>
 <li><p>Calcular la <strong>Elasticidad</strong></p></li>
 </ol>
 <p>EN adición contestar las siguientes preguntas.</p>
 <ol start="7" style="list-style-type: decimal">
-<li><p>Busca información básica sobre esta ballena, describe su distribución, biología, tamaño, comida preferida y otros aspectos de su vida. Puede usar el paper asignado y otras referencias (<em>Recuerda citar correctamente!!!</em>)</p></li>
-<li><p>Explica si la matrix es Ergodic y Irriducible, pq lo es (o no)?</p></li>
-<li><p>Explica lo que se observa con el análisis de <strong>Stable Stage Distribution</strong>. ¿Cual es la definición y la interpretación con respeto a la ballena?</p></li>
-<li><p>Explica lo que se observa con el análisis de <strong>Reproductive Value</strong>. ¿Cual es la definición y la interpretación con respeto a la ballena?</p></li>
-<li><p>Qué es la interpretación del análisis de <strong>Elasticidad</strong>. ¿Cual es la definición y la interpretación con respeto a la ballena?</p></li>
-<li><p>Ud es parte de un grupo de biólogos interesados en la conservación informando a la agencia que determina los parámetros sobre la caza de ballena al nivel mundial <a href="https://iwc.int/home">IWC</a>. Con la información anterior que sugerencia tiene sobre la caza de esta ballena.</p></li>
+<li><p>Busca información básica sobre esta ballena, describe su
+distribución, biología, tamaño, comida preferida y otros aspectos de su
+vida. Puede usar el paper asignado y otras referencias (<em>Recuerda
+citar correctamente!!!</em>)</p></li>
+<li><p>Explica si la matrix es Ergodic y Irriducible, pq lo es (o
+no)?</p></li>
+<li><p>Explica lo que se observa con el análisis de <strong>Stable Stage
+Distribution</strong>. ¿Cual es la definición y la interpretación con
+respeto a la ballena?</p></li>
+<li><p>Explica lo que se observa con el análisis de <strong>Reproductive
+Value</strong>. ¿Cual es la definición y la interpretación con respeto a
+la ballena?</p></li>
+<li><p>Qué es la interpretación del análisis de
+<strong>Elasticidad</strong>. ¿Cual es la definición y la interpretación
+con respeto a la ballena?</p></li>
+<li><p>Ud es parte de un grupo de biólogos interesados en la
+conservación informando a la agencia que determina los parámetros sobre
+la caza de ballena al nivel mundial <a
+href="https://iwc.int/home">IWC</a>. Con la información anterior que
+sugerencia tiene sobre la caza de esta ballena.</p></li>
 </ol>
 </div>
 <div id="entrega" class="section level3">
 <h3>Entrega:</h3>
-<p>Se entregará un documento bien organizado en formato .html al portal de MSTeam, en una semana del momento que este posteado en MSTeam.</p>
-<p>El trabajo es individual. Si tiene dudas TIENE que comunicarse conmigo….<strong>NO Pueden discutir del trabajo con coleguas de esta clase o otras personas</strong>.</p>
+<p>Se entregará un documento bien organizado en formato .html al portal
+de MSTeam, en una semana del momento que este posteado en MSTeam.</p>
+<p>El trabajo es individual. Si tiene dudas TIENE que comunicarse
+conmigo….<strong>NO Pueden discutir del trabajo con coleguas de esta
+clase o otras personas</strong>.</p>
 </div>
 </div>
 

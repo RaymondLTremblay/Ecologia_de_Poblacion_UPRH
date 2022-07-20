@@ -14,7 +14,7 @@
 
 <title>Lepanthes rubripetala</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -329,7 +333,7 @@ div.tocify {
   <a href="schedule.html">Calendario</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Conferencias
      
     <span class="caret"></span>
@@ -410,7 +414,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tareas
      
     <span class="caret"></span>
@@ -431,7 +435,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Invitados
      
     <span class="caret"></span>
@@ -443,7 +447,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Ejemplos de proyecto de PVA
      
     <span class="caret"></span>
@@ -468,7 +472,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -488,33 +492,46 @@ div.tocify {
 <h3>APPENDIX S1</h3>
 <ul>
 <li>R code for figures</li>
-<li>This appendix provides R code for producing the figures included in the main manuscript.</li>
-<li>Install the library using install.packages() or by downloading from <a href="http://cran.R-project.org" class="uri">http://cran.R-project.org</a></li>
+<li>This appendix provides R code for producing the figures included in
+the main manuscript.</li>
+<li>Install the library using install.packages() or by downloading from
+<a href="http://cran.R-project.org"
+class="uri">http://cran.R-project.org</a></li>
 </ul>
 </div>
 <div id="load-the-library" class="section level3">
 <h3>Load the library</h3>
 <pre class="r"><code>library(popdemo)
 library(popbio)</code></pre>
-<p><em>Lepanthes</em> is one of the largest genera of the Orchidaceae with &gt;1200 species, found only in the Neotropics.</p>
+<p><em>Lepanthes</em> is one of the largest genera of the Orchidaceae
+with &gt;1200 species, found only in the Neotropics.</p>
 <hr />
 <p>Here is photo of the flower of <em>Lepanthes rubripetala</em>,</p>
 <div class="figure">
 <img src="figures/Lepanthes_rubripetala.png" alt="" />
 <p class="caption">Lepanthes rubripetala</p>
 </div>
-<p>A population of <em>Lepanthes rupestris</em>, those of <em>Lepanthes rubripetala</em> growth in the same way (on rocks or trees), so these groups of individuals are discrete and may be seperated by large distances.</p>
+<p>A population of <em>Lepanthes rupestris</em>, those of <em>Lepanthes
+rubripetala</em> growth in the same way (on rocks or trees), so these
+groups of individuals are discrete and may be seperated by large
+distances.</p>
 <hr />
 <div class="figure">
-<img src="figures/Lepanthes-rupestris-on-a-boulder-along-Quebrada-Sonadora-in-the-Caribbean-National.png" alt="" />
+<img
+src="figures/Lepanthes-rupestris-on-a-boulder-along-Quebrada-Sonadora-in-the-Caribbean-National.png"
+alt="" />
 <p class="caption">Lepanthes population</p>
 </div>
 <hr />
 </div>
 <div id="lectura-para-lunes" class="section level2">
 <h2>Lectura para Lunes</h2>
-<p>Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este manuscrito.</p>
-<p><a href="PDF/When%20stable-stage%20equilibrium%20is%20unlikely-%20integrating%20transient%20population%20dynsmics.pdf">Tremblay, Raventos Ackerman</a>. Habrá un quiz de comprobación de lectura al principio de la clase.</p>
+<p>Deben leer el siguiente manuscrito para lunes, habrá prueba corta
+sobre este manuscrito.</p>
+<p><a
+href="PDF/When%20stable-stage%20equilibrium%20is%20unlikely-%20integrating%20transient%20population%20dynsmics.pdf">Tremblay,
+Raventos Ackerman</a>. Habrá un quiz de comprobación de lectura al
+principio de la clase.</p>
 <hr />
 </div>
 <div id="lepanthes-rubripetala-population-3" class="section level1">
@@ -537,13 +554,18 @@ Lrub1</code></pre>
 ## [3,] 0.00 0.00 0.51 0.15
 ## [4,] 0.00 0.14 0.43 0.84</code></pre>
 </div>
-<div id="two-problems-need-to-be-evaluated-before-analysis" class="section level2">
+<div id="two-problems-need-to-be-evaluated-before-analysis"
+class="section level2">
 <h2>Two problems need to be evaluated before analysis</h2>
 <ul>
-<li><p><strong>Ergodicity</strong> (the condition that regardless of the initial stage structure, the asymptotic growth rate will be the same)</p></li>
-<li><p><strong>Irreducibility</strong> (the condition that the transitions from all stages to all other stages are possible),</p></li>
+<li><p><strong>Ergodicity</strong> (the condition that regardless of the
+initial stage structure, the asymptotic growth rate will be the
+same)</p></li>
+<li><p><strong>Irreducibility</strong> (the condition that the
+transitions from all stages to all other stages are possible),</p></li>
 </ul>
-<p>failure to meet both of these conditions which may severely impact matrix structure and analyses (Stott et al., 2010a).</p>
+<p>failure to meet both of these conditions which may severely impact
+matrix structure and analyses (Stott et al., 2010a).</p>
 <p>You can test this with the following functions from “popdemo”.</p>
 <pre class="r"><code>isErgodic(Lrub1, digits=10, return.eigvec=FALSE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
@@ -559,19 +581,28 @@ Lrub1</code></pre>
 </div>
 <div id="reality-of-the-data-collection" class="section level2">
 <h2>Reality of the data collection</h2>
-<p>However the data from this matrix is limited because seeds and fungy infection cannot be evaluated in the field, because seeds are too small and there is no quick technique in the field to detedct the symbiotic fungi.</p>
-<p>This matrix is size-based, with medium fecundity. The size classes are as follows: - 1: Plantula - 2: Juveniles - 3: A0: non-reproductive adults - 4: A+: reproductive adults</p>
+<p>However the data from this matrix is limited because seeds and fungy
+infection cannot be evaluated in the field, because seeds are too small
+and there is no quick technique in the field to detedct the symbiotic
+fungi.</p>
+<p>This matrix is size-based, with medium fecundity. The size classes
+are as follows: - 1: Plantula - 2: Juveniles - 3: A0: non-reproductive
+adults - 4: A+: reproductive adults</p>
 <div id="section" class="section level75">
 <p class="heading"></p>
 <p>#FIGURE 1: POPULATION PROJECTION #</p>
-<p>#This figure is designed to be 3.5” by 3.5” #(Check size of plot window using ‘par(din)’). # # #Set margins: par(mar=c(5,4,1,1))</p>
+<p>#This figure is designed to be 3.5” by 3.5” #(Check size of plot
+window using ‘par(din)’). # # #Set margins: par(mar=c(5,4,1,1))</p>
 <p>#Create a population vector. This one is biased towards adults.</p>
 <pre class="r"><code>n0 &lt;- c(0, 0, 2, 0)</code></pre>
 </div>
 </div>
-<div id="now-project-the-population-for-x-years-in-the-future." class="section level2">
+<div id="now-project-the-population-for-x-years-in-the-future."
+class="section level2">
 <h2>Now project the population for x years in the future.</h2>
-<p>Project the orchid PPM and population vector. In this case, we are projecting for 24 time intervals. The orchid interval is one month, so this projection is for 2 years. We use the function ‘project’.</p>
+<p>Project the orchid PPM and population vector. In this case, we are
+projecting for 24 time intervals. The orchid interval is one month, so
+this projection is for 2 years. We use the function ‘project’.</p>
 <pre class="r"><code>pr1 &lt;- project(Lrub1, vector=n0, time=24)
 
 #Plot the projection. This uses an S3 plotting
@@ -581,7 +612,8 @@ plot(pr1)</code></pre>
 </div>
 <div id="primitive-matrix" class="section level2">
 <h2>Primitive Matrix</h2>
-<p>For a primitive matrix (see below), the long-term growth rate is the real part of the first dominant eigenvalue of the PPM.</p>
+<p>For a primitive matrix (see below), the long-term growth rate is the
+real part of the first dominant eigenvalue of the PPM.</p>
 <pre class="r"><code>eigs &lt;- eigen(Lrub1)
 eigs</code></pre>
 <pre><code>## eigen() decomposition
@@ -599,13 +631,18 @@ eigs</code></pre>
 lambdamax</code></pre>
 <pre><code>## [1] 1.029629</code></pre>
 <p>Stable Stable Stage distribution</p>
-<p>The stable demographic structure of the population is equal to the dominant right eigenvector, which is the absolute value of the real part of the first eigenvector.</p>
-<p>This is the expected proportional distribution among the different stages <strong>IF</strong> the population attains a sable structure.</p>
+<p>The stable demographic structure of the population is equal to the
+dominant right eigenvector, which is the absolute value of the real part
+of the first eigenvector.</p>
+<p>This is the expected proportional distribution among the different
+stages <strong>IF</strong> the population attains a sable structure.</p>
 <pre class="r"><code>w &lt;- stable.stage(Lrub1)
 w</code></pre>
 <pre><code>## [1] 0.1173246 0.2351086 0.1450580 0.5025088</code></pre>
-<p>Note that the package popbio provides functions ‘lambda’ and ‘stable.stage’ that will provide these also.</p>
-<p>For more info on projecting population dynamics, see demo(projection).</p>
+<p>Note that the package popbio provides functions ‘lambda’ and
+‘stable.stage’ that will provide these also.</p>
+<p>For more info on projecting population dynamics, see
+demo(projection).</p>
 <hr />
 <div id="section-1" class="section level75">
 <p class="heading"></p>
@@ -618,60 +655,168 @@ w</code></pre>
 </div>
 <div id="section-2" class="section level1">
 <h1></h1>
-<p>Fig. 2a: Population-specific transient dynamics # This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
+<p>Fig. 2a: Population-specific transient dynamics # This figure is
+designed to be 3.5” by 3.5” (Check size of plot window using
+‘par(din)’).</p>
 <p>Set margins: par(mar=c(10,4,1,1))</p>
-<p>Create 2 population vectors. One is adult- biased, and it amplifies. One is juvenile- biased and it attenuates.</p>
+<p>Create 2 population vectors. One is adult- biased, and it amplifies.
+One is juvenile- biased and it attenuates.</p>
 <p>n0.amp &lt;- c(1000,1,1,1)</p>
 <p>n0.att &lt;- c(1,1,1,1000)</p>
-<p>Project these vectors using the project function. We are standardising the matrix using ‘standard.A=T’ to remove effects of asymptotic dynamics. This means that the projection has a long-term growth rate of unity, i.e. it does not grow or decline in the long-term. We also standardise the population vector to sum to 1 using ‘standard.vec=T’. These standardisations make it easier (and fairer) to compare between models with different population sizes, and different long-term growth rates. pr2.1 &lt;- project(Lrub1, vector=n0.amp, time=156, standard.A=T, standard.vec=T) pr2.2 &lt;- project(Lrub1, vector=n0.att, time=156, standard.A=T, standard.vec=T)</p>
-<p>Plot the amplification projection and label it plot(pr2.1, ylim=c(0.4,1), log=“y”, cex.axis=0.8) text(52, pr2.1[51], “amplification”, adj=c(1,-0.5), cex=0.8) maxamp(Lrub1, vector=n0.amp) reactivity(Lrub1,vector=n0.amp) inertia(Lrub1,vector=n0.amp)</p>
-<p>Calculate the transient dynamics of the amplification projection reac &lt;- reactivity(Lrub1, vector=n0.amp) maxamp &lt;- maxamp(Lrub1, vector=n0.amp, return.t=T) upinertia &lt;- inertia(Lrub1, vector=n0.amp)</p>
-<p>Add points on the projection for amplification and label them points(c(1,maxamp<span class="math inline">\(t,31), c(reac,maxamp\)</span>maxamp,upinertia), pch=3, col=“red”) text(1, reac, expression(bar(P)[1]), adj=c(-0.3,0.5), col=“red”, cex=0.8) text(maxamp<span class="math inline">\(t, maxamp\)</span>maxamp, expression(bar(P)[max]), adj=c(0.1,-0.5), col=“red”, cex=0.8) text(31, upinertia, expression(bar(P)[infinity]), adj=c(0.1,-0.5), col=“red”, cex=0.8)</p>
-<p>Add in the second projection using the ‘lines’ command and label it lines(0:50, pr2.2) text(52, pr2.2[51], “attenuation”, adj=c(1,1), cex=0.8)</p>
-<p>Calculate the transient dynamics of the attenuation projection firstep &lt;- firststepatt(Lrub1, vector=n0.att) maxatt &lt;- maxatt(Lrub1, vector=n0.att, return.t=T) lowinertia &lt;- inertia(Lrub1, vector=n0.att)</p>
-<p>firststepatt(Lrub1, vector=n0.att) maxatt(Lrub1, vector=n0.att, return.t=T) inertia(Lrub1, vector=n0.att)</p>
-<p>Add points on the attenuation projection and label them points(c(1,maxatt<span class="math inline">\(t,31), c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1, firstep, expression(underline(P)[1]), adj=c(0,-0.6), col=“red”, cex=0.8) text(maxatt<span class="math inline">\(t, maxatt\)</span>maxatt, expression(underline(P)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8) text(31, lowinertia, expression(underline(P)[infinity]), adj=c(0.1,1.5), col=“red”, cex=0.8)</p>
+<p>Project these vectors using the project function. We are
+standardising the matrix using ‘standard.A=T’ to remove effects of
+asymptotic dynamics. This means that the projection has a long-term
+growth rate of unity, i.e. it does not grow or decline in the long-term.
+We also standardise the population vector to sum to 1 using
+‘standard.vec=T’. These standardisations make it easier (and fairer) to
+compare between models with different population sizes, and different
+long-term growth rates. pr2.1 &lt;- project(Lrub1, vector=n0.amp,
+time=156, standard.A=T, standard.vec=T) pr2.2 &lt;- project(Lrub1,
+vector=n0.att, time=156, standard.A=T, standard.vec=T)</p>
+<p>Plot the amplification projection and label it plot(pr2.1,
+ylim=c(0.4,1), log=“y”, cex.axis=0.8) text(52, pr2.1[51],
+“amplification”, adj=c(1,-0.5), cex=0.8) maxamp(Lrub1, vector=n0.amp)
+reactivity(Lrub1,vector=n0.amp) inertia(Lrub1,vector=n0.amp)</p>
+<p>Calculate the transient dynamics of the amplification projection reac
+&lt;- reactivity(Lrub1, vector=n0.amp) maxamp &lt;- maxamp(Lrub1,
+vector=n0.amp, return.t=T) upinertia &lt;- inertia(Lrub1,
+vector=n0.amp)</p>
+<p>Add points on the projection for amplification and label them
+points(c(1,maxamp<span class="math inline">\(t,31),
+c(reac,maxamp\)</span>maxamp,upinertia), pch=3, col=“red”) text(1, reac,
+expression(bar(P)[1]), adj=c(-0.3,0.5), col=“red”, cex=0.8)
+text(maxamp<span class="math inline">\(t, maxamp\)</span>maxamp,
+expression(bar(P)[max]), adj=c(0.1,-0.5), col=“red”, cex=0.8) text(31,
+upinertia, expression(bar(P)[infinity]), adj=c(0.1,-0.5), col=“red”,
+cex=0.8)</p>
+<p>Add in the second projection using the ‘lines’ command and label it
+lines(0:50, pr2.2) text(52, pr2.2[51], “attenuation”, adj=c(1,1),
+cex=0.8)</p>
+<p>Calculate the transient dynamics of the attenuation projection
+firstep &lt;- firststepatt(Lrub1, vector=n0.att) maxatt &lt;-
+maxatt(Lrub1, vector=n0.att, return.t=T) lowinertia &lt;- inertia(Lrub1,
+vector=n0.att)</p>
+<p>firststepatt(Lrub1, vector=n0.att) maxatt(Lrub1, vector=n0.att,
+return.t=T) inertia(Lrub1, vector=n0.att)</p>
+<p>Add points on the attenuation projection and label them
+points(c(1,maxatt<span class="math inline">\(t,31),
+c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1,
+firstep, expression(underline(P)[1]), adj=c(0,-0.6), col=“red”, cex=0.8)
+text(maxatt<span class="math inline">\(t, maxatt\)</span>maxatt,
+expression(underline(P)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8)
+text(31, lowinertia, expression(underline(P)[infinity]), adj=c(0.1,1.5),
+col=“red”, cex=0.8)</p>
 <p>Add in a dotted line at y=1 lines(c(0,50),c(1,1),lty=2)</p>
 <hr />
-<p>Fig. 2b: Transient bounds This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
+<p>Fig. 2b: Transient bounds This figure is designed to be 3.5” by 3.5”
+(Check size of plot window using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(5,4,1,1))</p>
-<p>Transient bounds result from projections of the stage-biased dynamics of the model. When using the function ‘project’, the stage-biased model dynamics are projected automatically if no population vector is specified. We can do this for the orchid, using a standardised matrix like before: pr2 &lt;- project(Lrub1, standard.A=TRUE, time=156)</p>
-<p>Now we need to plot these population dynamics. The S3 method for projections automatically plots all stage-biased projections: plot(pr2, log=“y”, cex.axis=0.8, ylim=c(0.4,1.5))</p>
+<p>Transient bounds result from projections of the stage-biased dynamics
+of the model. When using the function ‘project’, the stage-biased model
+dynamics are projected automatically if no population vector is
+specified. We can do this for the orchid, using a standardised matrix
+like before: pr2 &lt;- project(Lrub1, standard.A=TRUE, time=156)</p>
+<p>Now we need to plot these population dynamics. The S3 method for
+projections automatically plots all stage-biased projections: plot(pr2,
+log=“y”, cex.axis=0.8, ylim=c(0.4,1.5))</p>
 <p>Add in a dotted line at y=1 lines(c(0,156), c(1,1), lty=2)</p>
-<p>Calculate the bounds on transient dynamics for the orchid. This is also done automatically if no population vector is specified. reacb &lt;- reactivity(Lrub1) firstepb &lt;- firststepatt(Lrub1) maxampb &lt;- maxamp(Lrub1, return.t=T) maxattb &lt;- maxatt(Lrub1, return.t=T) upinertiab &lt;- inertia(Lrub1, bound=“upper”) lowinertiab &lt;- inertia(Lrub1, bound=“lower”)</p>
-<p>reactivity(Lrub1) firststepatt(Lrub1) maxamp(Lrub1, return.t=T) maxatt(Lrub1, return.t=T) inertia(Lrub1, bound=“upper”) inertia(Lrub1, bound=“lower”)</p>
-<p>Add points on the projection and label them points(c(1,1,maxampb<span class="math inline">\(t,maxattb\)</span>t,31,31), c(reacb,firstepb,maxampb<span class="math inline">\(maxamp,maxattb\)</span>maxatt,upinertiab,lowinertiab), pch=3,col=“red”) text(1, reacb, expression(bar(rho)[1]), adj=c(-0.5,0.5), col=“red”, cex=0.8) text(1, firstepb, expression(underline(rho)[1]), adj=c(-0.5,1.5), col=“red”, cex=0.8) text(maxampb<span class="math inline">\(t, maxampb\)</span>maxamp, expression(bar(rho)[max]), adj=c(0.1,-0.5), col=“red”, cex=0.8) text(maxattb<span class="math inline">\(t, maxattb\)</span>maxatt, expression(underline(rho)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8) text(31, upinertiab, expression(bar(rho)[infinity]), adj=c(0.1,-0.5), col=“red”, cex=0.8) text(31, lowinertiab, expression(underline(rho)[infinity]), adj=c(0.1,1.5), col=“red”, cex=0.8)</p>
-<p>Amplification bounds result from the projection of a population with 100% stage x individuals. Attenuation bounds result from the projection of a population with 100% stage 1 individuals.</p>
+<p>Calculate the bounds on transient dynamics for the orchid. This is
+also done automatically if no population vector is specified. reacb
+&lt;- reactivity(Lrub1) firstepb &lt;- firststepatt(Lrub1) maxampb &lt;-
+maxamp(Lrub1, return.t=T) maxattb &lt;- maxatt(Lrub1, return.t=T)
+upinertiab &lt;- inertia(Lrub1, bound=“upper”) lowinertiab &lt;-
+inertia(Lrub1, bound=“lower”)</p>
+<p>reactivity(Lrub1) firststepatt(Lrub1) maxamp(Lrub1, return.t=T)
+maxatt(Lrub1, return.t=T) inertia(Lrub1, bound=“upper”) inertia(Lrub1,
+bound=“lower”)</p>
+<p>Add points on the projection and label them points(c(1,1,maxampb<span
+class="math inline">\(t,maxattb\)</span>t,31,31),
+c(reacb,firstepb,maxampb<span
+class="math inline">\(maxamp,maxattb\)</span>maxatt,upinertiab,lowinertiab),
+pch=3,col=“red”) text(1, reacb, expression(bar(rho)[1]),
+adj=c(-0.5,0.5), col=“red”, cex=0.8) text(1, firstepb,
+expression(underline(rho)[1]), adj=c(-0.5,1.5), col=“red”, cex=0.8)
+text(maxampb<span class="math inline">\(t, maxampb\)</span>maxamp,
+expression(bar(rho)[max]), adj=c(0.1,-0.5), col=“red”, cex=0.8)
+text(maxattb<span class="math inline">\(t, maxattb\)</span>maxatt,
+expression(underline(rho)[min]), adj=c(0.1,1.5), col=“red”, cex=0.8)
+text(31, upinertiab, expression(bar(rho)[infinity]), adj=c(0.1,-0.5),
+col=“red”, cex=0.8) text(31, lowinertiab,
+expression(underline(rho)[infinity]), adj=c(0.1,1.5), col=“red”,
+cex=0.8)</p>
+<p>Amplification bounds result from the projection of a population with
+100% stage x individuals. Attenuation bounds result from the projection
+of a population with 100% stage 1 individuals.</p>
 <div id="section-3" class="section level70">
 <p class="heading"></p>
 <p>FIGURE 3: TRANSFER FUNCTIONS</p>
 <hr />
 <p>Fig. 3a: Transfer function of asymptotic growth</p>
-<p>This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
+<p>This figure is designed to be 3.5” by 3.5” (Check size of plot window
+using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(5,4,1,1))</p>
-<p>Create a transfer function using ‘tfa’. The perturbation structure is determined by two vectors d and e. The matrix d%*%t(e) gives the structure, where nonzero elements in this matrix are the elements of the PPM to be perturbed. The relative size of entries in this matrix are the relative sizes of perturbation to those elements. In this case, we are perturbing element [5,4]. We are going to look at the effect of perturbing up to 0.25. The largest biologically reasonable perturbation is about 0.12. tf1 &lt;- tfa(Lrub1, d=c(1,0,0,0), e=c(0,0,1,0), prange=seq(0,0.25,0.01))</p>
-<p>Now we plot this using an S3 method for transfer functions (for information see ‘?plot.tfa’). plot(tf1, cex.axis=0.8)</p>
-<p>Now we’re going to add in the sensitivity tangent. This has an intercept of lambda-max, and a slope of the sensitivity of the same transfer function. Calculate lambda-max of the desert tortoise PPM: lambda &lt;- Re(eigen(LaeliaZ1)$values[1])</p>
-<p>Calculate the sensitivity using the function ‘tfsens’: sens1 &lt;- tfsens(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0))</p>
-<p>Now add in the line, specifying the correct intercept and slope: abline(lambda, sens1, lty=2, col=“red”)</p>
+<p>Create a transfer function using ‘tfa’. The perturbation structure is
+determined by two vectors d and e. The matrix d%*%t(e) gives the
+structure, where nonzero elements in this matrix are the elements of the
+PPM to be perturbed. The relative size of entries in this matrix are the
+relative sizes of perturbation to those elements. In this case, we are
+perturbing element [5,4]. We are going to look at the effect of
+perturbing up to 0.25. The largest biologically reasonable perturbation
+is about 0.12. tf1 &lt;- tfa(Lrub1, d=c(1,0,0,0), e=c(0,0,1,0),
+prange=seq(0,0.25,0.01))</p>
+<p>Now we plot this using an S3 method for transfer functions (for
+information see ‘?plot.tfa’). plot(tf1, cex.axis=0.8)</p>
+<p>Now we’re going to add in the sensitivity tangent. This has an
+intercept of lambda-max, and a slope of the sensitivity of the same
+transfer function. Calculate lambda-max of the desert tortoise PPM:
+lambda &lt;- Re(eigen(LaeliaZ1)$values[1])</p>
+<p>Calculate the sensitivity using the function ‘tfsens’: sens1 &lt;-
+tfsens(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0))</p>
+<p>Now add in the line, specifying the correct intercept and slope:
+abline(lambda, sens1, lty=2, col=“red”)</p>
 <hr />
 <p>Fig. 3b: Transfer function of population inertia</p>
-<p>This figure is designed to be 3.5” by 3.5” (Check size of plot window using ‘par(din)’).</p>
+<p>This figure is designed to be 3.5” by 3.5” (Check size of plot window
+using ‘par(din)’).</p>
 <p>Set margins: par(mar=c(5,4,1,1))</p>
-<p>The process is very similar to above. We need to specify a PPM, perturbation structure and perturbation range. For inertia we either have to specify a population vector using the ‘vector’ argument, or the bound to be calculated using the ‘bound’ argument. Create a population vector: n0 &lt;- c(1,8,13,21)</p>
-<p>tf1 &lt;- tfa(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0), prange=seq(0,0.25,0.01))</p>
-<p>Now calculate the transfer function using inertia.tfa: tf2 &lt;- inertia.tfa(Lrub1, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0), prange= seq(0,0.25,0.01))</p>
-<p>Plot the transfer function using the same S3 method as before: plot(tf2, cex.axis=0.8, ylim=c(3.9,4.43))</p>
-<p>The sensitivity tangent for transfer function of inertia has an intercept of equal to the relevant inertia (either using the same population vector, or the correct bound), and a slope of the sensitivity of the same transfer function. Calculate inertia of the desert tortoise PPM using the population vector: inertia &lt;- inertia(Lrub1, vector=n0)</p>
-<p>Calculate the sensitivity using the function ‘inertia.tfsens’: sens2 &lt;- inertia.tfsens(Lrub1, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0), tolerance=1e-5)</p>
-<p>(Here the ‘tolerance’ has had to be lowered to avoid calculation error: try the function without that argument and it will have trouble running)</p>
-<p>Now add in the line, specifying the correct intercept and slope: abline(inertia, sens2, lty=2, col=“red”)</p>
+<p>The process is very similar to above. We need to specify a PPM,
+perturbation structure and perturbation range. For inertia we either
+have to specify a population vector using the ‘vector’ argument, or the
+bound to be calculated using the ‘bound’ argument. Create a population
+vector: n0 &lt;- c(1,8,13,21)</p>
+<p>tf1 &lt;- tfa(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0),
+prange=seq(0,0.25,0.01))</p>
+<p>Now calculate the transfer function using inertia.tfa: tf2 &lt;-
+inertia.tfa(Lrub1, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0), prange=
+seq(0,0.25,0.01))</p>
+<p>Plot the transfer function using the same S3 method as before:
+plot(tf2, cex.axis=0.8, ylim=c(3.9,4.43))</p>
+<p>The sensitivity tangent for transfer function of inertia has an
+intercept of equal to the relevant inertia (either using the same
+population vector, or the correct bound), and a slope of the sensitivity
+of the same transfer function. Calculate inertia of the desert tortoise
+PPM using the population vector: inertia &lt;- inertia(Lrub1,
+vector=n0)</p>
+<p>Calculate the sensitivity using the function ‘inertia.tfsens’: sens2
+&lt;- inertia.tfsens(Lrub1, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0),
+tolerance=1e-5)</p>
+<p>(Here the ‘tolerance’ has had to be lowered to avoid calculation
+error: try the function without that argument and it will have trouble
+running)</p>
+<p>Now add in the line, specifying the correct intercept and slope:
+abline(inertia, sens2, lty=2, col=“red”)</p>
 <div id="section-4" class="section level73">
 <p class="heading"></p>
 <p>FIGURE 4: TRANSFER FUNCTION MATRIX</p>
-<p>This figure is designed to be 7” by 7” (Check size of plot window using ‘par(din)’).</p>
-<p>This is a nice, easy plot because the function does it all for you. The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function for every PPM element. They are saved as arrays of values. The functions are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
-<p>Create the array for inertia, using a specific population vector: n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1, vector=n0)</p>
+<p>This figure is designed to be 7” by 7” (Check size of plot window
+using ‘par(din)’).</p>
+<p>This is a nice, easy plot because the function does it all for you.
+The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function
+for every PPM element. They are saved as arrays of values. The functions
+are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
+<p>Create the array for inertia, using a specific population vector: n0
+&lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1,
+vector=n0)</p>
 <p>…and plot it! plot(tfmat)</p>
 <p>n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- tfamatrix(Lrub1)</p>
 <p>…and plot it! plot(tfmat)</p>
