@@ -14,6 +14,19 @@ output:
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
+
+```{r}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+```
+
+
 ## El efecto Allee
 
 ![](figures/prairie_dogs3.jpg)
@@ -67,7 +80,10 @@ En este ejercicio exploraremos las implicaciones de la **dependencia de densidad
 
 1. En InsightMaker, cargue el modelo logístico con tasas vitales, es decir, donde $b$ y $d$ dependen de la densidad del modelo. Debería verse algo como esto (o si aún no lo tiene, clónelo desde [aquí](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
 
-- 1. In InsightMaker, load up the logistic model with vital rates -- that is, where $b$ and $d$ are each modeled density-dependent.  It should look something like this (or if you don't already have this, clone it from [here](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
+`r colorize("1. In InsightMaker, load up the logistic model with vital rates -- that is, where $b$ and $d$ are each modeled density-dependent.  It should look something like this, or if you do not already have this, clone it from", "blue")` 
+
+
+[here](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
 
 ![](figures/IM5.jpg)
 ![](figures/Paloma_Viajera.png)
@@ -76,7 +92,7 @@ En este ejercicio exploraremos las implicaciones de la **dependencia de densidad
 2. Ahora agregue una nueva constante ([Variable] en InsightMaker) llamada *Umbral de Allee *. Establezca esta constante en 200.
 
 
-- 2. Now add a new constant ([Variable] in InsightMaker) called *Allee threshold*. Set this constant equal to 200.
+`r colorize("2. Now add a new constant ([Variable] in InsightMaker) called *Allee threshold*. Set this constant equal to 200.","blue" )`
 
 
 3. En cuanto a los demás parámetros, configúrelos de la siguiente manera:
@@ -87,23 +103,26 @@ c. Dependencia de la densidad de la mortalidad: 0,001
 d. Tasa de natalidad máxima: 0,8
 e. Mortalidad mínima: 0.3
 
-- 3. As for the other parameters, set them as follows:    
-    - Initial abundance: 201 (just above the Allee threshold) 
-    - Density dependence on birth rate: 0.004    
-    - Density dependence on mortality: 0.001   
-    - Max birth rate: 0.8   
-    - Min mortality: 0.3   
+`r colorize("3. As for the other parameters, set them as follows:", "blue")` 
+
+  `r colorize(" - Initial abundance: 201 (just above the Allee threshold)", "blue")`   
+  `r colorize(" - Density dependence on birth rate: 0.004", "blue")`   
+  `r colorize(" - Density dependence on mortality: 0.001 ", "blue")`  
+  `r colorize(" - Max birth rate: 0.8  ", "blue")`  
+  `r colorize(" - Min mortality: 0.3  ", "blue")`
+    
+    
 
 
 4. Ahora usemos una sentencia *Condicional (SI-ENTONCES-ELSE) * para especificar un efecto Allee. La población experimenta una tasa de crecimiento máxima en el umbral de Allee. Si la población está por encima del umbral de Allee, la población exhibe (estabilizando) una dependencia de densidad negativa. Si la población está por debajo del umbral de Allee, entonces la población experimenta una dependencia de densidad positiva, por lo que los individuos de poblaciones más pequeñas tienen una aptitud general *menor *. 
 
 
-- 4. Now let's use a *Conditional (IF-THEN-ELSE) statement* to specify an Allee effect. The population experiences maximum growth rate at the Allee threshold. If the population is above the Allee threshold, the population exhibits (stabilizing) negative density dependence. If the population is below the Allee threshold, then the population experiences positive density dependence- whereby individuals in smaller populations have *lower* overall fitness. 
+`r colorize("4. Now let's use a *Conditional (IF-THEN-ELSE) statement* to specify an Allee effect. The population experiences maximum growth rate at the Allee threshold. If the population is above the Allee threshold, the population exhibits (stabilizing) negative density dependence. If the population is below the Allee threshold, then the population experiences positive density dependence- whereby individuals in smaller populations have *lower* overall fitness.", "blue")`
 
 
 Para hacer esto, defina su *Nacimientos per cápita* usando la siguiente sintaxis:
 
-- To do this, define your *Births per Capita* using the following syntax:
+`r colorize("To do this, define your *Births per Capita* using the following syntax:.", "blue")`
 
 ```
 If [Pigeons]<[Allee threshold] Then
@@ -115,7 +134,7 @@ End If
 
 De manera similar, defina sus * Muertes per cápita * utilizando la siguiente sintaxis:
 
-- Similarly, define your *Deaths per capita* using the following syntax:
+`r colorize("Similarly, define your *Deaths per capita* using the following syntax:.", "blue")`
 
 ```
 If [Pigeons]<[Allee threshold] Then
@@ -127,7 +146,7 @@ End If
 
 5. Si nos estamos quedando sin tiempo en clase (¡lo cual probablemente lo estaremos!), Cargue el modelo (¡y clónelo!) Usando [este enlace](https://insightmaker.com/insight/71147/Allee-Effect-1#)!
 
-- 5. If we are running out of time in class (which we probably will be!), load the model (and clone it!) using [this link](https://insightmaker.com/insight/71147/Allee-Effect-1#)!    
+`r colorize("5. If we are running out of time in class (which we probably will be!), load the model (and clone it!) using [this link](https://insightmaker.com/insight/71147/Allee-Effect-1#)!.", "blue")`   
 
 
 ****
