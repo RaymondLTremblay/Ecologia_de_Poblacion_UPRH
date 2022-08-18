@@ -1,7 +1,7 @@
 ---
 title: "Paloma viajera/Allee effect"
 author: "BIOL4558"
-date: "Agosto 2021"
+date: "Agosto 2022"
 output: 
   html_document: 
     theme: spacelab
