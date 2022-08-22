@@ -266,25 +266,31 @@ El modelo logistico asume que cada individuo que se añade a una población tien
 
 
 
+***
+
+
+
+
 ## Variación sobre el modelo básico
 
 ### Retrasos en tiempo / *Time Lag*
 
-El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es imediato.  Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.  
+El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es inmediato.  Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.  
 
 Ejemplos:
+
  - Plantas anuales no tienen time lag (asumiendo que no hay banco de semillas)
- - Los elefantes comienzan a reproducirse solamente despues de 14-15 años
- - Los coquis se pueden reproducir a la edad de ± 8 meses
+ - Los elefantes comienzan a reproducirse solamente después de 14-15 años
+ - Los Coqui's se pueden reproducir a la edad de ± 8 meses
  - El árbol de "Brazil Nuts", *Bertholletia excelsa* necesita más de 120 años antes de producir flores.
- - La Caoba, *Swietenia mahogani* tienen que tener 50 años antes de comenzar a reproducrise
+ - La Caoba, *Swietenia mahogani* tienen que tener 50 años antes de comenzar a reproducirse
  
  
  Para considerar el efecto de retraso en tiempo, se puede incluir la información en el modelo de la siguiente forma
  
  $$\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})$$ por consecuencia el efecto sobre el crecimiento esta atrasado por el tiempo $t$, donde la $i$ representa el tiempo.  El comportamiento de los que es una **ecuación differencial de retardo** depende de 2 factores.
  
-  1) el tiempo del tiempo de retardo,  $\tau$ (se dice *tau*), 
+  1) el tiempo de retardo,  $\tau$ (se dice *tau*), 
   2) el tiempo de repuesta de una población, que es inversamente proporcional.
   
 
@@ -302,7 +308,7 @@ Lo importante no son tanto los valores que reconocer que debido a la razon de $r
 
 
 ```{r}
-p <- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+p <- ggplot(data = data.frame(x = c(-3, 3)), aes(x))
 
 
 scurve <- function(x){
@@ -310,30 +316,60 @@ scurve <- function(x){
   return(y)
 }
 
+n=101
 
-p + stat_function(fun = scurve, n = 500) 
+p + stat_function(fun = scurve, n = n) 
+
+#p + stat_function(fun = function(x) exp(x)/(1+exp(x)), n = 100) 
+
 ```
 
 
+Damped response
+
+Un buen sitio para conseguir más información es en el siguiente enlace. 
+
+https://hankstevens.github.io/Primer-of-Ecology/DDgrowth.html
+
+
+
 ```{r}
-p <- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+q <- ggplot(data = data.frame(x = c(-3, 3)), aes(x))
 
-
-r=0.1
-N=10
-damped <- function(x){
+x = c(-3, 3)
+r=0.001
+N=101
+scurve <- function(x){
   y <- exp(x) / (1 + exp(x))
   return(y)
 }
 
-N
+
 damped <- function(x){
-  y <- r*N* (1 - lag(N(x)))
+  y <- r*N*(1 - lag(N*x))
   return(y)
 }
 
 
-p + stat_function(fun = damped, n = 50) 
+q+stat_function(fun = damped, n = N) 
+
+
+
+```
+
+
+
+Sine wave damping
+
+```{r}
+
+f <- function(x) exp(-abs(x)) * sin(2 * pi * x)
+
+ggplot(data.frame(x = c(-3.5, 3.5))) +
+  aes(x) +
+  stat_function(fun = f) +
+  ggtitle("Dampened Sine Wave")
+
 ```
  
  

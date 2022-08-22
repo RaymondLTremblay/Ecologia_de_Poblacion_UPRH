@@ -660,18 +660,26 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 <li>Si N es mayor K, la porblación se va a reducir</li>
 <li>Nota que aunque <span class="math inline">\(b\)</span> y <span class="math inline">\(d\)</span> son constantes, el razón de de mortandad <span class="math inline">\(b&#39;\)</span> y natalidad <span class="math inline">\(n&#39;\)</span> cambia con el tamaño poblacional.</li>
 </ul>
+<hr />
 </div>
 </div>
 <div id="variación-sobre-el-modelo-básico" class="section level2">
 <h2>Variación sobre el modelo básico</h2>
 <div id="retrasos-en-tiempo-time-lag" class="section level3">
 <h3>Retrasos en tiempo / <em>Time Lag</em></h3>
-<p>El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es imediato. Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.</p>
-<p>Ejemplos: - Plantas anuales no tienen time lag (asumiendo que no hay banco de semillas) - Los elefantes comienzan a reproducirse solamente despues de 14-15 años - Los coquis se pueden reproducir a la edad de ± 8 meses - El árbol de “Brazil Nuts”, <em>Bertholletia excelsa</em> necesita más de 120 años antes de producir flores. - La Caoba, <em>Swietenia mahogani</em> tienen que tener 50 años antes de comenzar a reproducrise</p>
+<p>El modelo básico asume que cuando individuos se añaden a la población, el efecto sobre la razón de crecimiento es inmediato. Pero en muchas especies el efecto se puede ser postergado a un momento en el futuro.</p>
+<p>Ejemplos:</p>
+<ul>
+<li>Plantas anuales no tienen time lag (asumiendo que no hay banco de semillas)</li>
+<li>Los elefantes comienzan a reproducirse solamente después de 14-15 años</li>
+<li>Los Coqui’s se pueden reproducir a la edad de ± 8 meses</li>
+<li>El árbol de “Brazil Nuts”, <em>Bertholletia excelsa</em> necesita más de 120 años antes de producir flores.</li>
+<li>La Caoba, <em>Swietenia mahogani</em> tienen que tener 50 años antes de comenzar a reproducirse</li>
+</ul>
 <p>Para considerar el efecto de retraso en tiempo, se puede incluir la información en el modelo de la siguiente forma</p>
 <p><span class="math display">\[\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})\]</span> por consecuencia el efecto sobre el crecimiento esta atrasado por el tiempo <span class="math inline">\(t\)</span>, donde la <span class="math inline">\(i\)</span> representa el tiempo. El comportamiento de los que es una <strong>ecuación differencial de retardo</strong> depende de 2 factores.</p>
 <ol style="list-style-type: decimal">
-<li>el tiempo del tiempo de retardo, <span class="math inline">\(\tau\)</span> (se dice <em>tau</em>),</li>
+<li>el tiempo de retardo, <span class="math inline">\(\tau\)</span> (se dice <em>tau</em>),</li>
 <li>el tiempo de repuesta de una población, que es inversamente proporcional.</li>
 </ol>
 <p>La razón de <span class="math inline">\(\tau\)</span> al tiempo de respuesta <span class="math inline">\(\frac{1}{r}\)</span> o <span class="math inline">\(r\tau\)</span> controla para el crecimiento de la población.</p>
@@ -685,7 +693,7 @@ legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1
 </div>
 <div id="gráficos-logistico" class="section level3">
 <h3>Gráficos Logistico</h3>
-<pre class="r"><code>p &lt;- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+<pre class="r"><code>p &lt;- ggplot(data = data.frame(x = c(-3, 3)), aes(x))
 
 
 scurve &lt;- function(x){
@@ -693,31 +701,42 @@ scurve &lt;- function(x){
   return(y)
 }
 
+n=101
 
-p + stat_function(fun = scurve, n = 500) </code></pre>
+p + stat_function(fun = scurve, n = n) </code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<pre class="r"><code>p &lt;- ggplot(data = data.frame(x = c(-4, 10)), aes(x))
+<pre class="r"><code>#p + stat_function(fun = function(x) exp(x)/(1+exp(x)), n = 100) </code></pre>
+<p>Damped response</p>
+<p>Un buen sitio para conseguir más información es en el siguiente enlace.</p>
+<p><a href="https://hankstevens.github.io/Primer-of-Ecology/DDgrowth.html" class="uri">https://hankstevens.github.io/Primer-of-Ecology/DDgrowth.html</a></p>
+<pre class="r"><code>q &lt;- ggplot(data = data.frame(x = c(-3, 3)), aes(x))
 
-
-r=0.1
-N=10
-damped &lt;- function(x){
+x = c(-3, 3)
+r=0.001
+N=101
+scurve &lt;- function(x){
   y &lt;- exp(x) / (1 + exp(x))
   return(y)
 }
 
-N</code></pre>
-<pre><code>## [1] 10</code></pre>
-<pre class="r"><code>damped &lt;- function(x){
-  y &lt;- r*N* (1 - lag(N(x)))
+
+damped &lt;- function(x){
+  y &lt;- r*N*(1 - lag(N*x))
   return(y)
 }
 
 
-p + stat_function(fun = damped, n = 50) </code></pre>
-<pre><code>## Warning: Computation failed in `stat_function()`:
-## could not find function &quot;N&quot;</code></pre>
+q+stat_function(fun = damped, n = N) </code></pre>
+<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Sine wave damping</p>
+<pre class="r"><code>f &lt;- function(x) exp(-abs(x)) * sin(2 * pi * x)
+
+ggplot(data.frame(x = c(-3.5, 3.5))) +
+  aes(x) +
+  stat_function(fun = f) +
+  ggtitle(&quot;Dampened Sine Wave&quot;)</code></pre>
+<p><img src="LECTURE4_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>See this website for visualizing change in time of a simple logistic model</p>
 <p><a href="http://virtualbiologylab.org/population-ecology/">Logistic model</a></p>
 <p><a href="LECTURE5.html">–go to next lecture–</a></p>
