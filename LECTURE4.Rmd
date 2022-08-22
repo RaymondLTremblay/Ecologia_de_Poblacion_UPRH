@@ -310,6 +310,7 @@ scurve <- function(x){
   return(y)
 }
 
+
 p + stat_function(fun = scurve, n = 500) 
 ```
 
