@@ -272,13 +272,58 @@ LT %>%
 ### ¿Cuales son las definiciones matemática y ecológica de cada una de las variables en la tabla?
 
   
- 
+```{r eval=FALSE, include=FALSE}
+library(tidyverse)
+library(gt)
+LT2=tribble(
+  ~Age, ~N_x, ~l_x, ~b_x, ~lxbx, ~m_x, ~S_x, ~d_x,
+  0, 956, 1, 0, 0, 0.24, .76, 0.24,
+  1, 726.6, 0.76, 2, 1.52, 0.3, 0.7, 0.23,
+  2, 507, .53, 3, 1.59, 0.58, 0.42, .31,
+  3, 213, 0.22, 1, .22, 0.042, 0.045, 0.21,
+  4, 9, 0.01, 0.5, 0.005, 1, 0, NA,
+  5, 0,0,0,0,NA, NA, NA
+    )
+  
+
+LT2 %>% 
+  gt()
+
+Nx = 956*.76
+Nx
+lx = 507/956
+lx
+lxbx = .76*2.0
+lxbx
+mx = 213/507
+mx
+Sx =726.6/956
+Sx
+mx=213/507
+mx
+```
 
 [--go to next lecture--](LECTURE7.html)
 
 
 
+R0
 
+```{r eval=FALSE, include=FALSE}
+Ro= sum(LT2$lxbx)
+Ro
+```
+
+
+G
+
+```{r eval=FALSE, include=FALSE}
+LT2$lx_bx_x= LT2$l_x*LT2$b_x*LT2$Age
+LT2
+
+G=sum(LT2$lx_bx_x)/Ro
+G
+```
 
 
 

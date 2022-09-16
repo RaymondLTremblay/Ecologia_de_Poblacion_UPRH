@@ -14,7 +14,7 @@
 
 <title>Poblaciones estructurada por edad</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -488,14 +488,10 @@ div.tocify {
 </div>
 
 
-<div id="cuando-d-y-b-dependen-de-algo-más-que-la-densidad"
-class="section level2">
-<h2>Cuando <span class="math inline">\(d\)</span> y <span
-class="math inline">\(b\)</span> dependen de algo más que la densidad
-…</h2>
+<div id="cuando-d-y-b-dependen-de-algo-más-que-la-densidad" class="section level2">
+<h2>Cuando <span class="math inline">\(d\)</span> y <span class="math inline">\(b\)</span> dependen de algo más que la densidad …</h2>
 <p><img src="figures/elephant1.jpg" /></p>
-<p>Tome este elefante de la india, por ejemplo. ¿Cómo depende la tasa de
-reproducción de la edad en este caso?</p>
+<p>Tome este elefante de la india, por ejemplo. ¿Cómo depende la tasa de reproducción de la edad en este caso?</p>
 <p>¡Podríamos imaginar que se parece a esto!</p>
 <pre class="r"><code>Elephant_age &lt;- seq(0,60, by=2)
 Elephant_age</code></pre>
@@ -514,8 +510,7 @@ names(Birth_rate) &lt;- Elephant_age
 barplot(Birth_rate,xlab=&quot;Age&quot;,ylab=&quot;b, per-capita birth rate&quot;,col=&quot;blue&quot;,ylim=c(0,0.5))</code></pre>
 <p><img src="LECTURE6_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p><img src="figures/tortoise1.jpg" /></p>
-<p>¿Qué pasa con las tasas de mortalidad per cápita de una tortuga?
-Podríamos imaginar algo que se parece a esto …</p>
+<p>¿Qué pasa con las tasas de mortalidad per cápita de una tortuga? Podríamos imaginar algo que se parece a esto …</p>
 <pre class="r"><code>Tortoise_age &lt;- seq(0,120,by=5)
 
 Death_rate &lt;- c(seq(0.7,0.05,length=5),seq(0.02,0.02,length=16),seq(0.02,0.5,length=4))
@@ -524,40 +519,22 @@ names(Death_rate) &lt;- Tortoise_age
 
 barplot(Death_rate,xlab=&quot;Age&quot;,ylab=&quot;d, per-capita death rate&quot;,col=&quot;blue&quot;)</code></pre>
 <p><img src="LECTURE6_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Entonces, para muchas especies, la tasa de natalidad per cápita y la
-tasa de mortalidad dependen fundamentalmente de la edad.</p>
+<p>Entonces, para muchas especies, la tasa de natalidad per cápita y la tasa de mortalidad dependen fundamentalmente de la edad.</p>
 <p><img src="figures/spadefoot1.jpg" /></p>
-<p><strong>Q:</strong> Imagina que estás intentando restablecer una
-población de sapos “pata de espada”. Toma 1000 renacuajos de una
-población cautiva y los coloca en un humedal temporal justo después de
-una tormenta. ¿Cómo se vería el crecimiento de la población en los
-próximos años, suponiendo que la estrategia de reintroducción fuera
-exitosa?</p>
-<p>Trata de calcular cuantas ranas originales hubiese en el 2 año, el 3
-año, en 10 años.</p>
+<p><strong>Q:</strong> Imagina que estás intentando restablecer una población de sapos “pata de espada”. Toma 1000 renacuajos de una población cautiva y los coloca en un humedal temporal justo después de una tormenta. ¿Cómo se vería el crecimiento de la población en los próximos años, suponiendo que la estrategia de reintroducción fuera exitosa?</p>
+<p>Trata de calcular cuantas ranas originales hubiese en el 2 año, el 3 año, en 10 años.</p>
 <hr />
 </div>
-<div id="adicional-tasas-vitales-estructuradas-por-sexo"
-class="section level2">
+<div id="adicional-tasas-vitales-estructuradas-por-sexo" class="section level2">
 <h2>Adicional: tasas vitales estructuradas por sexo</h2>
-<p><strong>Q:</strong> ¿Puede pensar en algunos ejemplos del mundo real
-en los que las tasas vitales pueden diferir entre hombres y mujeres?</p>
-<p><strong>Q:</strong> ¿Es importante considerar la estructura de sexos
-al modelar poblaciones? ¿Por qué o por qué no?</p>
+<p><strong>Q:</strong> ¿Puede pensar en algunos ejemplos del mundo real en los que las tasas vitales pueden diferir entre hombres y mujeres?</p>
+<p><strong>Q:</strong> ¿Es importante considerar la estructura de sexos al modelar poblaciones? ¿Por qué o por qué no?</p>
 <p><img src="figures/tamarin1.jpg" /></p>
-<p><strong>Q:</strong> Imagínese una población de 100 titíes león
-(Golden headed lion tamarins) de cabeza dorada (<em>Leontopithecus
-chrysomelas</em>) que consiste en todos los machos adultos y hembras
-post-reproductivas. ¿Cuál es el estado de conservación de esta
-población?</p>
+<p><strong>Q:</strong> Imagínese una población de 100 titíes león (Golden headed lion tamarins) de cabeza dorada (<em>Leontopithecus chrysomelas</em>) que consiste en todos los machos adultos y hembras post-reproductivas. ¿Cuál es el estado de conservación de esta población?</p>
 </div>
 <div id="life-table" class="section level2">
 <h2>Life table!</h2>
-<p>Las poblaciones estructuradas por edad a menudo se representan
-mediante una tabla llamada <strong>tabla de vida</strong>. Una tabla de
-vida generalmente representa una única <strong>cohorte</strong> (grupo
-de organismos de la misma especie que nacen durante el mismo año) que se
-rastrea a lo largo del tiempo. He aquí un ejemplo:</p>
+<p>Las poblaciones estructuradas por edad a menudo se representan mediante una tabla llamada <strong>tabla de vida</strong>. Una tabla de vida generalmente representa una única <strong>cohorte</strong> (grupo de organismos de la misma especie que nacen durante el mismo año) que se rastrea a lo largo del tiempo. He aquí un ejemplo:</p>
 <table>
 <thead>
 <tr class="header">
@@ -608,51 +585,31 @@ rastrea a lo largo del tiempo. He aquí un ejemplo:</p>
 </table>
 <div id="calendario-de-fecundidad" class="section level3">
 <h3>Calendario de fecundidad</h3>
-<p>El componente de fecundidad de la tabla de vida se llama “programa de
-fecundidad”. El término <span class="math inline">\(b(x)\)</span>
-representa la tasa de natalidad per cápita para las mujeres de edad
-x.</p>
+<p>El componente de fecundidad de la tabla de vida se llama “programa de fecundidad”. El término <span class="math inline">\(b(x)\)</span> representa la tasa de natalidad per cápita para las mujeres de edad x.</p>
 </div>
 <div id="calendario-de-supervivencia" class="section level3">
 <h3>Calendario de supervivencia</h3>
-<p>¡La fecundidad es solo la mitad de la historia! El componente de
-supervivencia de la tabla de vida se llama “programa de
-supervivencia”.</p>
-<p>El término <strong>cohorte </strong> representa un grupo de personas
-que nacieron al mismo tiempo. En la tabla de vida, el término <span
-class="math inline">\(S(x)\)</span> se refiere al número de individuos
-de una cohorte particular que todavía están vivos a la edad x. A partir
-de estos datos sin procesar, calculamos dos términos, llamados
-<strong>supervivencia</strong> y <strong>tasa de
-supervivencia</strong></p>
-<p>El término <span class="math inline">\(l(x)\)</span> representa la
-<em>proporción de la cohorte que sobrevive desde la edad 0 hasta la edad
-x</em>. Esto se llama <strong>supervivencia</strong></p>
-<p>El término <span class="math inline">\(g(x)\)</span> representa la
-<em>proporción que sobrevive desde la edad x hasta la edad x + 1</em>.
-Esto se llama <strong>tasa de supervivencia </strong></p>
+<p>¡La fecundidad es solo la mitad de la historia! El componente de supervivencia de la tabla de vida se llama “programa de supervivencia”.</p>
+<p>El término <strong>cohorte </strong> representa un grupo de personas que nacieron al mismo tiempo. En la tabla de vida, el término <span class="math inline">\(S(x)\)</span> se refiere al número de individuos de una cohorte particular que todavía están vivos a la edad x. A partir de estos datos sin procesar, calculamos dos términos, llamados <strong>supervivencia</strong> y <strong>tasa de supervivencia</strong></p>
+<p>El término <span class="math inline">\(l(x)\)</span> representa la <em>proporción de la cohorte que sobrevive desde la edad 0 hasta la edad x</em>. Esto se llama <strong>supervivencia</strong></p>
+<p>El término <span class="math inline">\(g(x)\)</span> representa la <em>proporción que sobrevive desde la edad x hasta la edad x + 1</em>. Esto se llama <strong>tasa de supervivencia </strong></p>
 </div>
 <div id="tipos-de-curvas-de-supervivencia" class="section level3">
 <h3>Tipos de curvas de supervivencia …</h3>
-<p>Hay tres tipos principales de curvas de supervivencia (también
-llamadas programas de supervivencia), clasificadas como</p>
+<p>Hay tres tipos principales de curvas de supervivencia (también llamadas programas de supervivencia), clasificadas como</p>
 <ul>
 <li><strong>Tipo I </strong></li>
 <li><strong>Tipo II </strong></li>
 <li><strong>Tipo III </strong></li>
 </ul>
-<p><em>Las curvas de supervivencia </em> describen cómo el logaritmo de
-supervivencia (<span class="math inline">\(log(l(x))\)</span>) disminuye
-con la edad. Estos tres tipos de patrones de <strong>historia de vida
-</strong> se pueden ilustrar con tres ejemplos del mundo real:</p>
+<p><em>Las curvas de supervivencia </em> describen cómo el logaritmo de supervivencia (<span class="math inline">\(log(l(x))\)</span>) disminuye con la edad. Estos tres tipos de patrones de <strong>historia de vida </strong> se pueden ilustrar con tres ejemplos del mundo real:</p>
 <ul>
 <li>humanos,</li>
 <li>pájaros cantores</li>
 <li>ranas.</li>
 </ul>
 <p><strong>Q</strong>: ¿Puede la supervivencia aumentar con la edad?</p>
-<p><strong>Q</strong>: ¿Por qué usamos el logaritmo de supervivencia
-para caracterizar las curvas de supervivencia?</p>
+<p><strong>Q</strong>: ¿Por qué usamos el logaritmo de supervivencia para caracterizar las curvas de supervivencia?</p>
 <div id="type-i" class="section level4">
 <h4>Type I</h4>
 <p><img src="figures/human2.png" /></p>
@@ -666,8 +623,7 @@ para caracterizar las curvas de supervivencia?</p>
 <p><img src="figures/frog1.jpg" /></p>
 <p><img src="figures/Survivorship_Curves.jpg" /></p>
 <p>¡Tenga en cuenta la escala logarítmica en el eje Y!</p>
-<p><strong>Q:</strong> ¿Qué curva de supervivencia es la más común en la
-naturaleza?</p>
+<p><strong>Q:</strong> ¿Qué curva de supervivencia es la más común en la naturaleza?</p>
 <ul>
 <li><p>Defiende su respuesta</p></li>
 <li><p>Debate entre cuatro grupos del salón</p></li>
@@ -675,161 +631,80 @@ naturaleza?</p>
 </div>
 </div>
 </div>
-<div
-id="ejercicio-en-clase-crecimiento-de-la-población-estructurado-por-edad"
-class="section level2">
-<h2>Ejercicio en clase: crecimiento de la población estructurado por
-edad</h2>
-<p>In this exercise we will explore some facets of <strong>age-stuctured
-populations</strong>.</p>
+<div id="ejercicio-en-clase-crecimiento-de-la-población-estructurado-por-edad" class="section level2">
+<h2>Ejercicio en clase: crecimiento de la población estructurado por edad</h2>
+<p>In this exercise we will explore some facets of <strong>age-stuctured populations</strong>.</p>
 <ol style="list-style-type: decimal">
-<li>Cargue la tabla de vida anterior en esta lección, haciendo clic <a
-href="life_table.csv">aquí</a>. Utilice esta tabla para calcular la
-<strong>tasa de reproducción neta, $R_0 $</strong>. Esto representa el
-número promedio (esperado) de crías hembras producidas por hembra
-durante toda su vida. ¡Esto también se conoce como <em>potencial
-reproductivo de por vida</em>! Esto se puede calcular como:</li>
+<li>Cargue la tabla de vida anterior en esta lección, haciendo clic <a href="life_table.csv">aquí</a>. Utilice esta tabla para calcular la <strong>tasa de reproducción neta, $R_0 $</strong>. Esto representa el número promedio (esperado) de crías hembras producidas por hembra durante toda su vida. ¡Esto también se conoce como <em>potencial reproductivo de por vida</em>! Esto se puede calcular como:</li>
 </ol>
-<p><span class="math inline">\(R_0 = \sum_{x=0}^k l(x)\cdot
-b(x)\)</span></p>
+<p><span class="math inline">\(R_0 = \sum_{x=0}^k l(x)\cdot b(x)\)</span></p>
 <p>Donde <span class="math inline">\(k\)</span> es la edad máxima.</p>
-<p><strong>Q:</strong> ¿Puedes implementar esta fórmula en Excel? ¿Cuál
-es la respuesta?</p>
+<p><strong>Q:</strong> ¿Puedes implementar esta fórmula en Excel? ¿Cuál es la respuesta?</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la
-población está por encima de la <strong>tasa de reemplazo</strong> de 1
-y, por lo tanto, la población crecerá. Si <span
-class="math inline">\(R_0\)</span> es negativo, entonces la población
-disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de
-crecimiento finita, <span class="math inline">\(\lambda\)</span>.</li>
+<li>Si la tasa neta de reproducción, $R_0 $ es positiva, entonces la población está por encima de la <strong>tasa de reemplazo</strong> de 1 y, por lo tanto, la población crecerá. Si <span class="math inline">\(R_0\)</span> es negativo, entonces la población disminuirá. Esto suena familiar, ¿verdad? Al igual que la tasa de crecimiento finita, <span class="math inline">\(\lambda\)</span>.</li>
 </ol>
-<p>PERO, ¿cuál es el marco de tiempo de $R_0 $? ¿Cuál es el período de
-tiempo de <span class="math inline">\(\lambda\)</span>? Son diferentes,
-¿verdad? ¡La diferencia es que $R_0 $ describe el crecimiento por
-<strong>generación </strong> !.</p>
-<p>¿Qué es una <strong>generación</strong>? La definición más común
-(para el tiempo de generación) es la <em>Edad media de los padres de
-toda la descendencia producida por una sola cohorte</em>. Esto se puede
-calcular a partir de la tabla de vida como:</p>
-<p><span class="math inline">\(G = \frac{\sum_{x=0}^{k}l(x)\cdot
-b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}\)</span></p>
-<p>Vea si puede implementar esto en Excel (¡o cualquier software de hoja
-de cálculo que use!).</p>
-<p><strong>Q:</strong> ¿Cuál es el <em>tiempo de generación</em> de la
-población en la tabla?</p>
+<p>PERO, ¿cuál es el marco de tiempo de $R_0 $? ¿Cuál es el período de tiempo de <span class="math inline">\(\lambda\)</span>? Son diferentes, ¿verdad? ¡La diferencia es que $R_0 $ describe el crecimiento por <strong>generación </strong> !.</p>
+<p>¿Qué es una <strong>generación</strong>? La definición más común (para el tiempo de generación) es la <em>Edad media de los padres de toda la descendencia producida por una sola cohorte</em>. Esto se puede calcular a partir de la tabla de vida como:</p>
+<p><span class="math inline">\(G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}\)</span></p>
+<p>Vea si puede implementar esto en Excel (¡o cualquier software de hoja de cálculo que use!).</p>
+<p><strong>Q:</strong> ¿Cuál es el <em>tiempo de generación</em> de la población en la tabla?</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Ahora, ¿puede calcular la <em>tasa intrínseca de crecimiento</em>
-(<span class="math inline">\(r\)</span>) para esta población
-estructurada por edad?</li>
+<li>Ahora, ¿puede calcular la <em>tasa intrínseca de crecimiento</em> (<span class="math inline">\(r\)</span>) para esta población estructurada por edad?</li>
 </ol>
 <p>Para una aproximación de primer orden, puede usar esta ecuación:</p>
 <p><span class="math inline">\(r = \frac{ln(R_0)}{G}\)</span></p>
-<p>Con solo mirar esta ecuación, verá que los organismos con tiempos de
-generación más largos ($G $) tienen tasas intrínsecas de crecimiento más
-lentas, en igualdad de condiciones.</p>
-<p><strong>Q:</strong>Implemente esta ecuación en Excel. ¿Es esta una
-población en crecimiento exponencial?</p>
+<p>Con solo mirar esta ecuación, verá que los organismos con tiempos de generación más largos ($G $) tienen tasas intrínsecas de crecimiento más lentas, en igualdad de condiciones.</p>
+<p><strong>Q:</strong>Implemente esta ecuación en Excel. ¿Es esta una población en crecimiento exponencial?</p>
 <ol start="4" style="list-style-type: decimal">
-<li>Cargue un modelo estructurado por edades en InsightMaker. Puedes
-clonar <a
-href="https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad">Este
-Aqui</a>.</li>
+<li>Cargue un modelo estructurado por edades en InsightMaker. Puedes clonar <a href="https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad">Este Aqui</a>.</li>
 </ol>
-<p>4a. Inicialice la población como en el ejemplo del sapo spadefoot de
-arriba, con solo la primera clase de edad (juvenil). ¿Qué dinámica
-poblacional ocurre al comienzo de la simulación? ¿Qué pasa con el final
-de la simulación?</p>
-<p>4b. ¿Puede modificar la abundancia inicial de juveniles, subadultos y
-adultos para que la población exhiba un crecimiento exponencial uniforme
-para las tres clases de edad (y la población en su conjunto)? Esto se
-llama ** Distribución de edad estable (S.A.D.) **</p>
-<p>4c. Ahora cambie las tasas vitales (<em>Tasa de mortalidad
-juvenil</em>, <em>Tasa de mortalidad secundaria </em>, <em>Tasa de
-transición a Subadulto </em>, etc.). ¿El crecimiento de la población
-sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA
-<em>Distribución de edad estable </em>?</p>
-<p>4d. Regrese al modelo inicial (<a
-href="https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad">este,
-aquí</a>). Ahora cambie la <strong>tasa de mortalidad de
-adultos</strong> a 0,65. ¿Que lo que sucede? ¿Es esta una población en
-crecimiento?</p>
-<p><strong>Q</strong>: Usando el modelo del paso 4d, con la mortalidad
-de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían
-agregarse a la población cada año (suplementación de individuos a la
-población) para mantener una población estable o en crecimiento de&gt;
-20 adultos?</p>
-<p><strong>Q</strong>: ¿Es la suplementación la mejor estrategia para
-conservar esta población?</p>
-<p><a href="PDF/LifeTables_Excel.pdf">Vea este documento para los
-codigos en Excel</a></p>
+<p>4a. Inicialice la población como en el ejemplo del sapo spadefoot de arriba, con solo la primera clase de edad (juvenil). ¿Qué dinámica poblacional ocurre al comienzo de la simulación? ¿Qué pasa con el final de la simulación?</p>
+<p>4b. ¿Puede modificar la abundancia inicial de juveniles, subadultos y adultos para que la población exhiba un crecimiento exponencial uniforme para las tres clases de edad (y la población en su conjunto)? Esto se llama ** Distribución de edad estable (S.A.D.) **</p>
+<p>4c. Ahora cambie las tasas vitales (<em>Tasa de mortalidad juvenil</em>, <em>Tasa de mortalidad secundaria </em>, <em>Tasa de transición a Subadulto </em>, etc.). ¿El crecimiento de la población sigue siendo fluido? Si no es así, ¿puede encontrar la NUEVA <em>Distribución de edad estable </em>?</p>
+<p>4d. Regrese al modelo inicial (<a href="https://insightmaker.com/insight/234765/Poblaci-n-estructurada-por-edad">este, aquí</a>). Ahora cambie la <strong>tasa de mortalidad de adultos</strong> a 0,65. ¿Que lo que sucede? ¿Es esta una población en crecimiento?</p>
+<p><strong>Q</strong>: Usando el modelo del paso 4d, con la mortalidad de adultos establecida en 0.65. ¿Cuántos subadultos necesitarían agregarse a la población cada año (suplementación de individuos a la población) para mantener una población estable o en crecimiento de&gt; 20 adultos?</p>
+<p><strong>Q</strong>: ¿Es la suplementación la mejor estrategia para conservar esta población?</p>
+<p><a href="PDF/LifeTables_Excel.pdf">Vea este documento para los codigos en Excel</a></p>
 <p>### Texto en Ingles:</p>
 </div>
-<div id="in-class-exercise-age-structured-population-growth"
-class="section level2">
+<div id="in-class-exercise-age-structured-population-growth" class="section level2">
 <h2>In-class exercise: age-structured population growth</h2>
 <blockquote>
-<p>In this exercise we will explore some facets of <strong>age-stuctured
-populations</strong>.</p>
+<p>In this exercise we will explore some facets of <strong>age-stuctured populations</strong>.</p>
 </blockquote>
 <blockquote>
 <ol style="list-style-type: decimal">
-<li>Load up the life table from earlier in this lecture, by clicking <a
-href="life_table.csv">here</a>. Use this table to compute the
-<strong>net reproductive rate, <span
-class="math inline">\(R_0\)</span></strong>. This represents the mean
-number of female offspring produced per female over her entire lifetime.
-This is also known as <em>lifetime reproductive potential</em>! This can
-be computed as:</li>
+<li>Load up the life table from earlier in this lecture, by clicking <a href="life_table.csv">here</a>. Use this table to compute the <strong>net reproductive rate, <span class="math inline">\(R_0\)</span></strong>. This represents the mean number of female offspring produced per female over her entire lifetime. This is also known as <em>lifetime reproductive potential</em>! This can be computed as:</li>
 </ol>
 </blockquote>
 <blockquote>
-<p><span class="math inline">\(R_0 = \sum_{x=0}^k l(x)\cdot
-b(x)\)</span></p>
+<p><span class="math inline">\(R_0 = \sum_{x=0}^k l(x)\cdot b(x)\)</span></p>
 </blockquote>
 <blockquote>
 <p>Where <span class="math inline">\(k\)</span> is the maximum age.</p>
 </blockquote>
-<p><strong>Q:</strong> Can you implement this formula in Excel? What’s
-the answer?</p>
+<p><strong>Q:</strong> Can you implement this formula in Excel? What’s the answer?</p>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
-<li>If the net reproductive rate, <span
-class="math inline">\(R_0\)</span> is positive, then the population is
-above the <strong>replacement rate</strong> of 1, and therefore the
-population will grow. If <span class="math inline">\(R_0\)</span> is
-negative, then the population will decline. This sounds familiar, right?
-Just like the finite rate of growth, <span
-class="math inline">\(\lambda\)</span>.</li>
+<li>If the net reproductive rate, <span class="math inline">\(R_0\)</span> is positive, then the population is above the <strong>replacement rate</strong> of 1, and therefore the population will grow. If <span class="math inline">\(R_0\)</span> is negative, then the population will decline. This sounds familiar, right? Just like the finite rate of growth, <span class="math inline">\(\lambda\)</span>.</li>
 </ol>
 </blockquote>
 <blockquote>
-<p>BUT, what is the time frame of <span
-class="math inline">\(R_0\)</span>? What is the timeframe of <span
-class="math inline">\(\lambda\)</span>? They are different right? The
-difference is that <span class="math inline">\(R_0\)</span> describes
-growth per <strong>generation</strong>!.</p>
+<p>BUT, what is the time frame of <span class="math inline">\(R_0\)</span>? What is the timeframe of <span class="math inline">\(\lambda\)</span>? They are different right? The difference is that <span class="math inline">\(R_0\)</span> describes growth per <strong>generation</strong>!.</p>
 </blockquote>
 <blockquote>
-<p>What is a <strong>generation</strong>? The most common definition
-(for generation time) is the <em>Average age of the parents of all the
-offspring produced by a single cohort</em>. This can be computed from
-the life table as:</p>
+<p>What is a <strong>generation</strong>? The most common definition (for generation time) is the <em>Average age of the parents of all the offspring produced by a single cohort</em>. This can be computed from the life table as:</p>
 </blockquote>
 <blockquote>
-<p><span class="math inline">\(G = \frac{\sum_{x=0}^{k}l(x)\cdot
-b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}\)</span></p>
+<p><span class="math inline">\(G = \frac{\sum_{x=0}^{k}l(x)\cdot b(x)\cdot x}{\sum_{x=0}^{k}l(x)\cdot b(x)}\)</span></p>
 </blockquote>
 <blockquote>
-<p>See if you can implement this in Excel (or whatever spreadsheet
-software you use!).</p>
+<p>See if you can implement this in Excel (or whatever spreadsheet software you use!).</p>
 </blockquote>
-<p><strong>Q:</strong> What is the <em>generation time</em> of the
-population in the table?</p>
+<p><strong>Q:</strong> What is the <em>generation time</em> of the population in the table?</p>
 <blockquote>
 <ol start="3" style="list-style-type: decimal">
-<li>Now, can you compute the <em>intrinsic rate of growth</em> (<span
-class="math inline">\(r\)</span>) for this age-structured
-population?</li>
+<li>Now, can you compute the <em>intrinsic rate of growth</em> (<span class="math inline">\(r\)</span>) for this age-structured population?</li>
 </ol>
 </blockquote>
 <blockquote>
@@ -837,48 +712,30 @@ population?</li>
 </blockquote>
 <p><span class="math inline">\(r = \frac{ln(R_0)}{G}\)</span></p>
 <blockquote>
-<p>Just looking at this equation, you see that organisms with longer
-generation times (<span class="math inline">\(G\)</span>) have slower
-intrinsic rates of growth, all else being equal.</p>
+<p>Just looking at this equation, you see that organisms with longer generation times (<span class="math inline">\(G\)</span>) have slower intrinsic rates of growth, all else being equal.</p>
 </blockquote>
-<p><strong>Q:</strong> Implement this equation in Excel. Is this an
-exponentially growing population?</p>
+<p><strong>Q:</strong> Implement this equation in Excel. Is this an exponentially growing population?</p>
 <blockquote>
 <ol start="4" style="list-style-type: decimal">
-<li>Load up an age-structured model in InsightMaker. You can clone <a
-href="https://insightmaker.com/insight/70809/Age-structured-population">this
-one, here</a>.</li>
+<li>Load up an age-structured model in InsightMaker. You can clone <a href="https://insightmaker.com/insight/70809/Age-structured-population">this one, here</a>.</li>
 </ol>
 </blockquote>
 <blockquote>
-<p>4a. Initialize the population like the spadefoot toad example from
-above- with only the first (juvenile) age class. What population
-dynamics occur at the beginning of the simulation? What about the end of
-the simulation?</p>
+<p>4a. Initialize the population like the spadefoot toad example from above- with only the first (juvenile) age class. What population dynamics occur at the beginning of the simulation? What about the end of the simulation?</p>
 </blockquote>
 <blockquote>
-<p>4b. Can you tweak the initial abundance of juveniles, subadults and
-adults so that the population exhibits smooth exponential growth for all
-three age classes? This is called <strong>Stable Age
-Distribution</strong></p>
+<p>4b. Can you tweak the initial abundance of juveniles, subadults and adults so that the population exhibits smooth exponential growth for all three age classes? This is called <strong>Stable Age Distribution</strong></p>
 </blockquote>
 <blockquote>
-<p>4c. Now change the vital rates (<em>Juv mort rate</em>, <em>Sub mort
-rate</em>, <em>Transition rate to Subadult</em>, etc.). Is the
-population growth still smooth? If not, can you find the <em>Stable Age
-Distribution</em> now??</p>
+<p>4c. Now change the vital rates (<em>Juv mort rate</em>, <em>Sub mort rate</em>, <em>Transition rate to Subadult</em>, etc.). Is the population growth still smooth? If not, can you find the <em>Stable Age Distribution</em> now??</p>
 </blockquote>
 <blockquote>
-<p>4d. Now change the <strong>Simulation time step</strong> to 5 years,
-and return to an initial population with only juveniles. What happens?
-Is this a <strong>stochastic</strong> model? If not, why does it look
-like it has a random component? &gt;</p>
+<p>4d. Now change the <strong>Simulation time step</strong> to 5 years, and return to an initial population with only juveniles. What happens? Is this a <strong>stochastic</strong> model? If not, why does it look like it has a random component? &gt;</p>
 </blockquote>
 </div>
 <div id="ejercicio-to-be-submitted-in-msteam" class="section level2">
 <h2>Ejercicio: To be submitted in MSTeam</h2>
-<p>LLenar los blancos: Usa las formulas aprendida para calcular y llenar
-los blancos. Enviaré un enlace por MSTEam para llenar los blancos.</p>
+<p>LLenar los blancos: Usa las formulas aprendida para calcular y llenar los blancos. Enviaré un enlace por MSTEam para llenar los blancos.</p>
 <pre class="r"><code>library(tidyverse)
 library(gt)
 LT=tribble(
@@ -1301,12 +1158,11 @@ LT %&gt;%
 </table>
 </div>
 <hr />
-<div
-id="cuales-son-las-definiciones-matemática-y-ecológica-de-cada-una-de-las-variables-en-la-tabla"
-class="section level3">
-<h3>¿Cuales son las definiciones matemática y ecológica de cada una de
-las variables en la tabla?</h3>
+<div id="cuales-son-las-definiciones-matemática-y-ecológica-de-cada-una-de-las-variables-en-la-tabla" class="section level3">
+<h3>¿Cuales son las definiciones matemática y ecológica de cada una de las variables en la tabla?</h3>
 <p><a href="LECTURE7.html">–go to next lecture–</a></p>
+<p>R0</p>
+<p>G</p>
 </div>
 </div>
 

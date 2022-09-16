@@ -40,6 +40,11 @@ En este modulo encontrarán una serie presentaciones sobre como evaluar la diná
 [Parte 3](POP_DYN _PDF_Workshops/Population_Dynamics_3.pdf)
 
 
+### Parte 4
+[Parte 4](POP_DYN _PDF_Workshops/English_Spala_Poland_4.pdf)
+
+
+
 Aquí tres fotos de Lodz, para se anime a viajar
 
 ![El hotel donde nos quedamos en Lodz](figures/Hotel_Lodz.png){width=50%}
