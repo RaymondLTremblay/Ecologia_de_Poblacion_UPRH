@@ -30,6 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(popdemo)
 library(popbio)
+
 ```
 
 *Lepanthes* is one of the largest genera of the Orchidaceae with >1200 species, found only in the Neotropics.  

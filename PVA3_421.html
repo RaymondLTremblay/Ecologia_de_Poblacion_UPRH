@@ -648,9 +648,8 @@ projection_matrix &lt;- matrix(
     0,     0.047,  0.657,  0,          0,
     0,     0,      0.019,  0.682,      0,
     0,     0,      0,      0.061,      0.809
-  )
-  ,nrow=5,ncol=5,byrow=T
-)
+  ),nrow=5,ncol=5,byrow=T
+    )
 
 stagenames &lt;- c(&quot;Hatchling&quot;,&quot;Small Juv&quot;,&quot;Large Juv&quot;,&quot;Subadult&quot;,&quot;Adult&quot;)
 rownames(projection_matrix) &lt;- stagenames
@@ -694,7 +693,7 @@ for(s in 1:5){
 axis(1,at=seq(1,nYears+1),labels = seq(0,nYears))   # label the axis
 legend(&quot;topright&quot;,col=cols,lwd=rep(2,3),legend=rownames(TMat),bty=&quot;n&quot;)  # put a legend on the plot</code></pre>
 <p><img src="PVA3_421_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>NOTE: here we use the term “survival” to refer to surviving and
+<p>NOTE: here we use the term “survival” to refer to surviving AND
 staying in the same stage class, and “growth” to refer to surviving and
 moving on to the next life stage.</p>
 <p>Look over the model, and make sure that you understand the inner

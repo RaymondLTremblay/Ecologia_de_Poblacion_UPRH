@@ -1,0 +1,95 @@
+---
+title: "Orchid Family Matrices"
+author: "Raymond_L_Tremblay"
+date: "2022-10-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+library(Rcompadre)
+library(Rage)
+library(gt) # grammar of tables
+```
+
+
+```{r}
+
+x <- cdb_fetch("compadre")
+x
+names(x)
+```
+
+```{r}
+ #Subset to Orchids, published by Tremblay
+ ORCHIDS <- x %>% 
+  filter(Family == "Orchidaceae")
+
+#Number of matrices
+nrow(ORCHIDS) 
+```
+
+
+```{r}
+ #Subset to Lepanthes, published by Tremblay
+ ORCHIDS <- x %>% 
+  filter(Genus == "Lepanthes")
+
+#Number of matrices
+nrow(ORCHIDS) 
+```
+
+
+```{r}
+ORCHIDS %>% 
+ cdb_metadata() %>% 
+ select(Genus, Species) %>% 
+ unique() |>   
+  arrange(Genus) |> 
+  gt()
+
+
+```
+
+
+
+```{r}
+ORCHIDS %>% 
+ cdb_metadata() %>% 
+ select(Authors, Journal, YearPublication) %>% 
+ unique() |> 
+  arrange(desc(YearPublication)) |> 
+  gt()
+
+```
+
+
+## Access to all the matrices
+
+
+```{r}
+
+
+
+matA(ORCHIDS)[1:5]
+
+#matA(ORCHIDS)  All matrices
+```
+
+
+```{r}
+As=ORCHIDS %>% 
+filter(Genus=="Aspasia")
+
+As
+
+As1=matA(ORCHIDS)[1]
+As1
+library(popbio)
+lambda(As1[[1]])
+```

@@ -88,6 +88,7 @@ Por ejemplo, las tasas vitales de teasel se pueden resumir en [esta matriz](teas
 # Teasel example from Gotelli: summarizing a complex life history!
 
 teasel <- read.csv("teaselmatrix1.csv", header=T)      # read in the teasel transition matrix from Gotelli
+teasel
 teasel <- teasel[,-1]                                  # remove the row names
 teasel_matrix <- as.matrix(teasel)                     # convert to a matrix (from a data frame)
 colnames(teasel_matrix) <- names(teasel)               # assign row and column names
@@ -119,7 +120,7 @@ Esto puede simplificar nuestros modelos considerablemente. Por ejemplo, consider
 
 Edad 0-1: recien nacidos      
 Edad 1-5: juveniles joven     
-Edad 5-10: juvenile más grandes     
+Edad 5-10: juveniles más grandes     
 Edad 10-17: sub-adult0      
 Edad 18+: adult0      
 
@@ -196,7 +197,7 @@ Podríamos usar esta estrategia para simular la abundancia durante diez años (o
 # Use a for loop to project the population dynamics for the next 10 years!
 
 nYears <- 10
-tenYears <- matrix(0,nrow=6,ncol=nYears+1)          # initialize storate array for recording age structured abundances for the next 10 years. 
+tenYears <- matrix(0,nrow=6,ncol=nYears+1)          # initialize the array for recording age structured abundances for the next 10 years. 
 rownames(tenYears) <- rownames(Initial_teasel)      # assign row and column names
 colnames(tenYears) <- seq(0,10)
 tenYears[,1] <- Initial_teasel                      # initialize the simulated abundances
@@ -240,7 +241,7 @@ Existe una clara similitud entre la ecuación de crecimiento de la población fi
 
 $N_{t+1}=\lambda \cdot N_t$,
 
-donde $N $ es abundancia (como siempre), $t$ es el tiempo, a menudo en años, pero podría ser cualquier unidad de tiempo, y $\lambda$ es la tasa de crecimiento multiplicativo durante el período de tiempo $t \ rightarrow t + 1$
+donde $N $ es abundancia (como siempre), $t$ es el tiempo, a menudo en años, pero podría ser cualquier unidad de tiempo, y $\lambda$ es la tasa de crecimiento multiplicativo durante el período de tiempo $t = t + 1$
 
 ... y la ecuación matricial de crecimiento de la población:
 
@@ -255,33 +256,33 @@ Ambas ecuaciones describen un crecimiento o una disminución exponencial simple.
 
 **Q:** ¿Puedes ver la diferencia entre estas dos ecuaciones?
 
-Tenga en cuenta que $N $ en la primera ecuación es un **escalar **, es decir, es solo un número desnudo sin componentes adicionales.
+Tenga en cuenta que $N$ en la primera ecuación es un **escalar**, es decir, es solo un número sin componentes adicionales.
 
 
 MIENTRAS QUE,
 
-$\mathbf{N}$ en la segunda ecuación es un **vector ** estructurado por edad: un conjunto de abundancias estructurado por edad o clase de etapa.
+$N$ en la segunda ecuación es un **vector ** estructurado por edad: un conjunto de abundancias estructurado por edad o clase de etapa.
 
-De manera similar, la tasa de crecimiento de la población finita, $\lambda $ es un escalar,
+De manera similar, la tasa de crecimiento de la población finita, $\lambda$ es un escalar,
 
 MIENTRAS QUE,
 
 
-$\mathbf{A} $ es una **matriz ** (la matriz de transición)
+$A$ es una **matriz ** (la matriz de transición)
 
 #### ¿Qué pasa con esos trucos que prometiste?
 
 Okay one of the tricks is this:
 
-In one step, you can compute $\lambda$ from $\mathbf{A}$!!     
+In one step, you can compute $\lambda$ from $A$!!     
 
-All you need to do is obtain the _first, or dominant, **eigenvalue** of $\mathbf{A}$_! This number is the finite rate of growth, $\lambda$, for an age or stage-structured population.
+All you need to do is obtain the _first, or dominant, **eigenvalue** of $A$! This number is the finite rate of growth, $\lambda$, for an age or stage-structured population.
 
 Recall that when a population is at stable age distribution, it grows in a discrete exponential growth pattern- this rate of exponential growth can be described by a single parameter -- Lambda! 
 
 ¡Hagamos esto en R!
 
-¿Cuál es la tasa de crecimiento $ \ lambda $ para la población de teasel? Si recuerda, parecía que estaba creciendo, por lo que debería estar por encima de 1 ...
+¿Cuál es la tasa de crecimiento $ \lambda $ para la población de teasel? Si recuerda, parecía que estaba creciendo, por lo que debería estar por encima de 1 ...
 
 ```{r}
 
@@ -308,9 +309,9 @@ No es necesario que comprenda las matemáticas aquí, pero quiero que comprenda 
 
 Aquí hay otro truco ingenioso:
 
-En un solo paso, puede calcular **distribución de edad estable (S.A.D)** a partir de $\mathbf{A}$!!     
+En un solo paso, puede calcular **distribución de edad estable (S.A.D)** a partir de $A$!!     
 
-¡Todo lo que necesita hacer es obtener el  _eigenvectoc derecho de $\mathbf{A}$_! Este vector representa las abundancias relativas en cada clase de edad en la distribución de edad estable.
+¡Todo lo que necesita hacer es obtener el **eigenvector** derecho de $A$! Este vector representa las abundancias relativas en cada clase de edad en la distribución de edad estable.
 
 ¡Hagamos esto en R!
 
@@ -514,7 +515,7 @@ NOTA: ¡esta también es una pregunta en el laboratorio 4!
 
 > Asumimos que la historia de vida del halcón de cola roja podría describirse en términos de tres etapas principales de la vida: cría (primer año de vida), juvenil (principalmente individuos en su segundo año de vida) y adulto (generalmente el tercer año de vida). y más allá). Los adultos son la etapa reproductiva primaria y producen un promedio de 3 nuevas crías cada año. Se espera que los juveniles produzcan solo 1 cría nueva cada año. Asumimos que los adultos experimentaron un promedio de 18% de mortalidad cada año. La mortalidad juvenil se fijó en un 30% anual. Aproximadamente el 5% de los juveniles permanecen en la fase juvenil cada año, y todos los demás sobrevivientes pasan a la etapa adulta. Finalmente, las crías tenían un 20% de posibilidades de sobrevivir y hacer la transición para convertirse en juveniles. Inicializamos la población con 1000 crías, 150 juveniles y 5 adultos.
 
-**P: ** ¿Cómo se ve la matriz de transición? [EDMODO]
+**P: ** ¿Cómo se ve la matriz de transición?
 
 **P: ** ¿Cómo se ve el vector de abundancia de la etapa inicial?
 

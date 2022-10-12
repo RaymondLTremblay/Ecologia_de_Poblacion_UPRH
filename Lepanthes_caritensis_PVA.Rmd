@@ -129,7 +129,7 @@ for(i in 1:240){
 matriz=c()
 interactionX=1000
 quasi=2
-popExtinctProject<-stoch.projection(matrices=transMat, n0=popState, tmax=i, nmax=1000, nreps = interactionX, prob = rep(1/24, length=24), verbose=FALSE)
+popExtinctProject<-stoch.projection(matrices=transMat, n0=popState, tmax=i, nmax=500, nreps = interactionX, prob = rep(1/24, length=24), verbose=FALSE)
 for(ii in 1:interactionX){
 		a=sum(popExtinctProject[ii,])
 		matriz<-rbind(matriz,c(a))

@@ -158,9 +158,8 @@ projection_matrix <- matrix(
     0,     0.047,  0.657,  0,          0,
     0,     0,      0.019,  0.682,      0,
     0,     0,      0,      0.061,      0.809
-  )
-  ,nrow=5,ncol=5,byrow=T
-)
+  ),nrow=5,ncol=5,byrow=T
+    )
 
 stagenames <- c("Hatchling","Small Juv","Large Juv","Subadult","Adult")
 rownames(projection_matrix) <- stagenames
@@ -203,7 +202,7 @@ legend("topright",col=cols,lwd=rep(2,3),legend=rownames(TMat),bty="n")  # put a 
 ```
 
 
-NOTE: here we use the term "survival" to refer to surviving and staying in the same stage class, and "growth" to refer to surviving and moving on to the next life stage. 
+NOTE: here we use the term "survival" to refer to surviving AND staying in the same stage class, and "growth" to refer to surviving and moving on to the next life stage. 
 
 Look over the model, and make sure that you understand the inner workings!
 
