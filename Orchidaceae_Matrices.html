@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Raymond_L_Tremblay" />
+
+<meta name="date" content="2022-10-03" />
+
+<title>Orchid Family Matrices</title>
+
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Conferencias
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1_2.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">Paloma Viajera</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE6a.html">Dinamica Poblacional en Orquideas</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+    <li>
+      <a href="Tarea_Ballena.html">Tarea 2: Dinámica de Ballenas</a>
+    </li>
+    <li>
+      <a href="Tarea_3_Paradigma_Poblacion_declive.html">Tarea 3: Paradigma de población en declive</a>
+    </li>
+    <li>
+      <a href="FINAL_PROJECTS.html">Proyecto Final</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Invitados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Invitados.html">Lecturas de los Invitados</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Ejemplos de proyecto de PVA
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PVA_Ejemplos.html">PVA por los estudiantes</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Orchid Family Matrices</h1>
+<h4 class="author">Raymond_L_Tremblay</h4>
+<h4 class="date">2022-10-03</h4>
+
+</div>
+
+
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
+## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+## ✔ readr   2.1.3      ✔ forcats 0.5.2 
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(Rcompadre)
+library(Rage)
+library(gt) # grammar of tables</code></pre>
+<pre class="r"><code>x &lt;- cdb_fetch(&quot;compadre&quot;)</code></pre>
+<pre><code>## This is COMPADRE version 6.22.5.0 (release date May_11_2022)
+## See user agreement at https://compadre-db.org/Help/UserAgreement
+## See how to cite at https://compadre-db.org/Help/HowToCite</code></pre>
+<pre class="r"><code>x</code></pre>
+<pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 760 SPECIES and 8851 MATRICES.
+## 
+## # A tibble: 8,851 × 59
+##    mat        MatrixID Speci…¹ Speci…² Commo…³ Kingdom Phylum Class Order Family
+##    &lt;list&gt;        &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
+##  1 &lt;CompdrMt&gt;   238259 Abies_… Abies … Balsam… Plantae Pinop… Pino… Pina… Pinac…
+##  2 &lt;CompdrMt&gt;   238260 Abies_… Abies … Balsam… Plantae Pinop… Pino… Pina… Pinac…
+##  3 &lt;CompdrMt&gt;   238261 Agave_… Agave … Caribb… Plantae Magno… Lili… Aspa… Aspar…
+##  4 &lt;CompdrMt&gt;   238262 Agave_… Agave … Caribb… Plantae Magno… Lili… Aspa… Aspar…
+##  5 &lt;CompdrMt&gt;   238263 Allium… Allium… &lt;NA&gt;    Plantae Magno… Lili… Aspa… Amary…
+##  6 &lt;CompdrMt&gt;   238265 Arauca… Arauca… &lt;NA&gt;    Plantae Pinop… Pino… Pina… Arauc…
+##  7 &lt;CompdrMt&gt;   238266 Arauca… Arauca… &lt;NA&gt;    Plantae Pinop… Pino… Pina… Arauc…
+##  8 &lt;CompdrMt&gt;   238271 Ascoph… Ascoph… &lt;NA&gt;    Chroma… Heter… Phae… Fuca… Fucac…
+##  9 &lt;CompdrMt&gt;   238272 Ascoph… Ascoph… &lt;NA&gt;    Chroma… Heter… Phae… Fuca… Fucac…
+## 10 &lt;CompdrMt&gt;   238273 Ascoph… Ascoph… &lt;NA&gt;    Chroma… Heter… Phae… Fuca… Fucac…
+## # … with 8,841 more rows, 49 more variables: Genus &lt;chr&gt;, Species &lt;chr&gt;,
+## #   Infraspecies &lt;chr&gt;, InfraspeciesType &lt;chr&gt;, OrganismType &lt;chr&gt;,
+## #   DicotMonoc &lt;chr&gt;, AngioGymno &lt;chr&gt;, Authors &lt;chr&gt;, Journal &lt;chr&gt;,
+## #   SourceType &lt;chr&gt;, OtherType &lt;chr&gt;, YearPublication &lt;chr&gt;, DOI_ISBN &lt;chr&gt;,
+## #   AdditionalSource &lt;chr&gt;, StudyDuration &lt;chr&gt;, StudyStart &lt;chr&gt;,
+## #   StudyEnd &lt;chr&gt;, ProjectionInterval &lt;chr&gt;, MatrixCriteriaSize &lt;chr&gt;,
+## #   MatrixCriteriaOntogeny &lt;chr&gt;, MatrixCriteriaAge &lt;chr&gt;, …</code></pre>
+<pre class="r"><code>names(x)</code></pre>
+<pre><code>##  [1] &quot;mat&quot;                    &quot;MatrixID&quot;               &quot;SpeciesAuthor&quot;         
+##  [4] &quot;SpeciesAccepted&quot;        &quot;CommonName&quot;             &quot;Kingdom&quot;               
+##  [7] &quot;Phylum&quot;                 &quot;Class&quot;                  &quot;Order&quot;                 
+## [10] &quot;Family&quot;                 &quot;Genus&quot;                  &quot;Species&quot;               
+## [13] &quot;Infraspecies&quot;           &quot;InfraspeciesType&quot;       &quot;OrganismType&quot;          
+## [16] &quot;DicotMonoc&quot;             &quot;AngioGymno&quot;             &quot;Authors&quot;               
+## [19] &quot;Journal&quot;                &quot;SourceType&quot;             &quot;OtherType&quot;             
+## [22] &quot;YearPublication&quot;        &quot;DOI_ISBN&quot;               &quot;AdditionalSource&quot;      
+## [25] &quot;StudyDuration&quot;          &quot;StudyStart&quot;             &quot;StudyEnd&quot;              
+## [28] &quot;ProjectionInterval&quot;     &quot;MatrixCriteriaSize&quot;     &quot;MatrixCriteriaOntogeny&quot;
+## [31] &quot;MatrixCriteriaAge&quot;      &quot;MatrixPopulation&quot;       &quot;NumberPopulations&quot;     
+## [34] &quot;Lat&quot;                    &quot;Lon&quot;                    &quot;Altitude&quot;              
+## [37] &quot;Country&quot;                &quot;Continent&quot;              &quot;Ecoregion&quot;             
+## [40] &quot;StudiedSex&quot;             &quot;MatrixComposite&quot;        &quot;MatrixSeasonal&quot;        
+## [43] &quot;MatrixTreatment&quot;        &quot;MatrixCaptivity&quot;        &quot;MatrixStartYear&quot;       
+## [46] &quot;MatrixStartSeason&quot;      &quot;MatrixStartMonth&quot;       &quot;MatrixEndYear&quot;         
+## [49] &quot;MatrixEndSeason&quot;        &quot;MatrixEndMonth&quot;         &quot;CensusType&quot;            
+## [52] &quot;MatrixSplit&quot;            &quot;MatrixFec&quot;              &quot;Observations&quot;          
+## [55] &quot;MatrixDimension&quot;        &quot;SurvivalIssue&quot;          &quot;_Database&quot;             
+## [58] &quot;_PopulationStatus&quot;      &quot;_PublicationStatus&quot;</code></pre>
+<pre class="r"><code> #Subset to Orchids, published by Tremblay
+ ORCHIDS &lt;- x %&gt;% 
+  filter(Family == &quot;Orchidaceae&quot;)
+
+#Number of matrices
+nrow(ORCHIDS) </code></pre>
+<pre><code>## [1] 637</code></pre>
+<pre class="r"><code> #Subset to Lepanthes, published by Tremblay
+ ORCHIDS &lt;- x %&gt;% 
+  filter(Genus == &quot;Lepanthes&quot;)
+
+#Number of matrices
+nrow(ORCHIDS) </code></pre>
+<pre><code>## [1] 202</code></pre>
+<pre class="r"><code>ORCHIDS %&gt;% 
+ cdb_metadata() %&gt;% 
+ select(Genus, Species) %&gt;% 
+ unique() |&gt;   
+  arrange(Genus) |&gt; 
+  gt()</code></pre>
+<div id="zdiyabqila" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#zdiyabqila .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zdiyabqila .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zdiyabqila .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zdiyabqila .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zdiyabqila .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zdiyabqila .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zdiyabqila .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zdiyabqila .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zdiyabqila .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zdiyabqila .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zdiyabqila .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zdiyabqila .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zdiyabqila .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zdiyabqila .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zdiyabqila .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zdiyabqila .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zdiyabqila .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zdiyabqila .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zdiyabqila .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zdiyabqila .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zdiyabqila .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zdiyabqila .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zdiyabqila .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zdiyabqila .gt_left {
+  text-align: left;
+}
+
+#zdiyabqila .gt_center {
+  text-align: center;
+}
+
+#zdiyabqila .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zdiyabqila .gt_font_normal {
+  font-weight: normal;
+}
+
+#zdiyabqila .gt_font_bold {
+  font-weight: bold;
+}
+
+#zdiyabqila .gt_font_italic {
+  font-style: italic;
+}
+
+#zdiyabqila .gt_super {
+  font-size: 65%;
+}
+
+#zdiyabqila .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#zdiyabqila .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zdiyabqila .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zdiyabqila .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zdiyabqila .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zdiyabqila .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zdiyabqila .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Genus">Genus</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Genus" class="gt_row gt_left">Lepanthes</td>
+<td headers="Species" class="gt_row gt_left">rubripetala</td></tr>
+    <tr><td headers="Genus" class="gt_row gt_left">Lepanthes</td>
+<td headers="Species" class="gt_row gt_left">acuminata</td></tr>
+    <tr><td headers="Genus" class="gt_row gt_left">Lepanthes</td>
+<td headers="Species" class="gt_row gt_left">caritensis</td></tr>
+    <tr><td headers="Genus" class="gt_row gt_left">Lepanthes</td>
+<td headers="Species" class="gt_row gt_left">eltoroensis</td></tr>
+    <tr><td headers="Genus" class="gt_row gt_left">Lepanthes</td>
+<td headers="Species" class="gt_row gt_left">rupestris</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<pre class="r"><code>ORCHIDS %&gt;% 
+ cdb_metadata() %&gt;% 
+ select(Authors, Journal, YearPublication) %&gt;% 
+ unique() |&gt; 
+  arrange(desc(YearPublication)) |&gt; 
+  gt()</code></pre>
+<div id="sowapfifer" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#sowapfifer .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sowapfifer .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sowapfifer .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sowapfifer .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sowapfifer .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sowapfifer .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sowapfifer .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sowapfifer .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sowapfifer .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sowapfifer .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sowapfifer .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sowapfifer .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sowapfifer .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sowapfifer .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sowapfifer .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sowapfifer .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sowapfifer .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sowapfifer .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sowapfifer .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sowapfifer .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sowapfifer .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sowapfifer .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sowapfifer .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sowapfifer .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sowapfifer .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sowapfifer .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sowapfifer .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sowapfifer .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sowapfifer .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sowapfifer .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sowapfifer .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sowapfifer .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sowapfifer .gt_left {
+  text-align: left;
+}
+
+#sowapfifer .gt_center {
+  text-align: center;
+}
+
+#sowapfifer .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sowapfifer .gt_font_normal {
+  font-weight: normal;
+}
+
+#sowapfifer .gt_font_bold {
+  font-weight: bold;
+}
+
+#sowapfifer .gt_font_italic {
+  font-style: italic;
+}
+
+#sowapfifer .gt_super {
+  font-size: 65%;
+}
+
+#sowapfifer .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#sowapfifer .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sowapfifer .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sowapfifer .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sowapfifer .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sowapfifer .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sowapfifer .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Authors">Authors</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Journal">Journal</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="YearPublication">YearPublication</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Authors" class="gt_row gt_left">Raventós; García-González; Riverón-Giró; Damon</td>
+<td headers="Journal" class="gt_row gt_left">Plant Ecol Divers</td>
+<td headers="YearPublication" class="gt_row gt_right">2018</td></tr>
+    <tr><td headers="Authors" class="gt_row gt_left">Crain; Tremblay; Ferguson</td>
+<td headers="Journal" class="gt_row gt_left">Popul Ecol</td>
+<td headers="YearPublication" class="gt_row gt_right">2018</td></tr>
+    <tr><td headers="Authors" class="gt_row gt_left">Tremblay; Raventós; Ackerman; </td>
+<td headers="Journal" class="gt_row gt_left">Ann Bot-London</td>
+<td headers="YearPublication" class="gt_row gt_right">2015</td></tr>
+    <tr><td headers="Authors" class="gt_row gt_left">Tremblay; McCarthy</td>
+<td headers="Journal" class="gt_row gt_left">PLOS ONE</td>
+<td headers="YearPublication" class="gt_row gt_right">2014</td></tr>
+    <tr><td headers="Authors" class="gt_row gt_left">Schödelbauerová; Tremblay; Kindlmann</td>
+<td headers="Journal" class="gt_row gt_left">Biodivers Conserv</td>
+<td headers="YearPublication" class="gt_row gt_right">2010</td></tr>
+    <tr><td headers="Authors" class="gt_row gt_left">Tremblay; Ackerman</td>
+<td headers="Journal" class="gt_row gt_left">Biol J Linn Soc</td>
+<td headers="YearPublication" class="gt_row gt_right">2001</td></tr>
+    <tr><td headers="Authors" class="gt_row gt_left">Tremblay</td>
+<td headers="Journal" class="gt_row gt_left">Selbyana</td>
+<td headers="YearPublication" class="gt_row gt_right">1997</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<div id="access-to-all-the-matrices" class="section level2">
+<h2>Access to all the matrices</h2>
+<pre class="r"><code>matA(ORCHIDS)[1:5]</code></pre>
+<pre><code>## [[1]]
+##          A1       A2       A3       A4
+## A1 0.405000 0.000000 0.000000 0.158333
+## A2 0.371667 0.821667 0.000000 0.000000
+## A3 0.000000 0.000500 0.656667 0.210000
+## A4 0.000000 0.111667 0.298333 0.768333
+## 
+## [[2]]
+##        A1     A2     A3     A4
+## A1 0.1712 0.0000 0.1562 1.8563
+## A2 0.2519 0.2019 0.0650 0.0000
+## A3 0.2154 0.5712 0.4500 0.0700
+## A4 0.0250 0.0000 0.3150 0.8250
+## 
+## [[3]]
+##      A1   A2   A3   A4
+## A1 0.89 0.00 0.64 0.00
+## A2 0.08 0.97 0.00 0.00
+## A3 0.00 0.02 0.53 0.09
+## A4 0.00 0.00 0.45 0.91
+## 
+## [[4]]
+##          A1       A2       A3       A4
+## A1 0.786927 0.000000 0.830045 0.000000
+## A2 0.176035 0.972482 0.000000 0.000000
+## A3 0.000000 0.015780 0.574682 0.076764
+## A4 0.000000 0.000000 0.416211 0.923236
+## 
+## [[5]]
+##          A1       A2       A3       A4
+## A1 0.828514 0.000000 0.000000 0.000000
+## A2 0.139605 0.963569 0.000000 0.000000
+## A3 0.000000 0.021503 0.492138 0.080071
+## A4 0.000000 0.000000 0.498378 0.919929</code></pre>
+<pre class="r"><code>#matA(ORCHIDS)  All matrices</code></pre>
+<pre class="r"><code>As=ORCHIDS %&gt;% 
+filter(Genus==&quot;Aspasia&quot;)
+
+As</code></pre>
+<pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 0 SPECIES and 0 MATRICES.
+## 
+## # A tibble: 0 × 59
+## # … with 59 variables: mat &lt;list&gt;, MatrixID &lt;int&gt;, SpeciesAuthor &lt;chr&gt;,
+## #   SpeciesAccepted &lt;chr&gt;, CommonName &lt;chr&gt;, Kingdom &lt;chr&gt;, Phylum &lt;chr&gt;,
+## #   Class &lt;chr&gt;, Order &lt;chr&gt;, Family &lt;chr&gt;, Genus &lt;chr&gt;, Species &lt;chr&gt;,
+## #   Infraspecies &lt;chr&gt;, InfraspeciesType &lt;chr&gt;, OrganismType &lt;chr&gt;,
+## #   DicotMonoc &lt;chr&gt;, AngioGymno &lt;chr&gt;, Authors &lt;chr&gt;, Journal &lt;chr&gt;,
+## #   SourceType &lt;chr&gt;, OtherType &lt;chr&gt;, YearPublication &lt;chr&gt;, DOI_ISBN &lt;chr&gt;,
+## #   AdditionalSource &lt;chr&gt;, StudyDuration &lt;chr&gt;, StudyStart &lt;chr&gt;, …</code></pre>
+<pre class="r"><code>As1=matA(ORCHIDS)[1]
+As1</code></pre>
+<pre><code>## [[1]]
+##          A1       A2       A3       A4
+## A1 0.405000 0.000000 0.000000 0.158333
+## A2 0.371667 0.821667 0.000000 0.000000
+## A3 0.000000 0.000500 0.656667 0.210000
+## A4 0.000000 0.111667 0.298333 0.768333</code></pre>
+<pre class="r"><code>library(popbio)
+lambda(As1[[1]])</code></pre>
+<pre><code>## [1] 1.00663</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

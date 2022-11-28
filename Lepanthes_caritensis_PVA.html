@@ -14,7 +14,7 @@
 
 <title>Lepanthes_caritensis_PVA</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -182,8 +182,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -191,16 +191,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -629,7 +622,7 @@ for(i in 1:240){
 matriz=c()
 interactionX=1000
 quasi=2
-popExtinctProject&lt;-stoch.projection(matrices=transMat, n0=popState, tmax=i, nmax=1000, nreps = interactionX, prob = rep(1/24, length=24), verbose=FALSE)
+popExtinctProject&lt;-stoch.projection(matrices=transMat, n0=popState, tmax=i, nmax=500, nreps = interactionX, prob = rep(1/24, length=24), verbose=FALSE)
 for(ii in 1:interactionX){
         a=sum(popExtinctProject[ii,])
         matriz&lt;-rbind(matriz,c(a))

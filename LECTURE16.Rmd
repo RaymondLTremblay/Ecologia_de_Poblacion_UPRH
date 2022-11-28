@@ -29,14 +29,14 @@ Desde el punto de vista del modelado, aquí es donde las cosas se ponen realment
 
 Las interacciones de las especies se pueden clasificar según el efecto de la interacción en cada especie: (+, +), (+, -), (+, 0), (-, -), (-, 0), (0,0 )
 
-**P **: ¿Puede nombrar cada una de las clases de interacción anteriores? [Edmodo]
+**P **: ¿Puede nombrar cada una de las clases de interacción anteriores?
 
 
 ## Competencia
 
 ### ¿Qué es la competencia?
 
-La competencia se define como un tipo de interacción entre especies mediante la cual *las tasas vitales de población de cada especie se ven influenciadas negativamente por la presencia de la otra *.
+La competencia se define como un tipo de interacción entre especies mediante la cual **las tasas vitales de población de cada especie se ven influenciadas negativamente por la presencia de la otra**.
 
 ¡No hay mucha diferencia esencial entre la competencia dentro de las especies (uno de los mecanismos principales para la regulación de la población dependiente de la densidad) y la competencia entre especies por los recursos!
 
@@ -45,16 +45,18 @@ La competencia se define como un tipo de interacción entre especies mediante la
 
 Este es el tipo de competencia en la que probablemente pensamos primero: todos los individuos compiten por los recursos y todos tienen habilidades competitivas similares. Es gratis para todos: ¡todos reciben una porción de un pastel limitado!
 
-La competencia por los recursos dentro de las especies es a menudo el mecanismo detrás de los procesos dependientes de la densidad que ya hemos discutido en esta clase. Dentro de una sola especie, esto a menudo se denomina "* competencia de revueltas *".
+La competencia por los recursos dentro de las especies es a menudo el mecanismo detrás de los procesos dependientes de la densidad que ya hemos discutido en esta clase. Dentro de una sola especie, esto a menudo se denomina **competencia de revueltas**.
 
 #### Interferencia
 A veces, el efecto negativo de un actor (individuo de la misma u otra especie) sobre otro actor se debe a la exclusión conductual directa. Este es el caso de las aves que mantienen territorios y mantienen a otras aves fuera del territorio.
 
-Algunas plantas participan en una competencia de interferencia en un proceso llamado "alelopatía".
+Algunas plantas participan en una competencia de interferencia en un proceso llamado **alelopatía**.
 
-![](figuures/allelopathy.jpg)
+![](figures/allelopathy.jpg)
 
-### Competencia de modelado: ¡extendiendo las ecuaciones de crecimiento logístico a más de una especie!
+## Competencia de modelado: 
+
+### ¡extendiendo las ecuaciones de crecimiento logístico a más de una especie!
 
 Si * competencia entre especies * y * competencia entre especies * son esencialmente lo mismo, ¡quizás podamos modelar estos procesos de la misma manera!
 
@@ -76,13 +78,16 @@ Especie 2: $\Delta N2 = r\cdot N2_t \cdot (1-\frac{N2+\beta N1}{K2})$
 
 Las constante $\alpha$ y $\beta$ son medidas del efecto de una especie sobre el crecimiento de las otras especies.
 
-**P **: ¿qué significa si $ \ alpha $ es igual a 1?
+**P **: ¿qué significa si $\alpha$ es igual a 1?
 
-**P **: ¿qué significa si $ \ alpha $ es igual a 5?
+**P **: ¿qué significa si $\alpha$ es igual a 5?
 
-**P **: ¿qué significa si $ \ alpha $ es igual a $ \ frac {1} {5} $?
+**P **: ¿qué significa si $\alpha$ es igual a $ \ frac {1} {5} $?
 
-**P **: ¿qué significa si $ \ alpha $ es igual a cero?
+**P **: ¿qué significa si $\alpha$ es igual a cero?
+
+
+***
 
 ### Exploremos este modelo juntos en InsightMaker!
 
@@ -107,6 +112,8 @@ Las constante $\alpha$ y $\beta$ son medidas del efecto de una especie sobre el 
 
 This model is known as *Lotka-Volterra competition*! The model is named after mathematicians Alfred Lotka and Vito Volterra 
 
+***
+
 ______________
  **P**: Qué sucede si una especie es un competidor superior? ¿Qué significa ser un competidor superior? ¿Puede una especie extinguirse?
 
@@ -115,6 +122,9 @@ ______________
 **P **: imagina que la especie 1 es una especie exótica, un posible invasor de un ecosistema dominado por la especie 2 (que está en capacidad de carga). ¿Bajo qué condiciones la especie 1 tiene éxito en la invasión? ¿En qué condiciones el invasor provoca la extinción de las especies nativas?
 
 **P **: ¿puede identificar alguna condición de equilibrio (estable o inestable)?
+
+
+***
 
 
 ## La fase plana!
@@ -164,6 +174,7 @@ for(i in 1:(Nyears+1)){
 
 ```
 
+***
 
 Ahora visualicemos el año cero en *phase space*:
 
@@ -177,6 +188,7 @@ points(System[1,],col="green",pch=20,cex=2)
 
 ```
 
+***
 
 ¿Qué tal los primeros 5 años ...
 
@@ -187,6 +199,8 @@ plot(1,1,pch="",ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab="species 1",ylab="species
 points(System[1:6,],col="green",pch=20,cex=2)
 
 ```
+
+***
 
 Tenga en cuenta que cada punto en el plano de fase tiene una ubicación y una * dirección * (piense en el plano de fase como un campo magnético) en cada punto del plano de fase, el sistema es atraído o repelido de ir en ciertas direcciones.
 
@@ -200,6 +214,7 @@ points(System,col="green",pch=20,cex=2)
 
 ```
 
+***
 
 Bien, entonces la especie 1 está superando a la especie 2. ¡A medida que aumenta la abundancia de la especie 1, la abundancia de la especie 2 disminuye y terminamos con solo la especie 1!
 
@@ -240,6 +255,8 @@ for(i in 1:(Nyears+1)){
 ```
 
 
+***
+
 Con estos nuevos parámetros, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:
 
 ```{r}
@@ -252,6 +269,8 @@ abline(h=K2,v=K1,col="gray",lwd=2,lty=2)
 
 ```
 
+
+***
 
 Puede ver que este sistema ha llegado a un equilibrio al final, justo por debajo de la capacidad de carga de la especie 1.
 
@@ -293,6 +312,7 @@ for(i in 1:(Nyears+1)){
 ```
 
 
+***
 
 Ahora, el espacio de fase se ve así (con jittering para indicar la concentración de puntos:
 
@@ -309,7 +329,7 @@ points(jitter(System3[,1],500),jitter(System3[,2],500),col="blue",pch=20,cex=0.3
 abline(h=K2,v=K1,col="gray",lwd=2,lty=2)
 ```
 
-**P **: ¿Tiene este sistema de dos especies un equilibrio estable?
+**P**: ¿Tiene este sistema de dos especies un equilibrio estable?
 
 
 ```{r echo=FALSE}
@@ -655,6 +675,9 @@ jacobianAtXY <- compiler::cmpfun(function(fun,x=NULL, y=NULL,inc=1e-7){
 ```
 
 
+
+***
+
 ### ¡Trabajando en el plano de fase!
 
 Hay mucho que puede aprender sobre un sistema de dos especies que interactúan trabajando con el plano de fase.
@@ -716,6 +739,8 @@ phasearrows.draw(new)
 
 ```
 
+***
+
 Tome cualquier punto de partida arbitrario. Ahora podemos rastrear la trayectoria que tomará el sistema en el espacio de fase.
 
 ¡¡Intentalo!!
@@ -723,6 +748,8 @@ Tome cualquier punto de partida arbitrario. Ahora podemos rastrear la trayectori
 
 Verá que hay algunos umbrales clave en el espacio de fase que debemos considerar. Por ejemplo, las flechas pueden invertir la dirección.
 
+
+***
 
 ### Isoclinas!
 
@@ -791,6 +818,9 @@ abline(K1/Alpha,-(K1/Alpha)/K1,col="red",lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col="blue",lwd=3)   # species 2
 ```
 
+***
+
+
 Siga las trayectorias desde cualquier punto en este espacio de fase. ¿Cuál es el resultado aquí?
 
 **P **: ¿Existe un equilibrio en todo el sistema? [sombrero de copa]
@@ -832,6 +862,9 @@ abline(K2,-K2/(K2/Beta),col="blue",lwd=3)   # species 2
 
 ```
 
+
+***
+
 Siga las trayectorias desde cualquier punto en este espacio de fase. ¿Cuál es el resultado aquí?
 
 ** P **: ¿Existe un equilibrio en todo el sistema?
@@ -871,8 +904,11 @@ abline(K2,-K2/(K2/Beta),col="blue",lwd=2)   # species 2
 
 ```
 
+
 ** P **: ¿En qué parte de esta figura se "mueve" el sistema más rápido? (Analogía del campo magnético: atracción y repulsión más fuertes)
 
+
+***
 
 
 Finalmente, considere este ejemplo:

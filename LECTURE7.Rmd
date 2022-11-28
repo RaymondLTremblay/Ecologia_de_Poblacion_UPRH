@@ -14,7 +14,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-
 ```{r echo=FALSE}
 
 ############################################################
@@ -36,7 +35,6 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 ```
 
-
 ### Próximo examen parcial some date
 
 Test date in the future real soon
@@ -47,22 +45,20 @@ El 6 de octubre
 
 **cuándo y dónde** El primer examen parcial (de dos) se realizará el lunes **15 de marzo**. Tendrás todo el período de clase de 120 minutos para realizar el examen. El examen será en línea (por supuesto) y se administrará en Edmodo.
 
+**qué** El examen cubrirá:
 
-**qué ** El examen cubrirá:
-
-- Todo el material de los capítulos 1-3 del libro de Gotelli *incluidos los conceptos de modelos de población matricial *.
-- Todo el material cubierto en conferencias hasta e incluyendo esta conferencia sobre modelos matriciales de población.
-- Ch. 1 de "Beyond Connecting the Dots" (pensamiento sistémico básico y modelado de flujo de existencias, conceptos de retroalimentación y equilibrios)
-- Conceptos básicos de programación (IF-THEN-ELSE y de iteración)
+-   Todo el material de los capítulos 1-3 del libro de Gotelli *incluidos los conceptos de modelos de población matricial* .
+-   Todo el material cubierto en conferencias hasta e incluyendo esta conferencia sobre modelos matriciales de población.
+-   Ch. 1 de "Beyond Connecting the Dots" (pensamiento sistémico básico y modelado de flujo de existencias, conceptos de retroalimentación y equilibrios)
+-   Conceptos básicos de programación (IF-THEN-ELSE y de iteración)
 
 *El examen consistirá en una combinación de preguntas de opción múltiple y de respuesta corta.*
 
 *Por favor traiga una calculadora; una calculadora científica normal está bien (no es absolutamente necesaria, ¡pero podría ser útil para al menos una pregunta del examen!)*
 
-
 # Matrix population models
 
-En primer lugar, esta lección está llena de código R (¡R es bastante bueno para ejecutar modelos de población matricial!). Si desea seguir en R, puede encontrar el script R [aquí](LECTURE7.R). Recomiendo hacer clic derecho en el enlace, guardar el script en una carpeta designada y cargar el script en RStudio.    
+En primer lugar, esta lección está llena de código R (¡R es bastante bueno para ejecutar modelos de población matricial!). Si desea seguir en R, puede encontrar el script R [aquí](LECTURE7.R). Recomiendo hacer clic derecho en el enlace, guardar el script en una carpeta designada y cargar el script en RStudio.
 
 ## ¿Por qué matrices?
 
@@ -70,7 +66,7 @@ En primer lugar, esta lección está llena de código R (¡R es bastante bueno p
 
 ![](figures/IM8.jpg)
 
-Es posible que reconozca este modelo de InsightMaker. Esto representa una población estructurada por edad con solo tres clases de edad. Imagínese si hubiera cinco clases de edad o diez. ¿Qué pasaría si pudieras saltar de (por ejemplo) la etapa 3 a la etapa 5? ¿O de la etapa 5 a la etapa 3? ¿Cuántas líneas tendrías que dibujar, cuántas ecuaciones tendrías que poner en todos los diferentes flujos? Sería tedioso y fácilmente podría encontrarse con errores que serían muy difíciles de depurar. 
+Es posible que reconozca este modelo de InsightMaker. Esto representa una población estructurada por edad con solo tres clases de edad. Imagínese si hubiera cinco clases de edad o diez. ¿Qué pasaría si pudieras saltar de (por ejemplo) la etapa 3 a la etapa 5? ¿O de la etapa 5 a la etapa 3? ¿Cuántas líneas tendrías que dibujar, cuántas ecuaciones tendrías que poner en todos los diferentes flujos? Sería tedioso y fácilmente podría encontrarse con errores que serían muy difíciles de depurar.
 
 ![](figures/teasel1.jpg)
 
@@ -97,35 +93,30 @@ teasel_matrix                                          # print the matrix
 
 ```
 
-
-¿No es eso *elegante \*?
+¿No es eso \*elegante \*?
 
 ¡Entraremos en más detalles sobre las matrices más adelante!
 
-
 ### Supplementario: Matrices estructura por etapas vs. estructura por edades
-
 
 En la conferencia anterior, hablamos de 'poblaciones estructuradas por edad'. Lo que queremos decir con eso es que las tasas vitales de la población (por ejemplo, nacimiento y mortandad) variaban según la edad.
 
-
 A veces, es conveniente clasificar a los individuos dentro de un cierto rango de edad como pertenecientes a una etapa particular de su historia de vida. Por ejemplo, podríamos clasificar la historia de vida de un oso pardo así:
 
-Edad 0-1: recien nacidos     
-Edad 1-2: juveniles     
-Edad 2-5: sub-adulto     
-Edad 6+: adulto     
+Edad 0-1: recien nacidos\
+Edad 1-2: juveniles\
+Edad 2-5: sub-adulto\
+Edad 6+: adulto
 
-Esto puede simplificar nuestros modelos considerablemente. Por ejemplo, considere una especie como una tortuga marina, con hasta 75 o 100 años de vida. Podría construir un modelo en el que tenga 100 acciones, una por cada año de vida. O, podría tener 5 o más poblaciones que representen rangos de edad en los que las tortugas marinas tienden a tener tasas vitales consistentes (mas o menos). Por ejemplo, podríamos dividir la historia de vida de las tortugas marinas en las siguientes etapas: 
+Esto puede simplificar nuestros modelos considerablemente. Por ejemplo, considere una especie como una tortuga marina, con hasta 75 o 100 años de vida. Podría construir un modelo en el que tenga 100 acciones, una por cada año de vida. O, podría tener 5 o más poblaciones que representen rangos de edad en los que las tortugas marinas tienden a tener tasas vitales consistentes (mas o menos). Por ejemplo, podríamos dividir la historia de vida de las tortugas marinas en las siguientes etapas:
 
-Edad 0-1: recien nacidos      
-Edad 1-5: juveniles joven     
-Edad 5-10: juveniles más grandes     
-Edad 10-17: sub-adult0      
-Edad 18+: adult0      
+Edad 0-1: recien nacidos\
+Edad 1-5: juveniles joven\
+Edad 5-10: juveniles más grandes\
+Edad 10-17: sub-adult0\
+Edad 18+: adult0
 
 Al usar etapas, hemos simplificado nuestro modelo de tener 100 acciones (con aún más flujos / transiciones asociadas) a un modelo con solo 5 acciones, y todavía estamos capturando cómo cambian las tasas vitales con la edad (el modelo sigue siendo biológicamente realista).
-
 
 Los modelos matriciales de población pueden representar modelos estructurados por edades y estructurados por etapas con la misma simplicidad y elegancia.
 
@@ -135,13 +126,13 @@ La 'Leslie Matrix' comúnmente utilizada se refiere a un modelo de población ma
 
 En una de las preguntas del laboratorio 3, se le pidió que usara una tabla de vida para proyectar la estructura de edad de una población en un paso de tiempo en el futuro. ¿Fue sencillo y directo hacer esto? (respuesta: ¡¡NO !!)
 
-Las tablas de vida son excelentes para resumir los cronogramas de supervivencia y otros aspectos de las poblaciones estructuradas por edad. ¡Pero las _tablas de vida no son excelentes para proyectar la abundancia estructurada por edades en el futuro_!
+Las tablas de vida son excelentes para resumir los cronogramas de supervivencia y otros aspectos de las poblaciones estructuradas por edad. ¡Pero las *tablas de vida no son excelentes para proyectar la abundancia estructurada por edades en el futuro*!
 
 ¿Sabes qué *es* genial para proyectar la abundancia estructurada por edades en el futuro? (respuesta obvia: MATRICES!)
 
 Por ejemplo, proyectemos una población de teasel 1 año en el futuro:
 
-En primer lugar, debemos comenzar con una población de teasel **vector ** ...
+En primer lugar, debemos comenzar con una población de teasel **vector** ...
 
 ```{r}
 
@@ -155,8 +146,7 @@ Initial_teasel
 
 ```
 
-
-¡Entonces todo lo que tenemos que hacer es 'multiplicar por matriz' este **vector ** de abundancias por la **matriz de transición ** de arriba! ¡Cada vez que hacemos este paso de multiplicación, avanzamos un año! ¡Es fácil!
+¡Entonces todo lo que tenemos que hacer es 'multiplicar por matriz' este **vector** de abundancias por la **matriz de transición** de arriba! ¡Cada vez que hacemos este paso de multiplicación, avanzamos un año! ¡Es fácil!
 
 NOTA: la multiplicación de matrices (porcentaje-asterisco-porcentaje en R) no es lo mismo que la multiplicación estándar (asterisco en R). Repasaremos esto en la introducción al laboratorio 4 un poco más adelante.
 
@@ -189,7 +179,7 @@ nextYear  # now we get the (age structured) population size at time 2!
 
 Podríamos usar esta estrategia para simular la abundancia durante diez años (o 20, o 30, o 10000) ...
 
-¡Observe el uso de un **loop ** aquí!
+¡Observe el uso de un **loop** aquí!
 
 ```{r}
 
@@ -232,7 +222,6 @@ legend("topleft",col=cols,lwd=rep(2,6),legend=rownames(tenYears))      # add leg
 
 ```
 
-
 ¡Así que la proyección es fácil con matrices!
 
 ### Razón 3: ¡Trucos de álgebra matricial!
@@ -241,14 +230,13 @@ Existe una clara similitud entre la ecuación de crecimiento de la población fi
 
 $N_{t+1}=\lambda \cdot N_t$,
 
-donde $N $ es abundancia (como siempre), $t$ es el tiempo, a menudo en años, pero podría ser cualquier unidad de tiempo, y $\lambda$ es la tasa de crecimiento multiplicativo durante el período de tiempo $t = t + 1$
+donde \$N \$ es abundancia (como siempre), $t$ es el tiempo, a menudo en años, pero podría ser cualquier unidad de tiempo, y $\lambda$ es la tasa de crecimiento multiplicativo durante el período de tiempo $t = t + 1$
 
 ... y la ecuación matricial de crecimiento de la población:
 
 $\mathbf{N}_{t+1} = \mathbf{A} \cdot \mathbf{N}_{t}$,
 
-
-donde $\mathbf {N}$ es un ** vector ** de abundancias (abundancia para todas las etapas), y $\mathbf{A}$ es la **matriz de transición**, que hemos visto antes.
+donde $\mathbf {N}$ es un \*\* vector \*\* de abundancias (abundancia para todas las etapas), y $\mathbf{A}$ es la **matriz de transición**, que hemos visto antes.
 
 **Q:** ¿Puedes ver la similitud entre estas dos ecuaciones?
 
@@ -258,31 +246,29 @@ Ambas ecuaciones describen un crecimiento o una disminución exponencial simple.
 
 Tenga en cuenta que $N$ en la primera ecuación es un **escalar**, es decir, es solo un número sin componentes adicionales.
 
-
 MIENTRAS QUE,
 
-$N$ en la segunda ecuación es un **vector ** estructurado por edad: un conjunto de abundancias estructurado por edad o clase de etapa.
+$N$ en la segunda ecuación es un **vector** estructurado por edad: un conjunto de abundancias estructurado por edad o clase de etapa.
 
 De manera similar, la tasa de crecimiento de la población finita, $\lambda$ es un escalar,
 
 MIENTRAS QUE,
 
-
-$A$ es una **matriz ** (la matriz de transición)
+$A$ es una **matriz** (la matriz de transición)
 
 #### ¿Qué pasa con esos trucos que prometiste?
 
 Okay one of the tricks is this:
 
-In one step, you can compute $\lambda$ from $A$!!     
+In one step, you can compute $\lambda$ from $A$!!
 
-All you need to do is obtain the _first, or dominant, **eigenvalue** of $A$! This number is the finite rate of growth, $\lambda$, for an age or stage-structured population.
+All you need to do is obtain the \_first, or dominant, **eigenvalue** of $A$! This number is the finite rate of growth, $\lambda$, for an age or stage-structured population.
 
-Recall that when a population is at stable age distribution, it grows in a discrete exponential growth pattern- this rate of exponential growth can be described by a single parameter -- Lambda! 
+Recall that when a population is at stable age distribution, it grows in a discrete exponential growth pattern- this rate of exponential growth can be described by a single parameter -- Lambda!
 
 ¡Hagamos esto en R!
 
-¿Cuál es la tasa de crecimiento $ \lambda $ para la población de teasel? Si recuerda, parecía que estaba creciendo, por lo que debería estar por encima de 1 ...
+¿Cuál es la tasa de crecimiento \$ \lambda \$ para la población de teasel? Si recuerda, parecía que estaba creciendo, por lo que debería estar por encima de 1 ...
 
 ```{r}
 
@@ -294,7 +280,7 @@ Lambda
 
 ```
 
-O podríamos usar el paquete "popbio" en R:   
+O podríamos usar el paquete "popbio" en R:
 
 ```{r}
 
@@ -304,12 +290,11 @@ lambda(teasel_matrix)
 
 ```
 
-
 No es necesario que comprenda las matemáticas aquí, pero quiero que comprenda lo simple que fue, ¡solo una línea de código y calculamos la tasa anual de crecimiento a partir de la matriz de transición de teasel!
 
 Aquí hay otro truco ingenioso:
 
-En un solo paso, puede calcular **distribución de edad estable (S.A.D)** a partir de $A$!!     
+En un solo paso, puede calcular **distribución de edad estable (S.A.D)** a partir de $A$!!
 
 ¡Todo lo que necesita hacer es obtener el **eigenvector** derecho de $A$! Este vector representa las abundancias relativas en cada clase de edad en la distribución de edad estable.
 
@@ -327,7 +312,7 @@ SAD/sum(SAD)      # stable age distribution as a percentage of the total populat
 
 ```
 
-O podríamos usar el paquete "popbio" en R: 
+O podríamos usar el paquete "popbio" en R:
 
 ```{r}
 
@@ -337,16 +322,13 @@ stable.stage(teasel_matrix)
 
 ```
 
-**Q:** ¿Una población estructurada por etapas crece a una tasa de $ \ lambda $ por paso de tiempo si NO tiene una distribución de edad estable? [Edmodo]   
+**Q:** ¿Una población estructurada por etapas crece a una tasa de \$  lambda \$ por paso de tiempo si NO tiene una distribución de edad estable? [Edmodo]
 
-
-Para responder a esta pregunta, puede que le resulte útil cargar un modelo estructurado por etapas en InsightMaker como [this one](https://insightmaker.com/insight/70809/Age-structured-population)). 
+Para responder a esta pregunta, puede que le resulte útil cargar un modelo estructurado por etapas en InsightMaker como [this one](https://insightmaker.com/insight/70809/Age-structured-population)).
 
 ## Mechanics of matrix population models
 
-
-Echemos un vistazo a una población básica estructurada por edad, específicamente el ejemplo en clase de la última conferencia. ([this one](https://insightmaker.com/insight/70809/Age-structured-population).). 
-Echemos un vistazo a una población básica estructurada por edad, específicamente el ejemplo en clase de la última conferencia.
+Echemos un vistazo a una población básica estructurada por edad, específicamente el ejemplo en clase de la última conferencia. ([this one](https://insightmaker.com/insight/70809/Age-structured-population).). Echemos un vistazo a una población básica estructurada por edad, específicamente el ejemplo en clase de la última conferencia.
 
 ![](figures/IM9.jpg)
 
@@ -371,9 +353,9 @@ TMat                                               # now we have an all-zero tra
 
 Puede leer los **elementos** de una matriz de transición de la siguiente manera:
 
-"La producción per cápita de _(nombre de la fila)_ por _(nombre de la columna)_ es _(valor del elemento)_"
+"La producción per cápita de *(nombre de la fila)* por *(nombre de la columna)* es *(valor del elemento)*"
 
-Ahora podemos comenzar a completar esta matriz. Comencemos con el **elemento ** superior izquierdo de la matriz. Esto representa la producción per cápita de Juveniles (col) por Juveniles (fila). ¿Cuál es el valor de este elemento?
+Ahora podemos comenzar a completar esta matriz. Comencemos con el **elemento** superior izquierdo de la matriz. Esto representa la producción per cápita de Juveniles (col) por Juveniles (fila). ¿Cuál es el valor de este elemento?
 
 Actualicemos nuestra matriz de transición:
 
@@ -387,8 +369,7 @@ TMat
 
 ```
 
-¿Qué tal la segunda fila, la primera columna? Esto representa la producción per cápita de subadultos (fila) por juveniles del año anterior (col). Es decir, la tasa de transición de juvenil a subadulto. El valor de nuestro modelo es 0,3. 
-
+¿Qué tal la segunda fila, la primera columna? Esto representa la producción per cápita de subadultos (fila) por juveniles del año anterior (col). Es decir, la tasa de transición de juvenil a subadulto. El valor de nuestro modelo es 0,3.
 
 Actualicemos nuestra matriz de transición:
 
@@ -401,7 +382,6 @@ TMat[2,1] <- 0.3
 TMat
 
 ```
-
 
 Si continuamos, obtenemos la siguiente matriz. Vea si puede entender lo que dice esta matriz sobre las transiciones y dos de las tres etapas de la vida.
 
@@ -453,7 +433,6 @@ allYears
 
 ```
 
-
 ¡Ahora trazémoslo!
 
 ```{r}
@@ -479,14 +458,13 @@ Los modelos de población matricial son excelentes, pero también tienen algunas
 
 ### ¿Qué pasa con la dependencia de la densidad?
 
-
 De alguna manera, mientras introducimos un nuevo nivel de realismo en nuestros modelos, la estructura por edades, hemos estado ignorando otro tipo de realismo que introdujimos en conferencias anteriores: ¡**dependencia de la densidad**!
 
 ¿Qué tasas vitales dependen de la densidad? ¿Todas? ¿Algunos? ¿Depende? ¿Están disponibles los datos?
 
 ¿Cómo se incorpora la dependencia de la densidad en un modelo de población matricial?
 
-¿Cómo se incorpora la dinámica depredador-presa en un modelo de población matricial? [señal de explosión cerebral]    
+¿Cómo se incorpora la dinámica depredador-presa en un modelo de población matricial? [señal de explosión cerebral]
 
 ¿Cómo incluir variación ambiental?
 
@@ -496,18 +474,17 @@ De alguna manera, mientras introducimos un nuevo nivel de realismo en nuestros m
 
 ¿Que haces cuando no hay información sobre una de los parametros de la matriz?
 
+*Todo lo que pueda hacer con un modelo de población matricial, también puede hacerlo en InsightMaker (o R, o cualquier otra plataforma de programación)* (¡pero puede que no sea tan 'bonito' o elegante como un modelo de población matricial!)
 
-_Todo lo que pueda hacer con un modelo de población matricial, también puede hacerlo en InsightMaker (o R, o cualquier otra plataforma de programación)_ (¡pero puede que no sea tan 'bonito' o elegante como un modelo de población matricial!)
-
-The reverse is NOT true: **you can not always convert InsightMaker models to matrix population models** (IM is a programming language, so is much more flexible!)   
+The reverse is NOT true: **you can not always convert InsightMaker models to matrix population models** (IM is a programming language, so is much more flexible!)
 
 ### Repaso de la multiplicación de matrices
 
-(during lab!) 
+(during lab!)
 
 ### Ejercicio en clase: modelos de proyección matricial
 
-Traduzca el siguiente párrafo a un modelo de población matricial. Recuerde que un modelo de población matricial tiene dos componentes: un ** vector de abundancia inicial ** y una ** matriz de transición **.
+Traduzca el siguiente párrafo a un modelo de población matricial. Recuerde que un modelo de población matricial tiene dos componentes: un \*\* vector de abundancia inicial \*\* y una \*\* matriz de transición \*\*.
 
 NOTA: ¡esta también es una pregunta en el laboratorio 4!
 
@@ -515,43 +492,34 @@ NOTA: ¡esta también es una pregunta en el laboratorio 4!
 
 > Asumimos que la historia de vida del halcón de cola roja podría describirse en términos de tres etapas principales de la vida: cría (primer año de vida), juvenil (principalmente individuos en su segundo año de vida) y adulto (generalmente el tercer año de vida). y más allá). Los adultos son la etapa reproductiva primaria y producen un promedio de 3 nuevas crías cada año. Se espera que los juveniles produzcan solo 1 cría nueva cada año. Asumimos que los adultos experimentaron un promedio de 18% de mortalidad cada año. La mortalidad juvenil se fijó en un 30% anual. Aproximadamente el 5% de los juveniles permanecen en la fase juvenil cada año, y todos los demás sobrevivientes pasan a la etapa adulta. Finalmente, las crías tenían un 20% de posibilidades de sobrevivir y hacer la transición para convertirse en juveniles. Inicializamos la población con 1000 crías, 150 juveniles y 5 adultos.
 
-**P: ** ¿Cómo se ve la matriz de transición?
+**P:** ¿Cómo se ve la matriz de transición?
 
-**P: ** ¿Cómo se ve el vector de abundancia de la etapa inicial?
+**P:** ¿Cómo se ve el vector de abundancia de la etapa inicial?
 
-**P: ** ¿Se encuentra esta población en una distribución por etapas estable?
+**P:** ¿Se encuentra esta población en una distribución por etapas estable?
 
-**P: ** ¿Cuál es la tasa de crecimiento de esta población?
+**P:** ¿Cuál es la tasa de crecimiento de esta población?
 
-
-Para obtener más información sobre los modelos matriciales de población, la Biblia de este tema es [this book by Hal Caswell](https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=C1DH1414B1C6AK%2C1).
-Y finalmente, mira esto: esta es una base de datos de miles de matrices de etapas para plantas y animales en todo el mundo:
+Para obtener más información sobre los modelos matriciales de población, la Biblia de este tema es [this book by Hal Caswell](https://www.amazon.com/gp/huc/view.html?ie=UTF8&newItems=C1DH1414B1C6AK%2C1). Y finalmente, mira esto: esta es una base de datos de miles de matrices de etapas para plantas y animales en todo el mundo:
 
 [COMADRE and COMPADRE databases](https://compadredb.wordpress.com/2015/10/05/introducing-the-comadre-animal-matrix-database/)
 
 
+```{r eval=FALSE, include=FALSE}
+redtail=matrix(c(0,0,0,
+               0.20,0.05,0,
+               0,0.65,0.82),ncol=3,nrow=3, byrow = TRUE)
+redtail
+
+InitAbund <- c(1000,150,5)
+
+library(popbio)
+stable.stage(redtail)
+1000/1155
+150/1155
+5/1155
+lambda(redtail)
+```
+
+
 [--go to next lecture--](LECTURE8.html)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

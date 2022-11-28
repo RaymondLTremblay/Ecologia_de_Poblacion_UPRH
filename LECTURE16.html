@@ -14,7 +14,7 @@
 
 <title>Interacciones de especies: competencia!</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -183,8 +183,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -192,16 +192,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -508,15 +501,16 @@ impredecibles!</p>
 efecto de la interacción en cada especie: (+, +), (+, -), (+, 0), (-,
 -), (-, 0), (0,0 )</p>
 <p><strong>P </strong>: ¿Puede nombrar cada una de las clases de
-interacción anteriores? [Edmodo]</p>
+interacción anteriores?</p>
 </div>
 <div id="competencia" class="section level2">
 <h2>Competencia</h2>
 <div id="qué-es-la-competencia" class="section level3">
 <h3>¿Qué es la competencia?</h3>
 <p>La competencia se define como un tipo de interacción entre especies
-mediante la cual <em>las tasas vitales de población de cada especie se
-ven influenciadas negativamente por la presencia de la otra </em>.</p>
+mediante la cual <strong>las tasas vitales de población de cada especie
+se ven influenciadas negativamente por la presencia de la
+otra</strong>.</p>
 <p>¡No hay mucha diferencia esencial entre la competencia dentro de las
 especies (uno de los mecanismos principales para la regulación de la
 población dependiente de la densidad) y la competencia entre especies
@@ -530,7 +524,7 @@ una porción de un pastel limitado!</p>
 <p>La competencia por los recursos dentro de las especies es a menudo el
 mecanismo detrás de los procesos dependientes de la densidad que ya
 hemos discutido en esta clase. Dentro de una sola especie, esto a menudo
-se denomina “* competencia de revueltas *“.</p>
+se denomina <strong>competencia de revueltas</strong>.</p>
 </div>
 <div id="interferencia" class="section level4">
 <h4>Interferencia</h4>
@@ -539,15 +533,18 @@ especie) sobre otro actor se debe a la exclusión conductual directa.
 Este es el caso de las aves que mantienen territorios y mantienen a
 otras aves fuera del territorio.</p>
 <p>Algunas plantas participan en una competencia de interferencia en un
-proceso llamado “alelopatía”.</p>
-<p><img src="figuures/allelopathy.jpg" /></p>
+proceso llamado <strong>alelopatía</strong>.</p>
+<p><img src="figures/allelopathy.jpg" /></p>
 </div>
 </div>
+</div>
+<div id="competencia-de-modelado" class="section level2">
+<h2>Competencia de modelado:</h2>
 <div
-id="competencia-de-modelado-extendiendo-las-ecuaciones-de-crecimiento-logístico-a-más-de-una-especie"
+id="extendiendo-las-ecuaciones-de-crecimiento-logístico-a-más-de-una-especie"
 class="section level3">
-<h3>Competencia de modelado: ¡extendiendo las ecuaciones de crecimiento
-logístico a más de una especie!</h3>
+<h3>¡extendiendo las ecuaciones de crecimiento logístico a más de una
+especie!</h3>
 <p>Si * competencia entre especies * y * competencia entre especies *
 son esencialmente lo mismo, ¡quizás podamos modelar estos procesos de la
 misma manera!</p>
@@ -577,12 +574,15 @@ llenar * la capacidad de carga de las otras especies, ¡y viceversa!</li>
 <p>Las constante <span class="math inline">\(\alpha\)</span> y <span
 class="math inline">\(\beta\)</span> son medidas del efecto de una
 especie sobre el crecimiento de las otras especies.</p>
-<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a 1?</p>
-<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a 5?</p>
-<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a $  frac
-{1} {5} $?</p>
-<p><strong>P </strong>: ¿qué significa si $  alpha $ es igual a
-cero?</p>
+<p><strong>P </strong>: ¿qué significa si <span
+class="math inline">\(\alpha\)</span> es igual a 1?</p>
+<p><strong>P </strong>: ¿qué significa si <span
+class="math inline">\(\alpha\)</span> es igual a 5?</p>
+<p><strong>P </strong>: ¿qué significa si <span
+class="math inline">\(\alpha\)</span> es igual a $  frac {1} {5} $?</p>
+<p><strong>P </strong>: ¿qué significa si <span
+class="math inline">\(\alpha\)</span> es igual a cero?</p>
+<hr />
 </div>
 <div id="exploremos-este-modelo-juntos-en-insightmaker"
 class="section level3">
@@ -625,6 +625,7 @@ how the model behaves.</p>
 <p>This model is known as <em>Lotka-Volterra competition</em>! The model
 is named after mathematicians Alfred Lotka and Vito Volterra</p>
 <hr />
+<hr />
 <p><strong>P</strong>: Qué sucede si una especie es un competidor
 superior? ¿Qué significa ser un competidor superior? ¿Puede una especie
 extinguirse?</p>
@@ -637,6 +638,7 @@ en la invasión? ¿En qué condiciones el invasor provoca la extinción de
 las especies nativas?</p>
 <p><strong>P </strong>: ¿puede identificar alguna condición de
 equilibrio (estable o inestable)?</p>
+<hr />
 </div>
 </div>
 <div id="la-fase-plana" class="section level2">
@@ -682,6 +684,7 @@ doYear &lt;- function(prevyear){
 for(i in 1:(Nyears+1)){
   System[1+i,] &lt;- doYear(System[i,])
 }</code></pre>
+<hr />
 <p>Ahora visualicemos el año cero en <em>phase space</em>:</p>
 <pre class="r"><code>####
 # visualizar las abundancias iniciales en el plano de fase
@@ -689,11 +692,13 @@ for(i in 1:(Nyears+1)){
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(System[1,],col=&quot;green&quot;,pch=20,cex=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<hr />
 <p>¿Qué tal los primeros 5 años …</p>
 <pre class="r"><code># and the first 5 years...
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(System[1:6,],col=&quot;green&quot;,pch=20,cex=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<hr />
 <p>Tenga en cuenta que cada punto en el plano de fase tiene una
 ubicación y una * dirección * (piense en el plano de fase como un campo
 magnético) en cada punto del plano de fase, el sistema es atraído o
@@ -703,6 +708,7 @@ repelido de ir en ciertas direcciones.</p>
 plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1&quot;,ylab=&quot;species 2&quot;)
 points(System,col=&quot;green&quot;,pch=20,cex=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<hr />
 <p>Bien, entonces la especie 1 está superando a la especie 2. ¡A medida
 que aumenta la abundancia de la especie 1, la abundancia de la especie 2
 disminuye y terminamos con solo la especie 1!</p>
@@ -733,6 +739,7 @@ doYear &lt;- function(prevyear){
 for(i in 1:(Nyears+1)){
   System[1+i,] &lt;- doYear(System[i,])
 }</code></pre>
+<hr />
 <p>Con estos nuevos parámetros, el espacio de fase se ve así (con
 jittering para indicar la concentración de puntos:</p>
 <pre class="r"><code># visualizar en el plano de fase
@@ -741,6 +748,7 @@ plot(1,1,pch=&quot;&quot;,ylim=c(0,K2*1.5),xlim=c(0,K1*1.5),xlab=&quot;species 1
 points(jitter(System[,1],500),jitter(System[,2],500),col=&quot;brown&quot;,pch=20,cex=0.3)
 abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<hr />
 <p>Puede ver que este sistema ha llegado a un equilibrio al final, justo
 por debajo de la capacidad de carga de la especie 1.</p>
 <p>Finalmente, consideremos múltiples puntos de partida y veamos cómo se
@@ -774,6 +782,7 @@ System3 &lt;- data.frame(n1 = rep(InitN1,(Nyears+1)),n2 = InitN2)
 for(i in 1:(Nyears+1)){
   System3[1+i,] &lt;- doYear(System3[i,])
 }</code></pre>
+<hr />
 <p>Ahora, el espacio de fase se ve así (con jittering para indicar la
 concentración de puntos:</p>
 <pre class="r"><code># visualizar en el plano de fase
@@ -786,8 +795,9 @@ points(jitter(System3[,1],500),jitter(System3[,2],500),col=&quot;blue&quot;,pch=
 
 abline(h=K2,v=K1,col=&quot;gray&quot;,lwd=2,lty=2)</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p><strong>P </strong>: ¿Tiene este sistema de dos especies un
-equilibrio estable?</p>
+<p><strong>P</strong>: ¿Tiene este sistema de dos especies un equilibrio
+estable?</p>
+<hr />
 <div id="trabajando-en-el-plano-de-fase" class="section level3">
 <h3>¡Trabajando en el plano de fase!</h3>
 <p>Hay mucho que puede aprender sobre un sistema de dos especies que
@@ -847,11 +857,13 @@ phasearrows.draw(new)</code></pre>
 <pre class="r"><code>#
 ## END MODEL SPECIFICATION AND INITIALIZATION
 #######################################################################################</code></pre>
+<hr />
 <p>Tome cualquier punto de partida arbitrario. Ahora podemos rastrear la
 trayectoria que tomará el sistema en el espacio de fase.</p>
 <p>¡¡Intentalo!!</p>
 <p>Verá que hay algunos umbrales clave en el espacio de fase que debemos
 considerar. Por ejemplo, las flechas pueden invertir la dirección.</p>
+<hr />
 </div>
 <div id="isoclinas" class="section level3">
 <h3>Isoclinas!</h3>
@@ -908,6 +920,7 @@ phasearrows.draw(new)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=3)   # species 2</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<hr />
 <p>Siga las trayectorias desde cualquier punto en este espacio de fase.
 ¿Cuál es el resultado aquí?</p>
 <p><strong>P </strong>: ¿Existe un equilibrio en todo el sistema?
@@ -946,6 +959,7 @@ phasearrows.draw(new)
 abline(K1/Alpha,-(K1/Alpha)/K1,col=&quot;red&quot;,lwd=3)   # species 1
 abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=3)   # species 2</code></pre>
 <p><img src="LECTURE16_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<hr />
 <p>Siga las trayectorias desde cualquier punto en este espacio de fase.
 ¿Cuál es el resultado aquí?</p>
 <p>** P **: ¿Existe un equilibrio en todo el sistema?</p>
@@ -981,6 +995,7 @@ abline(K2,-K2/(K2/Beta),col=&quot;blue&quot;,lwd=2)   # species 2</code></pre>
 <p>** P **: ¿En qué parte de esta figura se “mueve” el sistema más
 rápido? (Analogía del campo magnético: atracción y repulsión más
 fuertes)</p>
+<hr />
 <p>Finalmente, considere este ejemplo:</p>
 <pre class="r"><code>########
 # And finally...
