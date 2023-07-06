@@ -14,7 +14,7 @@
 
 <title>Tarea_1_Historia_de_Vida</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -555,7 +555,7 @@ que los ejes esten bien identificados (Subir la grafica a Edmodo)</p>
 ##  8 Dl       1989    72
 ##  9 Dl       1990    74
 ## 10 Dl       1991    39
-## # … with 28 more rows</code></pre>
+## # ℹ 28 more rows</code></pre>
 <pre class="r"><code>Number_Ind %&gt;% 
   ggplot(aes(Year, N, color=Species)) +
   geom_point()+
@@ -630,13 +630,25 @@ lapponica</em> (Scythed)</p>
 
 gt(Life_Table)</code></pre>
 <div id="nnggssdjjh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#nnggssdjjh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nnggssdjjh thead, #nnggssdjjh tbody, #nnggssdjjh tfoot, #nnggssdjjh tr, #nnggssdjjh td, #nnggssdjjh th {
+  border-style: none;
+}
+
+#nnggssdjjh p {
+  margin: 0;
+  padding: 0;
 }
 
 #nnggssdjjh .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -657,18 +669,6 @@ gt(Life_Table)</code></pre>
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#nnggssdjjh .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #nnggssdjjh .gt_caption {
@@ -692,12 +692,24 @@ gt(Life_Table)</code></pre>
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#nnggssdjjh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #nnggssdjjh .gt_bottom_border {
@@ -771,6 +783,10 @@ gt(Life_Table)</code></pre>
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#nnggssdjjh .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #nnggssdjjh .gt_group_heading {
@@ -872,6 +888,10 @@ gt(Life_Table)</code></pre>
   border-top-width: 2px;
 }
 
+#nnggssdjjh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #nnggssdjjh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -921,6 +941,16 @@ gt(Life_Table)</code></pre>
   border-top-color: #D3D3D3;
 }
 
+#nnggssdjjh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #nnggssdjjh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -951,8 +981,8 @@ gt(Life_Table)</code></pre>
 #nnggssdjjh .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -1009,10 +1039,9 @@ gt(Life_Table)</code></pre>
 }
 
 #nnggssdjjh .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #nnggssdjjh .gt_asterisk {
@@ -1040,10 +1069,10 @@ gt(Life_Table)</code></pre>
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Treatment">Treatment</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Year_after_first_flowering">Year_after_first_flowering</th>

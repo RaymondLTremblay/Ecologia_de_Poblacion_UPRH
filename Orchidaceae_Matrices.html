@@ -15,7 +15,7 @@
 
 <title>Orchid Family Matrices</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -399,44 +399,46 @@ $(document).ready(function () {
 
 
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
-## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-## ✔ readr   2.1.3      ✔ forcats 0.5.2 
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Attaching core tidyverse packages ───────────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.1     
+## ── Conflicts ─────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <pre class="r"><code>library(Rcompadre)
 library(Rage)
 library(gt) # grammar of tables</code></pre>
 <pre class="r"><code>x &lt;- cdb_fetch(&quot;compadre&quot;)</code></pre>
-<pre><code>## This is COMPADRE version 6.22.5.0 (release date May_11_2022)
+<pre><code>## This is COMPADRE version 6.23.5.0 (release date May_06_2023)
 ## See user agreement at https://compadre-db.org/Help/UserAgreement
-## See how to cite at https://compadre-db.org/Help/HowToCite</code></pre>
+## See how to cite with `citation(Rcompadre)`</code></pre>
 <pre class="r"><code>x</code></pre>
-<pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 760 SPECIES and 8851 MATRICES.
+<pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 792 SPECIES and 8994 MATRICES.
 ## 
-## # A tibble: 8,851 × 59
-##    mat        MatrixID Speci…¹ Speci…² Commo…³ Kingdom Phylum Class Order Family
-##    &lt;list&gt;        &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
-##  1 &lt;CompdrMt&gt;   238259 Abies_… Abies … Balsam… Plantae Pinop… Pino… Pina… Pinac…
-##  2 &lt;CompdrMt&gt;   238260 Abies_… Abies … Balsam… Plantae Pinop… Pino… Pina… Pinac…
-##  3 &lt;CompdrMt&gt;   238261 Agave_… Agave … Caribb… Plantae Magno… Lili… Aspa… Aspar…
-##  4 &lt;CompdrMt&gt;   238262 Agave_… Agave … Caribb… Plantae Magno… Lili… Aspa… Aspar…
-##  5 &lt;CompdrMt&gt;   238263 Allium… Allium… &lt;NA&gt;    Plantae Magno… Lili… Aspa… Amary…
-##  6 &lt;CompdrMt&gt;   238265 Arauca… Arauca… &lt;NA&gt;    Plantae Pinop… Pino… Pina… Arauc…
-##  7 &lt;CompdrMt&gt;   238266 Arauca… Arauca… &lt;NA&gt;    Plantae Pinop… Pino… Pina… Arauc…
-##  8 &lt;CompdrMt&gt;   238271 Ascoph… Ascoph… &lt;NA&gt;    Chroma… Heter… Phae… Fuca… Fucac…
-##  9 &lt;CompdrMt&gt;   238272 Ascoph… Ascoph… &lt;NA&gt;    Chroma… Heter… Phae… Fuca… Fucac…
-## 10 &lt;CompdrMt&gt;   238273 Ascoph… Ascoph… &lt;NA&gt;    Chroma… Heter… Phae… Fuca… Fucac…
-## # … with 8,841 more rows, 49 more variables: Genus &lt;chr&gt;, Species &lt;chr&gt;,
-## #   Infraspecies &lt;chr&gt;, InfraspeciesType &lt;chr&gt;, OrganismType &lt;chr&gt;,
-## #   DicotMonoc &lt;chr&gt;, AngioGymno &lt;chr&gt;, Authors &lt;chr&gt;, Journal &lt;chr&gt;,
-## #   SourceType &lt;chr&gt;, OtherType &lt;chr&gt;, YearPublication &lt;chr&gt;, DOI_ISBN &lt;chr&gt;,
-## #   AdditionalSource &lt;chr&gt;, StudyDuration &lt;chr&gt;, StudyStart &lt;chr&gt;,
-## #   StudyEnd &lt;chr&gt;, ProjectionInterval &lt;chr&gt;, MatrixCriteriaSize &lt;chr&gt;,
-## #   MatrixCriteriaOntogeny &lt;chr&gt;, MatrixCriteriaAge &lt;chr&gt;, …</code></pre>
+## # A tibble: 8,994 × 59
+##    mat        MatrixID SpeciesAuthor   SpeciesAccepted CommonName Kingdom Phylum
+##    &lt;list&gt;        &lt;int&gt; &lt;chr&gt;           &lt;chr&gt;           &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt; 
+##  1 &lt;CompdrMt&gt;   238259 Abies_balsamea  Abies balsamea  Balsam Fir Plantae Pinop…
+##  2 &lt;CompdrMt&gt;   238260 Abies_balsamea  Abies balsamea  Balsam Fir Plantae Pinop…
+##  3 &lt;CompdrMt&gt;   238261 Agave_angustif… Agave vivipara  Caribbean… Plantae Magno…
+##  4 &lt;CompdrMt&gt;   238262 Agave_angustif… Agave vivipara  Caribbean… Plantae Magno…
+##  5 &lt;CompdrMt&gt;   238263 Allium_vineale  Allium vineale  &lt;NA&gt;       Plantae Magno…
+##  6 &lt;CompdrMt&gt;   238265 Araucaria_cunn… Araucaria cunn… &lt;NA&gt;       Plantae Pinop…
+##  7 &lt;CompdrMt&gt;   238266 Araucaria_cunn… Araucaria cunn… &lt;NA&gt;       Plantae Pinop…
+##  8 &lt;CompdrMt&gt;   238271 Ascophyllum_no… Ascophyllum no… &lt;NA&gt;       Chroma… Heter…
+##  9 &lt;CompdrMt&gt;   238272 Ascophyllum_no… Ascophyllum no… &lt;NA&gt;       Chroma… Heter…
+## 10 &lt;CompdrMt&gt;   238273 Ascophyllum_no… Ascophyllum no… &lt;NA&gt;       Chroma… Heter…
+## # ℹ 8,984 more rows
+## # ℹ 52 more variables: Class &lt;chr&gt;, Order &lt;chr&gt;, Family &lt;chr&gt;, Genus &lt;chr&gt;,
+## #   Species &lt;chr&gt;, Infraspecies &lt;chr&gt;, InfraspeciesType &lt;chr&gt;,
+## #   OrganismType &lt;chr&gt;, DicotMonoc &lt;chr&gt;, AngioGymno &lt;chr&gt;, Authors &lt;chr&gt;,
+## #   Journal &lt;chr&gt;, SourceType &lt;chr&gt;, OtherType &lt;chr&gt;, YearPublication &lt;chr&gt;,
+## #   DOI_ISBN &lt;chr&gt;, AdditionalSource &lt;chr&gt;, StudyDuration &lt;chr&gt;,
+## #   StudyStart &lt;chr&gt;, StudyEnd &lt;chr&gt;, ProjectionInterval &lt;chr&gt;, …</code></pre>
 <pre class="r"><code>names(x)</code></pre>
 <pre><code>##  [1] &quot;mat&quot;                    &quot;MatrixID&quot;               &quot;SpeciesAuthor&quot;         
 ##  [4] &quot;SpeciesAccepted&quot;        &quot;CommonName&quot;             &quot;Kingdom&quot;               
@@ -464,7 +466,7 @@ library(gt) # grammar of tables</code></pre>
 
 #Number of matrices
 nrow(ORCHIDS) </code></pre>
-<pre><code>## [1] 637</code></pre>
+<pre><code>## [1] 647</code></pre>
 <pre class="r"><code> #Subset to Lepanthes, published by Tremblay
  ORCHIDS &lt;- x %&gt;% 
   filter(Genus == &quot;Lepanthes&quot;)
@@ -479,13 +481,25 @@ nrow(ORCHIDS) </code></pre>
   arrange(Genus) |&gt; 
   gt()</code></pre>
 <div id="zdiyabqila" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#zdiyabqila table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zdiyabqila thead, #zdiyabqila tbody, #zdiyabqila tfoot, #zdiyabqila tr, #zdiyabqila td, #zdiyabqila th {
+  border-style: none;
+}
+
+#zdiyabqila p {
+  margin: 0;
+  padding: 0;
 }
 
 #zdiyabqila .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -506,18 +520,6 @@ nrow(ORCHIDS) </code></pre>
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#zdiyabqila .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #zdiyabqila .gt_caption {
@@ -541,12 +543,24 @@ nrow(ORCHIDS) </code></pre>
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#zdiyabqila .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #zdiyabqila .gt_bottom_border {
@@ -620,6 +634,10 @@ nrow(ORCHIDS) </code></pre>
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#zdiyabqila .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #zdiyabqila .gt_group_heading {
@@ -721,6 +739,10 @@ nrow(ORCHIDS) </code></pre>
   border-top-width: 2px;
 }
 
+#zdiyabqila .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #zdiyabqila .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -770,6 +792,16 @@ nrow(ORCHIDS) </code></pre>
   border-top-color: #D3D3D3;
 }
 
+#zdiyabqila .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #zdiyabqila .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -800,8 +832,8 @@ nrow(ORCHIDS) </code></pre>
 #zdiyabqila .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -858,10 +890,9 @@ nrow(ORCHIDS) </code></pre>
 }
 
 #zdiyabqila .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #zdiyabqila .gt_asterisk {
@@ -889,10 +920,10 @@ nrow(ORCHIDS) </code></pre>
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Genus">Genus</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
     </tr>
@@ -920,13 +951,25 @@ nrow(ORCHIDS) </code></pre>
   arrange(desc(YearPublication)) |&gt; 
   gt()</code></pre>
 <div id="sowapfifer" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#sowapfifer table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sowapfifer thead, #sowapfifer tbody, #sowapfifer tfoot, #sowapfifer tr, #sowapfifer td, #sowapfifer th {
+  border-style: none;
+}
+
+#sowapfifer p {
+  margin: 0;
+  padding: 0;
 }
 
 #sowapfifer .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -947,18 +990,6 @@ nrow(ORCHIDS) </code></pre>
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#sowapfifer .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #sowapfifer .gt_caption {
@@ -982,12 +1013,24 @@ nrow(ORCHIDS) </code></pre>
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#sowapfifer .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #sowapfifer .gt_bottom_border {
@@ -1061,6 +1104,10 @@ nrow(ORCHIDS) </code></pre>
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#sowapfifer .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #sowapfifer .gt_group_heading {
@@ -1162,6 +1209,10 @@ nrow(ORCHIDS) </code></pre>
   border-top-width: 2px;
 }
 
+#sowapfifer .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #sowapfifer .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -1211,6 +1262,16 @@ nrow(ORCHIDS) </code></pre>
   border-top-color: #D3D3D3;
 }
 
+#sowapfifer .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #sowapfifer .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -1241,8 +1302,8 @@ nrow(ORCHIDS) </code></pre>
 #sowapfifer .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -1299,10 +1360,9 @@ nrow(ORCHIDS) </code></pre>
 }
 
 #sowapfifer .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #sowapfifer .gt_asterisk {
@@ -1330,10 +1390,10 @@ nrow(ORCHIDS) </code></pre>
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Authors">Authors</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Journal">Journal</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="YearPublication">YearPublication</th>
@@ -1411,7 +1471,7 @@ As</code></pre>
 <pre><code>## A COM(P)ADRE database (&#39;CompadreDB&#39;) object with 0 SPECIES and 0 MATRICES.
 ## 
 ## # A tibble: 0 × 59
-## # … with 59 variables: mat &lt;list&gt;, MatrixID &lt;int&gt;, SpeciesAuthor &lt;chr&gt;,
+## # ℹ 59 variables: mat &lt;list&gt;, MatrixID &lt;int&gt;, SpeciesAuthor &lt;chr&gt;,
 ## #   SpeciesAccepted &lt;chr&gt;, CommonName &lt;chr&gt;, Kingdom &lt;chr&gt;, Phylum &lt;chr&gt;,
 ## #   Class &lt;chr&gt;, Order &lt;chr&gt;, Family &lt;chr&gt;, Genus &lt;chr&gt;, Species &lt;chr&gt;,
 ## #   Infraspecies &lt;chr&gt;, InfraspeciesType &lt;chr&gt;, OrganismType &lt;chr&gt;,
