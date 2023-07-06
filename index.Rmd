@@ -21,15 +21,15 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 **Email**: raymondtremblay_at_upr.edu
  
 ### Horario de la Clase
-**Lectures**: L, W a las 11:00am hasta las 12:20 pm (120 mins) en el Vagon de Biología.     
+**Lectures**: L, W a las 11:00am hasta las 12:20 pm (120 mins) en el Vagón de Biología.     
 
 
 **Hora de Consulta**:   
 
 - Tremblay: 
-    - Lunes 8:30 - 10:30
-    - Martes 8:30 - 10:00
-    - Miercoles  9:00 - 10:00
+    - L & W 9:00 - 10:30
+    - L & W 1:00 - 4:30
+    - J 1:00 - 2:00   
  
   
 
