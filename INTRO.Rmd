@@ -36,7 +36,8 @@ Las habilidades con software especializado y programación de computadoras son c
 
 Ver el [links page](Links.html) para obtener algunas referencias útiles (publicaré más enlaces en breve, ¡incluidos algunos tutoriales de R!).
 
-##Actividades en clase
+## Actividades en clase
+
 Este semestre proporcionaré materiales de conferencias, videos y lecturas antes de nuestras reuniones de clase. La mayoría de los períodos de clase se dedicarán a debates y ejercicios prácticos de modelado (mini laboratorios) para que todos tengan la oportunidad de aplicar los conceptos de ecología de poblaciones de los que hablamos en la conferencia. Muchos períodos de clase también incluirán preguntas breves (preguntas de discusión, opción múltiple, etc.), principalmente para darme retro alimentación sobre qué conceptos podrían necesitar más refuerzo. Sus respuestas a estas preguntas también ayudarán a informar su puntaje de participación.
 
 ## Actividades fuera de clase
@@ -68,7 +69,7 @@ La gran mayoria de la información de este website proviene de un curso preparad
 
 ## IMPORTANT NOTE:
 
-The majority of the information on this website is a translation of a site develelopped and organizaed by Dr. Kevin Shoemaker [https://github.com/kevintshoemaker/NRES-470](https://github.com/kevintshoemaker/NRES-470). Dr. Shoemaker generously agreed that I translate his website and add perosnal touch as needed for students studying Population Ecology with examples that would be relevant to the Tropics and the Caribbean.  
+The majority of the information on this website is a translation of a site develelopped and organizaed by Dr. Kevin Shoemaker [https://github.com/kevintshoemaker/NRES-470](https://github.com/kevintshoemaker/NRES-470). Dr. Shoemaker generously agreed that I translate his website and add personal touch as needed for students studying Population Ecology with examples that would be relevant to the Tropics and the Caribbean.  
 
 
 
