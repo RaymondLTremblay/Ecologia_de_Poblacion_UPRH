@@ -1,7 +1,7 @@
 ---
-title: "Calendario, Agosto 2021"
+title: "Calendario"
 author: "BIOL4558"
-date: "Agosto 2021"
+date: "Agosto 2023"
 output:
   html_document: 
     theme: spacelab
@@ -16,7 +16,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ¡Compruebe las actualizaciones con frecuencia!
 
-NOTA: en 2021 estamos en línea, los materiales del curso están disponibles para que trabaje a su propio ritmo, y debe asistir a todas las 'conferencias' (lunes o miércoles). Por lo tanto, seguiremos principalmente el programa que se enumera a continuación, pero los elementos etiquetados como 'CONFERENCIA' están disponibles en línea (de forma asincrónica). ¡Espero que esto tenga sentido!
 
 
 ```{r include=FALSE}
