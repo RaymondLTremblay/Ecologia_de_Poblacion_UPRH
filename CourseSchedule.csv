@@ -1,48 +1,48 @@
-Semanas,Dates,Topicos,Lecturas
-Week 1,8/9/21,CONFERENCIA: Introduccion al curso; Intro to Systems Thinking,
-,8/11/21,CONFERENCIA: Intro a la Ecologia de Poblaciones; Crecimiento exponencial,Gotelli Chapter 1
-,,"Hands_on_1: Introduccion a modelar en Ecol. Poblacion  con Excel, InsightMaker y R",Gotelli Chapter 1
-Week 2,8/16/21,CONFERENCIA: Malthus y el crecimiento poblacional,
-,8/18/21,CONFERENCIA: Crecimiento denso-dependiente,Gotelli Chapter 2
-,,Hands_on_1 (cont'd),
-Week 3,8/23/21,CONFERENCIA: Crecimiento denso-dependiente,Gotelli Chapter 2
-,8/25/21,CONFERENCIA: Paloma viajera/El Efecto Allee,
-,,Hands_on_2: Crecimiento denso-dependiente en InsightMaker; rendimiento maximo sostenible (maximum sustainable yield (MSY)) y mas,
-Week 4,8/30/21,CONFERENCIA: Poblaciones estructuradas por edad,
-,9/1/21,CONFERENCIA: Modelos matriciales de poblacion,Gotelli Chapter 3
-,,Hand_on_3: Poblaciones estructuradas por edad in Excel and InsightMaker,
-Week 5,9/6/21,Labor Day,
-,9/8/21,CONFERENCIA: Modelos matriciales de poblacion,Gotelli Chapter 3
-,,Trabajar en propuestas de PVA,
-Week 6,9/13/21,CONFERENCIA: Modelos matriciales de poblacion,Gotelli Chapter 3
-,9/15/21,CONFERENCIA: Estocasticidad e incertidumbre,Quiz: [Regan 2002](Regan_2002.pdf)
-,,Hands_On_4: Modelos matriciales de poblacion en R and InsightMaker,
-Week 7,9/20/21,CONFERENCIA: Estocasticidad e incertidumbre,
-,9/22/21,"Articulo: Heppell, 1998: Coates el al.  ",[Heppell 1998](heppell1.pdf)
-,,Propuestas PVA (propuestas sometida),
-Week 8,9/27/21,MIDTERM #1,
-,9/29/21,CONFERENCIA: Estocasticidad e incertidumbre,
-,,Trabajar en proyectos de PVA grupales (reuniones de propuestas),
-Week 9,10/4/21,CONFERENCIA: Paradigma de pequena poblacion,Quiz: [Caughley 1994](caughley1.pdf) 
-,10/6/21,Articulo: Amazona vittata,[J Thompson 2004](Amazona Vittata.pdf)
-,,Hands_on_5: Estocasticidad e incertidumbre,
-Week 10,10/11/21,Colombus Day: ,
-,10/13/21,"CONFERENCIA: Declining population paradigm, PVA!",Quiz_Bono: [Beissinger and Westphal 1998](beissinger1.pdf)
-,,Proyectos finales (modelos PVA que vencen la proxima semana),
-Week 11,10/18/21,CONFERENCIA: Metapopulacion,Gotelli Chapter 4
-,10/20/21,CONFERENCIA: Dinamica fuente-sumidero,Quiz_Bono: [Griffin et al](griffin1.pdf)
-,,Hands_on_6: Modelado de metapoblaciones en InsightMaker  (PVA models due),
-Week 12,10/25/21,CONFERENCIA: Estimacion de parametros,
-,10/27/21,Articulo: Tremblay et al. ,Gotelli Chapter 5; Do orchids behave as metapopulations?
-,,,
-Week 13,11/1/21,CONFERENCIA: MIDTERM #2,
-,11/3/21,Hands_on: PEER REVIEW of Project,
-,,,
-Week 14,11/8/21,CONFERENCIA: Interacciones de especies: competencia,
-,11/10/21,CONFERENCIA: Species interactions: predator-prey (final project: complete drafts Interacciones de especies: depredador-presa (proyecto final: anteproyecto completo),Gotelli Chapter 6
-,,,
-Week 15,11/15/21,Hands_on: STUDENT PRESENTATIONS,
-,11/17/21,Hands_on: STUDENT PRESENTATIONS,
-,,,
-Week 16,11/22/21,Hands_on: STUDENT PRESENTATIONS,
-,11/24/21,FINAL PAPERS DUE (last day of finals),
+Semanas,Dates,Week Day,Topicos,Lecturas
+Week 1,8/14/23,L,CONFERENCIA: Introduccion al curso; Intro to Systems Thinking,
+,8/16/23,W,CONFERENCIA: Intro a la Ecologia de Poblaciones; Crecimiento exponencial,Gotelli Chapter 1
+,,,"Hands_on_1: Introduccion a modelar en Ecol. Poblacion  con Excel, InsightMaker y R",Gotelli Chapter 1
+Week 2,8/21/23,L,CONFERENCIA: Malthus y el crecimiento poblacional,
+,8/23/23,W,CONFERENCIA: Crecimiento denso-dependiente,Gotelli Chapter 2
+,,,Hands_on_1 (cont'd),
+Week 3,8/28/23,L,CONFERENCIA: Crecimiento denso-dependiente,Gotelli Chapter 2
+,8/30/23,W,CONFERENCIA: Paloma viajera/El Efecto Allee,
+,,,Hands_on_2: Crecimiento denso-dependiente en InsightMaker; rendimiento maximo sostenible (maximum sustainable yield (MSY)) y mas,
+Week 4,9/4/23,L,Labor Day,
+,9/4/23,W,"CONFERENCIA: Modelos matriciales de poblacion, ",
+,,,Hand_on_3: Poblaciones estructuradas por edad in Excel and InsightMaker,
+Week 5,9/11/23,L,CONFERENCIA: Poblaciones estructuradas por edad,
+,9/13/23,W,CONFERENCIA: Modelos matriciales de poblacion,Gotelli Chapter 3
+,,,Trabajar en propuestas de PVA,
+Week 6,9/18/23,L,CONFERENCIA: Modelos matriciales de poblacion,Gotelli Chapter 3
+,9/20/23,W,CONFERENCIA: Estocasticidad e incertidumbre,Quiz: [Regan 2002](Regan_2002.pdf)
+,,,Hands_On_4: Modelos matriciales de poblacion en R and InsightMaker,
+Week 7,9/25/23,L,CONFERENCIA: Estocasticidad e incertidumbre,
+,9/27/23,W,"Articulo: Heppell, 1998: Coates el al.  ",[Heppell 1998](heppell1.pdf)
+,,,Propuestas PVA (propuestas sometida),
+Week 8,10/2/23,L,MIDTERM #1,
+,10/4/23,W,CONFERENCIA: Estocasticidad e incertidumbre,
+,,,Trabajar en proyectos de PVA grupales (reuniones de propuestas),
+Week 9,10/9/23,L,Colombus Day: ,
+,10/11/23,W,CONFERENCIA: Paradigma de pequena poblacion,
+,,,Hands_on_5: Estocasticidad e incertidumbre,
+Week 10,10/16/20213,L,Quiz: [Caughley 1994](caughley1.pdf) ,Articulo: Amazona vittata
+,10/18/23,W,"CONFERENCIA: Declining population paradigm, PVA!",Quiz_Bono: [Beissinger and Westphal 1998](beissinger1.pdf)[J Thompson 2004](Amazona Vittata.pdf)
+,,,Proyectos finales (modelos PVA que vencen la proxima semana),
+Week 11,10/23/23,L,CONFERENCIA: Metapopulacion,Gotelli Chapter 4
+,10/25/23,W,CONFERENCIA: Dinamica fuente-sumidero,Quiz_Bono: [Griffin et al](griffin1.pdf)
+,,,Hands_on_6: Modelado de metapoblaciones en InsightMaker  (PVA models due),
+Week 12,10/30/23,L,CONFERENCIA: Estimacion de parametros,
+,11/1/23,W,Articulo: Tremblay et al. ,Gotelli Chapter 5; Do orchids behave as metapopulations?
+,,,,
+Week 13,11/6/23,L,CONFERENCIA: MIDTERM #2,
+,11/8/23,W,Hands_on: PEER REVIEW of Project,
+,,,,
+Week 14,11/813/2023,L,Hands_on: STUDENT PRESENTATIONS,
+,11/15/23,W,Hands_on: STUDENT PRESENTATIONS,
+,,,,
+Week 15,11/20/23,L,Hands_on: STUDENT PRESENTATIONS,
+,11/22/23,W,FINAL PAPERS DUE (last day of finals),
+,,,,
+,,,,
+,,,,
