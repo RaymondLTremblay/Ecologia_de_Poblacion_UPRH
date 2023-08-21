@@ -627,25 +627,12 @@ SI-ENTONCES. En lenguaje sencillo: <em>SI alguna condición es verdadera,
 ENTONCES haz algo. DE LO CONTRARIO, si alguna otra condición es
 verdadera, ENTONCES haga otra cosa. ELSE si ninguna de las condiciones
 anteriores es verdadera, ENTONCES haga otra cosa.</em></p>
-<p><span style="color: blue;">- Conditional statements are also known as
-IF-THEN statements. In plain English: <em>IF some condition is true,
-THEN do something. ELSE if some other condition is true, THEN do
-something else. ELSE if none of the previous conditions are true, THEN
-do something else.</em></span></p>
 <p>En el ejercicio de hoy en clase, implementaremos la siguiente
 declaración condicional (la “condición de hambruna”): <em>SI la
 población humana está por debajo del límite de población, ENTONCES la
 tasa de mortalidad anual es 0.01. ELSE si la población excede el límite
 de población, surge una hambruna y la tasa de mortalidad salta a
 0,99</em></p>
-<p><span style="color: blue;">- In today’s in-class exercise, we will
-implement the following conditional statement (the <strong>famine
-condition</strong>): <em>IF human population is below the population
-limit, THEN the annual death rate is 0.01. ELSE if the population
-exceeds the population limit, a famine arises and the mortality rate
-jumps to 0.99</em></span></p>
-<p>Para implementar esto en InsightMaker, necesitamos usar la siguiente
-<strong>sintaxis</strong>:</p>
 <p>To implement this in InsightMaker, we need to use the following
 <strong>syntax</strong>:</p>
 <pre><code>If [Humans]&lt;[Limit] Then
@@ -654,100 +641,49 @@ Else
   0.99
 End If</code></pre>
 <ol style="list-style-type: decimal">
-<li>Elabore un modelo básico de crecimiento exponencial para una nueva
-[población] llamada <em>Humanos</em> (o simplemente clone y modifique un
-modelo básico de crecimiento exponencial con tasa de natalidad y
-mortalidad). Este [Stock] debe tener dos [Flows], uno [Flujo de entrada]
-llamado <em>Nacimientos</em> y uno [Flujo de salida] llamado
+<li><p>Elabore un modelo básico de crecimiento exponencial para una
+nueva [población] llamada <em>Humanos</em> (o simplemente clone y
+modifique un modelo básico de crecimiento exponencial con tasa de
+natalidad y mortalidad). Este [Stock] debe tener dos [Flows], uno [Flujo
+de entrada] llamado <em>Nacimientos</em> y uno [Flujo de salida] llamado
 <em>Muertes</em>. Tanto <em>Nacimientos</em> como <em>Muertes</em> deben
 definirse como el producto de <em>Humanos</em> y las constantes de tasa
 per cápita, respectivamente llamadas <em>Tasa de natalidad</em> y
 <em>Tasa de mortalidad</em> (cada una definida en el lienzo como
 [Variables]). Este modelo es idéntico al que hiciste en el laboratorio
-la semana pasada.</li>
-</ol>
-<p><span style="color: blue;">- 1. Put together a basic
-exponential-growth model for a new [Stock] named <em>Humans</em> (or
-just clone and modify a basic exponential growth model with birth and
-death rate). This [Stock] should have two [Flows], one [Flow In] named
-<em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both
-<em>Births</em> and <em>Deaths</em> should be defined as the product of
-<em>Humans</em> and per-capita rate constants, respectively called
-<em>Birth rate</em> and <em>Death rate</em> (each defined on the canvas
-as [Variables]). This model is identical to the one you made in lab last
-week.</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Inicialice la población de <em>Humanos</em> en 1000. Establezca la
-<em>Tasa de natalidad</em> en 0.1 (humanos producidos por humano por
+la semana pasada.</p></li>
+<li><p>Inicialice la población de <em>Humanos</em> en 1000. Establezca
+la <em>Tasa de natalidad</em> en 0.1 (humanos producidos por humano por
 año). Establezca la <em>Tasa de muerte</em> en 0.01 (humanos perdidos
 por humano por año). Cambie la configuración para que la simulación se
-ejecute durante 100 años.</li>
-</ol>
-<p><span style="color: blue;">- 2. Initialize the population of
-<em>Humans</em> to 1000. Set the <em>Birth rate</em> to 0.1 (humans
-produced per human per year). Set the <em>Death rate</em> to 0.01
-(humans lost per human per year). Change the settings so that the
-simulation runs for 100 years.</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Ejecute este modelo, asegúrese de que se comporte como lo esperaría
-(¡produciendo un crecimiento exponencial!). ¿Cuántos humanos hay después
-de 100 años?</li>
-</ol>
-<p><span style="color: blue;">- 3. Run this model, make sure it behaves
-like you would expect it to (yielding exponential growth!). How many
-humans are there after 100 years?</span></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Ahora cree un nuevo [Stock] llamado <em>Limit </em>, que represente
-el límite de población para <em>Humanos</em>. Esto podría, por ejemplo,
-representar el <em>número máximo de seres humanos que podrían mantenerse
-indefinidamente si toda la tierra cultivable se cultivara con el cultivo
-más rico en energía posible</em>. Inicialice el “Límite” a medio
-millón.</li>
-</ol>
-<p><span style="color: blue;">- 4. Now make a new [Stock] called
-<strong>Limit</strong>, representing the population limit for Humans.
-This could, for instance, represent the maximum number of humans that
-could be supported indefinitely if all arable land were cultivated with
-the most energy-rich crop possible. Initialize the
-<strong>Limit</strong> to half a million.</span></p>
-<ol start="5" style="list-style-type: decimal">
-<li>En preparación para implementar la condición de “hambruna” (la tasa
-de mortalidad aumenta al 99% si <em>Humanos</em> excede el
+ejecute durante 100 años.</p></li>
+<li><p>Ejecute este modelo, asegúrese de que se comporte como lo
+esperaría (¡produciendo un crecimiento exponencial!). ¿Cuántos humanos
+hay después de 100 años?</p></li>
+<li><p>Ahora cree un nuevo [Stock] llamado <em>Limit </em>, que
+represente el límite de población para <em>Humanos</em>. Esto podría,
+por ejemplo, representar el <em>número máximo de seres humanos que
+podrían mantenerse indefinidamente si toda la tierra cultivable se
+cultivara con el cultivo más rico en energía posible</em>. Inicialice el
+“Límite” a medio millón.</p></li>
+<li><p>En preparación para implementar la condición de “hambruna” (la
+tasa de mortalidad aumenta al 99% si <em>Humanos</em> excede el
 <em>Límite</em>), cree nuevos **Links* desde <em>Humanos</em> a <em>Tasa
 de mortalidad</em> y desde <em>Límite</em> a <em>Índice de
 mortalidad</em>. Su lienzo debe verse como la imagen a
-continuación:</li>
-</ol>
-<p><span style="color: blue;">- 5. In preparation for implementing the
-<strong>famine</strong> condition (death rate increases to 99% if
-<em>Humans</em> exceeds <em>Limit</em>), create new
-<strong>Links</strong> from <strong>Humans</strong> to <strong>Death
-rate</strong> and from <strong>Limit</strong> to <em>Death rate</em>.
-Your canvas should look something like the image below: </span></p>
-<p><img src="figures/IM4.jpg" /></p>
-<ol start="6" style="list-style-type: decimal">
-<li>¡Ahora podemos implementar la “condición de hambruna”! Abra la
+continuación:</p></li>
+<li><p>¡Ahora podemos implementar la “condición de hambruna”! Abra la
 ventana del editor de ecuaciones para * Tasa de mortalidad * (haga clic
-en el signo igual) y escriba lo siguiente:</li>
+en el signo igual) y escriba lo siguiente:</p></li>
+<li><p>Ejecute el modelo y describa lo que sucede.</p></li>
 </ol>
-<p><span style="color: blue;">- 6. Now we can implement the
-<strong>famine condition</strong>! Open the equation editor window for
-<em>Death rate</em> (click on the equals sign) and type the
-following:</span></p>
-<pre><code>If [Humans]&lt;[Limit] Then
-  0.01
-Else
-  0.99
-End If</code></pre>
+<p><img src="figures/IM4.jpg" /></p>
 <p>En realidad, no es necesario que escriba todo esto, simplemente haga
 clic en “Funciones de programación” en el editor de ecuaciones y
-seleccione “Si-Entonces-Else” de las opciones. Siempre es mejor usar los
+seleccione “Si-Then-Else If” de las opciones. Siempre es mejor usar los
 generadores de sintaxis integrados, ya que eso evita que cometa errores
 de sintaxis no intencionales (¡que pueden ser difíciles de
 eliminar!).</p>
-<ol start="7" style="list-style-type: decimal">
-<li>Ejecute el modelo y describa lo que sucede.</li>
-</ol>
 <p><strong>Pregunta de debate</strong> ¿esta población <em>está
 regulada</em>?</p>
 <p><strong>RETO:</strong> Malthus dijo que “La población, cuando no se
@@ -777,6 +713,58 @@ sostenible: ¡la tierra tiene límites! ¿Te suena familiar este argumento?
 Curiosamente, el modelo Insightmaker “World3” que algunos de ustedes
 pueden haber sacado en nuestra primera semana de clase es la base de las
 terribles predicciones del libro “Limits to Growth”.</p>
+<hr />
+<p><span style="color: blue;">- Conditional statements are also known as
+IF-THEN statements. In plain English: <em>IF some condition is true,
+THEN do something. ELSE if some other condition is true, THEN do
+something else. ELSE if none of the previous conditions are true, THEN
+do something else.</em></span></p>
+<p><span style="color: blue;">- In today’s in-class exercise, we will
+implement the following conditional statement (the <strong>famine
+condition</strong>): <em>IF human population is below the population
+limit, THEN the annual death rate is 0.01. ELSE if the population
+exceeds the population limit, a famine arises and the mortality rate
+jumps to 0.99</em></span></p>
+<p>A. <span style="color: blue;">- 1. Put together a basic
+exponential-growth model for a new [Stock] named <em>Humans</em> (or
+just clone and modify a basic exponential growth model with birth and
+death rate). This [Stock] should have two [Flows], one [Flow In] named
+<em>Births</em> and one [Flow Out] named <em>Deaths</em>. Both
+<em>Births</em> and <em>Deaths</em> should be defined as the product of
+<em>Humans</em> and per-capita rate constants, respectively called
+<em>Birth rate</em> and <em>Death rate</em> (each defined on the canvas
+as [Variables]). This model is identical to the one you made in lab last
+week.</span></p>
+<p>B. <span style="color: blue;">- 2. Initialize the population of
+<em>Humans</em> to 1000. Set the <em>Birth rate</em> to 0.1 (humans
+produced per human per year). Set the <em>Death rate</em> to 0.01
+(humans lost per human per year). Change the settings so that the
+simulation runs for 100 years.</span></p>
+<p>C. <span style="color: blue;">- 3. Run this model, make sure it
+behaves like you would expect it to (yielding exponential growth!). How
+many humans are there after 100 years?</span></p>
+<p>D. <span style="color: blue;">- 4. Now make a new [Stock] called
+<strong>Limit</strong>, representing the population limit for Humans.
+This could, for instance, represent the maximum number of humans that
+could be supported indefinitely if all arable land were cultivated with
+the most energy-rich crop possible. Initialize the
+<strong>Limit</strong> to half a million.</span></p>
+<p>E. <span style="color: blue;">- 5. In preparation for implementing
+the <strong>famine</strong> condition (death rate increases to 99% if
+<em>Humans</em> exceeds <em>Limit</em>), create new
+<strong>Links</strong> from <strong>Humans</strong> to <strong>Death
+rate</strong> and from <strong>Limit</strong> to <em>Death rate</em>.
+Your canvas should look something like the image below: </span></p>
+<p>F. <span style="color: blue;">- 6. Now we can implement the
+<strong>famine condition</strong>! Open the equation editor window for
+<em>Death rate</em> (click on the equals sign) and type the
+following:</span></p>
+<pre><code>If [Humans]&lt;[Limit] Then
+  0.01
+Else
+  0.99
+End If</code></pre>
+<hr />
 <p><a href="LECTURE4.html">–go to next lecture–</a></p>
 </div>
 

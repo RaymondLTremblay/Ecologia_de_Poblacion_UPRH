@@ -98,14 +98,10 @@ Aquí está el escenario que modelaremos: si la población excede un cierto lím
 
 Las declaraciones condicionales también se conocen como declaraciones SI-ENTONCES. En lenguaje sencillo: *SI alguna condición es verdadera, ENTONCES haz algo. DE LO CONTRARIO, si alguna otra condición es verdadera, ENTONCES haga otra cosa. ELSE si ninguna de las condiciones anteriores es verdadera, ENTONCES haga otra cosa.*
 
-`r colorize("- Conditional statements are also known as IF-THEN statements. In plain English: *IF some condition is true, THEN do something. ELSE if some other condition is true, THEN do something else. ELSE if none of the previous conditions are true, THEN do something else.*", "blue")`
 
 
 En el ejercicio de hoy en clase, implementaremos la siguiente declaración condicional (la "condición de hambruna"): *SI la población humana está por debajo del límite de población, ENTONCES la tasa de mortalidad anual es 0.01. ELSE si la población excede el límite de población, surge una hambruna y la tasa de mortalidad salta a 0,99*
 
-`r colorize("- In today's in-class exercise, we will implement the following conditional statement (the **famine condition**): *IF human population is below the population limit, THEN the annual death rate is 0.01. ELSE if the population exceeds the population limit, a famine arises and the mortality rate jumps to 0.99*", "blue")`
-
-Para implementar esto en InsightMaker, necesitamos usar la siguiente **sintaxis**:
 
 To implement this in InsightMaker, we need to use the following **syntax**:
 
@@ -119,43 +115,21 @@ End If
 
 1. Elabore un modelo básico de crecimiento exponencial para una nueva [población] llamada *Humanos* (o simplemente clone y modifique un modelo básico de crecimiento exponencial con tasa de natalidad y mortalidad). Este [Stock] debe tener dos [Flows], uno [Flujo de entrada] llamado *Nacimientos* y uno [Flujo de salida] llamado *Muertes*. Tanto *Nacimientos* como *Muertes* deben definirse como el producto de *Humanos* y las constantes de tasa per cápita, respectivamente llamadas *Tasa de natalidad* y *Tasa de mortalidad* (cada una definida en el lienzo como [Variables]). Este modelo es idéntico al que hiciste en el laboratorio la semana pasada.
 
-`r colorize("- 1. Put together a basic exponential-growth model for a new [Stock] named *Humans* (or just clone and modify a basic exponential growth model with birth and death rate). This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *Humans* and per-capita rate constants, respectively called *Birth rate* and *Death rate* (each defined on the canvas as [Variables]). This model is identical to the one you made in lab last week.", "blue")` 
-
-
 2. Inicialice la población de *Humanos* en 1000. Establezca la *Tasa de natalidad* en 0.1 (humanos producidos por humano por año). Establezca la *Tasa de muerte* en 0.01 (humanos perdidos por humano por año). Cambie la configuración para que la simulación se ejecute durante 100 años.
-
-
-`r colorize("- 2. Initialize the population of *Humans* to 1000. Set the *Birth rate* to 0.1 (humans produced per human per year). Set the *Death rate* to 0.01 (humans lost per human per year). Change the settings so that the simulation runs for 100 years.", "blue")`  
 
 3. Ejecute este modelo, asegúrese de que se comporte como lo esperaría (¡produciendo un crecimiento exponencial!). ¿Cuántos humanos hay después de 100 años?
 
-`r colorize("- 3. Run this model, make sure it behaves like you would expect it to (yielding exponential growth!). How many humans are there after 100 years?", "blue")`
-
 4. Ahora cree un nuevo [Stock] llamado *Limit *, que represente el límite de población para *Humanos*. Esto podría, por ejemplo, representar el *número máximo de seres humanos que podrían mantenerse indefinidamente si toda la tierra cultivable se cultivara con el cultivo más rico en energía posible*. Inicialice el "Límite" a medio millón.
-
-`r colorize("- 4. Now make a new [Stock] called **Limit**, representing the population limit for Humans. This could, for instance, represent the maximum number of humans that could be supported indefinitely if all arable land were cultivated with the most energy-rich crop possible. Initialize the **Limit** to half a million.", "blue")`
 
 5. En preparación para implementar la condición de "hambruna" (la tasa de mortalidad aumenta al 99% si *Humanos* excede el *Límite*), cree nuevos **Links* desde *Humanos* a *Tasa de mortalidad* y desde *Límite* a *Índice de mortalidad*. Su lienzo debe verse como la imagen a continuación:
 
-`r colorize("- 5. In preparation for implementing the **famine** condition (death rate increases to 99% if *Humans* exceeds *Limit*), create new **Links** from **Humans** to **Death rate** and from **Limit** to *Death rate*. Your canvas should look something like the image below: " , "blue")`
+6. ¡Ahora podemos implementar la "condición de hambruna"! Abra la ventana del editor de ecuaciones para * Tasa de mortalidad * (haga clic en el signo igual) y escriba lo siguiente:
+
+7. Ejecute el modelo y describa lo que sucede.  
 
 ![](figures/IM4.jpg)
 
-6. ¡Ahora podemos implementar la "condición de hambruna"! Abra la ventana del editor de ecuaciones para * Tasa de mortalidad * (haga clic en el signo igual) y escriba lo siguiente:
-
-`r colorize("- 6. Now we can implement the **famine condition**! Open the equation editor window for *Death rate* (click on the equals sign) and type the following:" , "blue")`
-
-```
-If [Humans]<[Limit] Then
-  0.01
-Else
-  0.99
-End If
-```
-
-En realidad, no es necesario que escriba todo esto, simplemente haga clic en "Funciones de programación" en el editor de ecuaciones y seleccione "Si-Entonces-Else" de las opciones. Siempre es mejor usar los generadores de sintaxis integrados, ya que eso evita que cometa errores de sintaxis no intencionales (¡que pueden ser difíciles de eliminar!).   
-
-7. Ejecute el modelo y describa lo que sucede.  
+En realidad, no es necesario que escriba todo esto, simplemente haga clic en "Funciones de programación" en el editor de ecuaciones y seleccione "Si-Then-Else If" de las opciones. Siempre es mejor usar los generadores de sintaxis integrados, ya que eso evita que cometa errores de sintaxis no intencionales (¡que pueden ser difíciles de eliminar!).  
 
 **Pregunta de debate** ¿esta población *está regulada*?  
 
@@ -167,7 +141,52 @@ En realidad, no es necesario que escriba todo esto, simplemente haga clic en "Fu
 
 Para diversión, aquí hay un [Video](https://www.youtube.com/watch?v=QAkW_i0bDpQ) made by [John Green](https://en.wikipedia.org/wiki/John_Green_(author)) sobre Malthus y el crecimiento poblacional!      
 
-... Otro video [video](https://www.youtube.com/watch?v=U7Z6h-U4CmI) sobre el influyente libro de 1972, "[Limits to Growth](https://www.amazon.com/Limits-Growth-Donella-H-Meadows/dp/193149858X)", lo que hizo el argumento de que el crecimiento no es sostenible: ¡la tierra tiene límites! ¿Te suena familiar este argumento? Curiosamente, el modelo Insightmaker "World3" que algunos de ustedes pueden haber sacado en nuestra primera semana de clase es la base de las terribles predicciones del libro "Limits to Growth".      
+... Otro video [video](https://www.youtube.com/watch?v=U7Z6h-U4CmI) sobre el influyente libro de 1972, "[Limits to Growth](https://www.amazon.com/Limits-Growth-Donella-H-Meadows/dp/193149858X)", lo que hizo el argumento de que el crecimiento no es sostenible: ¡la tierra tiene límites! ¿Te suena familiar este argumento? Curiosamente, el modelo Insightmaker "World3" que algunos de ustedes pueden haber sacado en nuestra primera semana de clase es la base de las terribles predicciones del libro "Limits to Growth".
+
+***
+
+`r colorize("- Conditional statements are also known as IF-THEN statements. In plain English: *IF some condition is true, THEN do something. ELSE if some other condition is true, THEN do something else. ELSE if none of the previous conditions are true, THEN do something else.*", "blue")`
+
+`r colorize("- In today's in-class exercise, we will implement the following conditional statement (the **famine condition**): *IF human population is below the population limit, THEN the annual death rate is 0.01. ELSE if the population exceeds the population limit, a famine arises and the mortality rate jumps to 0.99*", "blue")`
+
+
+ A. `r colorize("- 1. Put together a basic exponential-growth model for a new [Stock] named *Humans* (or just clone and modify a basic exponential growth model with birth and death rate). This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *Humans* and per-capita rate constants, respectively called *Birth rate* and *Death rate* (each defined on the canvas as [Variables]). This model is identical to the one you made in lab last week.", "blue")` 
+
+
+
+B. `r colorize("- 2. Initialize the population of *Humans* to 1000. Set the *Birth rate* to 0.1 (humans produced per human per year). Set the *Death rate* to 0.01 (humans lost per human per year). Change the settings so that the simulation runs for 100 years.", "blue")`  
+
+
+
+C. `r colorize("- 3. Run this model, make sure it behaves like you would expect it to (yielding exponential growth!). How many humans are there after 100 years?", "blue")`
+
+
+
+D. `r colorize("- 4. Now make a new [Stock] called **Limit**, representing the population limit for Humans. This could, for instance, represent the maximum number of humans that could be supported indefinitely if all arable land were cultivated with the most energy-rich crop possible. Initialize the **Limit** to half a million.", "blue")`
+
+
+
+E. `r colorize("- 5. In preparation for implementing the **famine** condition (death rate increases to 99% if *Humans* exceeds *Limit*), create new **Links** from **Humans** to **Death rate** and from **Limit** to *Death rate*. Your canvas should look something like the image below: " , "blue")`
+
+
+
+F. `r colorize("- 6. Now we can implement the **famine condition**! Open the equation editor window for *Death rate* (click on the equals sign) and type the following:" , "blue")`
+
+```
+If [Humans]<[Limit] Then
+  0.01
+Else
+  0.99
+End If
+```
+
+ 
+
+
+***
+
+
+      
 
 [--go to next lecture--](LECTURE4.html)   
 
