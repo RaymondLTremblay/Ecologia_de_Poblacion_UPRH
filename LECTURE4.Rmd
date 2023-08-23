@@ -118,6 +118,14 @@ legend("bottomleft",col=c("green","red"),lty=c(1,1),legend=c("per-capita birth r
 ```
 
 
+## Visualizando los cambios
+
+ Vea este website para ver los cambios en modelos de crecimiento logistico 
+ 
+ [Logistic model](http://virtualbiologylab.org/population-ecology/)
+
+
+
 ```{r message=TRUE, warning=TRUE}
 library(tidyverse)
 ```
@@ -166,6 +174,9 @@ EQUATIONS
 - [Per-capita birth rate] = [Maximum per-capita birth rate] - [Density dependence on fecundity] * [Turtles] 
 - [Per-capita death rate] = [Minimum per-capita death rate] - [Density dependence on mortality] * [Turtles] 
 ```
+***
+
+
 
 ### ¿Cómo podemos hacer esto en InsightMaker?
 
@@ -173,28 +184,27 @@ EQUATIONS
 1. Cargue un modelo básico de crecimiento exponencial. Cambie el nombre de [Stock] *Box Turtles* principal. Este [Stock] debe tener dos [Flujos], uno [Flujo de entrada] llamado *Nacimientos* y uno [Flujo de salida] llamado *Muertes*. Tanto *Nacimientos* como *Defunciones* deben definirse como el producto de *tortugas* y tasas per cápita, respectivamente llamadas *Nacimientos per cápita * y *Defunciones per cápita* (cada una definida en el lienzo como [Variables]). ¡Este modelo debería ser muy familiar!
 
 
-`r colorize("- 1. Load a basic exponential-growth model. Rename the main [Stock] *Box Turtles*. This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *turtles* and per-capita rates, respectively called *Births per capita* and *Deaths per capita* (each defined on the canvas as [Variables]). This model should be very familiar!!", "blue")` 
+
 
 2. Inicialice la población de *Tortugas* a 5 (muy por debajo de la capacidad de carga). 
 
-`r colorize(" 2. Initialize the population of *Turtles* to 5 (way below carrying capacity).","blue")`
+
  
 3. Haga cuatro nuevas [Variables] en el lienzo, para representar las cuatro constantes en nuestro modelo.
 
-`r colorize("3. Make four new [Variables] on the canvas, to represent the four constants in our model.", "blue")`   
+
 
 4. Establezca la *Tasa máxima de natalidad per cápita* en 0.8 (tortugas producidas por tortuga por año). Establezca la *Tasa mínima de mortalidad per cápita* en 0,3. Establezca la *Dependencia de la densidad de la fecundidad* en 0,001. Establezca la *Dependencia de la densidad de la mortalidad* en 0,0005.
 
-`r colorize("4. Set the *Maximum per-capita birth rate* to 0.8 (turtles produced per turtle per year). Set the *Minimum per-capita Death rate* to 0.3. Set the *Density dependence on fecundity* to 0.001.  Set the *Density dependence on mortality* to 0.0005.","blue")`  
+  
 
 5. Realice las conexiones adecuadas, como en la figura anterior, y use la ventana de ecuaciones para asegurarse de que las ecuaciones sean correctas.
 
-`r colorize("5. Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.","blue")`   
+ 
 
 
 6. Cambie la configuración para que la simulación se ejecute durante 100 años.
 
-`r colorize("6. Change the settings so that the simulation runs for 100 years.","blue")`  
 
 
  ¡Tu modelo debería verse así! (Si aún no tiene un modelo como este, clone [este modelo](https://insightmaker.com/insight/70353/Logistic-Growth-1#))
@@ -203,7 +213,10 @@ EQUATIONS
 ![](figures/IM5.jpg)
 
 
-7. Ejecute este modelo. ¿El modelo se comporta como cabría esperar?  
+7. Ejecute este modelo. ¿El modelo se comporta como cabría esperar? 
+
+***
+
 
 **Q:** ¿Qué sucede si el tamaño de la población comienza *en* la capacidad de carga? [Edmodo]  
 
@@ -219,6 +232,23 @@ $\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K}  \right )$
 Abra su modelo InsightMaker para un crecimiento logístico básico con un término $r_ {max}$ (flecha de dos puntas). O puede clonarlo desde [aquí](https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax). Debería verse algo como esto:
 
 ![](figures/IM6.jpg)
+
+
+`r colorize("- 1. Load a basic exponential-growth model. Rename the main [Stock] *Box Turtles*. This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *turtles* and per-capita rates, respectively called *Births per capita* and *Deaths per capita* (each defined on the canvas as [Variables]). This model should be very familiar!!", "blue")` 
+
+`r colorize(" 2. Initialize the population of *Turtles* to 5 (way below carrying capacity).","blue")`
+
+`r colorize("3. Make four new [Variables] on the canvas, to represent the four constants in our model.", "blue")`   
+
+`r colorize("4. Set the *Maximum per-capita birth rate* to 0.8 (turtles produced per turtle per year). Set the *Minimum per-capita Death rate* to 0.3. Set the *Density dependence on fecundity* to 0.001.  Set the *Density dependence on mortality* to 0.0005.","blue")`
+
+
+`r colorize("5. Make the appropriate connections, as in the figure above, and use the equation window to make sure the equations are correct.","blue")`  
+
+
+`r colorize("6. Change the settings so that the simulation runs for 100 years.","blue")`  
+
+
 
 
 Haga que el tamaño de su población inicial sea muy pequeño en comparación con la capacidad de carga.
@@ -238,6 +268,9 @@ Haga que el tamaño de su población inicial sea muy pequeño en comparación co
 ![](figures/Cyclura.jpg) 
 
 Foto del Nuevo Dia la siguiente [pagina](https://www.indicepr.com/noticias/2017/06/07/action/70906/upr-ayuda-en-la-restauracion-del-habitat-de-la-iguana-de-mona/)
+
+***
+
 
 Considerando la estructura los dos modelos anteriores, busca información sobre la Iguana de la Mona, *Cyclura stejnegeri* de fuentes como wikipedia y articulos revisados por pares, y construye modelos sencillo de crecimiento poblacional.  
 
@@ -373,10 +406,7 @@ ggplot(data.frame(x = c(-3.5, 3.5))) +
 ```
  
  
- See this website for visualizing change in time of a simple logistic model
- 
- 
- [Logistic model](http://virtualbiologylab.org/population-ecology/)
+
 
 
 [--go to next lecture--](LECTURE5.html)

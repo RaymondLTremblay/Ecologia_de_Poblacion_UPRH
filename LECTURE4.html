@@ -610,6 +610,13 @@ axis(4,at=seq(0,1,0.2))
 #mtext(&quot;d&quot;,4)
 legend(&quot;bottomleft&quot;,col=c(&quot;green&quot;,&quot;red&quot;),lty=c(1,1),legend=c(&quot;per-capita birth rate&quot;,&quot;per-capita mortality&quot;),bty=&quot;n&quot;)</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="visualizando-los-cambios" class="section level2">
+<h2>Visualizando los cambios</h2>
+<p>Vea este website para ver los cambios en modelos de crecimiento
+logistico</p>
+<p><a href="http://virtualbiologylab.org/population-ecology/">Logistic
+model</a></p>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <p><strong>Q</strong>: ¿Cuál es el punto de equilibrio en este sistema?
 Es decir, ¿cuál es la abundancia / densidad (distinta de cero) a la que
@@ -655,66 +662,35 @@ InsightMaker!</p>
 <pre><code>EQUATIONS
 - [Per-capita birth rate] = [Maximum per-capita birth rate] - [Density dependence on fecundity] * [Turtles] 
 - [Per-capita death rate] = [Minimum per-capita death rate] - [Density dependence on mortality] * [Turtles] </code></pre>
+<hr />
 <div id="cómo-podemos-hacer-esto-en-insightmaker"
 class="section level3">
 <h3>¿Cómo podemos hacer esto en InsightMaker?</h3>
 <ol style="list-style-type: decimal">
-<li>Cargue un modelo básico de crecimiento exponencial. Cambie el nombre
-de [Stock] <em>Box Turtles</em> principal. Este [Stock] debe tener dos
-[Flujos], uno [Flujo de entrada] llamado <em>Nacimientos</em> y uno
-[Flujo de salida] llamado <em>Muertes</em>. Tanto <em>Nacimientos</em>
-como <em>Defunciones</em> deben definirse como el producto de
-<em>tortugas</em> y tasas per cápita, respectivamente llamadas
-<em>Nacimientos per cápita </em> y <em>Defunciones per cápita</em> (cada
-una definida en el lienzo como [Variables]). ¡Este modelo debería ser
-muy familiar!</li>
-</ol>
-<p><span style="color: blue;">- 1. Load a basic exponential-growth
-model. Rename the main [Stock] <em>Box Turtles</em>. This [Stock] should
-have two [Flows], one [Flow In] named <em>Births</em> and one [Flow Out]
-named <em>Deaths</em>. Both <em>Births</em> and <em>Deaths</em> should
-be defined as the product of <em>turtles</em> and per-capita rates,
-respectively called <em>Births per capita</em> and <em>Deaths per
-capita</em> (each defined on the canvas as [Variables]). This model
-should be very familiar!!</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Inicialice la población de <em>Tortugas</em> a 5 (muy por debajo de
-la capacidad de carga).</li>
-</ol>
-<p><span style="color: blue;"> 2. Initialize the population of
-<em>Turtles</em> to 5 (way below carrying capacity).</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Haga cuatro nuevas [Variables] en el lienzo, para representar las
-cuatro constantes en nuestro modelo.</li>
-</ol>
-<p><span style="color: blue;">3. Make four new [Variables] on the
-canvas, to represent the four constants in our model.</span></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Establezca la <em>Tasa máxima de natalidad per cápita</em> en 0.8
+<li><p>Cargue un modelo básico de crecimiento exponencial. Cambie el
+nombre de [Stock] <em>Box Turtles</em> principal. Este [Stock] debe
+tener dos [Flujos], uno [Flujo de entrada] llamado <em>Nacimientos</em>
+y uno [Flujo de salida] llamado <em>Muertes</em>. Tanto
+<em>Nacimientos</em> como <em>Defunciones</em> deben definirse como el
+producto de <em>tortugas</em> y tasas per cápita, respectivamente
+llamadas <em>Nacimientos per cápita </em> y <em>Defunciones per
+cápita</em> (cada una definida en el lienzo como [Variables]). ¡Este
+modelo debería ser muy familiar!</p></li>
+<li><p>Inicialice la población de <em>Tortugas</em> a 5 (muy por debajo
+de la capacidad de carga).</p></li>
+<li><p>Haga cuatro nuevas [Variables] en el lienzo, para representar las
+cuatro constantes en nuestro modelo.</p></li>
+<li><p>Establezca la <em>Tasa máxima de natalidad per cápita</em> en 0.8
 (tortugas producidas por tortuga por año). Establezca la <em>Tasa mínima
 de mortalidad per cápita</em> en 0,3. Establezca la <em>Dependencia de
 la densidad de la fecundidad</em> en 0,001. Establezca la
-<em>Dependencia de la densidad de la mortalidad</em> en 0,0005.</li>
+<em>Dependencia de la densidad de la mortalidad</em> en 0,0005.</p></li>
+<li><p>Realice las conexiones adecuadas, como en la figura anterior, y
+use la ventana de ecuaciones para asegurarse de que las ecuaciones sean
+correctas.</p></li>
+<li><p>Cambie la configuración para que la simulación se ejecute durante
+100 años.</p></li>
 </ol>
-<p><span style="color: blue;">4. Set the <em>Maximum per-capita birth
-rate</em> to 0.8 (turtles produced per turtle per year). Set the
-<em>Minimum per-capita Death rate</em> to 0.3. Set the <em>Density
-dependence on fecundity</em> to 0.001. Set the <em>Density dependence on
-mortality</em> to 0.0005.</span></p>
-<ol start="5" style="list-style-type: decimal">
-<li>Realice las conexiones adecuadas, como en la figura anterior, y use
-la ventana de ecuaciones para asegurarse de que las ecuaciones sean
-correctas.</li>
-</ol>
-<p><span style="color: blue;">5. Make the appropriate connections, as in
-the figure above, and use the equation window to make sure the equations
-are correct.</span></p>
-<ol start="6" style="list-style-type: decimal">
-<li>Cambie la configuración para que la simulación se ejecute durante
-100 años.</li>
-</ol>
-<p><span style="color: blue;">6. Change the settings so that the
-simulation runs for 100 years.</span></p>
 <p>¡Tu modelo debería verse así! (Si aún no tiene un modelo como este,
 clone <a
 href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">este
@@ -724,6 +700,7 @@ modelo</a>)</p>
 <li>Ejecute este modelo. ¿El modelo se comporta como cabría
 esperar?</li>
 </ol>
+<hr />
 <p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza
 <em>en</em> la capacidad de carga? [Edmodo]</p>
 <p><strong>Q:</strong> ¿Qué sucede si el tamaño de la población comienza
@@ -743,6 +720,28 @@ puntas). O puede clonarlo desde <a
 href="https://insightmaker.com/insight/71146/Basic-logistic-growth-rmax">aquí</a>.
 Debería verse algo como esto:</p>
 <p><img src="figures/IM6.jpg" /></p>
+<p><span style="color: blue;">- 1. Load a basic exponential-growth
+model. Rename the main [Stock] <em>Box Turtles</em>. This [Stock] should
+have two [Flows], one [Flow In] named <em>Births</em> and one [Flow Out]
+named <em>Deaths</em>. Both <em>Births</em> and <em>Deaths</em> should
+be defined as the product of <em>turtles</em> and per-capita rates,
+respectively called <em>Births per capita</em> and <em>Deaths per
+capita</em> (each defined on the canvas as [Variables]). This model
+should be very familiar!!</span></p>
+<p><span style="color: blue;"> 2. Initialize the population of
+<em>Turtles</em> to 5 (way below carrying capacity).</span></p>
+<p><span style="color: blue;">3. Make four new [Variables] on the
+canvas, to represent the four constants in our model.</span></p>
+<p><span style="color: blue;">4. Set the <em>Maximum per-capita birth
+rate</em> to 0.8 (turtles produced per turtle per year). Set the
+<em>Minimum per-capita Death rate</em> to 0.3. Set the <em>Density
+dependence on fecundity</em> to 0.001. Set the <em>Density dependence on
+mortality</em> to 0.0005.</span></p>
+<p><span style="color: blue;">5. Make the appropriate connections, as in
+the figure above, and use the equation window to make sure the equations
+are correct.</span></p>
+<p><span style="color: blue;">6. Change the settings so that the
+simulation runs for 100 years.</span></p>
 <p>Haga que el tamaño de su población inicial sea muy pequeño en
 comparación con la capacidad de carga.</p>
 <p><strong>Q:</strong> ¿Qué sucede si <span
@@ -764,6 +763,7 @@ conservación?</p>
 <p><img src="figures/Cyclura.jpg" /></p>
 <p>Foto del Nuevo Dia la siguiente <a
 href="https://www.indicepr.com/noticias/2017/06/07/action/70906/upr-ayuda-en-la-restauracion-del-habitat-de-la-iguana-de-mona/">pagina</a></p>
+<hr />
 <p>Considerando la estructura los dos modelos anteriores, busca
 información sobre la Iguana de la Mona, <em>Cyclura stejnegeri</em> de
 fuentes como wikipedia y articulos revisados por pares, y construye
@@ -914,10 +914,6 @@ ggplot(data.frame(x = c(-3.5, 3.5))) +
   stat_function(fun = f) +
   ggtitle(&quot;Dampened Sine Wave&quot;)</code></pre>
 <p><img src="LECTURE4_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>See this website for visualizing change in time of a simple logistic
-model</p>
-<p><a href="http://virtualbiologylab.org/population-ecology/">Logistic
-model</a></p>
 <p><a href="LECTURE5.html">–go to next lecture–</a></p>
 </div>
 </div>
