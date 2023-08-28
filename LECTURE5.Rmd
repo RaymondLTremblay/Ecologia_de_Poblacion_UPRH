@@ -153,7 +153,7 @@ End If
 
 ***
 
-Ahora puede intentar responder las siguientes preguntas:
+### Ahora puede intentar responder las siguientes preguntas:
 
 
 **Q**: ¿Cuál es la capacidad de carga (K) de esta población?
