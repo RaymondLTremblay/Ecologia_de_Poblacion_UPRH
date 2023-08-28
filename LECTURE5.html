@@ -352,7 +352,7 @@ div.tocify {
       <a href="LECTURE4.html">Regulación de Poblaciones</a>
     </li>
     <li>
-      <a href="LECTURE5.html">Paloma Viajera</a>
+      <a href="LECTURE5.html">El efecto Allee</a>
     </li>
     <li>
       <a href="LECTURE6.html">Población estructurada por Edad</a>
@@ -575,27 +575,13 @@ class="math inline">\(d\)</span> dependen de la densidad del modelo.
 Debería verse algo como esto (o si aún no lo tiene, clónelo desde <a
 href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">aquí</a>):</li>
 </ol>
-<p><span style="color: blue;">1. In InsightMaker, load up the logistic
-model with vital rates – that is, where <span
-class="math inline">\(b\)</span> and <span
-class="math inline">\(d\)</span> are each modeled density-dependent. It
-should look something like this, or if you do not already have this,
-clone it from</span></p>
-<p><a
-href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">here</a>):</p>
-<p><img src="figures/IM5.jpg" /> <img
-src="figures/Paloma_Viajera.png" /></p>
+<p><img src="figures/Paloma_Viajera.png" /></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Ahora agregue una nueva constante ([Variable] en InsightMaker)
+<li><p>Ahora agregue una nueva constante ([Variable] en InsightMaker)
 llamada <em>Umbral de Allee </em>. Establezca esta constante en
-200.</li>
-</ol>
-<p><span style="color: blue;">2. Now add a new constant ([Variable] in
-InsightMaker) called <em>Allee threshold</em>. Set this constant equal
-to 200.</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>En cuanto a los demás parámetros, configúrelos de la siguiente
-manera:</li>
+200.</p></li>
+<li><p>En cuanto a los demás parámetros, configúrelos de la siguiente
+manera:</p></li>
 </ol>
 <ol style="list-style-type: lower-alpha">
 <li>Abundancia inicial: 201 (justo por encima del umbral de Allee)</li>
@@ -604,6 +590,37 @@ manera:</li>
 <li>Tasa de natalidad máxima: 0,8</li>
 <li>Mortalidad mínima: 0.3</li>
 </ol>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Ahora usemos una sentencia <em>Condicional (SI-ENTONCES-ELSE)
+</em> para especificar un efecto Allee. La población experimenta una
+tasa de crecimiento máxima en el umbral de Allee. Si la población está
+por encima del umbral de Allee, la población exhibe (estabilizando) una
+dependencia de densidad negativa. Si la población está por debajo del
+umbral de Allee, entonces la población experimenta una dependencia de
+densidad positiva, por lo que los individuos de poblaciones más pequeñas
+tienen una aptitud general <em>menor </em>.</p></li>
+<li><p>Para hacer esto, defina su <em>Nacimientos per cápita</em> usando
+la siguiente sintaxis:</p></li>
+<li><p>De manera similar, defina sus * Muertes per cápita * utilizando
+la siguiente sintaxis:</p></li>
+<li><p>Si nos estamos quedando sin tiempo en clase (¡lo cual
+probablemente lo estaremos!), Cargue el modelo (¡y clónelo!) Usando <a
+href="https://insightmaker.com/insight/71147/Allee-Effect-1#">este
+enlace</a>!</p></li>
+</ol>
+<hr />
+<p><a
+href="https://insightmaker.com/insight/70353/Logistic-Growth-1#">here</a>):</p>
+<p><img src="figures/IM5.jpg" /></p>
+<p><span style="color: blue;">1. In InsightMaker, load up the logistic
+model with vital rates – that is, where <span
+class="math inline">\(b\)</span> and <span
+class="math inline">\(d\)</span> are each modeled density-dependent. It
+should look something like this, or if you do not already have this,
+clone it from</span></p>
+<p><span style="color: blue;">2. Now add a new constant ([Variable] in
+InsightMaker) called <em>Allee threshold</em>. Set this constant equal
+to 200.</span></p>
 <p><span style="color: blue;">3. As for the other parameters, set them
 as follows:</span></p>
 <p><span style="color: blue;"> - Initial abundance: 201 (just above the
@@ -614,16 +631,6 @@ Allee threshold)</span><br />
 </span><br />
 <span style="color: blue;"> - Max birth rate: 0.8 </span><br />
 <span style="color: blue;"> - Min mortality: 0.3 </span></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Ahora usemos una sentencia <em>Condicional (SI-ENTONCES-ELSE) </em>
-para especificar un efecto Allee. La población experimenta una tasa de
-crecimiento máxima en el umbral de Allee. Si la población está por
-encima del umbral de Allee, la población exhibe (estabilizando) una
-dependencia de densidad negativa. Si la población está por debajo del
-umbral de Allee, entonces la población experimenta una dependencia de
-densidad positiva, por lo que los individuos de poblaciones más pequeñas
-tienen una aptitud general <em>menor </em>.</li>
-</ol>
 <p><span style="color: blue;">4. Now let’s use a <em>Conditional
 (IF-THEN-ELSE) statement</em> to specify an Allee effect. The population
 experiences maximum growth rate at the Allee threshold. If the
@@ -632,31 +639,16 @@ population is above the Allee threshold, the population exhibits
 the Allee threshold, then the population experiences positive density
 dependence- whereby individuals in smaller populations have
 <em>lower</em> overall fitness.</span></p>
-<p>Para hacer esto, defina su <em>Nacimientos per cápita</em> usando la
-siguiente sintaxis:</p>
-<p><span style="color: blue;">To do this, define your <em>Births per
+<p><span style="color: blue;">5. To do this, define your <em>Births per
 Capita</em> using the following syntax:.</span></p>
+<p><span style="color: blue;">6. Similarly, define your <em>Deaths per
+capita</em> using the following syntax:.</span></p>
 <pre><code>If [Pigeons]&lt;[Allee threshold] Then
   [Max fecundity]-[Density dependence on fecundity]*([Allee threshold]-[Pigeons])
 Else
   [Max fecundity]-[Density dependence on fecundity]*([Pigeons]-[Allee threshold])
 End If</code></pre>
-<p>De manera similar, defina sus * Muertes per cápita * utilizando la
-siguiente sintaxis:</p>
-<p><span style="color: blue;">Similarly, define your <em>Deaths per
-capita</em> using the following syntax:.</span></p>
-<pre><code>If [Pigeons]&lt;[Allee threshold] Then
-  [Min mortality]+[Density dependence on survival]*([Allee threshold]-[Pigeons])
-Else
-  [Min mortality]+[Density dependence on survival]*([Pigeons]-[Allee threshold])
-End If</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Si nos estamos quedando sin tiempo en clase (¡lo cual probablemente
-lo estaremos!), Cargue el modelo (¡y clónelo!) Usando <a
-href="https://insightmaker.com/insight/71147/Allee-Effect-1#">este
-enlace</a>!</li>
-</ol>
-<p><span style="color: blue;">5. If we are running out of time in class
+<p><span style="color: blue;">7. If we are running out of time in class
 (which we probably will be!), load the model (and clone it!) using <a
 href="https://insightmaker.com/insight/71147/Allee-Effect-1#">this
 link</a>!.</span></p>
@@ -664,19 +656,23 @@ link</a>!.</span></p>
 <p>Ahora puede intentar responder las siguientes preguntas:</p>
 <p><strong>Q</strong>: ¿Cuál es la capacidad de carga (K) de esta
 población?</p>
-<p><strong>Q</strong>: La capacidad de carga (K) representa un punto de
-equilibrio en este modelo. Trate de encontrar otro punto de equilibrio,
-es decir, un punto donde la población no crece ni declina.</p>
+<p><strong>Q</strong>: ¿La capacidad de carga (K) representa un punto de
+equilibrio en este modelo? - Trate de encontrar otro punto de
+equilibrio, es decir, un punto donde la población no crece ni
+declina.</p>
 <p><strong>Q</strong>:¿Es este equilibrio un <em>equilibrio estable
-</em> o un <em>equilibrio inestable </em>?</p>
+</em> o un <em>equilibrio inestable</em>?</p>
 <p><strong>Q</strong>: Traza las tasas de natalidad y mortalidad en
 función de la densidad en este modelo, ¿puede identificar los dos
 equilibrios?</p>
 <p><strong>Q:</strong> ¿Por qué los efectos Allee a menudo significan
 malas noticias para la conservación de la vida silvestre?</p>
 <p><strong>Q:</strong> Haz una pequeña busqueda de literatura para
-averiguar cual otra especie pudiese tener un efecto ALLEE y describe un
-3-4 lineas de lo que se conoce de esta especies y el efecto Allee.</p>
+averiguar cual otra especie pudiese tener un efecto ALLEE - Busca
+información sobre 2 especies en la literatura que tienen o
+potencialmente tienen un efecto ALLEE. - Escribe de 7-10 lineas con
+referencias sobre lo que encuentra - Los dos mejores trabajos serán
+añadido al website (Esta pagina)</p>
 <p>Para ver expandir su conocimiento <a
 href="http://www.audubon.org/magazine/may-june-2014/why-passenger-pigeon-went-extinct">the
 passenger pigeon and its possible “de-extinction”</a></p>

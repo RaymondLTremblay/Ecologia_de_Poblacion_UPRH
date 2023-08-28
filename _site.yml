@@ -27,7 +27,7 @@ navbar:
           text: "Regulación de Poblaciones"
         - 
           href: LECTURE5.html
-          text: "Paloma Viajera"
+          text: "El efecto Allee"
         - 
           href: LECTURE6.html
           text: "Población estructurada por Edad"
