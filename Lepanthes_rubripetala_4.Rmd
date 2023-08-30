@@ -50,9 +50,9 @@ A population of *Lepanthes rupestris*, those of *Lepanthes rubripetala* growth i
 
 ***
 
-## Lectura para Lunes
+## Articulo para guiar su aprendizaje
 
-Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este manuscrito. 
+ 
 
 [Tremblay, Raventos Ackerman](PDF/When stable-stage equilibrium is unlikely- integrating transient population dynsmics.pdf). Habrá un quiz de comprobación de lectura al principio de la clase.  
 
@@ -64,10 +64,10 @@ Deben leer el siguiente manuscrito para lunes, habrá prueba corta sobre este ma
 
 ```{r}
  R3=matrix(c(
-0.43, 	0,	    0,	 0.14,
-0.38,	0.84, 	0,	0, 
-0, 	    0,	    0.51,	0.15,	
-0,      0.14,    0.43, 0.84
+0.43, 	0,	  0,    0.14,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.14, 0.43, 0.84
 ), byrow=TRUE, ncol=4)
 
 Lrub1=R3
@@ -76,20 +76,59 @@ Lrub1
 ```
 
 
-## Two problems need to be evaluated before analysis 
+```{r}
+library(Rage)
+stages <- c("plantulas", "juveniles", "adulto_no_reproductivos", "adultos_reproductivos") 
+plot_life_cycle(Lrub1, stages=stages)
+```
 
- - **Ergodicity** (the condition that regardless of the initial stage
-structure, the asymptotic growth rate will be the same) 
+
+En general lo que uno es separar la matriz de transciones de la matriz de fecundidad.  Eso es para tener claro los procesos que ocurren en la población.   Sumando ambas matriz tenemos la matriz para evaluar la dinamica poblacional de esa población.  
+
+```{r}
+R3T=matrix(c(
+0.43, 	0,	  0,    0.00,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.14, 0.43, 0.84
+), byrow=TRUE, ncol=4)
+
+R3T
+
+
+R3F=matrix(c(
+0.0, 	0,	  0,    0.14,
+0.0,	0, 	0,	  0, 
+0, 	  0,	  0,	0,	
+0,    0, 0, 0
+), byrow=TRUE, ncol=4)
+
+R3F
+
+TF=R3T+R3F
+TF
+```
+***
+
+
+Here is the theoretical life cycle of the species
+ 
+![Theoretical life cycle](figures/Fig_theoretical_Life_cycle.png)
+
+***
+
+## Dos posible problemas se tiene que considerar antes de hacer los analisis  
+
+ - **Ergodicity**
+    - la condición que irrelevante cual es el la etapa inicial, el crecimiento poblacional asimptotico sera igual 
 
  - **Irreducibility**
-(the condition that the transitions from all stages to all other
-stages are possible), 
+    - la condición que las transiciones de todas las etapas a otra son posibles.  
 
-failure to meet both of these conditions which may severely impact matrix structure
-and analyses (Stott et al., 2010a).
+Si no cumple con esas condiciones los analisis pueden ser severamente impactado. (Stott et al., 2010a).
 
 
-You can test this with the following functions from "popdemo". 
+Pueden probar esas dos condiciones usando las funciones en "popdemo". 
 
 ```{r}
 isErgodic(Lrub1, digits=10, return.eigvec=FALSE)
@@ -101,9 +140,7 @@ isIrreducible(Lrub1)
  
  ***
  
- Here is the theoretical life cycle of the species
  
-![Theoretical life cycle](figures/Fig_theoretical_Life_cycle.png)
 
 ## Reality of the data collection
 
@@ -137,7 +174,7 @@ par(mar=c(5,4,1,1))
 This one is biased towards adults.
 
 ```{r}
-n0 <- c(0, 0, 2, 0)
+n0 <- c(10, 10, 20, 10)
 
 ```
 
@@ -199,16 +236,26 @@ Fig. 2a: Population-specific transient dynamics
 This figure is designed to be 3.5" by 3.5"
 (Check size of plot window using 'par(din)').
 
+
 Set margins:
+
+```{r}
 par(mar=c(10,4,1,1))
+```
+
+
+
 
 Create 2 population vectors.  One is adult-
 biased, and it amplifies.  One is juvenile-
 biased and it attenuates.
 
+```{r}
 n0.amp <- c(1000,1,1,1)
 
 n0.att <- c(1,1,1,1000)
+```
+
 
 Project these vectors using the project function.
 We are standardising the matrix using 'standard.A=T'
@@ -220,27 +267,41 @@ vector to sum to 1 using 'standard.vec=T'.
 These standardisations make it easier (and fairer)
 to compare between models with different population 
 sizes, and different long-term growth rates.
+
+```{r}
 pr2.1 <- project(Lrub1, vector=n0.amp, time=156, 
                  standard.A=T, standard.vec=T)
 pr2.2 <- project(Lrub1, vector=n0.att, time=156, 
                  standard.A=T, standard.vec=T)
+```
+
 
 Plot the amplification projection and label it
-plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
-text(52, pr2.1[51], "amplification", 
-     adj=c(1,-0.5), cex=0.8)
-maxamp(Lrub1, vector=n0.amp)
-reactivity(Lrub1,vector=n0.amp)
-inertia(Lrub1,vector=n0.amp)
 
+```{r}
+plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
+text(52, pr2.1[51], "attenuation", 
+     adj=c(1,-0.5), cex=0.8)
+maxamp(Lrub1 )
+reac(Lrub1,bound = "upper")
+inertia(Lrub1,bound = "lower")
+```
 Calculate the transient dynamics of the
 amplification projection
-reac <- reactivity(Lrub1, vector=n0.amp)
-maxamp <- maxamp(Lrub1, vector=n0.amp, return.t=T)
+
+
+```{r}
+reac <- reac(Lrub1, vector=n0.amp)
+maxamp <- maxamp(Lrub1,  return.t=T)
 upinertia <- inertia(Lrub1, vector=n0.amp)
+```
+
 
 Add points on the projection for amplification
 and label them
+
+```{r, eval=FALSE}
+par(mar=c(10,4,1,1))
 points(c(1,maxamp$t,31), c(reac,maxamp$maxamp,upinertia), 
        pch=3, col="red")
 text(1, reac, expression(bar(P)[1]), 
@@ -250,11 +311,11 @@ text(maxamp$t, maxamp$maxamp, expression(bar(P)[max]),
 text(31, upinertia, expression(bar(P)[infinity]), 
      adj=c(0.1,-0.5), col="red", cex=0.8)
 
-Add in the second projection using the
-'lines' command and label it
+#Add in the second projection using the
+#'lines' command and label it
 lines(0:50, pr2.2)
 text(52, pr2.2[51], "attenuation", adj=c(1,1), cex=0.8)
-
+```
 Calculate the transient dynamics of the 
 attenuation projection
 firstep <- firststepatt(Lrub1, vector=n0.att)
