@@ -86,26 +86,26 @@ plot_life_cycle(Lrub1, stages=stages)
 En general lo que uno es separar la matriz de transciones de la matriz de fecundidad.  Eso es para tener claro los procesos que ocurren en la población.   Sumando ambas matriz tenemos la matriz para evaluar la dinamica poblacional de esa población.  
 
 ```{r}
-R3T=matrix(c(
+matU=matrix(c(
 0.43, 	0,	  0,    0.00,
 0.38,	0.84, 	0,	  0, 
 0, 	    0,	  0.51,	0.15,	
 0,      0.14, 0.43, 0.84
 ), byrow=TRUE, ncol=4)
 
-R3T
+matU
 
 
-R3F=matrix(c(
+matF=matrix(c(
 0.0, 	0,	  0,    0.14,
 0.0,	0, 	0,	  0, 
 0, 	  0,	  0,	0,	
 0,    0, 0, 0
 ), byrow=TRUE, ncol=4)
 
-R3F
+matF
 
-TF=R3T+R3F
+TF=matU+matF
 TF
 ```
 ***
