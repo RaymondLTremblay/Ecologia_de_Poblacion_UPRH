@@ -536,46 +536,19 @@ principio de la clase.</p>
 <hr />
 </div>
 <div id="lepanthes-rubripetala-population-3" class="section level1">
-<h1>Lepanthes rubripetala population #3</h1>
+<h1><em>Lepanthes rubripetala</em> population #3</h1>
 <div id="how-to-construct-a-matrix-in-r" class="section level3">
 <h3>How to construct a matrix in R</h3>
-<pre class="r"><code>R3T=matrix(c(
-        0.43,   0,      0,    0.0,
-        0.38,     0.84,     0,    0, 
-        0,      0,      0.51,   0.15,   
-        0,      0.14,   0.43, 0.84
-        ), byrow=TRUE, ncol=4)
-
-R3F=matrix(c(
-        0,  0,  0, 0.14,
-        0,  0,  0,0,
-        0,0,0,0,    
-        0,0,0,0
-        ), byrow=TRUE, ncol=4)
- 
-Lrub1_TF=R3T+R3F
-
-Lrub1_TF</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4]
-## [1,] 0.43 0.00 0.00 0.14
-## [2,] 0.38 0.84 0.00 0.00
-## [3,] 0.00 0.00 0.51 0.15
-## [4,] 0.00 0.14 0.43 0.84</code></pre>
-<pre class="r"><code> Lrub1=Lrub1_TF</code></pre>
+<p>En general lo que uno hace es separar la matriz de transciones (matU)
+de la matriz de fecundidad (matF). Eso es para tener claro los procesos
+que ocurren en la población. Sumando ambas matriz
+<strong>matU</strong>+<strong>matF</strong> = <strong>matA</strong>
+tenemos la matriz para evaluar la dinamica poblacional de esa población.
+Nota que eso es la terminología que van a encontrar en la literatura,
+<strong>matU</strong> y <strong>matF</strong> y
+<strong>matA</strong></p>
 <pre class="r"><code>library(Rage)
-
-colnames(Lrub1_TF) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
-rownames(Lrub1_TF) &lt;- colnames(Lrub1_TF)
-
-#stages &lt;- c(Lrub1_TF) 
-plot_life_cycle(Lrub1_TF)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f81d56f1030c9f4f7501" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<p>En general lo que uno es separar la matriz de transciones de la
-matriz de fecundidad. Eso es para tener claro los procesos que ocurren
-en la población. Sumando ambas matriz tenemos la matriz para evaluar la
-dinamica poblacional de esa población.</p>
-<pre class="r"><code>matU=matrix(c(
+matU=matrix(c(
 0.43,   0,    0,    0.00,
 0.38,   0.84,   0,    0, 
 0,      0,    0.51, 0.15,   
@@ -623,14 +596,14 @@ TF</code></pre>
 ## adultos reproductivos                    0.84</code></pre>
 <pre class="r"><code>orchid_names= c(&quot;1_plantulas&quot;, &quot;2_juveniles&quot;, &quot;3_adulto no reproductivos&quot;, &quot;4_adultos reproductivos&quot;)
 
+
+
 orchid_names_2= c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;)
-#stages &lt;- c(Lrub1_TF) 
+#stages &lt;- c(TF_TF) 
 plot_life_cycle(TF) </code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b28bdc049c35513929a8" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b28bdc049c35513929a8">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<pre class="r"><code>plot_life_cycle(TF, stages = orchid_names_2)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b4f498b37ebe42c07e1" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4b4f498b37ebe42c07e1">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\"; \"2\"; \"3\"; \"4\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\"; \"2\"; \"3\"; \"4\" } [style=invis] \"1\" -> \"1\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"2\" -> \"4\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"4\" -> \"3\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f81d56f1030c9f4f7501" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#plot_life_cycle(TF, stages = orchid_names_2)</code></pre>
 <hr />
 <p>Here is the theoretical life cycle of the species</p>
 <div class="float">
@@ -638,53 +611,90 @@ plot_life_cycle(TF) </code></pre>
 alt="Theoretical life cycle" />
 <div class="figcaption">Theoretical life cycle</div>
 </div>
-<pre class="r"><code>matB=matrix(c(
-0.43,   0.000,  0.0000,   0.14,
-0.38,     0.74,      0.0000,    0.000, 
-0.0000, 0.000,   0.5100,    0.1500, 
-0.0000, 0.1400, 0.4300,   0.8400), byrow=4, ncol=4)
+<hr />
+<hr />
+</div>
+<div id="crecimiento-poblacional-intrinsico" class="section level3">
+<h3>Crecimiento poblacional intrinsico</h3>
+<p>La definición de <strong>crecimiento poblacional asimptotico”: Si
+nada más cambia, la población eventualmente alcanza la
+</strong>distribución de etapa estable** y la <strong>razón de cambio de
+la población</strong> se acerca a una tasa constante (la tasa de
+crecimiento demográfico asintótica).</p>
+<p>This is a measure of the asymptotic population growth rate of the
+species</p>
+<pre class="r"><code>library(popbio)
+lambda(TF)</code></pre>
+<pre><code>## [1] 1.029629</code></pre>
+</div>
+<div id="ejercicio-1" class="section level3">
+<h3>Ejercicio 1</h3>
+<p>Cambie el valor de supervivencia de los adultos reprodutivos a la
+mitad y evalue el crecimiento de la población.</p>
+<pre class="r"><code>library(Rage)
+matU1=matrix(c(
+0.43,   0,    0,    0.00,
+0.38,   0.84,   0,    0, 
+0,      0,    0.51, 0.15,   
+0,      0.14, 0.43, 0.44
+), byrow=4, ncol=4)
 
-colnames(matB) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
-rownames(matB) &lt;- colnames(matB)
+matU1</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,] 0.43 0.00 0.00 0.00
+## [2,] 0.38 0.84 0.00 0.00
+## [3,] 0.00 0.00 0.51 0.15
+## [4,] 0.00 0.14 0.43 0.44</code></pre>
+<pre class="r"><code>matF1=matrix(c(
+0,    0,      0,    0.14,
+0,    0,      0,      0, 
+0,    0,      0,      0,    
+0,    0,    0,    0
+), byrow=4, ncol=4)
 
-stages_orchid &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+matF1</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    0    0    0 0.14
+## [2,]    0    0    0 0.00
+## [3,]    0    0    0 0.00
+## [4,]    0    0    0 0.00</code></pre>
+<pre class="r"><code>TF1=matU1+matF1
+lambda(TF1)</code></pre>
+<pre><code>## [1] 0.8955143</code></pre>
+</div>
+<div id="ejercicio-1-1" class="section level3">
+<h3>Ejercicio 1</h3>
+<p>Cambie el de reproducción a 100% de la matriz original.</p>
+<pre class="r"><code>library(Rage)
+matU2=matrix(c(
+0.43,   0,    0,    0.00,
+0.38,   0.84,   0,    0, 
+0,      0,    0.51, 0.15,   
+0,      0.14, 0.43, 0.84
+), byrow=4, ncol=4)
 
-matB</code></pre>
-<pre><code>##                         plantulas juveniles adulto no reproductivos
-## plantulas                    0.43      0.00                    0.00
-## juveniles                    0.38      0.74                    0.00
-## adulto no reproductivos      0.00      0.00                    0.51
-## adultos reproductivos        0.00      0.14                    0.43
-##                         adultos reproductivos
-## plantulas                                0.14
-## juveniles                                0.00
-## adulto no reproductivos                  0.15
-## adultos reproductivos                    0.84</code></pre>
-<pre class="r"><code>plot_life_cycle(matB)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7cff03958c6c66c4d1af" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7cff03958c6c66c4d1af">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.74\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<pre class="r"><code>matA1 &lt;- matrix(c(
-  0.2500000, 0.6250000, 0.2000000, 0.3333333,
-  0.7500000, 0.1250000, 0.4000000, 0.0000000,
-  0.0000000, 0.100000, 0.2000000, 0.3333333,
-  0.0000000, 0.2500000, 0.2000000, 0.3333333), byrow = 4, ncol = 4)
+matU2</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,] 0.43 0.00 0.00 0.00
+## [2,] 0.38 0.84 0.00 0.00
+## [3,] 0.00 0.00 0.51 0.15
+## [4,] 0.00 0.14 0.43 0.84</code></pre>
+<pre class="r"><code>matF2=matrix(c(
+0,    0,      0,    0.28,
+0,    0,      0,      0, 
+0,    0,      0,      0,    
+0,    0,    0,    0
+), byrow=4, ncol=4)
 
-
-
-matA1</code></pre>
-<pre><code>##      [,1]  [,2] [,3]      [,4]
-## [1,] 0.25 0.625  0.2 0.3333333
-## [2,] 0.75 0.125  0.4 0.0000000
-## [3,] 0.00 0.100  0.2 0.3333333
-## [4,] 0.00 0.250  0.2 0.3333333</code></pre>
-<pre class="r"><code>colnames(matA1) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
-rownames(matA1) &lt;- colnames(matA1)
-
-stages_orchid1 &lt;- c(&quot;1-2&quot;, &quot;3-4&quot;, &quot;5&quot;, &quot;6&quot;)
-
-plot_life_cycle(matA1, stages = stages_orchid1) </code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-67c388927faf32f29164" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-67c388927faf32f29164">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1-2\"; \"3-4\"; \"5\"; \"6\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"1-2\"; \"3-4\"; \"5\"; \"6\" } [style=invis] \"1-2\" -> \"1-2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.25\"]\n\"1-2\" -> \"3-4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.75\"]\n\"3-4\" -> \"1-2\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.625\"]\n\"3-4\" -> \"3-4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.125\"]\n\"3-4\" -> \"5\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"3-4\" -> \"6\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.25\"]\n\"5\" -> \"1-2\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"5\" -> \"3-4\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"5\" -> \"5\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"5\" -> \"6\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"6\" -> \"1-2\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"6\" -> \"5\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"6\" -> \"6\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.333\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+matF2</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    0    0    0 0.28
+## [2,]    0    0    0 0.00
+## [3,]    0    0    0 0.00
+## [4,]    0    0    0 0.00</code></pre>
+<pre class="r"><code>TF2=matU2+matF2
+lambda(TF2)</code></pre>
+<pre><code>## [1] 1.062548</code></pre>
 <hr />
 </div>
 <div
@@ -704,26 +714,127 @@ crecimiento poblacional asimptotico sera igual</li>
 posibles.</li>
 </ul></li>
 </ul>
+<p>Recuerda la definición de <strong>crecimiento poblacional
+asimptotico”: Si nada más cambia, la población eventualmente alcanza la
+</strong>distribución de etapa estable** y la <strong>razón de cambio de
+la población</strong> se acerca a una tasa constante (la tasa de
+crecimiento demográfico asintótica).</p>
 <p>Si no cumple con esas condiciones los analisis pueden ser severamente
 impactado. (Stott et al., 2010a).</p>
 <p>Pueden probar esas dos condiciones usando las funciones en
 “popdemo”.</p>
-<pre class="r"><code>isErgodic(Lrub1, digits=10, return.eigvec=FALSE)</code></pre>
+<pre class="r"><code>library(popdemo)
+isErgodic(TF, digits=10, return.eigvec=FALSE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<pre class="r"><code>isIrreducible(Lrub1)</code></pre>
+<pre class="r"><code>isIrreducible(TF)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<p>lambda(Lrub1)</p>
+<p>lambda(TF)</p>
+<hr />
+<div id="ergodica" class="section level4">
+<h4>Ergodica</h4>
+<p>Evaluamos una población que no es <em>Ergodica</em></p>
+<ul>
+<li>Cualquiera que sea la estructura de la etapa inicial que se utilice
+en la proyección de población, siempre exhibirá la misma tasa de
+crecimiento asintótica estable.</li>
+</ul>
+<pre class="r"><code> library(Rage)
+matU4=matrix(c(
+0.43,   0,    0,    0.00,
+0.38,   0.84,   0,    0, 
+0,      0,    0.51, 0.15,   
+0,      0.0, 0.43, 0.84
+), byrow=4, ncol=4)
+
+matU4  # ¿Cual es el problema con esa matriz?</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,] 0.43 0.00 0.00 0.00
+## [2,] 0.38 0.84 0.00 0.00
+## [3,] 0.00 0.00 0.51 0.15
+## [4,] 0.00 0.00 0.43 0.84</code></pre>
+<pre class="r"><code>matF4=matrix(c(
+0,    0,      0,    0.28,
+0,    0,      0,      0, 
+0,    0,      0,      0,    
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF4</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    0    0    0 0.28
+## [2,]    0    0    0 0.00
+## [3,]    0    0    0 0.00
+## [4,]    0    0    0 0.00</code></pre>
+<pre class="r"><code>TF4=matU4+matF4
+
+isErgodic(TF4)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>plot_life_cycle(TF4)</code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b28bdc049c35513929a8" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b28bdc049c35513929a8">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\"; \"2\"; \"3\"; \"4\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\"; \"2\"; \"3\"; \"4\" } [style=invis] \"1\" -> \"1\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.28\"]\n\"4\" -> \"3\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
-<div id="reality-of-the-data-collection" class="section level2">
-<h2>Reality of the data collection</h2>
-<p>However the data from this matrix is limited because seeds and fungy
-infection cannot be evaluated in the field, because seeds are too small
-and there is no quick technique in the field to detedct the symbiotic
-fungi.</p>
-<p>This matrix is size-based, with medium fecundity. The size classes
-are as follows: - 1: Plantula - 2: Juveniles - 3: A0: non-reproductive
-adults - 4: A+: reproductive adults</p>
+<div id="irreducible" class="section level4">
+<h4>Irreducible</h4>
+<p>Evaluamos una población que no es <em>Ergodica</em></p>
+<p>El gráfico del ciclo de vida asociado contiene las tasas de
+transición necesarias para facilitar los caminos desde todas las etapas
+a todas las demás etapas</p>
+<pre class="r"><code> library(Rage)
+matU4=matrix(c(
+0.43,   0,    0,    0.00,
+0.38,   0.84,   0,    0, 
+0,      0,    0.51, 0.15,   
+0,      0.0, 0.43, 0.84
+), byrow=4, ncol=4)
+
+matU4  # ¿Cual es el problema con esa matriz?</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,] 0.43 0.00 0.00 0.00
+## [2,] 0.38 0.84 0.00 0.00
+## [3,] 0.00 0.00 0.51 0.15
+## [4,] 0.00 0.00 0.43 0.84</code></pre>
+<pre class="r"><code>matF4=matrix(c(
+0,    0,      0,    0.28,
+0,    0,      0,      0, 
+0,    0,      0,      0,    
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF4</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    0    0    0 0.28
+## [2,]    0    0    0 0.00
+## [3,]    0    0    0 0.00
+## [4,]    0    0    0 0.00</code></pre>
+<pre class="r"><code>TF4=matU4+matF4
+
+isIrreducible(TF4)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>plot_life_cycle(TF4)</code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b4f498b37ebe42c07e1" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4b4f498b37ebe42c07e1">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\"; \"2\"; \"3\"; \"4\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\"; \"2\"; \"3\"; \"4\" } [style=invis] \"1\" -> \"1\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.28\"]\n\"4\" -> \"3\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="float">
+<img src="figures/mee3_32_f1.gif" alt="Irreducible Matrix" />
+<div class="figcaption">Irreducible Matrix</div>
+</div>
+<hr />
+</div>
+</div>
+<div id="realidad-de-la-recopilación-de-datos" class="section level2">
+<h2>Realidad de la recopilación de datos</h2>
+<p>Sin embargo, los datos de la siguiente matriz son limitados porque la
+colonización de semillas por los no se puede detectar en el campo con
+facilidad, porque las semillas son demasiado pequeñas y no existe una
+técnica rápida en el campo para detectar los hongos simbióticos.</p>
+<p>Esta matriz se basa en el tamaño, con una fecundidad media. Las
+clases de tamaño son las siguientes:</p>
+<ul>
+<li>1: Plántula</li>
+<li>2: Juveniles</li>
+<li>3: A0: adultos no reproductivos</li>
+<li>4: A+: adultos reproductivos</li>
+</ul>
 <div id="section" class="section level75">
 <p class="heading"></p>
 <p>#FIGURE 1: POPULATION PROJECTION #</p>
@@ -739,18 +850,18 @@ class="section level2">
 <p>Project the orchid PPM and population vector. In this case, we are
 projecting for 24 time intervals. The orchid interval is one month, so
 this projection is for 2 years. We use the function ‘project’.</p>
-<pre class="r"><code>pr1 &lt;- project(Lrub1, vector=n0, time=24)
+<pre class="r"><code>pr1 &lt;- project(TF, vector=n0, time=24)
 
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see &#39;?plot.projection&#39;.  
 plot(pr1)</code></pre>
-<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="primitive-matrix" class="section level2">
 <h2>Primitive Matrix</h2>
 <p>For a primitive matrix (see below), the long-term growth rate is the
 real part of the first dominant eigenvalue of the PPM.</p>
-<pre class="r"><code>eigs &lt;- eigen(Lrub1)
+<pre class="r"><code>eigs &lt;- eigen(TF)
 eigs</code></pre>
 <pre><code>## eigen() decomposition
 ## $values
@@ -772,9 +883,12 @@ dominant right eigenvector, which is the absolute value of the real part
 of the first eigenvector.</p>
 <p>This is the expected proportional distribution among the different
 stages <strong>IF</strong> the population attains a sable structure.</p>
-<pre class="r"><code>w &lt;- stable.stage(Lrub1)
+<pre class="r"><code>w &lt;- stable.stage(TF)
 w</code></pre>
-<pre><code>## [1] 0.1173246 0.2351086 0.1450580 0.5025088</code></pre>
+<pre><code>##               plantulas               juveniles adulto no reproductivos 
+##               0.1173246               0.2351086               0.1450580 
+##   adultos reproductivos 
+##               0.5025088</code></pre>
 <p>Note that the package popbio provides functions ‘lambda’ and
 ‘stable.stage’ that will provide these also.</p>
 <p>For more info on projecting population dynamics, see
@@ -809,25 +923,25 @@ We also standardise the population vector to sum to 1 using
 ‘standard.vec=T’. These standardisations make it easier (and fairer) to
 compare between models with different population sizes, and different
 long-term growth rates.</p>
-<pre class="r"><code>pr2.1 &lt;- project(Lrub1, vector=n0.amp, time=156, 
+<pre class="r"><code>pr2.1 &lt;- project(TF, vector=n0.amp, time=156, 
                  standard.A=T, standard.vec=T)
-pr2.2 &lt;- project(Lrub1, vector=n0.att, time=156, 
+pr2.2 &lt;- project(TF, vector=n0.att, time=156, 
                  standard.A=T, standard.vec=T)</code></pre>
 <p>Plot the amplification projection and label it</p>
 <pre class="r"><code>plot(pr2.1, ylim=c(0.4,1), log=&quot;y&quot;, cex.axis=0.8)
 text(52, pr2.1[51], &quot;attenuation&quot;, 
      adj=c(1,-0.5), cex=0.8)</code></pre>
-<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<pre class="r"><code>maxamp(Lrub1 )</code></pre>
+<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<pre class="r"><code>maxamp(TF )</code></pre>
 <pre><code>## [1] 1.17506</code></pre>
-<pre class="r"><code>reac(Lrub1,bound = &quot;upper&quot;)</code></pre>
+<pre class="r"><code>reac(TF,bound = &quot;upper&quot;)</code></pre>
 <pre><code>## [1] 1.097483</code></pre>
-<pre class="r"><code>inertia(Lrub1,bound = &quot;lower&quot;)</code></pre>
+<pre class="r"><code>inertia(TF,bound = &quot;lower&quot;)</code></pre>
 <pre><code>## [1] 0.5497777</code></pre>
 <p>Calculate the transient dynamics of the amplification projection</p>
-<pre class="r"><code>reac &lt;- reac(Lrub1, vector=n0.amp)
-maxamp &lt;- maxamp(Lrub1,  return.t=T)
-upinertia &lt;- inertia(Lrub1, vector=n0.amp)</code></pre>
+<pre class="r"><code>reac &lt;- reac(TF, vector=n0.amp)
+maxamp &lt;- maxamp(TF,  return.t=T)
+upinertia &lt;- inertia(TF, vector=n0.amp)</code></pre>
 <p>Add points on the projection for amplification and label them</p>
 <pre class="r"><code>par(mar=c(10,4,1,1))
 points(c(1,maxamp$t,31), c(reac,maxamp$maxamp,upinertia), 
@@ -844,11 +958,11 @@ text(31, upinertia, expression(bar(P)[infinity]),
 lines(0:50, pr2.2)
 text(52, pr2.2[51], &quot;attenuation&quot;, adj=c(1,1), cex=0.8)</code></pre>
 <p>Calculate the transient dynamics of the attenuation projection
-firstep &lt;- firststepatt(Lrub1, vector=n0.att) maxatt &lt;-
-maxatt(Lrub1, vector=n0.att, return.t=T) lowinertia &lt;- inertia(Lrub1,
+firstep &lt;- firststepatt(TF, vector=n0.att) maxatt &lt;- maxatt(TF,
+vector=n0.att, return.t=T) lowinertia &lt;- inertia(TF,
 vector=n0.att)</p>
-<p>firststepatt(Lrub1, vector=n0.att) maxatt(Lrub1, vector=n0.att,
-return.t=T) inertia(Lrub1, vector=n0.att)</p>
+<p>firststepatt(TF, vector=n0.att) maxatt(TF, vector=n0.att, return.t=T)
+inertia(TF, vector=n0.att)</p>
 <p>Add points on the attenuation projection and label them
 points(c(1,maxatt<span class="math inline">\(t,31),
 c(firstep,maxatt\)</span>maxatt,lowinertia), pch=3, col=“red”) text(1,
@@ -866,20 +980,19 @@ col=“red”, cex=0.8)</p>
 of the model. When using the function ‘project’, the stage-biased model
 dynamics are projected automatically if no population vector is
 specified. We can do this for the orchid, using a standardised matrix
-like before: pr2 &lt;- project(Lrub1, standard.A=TRUE, time=156)</p>
+like before: pr2 &lt;- project(TF, standard.A=TRUE, time=156)</p>
 <p>Now we need to plot these population dynamics. The S3 method for
 projections automatically plots all stage-biased projections: plot(pr2,
 log=“y”, cex.axis=0.8, ylim=c(0.4,1.5))</p>
 <p>Add in a dotted line at y=1 lines(c(0,156), c(1,1), lty=2)</p>
 <p>Calculate the bounds on transient dynamics for the orchid. This is
 also done automatically if no population vector is specified. reacb
-&lt;- reactivity(Lrub1) firstepb &lt;- firststepatt(Lrub1) maxampb &lt;-
-maxamp(Lrub1, return.t=T) maxattb &lt;- maxatt(Lrub1, return.t=T)
-upinertiab &lt;- inertia(Lrub1, bound=“upper”) lowinertiab &lt;-
-inertia(Lrub1, bound=“lower”)</p>
-<p>reactivity(Lrub1) firststepatt(Lrub1) maxamp(Lrub1, return.t=T)
-maxatt(Lrub1, return.t=T) inertia(Lrub1, bound=“upper”) inertia(Lrub1,
+&lt;- reactivity(TF) firstepb &lt;- firststepatt(TF) maxampb &lt;-
+maxamp(TF, return.t=T) maxattb &lt;- maxatt(TF, return.t=T) upinertiab
+&lt;- inertia(TF, bound=“upper”) lowinertiab &lt;- inertia(TF,
 bound=“lower”)</p>
+<p>reactivity(TF) firststepatt(TF) maxamp(TF, return.t=T) maxatt(TF,
+return.t=T) inertia(TF, bound=“upper”) inertia(TF, bound=“lower”)</p>
 <p>Add points on the projection and label them points(c(1,1,maxampb<span
 class="math inline">\(t,maxattb\)</span>t,31,31),
 c(reacb,firstepb,maxampb<span
@@ -913,7 +1026,7 @@ PPM to be perturbed. The relative size of entries in this matrix are the
 relative sizes of perturbation to those elements. In this case, we are
 perturbing element [5,4]. We are going to look at the effect of
 perturbing up to 0.25. The largest biologically reasonable perturbation
-is about 0.12. tf1 &lt;- tfa(Lrub1, d=c(1,0,0,0), e=c(0,0,1,0),
+is about 0.12. tf1 &lt;- tfa(TF, d=c(1,0,0,0), e=c(0,0,1,0),
 prange=seq(0,0.25,0.01))</p>
 <p>Now we plot this using an S3 method for transfer functions (for
 information see ‘?plot.tfa’). plot(tf1, cex.axis=0.8)</p>
@@ -922,7 +1035,7 @@ intercept of lambda-max, and a slope of the sensitivity of the same
 transfer function. Calculate lambda-max of the desert tortoise PPM:
 lambda &lt;- Re(eigen(LaeliaZ1)$values[1])</p>
 <p>Calculate the sensitivity using the function ‘tfsens’: sens1 &lt;-
-tfsens(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0))</p>
+tfsens(TF, d=c(0,0,0,1), e=c(0,0,1,0))</p>
 <p>Now add in the line, specifying the correct intercept and slope:
 abline(lambda, sens1, lty=2, col=“red”)</p>
 <hr />
@@ -935,10 +1048,10 @@ perturbation structure and perturbation range. For inertia we either
 have to specify a population vector using the ‘vector’ argument, or the
 bound to be calculated using the ‘bound’ argument. Create a population
 vector: n0 &lt;- c(1,8,13,21)</p>
-<p>tf1 &lt;- tfa(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0),
+<p>tf1 &lt;- tfa(TF, d=c(0,0,0,1), e=c(0,0,1,0),
 prange=seq(0,0.25,0.01))</p>
 <p>Now calculate the transfer function using inertia.tfa: tf2 &lt;-
-inertia.tfa(Lrub1, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0), prange=
+inertia.tfa(TF, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0), prange=
 seq(0,0.25,0.01))</p>
 <p>Plot the transfer function using the same S3 method as before:
 plot(tf2, cex.axis=0.8, ylim=c(3.9,4.43))</p>
@@ -946,10 +1059,10 @@ plot(tf2, cex.axis=0.8, ylim=c(3.9,4.43))</p>
 intercept of equal to the relevant inertia (either using the same
 population vector, or the correct bound), and a slope of the sensitivity
 of the same transfer function. Calculate inertia of the desert tortoise
-PPM using the population vector: inertia &lt;- inertia(Lrub1,
+PPM using the population vector: inertia &lt;- inertia(TF,
 vector=n0)</p>
 <p>Calculate the sensitivity using the function ‘inertia.tfsens’: sens2
-&lt;- inertia.tfsens(Lrub1, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0),
+&lt;- inertia.tfsens(TF, vector=n0, d=c(0,0,0,1), e=c(0,0,1,0),
 tolerance=1e-5)</p>
 <p>(Here the ‘tolerance’ has had to be lowered to avoid calculation
 error: try the function without that argument and it will have trouble
@@ -966,10 +1079,9 @@ The functions ‘tfmat’ and ‘inertia.tfmat’ calculate a transfer function
 for every PPM element. They are saved as arrays of values. The functions
 are customisable: see ‘?tfmat’ and ‘?inertia.tfmat’.</p>
 <p>Create the array for inertia, using a specific population vector: n0
-&lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(Lrub1,
-vector=n0)</p>
+&lt;- c(48, 16, 12, 10) tfmat &lt;- inertia.tfamatrix(TF, vector=n0)</p>
 <p>…and plot it! plot(tfmat)</p>
-<p>n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- tfamatrix(Lrub1)</p>
+<p>n0 &lt;- c(48, 16, 12, 10) tfmat &lt;- tfamatrix(TF)</p>
 <p>…and plot it! plot(tfmat)</p>
 </div>
 </div>

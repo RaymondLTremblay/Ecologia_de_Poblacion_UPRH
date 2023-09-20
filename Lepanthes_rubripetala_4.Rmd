@@ -58,11 +58,11 @@ A population of *Lepanthes rupestris*, those of *Lepanthes rubripetala* growth i
 
 ***
 
-# Lepanthes rubripetala population #3
+# *Lepanthes rubripetala* population #3
 
 ### How to construct a matrix in R
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 R3T=matrix(c(
         0.43, 	0,	    0,    0.0,
         0.38,	  0.84, 	0,	  0, 
@@ -77,29 +77,31 @@ R3F=matrix(c(
         0,0,0,0
         ), byrow=TRUE, ncol=4)
  
-Lrub1_TF=R3T+R3F
+TF_TF=R3T+R3F
 
-Lrub1_TF
+TF_TF
 
- Lrub1=Lrub1_TF
+TF=TF_TF
 
 ```
 
 
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 library(Rage)
 
-colnames(Lrub1_TF) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
-rownames(Lrub1_TF) <- colnames(Lrub1_TF)
+colnames(TF_TF) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+rownames(TF_TF) <- colnames(TF_TF)
 
-#stages <- c(Lrub1_TF) 
-plot_life_cycle(Lrub1_TF)
+#stages <- c(TF_TF) 
+plot_life_cycle(TF_TF)
 ```
 
 
-En general lo que uno es separar la matriz de transciones de la matriz de fecundidad.  Eso es para tener claro los procesos que ocurren en la población.   Sumando ambas matriz tenemos la matriz para evaluar la dinamica poblacional de esa población.  
+En general lo que uno hace es separar la matriz de transciones (matU) de la matriz de fecundidad (matF).  Eso es para tener claro los procesos que ocurren en la población.   Sumando ambas matriz **matU**+**matF** = **matA** tenemos la matriz para evaluar la dinamica poblacional de esa población.  Nota que eso es la terminología que van a encontrar en la literatura,  **matU** y **matF** y **matA**
 
 ```{r}
+
+library(Rage)
 matU=matrix(c(
 0.43, 	0,	  0,    0.00,
 0.38,	0.84, 	0,	  0, 
@@ -128,10 +130,12 @@ rownames(TF) <- colnames(TF)
 TF
 orchid_names= c("1_plantulas", "2_juveniles", "3_adulto no reproductivos", "4_adultos reproductivos")
 
+
+
 orchid_names_2= c("1", "2", "3", "4")
-#stages <- c(Lrub1_TF) 
+#stages <- c(TF_TF) 
 plot_life_cycle(TF) 
-plot_life_cycle(TF, stages = orchid_names_2)
+#plot_life_cycle(TF, stages = orchid_names_2)
 ```
 ***
 
@@ -140,7 +144,10 @@ Here is the theoretical life cycle of the species
  
 ![Theoretical life cycle](figures/Fig_theoretical_Life_cycle.png)
 
-```{r}
+
+***
+
+```{r, eval=FALSE, echo=FALSE}
 matB=matrix(c(
 0.43, 	0.000,	0.0000,   0.14,
 0.38,	  0.74, 	 0.0000,	0.000, 
@@ -158,25 +165,83 @@ plot_life_cycle(matB)
 ```
 
 
+
+
+
+
+***
+
+### Crecimiento poblacional intrinsico
+
+La definición de **crecimiento poblacional asimptotico":   Si nada más cambia, la población eventualmente alcanza la **distribución de etapa estable** y la **razón de cambio de la población** se acerca a una tasa constante (la tasa de crecimiento demográfico asintótica).
+
+
+This is a measure of the asymptotic population growth rate of the species
 ```{r}
-matA1 <- matrix(c(
-  0.2500000, 0.6250000, 0.2000000, 0.3333333,
-  0.7500000, 0.1250000, 0.4000000, 0.0000000,
-  0.0000000, 0.100000, 0.2000000, 0.3333333,
-  0.0000000, 0.2500000, 0.2000000, 0.3333333), byrow = 4, ncol = 4)
+library(popbio)
+lambda(TF)
+```
 
 
+### Ejercicio 1
 
-matA1
+Cambie el valor de supervivencia de los adultos reprodutivos a la mitad y evalue el crecimiento de la población. 
 
-colnames(matA1) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
-rownames(matA1) <- colnames(matA1)
+```{r}
 
-stages_orchid1 <- c("1-2", "3-4", "5", "6")
+library(Rage)
+matU1=matrix(c(
+0.43, 	0,	  0,    0.00,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.14, 0.43, 0.44
+), byrow=4, ncol=4)
 
-plot_life_cycle(matA1, stages = stages_orchid1) 
+matU1
 
 
+matF1=matrix(c(
+0, 	  0,	  0,    0.14,
+0,	  0, 	  0,	  0, 
+0, 	  0,	  0,	  0,	
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF1
+
+TF1=matU1+matF1
+lambda(TF1)
+```
+
+
+### Ejercicio 1
+
+Cambie el de reproducción a 100% de la matriz original. 
+
+```{r}
+
+library(Rage)
+matU2=matrix(c(
+0.43, 	0,	  0,    0.00,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.14, 0.43, 0.84
+), byrow=4, ncol=4)
+
+matU2
+
+
+matF2=matrix(c(
+0, 	  0,	  0,    0.28,
+0,	  0, 	  0,	  0, 
+0, 	  0,	  0,	  0,	
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF2
+
+TF2=matU2+matF2
+lambda(TF2)
 ```
 
 ***
@@ -188,6 +253,9 @@ plot_life_cycle(matA1, stages = stages_orchid1)
 
  - **Irreducibility**
     - la condición que las transiciones de todas las etapas a otra son posibles.  
+    
+    
+Recuerda la definición de **crecimiento poblacional asimptotico":   Si nada más cambia, la población eventualmente alcanza la **distribución de etapa estable** y la **razón de cambio de la población** se acerca a una tasa constante (la tasa de crecimiento demográfico asintótica).    
 
 Si no cumple con esas condiciones los analisis pueden ser severamente impactado. (Stott et al., 2010a).
 
@@ -195,27 +263,104 @@ Si no cumple con esas condiciones los analisis pueden ser severamente impactado.
 Pueden probar esas dos condiciones usando las funciones en "popdemo". 
 
 ```{r}
-isErgodic(Lrub1, digits=10, return.eigvec=FALSE)
-isIrreducible(Lrub1)
+library(popdemo)
+isErgodic(TF, digits=10, return.eigvec=FALSE)
+isIrreducible(TF)
 
 ```
  
- lambda(Lrub1)
+ lambda(TF)
  
  ***
  
+#### Ergodica
+ 
+ Evaluamos una población que no es *Ergodica*
+ 
+- Cualquiera que sea la estructura de la etapa inicial que se utilice en la proyección de población, siempre exhibirá la misma tasa de crecimiento asintótica estable. 
+
+```{r} 
+ library(Rage)
+matU4=matrix(c(
+0.43, 	0,	  0,    0.00,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.0, 0.43, 0.84
+), byrow=4, ncol=4)
+
+matU4  # ¿Cual es el problema con esa matriz?
+
+
+matF4=matrix(c(
+0, 	  0,	  0,    0.28,
+0,	  0, 	  0,	  0, 
+0, 	  0,	  0,	  0,	
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF4
+
+TF4=matU4+matF4
+
+isErgodic(TF4)
+
+plot_life_cycle(TF4)
+```
  
 
-## Reality of the data collection
+***
 
-However the data from this matrix is limited because seeds and fungy infection cannot be evaluated in the field, because seeds are too small and there is no quick technique in the field to detedct the symbiotic fungi.  
+#### Irreducible
+ 
+ Evaluamos una población que no es *Ergodica*
+ 
+ 
+El gráfico del ciclo de vida asociado contiene las tasas de transición necesarias para facilitar los caminos desde todas las etapas a todas las demás etapas
 
-This matrix is size-based, with medium fecundity.
- The size classes are as follows:
- - 1: Plantula
+```{r} 
+ library(Rage)
+matU4=matrix(c(
+0.43, 	0,	  0,    0.00,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.0, 0.43, 0.84
+), byrow=4, ncol=4)
+
+matU4  # ¿Cual es el problema con esa matriz?
+
+
+matF4=matrix(c(
+0, 	  0,	  0,    0.28,
+0,	  0, 	  0,	  0, 
+0, 	  0,	  0,	  0,	
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF4
+
+TF4=matU4+matF4
+
+isIrreducible(TF4)
+
+plot_life_cycle(TF4)
+```
+
+![Irreducible Matrix](figures/mee3_32_f1.gif)
+
+***
+
+
+## Realidad de la recopilación de datos
+
+Sin embargo, los datos de la siguiente matriz son limitados porque la colonización de semillas por los no se puede detectar en el campo con facilidad, porque las semillas son demasiado pequeñas y no existe una técnica rápida en el campo para detectar los hongos simbióticos.
+
+Esta matriz se basa en el tamaño, con una fecundidad media.
+ Las clases de tamaño son las siguientes:
+ 
+ - 1: Plántula
  - 2: Juveniles
- - 3: A0: non-reproductive adults
- - 4: A+: reproductive adults
+ - 3: A0: adultos no reproductivos
+ - 4: A+: adultos reproductivos
 
 
 
@@ -250,7 +395,7 @@ Project the orchid PPM and population vector.  In this case, we are projecting f
 
 
 ```{r}
-pr1 <- project(Lrub1, vector=n0, time=24)
+pr1 <- project(TF, vector=n0, time=24)
 
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see '?plot.projection'.  
@@ -263,7 +408,7 @@ plot(pr1)
 For a primitive matrix (see below), the long-term growth rate is the real  part of the first dominant eigenvalue of the PPM.
 
 ```{r}
-eigs <- eigen(Lrub1)
+eigs <- eigen(TF)
 eigs
 lambdamax <- Re(eigs$values[1])
 lambdamax
@@ -278,7 +423,7 @@ This is the expected proportional distribution among the different stages **IF**
 
 ```{r}
 
-w <- stable.stage(Lrub1)
+w <- stable.stage(TF)
 w
 ```
 
@@ -333,9 +478,9 @@ to compare between models with different population
 sizes, and different long-term growth rates.
 
 ```{r}
-pr2.1 <- project(Lrub1, vector=n0.amp, time=156, 
+pr2.1 <- project(TF, vector=n0.amp, time=156, 
                  standard.A=T, standard.vec=T)
-pr2.2 <- project(Lrub1, vector=n0.att, time=156, 
+pr2.2 <- project(TF, vector=n0.att, time=156, 
                  standard.A=T, standard.vec=T)
 ```
 
@@ -346,18 +491,18 @@ Plot the amplification projection and label it
 plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
 text(52, pr2.1[51], "attenuation", 
      adj=c(1,-0.5), cex=0.8)
-maxamp(Lrub1 )
-reac(Lrub1,bound = "upper")
-inertia(Lrub1,bound = "lower")
+maxamp(TF )
+reac(TF,bound = "upper")
+inertia(TF,bound = "lower")
 ```
 Calculate the transient dynamics of the
 amplification projection
 
 
 ```{r}
-reac <- reac(Lrub1, vector=n0.amp)
-maxamp <- maxamp(Lrub1,  return.t=T)
-upinertia <- inertia(Lrub1, vector=n0.amp)
+reac <- reac(TF, vector=n0.amp)
+maxamp <- maxamp(TF,  return.t=T)
+upinertia <- inertia(TF, vector=n0.amp)
 ```
 
 
@@ -382,13 +527,13 @@ text(52, pr2.2[51], "attenuation", adj=c(1,1), cex=0.8)
 ```
 Calculate the transient dynamics of the 
 attenuation projection
-firstep <- firststepatt(Lrub1, vector=n0.att)
-maxatt <- maxatt(Lrub1, vector=n0.att, return.t=T)
-lowinertia <- inertia(Lrub1, vector=n0.att)
+firstep <- firststepatt(TF, vector=n0.att)
+maxatt <- maxatt(TF, vector=n0.att, return.t=T)
+lowinertia <- inertia(TF, vector=n0.att)
 
-firststepatt(Lrub1, vector=n0.att)
-maxatt(Lrub1, vector=n0.att, return.t=T)
-inertia(Lrub1, vector=n0.att)
+firststepatt(TF, vector=n0.att)
+maxatt(TF, vector=n0.att, return.t=T)
+inertia(TF, vector=n0.att)
 
 Add points on the attenuation projection
 and label them
@@ -420,7 +565,7 @@ stage-biased model dynamics are projected
 automatically if no population vector is specified.
 We can do this for the orchid, using a 
 standardised matrix like before:
-pr2 <- project(Lrub1, standard.A=TRUE, time=156)
+pr2 <- project(TF, standard.A=TRUE, time=156)
 
 Now we need to plot these population dynamics.
 The S3 method for projections automatically plots
@@ -433,20 +578,20 @@ lines(c(0,156), c(1,1), lty=2)
 Calculate the bounds on transient dynamics for
 the orchid.  This is also done automatically if
 no population vector is specified.
-reacb <- reactivity(Lrub1)
-firstepb <- firststepatt(Lrub1)
-maxampb <- maxamp(Lrub1, return.t=T)
-maxattb <- maxatt(Lrub1, return.t=T)
-upinertiab <- inertia(Lrub1, bound="upper")
-lowinertiab <- inertia(Lrub1, bound="lower")
+reacb <- reactivity(TF)
+firstepb <- firststepatt(TF)
+maxampb <- maxamp(TF, return.t=T)
+maxattb <- maxatt(TF, return.t=T)
+upinertiab <- inertia(TF, bound="upper")
+lowinertiab <- inertia(TF, bound="lower")
 
 
-reactivity(Lrub1)
-firststepatt(Lrub1)
-maxamp(Lrub1, return.t=T)
-maxatt(Lrub1, return.t=T)
-inertia(Lrub1, bound="upper")
-inertia(Lrub1, bound="lower")
+reactivity(TF)
+firststepatt(TF)
+maxamp(TF, return.t=T)
+maxatt(TF, return.t=T)
+inertia(TF, bound="upper")
+inertia(TF, bound="lower")
 
 
 
@@ -499,7 +644,7 @@ In this case, we are perturbing element [5,4].
 We are going to look at the effect of perturbing
 up to 0.25.  The largest biologically reasonable 
 perturbation is about 0.12.
-tf1 <- tfa(Lrub1, d=c(1,0,0,0), e=c(0,0,1,0), 
+tf1 <- tfa(TF, d=c(1,0,0,0), e=c(0,0,1,0), 
          prange=seq(0,0.25,0.01))
 
 Now we plot this using an S3 method for transfer functions
@@ -513,7 +658,7 @@ Calculate lambda-max of the desert tortoise PPM:
 lambda <- Re(eigen(LaeliaZ1)$values[1])
 
 Calculate the sensitivity using the function 'tfsens':
-sens1 <- tfsens(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0))
+sens1 <- tfsens(TF, d=c(0,0,0,1), e=c(0,0,1,0))
 
 Now add in the line, specifying the correct intercept and slope:
 abline(lambda, sens1, lty=2, col="red")
@@ -536,11 +681,11 @@ the 'vector' argument, or the bound to be calculated using the
 Create a population vector:
 n0 <- c(1,8,13,21)
 
-tf1 <- tfa(Lrub1, d=c(0,0,0,1), e=c(0,0,1,0), 
+tf1 <- tfa(TF, d=c(0,0,0,1), e=c(0,0,1,0), 
          prange=seq(0,0.25,0.01))
 
 Now calculate the transfer function using inertia.tfa:
-tf2 <- inertia.tfa(Lrub1, vector=n0, d=c(0,0,0,1), 
+tf2 <- inertia.tfa(TF, vector=n0, d=c(0,0,0,1), 
                  e=c(0,0,1,0), prange= seq(0,0.25,0.01))
 
 Plot the transfer function using the same S3 method as before:
@@ -552,10 +697,10 @@ the same population vector, or the correct bound), and a slope
 of the sensitivity of the same transfer function.
 Calculate inertia of the desert tortoise PPM using the
 population vector:
-inertia <- inertia(Lrub1, vector=n0)
+inertia <- inertia(TF, vector=n0)
 
 Calculate the sensitivity using the function 'inertia.tfsens':
-sens2 <- inertia.tfsens(Lrub1, vector=n0, d=c(0,0,0,1), 
+sens2 <- inertia.tfsens(TF, vector=n0, d=c(0,0,0,1), 
                         e=c(0,0,1,0), tolerance=1e-5)
 
 (Here the 'tolerance' has had to be lowered to avoid calculation error:
@@ -580,13 +725,13 @@ are customisable: see '?tfmat' and '?inertia.tfmat'.
 
 Create the array for inertia, using a specific population vector:
 n0 <- c(48, 16, 12, 10)
-tfmat <- inertia.tfamatrix(Lrub1, vector=n0)
+tfmat <- inertia.tfamatrix(TF, vector=n0)
 
 ...and plot it!
 plot(tfmat)
 
 n0 <- c(48, 16, 12, 10)
-tfmat <- tfamatrix(Lrub1)
+tfmat <- tfamatrix(TF)
 
 ...and plot it!
 plot(tfmat)
