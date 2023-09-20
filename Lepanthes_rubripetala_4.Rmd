@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(popdemo)
 library(popbio)
-
+#remotes::install_github("jonesor/Rage")
 ```
 
 *Lepanthes* is one of the largest genera of the Orchidaceae with >1200 species, found only in the Neotropics.  
@@ -63,23 +63,37 @@ A population of *Lepanthes rupestris*, those of *Lepanthes rubripetala* growth i
 ### How to construct a matrix in R
 
 ```{r}
- R3=matrix(c(
-0.43, 	0,	  0,    0.14,
-0.38,	0.84, 	0,	  0, 
-0, 	    0,	  0.51,	0.15,	
-0,      0.14, 0.43, 0.84
-), byrow=TRUE, ncol=4)
+R3T=matrix(c(
+        0.43, 	0,	    0,    0.0,
+        0.38,	  0.84, 	0,	  0, 
+        0, 	    0,	    0.51,	0.15,	
+        0,      0.14,   0.43, 0.84
+        ), byrow=TRUE, ncol=4)
 
-Lrub1=R3
+R3F=matrix(c(
+        0, 	0,	0, 0.14,
+        0,	0, 	0,0,
+        0,0,0,0,	
+        0,0,0,0
+        ), byrow=TRUE, ncol=4)
+ 
+Lrub1_TF=R3T+R3F
 
-Lrub1
+Lrub1_TF
+
+ Lrub1=Lrub1_TF
+
 ```
 
 
 ```{r}
 library(Rage)
-stages <- c("plantulas", "juveniles", "adulto_no_reproductivos", "adultos_reproductivos") 
-plot_life_cycle(Lrub1, stages=stages)
+
+colnames(Lrub1_TF) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+rownames(Lrub1_TF) <- colnames(Lrub1_TF)
+
+#stages <- c(Lrub1_TF) 
+plot_life_cycle(Lrub1_TF)
 ```
 
 
@@ -91,22 +105,33 @@ matU=matrix(c(
 0.38,	0.84, 	0,	  0, 
 0, 	    0,	  0.51,	0.15,	
 0,      0.14, 0.43, 0.84
-), byrow=TRUE, ncol=4)
+), byrow=4, ncol=4)
 
 matU
 
 
 matF=matrix(c(
-0.0, 	0,	  0,    0.14,
-0.0,	0, 	0,	  0, 
-0, 	  0,	  0,	0,	
-0,    0, 0, 0
-), byrow=TRUE, ncol=4)
+0, 	  0,	  0,    0.14,
+0,	  0, 	  0,	  0, 
+0, 	  0,	  0,	  0,	
+0,    0,    0,    0
+), byrow=4, ncol=4)
 
 matF
 
 TF=matU+matF
 TF
+
+
+colnames(TF) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+rownames(TF) <- colnames(TF)
+TF
+orchid_names= c("1_plantulas", "2_juveniles", "3_adulto no reproductivos", "4_adultos reproductivos")
+
+orchid_names_2= c("1", "2", "3", "4")
+#stages <- c(Lrub1_TF) 
+plot_life_cycle(TF) 
+plot_life_cycle(TF, stages = orchid_names_2)
 ```
 ***
 
@@ -114,6 +139,45 @@ TF
 Here is the theoretical life cycle of the species
  
 ![Theoretical life cycle](figures/Fig_theoretical_Life_cycle.png)
+
+```{r}
+matB=matrix(c(
+0.43, 	0.000,	0.0000,   0.14,
+0.38,	  0.74, 	 0.0000,	0.000, 
+0.0000, 0.000,	 0.5100,	0.1500,	
+0.0000, 0.1400, 0.4300,   0.8400), byrow=4, ncol=4)
+
+colnames(matB) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+rownames(matB) <- colnames(matB)
+
+stages_orchid <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+
+matB
+
+plot_life_cycle(matB)
+```
+
+
+```{r}
+matA1 <- matrix(c(
+  0.2500000, 0.6250000, 0.2000000, 0.3333333,
+  0.7500000, 0.1250000, 0.4000000, 0.0000000,
+  0.0000000, 0.100000, 0.2000000, 0.3333333,
+  0.0000000, 0.2500000, 0.2000000, 0.3333333), byrow = 4, ncol = 4)
+
+
+
+matA1
+
+colnames(matA1) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+rownames(matA1) <- colnames(matA1)
+
+stages_orchid1 <- c("1-2", "3-4", "5", "6")
+
+plot_life_cycle(matA1, stages = stages_orchid1) 
+
+
+```
 
 ***
 

@@ -14,7 +14,7 @@
 
 <title>Lepanthes rubripetala</title>
 
-<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -503,7 +503,8 @@ class="uri">http://cran.R-project.org</a></li>
 <div id="load-the-library" class="section level3">
 <h3>Load the library</h3>
 <pre class="r"><code>library(popdemo)
-library(popbio)</code></pre>
+library(popbio)
+#remotes::install_github(&quot;jonesor/Rage&quot;)</code></pre>
 <p><em>Lepanthes</em> is one of the largest genera of the Orchidaceae
 with &gt;1200 species, found only in the Neotropics.</p>
 <hr />
@@ -538,26 +539,38 @@ principio de la clase.</p>
 <h1>Lepanthes rubripetala population #3</h1>
 <div id="how-to-construct-a-matrix-in-r" class="section level3">
 <h3>How to construct a matrix in R</h3>
-<pre class="r"><code> R3=matrix(c(
-0.43,   0,    0,    0.14,
-0.38,   0.84,   0,    0, 
-0,      0,    0.51, 0.15,   
-0,      0.14, 0.43, 0.84
-), byrow=TRUE, ncol=4)
+<pre class="r"><code>R3T=matrix(c(
+        0.43,   0,      0,    0.0,
+        0.38,     0.84,     0,    0, 
+        0,      0,      0.51,   0.15,   
+        0,      0.14,   0.43, 0.84
+        ), byrow=TRUE, ncol=4)
 
-Lrub1=R3
+R3F=matrix(c(
+        0,  0,  0, 0.14,
+        0,  0,  0,0,
+        0,0,0,0,    
+        0,0,0,0
+        ), byrow=TRUE, ncol=4)
+ 
+Lrub1_TF=R3T+R3F
 
-Lrub1</code></pre>
+Lrub1_TF</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,] 0.43 0.00 0.00 0.14
 ## [2,] 0.38 0.84 0.00 0.00
 ## [3,] 0.00 0.00 0.51 0.15
 ## [4,] 0.00 0.14 0.43 0.84</code></pre>
+<pre class="r"><code> Lrub1=Lrub1_TF</code></pre>
 <pre class="r"><code>library(Rage)
-stages &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto_no_reproductivos&quot;, &quot;adultos_reproductivos&quot;) 
-plot_life_cycle(Lrub1, stages=stages)</code></pre>
+
+colnames(Lrub1_TF) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+rownames(Lrub1_TF) &lt;- colnames(Lrub1_TF)
+
+#stages &lt;- c(Lrub1_TF) 
+plot_life_cycle(Lrub1_TF)</code></pre>
 <div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f81d56f1030c9f4f7501" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto_no_reproductivos\"; \"adultos_reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto_no_reproductivos\"; \"adultos_reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos_reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto_no_reproductivos\" -> \"adulto_no_reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto_no_reproductivos\" -> \"adultos_reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos_reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos_reproductivos\" -> \"adulto_no_reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos_reproductivos\" -> \"adultos_reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>En general lo que uno es separar la matriz de transciones de la
 matriz de fecundidad. Eso es para tener claro los procesos que ocurren
 en la población. Sumando ambas matriz tenemos la matriz para evaluar la
@@ -567,7 +580,7 @@ dinamica poblacional de esa población.</p>
 0.38,   0.84,   0,    0, 
 0,      0,    0.51, 0.15,   
 0,      0.14, 0.43, 0.84
-), byrow=TRUE, ncol=4)
+), byrow=4, ncol=4)
 
 matU</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
@@ -576,11 +589,11 @@ matU</code></pre>
 ## [3,] 0.00 0.00 0.51 0.15
 ## [4,] 0.00 0.14 0.43 0.84</code></pre>
 <pre class="r"><code>matF=matrix(c(
-0.0,    0,    0,    0.14,
-0.0,    0,  0,    0, 
-0,    0,      0,    0,  
-0,    0, 0, 0
-), byrow=TRUE, ncol=4)
+0,    0,      0,    0.14,
+0,    0,      0,      0, 
+0,    0,      0,      0,    
+0,    0,    0,    0
+), byrow=4, ncol=4)
 
 matF</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
@@ -595,6 +608,29 @@ TF</code></pre>
 ## [2,] 0.38 0.84 0.00 0.00
 ## [3,] 0.00 0.00 0.51 0.15
 ## [4,] 0.00 0.14 0.43 0.84</code></pre>
+<pre class="r"><code>colnames(TF) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+rownames(TF) &lt;- colnames(TF)
+TF</code></pre>
+<pre><code>##                         plantulas juveniles adulto no reproductivos
+## plantulas                    0.43      0.00                    0.00
+## juveniles                    0.38      0.84                    0.00
+## adulto no reproductivos      0.00      0.00                    0.51
+## adultos reproductivos        0.00      0.14                    0.43
+##                         adultos reproductivos
+## plantulas                                0.14
+## juveniles                                0.00
+## adulto no reproductivos                  0.15
+## adultos reproductivos                    0.84</code></pre>
+<pre class="r"><code>orchid_names= c(&quot;1_plantulas&quot;, &quot;2_juveniles&quot;, &quot;3_adulto no reproductivos&quot;, &quot;4_adultos reproductivos&quot;)
+
+orchid_names_2= c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;)
+#stages &lt;- c(Lrub1_TF) 
+plot_life_cycle(TF) </code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b28bdc049c35513929a8" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b28bdc049c35513929a8">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>plot_life_cycle(TF, stages = orchid_names_2)</code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b4f498b37ebe42c07e1" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4b4f498b37ebe42c07e1">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\"; \"2\"; \"3\"; \"4\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\"; \"2\"; \"3\"; \"4\" } [style=invis] \"1\" -> \"1\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"2\" -> \"4\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"4\" -> \"3\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 <p>Here is the theoretical life cycle of the species</p>
 <div class="float">
@@ -602,6 +638,53 @@ TF</code></pre>
 alt="Theoretical life cycle" />
 <div class="figcaption">Theoretical life cycle</div>
 </div>
+<pre class="r"><code>matB=matrix(c(
+0.43,   0.000,  0.0000,   0.14,
+0.38,     0.74,      0.0000,    0.000, 
+0.0000, 0.000,   0.5100,    0.1500, 
+0.0000, 0.1400, 0.4300,   0.8400), byrow=4, ncol=4)
+
+colnames(matB) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+rownames(matB) &lt;- colnames(matB)
+
+stages_orchid &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+
+matB</code></pre>
+<pre><code>##                         plantulas juveniles adulto no reproductivos
+## plantulas                    0.43      0.00                    0.00
+## juveniles                    0.38      0.74                    0.00
+## adulto no reproductivos      0.00      0.00                    0.51
+## adultos reproductivos        0.00      0.14                    0.43
+##                         adultos reproductivos
+## plantulas                                0.14
+## juveniles                                0.00
+## adulto no reproductivos                  0.15
+## adultos reproductivos                    0.84</code></pre>
+<pre class="r"><code>plot_life_cycle(matB)</code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7cff03958c6c66c4d1af" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7cff03958c6c66c4d1af">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\"; \"juveniles\"; \"adulto no reproductivos\"; \"adultos reproductivos\" } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.74\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>matA1 &lt;- matrix(c(
+  0.2500000, 0.6250000, 0.2000000, 0.3333333,
+  0.7500000, 0.1250000, 0.4000000, 0.0000000,
+  0.0000000, 0.100000, 0.2000000, 0.3333333,
+  0.0000000, 0.2500000, 0.2000000, 0.3333333), byrow = 4, ncol = 4)
+
+
+
+matA1</code></pre>
+<pre><code>##      [,1]  [,2] [,3]      [,4]
+## [1,] 0.25 0.625  0.2 0.3333333
+## [2,] 0.75 0.125  0.4 0.0000000
+## [3,] 0.00 0.100  0.2 0.3333333
+## [4,] 0.00 0.250  0.2 0.3333333</code></pre>
+<pre class="r"><code>colnames(matA1) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+rownames(matA1) &lt;- colnames(matA1)
+
+stages_orchid1 &lt;- c(&quot;1-2&quot;, &quot;3-4&quot;, &quot;5&quot;, &quot;6&quot;)
+
+plot_life_cycle(matA1, stages = stages_orchid1) </code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-67c388927faf32f29164" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-67c388927faf32f29164">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1-2\"; \"3-4\"; \"5\"; \"6\" \n  } ordering=out\n  x [style=invis]\n  x -> { \"1-2\"; \"3-4\"; \"5\"; \"6\" } [style=invis] \"1-2\" -> \"1-2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.25\"]\n\"1-2\" -> \"3-4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.75\"]\n\"3-4\" -> \"1-2\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.625\"]\n\"3-4\" -> \"3-4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.125\"]\n\"3-4\" -> \"5\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.1\"]\n\"3-4\" -> \"6\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.25\"]\n\"5\" -> \"1-2\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"5\" -> \"3-4\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.4\"]\n\"5\" -> \"5\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"5\" -> \"6\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.2\"]\n\"6\" -> \"1-2\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"6\" -> \"5\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.333\"]\n\"6\" -> \"6\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.333\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
 <div
@@ -661,7 +744,7 @@ this projection is for 2 years. We use the function ‘project’.</p>
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see &#39;?plot.projection&#39;.  
 plot(pr1)</code></pre>
-<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="primitive-matrix" class="section level2">
 <h2>Primitive Matrix</h2>
@@ -734,7 +817,7 @@ pr2.2 &lt;- project(Lrub1, vector=n0.att, time=156,
 <pre class="r"><code>plot(pr2.1, ylim=c(0.4,1), log=&quot;y&quot;, cex.axis=0.8)
 text(52, pr2.1[51], &quot;attenuation&quot;, 
      adj=c(1,-0.5), cex=0.8)</code></pre>
-<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code>maxamp(Lrub1 )</code></pre>
 <pre><code>## [1] 1.17506</code></pre>
 <pre class="r"><code>reac(Lrub1,bound = &quot;upper&quot;)</code></pre>
