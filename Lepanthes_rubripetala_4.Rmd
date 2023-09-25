@@ -366,7 +366,15 @@ plot_life_cycle(TF4)
 
 ## Realidad de la recopilación de datos
 
-Sin embargo, los datos de la siguiente matriz son limitados porque la colonización de semillas por los no se puede detectar en el campo con facilidad, porque las semillas son demasiado pequeñas y no existe una técnica rápida en el campo para detectar los hongos simbióticos.
+Sin embargo, los datos de la siguiente matriz son limitados porque la colonización de semillas no se puede detectar en el campo con facilidad, porque las semillas son demasiado pequeñas y no existe una técnica rápida en el campo para detectar los hongos simbióticos y la colonización de los hongos entrando en la semilla. 
+
+![Orchid with Mycorrhiza: From 21st Century Guidebook to Fungi, SECOND EDITION, by David Moore, Geoffrey D. Robson and Anthony P. J. Trinci](figures/orchid-mycorrhiza.jpg)
+
+
+
+
+***
+
 
 Esta matriz se basa en el tamaño, con una fecundidad media.
  Las clases de tamaño son las siguientes:
@@ -397,7 +405,7 @@ par(mar=c(5,4,1,1))
 This one is biased towards adults.
 
 ```{r}
-n0 <- c(10, 10, 20, 10)
+n0 <- c(10, 10, 10, 10)
 
 ```
 
@@ -419,23 +427,35 @@ plot(pr1)
 
 
 ## Primitive Matrix
-For a primitive matrix (see below), the long-term growth rate is the real  part of the first dominant eigenvalue of the PPM.
+
+For a primitive matrix (see below), the long-term growth rate is the real part of the first dominant eigenvalue of the PPM.
 
 ```{r}
 eigs <- eigen(TF)
 eigs
-lambdamax <- Re(eigs$values[1])
+lambdamax <- Re(eigs$values[1]) # esta función seleciona para el primer valor
 lambdamax
+
+# Es más facil utilzar la siguiente función en el paquete popdemo
+
+truelambda(TF) # Con el paquete popdemo
+lambda(TF) # con el paquete popbio
 ```
 
-Stable Stable Stage distribution 
+Stable Stage distribution 
 
 
 The stable demographic structure of the population is equal to the dominant right eigenvector, which is the absolute value of the real part of the first eigenvector.
 
 This is the expected proportional distribution among the different stages **IF** the population attains a sable structure.   
 
+Compara la porporción que hay por etapas al principio de la investigación
+
+n0 <- c(10, 10, 10, 10)
+
 ```{r}
+
+
 
 w <- stable.stage(TF)
 w
@@ -443,8 +463,83 @@ w
 
 Note that the package popbio provides functions 'lambda' and 'stable.stage' that will provide these also.
 
+• Elasticity: the proportional change in population growth rate resulting from an equivalent proportional change in a specific vital rate.
 
-For more info on projecting population dynamics, see demo(projection).
+• Elasticidad: el cambio proporcional en la tasa de crecimiento de la población resultante de un cambio proporcional equivalente en una tasa vital específica.
+
+
+```{r}
+elas(TF)
+```
+
+
+
+Excercise. Caretta caretta
+
+Use data from COMADRE: Crowder LB; Crouse DT; Heppell SS; Martin
+Reference Type: Journal Article
+DOI/ISBN: 10.2307/1941948
+Journal Name: Ecol Appl
+Title:
+Year: 1994
+Volume:
+Pages:
+
+
+Caretta caretta: 
+
+A Matrix			
+0	0	0	76.5
+0.675	0	0	0
+0	0.75	0	0
+0	0	0.704	0.809
+
+![Irreducible Matrix](figures/Caretta_caretta.png)
+
+
+
+```{r}
+matUCc=matrix(c(
+0,	    0,   	     0,	    0,     0,
+0.675,	0.703,     0,	    0,     0,
+0,	    0.047,	   0.657,  0,    0, 
+0	,     0,	       0.019,	0.682, 0,
+0,      0,         0,     0.061, 0.8091
+), byrow=5, ncol=5)
+
+
+
+matFCc=matrix(c(			
+0,	0,	0,	4.665, 61.896,
+0,	0,	0,	0,0,
+0,	0,	0,	0,0,
+0,	0,	0,	0,0,
+0,0,0,0,0
+), byrow=5, ncol=5)
+
+matACc=matUCc+matFCc
+
+matACc
+```
+
+
+```{r}
+truelambda(matACc)
+
+elas(matACc)
+```
+Plot turtle growth
+
+```{r}
+
+nCc <- c(10, 10, 10, 10, 10)
+pr1 <- project(matACc, vector=nCc, time=24)
+
+#Plot the projection. This uses an S3 plotting
+#method for projections. For info, see '?plot.projection'.  
+plot(pr1)
+```
+
 
 *******
 
@@ -474,9 +569,9 @@ biased, and it amplifies.  One is juvenile-
 biased and it attenuates.
 
 ```{r}
-n0.amp <- c(1000,1,1,1)
+n0.att <- c(1000,1,1,1)
 
-n0.att <- c(1,1,1,1000)
+n0.amp <- c(1,1,1,1000)
 ```
 
 
@@ -492,9 +587,9 @@ to compare between models with different population
 sizes, and different long-term growth rates.
 
 ```{r}
-pr2.1 <- project(TF, vector=n0.amp, time=156, 
+pr2.1amp <- project(TF, vector=n0.amp, time=50, 
                  standard.A=T, standard.vec=T)
-pr2.2 <- project(TF, vector=n0.att, time=156, 
+pr2.2att <- project(TF, vector=n0.att, time=50, 
                  standard.A=T, standard.vec=T)
 ```
 
@@ -502,15 +597,22 @@ pr2.2 <- project(TF, vector=n0.att, time=156,
 Plot the amplification projection and label it
 
 ```{r}
-plot(pr2.1, ylim=c(0.4,1), log="y", cex.axis=0.8)
-text(52, pr2.1[51], "attenuation", 
+plot(pr2.2att, ylim=c(0.4,1.0), log="y", cex.axis=0.8)
+text(30, pr2.2att[10], "attenuation", 
      adj=c(1,-0.5), cex=0.8)
+
+
+
+
+plot(pr2.1amp, ylim=c(0.4,1.2), log="y", cex.axis=0.8)
+text(30, pr2.1amp[10], "amplification", 
+     adj=c(1,-.25), cex=0.8)
 maxamp(TF )
 reac(TF,bound = "upper")
 inertia(TF,bound = "lower")
 ```
 Calculate the transient dynamics of the
-amplification projection
+amplification projection.  
 
 
 ```{r}
