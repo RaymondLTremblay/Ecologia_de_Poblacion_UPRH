@@ -93,21 +93,21 @@ colnames(TF_TF) <- c("plantulas", "juveniles", "adulto no reproductivos", "adult
 rownames(TF_TF) <- colnames(TF_TF)
 
 #stages <- c(TF_TF) 
-plot_life_cycle(TF_TF)
+plot_life_cycle(TF_TF, node_order = c(1,2,3,4))
 ```
 
 
-En general lo que uno hace es separar la matriz de transciones (matU) de la matriz de fecundidad (matF).  Eso es para tener claro los procesos que ocurren en la población.   Sumando ambas matriz **matU**+**matF** = **matA** tenemos la matriz para evaluar la dinamica poblacional de esa población.  Nota que eso es la terminología que van a encontrar en la literatura,  **matU** y **matF** y **matA**
+En general lo que uno hace es separar la matriz de transciones (matU) de la matriz de fecundidad (matF).  Eso es para tener claro los procesos que ocurren en la población.   Sumando ambas matriz **matU**+**matF** = **matA** tenemos la matriz para evaluar la dinamica poblacional de esa población.  Nota que eso es la nueva terminología que van a encontrar en la literatura reciente,  **matU** y **matF** y **matA**
 
 ```{r}
 
 library(Rage)
 matU=matrix(c(
-0.43, 	0,	  0.00,   0.00, 
-0.38,	  0.84, 0.00,	  0.00, 
-0, 	    0.00,	  0.51,	0.15,
-0,      0.14, 0.43, 0.84
-), byrow=4, ncol=4)
+0.43, 	0,	    0.00,   0.00, 
+0.38,	  0.84,   0.00,	  0.00, 
+0, 	    0.00,	  0.51,	  0.15,
+0,      0.14,   0.43,   0.84),
+byrow=4, ncol=4)
 
 matU
 
@@ -187,7 +187,7 @@ This is a measure of the asymptotic population growth rate of the species
 
 TF
 library(popbio)
-lambda(TF)
+lambda(TF) # crecimiento de 3% 
 ```
 
 
@@ -281,6 +281,7 @@ library(popdemo)
 isErgodic(TF, digits=10, return.eigvec=FALSE)
 isIrreducible(TF)
 
+plot_life_cycle(TF)
 ```
  
  lambda(TF)
@@ -296,10 +297,10 @@ isIrreducible(TF)
 ```{r} 
  library(Rage)
 matU4=matrix(c(
-0.43, 	0,	  0,    0.00,
-0.38,	0.84, 	0,	  0, 
-0, 	    0,	  0.51,	0.15,	
-0,      0.0, 0.43, 0.84
+0.43, 	0,	    0,     0.00,
+0.38,	  0.84, 	0,	   0, 
+0.00,   0,	    0.51,	 0.15,	
+0,      0.0,    0.43,  0.84
 ), byrow=4, ncol=4)
 
 matU4  # ¿Cual es el problema con esa matriz?
@@ -317,6 +318,7 @@ matF4
 TF4=matU4+matF4
 
 isErgodic(TF4)
+isIrreducible(TF4)
 
 plot_life_cycle(TF4)
 ```
@@ -359,6 +361,10 @@ isIrreducible(TF4)
 plot_life_cycle(TF4)
 ```
 
+
+
+
+
 ![Irreducible Matrix](figures/mee3_32_f1.gif)
 
 ***
@@ -376,7 +382,7 @@ Sin embargo, los datos de la siguiente matriz son limitados porque la colonizaci
 ***
 
 
-Esta matriz se basa en el tamaño, con una fecundidad media.
+Esta matriz se basa en el tamaños o carateristicas observable en el campo, con una fecundidad media.
  Las clases de tamaño son las siguientes:
  
  - 1: Plántula
@@ -417,7 +423,7 @@ Project the orchid PPM and population vector.  In this case, we are projecting f
 
 
 ```{r}
-pr1 <- project(TF, vector=n0, time=24)
+pr1 <- project(TF, vector=n0, time=100)
 
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see '?plot.projection'.  
@@ -474,7 +480,7 @@ elas(TF)
 
 
 
-Excercise. Caretta caretta
+Excercise. *Caretta caretta*
 
 Use data from COMADRE: Crowder LB; Crouse DT; Heppell SS; Martin
 Reference Type: Journal Article
@@ -488,15 +494,9 @@ Pages:
 
 Caretta caretta: 
 
-A Matrix			
-0	0	0	76.5
-0.675	0	0	0
-0	0.75	0	0
-0	0	0.704	0.809
+![Caretta caretta matrix](figures/Caretta_caretta.png)
 
-![Irreducible Matrix](figures/Caretta_caretta.png)
-
-
+Las matrices 
 
 ```{r}
 matUCc=matrix(c(
@@ -520,6 +520,18 @@ matFCc=matrix(c(
 matACc=matUCc+matFCc
 
 matACc
+
+plot_life_cycle(matACc)
+
+
+
+colnames(matACc) <- c("Huevos", "small_juv(1-7yrs)", "Large_juv(8-15)", "Subadults(16-21)", "Adults(22+)")
+rownames(matACc) <- colnames(matACc)
+
+plot_life_cycle(matACc) # life cycle with names
+
+
+
 ```
 
 
@@ -539,6 +551,60 @@ pr1 <- project(matACc, vector=nCc, time=24)
 #method for projections. For info, see '?plot.projection'.  
 plot(pr1)
 ```
+
+## Elasticities
+Perturbation analysis is an intuitively appealing way to answer questions about the relative importance of variation in parameters in the matrix. ... Elasticity analysis estimates the effect of a proportional change in the vital rates on population growth rate λ (= er, where r is the per capita rate of population increase)1, 2.
+
+
+```{r elasticities}
+matACc # the matrix matU
+round(elas(matACc),digit=4) # elasticities
+```
+
+
+## Stable Stage distribution.
+
+La proporción de individuos por estapa cuando la población llega a su estabilidad
+
+```{r}
+stable.stage(matACc)
+```
+
+
+
+## Convergence Time
+
+Convergence Time is the expected time for a population at attain stable stage distribution. Calculate the time to convergence of a population matrix projection model from the model projection.
+ convt(A, vector = "n", accuracy = 0.01, iterations = 1e+05)
+
+```{r}
+
+n=c(1000,0,0,0, 0)
+convt(matACc, accuracy=1e-3, vector=n) # Convergence time to Stable Stage Distribution
+
+n1=c(238,648,103,7, 3)
+convt(matACc, accuracy=1e-3, vector=n1) # Convergence time to Stable Stage Distribution
+
+
+```
+
+
+
+# Damping Ratio
+The damping ratio (ρ) is a measure of how fast a population will converge to the stable stage distribution and is defined as the dominant eigenvalue (λ1) divided by the absolute value of the largest subdominant eigenvalue (λ2) (Caswell 1989).
+
+Thus small damping ratio suggest that populations will take a long time to attain stable stage distribution, while large damping ratio, the stable stage distribution will be attain within a few time periods.  
+
+```{r}
+
+dr(matACc)
+dr(matACc, return.time=TRUE, x=10) # damping ratio
+
+```
+
+
+
+
 
 
 *******
