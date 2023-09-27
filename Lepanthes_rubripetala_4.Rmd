@@ -496,6 +496,12 @@ Caretta caretta:
 
 ![Caretta caretta matrix](figures/Caretta_caretta.png)
 
+
+```{r}
+#remotes::install_github("jonesor/Rage") # eso es para instalar el programa directo de github
+```
+
+
 Las matrices 
 
 ```{r}
@@ -511,10 +517,10 @@ matUCc=matrix(c(
 
 matFCc=matrix(c(			
 0,	0,	0,	4.665, 61.896,
-0,	0,	0,	0,0,
-0,	0,	0,	0,0,
-0,	0,	0,	0,0,
-0,0,0,0,0
+0,	0,	0,	0, 0,
+0,	0,	0,	0, 0,
+0,	0,	0,	0, 0,
+0,  0,  0,  0, 0
 ), byrow=5, ncol=5)
 
 matACc=matUCc+matFCc
@@ -528,6 +534,8 @@ plot_life_cycle(matACc)
 colnames(matACc) <- c("Huevos", "small_juv(1-7yrs)", "Large_juv(8-15)", "Subadults(16-21)", "Adults(22+)")
 rownames(matACc) <- colnames(matACc)
 
+
+library(Rage)
 plot_life_cycle(matACc) # life cycle with names
 
 
@@ -537,15 +545,15 @@ plot_life_cycle(matACc) # life cycle with names
 
 ```{r}
 truelambda(matACc)
+lambda(matACc)
 
-elas(matACc)
 ```
 Plot turtle growth
 
 ```{r}
 
-nCc <- c(10, 10, 10, 10, 10)
-pr1 <- project(matACc, vector=nCc, time=24)
+nCc <- c(10, 10, 10, 10, 1000)
+pr1 <- project(matACc, vector=nCc, time=240)
 
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see '?plot.projection'.  
@@ -558,16 +566,19 @@ Perturbation analysis is an intuitively appealing way to answer questions about 
 
 ```{r elasticities}
 matACc # the matrix matU
-round(elas(matACc),digit=4) # elasticities
+
+
+round(elas(matACc),digit=4) # elas=elasticities, en el paquete "popdemo"
 ```
 
 
 ## Stable Stage distribution.
 
-La proporción de individuos por estapa cuando la población llega a su estabilidad
+La proporción de individuos por etapa cuando la población llega a su estabilidad/madura
 
 ```{r}
-stable.stage(matACc)
+
+stable.stage(matACc) # en el paquete popdemo
 ```
 
 
@@ -578,7 +589,7 @@ Convergence Time is the expected time for a population at attain stable stage di
  convt(A, vector = "n", accuracy = 0.01, iterations = 1e+05)
 
 ```{r}
-
+# convt, en popdemo
 n=c(1000,0,0,0, 0)
 convt(matACc, accuracy=1e-3, vector=n) # Convergence time to Stable Stage Distribution
 
