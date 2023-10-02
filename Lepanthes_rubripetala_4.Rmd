@@ -125,7 +125,7 @@ TF=matU+matF
 TF
 
 
-colnames(TF) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos")
+colnames(TF) <- c("plantulas", "juveniles", "A no reprod", "A reprod")
 rownames(TF) <- colnames(TF)
 TF
 orchid_names= c("1_plantulas", "2_juveniles", "3_adulto no reproductivos", "4_adultos reproductivos")
@@ -438,7 +438,7 @@ For a primitive matrix (see below), the long-term growth rate is the real part o
 
 ```{r}
 eigs <- eigen(TF)
-eigs
+eigs # los diferentes eigenvalue de la matrix. El que responde al crecimiento intrinsico de la población es la parte mayor real.    
 lambdamax <- Re(eigs$values[1]) # esta función seleciona para el primer valor
 lambdamax
 
@@ -448,26 +448,35 @@ truelambda(TF) # Con el paquete popdemo
 lambda(TF) # con el paquete popbio
 ```
 
-Stable Stage distribution 
+### Distribución estable de la población, **w** 
 
+ Stable Stage distribution 
 
 The stable demographic structure of the population is equal to the dominant right eigenvector, which is the absolute value of the real part of the first eigenvector.
 
-This is the expected proportional distribution among the different stages **IF** the population attains a sable structure.   
+This is the expected proportional distribution among the different stages **IF** the population attains a stable structure.   
 
-Compara la porporción que hay por etapas al principio de la investigación
+Compara la porporción que hay por etapas al principio de la investigación. 
 
 n0 <- c(10, 10, 10, 10)
 
 ```{r}
 
-
-
 w <- stable.stage(TF)
 w
+
+barplot(w, col="green", ylim=c(0,1), las=1, main="Lepanthes rubripetala",
+     ylab="La proporción Etapa de Vida", xlab="Etapas de vida")
+
+
 ```
 
 Note that the package popbio provides functions 'lambda' and 'stable.stage' that will provide these also.
+
+
+### Elasticidad
+
+
 
 • Elasticity: the proportional change in population growth rate resulting from an equivalent proportional change in a specific vital rate.
 
@@ -564,9 +573,13 @@ plot(pr1)
 Perturbation analysis is an intuitively appealing way to answer questions about the relative importance of variation in parameters in the matrix. ... Elasticity analysis estimates the effect of a proportional change in the vital rates on population growth rate λ (= er, where r is the per capita rate of population increase)1, 2.
 
 
-```{r elasticities}
+```{r matrix Caretta}
 matACc # the matrix matU
 
+```
+
+
+```{r matrix elasticidad Caretta}
 
 round(elas(matACc),digit=4) # elas=elasticities, en el paquete "popdemo"
 ```
@@ -583,6 +596,41 @@ stable.stage(matACc) # en el paquete popdemo
 
 
 
+
+
+
+
+# Damping Ratio
+
+Es un indice de medida de tiempo que toma la población a llegar a su etapas estable
+
+$$\rho=\frac{\lambda_1}{|\lambda_2|}$$
+
+The damping ratio (ρ) is a measure of how fast a population will converge to the stable stage distribution and is defined as the dominant eigenvalue (λ1) divided by the absolute value of the largest subdominant eigenvalue (λ2) (Caswell 1989).
+
+Thus **small damping ratio** suggest that populations will take a **long time** to attain stable stage distribution, while **large damping ratio**, the stable stage distribution will be attain within a **few** time periods.  
+
+```{r damping ratio de la orquidea}
+eigen(TF)
+# Calcular a mano el damping.ratio
+1.029/abs(0.77)
+dr(TF, return.time=TRUE, x=10)
+
+```
+
+
+```{r damping ratio Caretta }
+eigen(matACc)
+matACc
+0.95158/abs(0.711699)
+
+
+dr(matACc)
+dr(matACc, return.time=TRUE, x=10) # damping ratio
+
+```
+
+
 ## Convergence Time
 
 Convergence Time is the expected time for a population at attain stable stage distribution. Calculate the time to convergence of a population matrix projection model from the model projection.
@@ -591,30 +639,16 @@ Convergence Time is the expected time for a population at attain stable stage di
 ```{r}
 # convt, en popdemo
 n=c(1000,0,0,0, 0)
-convt(matACc, accuracy=1e-3, vector=n) # Convergence time to Stable Stage Distribution
+convt(matACc, accuracy=1e-3, vector=n) # Convergence time to Stable Stage Distribution from an invasive species starting with smallest size
 
 n1=c(238,648,103,7, 3)
-convt(matACc, accuracy=1e-3, vector=n1) # Convergence time to Stable Stage Distribution
+convt(matACc, accuracy=1e-3, vector=n1) # Convergence time to Stable Stage Distribution when close to Stable Stage
+
+n2=c(0,0,0,0,1000)
+convt(matACc, accuracy=1e-3, vector=n2) # Convergence time to Stable Stage Distribution when starting with an invasive species of adults
 
 
 ```
-
-
-
-# Damping Ratio
-The damping ratio (ρ) is a measure of how fast a population will converge to the stable stage distribution and is defined as the dominant eigenvalue (λ1) divided by the absolute value of the largest subdominant eigenvalue (λ2) (Caswell 1989).
-
-Thus small damping ratio suggest that populations will take a long time to attain stable stage distribution, while large damping ratio, the stable stage distribution will be attain within a few time periods.  
-
-```{r}
-
-dr(matACc)
-dr(matACc, return.time=TRUE, x=10) # damping ratio
-
-```
-
-
-
 
 
 
@@ -646,9 +680,9 @@ biased, and it amplifies.  One is juvenile-
 biased and it attenuates.
 
 ```{r}
-n0.att <- c(1000,1,1,1)
+n0.att <- c(1000,1,1,1) # La población es sesgada a una estructura de etapas pequeñas
 
-n0.amp <- c(1,1,1,1000)
+n0.amp <- c(1,1,1,1000) # la población es sesgada a una estructura de etapas grandes
 ```
 
 
@@ -785,7 +819,6 @@ maxamp(TF, return.t=T)
 maxatt(TF, return.t=T)
 inertia(TF, bound="upper")
 inertia(TF, bound="lower")
-
 
 
 Add points on the projection and label them

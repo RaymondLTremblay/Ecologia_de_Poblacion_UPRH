@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="RLTremblay" />
+
+<meta name="date" content="2023-10-02" />
+
+<title>Vignette_Tort</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> BIOL4458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Calendario</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Conferencias
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="INTRO.html">Introducción a BIOL4458</a>
+    </li>
+    <li>
+      <a href="LECTURE1_2.html">Un enfoque de sistemas holístico</a>
+    </li>
+    <li>
+      <a href="LECTURE2.html">Introducción a la Ecología de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE3_2.html">Thomas Robert Malthus</a>
+    </li>
+    <li>
+      <a href="LECTURE4.html">Regulación de Poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE5.html">El efecto Allee</a>
+    </li>
+    <li>
+      <a href="LECTURE6.html">Población estructurada por Edad</a>
+    </li>
+    <li>
+      <a href="LECTURE6a.html">Dinamica Poblacional en Orquideas</a>
+    </li>
+    <li>
+      <a href="LECTURE7.html">Modelos de población usando Matrices</a>
+    </li>
+    <li>
+      <a href="Lepanthes_rubripetala_4.html">Modelos matriciales de una orquidea</a>
+    </li>
+    <li>
+      <a href="LECTURE8.html">Modelos Estochasticos de poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE9.html">El paradigma de pequeñas poblaciones</a>
+    </li>
+    <li>
+      <a href="LECTURE10.html">Modelos individuales</a>
+    </li>
+    <li>
+      <a href="LECTURE11.html">El paradigma de poblaciones en reducción</a>
+    </li>
+    <li>
+      <a href="LECTURE12.html">PVA = Population Viability Analysis</a>
+    </li>
+    <li>
+      <a href="LECTURE13.html">Metapopulations</a>
+    </li>
+    <li>
+      <a href="LECTURE14.html">PVA example: pdogs and ferrets</a>
+    </li>
+    <li>
+      <a href="LECTURE15.html">Estimados de parametros</a>
+    </li>
+    <li>
+      <a href="LECTURE16.html">Interaciones entre especies: competencia</a>
+    </li>
+    <li>
+      <a href="LECTURE17.html">Interaciones entre especies: presa-depredador</a>
+    </li>
+    <li>
+      <a href="LECTURE18.html">Wrap-up</a>
+    </li>
+    <li>
+      <a href="PVA1_421.html">NRES421: PVA basics</a>
+    </li>
+    <li>
+      <a href="PVA2_421.html">NRES421: grizzly PVA</a>
+    </li>
+    <li>
+      <a href="PVA3_421.html">NRES421: loggerhead PVA</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Tareas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Tarea_1_historia_vida.html">Tarea 1: Historia de Vida</a>
+    </li>
+    <li>
+      <a href="Tarea_Ballena.html">Tarea 2: Dinámica de Ballenas</a>
+    </li>
+    <li>
+      <a href="Tarea_3_Paradigma_Poblacion_declive.html">Tarea 3: Paradigma de población en declive</a>
+    </li>
+    <li>
+      <a href="FINAL_PROJECTS.html">Proyecto Final</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Invitados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Invitados.html">Lecturas de los Invitados</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Ejemplos de proyecto de PVA
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="PVA_Ejemplos.html">PVA por los estudiantes</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Links.html">Links</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Vignette_Tort</h1>
+<h4 class="author">RLTremblay</h4>
+<h4 class="date">2023-10-02</h4>
+
+</div>
+
+
+<pre class="r"><code># Install dependencies from CRAN:
+#install.packages(c(&quot;devtools&quot;, &quot;expm&quot;, &quot;MCMCpack&quot;, &quot;markovchain&quot;))
+
+# Install stable version from GitHub (recommended):
+# NOTE don&#39;t forget to change the version number!
+library(popdemo)
+
+# Install development version &#39;popdemoDev&#39; (not recommended):
+#devtools::install_github(&quot;iainmstott/popdemo/Dev/popdemoDev&quot;, ref = &quot;development&quot;)
+
+#library(popdemoDev)</code></pre>
+<pre class="r"><code>data(Tort)
+
+Tort</code></pre>
+<pre><code>##       Yr    J1    J2    I1    I2    SA    A1   A2
+## Yr 0.000 0.000 0.000 0.000 0.000 1.300 1.980 2.57
+## J1 0.716 0.567 0.000 0.000 0.000 0.000 0.000 0.00
+## J2 0.000 0.149 0.567 0.000 0.000 0.000 0.000 0.00
+## I1 0.000 0.000 0.149 0.604 0.000 0.000 0.000 0.00
+## I2 0.000 0.000 0.000 0.235 0.560 0.000 0.000 0.00
+## SA 0.000 0.000 0.000 0.000 0.225 0.678 0.000 0.00
+## A1 0.000 0.000 0.000 0.000 0.000 0.249 0.851 0.00
+## A2 0.000 0.000 0.000 0.000 0.000 0.000 0.016 0.86</code></pre>
+<p>That is, the population size at time t nt is equal to projection
+matrix A multiplied by the population size at time 0, n0. We have the
+matrix, but not a vector. We will: - choose a vector using a random
+uniform distribution - project this vector using the project function
+from popdemo - plot the projection</p>
+<pre class="r"><code>Tortvec1 &lt;- runif(8)
+Tortvec1 &lt;- Tortvec1/sum(Tortvec1) #scales the vector to sum to 1
+( Tortp1.1 &lt;- project(Tort, Tortvec1, time = 100) )</code></pre>
+<pre><code>## 1 deterministic population projection over 100 time intervals.
+## 
+##   [1] 1.00000000 1.46913151 1.79259548 2.00199265 2.12059533 2.16789266
+##   [7] 2.15993291 2.11075004 2.03293770 1.93753990 1.83373460 1.72862008
+##  [13] 1.62721257 1.53263965 1.44646212 1.36905069 1.29995831 1.23824869
+##  [19] 1.18276064 1.13230249 1.08578046 1.04227106 1.00104970 0.96158825
+##  [25] 0.92353301 0.88667226 0.85090087 0.81618647 0.78254041 0.74999476
+##  [31] 0.71858566 0.68834244 0.65928164 0.63140474 0.60469851 0.57913707
+##  [37] 0.55468465 0.53129868 0.50893261 0.48753839 0.46706827 0.44747619
+##  [43] 0.42871858 0.41075478 0.39354712 0.37706078 0.36126359 0.34612564
+##  [49] 0.33161900 0.31771741 0.30439596 0.29163096 0.27939970 0.26768038
+##  [55] 0.25645202 0.24569440 0.23538803 0.22551415 0.21605469 0.20699229
+##  [61] 0.19831028 0.18999265 0.18202407 0.17438984 0.16707588 0.16006872
+##  [67] 0.15335547 0.14692376 0.14076179 0.13485823 0.12920224 0.12378344
+##  [73] 0.11859189 0.11361806 0.10885283 0.10428744 0.09991353 0.09572306
+##  [79] 0.09170835 0.08786202 0.08417701 0.08064655 0.07726417 0.07402364
+##  [85] 0.07091903 0.06794463 0.06509498 0.06236485 0.05974922 0.05724329
+##  [91] 0.05484246 0.05254233 0.05033866 0.04822742 0.04620472 0.04426686
+##  [97] 0.04241027 0.04063155 0.03892743 0.03729479 0.03573061</code></pre>
+<pre class="r"><code>plot(Tortp1.1, log = &quot;y&quot;)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>vec(Tortp1.1)[1:11, ]</code></pre>
+<pre><code>##               Yr         J1         J2         I1         I2         SA
+##  [1,] 0.08536555 0.03543107 0.13199073 0.16726860 0.24681486 0.03159457
+##  [2,] 0.66363185 0.08121115 0.08011797 0.12069685 0.17752444 0.07695446
+##  [3,] 0.65703614 0.52120713 0.05752735 0.08483848 0.12777745 0.09211812
+##  [4,] 0.64201419 0.76596232 0.11027787 0.05981402 0.09149241 0.09120601
+##  [5,] 0.61808868 0.89398279 0.17665594 0.05255907 0.06529204 0.08242347
+##  [6,] 0.58646079 0.94943974 0.23336735 0.05806741 0.04891493 0.07057382
+##  [7,] 0.54916568 0.95823825 0.27378581 0.06984445 0.04103820 0.05885491
+##  [8,] 0.50905941 0.93652372 0.29801405 0.08298013 0.03939484 0.04913722
+##  [9,] 0.46901701 0.89549549 0.30851600 0.09452410 0.04156144 0.04217888
+## [10,] 0.43133405 0.84356212 0.30835740 0.10306144 0.04548757 0.03794860
+## [11,] 0.39748660 0.78713490 0.30052940 0.10819436 0.04969248 0.03596386
+##              A1         A2
+##  [1,] 0.2582798 0.04325485
+##  [2,] 0.2276631 0.04133164
+##  [3,] 0.2129030 0.03918782
+##  [4,] 0.2041179 0.03710798
+##  [5,] 0.1964146 0.03517875
+##  [6,] 0.1876723 0.03339635
+##  [7,] 0.1772820 0.03172362
+##  [8,] 0.1655218 0.03011883
+##  [9,] 0.1530943 0.02855054
+## [10,] 0.1407857 0.02700297
+## [11,] 0.1292579 0.02547513</code></pre>
+<p>The time series of stage 2 sizes is:</p>
+<pre class="r"><code>vec(Tortp1.1)[, 2]</code></pre>
+<pre><code>##   [1] 0.03543107 0.08121115 0.52120713 0.76596232 0.89398279 0.94943974
+##   [7] 0.95823825 0.93652372 0.89549549 0.84356212 0.78713490 0.73090590
+##  [13] 0.67802240 0.63029995 0.58848759 0.55255399 0.52195922 0.49588689
+##  [19] 0.47342475 0.45369161 0.43591606 0.41947540 0.40390502 0.38888766
+##  [25] 0.37423109 0.35984063 0.34569130 0.33180271 0.31821838 0.30499003
+##  [31] 0.29216677 0.27978858 0.26788317 0.25646535 0.24553815 0.23509478
+##  [37] 0.22512111 0.21559802 0.20650357 0.19781475 0.18950875 0.18156387
+##  [43] 0.17396000 0.16667882 0.15970385 0.15302025 0.14661467 0.14047496
+##  [49] 0.13458996 0.12894928 0.12354312 0.11836216 0.11339744 0.10864033
+##  [55] 0.10408245 0.09971570 0.09553222 0.09152442 0.08768497 0.08400680
+##  [61] 0.08048312 0.07710740 0.07387340 0.07077513 0.06780686 0.06496310
+##  [67] 0.06223862 0.05962839 0.05712761 0.05473170 0.05243626 0.05023706
+##  [73] 0.04813009 0.04611148 0.04417752 0.04232467 0.04054953 0.03884884
+##  [79] 0.03721948 0.03565845 0.03416290 0.03273008 0.03135735 0.03004220
+##  [85] 0.02878220 0.02757506 0.02641854 0.02531052 0.02424898 0.02323196
+##  [91] 0.02225759 0.02132409 0.02042975 0.01957291 0.01875200 0.01796553
+##  [97] 0.01721204 0.01649015 0.01579854 0.01513594 0.01450113</code></pre>
+<p>Cuando se usa la función <strong>eigs</strong> con la opción
+<strong>“all”</strong> tenemos tres información</p>
+<ul>
+<li>el crecimeinto intrinsico, lambda</li>
+<li>la etapa estable de dsitibución; ss</li>
+<li>y el valor reproductivo; rv</li>
+</ul>
+<pre class="r"><code>eigs(Tort, &quot;all&quot;)</code></pre>
+<pre><code>## $lambda
+## [1] 0.9580592
+## 
+## $ss
+## [1] 0.22166176 0.40584601 0.15463401 0.06507518 0.03841807 0.03086514 0.07178663
+## [8] 0.01171319
+## 
+## $rv
+## [1] 0.1954968 0.2615887 0.6865549 1.8019036 2.7148109 4.8029132 4.3813423
+## [8] 5.1237087</code></pre>
+<pre class="r"><code>Tortw &lt;- eigs(Tort, &quot;ss&quot;)
+Tortpw &lt;- project(Tort, Tortw, time = 100)</code></pre>
+<pre class="r"><code>Tortp1.1s &lt;- project(Tort, Tortvec1, time = 100, 
+                     standard.A = TRUE, standard.vec = TRUE)
+Tortpws &lt;- project(Tort, Tortw, time = 100, 
+                   standard.A = TRUE, standard.vec = TRUE)
+plot(Tortp1.1s, log = &quot;y&quot;)
+lines(Tortpws, lty = 2)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>( r1 &lt;- reac(Tort, Tortvec1) )</code></pre>
+<pre><code>## [1] 1.533445</code></pre>
+<pre class="r"><code>##   [1] 1.136
+
+( i1 &lt;- inertia(Tort, Tortvec1) )</code></pre>
+<pre><code>## [1] 2.593017</code></pre>
+<pre class="r"><code>##   [1] 1.777
+
+## Copiar el chunk ariba
+Tortp1.1s &lt;- project(Tort, Tortvec1, time = 100, 
+                     standard.A = TRUE, standard.vec = TRUE)
+Tortpws &lt;- project(Tort, Tortw, time = 100, 
+                   standard.A = TRUE, standard.vec = TRUE)
+plot(Tortp1.1s, log = &quot;y&quot;)
+lines(Tortpws, lty = 2)
+points(c(1, 100), c(r1, i1), pch = 3, col = &quot;red&quot;)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>TortAMP &lt;- c(1, 1, 2, 3, 5, 8, 13, 21) #a population that amplifies
+TortATT &lt;- c(21, 13, 8, 5, 3, 2, 1, 1) #a population that attenuates
+TortBTH &lt;- c(0, 0, 0, 1, 0, 0, 0, 0) #a population that does both
+Tortvec3 &lt;- cbind(AMP = TortAMP, 
+                  ATT = TortATT,
+                  BTH = TortBTH)
+Tortp3.1 &lt;- project(Tort, Tortvec3, time = 100, 
+                    standard.A = TRUE, standard.vec = TRUE)
+plot(Tortp3.1, log = &quot;y&quot;); lines(Tortpws, lty = 2)
+( r3 &lt;- apply(Tortvec3, 2, reac, A = Tort) )</code></pre>
+<pre><code>##       AMP       ATT       BTH 
+## 2.6319219 0.9152956 0.8757288</code></pre>
+<pre class="r"><code>##      AMP    ATT    BTH 
+##   2.6319 0.9153 0.8757
+( r3t &lt;- rep(1, 3) )</code></pre>
+<pre><code>## [1] 1 1 1</code></pre>
+<pre class="r"><code>##   [1] 1 1 1
+
+( i3 &lt;- apply(Tortvec3, 2, inertia, A = Tort) )</code></pre>
+<pre><code>##       AMP       ATT       BTH 
+## 4.1442333 0.9122843 1.8019036</code></pre>
+<pre class="r"><code>##      AMP    ATT    BTH 
+##   4.1442 0.9123 1.8019
+( i3t &lt;- rep(100, 3) )</code></pre>
+<pre><code>## [1] 100 100 100</code></pre>
+<pre class="r"><code>##   [1] 100 100 100
+
+( max3 &lt;- apply(Tortvec3[,c(1,3)], 2, maxamp, A = Tort) )</code></pre>
+<pre><code>##      AMP      BTH 
+## 5.110659 1.962069</code></pre>
+<pre class="r"><code>##     AMP   BTH 
+##   5.111 1.962
+( max3t &lt;- apply(Tortvec3[,c(1,3)], 2, function(x){
+                 maxamp(vector = x, A = Tort, return.t = TRUE)$t}) )</code></pre>
+<pre><code>## AMP BTH 
+##   6  13</code></pre>
+<pre class="r"><code>##   AMP BTH 
+##     6  13
+
+( min3 &lt;- apply(Tortvec3[,c(2,3)], 2, maxatt, A = Tort) )</code></pre>
+<pre><code>##       ATT       BTH 
+## 0.8376878 0.7261496</code></pre>
+<pre class="r"><code>##      ATT    BTH 
+##   0.8377 0.7261
+( min3t &lt;- apply(Tortvec3[,c(2,3)], 2, function(x){
+                 maxatt(vector = x, A = Tort, return.t = TRUE )$t}) )</code></pre>
+<pre><code>## ATT BTH 
+##   4   3</code></pre>
+<pre class="r"><code>##   ATT BTH 
+##     4   3
+
+points(c(r3t, i3t, max3t, min3t), 
+       c(r3, i3, max3, min3), 
+       pch = 3, col = &quot;red&quot;)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>plot(Tortp1.1s, log = &quot;y&quot;, bounds = TRUE)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>plot(project(Tort, standard.A = TRUE), log = &quot;y&quot;)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>Tortpd &lt;- project(Tort, &quot;diri&quot;, time = 31,
+                  standard.A = TRUE)
+##   Warning in .recacheSubclasses(def@className, def, env): undefined subclass
+##   &quot;numericVector&quot; of class &quot;Mnumeric&quot;; definition not updated
+plot(Tortpd, plottype = &quot;shady&quot;, bounds = T, log = &quot;y&quot;)</code></pre>
+<p><img src="Tort_Stott_Vignette_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

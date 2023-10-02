@@ -1,0 +1,179 @@
+---
+title: "Vignette_Tort"
+author: "RLTremblay"
+date: "2023-10-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, eval=TRUE}
+# Install dependencies from CRAN:
+#install.packages(c("devtools", "expm", "MCMCpack", "markovchain"))
+
+# Install stable version from GitHub (recommended):
+# NOTE don't forget to change the version number!
+library(popdemo)
+
+# Install development version 'popdemoDev' (not recommended):
+#devtools::install_github("iainmstott/popdemo/Dev/popdemoDev", ref = "development")
+
+#library(popdemoDev)
+```
+
+
+
+```{r}
+data(Tort)
+
+Tort
+```
+
+That is, the population size at time t nt is equal to projection matrix A multiplied by the population size at time 0, n0. We have the matrix, but not a vector. We will:
+- choose a vector using a random uniform distribution
+- project this vector using the project function from popdemo
+- plot the projection
+
+```{r}
+Tortvec1 <- runif(8)
+Tortvec1 <- Tortvec1/sum(Tortvec1) #scales the vector to sum to 1
+( Tortp1.1 <- project(Tort, Tortvec1, time = 100) )
+
+plot(Tortp1.1, log = "y")
+```
+
+
+
+
+
+```{r}
+vec(Tortp1.1)[1:11, ]
+```
+
+
+The time series of stage 2 sizes is:
+
+
+```{r}
+vec(Tortp1.1)[, 2]
+```
+
+
+Cuando se usa la función **eigs** con la opción **"all"** tenemos tres información
+
+ - el crecimeinto intrinsico, lambda
+ - la etapa estable de dsitibución; ss
+ - y el valor reproductivo; rv
+
+
+```{r}
+eigs(Tort, "all")
+```
+```{r}
+Tortw <- eigs(Tort, "ss")
+Tortpw <- project(Tort, Tortw, time = 100)
+```
+
+
+
+```{r}
+Tortp1.1s <- project(Tort, Tortvec1, time = 100, 
+                     standard.A = TRUE, standard.vec = TRUE)
+Tortpws <- project(Tort, Tortw, time = 100, 
+                   standard.A = TRUE, standard.vec = TRUE)
+plot(Tortp1.1s, log = "y")
+lines(Tortpws, lty = 2)
+```
+
+
+
+```{r}
+( r1 <- reac(Tort, Tortvec1) )
+##   [1] 1.136
+
+( i1 <- inertia(Tort, Tortvec1) )
+##   [1] 1.777
+
+## Copiar el chunk ariba
+Tortp1.1s <- project(Tort, Tortvec1, time = 100, 
+                     standard.A = TRUE, standard.vec = TRUE)
+Tortpws <- project(Tort, Tortw, time = 100, 
+                   standard.A = TRUE, standard.vec = TRUE)
+plot(Tortp1.1s, log = "y")
+lines(Tortpws, lty = 2)
+points(c(1, 100), c(r1, i1), pch = 3, col = "red")
+```
+
+
+
+
+```{r}
+TortAMP <- c(1, 1, 2, 3, 5, 8, 13, 21) #a population that amplifies
+TortATT <- c(21, 13, 8, 5, 3, 2, 1, 1) #a population that attenuates
+TortBTH <- c(0, 0, 0, 1, 0, 0, 0, 0) #a population that does both
+Tortvec3 <- cbind(AMP = TortAMP, 
+                  ATT = TortATT,
+                  BTH = TortBTH)
+Tortp3.1 <- project(Tort, Tortvec3, time = 100, 
+                    standard.A = TRUE, standard.vec = TRUE)
+plot(Tortp3.1, log = "y"); lines(Tortpws, lty = 2)
+( r3 <- apply(Tortvec3, 2, reac, A = Tort) )
+##      AMP    ATT    BTH 
+##   2.6319 0.9153 0.8757
+( r3t <- rep(1, 3) )
+##   [1] 1 1 1
+
+( i3 <- apply(Tortvec3, 2, inertia, A = Tort) )
+##      AMP    ATT    BTH 
+##   4.1442 0.9123 1.8019
+( i3t <- rep(100, 3) )
+##   [1] 100 100 100
+
+( max3 <- apply(Tortvec3[,c(1,3)], 2, maxamp, A = Tort) )
+##     AMP   BTH 
+##   5.111 1.962
+( max3t <- apply(Tortvec3[,c(1,3)], 2, function(x){
+                 maxamp(vector = x, A = Tort, return.t = TRUE)$t}) )
+##   AMP BTH 
+##     6  13
+
+( min3 <- apply(Tortvec3[,c(2,3)], 2, maxatt, A = Tort) )
+##      ATT    BTH 
+##   0.8377 0.7261
+( min3t <- apply(Tortvec3[,c(2,3)], 2, function(x){
+                 maxatt(vector = x, A = Tort, return.t = TRUE )$t}) )
+##   ATT BTH 
+##     4   3
+
+points(c(r3t, i3t, max3t, min3t), 
+       c(r3, i3, max3, min3), 
+       pch = 3, col = "red")
+```
+
+
+
+```{r}
+plot(Tortp1.1s, log = "y", bounds = TRUE)
+```
+
+
+```{r}
+plot(project(Tort, standard.A = TRUE), log = "y")
+```
+
+
+```{r}
+Tortpd <- project(Tort, "diri", time = 31,
+                  standard.A = TRUE)
+##   Warning in .recacheSubclasses(def@className, def, env): undefined subclass
+##   "numericVector" of class "Mnumeric"; definition not updated
+plot(Tortpd, plottype = "shady", bounds = T, log = "y")
+```
+
+
+
+
+

@@ -581,19 +581,14 @@ TF</code></pre>
 ## [2,] 0.38 0.84 0.00 0.00
 ## [3,] 0.00 0.00 0.51 0.15
 ## [4,] 0.00 0.14 0.43 0.84</code></pre>
-<pre class="r"><code>colnames(TF) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;adulto no reproductivos&quot;, &quot;adultos reproductivos&quot;)
+<pre class="r"><code>colnames(TF) &lt;- c(&quot;plantulas&quot;, &quot;juveniles&quot;, &quot;A no reprod&quot;, &quot;A reprod&quot;)
 rownames(TF) &lt;- colnames(TF)
 TF</code></pre>
-<pre><code>##                         plantulas juveniles adulto no reproductivos
-## plantulas                    0.43      0.00                    0.00
-## juveniles                    0.38      0.84                    0.00
-## adulto no reproductivos      0.00      0.00                    0.51
-## adultos reproductivos        0.00      0.14                    0.43
-##                         adultos reproductivos
-## plantulas                                0.14
-## juveniles                                0.00
-## adulto no reproductivos                  0.15
-## adultos reproductivos                    0.84</code></pre>
+<pre><code>##             plantulas juveniles A no reprod A reprod
+## plantulas        0.43      0.00        0.00     0.14
+## juveniles        0.38      0.84        0.00     0.00
+## A no reprod      0.00      0.00        0.51     0.15
+## A reprod         0.00      0.14        0.43     0.84</code></pre>
 <pre class="r"><code>orchid_names= c(&quot;1_plantulas&quot;, &quot;2_juveniles&quot;, &quot;3_adulto no reproductivos&quot;, &quot;4_adultos reproductivos&quot;)
 
 
@@ -602,7 +597,7 @@ orchid_names_2= c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;)
 #stages &lt;- c(TF_TF) 
 plot_life_cycle(TF) </code></pre>
 <div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f81d56f1030c9f4f7501" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"adulto no reproductivos\" -> \"adultos reproductivos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"adulto no reproductivos\" -> \"adultos reproductivos\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"A reprod\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A no reprod\" -> \"A no reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"A no reprod\" -> \"A reprod\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"A reprod\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A reprod\" -> \"A no reprod\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"A reprod\" -> \"A reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#plot_life_cycle(TF, stages = orchid_names_2)</code></pre>
 <hr />
 <p>Here is the theoretical life cycle of the species</p>
@@ -627,16 +622,11 @@ crecimiento demográfico asintótica).</p>
 <p>This is a measure of the asymptotic population growth rate of the
 species</p>
 <pre class="r"><code>TF</code></pre>
-<pre><code>##                         plantulas juveniles adulto no reproductivos
-## plantulas                    0.43      0.00                    0.00
-## juveniles                    0.38      0.84                    0.00
-## adulto no reproductivos      0.00      0.00                    0.51
-## adultos reproductivos        0.00      0.14                    0.43
-##                         adultos reproductivos
-## plantulas                                0.14
-## juveniles                                0.00
-## adulto no reproductivos                  0.15
-## adultos reproductivos                    0.84</code></pre>
+<pre><code>##             plantulas juveniles A no reprod A reprod
+## plantulas        0.43      0.00        0.00     0.14
+## juveniles        0.38      0.84        0.00     0.00
+## A no reprod      0.00      0.00        0.51     0.15
+## A reprod         0.00      0.14        0.43     0.84</code></pre>
 <pre class="r"><code>library(popbio)
 lambda(TF) # crecimiento de 3% </code></pre>
 <pre><code>## [1] 1.029629</code></pre>
@@ -755,7 +745,7 @@ isErgodic(TF, digits=10, return.eigvec=FALSE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>plot_life_cycle(TF)</code></pre>
 <div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b28bdc049c35513929a8" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b28bdc049c35513929a8">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"adulto no reproductivos\" -> \"adultos reproductivos\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"adulto no reproductivos\" -> \"adultos reproductivos\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"adultos reproductivos\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adulto no reproductivos\" -> \"adulto no reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"adulto no reproductivos\" -> \"adultos reproductivos\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"adultos reproductivos\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"adultos reproductivos\" -> \"adulto no reproductivos\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"adultos reproductivos\" -> \"adultos reproductivos\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-b28bdc049c35513929a8">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"A reprod\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A no reprod\" -> \"A no reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"A no reprod\" -> \"A reprod\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"A reprod\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A reprod\" -> \"A no reprod\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"A reprod\" -> \"A reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>lambda(TF)</p>
 <hr />
 <div id="ergodica" class="section level4">
@@ -902,7 +892,7 @@ plot(pr1)</code></pre>
 <p>For a primitive matrix (see below), the long-term growth rate is the
 real part of the first dominant eigenvalue of the PPM.</p>
 <pre class="r"><code>eigs &lt;- eigen(TF)
-eigs</code></pre>
+eigs # los diferentes eigenvalue de la matrix. El que responde al crecimiento intrinsico de la población es la parte mayor real.    </code></pre>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1.0296288+0.000000i 0.7709252+0.000000i 0.4097230+0.050035i
@@ -927,23 +917,30 @@ truelambda(TF) # Con el paquete popdemo</code></pre>
 ## [4,] 1.029629 1.029629</code></pre>
 <pre class="r"><code>lambda(TF) # con el paquete popbio</code></pre>
 <pre><code>## [1] 1.029629</code></pre>
+<div id="distribución-estable-de-la-población-w" class="section level3">
+<h3>Distribución estable de la población, <strong>w</strong></h3>
 <p>Stable Stage distribution</p>
 <p>The stable demographic structure of the population is equal to the
 dominant right eigenvector, which is the absolute value of the real part
 of the first eigenvector.</p>
 <p>This is the expected proportional distribution among the different
-stages <strong>IF</strong> the population attains a sable structure.</p>
+stages <strong>IF</strong> the population attains a stable
+structure.</p>
 <p>Compara la porporción que hay por etapas al principio de la
-investigación</p>
+investigación.</p>
 <p>n0 &lt;- c(10, 10, 10, 10)</p>
 <pre class="r"><code>w &lt;- stable.stage(TF)
 w</code></pre>
-<pre><code>##               plantulas               juveniles adulto no reproductivos 
-##               0.1173246               0.2351086               0.1450580 
-##   adultos reproductivos 
-##               0.5025088</code></pre>
+<pre><code>##   plantulas   juveniles A no reprod    A reprod 
+##   0.1173246   0.2351086   0.1450580   0.5025088</code></pre>
+<pre class="r"><code>barplot(w, col=&quot;green&quot;, ylim=c(0,1), las=1, main=&quot;Lepanthes rubripetala&quot;,
+     ylab=&quot;La proporción Etapa de Vida&quot;, xlab=&quot;Etapas de vida&quot;)</code></pre>
+<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Note that the package popbio provides functions ‘lambda’ and
 ‘stable.stage’ that will provide these also.</p>
+</div>
+<div id="elasticidad" class="section level3">
+<h3>Elasticidad</h3>
 <p>• Elasticity: the proportional change in population growth rate
 resulting from an equivalent proportional change in a specific vital
 rate.</p>
@@ -951,16 +948,11 @@ rate.</p>
 población resultante de un cambio proporcional equivalente en una tasa
 vital específica.</p>
 <pre class="r"><code>elas(TF)</code></pre>
-<pre><code>##                          plantulas  juveniles adulto no reproductivos
-## plantulas               0.02693792 0.00000000              0.00000000
-## juveniles               0.03756455 0.16639992              0.00000000
-## adulto no reproductivos 0.00000000 0.00000000              0.06986646
-## adultos reproductivos   0.00000000 0.03756455              0.07118554
-##                         adultos reproductivos
-## plantulas                          0.03756455
-## juveniles                          0.00000000
-## adulto no reproductivos            0.07118554
-## adultos reproductivos              0.48173098</code></pre>
+<pre><code>##              plantulas  juveniles A no reprod   A reprod
+## plantulas   0.02693792 0.00000000  0.00000000 0.03756455
+## juveniles   0.03756455 0.16639992  0.00000000 0.00000000
+## A no reprod 0.00000000 0.00000000  0.06986646 0.07118554
+## A reprod    0.00000000 0.03756455  0.07118554 0.48173098</code></pre>
 <p>Excercise. <em>Caretta caretta</em></p>
 <p>Use data from COMADRE: Crowder LB; Crouse DT; Heppell SS; Martin
 Reference Type: Journal Article DOI/ISBN: 10.2307/1941948 Journal Name:
@@ -970,6 +962,7 @@ Ecol Appl Title: Year: 1994 Volume: Pages:</p>
 <img src="figures/Caretta_caretta.png" alt="Caretta caretta matrix" />
 <div class="figcaption">Caretta caretta matrix</div>
 </div>
+<pre class="r"><code>#remotes::install_github(&quot;jonesor/Rage&quot;) # eso es para instalar el programa directo de github</code></pre>
 <p>Las matrices</p>
 <pre class="r"><code>matUCc=matrix(c(
 0,      0,           0,     0,     0,
@@ -983,10 +976,10 @@ Ecol Appl Title: Year: 1994 Volume: Pages:</p>
 
 matFCc=matrix(c(            
 0,  0,  0,  4.665, 61.896,
-0,  0,  0,  0,0,
-0,  0,  0,  0,0,
-0,  0,  0,  0,0,
-0,0,0,0,0
+0,  0,  0,  0, 0,
+0,  0,  0,  0, 0,
+0,  0,  0,  0, 0,
+0,  0,  0,  0, 0
 ), byrow=5, ncol=5)
 
 matACc=matUCc+matFCc
@@ -1004,6 +997,8 @@ matACc</code></pre>
 <pre class="r"><code>colnames(matACc) &lt;- c(&quot;Huevos&quot;, &quot;small_juv(1-7yrs)&quot;, &quot;Large_juv(8-15)&quot;, &quot;Subadults(16-21)&quot;, &quot;Adults(22+)&quot;)
 rownames(matACc) &lt;- colnames(matACc)
 
+
+library(Rage)
 plot_life_cycle(matACc) # life cycle with names</code></pre>
 <div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-58606d47b924ed93d1b9" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-58606d47b924ed93d1b9">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Huevos\" -> \"small_juv(1-7yrs)\" -> \"Large_juv(8-15)\" -> \"Subadults(16-21)\" -> \"Adults(22+)\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Huevos\" -> \"small_juv(1-7yrs)\" -> \"Large_juv(8-15)\" -> \"Subadults(16-21)\" -> \"Adults(22+)\" [style=invis] } [style=invis] \"Huevos\" -> \"small_juv(1-7yrs)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.675\"]\n\"small_juv(1-7yrs)\" -> \"small_juv(1-7yrs)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.703\"]\n\"small_juv(1-7yrs)\" -> \"Large_juv(8-15)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.047\"]\n\"Large_juv(8-15)\" -> \"Large_juv(8-15)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.657\"]\n\"Large_juv(8-15)\" -> \"Subadults(16-21)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.019\"]\n\"Subadults(16-21)\" -> \"Huevos\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 4.665\"]\n\"Subadults(16-21)\" -> \"Subadults(16-21)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.682\"]\n\"Subadults(16-21)\" -> \"Adults(22+)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.061\"]\n\"Adults(22+)\" -> \"Huevos\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 61.896\"]\n\"Adults(22+)\" -> \"Adults(22+)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.809\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
@@ -1014,27 +1009,17 @@ plot_life_cycle(matACc) # life cycle with names</code></pre>
 ## [3,] 0.9515816 0.9515818
 ## [4,] 0.9515817 0.9515818
 ## [5,] 0.9515817 0.9515819</code></pre>
-<pre class="r"><code>elas(matACc)</code></pre>
-<pre><code>##                       Huevos small_juv(1-7yrs) Large_juv(8-15) Subadults(16-21)
-## Huevos            0.00000000        0.00000000      0.00000000      0.008669156
-## small_juv(1-7yrs) 0.05791373        0.16378255      0.00000000      0.000000000
-## Large_juv(8-15)   0.00000000        0.05791373      0.12916388      0.000000000
-## Subadults(16-21)  0.00000000        0.00000000      0.05791373      0.146512753
-## Adults(22+)       0.00000000        0.00000000      0.00000000      0.049244572
-##                   Adults(22+)
-## Huevos             0.04924457
-## small_juv(1-7yrs)  0.00000000
-## Large_juv(8-15)    0.00000000
-## Subadults(16-21)   0.00000000
-## Adults(22+)        0.27964134</code></pre>
+<pre class="r"><code>lambda(matACc)</code></pre>
+<pre><code>## [1] 0.9515817</code></pre>
 <p>Plot turtle growth</p>
-<pre class="r"><code>nCc &lt;- c(10, 10, 10, 10, 10)
-pr1 &lt;- project(matACc, vector=nCc, time=24)
+<pre class="r"><code>nCc &lt;- c(10, 10, 10, 10, 1000)
+pr1 &lt;- project(matACc, vector=nCc, time=240)
 
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see &#39;?plot.projection&#39;.  
 plot(pr1)</code></pre>
-<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Lepanthes_rubripetala_4_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+</div>
 </div>
 <div id="elasticities" class="section level2">
 <h2>Elasticities</h2>
@@ -1056,7 +1041,7 @@ the per capita rate of population increase)1, 2.</p>
 ## Large_juv(8-15)        0.0000
 ## Subadults(16-21)       0.0000
 ## Adults(22+)            0.8091</code></pre>
-<pre class="r"><code>round(elas(matACc),digit=4) # elasticities</code></pre>
+<pre class="r"><code>round(elas(matACc),digit=4) # elas=elasticities, en el paquete &quot;popdemo&quot;</code></pre>
 <pre><code>##                   Huevos small_juv(1-7yrs) Large_juv(8-15) Subadults(16-21)
 ## Huevos            0.0000            0.0000          0.0000           0.0087
 ## small_juv(1-7yrs) 0.0579            0.1638          0.0000           0.0000
@@ -1072,37 +1057,86 @@ the per capita rate of population increase)1, 2.</p>
 </div>
 <div id="stable-stage-distribution." class="section level2">
 <h2>Stable Stage distribution.</h2>
-<p>La proporción de individuos por estapa cuando la población llega a su
-estabilidad</p>
-<pre class="r"><code>stable.stage(matACc)</code></pre>
+<p>La proporción de individuos por etapa cuando la población llega a su
+estabilidad/madura</p>
+<pre class="r"><code>stable.stage(matACc) # en el paquete popdemo</code></pre>
 <pre><code>##            Huevos small_juv(1-7yrs)   Large_juv(8-15)  Subadults(16-21) 
 ##       0.238535412       0.647720163       0.103342617       0.007283541 
 ##       Adults(22+) 
 ##       0.003118266</code></pre>
 </div>
-<div id="convergence-time" class="section level2">
-<h2>Convergence Time</h2>
-<p>Convergence Time is the expected time for a population at attain
-stable stage distribution. Calculate the time to convergence of a
-population matrix projection model from the model projection. convt(A,
-vector = “n”, accuracy = 0.01, iterations = 1e+05)</p>
-<pre class="r"><code>n=c(1000,0,0,0, 0)
-convt(matACc, accuracy=1e-3, vector=n) # Convergence time to Stable Stage Distribution</code></pre>
-<pre><code>## [1] 27</code></pre>
-<pre class="r"><code>n1=c(238,648,103,7, 3)
-convt(matACc, accuracy=1e-3, vector=n1) # Convergence time to Stable Stage Distribution</code></pre>
-<pre><code>## [1] 6</code></pre>
-</div>
 </div>
 <div id="damping-ratio" class="section level1">
 <h1>Damping Ratio</h1>
+<p>Es un indice de medida de tiempo que toma la población a llegar a su
+etapas estable</p>
+<p><span
+class="math display">\[\rho=\frac{\lambda_1}{|\lambda_2|}\]</span></p>
 <p>The damping ratio (ρ) is a measure of how fast a population will
 converge to the stable stage distribution and is defined as the dominant
 eigenvalue (λ1) divided by the absolute value of the largest subdominant
 eigenvalue (λ2) (Caswell 1989).</p>
-<p>Thus small damping ratio suggest that populations will take a long
-time to attain stable stage distribution, while large damping ratio, the
-stable stage distribution will be attain within a few time periods.</p>
+<p>Thus <strong>small damping ratio</strong> suggest that populations
+will take a <strong>long time</strong> to attain stable stage
+distribution, while <strong>large damping ratio</strong>, the stable
+stage distribution will be attain within a <strong>few</strong> time
+periods.</p>
+<pre class="r"><code>eigen(TF)</code></pre>
+<pre><code>## eigen() decomposition
+## $values
+## [1] 1.0296288+0.000000i 0.7709252+0.000000i 0.4097230+0.050035i
+## [4] 0.4097230-0.050035i
+## 
+## $vectors
+##              [,1]          [,2]                  [,3]                  [,4]
+## [1,] 0.2004457+0i -0.1598129+0i  0.6765605+0.0000000i  0.6765605+0.0000000i
+## [2,] 0.4016762+0i  0.8791759+0i -0.5895339-0.0685543i -0.5895339+0.0685543i
+## [3,] 0.2478274+0i -0.2237269+0i  0.2618588-0.2310360i  0.2618588+0.2310360i
+## [4,] 0.8585216+0i -0.3891732+0i -0.0979901+0.2417980i -0.0979901-0.2417980i</code></pre>
+<pre class="r"><code># Calcular a mano el damping.ratio
+1.029/abs(0.77)</code></pre>
+<pre><code>## [1] 1.336364</code></pre>
+<pre class="r"><code>dr(TF, return.time=TRUE, x=10)</code></pre>
+<pre><code>## $dr
+## [1] 1.335576
+## 
+## $t
+## [1] 7.957447</code></pre>
+<pre class="r"><code>eigen(matACc)</code></pre>
+<pre><code>## eigen() decomposition
+## $values
+## [1] 0.951581736832+0.0000000i 0.711699196265+0.2231612i
+## [3] 0.711699196265-0.2231612i 0.476116990057+0.0000000i
+## [5] 0.000002880582+0.0000000i
+## 
+## $vectors
+##                [,1]                      [,2]                      [,3]
+## [1,] 0.341748635+0i -0.012009343-0.308076711i -0.012009343+0.308076711i
+## [2,] 0.927985828+0i -0.931845451+0.000000000i -0.931845451+0.000000000i
+## [3,] 0.148058513+0i -0.045378158+0.185133353i -0.045378158-0.185133353i
+## [4,] 0.010435098+0i  0.014982761+0.005857473i  0.014982761-0.005857473i
+## [5,] 0.004467527+0i -0.000156567-0.004027127i -0.000156567+0.004027127i
+##                 [,4]            [,5]
+## [1,] -0.309283738+0i -0.720439943+0i
+## [2,]  0.920150536+0i  0.691748157+0i
+## [3,] -0.239088653+0i -0.049486006+0i
+## [4,]  0.022064397+0i  0.001378648+0i
+## [5,] -0.004042033+0i -0.000103940+0i</code></pre>
+<pre class="r"><code>matACc</code></pre>
+<pre><code>##                   Huevos small_juv(1-7yrs) Large_juv(8-15) Subadults(16-21)
+## Huevos             0.000             0.000           0.000            4.665
+## small_juv(1-7yrs)  0.675             0.703           0.000            0.000
+## Large_juv(8-15)    0.000             0.047           0.657            0.000
+## Subadults(16-21)   0.000             0.000           0.019            0.682
+## Adults(22+)        0.000             0.000           0.000            0.061
+##                   Adults(22+)
+## Huevos                61.8960
+## small_juv(1-7yrs)      0.0000
+## Large_juv(8-15)        0.0000
+## Subadults(16-21)       0.0000
+## Adults(22+)            0.8091</code></pre>
+<pre class="r"><code>0.95158/abs(0.711699)</code></pre>
+<pre><code>## [1] 1.337054</code></pre>
 <pre class="r"><code>dr(matACc)</code></pre>
 <pre><code>## [1] 1.275807</code></pre>
 <pre class="r"><code>dr(matACc, return.time=TRUE, x=10) # damping ratio</code></pre>
@@ -1111,9 +1145,26 @@ stable stage distribution will be attain within a few time periods.</p>
 ## 
 ## $t
 ## [1] 9.453131</code></pre>
+<div id="convergence-time" class="section level2">
+<h2>Convergence Time</h2>
+<p>Convergence Time is the expected time for a population at attain
+stable stage distribution. Calculate the time to convergence of a
+population matrix projection model from the model projection. convt(A,
+vector = “n”, accuracy = 0.01, iterations = 1e+05)</p>
+<pre class="r"><code># convt, en popdemo
+n=c(1000,0,0,0, 0)
+convt(matACc, accuracy=1e-3, vector=n) # Convergence time to Stable Stage Distribution from an invasive species starting with smallest size</code></pre>
+<pre><code>## [1] 27</code></pre>
+<pre class="r"><code>n1=c(238,648,103,7, 3)
+convt(matACc, accuracy=1e-3, vector=n1) # Convergence time to Stable Stage Distribution when close to Stable Stage</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>n2=c(0,0,0,0,1000)
+convt(matACc, accuracy=1e-3, vector=n2) # Convergence time to Stable Stage Distribution when starting with an invasive species of adults</code></pre>
+<pre><code>## [1] 24</code></pre>
 <hr />
 <div id="section-1" class="section level75">
 <p class="heading"></p>
+</div>
 </div>
 <div id="transient-dynamics" class="section level2">
 <h2>TRANSIENT DYNAMICS</h2>
@@ -1129,9 +1180,9 @@ designed to be 3.5” by 3.5” (Check size of plot window using
 <pre class="r"><code>par(mar=c(10,4,1,1))</code></pre>
 <p>Create 2 population vectors. One is adult- biased, and it amplifies.
 One is juvenile- biased and it attenuates.</p>
-<pre class="r"><code>n0.att &lt;- c(1000,1,1,1)
+<pre class="r"><code>n0.att &lt;- c(1000,1,1,1) # La población es sesgada a una estructura de etapas pequeñas
 
-n0.amp &lt;- c(1,1,1,1000)</code></pre>
+n0.amp &lt;- c(1,1,1,1000) # la población es sesgada a una estructura de etapas grandes</code></pre>
 <p>Project these vectors using the project function. We are
 standardising the matrix using ‘standard.A=T’ to remove effects of
 asymptotic dynamics. This means that the projection has a long-term
