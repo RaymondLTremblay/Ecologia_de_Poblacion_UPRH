@@ -536,7 +536,7 @@ suficientes</em>. En este caso, la herramienta que utilizamos se llama
 rango de valores posibles para un parámetro (generalmente una tasa vital
 per cápita, a menudo modelada como [Variables] en InsightMaker) sobre la
 que no estamos seguros (por ejemplo, la tasa de supervivencia de adultos
-podría ser 0.6 o 0.7) y ver qué sucede. a nuestro sistema de estudio
+podría ser 0.6 o 0.7) y ver qué sucede en nuestro sistema de estudio
 (por ejemplo, dada la incertidumbre que tenemos sobre el verdadero valor
 del parámetro, ¿es plausible que la población se extinga? ¿Es plausible
 que disminuya?).</p>
@@ -548,7 +548,7 @@ class="section level3">
 <li><p>En segundo lugar, generalmente no podemos predecir si un
 individuo vivirá o morirá, se reproducirá o no se reproducirá, etc. Todo
 lo que podemos saber es la <em>probabilidad </em> de apareamiento, o la
-<em>probabilidad </em> de morir, o el valor per cápita. <em>tasa </em>
+<em>probabilidad </em> de morir, o el valor per cápita. La <em>tasa</em>
 de producción de descendencia, o la probabilidad de que una descendencia
 determinada sea hembra. Pero cuando se trata de proyectar exactamente
 qué individuos viven o mueren (¡si un individuo tendrá suerte, por así
@@ -609,7 +609,10 @@ este caso, la distribución se ve así (<em>probabilidad</em> de cada
 # define an arbitrary distribution
 
 box &lt;- c(rep(1,10),rep(2,5),rep(3,2))  # define what&#39;s in the lottery ball machine (10 &quot;1&quot; balls, 5 &quot;2&quot; balls and 2 &quot;3&quot; balls)
-barplot(table(box)/sum(table(box)),ylab=&quot;probability&quot;,xlab=&quot;possibility&quot;)  # visualize the distribution of possibilities</code></pre>
+
+box</code></pre>
+<pre><code>##  [1] 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 3 3</code></pre>
+<pre class="r"><code>barplot(table(box)/sum(table(box)),ylab=&quot;probability&quot;,xlab=&quot;possibility&quot;)  # visualize the distribution of possibilities</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Una distribución de probabilidad puede ser prácticamente cualquier
 cosa que desees. Sin embargo, hay varios tipos clave de distribución de
@@ -631,22 +634,26 @@ consideremos una <em>distribución binomial</em></p>
 #######
 # Ejemplo: distribución binomial (distribución de lanzamiento de moneda)
 
-             # plot a discrete distribution!
+
+# graficar la distribución binomial!
 xvals &lt;- seq(0,10,1)
+
 probs &lt;- dbinom(xvals,10,prob=0.3)
+#Cual es la suma de la probabilidades?
+
 names(probs) &lt;- xvals
                
-barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Binomial distribution (discrete)&quot;)</code></pre>
+barplot(probs,ylab=&quot;Probabilidades&quot;,xlab=&quot;Posibilidades&quot;,main=&quot;Distribución binomial (discreta)&quot;)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="comprobamos-esta-distribución-con-un-ejercicio-en-clase"
 class="section level3">
 <h3>Comprobamos esta distribución con un ejercicio en clase</h3>
-<p>Cada estudiante tomará una moneda, y la tirará para y contará cuantos
+<p>Cada estudiante tomará una moneda, y la tirará y contará cuantos
 <strong>caras</strong> contabiliza de 10 tiradas. Que tipo de
 característica biologíaca podría representar una distribución binomial?
-Aqui para comenzar datos ficticios. Tendrán que poner los datos
+Aquí para comenzar datos ficticios. Tendrán que poner los datos
 recopilado en la clase.</p>
 <pre class="r"><code>library(tidyverse)
 caras=c(4,7, 6, 8, 5, 4,3,7,7,2,
@@ -678,7 +685,11 @@ caras</code></pre>
 ## 20     5</code></pre>
 <pre class="r"><code>ggplot(caras, aes(value))+
   geom_histogram(aes(y=..density..))</code></pre>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+## ℹ Please use `after_stat(density)` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para
 la modelización la distribución binomial?</p>
@@ -688,10 +699,10 @@ la modelización la distribución binomial?</p>
 # Distribución de Poisson
 
 xvals &lt;- seq(0,10,1)
-probs &lt;- dpois(xvals,lambda=2.2)     # Poisson distribution
+probs &lt;- dpois(xvals,lambda=2.2)     # Distribución Poisson El lambda es una función que determina las probabilidades
 names(probs) &lt;- xvals
                
-barplot(probs,ylab=&quot;Probability&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Poisson distribution (discrete)&quot;)</code></pre>
+barplot(probs,ylab=&quot;Probabilidades&quot;,xlab=&quot;Possibilidades&quot;,main=&quot;Distribución Poisson (discreta)&quot;)</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><strong>P </strong> ¿Qué parámetro de población podría ser útil para
 modelar la distribución de Poisson?</p>
@@ -708,7 +719,7 @@ posibilidades entre dos posibilidades únicas.</p>
 lower = 0
 upper = 10
 
-curve(dunif(x,lower,upper),0,10,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Uniform distribution (continuous)&quot;,ylim=c(0,1))   # probability density</code></pre>
+curve(dunif(x,lower,upper),0,10,ylab=&quot;Probabilidad (densidad)&quot;,xlab=&quot;Possibilidades&quot;,main=&quot;Distribución uniforme (continuous)&quot;,ylim=c(0,1))   # Distribución uniforme</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Esta no es una distribución de aspecto muy interesante. Todos los
 números posibles del 0 al 10 son igualmente probables.</p>
@@ -725,27 +736,28 @@ distribución para modelar?</p>
 mean = 7.1
 stdev = 1.9
 
-curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probability (density)&quot;,xlab=&quot;Possibilities&quot;,main=&quot;Normal distribution (continuous)&quot;)   # probability density</code></pre>
+curve(dnorm(x,mean,stdev),0,15,ylab=&quot;Probabilidades (densidad)&quot;,xlab=&quot;Possibilidades&quot;,main=&quot;Distribución normal (continua)&quot;)  </code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 ### Nota que la distribución puede estar con valores negativos</p>
 <pre class="r"><code>#########
 # Distribución normal
 
-x=rnorm(1000000, 0,1 )
+x=rnorm(10000, 0,1 )
 x=as.tibble(x)</code></pre>
 <pre><code>## Warning: `as.tibble()` was deprecated in tibble 2.0.0.
-## Please use `as_tibble()` instead.
-## The signature and semantics have changed, see `?as_tibble`.
+## ℹ Please use `as_tibble()` instead.
+## ℹ The signature and semantics have changed, see `?as_tibble`.
 ## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
 <pre class="r"><code>#x
 
 ggplot(x, aes(value))+
   geom_density()</code></pre>
 <p><img src="LECTURE8_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>Otra distribución continua que debe conocer se llama Distribución
-<strong>lognormal</strong>. Esta distribución tiene un límite inferior
-de cero y un límite superior de <span
+<p>Otra distribución continua que debe conocer se llama
+<strong>Distribución lognormal</strong>. Esta distribución tiene un
+límite inferior de cero y un límite superior de <span
 class="math inline">\(\infty\)</span>.</p>
 <p><strong>P</strong> ¿Qué parámetro de población podría ser útil para
 el modelado de la distribución logarítmica normal?</p>
@@ -973,7 +985,7 @@ esto en InsightMaker, use la siguiente fórmula para el flujo * Muertes *
 (puede usar el menú “Funciones de números aleatorios” de la derecha para
 escribir automáticamente la sintaxis adecuada):</p></li>
 </ol>
-<pre><code>RandBinomial([Population], [Death rate])</code></pre>
+<pre><code>#RandBinomial([Population], [Death rate])</code></pre>
 <p>En términos sencillos: el número de muertes cada año es una cantidad
 aleatoria determinada por el “lanzamiento de una moneda” (la
 distribución binomial es la distribución del “lanzamiento de una

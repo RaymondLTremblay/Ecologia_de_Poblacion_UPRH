@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Install stable version from GitHub (recommended):
 # NOTE don't forget to change the version number!
+# devtools::install_github("iainmstott/popdemo/x.x-x/popdemo") #x.x-x is the desired version number
 library(popdemo)
 
 # Install development version 'popdemoDev' (not recommended):
@@ -38,9 +39,11 @@ That is, the population size at time t nt is equal to projection matrix A multip
 - plot the projection
 
 ```{r}
-Tortvec1 <- runif(8)
+
+set.seed(1234)
+Tortvec1 <- runif(8) # el 8 se refiere que hay 8 etapas
 Tortvec1 <- Tortvec1/sum(Tortvec1) #scales the vector to sum to 1
-( Tortp1.1 <- project(Tort, Tortvec1, time = 100) )
+( Tortp1.1 <- project(Tort, Tortvec1, time = 11) )
 
 plot(Tortp1.1, log = "y")
 ```
@@ -50,6 +53,8 @@ plot(Tortp1.1, log = "y")
 
 
 ```{r}
+#nT=c(10000, 500, 300, .....)
+stable.stage(Tort)
 vec(Tortp1.1)[1:11, ]
 ```
 
@@ -58,6 +63,7 @@ The time series of stage 2 sizes is:
 
 
 ```{r}
+Tort
 vec(Tortp1.1)[, 2]
 ```
 
@@ -65,13 +71,17 @@ vec(Tortp1.1)[, 2]
 Cuando se usa la función **eigs** con la opción **"all"** tenemos tres información
 
  - el crecimeinto intrinsico, lambda
- - la etapa estable de dsitibución; ss
+ - la etapa estable de distibución; ss
  - y el valor reproductivo; rv
 
 
 ```{r}
+Tort
 eigs(Tort, "all")
 ```
+# Start here
+
+
 ```{r}
 Tortw <- eigs(Tort, "ss")
 Tortpw <- project(Tort, Tortw, time = 100)

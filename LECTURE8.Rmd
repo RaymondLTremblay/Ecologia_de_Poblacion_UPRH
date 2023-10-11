@@ -59,11 +59,11 @@ Como ecologistas de población aplicados, debemos **abrazar la incertidumbre**. 
 
 ### Análisis de incertidumbre
 
-¿Qué pasa si simplemente no tenemos suficientes datos para construir un modelo perfecto? Este es un ejemplo de *falta de conocimientos suficientes*. En este caso, la herramienta que utilizamos se llama **análisis de incertidumbre **. Básicamente, probamos un rango de valores posibles para un parámetro (generalmente una tasa vital per cápita, a menudo modelada como [Variables] en InsightMaker) sobre la que no estamos seguros (por ejemplo, la tasa de supervivencia de adultos podría ser 0.6 o 0.7) y ver qué sucede. a nuestro sistema de estudio (por ejemplo, dada la incertidumbre que tenemos sobre el verdadero valor del parámetro, ¿es plausible que la población se extinga? ¿Es plausible que disminuya?). 
+¿Qué pasa si simplemente no tenemos suficientes datos para construir un modelo perfecto? Este es un ejemplo de *falta de conocimientos suficientes*. En este caso, la herramienta que utilizamos se llama **análisis de incertidumbre **. Básicamente, probamos un rango de valores posibles para un parámetro (generalmente una tasa vital per cápita, a menudo modelada como [Variables] en InsightMaker) sobre la que no estamos seguros (por ejemplo, la tasa de supervivencia de adultos podría ser 0.6 o 0.7) y ver qué sucede en nuestro sistema de estudio (por ejemplo, dada la incertidumbre que tenemos sobre el verdadero valor del parámetro, ¿es plausible que la población se extinga? ¿Es plausible que disminuya?). 
 
 ### Modelos estocásticos (estocasticidad demográfica y ambiental)
 
-1. En segundo lugar, generalmente no podemos predecir si un individuo vivirá o morirá, se reproducirá o no se reproducirá, etc. Todo lo que podemos saber es la *probabilidad * de apareamiento, o la *probabilidad * de morir, o el valor per cápita. *tasa * de producción de descendencia, o la probabilidad de que una descendencia determinada sea hembra. Pero cuando se trata de proyectar exactamente qué individuos viven o mueren (¡si un individuo tendrá suerte, por así decirlo!), Quién da a luz y quién no, y cuántas hembras nacen, simplemente _no podemos saberlo con certeza_. Este es un ejemplo de un sistema que es intrínsecamente impredecible. En ecología de poblaciones, esto se denomina **estocasticidad demográfica **. En este caso, **variamos aleatoriamente el total de nacimientos y muertes ** (los [Flujos] en InsightMaker) para representar la imprevisibilidad inherente de los destinos individuales dentro de una población.
+1. En segundo lugar, generalmente no podemos predecir si un individuo vivirá o morirá, se reproducirá o no se reproducirá, etc. Todo lo que podemos saber es la *probabilidad * de apareamiento, o la *probabilidad * de morir, o el valor per cápita. La *tasa* de producción de descendencia, o la probabilidad de que una descendencia determinada sea hembra. Pero cuando se trata de proyectar exactamente qué individuos viven o mueren (¡si un individuo tendrá suerte, por así decirlo!), Quién da a luz y quién no, y cuántas hembras nacen, simplemente _no podemos saberlo con certeza_. Este es un ejemplo de un sistema que es intrínsecamente impredecible. En ecología de poblaciones, esto se denomina **estocasticidad demográfica **. En este caso, **variamos aleatoriamente el total de nacimientos y muertes ** (los [Flujos] en InsightMaker) para representar la imprevisibilidad inherente de los destinos individuales dentro de una población.
 
 
 2. En tercer lugar, por lo general no podemos predecir si el próximo año o el siguiente será favorable o desfavorable para el crecimiento de la población, es decir, si las tasas vitales per cápita (p. Ej., $B$, $d$ o $r$) será más o menos óptimo en un momento futuro (si una _población_ "tendrá suerte", por así decirlo). Este es otro ejemplo de un sistema que es *intrínsecamente impredecible*. En ecología de poblaciones, esto se denomina **estocasticidad ambiental**. En este caso, **variamos aleatoriamente las tasas vitales per cápita** (representadas como [Variables] en InsightMaker) para representar la imprevisibilidad inherente de las condiciones ambientales.
@@ -93,6 +93,8 @@ Por ejemplo, la caja puede tener 10 "unos", 5 "dos" y 2 "tres". En este caso, la
 # define an arbitrary distribution
 
 box <- c(rep(1,10),rep(2,5),rep(3,2))  # define what's in the lottery ball machine (10 "1" balls, 5 "2" balls and 2 "3" balls)
+
+box
 barplot(table(box)/sum(table(box)),ylab="probability",xlab="possibility")  # visualize the distribution of possibilities
 
 ```
@@ -117,12 +119,16 @@ En *distribuciones discretas*, cada resultado único tiene una probabilidad espe
 #######
 # Ejemplo: distribución binomial (distribución de lanzamiento de moneda)
 
-             # plot a discrete distribution!
+
+# graficar la distribución binomial!
 xvals <- seq(0,10,1)
+
 probs <- dbinom(xvals,10,prob=0.3)
+#Cual es la suma de la probabilidades?
+
 names(probs) <- xvals
                
-barplot(probs,ylab="Probability",xlab="Possibilities",main="Binomial distribution (discrete)")
+barplot(probs,ylab="Probabilidades",xlab="Posibilidades",main="Distribución binomial (discreta)")
 
 
 
@@ -134,9 +140,9 @@ barplot(probs,ylab="Probability",xlab="Possibilities",main="Binomial distributio
 ### Comprobamos esta distribución con un ejercicio en clase
 
 
-Cada estudiante tomará una moneda, y la tirará para y contará cuantos **caras** contabiliza de 10 tiradas.  Que tipo de característica biologíaca podría representar una distribución binomial?  Aqui para comenzar datos ficticios. Tendrán que poner los datos recopilado en la clase. 
+Cada estudiante tomará una moneda, y la tirará y contará cuantos **caras** contabiliza de 10 tiradas.  Que tipo de característica biologíaca podría representar una distribución binomial?  Aquí para comenzar datos ficticios. Tendrán que poner los datos recopilado en la clase. 
 
-```{r}
+```{r, message=FALSE}
 library(tidyverse)
 caras=c(4,7, 6, 8, 5, 4,3,7,7,2,
         9, 3, 5,4, 5, 4, 4,2,6,5)
@@ -160,10 +166,10 @@ Otra distribución discreta que usaremos en esta clase es la *distribución de P
 # Distribución de Poisson
 
 xvals <- seq(0,10,1)
-probs <- dpois(xvals,lambda=2.2)     # Poisson distribution
+probs <- dpois(xvals,lambda=2.2)     # Distribución Poisson El lambda es una función que determina las probabilidades
 names(probs) <- xvals
                
-barplot(probs,ylab="Probability",xlab="Possibilities",main="Poisson distribution (discrete)")
+barplot(probs,ylab="Probabilidades",xlab="Possibilidades",main="Distribución Poisson (discreta)")
 
 
 ```
@@ -187,7 +193,7 @@ Consideremos la *distribución uniforme*:
 lower = 0
 upper = 10
 
-curve(dunif(x,lower,upper),0,10,ylab="Probability (density)",xlab="Possibilities",main="Uniform distribution (continuous)",ylim=c(0,1))   # probability density
+curve(dunif(x,lower,upper),0,10,ylab="Probabilidad (densidad)",xlab="Possibilidades",main="Distribución uniforme (continuous)",ylim=c(0,1))   # Distribución uniforme
 
 ```
 
@@ -205,7 +211,7 @@ Otra distribución continua que debe conocer se llama *Distribución normal*. Es
 mean = 7.1
 stdev = 1.9
 
-curve(dnorm(x,mean,stdev),0,15,ylab="Probability (density)",xlab="Possibilities",main="Normal distribution (continuous)")   # probability density
+curve(dnorm(x,mean,stdev),0,15,ylab="Probabilidades (densidad)",xlab="Possibilidades",main="Distribución normal (continua)")  
 
 ```
 ### Nota que la distribución puede estar con valores negativos
@@ -215,7 +221,7 @@ curve(dnorm(x,mean,stdev),0,15,ylab="Probability (density)",xlab="Possibilities"
 #########
 # Distribución normal
 
-x=rnorm(1000000, 0,1 )
+x=rnorm(10000, 0,1 )
 x=as.tibble(x)
 #x
 
@@ -225,7 +231,7 @@ ggplot(x, aes(value))+
 ```
 
 
-Otra distribución continua que debe conocer se llama  Distribución **lognormal**. Esta distribución tiene un límite inferior de cero y un límite superior de $\infty$.
+Otra distribución continua que debe conocer se llama  **Distribución lognormal**. Esta distribución tiene un límite inferior de cero y un límite superior de $\infty$.
 
 
 **P** ¿Qué parámetro de población podría ser útil para el modelado de la distribución logarítmica normal?
@@ -505,7 +511,7 @@ Comencemos con una población básica en crecimiento exponencial que se parece a
 2. Usaremos una * distribución binomial * para representar el número de muertes. Es decir, tiramos una moneda la misma cantidad de veces que hay individuos en la población. Si la moneda sale cara, el individuo muere. En este caso, estamos usando una moneda sesgada, ¡solo sale cara el 30% de las veces! La * distribución binomial * representa esencialmente el número de veces que aparecieron cabezas. Para hacer esto en InsightMaker, use la siguiente fórmula para el flujo * Muertes * (puede usar el menú "Funciones de números aleatorios" de la derecha para escribir automáticamente la sintaxis adecuada):
 
 ```
-RandBinomial([Population], [Death rate])
+#RandBinomial([Population], [Death rate])
 ```
 
 En términos sencillos: el número de muertes cada año es una cantidad aleatoria determinada por el "lanzamiento de una moneda" (la distribución binomial es la distribución del "lanzamiento de una moneda"). El total de muertes se calcula lanzando una moneda por cada individuo de la población y matando a todos los individuos que salen "cara" (donde la probabilidad de que salga "cara" es la tasa de mortalidad).

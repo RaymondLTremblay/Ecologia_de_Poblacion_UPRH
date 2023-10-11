@@ -202,7 +202,7 @@ matU1=matrix(c(
 0.43, 	0,	  0,    0.00,
 0.38,	0.84, 	0,	  0, 
 0, 	    0,	  0.51,	0.15,	
-0,      0.14, 0.43, 0.44
+0,      0.14, 1.43, 0.44
 ), byrow=4, ncol=4)
 
 matU1
@@ -423,7 +423,7 @@ Project the orchid PPM and population vector.  In this case, we are projecting f
 
 
 ```{r}
-pr1 <- project(TF, vector=n0, time=100)
+pr1 <- project(TF, vector=n0, time=24)
 
 #Plot the projection. This uses an S3 plotting
 #method for projections. For info, see '?plot.projection'.  
@@ -445,7 +445,7 @@ lambdamax
 # Es más facil utilzar la siguiente función en el paquete popdemo
 
 truelambda(TF) # Con el paquete popdemo
-lambda(TF) # con el paquete popbio
+popbio::lambda(TF) # con el paquete popbio
 ```
 
 ### Distribución estable de la población, **w** 
@@ -461,7 +461,7 @@ Compara la porporción que hay por etapas al principio de la investigación.
 n0 <- c(10, 10, 10, 10)
 
 ```{r}
-
+library(popbio)
 w <- stable.stage(TF)
 w
 
@@ -606,6 +606,7 @@ Es un indice de medida de tiempo que toma la población a llegar a su etapas est
 
 $$\rho=\frac{\lambda_1}{|\lambda_2|}$$
 
+
 The damping ratio (ρ) is a measure of how fast a population will converge to the stable stage distribution and is defined as the dominant eigenvalue (λ1) divided by the absolute value of the largest subdominant eigenvalue (λ2) (Caswell 1989).
 
 Thus **small damping ratio** suggest that populations will take a **long time** to attain stable stage distribution, while **large damping ratio**, the stable stage distribution will be attain within a **few** time periods.  
@@ -613,7 +614,7 @@ Thus **small damping ratio** suggest that populations will take a **long time** 
 ```{r damping ratio de la orquidea}
 eigen(TF)
 # Calcular a mano el damping.ratio
-1.029/abs(0.77)
+1.0296/abs(0.7709) # Calcular a mano
 dr(TF, return.time=TRUE, x=10)
 
 ```
