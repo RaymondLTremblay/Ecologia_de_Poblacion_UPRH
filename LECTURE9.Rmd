@@ -101,6 +101,8 @@ Una vez que una población se vuelve lo suficientemente pequeña, se vuelve suje
 
 En general, la extinción a menudo es causada por procesos estocásticos, ¡pero es poco probable que los procesos estocásticos sean la razón por la que la población se redujo en primer lugar!
 
+***
+
 ## Poblaciones viables mínimas = Minimum Viable Populations (MVP)
 
 Como administradores de vida silvestre, a menudo deseamos saber: "¿qué tan pequeña debe ser una población antes de que tengamos que comenzar a preocuparnos por las consecuencias adversas como la extinción, la erosión genética y la endogamia?"
@@ -115,6 +117,8 @@ Sin embargo, la definición anterior no es estrictamente cuantificable para la m
 
 > _MVP: la abundancia más pequeña que satisface un umbral de riesgo de extinción especificado (por ejemplo, la abundancia inicial más pequeña de manera que el riesgo de extinción en 50 años sea inferior al 5%) _
 
+***
+
 ## Análisis de viabilidad poblacional (PVA)
 
 El Análisis de Viabilidad de la Población (PVA) se utiliza a menudo para modelar los procesos involucrados en el vórtice de extinción (el concepto central del paradigma de la pequeña población). Esto puede incluir deriva genética y depresión por endogamia. Sin embargo, en este curso, no entraremos en el modelado de la genética (a menos que realmente lo desee, ¡me complace mostrarle cómo hacer esto en Vortex!)
@@ -124,6 +128,7 @@ El software PVA más utilizado, [Vortex](http://www.vortex10.org/Vortex10.aspx),
 
 ![](figures/vortex10.jpg)
 
+***
 
 ## Example: Aruba island rattlesnake
 
