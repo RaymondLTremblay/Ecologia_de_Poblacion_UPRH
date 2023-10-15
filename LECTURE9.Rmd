@@ -19,6 +19,8 @@ La extinción final de una población suele ser probabilística. Es decir, una v
 
 Es decir: el paradigma de la pequeña población se refiere a la tendencia en **biología de la conservación ** a estudiar aquellos factores en gran parte *estocásticos * que pueden resultar en la extinción o degradación de pequeñas poblaciones. 
 
+***
+
 ### Estocasticidad demográfica
 
 ¡Ya hemos explorado este concepto, que es fundamental para el paradigma de la pequeña población!
@@ -35,7 +37,9 @@ Cosas extrañas y dramáticas como la extinción aleatoria **nunca sucederían**
 ¡Lo mismo ocurre con la *deriva genética *! ¡La deriva genética es un _fenómeno de población pequeña_!
 
 
-### Deriva Genetica
+***
+
+### Deriva Genética
 
 En poblaciones grandes, las fuerzas aleatorias simplemente no son lo suficientementes como para erradicar una variante genética relativamente común (alelo) de una población (esto podría suceder por selección natural, pero no a través de procesos reproductivos aleatorios). En poblaciones pequeñas, el azar puede ser el principal impulsor del cambio genético a lo largo del tiempo.
 
@@ -56,6 +60,10 @@ Finalmente, imaginemos que las bolas rojas representan individuos que tienen má
 ### Inbreeding depression
 
 ![](figures/inbreeding1.jpg)
+
+
+***
+
 ### Depresión Endogámica
 
 La depresión endogámica es otro problema peculiar de las poblaciones pequeñas.
@@ -76,6 +84,9 @@ A menos que ... tus dos padres sean parientes cercanos. Si sus padres son parien
 La imagen de arriba es de [Charles II of Spain](https://en.wikipedia.org/wiki/Charles_II_of_Spain), 
 quien ilustra trágicamente algunos de los problemas que pueden surgir con la endogamia severa.
 
+Nota de Wikipedia: Born on 6 November 1661, Charles was the only surviving son of Philip IV of Spain and Mariana of Austria, who were uncle and niece. While European nobility commonly married within the same extended family to retain property, the Spanish and Austrian Habsburgs were unusual in the extent to which they followed this policy.
+
+***
 
 ## El Vórtice de extinción
 
