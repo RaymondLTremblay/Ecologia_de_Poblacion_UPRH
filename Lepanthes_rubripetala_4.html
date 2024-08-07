@@ -14,7 +14,7 @@
 
 <title>Lepanthes rubripetala</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -37,10 +37,11 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="site_libs/viz-1.8.2/viz.js"></script>
 <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="site_libs/grViz-binding-1.0.10/grViz.js"></script>
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -596,7 +597,7 @@ TF</code></pre>
 orchid_names_2= c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;)
 #stages &lt;- c(TF_TF) 
 plot_life_cycle(TF) </code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f81d56f1030c9f4f7501" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f81d56f1030c9f4f7501" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-f81d56f1030c9f4f7501">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"A reprod\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A no reprod\" -> \"A no reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"A no reprod\" -> \"A reprod\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"A reprod\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A reprod\" -> \"A no reprod\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"A reprod\" -> \"A reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#plot_life_cycle(TF, stages = orchid_names_2)</code></pre>
 <hr />
@@ -744,7 +745,7 @@ isErgodic(TF, digits=10, return.eigvec=FALSE)</code></pre>
 <pre class="r"><code>isIrreducible(TF)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>plot_life_cycle(TF)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b28bdc049c35513929a8" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-b28bdc049c35513929a8" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-b28bdc049c35513929a8">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"plantulas\" -> \"juveniles\" -> \"A no reprod\" -> \"A reprod\" [style=invis] } [style=invis] \"plantulas\" -> \"plantulas\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"plantulas\" -> \"juveniles\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"juveniles\" -> \"juveniles\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"juveniles\" -> \"A reprod\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A no reprod\" -> \"A no reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"A no reprod\" -> \"A reprod\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"A reprod\" -> \"plantulas\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.14\"]\n\"A reprod\" -> \"A no reprod\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"A reprod\" -> \"A reprod\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>lambda(TF)</p>
 <hr />
@@ -790,7 +791,7 @@ isErgodic(TF4)</code></pre>
 <pre class="r"><code>isIrreducible(TF4)</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>plot_life_cycle(TF4)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b4f498b37ebe42c07e1" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-4b4f498b37ebe42c07e1" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-4b4f498b37ebe42c07e1">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\" -> \"2\" -> \"3\" -> \"4\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\" -> \"2\" -> \"3\" -> \"4\" [style=invis] } [style=invis] \"1\" -> \"1\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.28\"]\n\"4\" -> \"3\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <hr />
 </div>
@@ -832,7 +833,7 @@ matF4</code></pre>
 isIrreducible(TF4)</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>plot_life_cycle(TF4)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7cff03958c6c66c4d1af" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-7cff03958c6c66c4d1af" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-7cff03958c6c66c4d1af">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\" -> \"2\" -> \"3\" -> \"4\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\" -> \"2\" -> \"3\" -> \"4\" [style=invis] } [style=invis] \"1\" -> \"1\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.38\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.51\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.43\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.28\"]\n\"4\" -> \"3\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.15\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.84\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <div class="float">
 <img src="figures/mee3_32_f1.gif" alt="Irreducible Matrix" />
@@ -895,15 +896,15 @@ real part of the first dominant eigenvalue of the PPM.</p>
 eigs # los diferentes eigenvalue de la matrix. El que responde al crecimiento intrinsico de la población es la parte mayor real.    </code></pre>
 <pre><code>## eigen() decomposition
 ## $values
-## [1] 1.0296288+0.000000i 0.7709252+0.000000i 0.4097230+0.050035i
-## [4] 0.4097230-0.050035i
+## [1] 1.0296288+0.00000000i 0.7709252+0.00000000i 0.4097230+0.05003503i
+## [4] 0.4097230-0.05003503i
 ## 
 ## $vectors
-##              [,1]          [,2]                  [,3]                  [,4]
-## [1,] 0.2004457+0i -0.1598129+0i  0.6765605+0.0000000i  0.6765605+0.0000000i
-## [2,] 0.4016762+0i  0.8791759+0i -0.5895339-0.0685543i -0.5895339+0.0685543i
-## [3,] 0.2478274+0i -0.2237269+0i  0.2618588-0.2310360i  0.2618588+0.2310360i
-## [4,] 0.8585216+0i -0.3891732+0i -0.0979901+0.2417980i -0.0979901-0.2417980i</code></pre>
+##              [,1]          [,2]                    [,3]                    [,4]
+## [1,] 0.2004457+0i -0.1598129+0i  0.67656050+0.00000000i  0.67656050+0.00000000i
+## [2,] 0.4016762+0i  0.8791759+0i -0.58953389-0.06855432i -0.58953389+0.06855432i
+## [3,] 0.2478274+0i -0.2237269+0i  0.26185876-0.23103598i  0.26185876+0.23103598i
+## [4,] 0.8585216+0i -0.3891732+0i -0.09799012+0.24179804i -0.09799012-0.24179804i</code></pre>
 <pre class="r"><code>lambdamax &lt;- Re(eigs$values[1]) # esta función seleciona para el primer valor
 lambdamax</code></pre>
 <pre><code>## [1] 1.029629</code></pre>
@@ -993,7 +994,7 @@ matACc</code></pre>
 ## [4,] 0.000 0.000 0.019 0.682  0.0000
 ## [5,] 0.000 0.000 0.000 0.061  0.8091</code></pre>
 <pre class="r"><code>plot_life_cycle(matACc)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-67c388927faf32f29164" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-67c388927faf32f29164" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-67c388927faf32f29164">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\" -> \"2\" -> \"3\" -> \"4\" -> \"5\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\" -> \"2\" -> \"3\" -> \"4\" -> \"5\" [style=invis] } [style=invis] \"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.675\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.703\"]\n\"2\" -> \"3\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.047\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.657\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.019\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 4.665\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.682\"]\n\"4\" -> \"5\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.061\"]\n\"5\" -> \"1\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 61.896\"]\n\"5\" -> \"5\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.809\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>colnames(matACc) &lt;- c(&quot;Huevos&quot;, &quot;small_juv(1-7yrs)&quot;, &quot;Large_juv(8-15)&quot;, &quot;Subadults(16-21)&quot;, &quot;Adults(22+)&quot;)
 rownames(matACc) &lt;- colnames(matACc)
@@ -1001,7 +1002,7 @@ rownames(matACc) &lt;- colnames(matACc)
 
 library(Rage)
 plot_life_cycle(matACc) # life cycle with names</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-58606d47b924ed93d1b9" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-58606d47b924ed93d1b9" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-58606d47b924ed93d1b9">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"Huevos\" -> \"small_juv(1-7yrs)\" -> \"Large_juv(8-15)\" -> \"Subadults(16-21)\" -> \"Adults(22+)\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"Huevos\" -> \"small_juv(1-7yrs)\" -> \"Large_juv(8-15)\" -> \"Subadults(16-21)\" -> \"Adults(22+)\" [style=invis] } [style=invis] \"Huevos\" -> \"small_juv(1-7yrs)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.675\"]\n\"small_juv(1-7yrs)\" -> \"small_juv(1-7yrs)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.703\"]\n\"small_juv(1-7yrs)\" -> \"Large_juv(8-15)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.047\"]\n\"Large_juv(8-15)\" -> \"Large_juv(8-15)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.657\"]\n\"Large_juv(8-15)\" -> \"Subadults(16-21)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.019\"]\n\"Subadults(16-21)\" -> \"Huevos\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 4.665\"]\n\"Subadults(16-21)\" -> \"Subadults(16-21)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.682\"]\n\"Subadults(16-21)\" -> \"Adults(22+)\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.061\"]\n\"Adults(22+)\" -> \"Huevos\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 61.896\"]\n\"Adults(22+)\" -> \"Adults(22+)\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.809\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>truelambda(matACc)</code></pre>
 <pre><code>##           [,1]      [,2]
@@ -1085,15 +1086,15 @@ periods.</p>
 <pre class="r"><code>eigen(TF)</code></pre>
 <pre><code>## eigen() decomposition
 ## $values
-## [1] 1.0296288+0.000000i 0.7709252+0.000000i 0.4097230+0.050035i
-## [4] 0.4097230-0.050035i
+## [1] 1.0296288+0.00000000i 0.7709252+0.00000000i 0.4097230+0.05003503i
+## [4] 0.4097230-0.05003503i
 ## 
 ## $vectors
-##              [,1]          [,2]                  [,3]                  [,4]
-## [1,] 0.2004457+0i -0.1598129+0i  0.6765605+0.0000000i  0.6765605+0.0000000i
-## [2,] 0.4016762+0i  0.8791759+0i -0.5895339-0.0685543i -0.5895339+0.0685543i
-## [3,] 0.2478274+0i -0.2237269+0i  0.2618588-0.2310360i  0.2618588+0.2310360i
-## [4,] 0.8585216+0i -0.3891732+0i -0.0979901+0.2417980i -0.0979901-0.2417980i</code></pre>
+##              [,1]          [,2]                    [,3]                    [,4]
+## [1,] 0.2004457+0i -0.1598129+0i  0.67656050+0.00000000i  0.67656050+0.00000000i
+## [2,] 0.4016762+0i  0.8791759+0i -0.58953389-0.06855432i -0.58953389+0.06855432i
+## [3,] 0.2478274+0i -0.2237269+0i  0.26185876-0.23103598i  0.26185876+0.23103598i
+## [4,] 0.8585216+0i -0.3891732+0i -0.09799012+0.24179804i -0.09799012-0.24179804i</code></pre>
 <pre class="r"><code># Calcular a mano el damping.ratio
 1.0296/abs(0.7709) # Calcular a mano</code></pre>
 <pre><code>## [1] 1.335582</code></pre>
@@ -1106,17 +1107,16 @@ periods.</p>
 <pre class="r"><code>eigen(matACc)</code></pre>
 <pre><code>## eigen() decomposition
 ## $values
-## [1] 0.951581736832+0.0000000i 0.711699196265+0.2231612i
-## [3] 0.711699196265-0.2231612i 0.476116990057+0.0000000i
-## [5] 0.000002880582+0.0000000i
+## [1] 9.515817e-01+0.0000000i 7.116992e-01+0.2231612i 7.116992e-01-0.2231612i
+## [4] 4.761170e-01+0.0000000i 2.880582e-06+0.0000000i
 ## 
 ## $vectors
-##                [,1]                      [,2]                      [,3]
-## [1,] 0.341748635+0i -0.012009343-0.308076711i -0.012009343+0.308076711i
-## [2,] 0.927985828+0i -0.931845451+0.000000000i -0.931845451+0.000000000i
-## [3,] 0.148058513+0i -0.045378158+0.185133353i -0.045378158-0.185133353i
-## [4,] 0.010435098+0i  0.014982761+0.005857473i  0.014982761-0.005857473i
-## [5,] 0.004467527+0i -0.000156567-0.004027127i -0.000156567+0.004027127i
+##                [,1]                       [,2]                       [,3]
+## [1,] 0.341748635+0i -0.0120093429-0.308076711i -0.0120093429+0.308076711i
+## [2,] 0.927985828+0i -0.9318454510+0.000000000i -0.9318454510+0.000000000i
+## [3,] 0.148058513+0i -0.0453781577+0.185133353i -0.0453781577-0.185133353i
+## [4,] 0.010435098+0i  0.0149827612+0.005857473i  0.0149827612-0.005857473i
+## [5,] 0.004467527+0i -0.0001565665-0.004027127i -0.0001565665+0.004027127i
 ##                 [,4]            [,5]
 ## [1,] -0.309283738+0i -0.720439943+0i
 ## [2,]  0.920150536+0i  0.691748157+0i

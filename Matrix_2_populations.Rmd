@@ -1,0 +1,85 @@
+---
+title: "Matrix_2_populations"
+author: "Raymond_L_Tremblay"
+date: "2023-10-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(popdemo)
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+R3T=matrix(c(
+        0.43, 	0,	    0,    0.0, 
+        0.38,	  0.84, 	0,	  0, 
+        0, 	    0,	    0.51,	0.15,	
+        0,      0.14,   0.43, 0.84
+        
+        
+        ), byrow=TRUE, ncol=4)
+
+R3F=matrix(c(
+        0, 	0,	0, 0.14,
+        0,	0, 	0,0,
+        0,0,0,0,	
+        0,0,0,0
+        ), byrow=TRUE, ncol=4)
+ 
+TF_TF=R3T+R3F
+
+TF_TF
+
+TF=TF_TF
+
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+R2T=matrix(c(
+        0.43, 	0,	    0,    0.0,   0,0,0,0,
+        0.38,	  0.84, 	0,	  0,     0,0,0,0,
+        0, 	    0,	    0.51,	0.15,	 0,0,0,0,
+        0,      0.14,   0.43, 0.84,  0,0,0,0,
+        0,0,0,0,                     0.43,0,0,0,
+        0,0,0,0,                     0.38,0.84,0,0,
+        0,0,0,0,                     0,0,0.51,0.14,
+        0,0,0,0,                     0,0.14,0.43,0.84
+        
+        
+        ), byrow=TRUE, ncol=8)
+
+R2F=matrix(c(
+        0, 	0,	0, 0.14,   0,0,0,0,
+        0,	0, 	0,0,       0,0,0,0,
+        0,0,0,0,	         0,0,0,0,
+        0,0,0,0,           0,0,0,0,
+        0,0,0,0,0,         0,0,0.14,
+        0,0,0,0,           0,0,0,0,
+        0,0,0,0,           0,0,0,0,
+        0,0,0,0,           0,0,0,0
+        ), byrow=TRUE, ncol=8)
+ 
+TF2_TF2=R2T+R2F
+
+TF2_TF2
+
+TF2=TF2_TF2
+
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+library(Rage)
+
+colnames(TF2) <- c("plantulas", "juveniles", "adulto no reproductivos", "adultos reproductivos", "plantulas2", "juveniles2", "adulto no reproductivos2", "adultos reproductivos2")
+rownames(TF2) <- colnames(TF2)
+
+#stages <- c(TF_TF) 
+plot_life_cycle(TF2, node_order = c(1,2,3,4,5,6,7,8))
+```

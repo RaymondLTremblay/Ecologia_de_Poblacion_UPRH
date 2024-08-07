@@ -1,0 +1,153 @@
+---
+title: "Lepanthes_rupripetala_1"
+author: "RLTremblay"
+date: "2023-11-20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(popbio)
+library(popdemo)
+library(raretrans)
+library(tidyverse)
+```
+
+
+
+```{r}
+
+library(Rage)
+matU1=matrix(c(
+0.43, 	0,	  0,    0.00,
+0.38,	0.84, 	0,	  0, 
+0, 	    0,	  0.51,	0.15,	
+0,      0.14, 0.43, 0.84
+), byrow=4, ncol=4)
+
+matU1
+
+
+matF1=matrix(c(
+0, 	  0,	  0,    0.14,
+0,	  0, 	  0,	  0, 
+0, 	  0,	  0,	  0,	
+0,    0,    0,    0
+), byrow=4, ncol=4)
+
+matF1
+
+TF1=matU1+matF1
+TF1
+lambda(TF1)
+
+TF_rub=list(Tmat = matU1, Fmat = matF1)
+```
+
+
+RLT_Tprior <- matrix(c(0.25, 0.025, 0.0,
+                       0.05, 0.9,   0.025,
+                       0.01, 0.025, 0.95,
+                       0.69, 0.05,  0.025), 
+                     byrow = TRUE, nrow = 4, ncol = 3)
+
+```{r}
+
+priorTF_rub=matrix(c(
+0.43, 	0,	    0,    0.00,
+0.38,	  0.84, 	0,	  0, 
+0, 	    0,	    0.51,	0.15,	
+0,      0.14,   0.43, 0.84,
+0.19,   0.02,   0.06, 0.01
+
+), byrow=5, ncol=4)
+
+priorTF_rub
+```
+
+
+```{r}
+N=c(10,10, 15, 20)
+```
+
+
+
+```{r}
+alpha <- matrix(c(NA_real_, NA_real_, NA_real_,1e-5,
+                  NA_real_, NA_real_, NA_real_,NA_real_,
+                  NA_real_, NA_real_, NA_real_,NA_real_,
+                  NA_real_, NA_real_, NA_real_,NA_real_), nrow=4, ncol = 4, byrow = TRUE)
+beta <- matrix(c(NA_real_,  NA_real_, NA_real_, 1e-5,
+                  NA_real_, NA_real_, NA_real_,NA_real_,
+                  NA_real_, NA_real_, NA_real_,NA_real_,
+                  NA_real_, NA_real_, NA_real_,NA_real_), nrow=4, ncol = 4, byrow = TRUE)
+```
+
+
+
+
+```{r}
+sim_transitions(
+  TF_rub,
+  N,
+  P = priorTF_rub,
+  alpha = alpha,
+  beta = beta,
+  priorweight = -1,
+  samples = 1
+)
+```
+
+
+
+```{r}
+sim_transitions(TF_rub, N, P = priorTF_rub, alpha = alpha, beta = beta,
+                priorweight = 0.1)
+```
+
+
+```{r}
+Lep_rub_0.5 <- sim_transitions(TF_rub, N, P = priorTF_rub, alpha = alpha, beta = beta,
+                priorweight = 0.5, samples = 10000)
+
+head(Lep_rub_0.5)
+```
+
+
+```{r}
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+        axis.text.x = element_text(colour="grey20",size=15, face="bold"),
+        axis.text.y = element_text(colour="grey20",size=15,face="bold"),  
+        axis.title.x = element_text(colour="grey20",size=15,face="bold"))
+```
+
+
+```{r}
+RLT_0.5 <- tibble(lposterior = map_dbl(Lep_rub_0.5, lambda)) # convertir la lista en un tibble
+ggplot(data = RLT_0.5,
+       mapping = aes(x = lposterior)) + 
+  geom_histogram(binwidth = 0.01, colour="white") + 
+  rlt_theme+ geom_vline(xintercept = 1, 
+                color = "blue", size=1.5)+
+  xlab("Lambda's")+
+  ylab("Frecuencia")
+
+ggsave("Figures/Posterior_Lep_rub_3.png")
+```
+
+
+```{r}
+RLT_0.5_summary <- summarize(RLT_0.5,
+                             medianL = median(lposterior),
+                             meanL = mean(lposterior),
+                             lcl = quantile(lposterior, probs = 0.025),
+                             ucl = quantile(lposterior, probs = 0.975),
+                             pincrease = sum(lposterior > 1.)/n())
+knitr::kable(RLT_0.5_summary, digits = 4)
+```
+```
+

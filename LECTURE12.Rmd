@@ -75,9 +75,7 @@ Por ejemplo, después de ejecutar su modelo (paso 4) y observar los resultados (
 #### Paso 1: historia de vida
 
 - Clase 1: pensamiento sistémico
-
 - Clase 2: retroalimentación
-
 - Clase 3: crecimiento exponencial
 - Clase 4: dependencia de la densidad
 - Clase 5: efectos allee
@@ -193,13 +191,13 @@ Aquí está la parametrización básica del modelo:
 
 R_max <- 1.15       # Tasa máxima de crecimiento
 Init_N <- 500        # Abundancia inicial
-K <- 500            # Capacidad de carga
+K <- 50            # Capacidad de carga
 
 ####
 # Estocasticidad ambiental
 ####
 
-SD_anngrowth <- 0.11  # desviación estándar de la tasa de crecimiento anual
+SD_anngrowth <- 0.01  # desviación estándar de la tasa de crecimiento anual
 
 ####
 # Densidad-dependencia (modelo de Ricker)
@@ -217,6 +215,8 @@ Flood_prob <- 0.05      # 5% probabilidad de una gran inundación
 Flood_lambda <- 0.25    # 25% de la población puede sobrevivir a una inundación
 
 ```
+
+
 ```{r}
 #remotes::install_github('yihui/tinytex')
 ```
@@ -233,16 +233,16 @@ Ahora podemos usar estos parámetros para construir y ejecutar un modelo PVA sim
 
 ```{r}
 
-# PASO 3: agregue estructura espacial (no se aplica aquí)
+# PASO 3: Agregue una estructura espacial (no se aplica aquí)
 
-# PASO 4: ¡simular!
+# PASO 4: ¡Simular!
 
 ####
 # Parámetros de simulación básicos
 ####
 
 nyears <- 100     # número de años
-nreps <- 500      # número de réplicas
+nreps <- 500    # número de réplicas
 
 
 PVAdemo <- function(nreps,nyears,Init_N,R_max,K,Flood_prob,Flood_lambda){

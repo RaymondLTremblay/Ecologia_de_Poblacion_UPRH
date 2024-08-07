@@ -14,7 +14,7 @@
 
 <title>Tillandsia brachycaulos</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -37,10 +37,11 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="site_libs/viz-1.8.2/viz.js"></script>
 <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="site_libs/grViz-binding-1.0.10/grViz.js"></script>
+<script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -544,7 +545,7 @@ Tis</code></pre>
 <p>Use the package <strong>Rage</strong></p>
 <pre class="r"><code>library(Rage)</code></pre>
 <pre class="r"><code>plot_life_cycle(Tis)</code></pre>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-34b8ee8cca09ef41c042" style="width:672px;height:480px;"></div>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-34b8ee8cca09ef41c042" style="width:672px;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-34b8ee8cca09ef41c042">{"x":{"diagram":"\ndigraph {\n  {\n    graph[overlap=false];\n    rank=same;\n    node [shape= egg , fontsize= 12 ]; \"1\" -> \"2\" -> \"3\" -> \"4\" -> \"5\" -> \"6\" -> \"7\" -> \"8\" -> \"9\" -> \"10\" -> \"11\" [style=invis] \n  } ordering=out\n  x [style=invis]\n  x -> { \"1\" -> \"2\" -> \"3\" -> \"4\" -> \"5\" -> \"6\" -> \"7\" -> \"8\" -> \"9\" -> \"10\" -> \"11\" [style=invis] } [style=invis] \"1\" -> \"2\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.28\"]\n\"2\" -> \"2\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.167\"]\n\"2\" -> \"3\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.33\"]\n\"2\" -> \"4\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.103\"]\n\"2\" -> \"7\"[minlen=15,fontsize=10,color=grey,xlabel=\" 0.039\"]\n\"3\" -> \"3\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.189\"]\n\"3\" -> \"4\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.378\"]\n\"3\" -> \"5\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.081\"]\n\"3\" -> \"6\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.014\"]\n\"3\" -> \"7\"[minlen=12,fontsize=10,color=grey,xlabel=\" 0.108\"]\n\"4\" -> \"1\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.007\"]\n\"4\" -> \"4\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.134\"]\n\"4\" -> \"5\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.179\"]\n\"4\" -> \"7\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.448\"]\n\"5\" -> \"1\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 0.017\"]\n\"5\" -> \"5\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.066\"]\n\"5\" -> \"6\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.082\"]\n\"5\" -> \"7\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.754\"]\n\"6\" -> \"1\"[minlen=-15,fontsize=10,color=grey,xlabel=\" 0.036\"]\n\"6\" -> \"7\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.94\"]\n\"7\" -> \"8\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.033\"]\n\"7\" -> \"9\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.148\"]\n\"7\" -> \"10\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.18\"]\n\"7\" -> \"11\"[minlen=12,fontsize=10,color=grey,xlabel=\" 0.115\"]\n\"8\" -> \"1\"[minlen=-21,fontsize=10,color=grey,xlabel=\" 0.001\"]\n\"8\" -> \"7\"[minlen=-3,fontsize=10,color=grey,xlabel=\" 0.3\"]\n\"8\" -> \"8\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.57\"]\n\"8\" -> \"9\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.183\"]\n\"8\" -> \"10\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.207\"]\n\"8\" -> \"11\"[minlen=9,fontsize=10,color=grey,xlabel=\" 0.126\"]\n\"9\" -> \"1\"[minlen=-24,fontsize=10,color=grey,xlabel=\" 0.011\"]\n\"9\" -> \"7\"[minlen=-6,fontsize=10,color=grey,xlabel=\" 0.57\"]\n\"9\" -> \"9\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.035\"]\n\"9\" -> \"10\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.193\"]\n\"9\" -> \"11\"[minlen=6,fontsize=10,color=grey,xlabel=\" 0.175\"]\n\"10\" -> \"1\"[minlen=-27,fontsize=10,color=grey,xlabel=\" 0.024\"]\n\"10\" -> \"7\"[minlen=-9,fontsize=10,color=grey,xlabel=\" 0.985\"]\n\"10\" -> \"10\"[minlen=0,fontsize=10,color=grey,xlabel=\" 0.037\"]\n\"10\" -> \"11\"[minlen=3,fontsize=10,color=grey,xlabel=\" 0.066\"]\n\"11\" -> \"1\"[minlen=-30,fontsize=10,color=grey,xlabel=\" 0.035\"]\n\"11\" -> \"7\"[minlen=-12,fontsize=10,color=grey,xlabel=\" 1.243\"]\n labelloc=\"t\";\n  label=\"  \"\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>isErgodic(Tis, digits=10, return.eigvec=FALSE)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
@@ -814,7 +815,7 @@ vector=n0)</p>
 <p>…and plot it! plot(tfmat)</p>
 <pre class="r"><code>n0 &lt;- c(48, 16, 12, 10)
 tfmat &lt;- tfamatrix(Tis)</code></pre>
-<pre><code>## Warning: &#39;tfamatrix&#39; has been renamed and is deprecated.
+<pre><code>## Warning in tfamatrix(Tis): &#39;tfamatrix&#39; has been renamed and is deprecated.
 ## The old name will continue to work for now, but may be removed in later versions.
 ## Use the new name &#39;tfam_lambda&#39; instead. See help(&quot;popdemo-deprecated&quot;) for more info.</code></pre>
 <pre class="r"><code>#...and plot it!

@@ -1,10 +1,13 @@
 
 ############################################################
 ####                                                    ####  
-####  NRES 470, Lecture 8                               ####
+####  BIOL4558, Topico 8                               ####
 ####                                                    ####
 ####  Kevin Shoemaker                                   #### 
-####  University of Nevada, Reno                        ####
+####  University of Nevada, Reno                    ####
+####        &                           ####
+####  Raymond L. Tremblay       ####
+####  Universidad de Puerto Rico                   ####
 ####                                                    #### 
 ############################################################
 
@@ -16,65 +19,90 @@
 
 
 #############
-# Random number generation!
+# Generación de números aleatorios!
 
 
 #####
 # define an arbitrary distribution
 
-box <- c(rep(1,10),rep(2,5),rep(3,2))                                           # define what's in the lottery ball machine (10 "1" balls, 5 "2" balls and 2 "3" balls)
-barplot(table(box)/sum(table(box)),ylab="probability",xlab="possibility")       # visualize the distribution of possibilities
+box <- c(rep(1,10),rep(2,5),rep(3,2))  # define what's in the lottery ball machine (10 "1" balls, 5 "2" balls and 2 "3" balls)
+
+box
+barplot(table(box)/sum(table(box)),ylab="probability",xlab="possibility")  # visualize the distribution of possibilities
 
 
 ################
-# Discrete distributions
+# Distribuciones discretas
 ################
 
 
 #######
-# Example: binomial distribuition (coin flipping distribution)
+# Ejemplo: distribución binomial (distribución de lanzamiento de moneda)
 
-             # plot a discrete distribution!
+
+# graficar la distribución binomial!
 xvals <- seq(0,10,1)
+
 probs <- dbinom(xvals,10,prob=0.3)
+#Cual es la suma de la probabilidades?
+
 names(probs) <- xvals
                
-barplot(probs,ylab="Probability",xlab="Possibilities",main="Binomial distribution (discrete)")
+barplot(probs,ylab="Probabilidades",xlab="Posibilidades",main="Distribución binomial (discreta)")
 
 
 
+library(tidyverse)
+caras=c(4,7, 6, 8, 5, 4,3,7,7,2,
+        9, 3, 5,4, 5, 4, 4,2,6,5)
+caras=as_tibble(caras)
+caras
+
+ggplot(caras, aes(value))+
+  geom_histogram(aes(y=..density..))
 
 #########
-# Poisson distribution
+# Distribución de Poisson
 
 xvals <- seq(0,10,1)
-probs <- dpois(xvals,lambda=2.2)     # POisson distribution
+probs <- dpois(xvals,lambda=2.2)     # Distribución Poisson El lambda es una función que determina las probabilidades
 names(probs) <- xvals
                
-barplot(probs,ylab="Probability",xlab="Possibilities",main="Poisson distribution (discrete)")
+barplot(probs,ylab="Probabilidades",xlab="Possibilidades",main="Distribución Poisson (discreta)")
 
 
 
 ################
-# CONTINUOUS DISTRIBUTIONS
+# DISTRIBUCIONES CONTINUAS
 #################
 
 ##########
-# Uniform distribution
+# Distribución uniforme
 
 lower = 0
 upper = 10
 
-curve(dunif(x,lower,upper),0,10,ylab="Probability (density)",xlab="Possibilities",main="Uniform distribution (continuous)",ylim=c(0,1))   # probability density
+curve(dunif(x,lower,upper),0,10,ylab="Probabilidad (densidad)",xlab="Possibilidades",main="Distribución uniforme (continuous)",ylim=c(0,1))   # Distribución uniforme
 
 
 #########
-# Normal distribution
+# Distribución normal
 
 mean = 7.1
 stdev = 1.9
 
-curve(dnorm(x,mean,stdev),0,15,ylab="Probability (density)",xlab="Possibilities",main="Normal distribution (continuous)")   # probability density
+curve(dnorm(x,mean,stdev),0,15,ylab="Probabilidades (densidad)",xlab="Possibilidades",main="Distribución normal (continua)")  
+
+
+#########
+# Distribución normal
+
+x=rnorm(10000, 0,1 )
+x=as.tibble(x)
+#x
+
+ggplot(x, aes(value))+
+  geom_density()
 
 
 ############
@@ -117,10 +145,17 @@ rlnorm(1,meanlog=0.5,sdlog=0.2)    # lognormal distribution is defined by "meanl
 ### beta random number generator (bounded between 0 and 1- just like survival rate!)
 rbeta(1,shape1=10,shape2=3)  # beta distribution is defined by "shape1" and "shape2", which together define the mean and spread within the range from 0 to 1.
 
+## Para información sobr ela distribución beta vea los sigyuientes enlaces
+
+# 1. https://keisan.casio.com/exec/system/1180573226
+# 2. https://stats.stackexchange.com/questions/376634/how-to-pick-starting-parameters-for-massfitdist-with-the-beta-distribution
+
+
+
 
 
 ########
-# sample from an arbitrary distribution!
+# muestra de una distribución arbitraria
 
 distribution <- c(5,3,5,4,3,6,4,5,5,1,6,5,4,3,6,6,4,2,8,4,4,5,2)     # make up a set of possibilities
 hist(distribution,freq = F, ylab="Probability",xlab="Possibilities")  # visualize distribution
@@ -128,7 +163,7 @@ sample(distribution,1)  # take one random sample from this distribution!
 
 
 #############
-# Demonstration: use data to determine a distribution!
+# Demostración: ¡use datos para determinar una distribución!
 #############
 
 
@@ -142,20 +177,50 @@ hist(hatch_perfem)
 
 
 ############
-# Try to identify a lognormal random number distribution to represent the canvasback data
+# Trate de identificar una distribución logarítmica normal de números aleatorios para representar la 'canvasback duck' data
 
 ## first, plot a histogram of the data from the 20-year study
 hist(hatch_perfem,freq=F,main="Histogram of avg number hatched per female",xlab="possibilities",ylab="probability",xlim=c(0,10),ylim=c(0,1))
 
-## now, overlay a lognormal probability distribution with arbitrary parameters (meanlog and sdlog). This is just a starting point.
+## ahora, superponga una distribución de probabilidad logarítmica normal con parámetros arbitrarios (meanlog y sdlog). Esto es sólo un punto de partida.
 
 curve(dlnorm(x,meanlog=1.5,sdlog=0.39),col="green",lty=2,lwd=2,add=T)
 
-curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col="green",lty=2,lwd=2,add=T)    # try a different value...
+curve(dlnorm(x,meanlog=1.8,sdlog=0.39),col="green",lty=2,lwd=2,add=T) 
 
-#### Keep changing the value for 'meanlog' until you find best parameters to fit the data!
+curve(dlnorm(x,meanlog=2.0,sdlog=0.39),col="red",lty=2,lwd=2,add=T) # try a different value...
 
-#### Once you find the best-fit parameters, generate 5 random numbers from this distribution using the "rlnorm()" function in R
+#### ¡Siga cambiando el valor de 'meanlog' hasta que encuentre los mejores parámetros que se ajusten a los datos!
 
-rlnorm(5,meanlog=1.5,sdlog=0.39)    # for example! (remember to change the "meanlog" parameter to the value you identified above!)
+#### Una vez que encuentre los parámetros que mejor se ajusten, genere 5 números aleatorios a partir de esta distribución usando la función "rlnorm ()" en R. 
 
+rlnorm(5,meanlog=1.5,sdlog=0.39)    # ¡por ejemplo! (¡recuerde cambiar el parámetro "meanlog" por el valor que identificó anteriormente!)
+
+
+hatch_5_years=hatch_perfem/5
+fitdistr(hatch_5_years,"log-normal")
+data=rlnorm(1000, -0.92822498, 0.38756090)
+exp(data)  # USe exp to convert he values from lognotmal to numbers again.  
+
+
+#c=log(2)
+#exp(c)
+beta_mom <- function(x) {
+
+  m_x <- mean(x, na.rm = TRUE)
+  s_x <- sd(x, na.rm = TRUE)
+
+  alpha <- m_x*((m_x*(1 - m_x)/s_x^2) - 1)
+  beta <- (1 - m_x)*((m_x*(1 - m_x)/s_x^2) - 1)
+
+  return(list(alpha = alpha, beta = beta))
+
+}
+
+Larva_supevivencia=c(0.184, 0.113, 0.355, 0.344, 0.295, 0.226, 0.207, 0.178, 0.171, 0.257)
+beta_mom(Larva_supevivencia)
+
+library(fitdistrplus)
+fit=fitdist(Larva_supevivencia,"beta")
+fit
+plot(fit, las=1)

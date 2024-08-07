@@ -14,7 +14,7 @@
 
 <title>PVA Short Course, lecture #1</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -910,15 +910,15 @@ of growth</em> for a discrete population growth model, or <span
 class="math inline">\(\frac {N_{t+1}}{N_t}\)</span>. Lambda is what you
 multiply the current population size by to compute the population size
 in the next time step.</p>
-<p><span class="math inline">\(N_{t+1}=N_t + \Delta N_t \qquad
+<p><span class="math inline">\(N_{t+1}=N_t + \Delta N_t  \qquad
 \text{(Eq. 9)}\)</span></p>
-<p><span class="math inline">\(N_{t+1}=N_t + r_d \cdot N_t \qquad
+<p><span class="math inline">\(N_{t+1}=N_t + r_d \cdot N_t  \qquad
 \text{(Eq. 10)}\)</span></p>
-<p><span class="math inline">\(N_{t+1}=N_t \cdot (1 + r_d) \qquad
+<p><span class="math inline">\(N_{t+1}=N_t \cdot (1 + r_d)  \qquad
 \text{(Eq. 11)}\)</span></p>
-<p><span class="math inline">\(N_{t+1}=\lambda \cdot N_t \qquad
+<p><span class="math inline">\(N_{t+1}=\lambda \cdot N_t  \qquad
 \text{(Eq. 12)}\)</span></p>
-<p><span class="math inline">\(N_{t}=\lambda^{t} \cdot N_0 \qquad
+<p><span class="math inline">\(N_{t}=\lambda^{t} \cdot N_0  \qquad
 \text{(Eq. 13)}\)</span></p>
 <p><strong>Q</strong>: Why do most population models ignore males??</p>
 <div id="continuous-population-growth" class="section level3">
@@ -932,14 +932,14 @@ time interval, the population will be bigger at the next time step.</p>
 growth?</p>
 <p>We can use <em>calculus notation</em> to consider the instantaneous
 change in population size:</p>
-<p><span class="math inline">\(\frac{\partial N}{\partial t} = r \cdot N
-\qquad \text{(Eq. 9)}\)</span></p>
+<p><span class="math inline">\(\frac{\partial N}{\partial t} = r \cdot
+N  \qquad \text{(Eq. 9)}\)</span></p>
 <p>This simple formula represents <strong>continuous exponential
 growth</strong>.</p>
 <p>To estimate the abundance at time <em>t</em>, we can
 <em>integrate</em> this differential equation, and we get the following
 result:</p>
-<p><span class="math inline">\(N_t = N_0 e^{rt} \qquad \text{(Eq.
+<p><span class="math inline">\(N_t = N_0 e^{rt}  \qquad \text{(Eq.
 10)}\)</span></p>
 </div>
 <div id="getting-started-with-insightmaker" class="section level3">

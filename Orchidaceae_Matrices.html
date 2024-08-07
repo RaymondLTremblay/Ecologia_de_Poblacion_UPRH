@@ -15,7 +15,7 @@
 
 <title>Orchid Family Matrices</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -398,18 +398,8 @@ $(document).ready(function () {
 </div>
 
 
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ──────────────────
-## ✔ dplyr     1.1.3     ✔ readr     2.1.4
-## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-## ✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-## ✔ purrr     1.0.2     
-## ── Conflicts ───────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>library(Rcompadre)
+<pre class="r"><code>library(tidyverse)
+library(Rcompadre)
 library(Rage)
 library(gt) # grammar of tables</code></pre>
 <pre class="r"><code>x &lt;- cdb_fetch(&quot;compadre&quot;)</code></pre>
@@ -480,23 +470,23 @@ nrow(ORCHIDS) </code></pre>
  unique() |&gt;   
   arrange(Genus) |&gt; 
   gt()</code></pre>
-<div id="zdiyabqila" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zdiyabqila table {
+<div id="ndpstrbbjp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ndpstrbbjp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zdiyabqila thead, #zdiyabqila tbody, #zdiyabqila tfoot, #zdiyabqila tr, #zdiyabqila td, #zdiyabqila th {
+#ndpstrbbjp thead, #ndpstrbbjp tbody, #ndpstrbbjp tfoot, #ndpstrbbjp tr, #ndpstrbbjp td, #ndpstrbbjp th {
   border-style: none;
 }
 
-#zdiyabqila p {
+#ndpstrbbjp p {
   margin: 0;
   padding: 0;
 }
 
-#zdiyabqila .gt_table {
+#ndpstrbbjp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -522,12 +512,12 @@ nrow(ORCHIDS) </code></pre>
   border-left-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_caption {
+#ndpstrbbjp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zdiyabqila .gt_title {
+#ndpstrbbjp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -539,7 +529,7 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-width: 0;
 }
 
-#zdiyabqila .gt_subtitle {
+#ndpstrbbjp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -551,7 +541,7 @@ nrow(ORCHIDS) </code></pre>
   border-top-width: 0;
 }
 
-#zdiyabqila .gt_heading {
+#ndpstrbbjp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -563,13 +553,13 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_bottom_border {
+#ndpstrbbjp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_col_headings {
+#ndpstrbbjp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -584,7 +574,7 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_col_heading {
+#ndpstrbbjp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,7 +594,7 @@ nrow(ORCHIDS) </code></pre>
   overflow-x: hidden;
 }
 
-#zdiyabqila .gt_column_spanner_outer {
+#ndpstrbbjp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -616,15 +606,15 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 4px;
 }
 
-#zdiyabqila .gt_column_spanner_outer:first-child {
+#ndpstrbbjp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zdiyabqila .gt_column_spanner_outer:last-child {
+#ndpstrbbjp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zdiyabqila .gt_column_spanner {
+#ndpstrbbjp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -636,11 +626,11 @@ nrow(ORCHIDS) </code></pre>
   width: 100%;
 }
 
-#zdiyabqila .gt_spanner_row {
+#ndpstrbbjp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zdiyabqila .gt_group_heading {
+#ndpstrbbjp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,7 +656,7 @@ nrow(ORCHIDS) </code></pre>
   text-align: left;
 }
 
-#zdiyabqila .gt_empty_group_heading {
+#ndpstrbbjp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -681,15 +671,15 @@ nrow(ORCHIDS) </code></pre>
   vertical-align: middle;
 }
 
-#zdiyabqila .gt_from_md > :first-child {
+#ndpstrbbjp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zdiyabqila .gt_from_md > :last-child {
+#ndpstrbbjp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zdiyabqila .gt_row {
+#ndpstrbbjp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -708,7 +698,7 @@ nrow(ORCHIDS) </code></pre>
   overflow-x: hidden;
 }
 
-#zdiyabqila .gt_stub {
+#ndpstrbbjp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,7 +711,7 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#zdiyabqila .gt_stub_row_group {
+#ndpstrbbjp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -735,15 +725,15 @@ nrow(ORCHIDS) </code></pre>
   vertical-align: top;
 }
 
-#zdiyabqila .gt_row_group_first td {
+#ndpstrbbjp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zdiyabqila .gt_row_group_first th {
+#ndpstrbbjp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zdiyabqila .gt_summary_row {
+#ndpstrbbjp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -753,16 +743,16 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#zdiyabqila .gt_first_summary_row {
+#ndpstrbbjp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_first_summary_row.thick {
+#ndpstrbbjp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zdiyabqila .gt_last_summary_row {
+#ndpstrbbjp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -772,7 +762,7 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_grand_summary_row {
+#ndpstrbbjp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -782,7 +772,7 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#zdiyabqila .gt_first_grand_summary_row {
+#ndpstrbbjp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -792,7 +782,7 @@ nrow(ORCHIDS) </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_last_grand_summary_row_top {
+#ndpstrbbjp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -802,11 +792,11 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_striped {
+#ndpstrbbjp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zdiyabqila .gt_table_body {
+#ndpstrbbjp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -815,7 +805,7 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_footnotes {
+#ndpstrbbjp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -829,7 +819,7 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_footnote {
+#ndpstrbbjp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -838,7 +828,7 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#zdiyabqila .gt_sourcenotes {
+#ndpstrbbjp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -852,7 +842,7 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdiyabqila .gt_sourcenote {
+#ndpstrbbjp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -860,69 +850,77 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#zdiyabqila .gt_left {
+#ndpstrbbjp .gt_left {
   text-align: left;
 }
 
-#zdiyabqila .gt_center {
+#ndpstrbbjp .gt_center {
   text-align: center;
 }
 
-#zdiyabqila .gt_right {
+#ndpstrbbjp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zdiyabqila .gt_font_normal {
+#ndpstrbbjp .gt_font_normal {
   font-weight: normal;
 }
 
-#zdiyabqila .gt_font_bold {
+#ndpstrbbjp .gt_font_bold {
   font-weight: bold;
 }
 
-#zdiyabqila .gt_font_italic {
+#ndpstrbbjp .gt_font_italic {
   font-style: italic;
 }
 
-#zdiyabqila .gt_super {
+#ndpstrbbjp .gt_super {
   font-size: 65%;
 }
 
-#zdiyabqila .gt_footnote_marks {
+#ndpstrbbjp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zdiyabqila .gt_asterisk {
+#ndpstrbbjp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zdiyabqila .gt_indent_1 {
+#ndpstrbbjp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zdiyabqila .gt_indent_2 {
+#ndpstrbbjp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zdiyabqila .gt_indent_3 {
+#ndpstrbbjp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zdiyabqila .gt_indent_4 {
+#ndpstrbbjp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zdiyabqila .gt_indent_5 {
+#ndpstrbbjp .gt_indent_5 {
   text-indent: 25px;
+}
+
+#ndpstrbbjp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ndpstrbbjp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
-    
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Genus">Genus</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
@@ -950,23 +948,23 @@ nrow(ORCHIDS) </code></pre>
  unique() |&gt; 
   arrange(desc(YearPublication)) |&gt; 
   gt()</code></pre>
-<div id="sowapfifer" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sowapfifer table {
+<div id="wxjhmbiuvy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wxjhmbiuvy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sowapfifer thead, #sowapfifer tbody, #sowapfifer tfoot, #sowapfifer tr, #sowapfifer td, #sowapfifer th {
+#wxjhmbiuvy thead, #wxjhmbiuvy tbody, #wxjhmbiuvy tfoot, #wxjhmbiuvy tr, #wxjhmbiuvy td, #wxjhmbiuvy th {
   border-style: none;
 }
 
-#sowapfifer p {
+#wxjhmbiuvy p {
   margin: 0;
   padding: 0;
 }
 
-#sowapfifer .gt_table {
+#wxjhmbiuvy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -992,12 +990,12 @@ nrow(ORCHIDS) </code></pre>
   border-left-color: #D3D3D3;
 }
 
-#sowapfifer .gt_caption {
+#wxjhmbiuvy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sowapfifer .gt_title {
+#wxjhmbiuvy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1009,7 +1007,7 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-width: 0;
 }
 
-#sowapfifer .gt_subtitle {
+#wxjhmbiuvy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1021,7 +1019,7 @@ nrow(ORCHIDS) </code></pre>
   border-top-width: 0;
 }
 
-#sowapfifer .gt_heading {
+#wxjhmbiuvy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1033,13 +1031,13 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sowapfifer .gt_bottom_border {
+#wxjhmbiuvy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sowapfifer .gt_col_headings {
+#wxjhmbiuvy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1054,7 +1052,7 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sowapfifer .gt_col_heading {
+#wxjhmbiuvy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1074,7 +1072,7 @@ nrow(ORCHIDS) </code></pre>
   overflow-x: hidden;
 }
 
-#sowapfifer .gt_column_spanner_outer {
+#wxjhmbiuvy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1086,15 +1084,15 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 4px;
 }
 
-#sowapfifer .gt_column_spanner_outer:first-child {
+#wxjhmbiuvy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sowapfifer .gt_column_spanner_outer:last-child {
+#wxjhmbiuvy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sowapfifer .gt_column_spanner {
+#wxjhmbiuvy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1106,11 +1104,11 @@ nrow(ORCHIDS) </code></pre>
   width: 100%;
 }
 
-#sowapfifer .gt_spanner_row {
+#wxjhmbiuvy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sowapfifer .gt_group_heading {
+#wxjhmbiuvy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1136,7 +1134,7 @@ nrow(ORCHIDS) </code></pre>
   text-align: left;
 }
 
-#sowapfifer .gt_empty_group_heading {
+#wxjhmbiuvy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1151,15 +1149,15 @@ nrow(ORCHIDS) </code></pre>
   vertical-align: middle;
 }
 
-#sowapfifer .gt_from_md > :first-child {
+#wxjhmbiuvy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sowapfifer .gt_from_md > :last-child {
+#wxjhmbiuvy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sowapfifer .gt_row {
+#wxjhmbiuvy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1178,7 +1176,7 @@ nrow(ORCHIDS) </code></pre>
   overflow-x: hidden;
 }
 
-#sowapfifer .gt_stub {
+#wxjhmbiuvy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1191,7 +1189,7 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#sowapfifer .gt_stub_row_group {
+#wxjhmbiuvy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1205,15 +1203,15 @@ nrow(ORCHIDS) </code></pre>
   vertical-align: top;
 }
 
-#sowapfifer .gt_row_group_first td {
+#wxjhmbiuvy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sowapfifer .gt_row_group_first th {
+#wxjhmbiuvy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sowapfifer .gt_summary_row {
+#wxjhmbiuvy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1223,16 +1221,16 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#sowapfifer .gt_first_summary_row {
+#wxjhmbiuvy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sowapfifer .gt_first_summary_row.thick {
+#wxjhmbiuvy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sowapfifer .gt_last_summary_row {
+#wxjhmbiuvy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1242,7 +1240,7 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#sowapfifer .gt_grand_summary_row {
+#wxjhmbiuvy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1252,7 +1250,7 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#sowapfifer .gt_first_grand_summary_row {
+#wxjhmbiuvy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1262,7 +1260,7 @@ nrow(ORCHIDS) </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#sowapfifer .gt_last_grand_summary_row_top {
+#wxjhmbiuvy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1272,11 +1270,11 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#sowapfifer .gt_striped {
+#wxjhmbiuvy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sowapfifer .gt_table_body {
+#wxjhmbiuvy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1285,7 +1283,7 @@ nrow(ORCHIDS) </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#sowapfifer .gt_footnotes {
+#wxjhmbiuvy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1299,7 +1297,7 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sowapfifer .gt_footnote {
+#wxjhmbiuvy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1308,7 +1306,7 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#sowapfifer .gt_sourcenotes {
+#wxjhmbiuvy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1322,7 +1320,7 @@ nrow(ORCHIDS) </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#sowapfifer .gt_sourcenote {
+#wxjhmbiuvy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1330,69 +1328,77 @@ nrow(ORCHIDS) </code></pre>
   padding-right: 5px;
 }
 
-#sowapfifer .gt_left {
+#wxjhmbiuvy .gt_left {
   text-align: left;
 }
 
-#sowapfifer .gt_center {
+#wxjhmbiuvy .gt_center {
   text-align: center;
 }
 
-#sowapfifer .gt_right {
+#wxjhmbiuvy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sowapfifer .gt_font_normal {
+#wxjhmbiuvy .gt_font_normal {
   font-weight: normal;
 }
 
-#sowapfifer .gt_font_bold {
+#wxjhmbiuvy .gt_font_bold {
   font-weight: bold;
 }
 
-#sowapfifer .gt_font_italic {
+#wxjhmbiuvy .gt_font_italic {
   font-style: italic;
 }
 
-#sowapfifer .gt_super {
+#wxjhmbiuvy .gt_super {
   font-size: 65%;
 }
 
-#sowapfifer .gt_footnote_marks {
+#wxjhmbiuvy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sowapfifer .gt_asterisk {
+#wxjhmbiuvy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sowapfifer .gt_indent_1 {
+#wxjhmbiuvy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sowapfifer .gt_indent_2 {
+#wxjhmbiuvy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sowapfifer .gt_indent_3 {
+#wxjhmbiuvy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sowapfifer .gt_indent_4 {
+#wxjhmbiuvy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sowapfifer .gt_indent_5 {
+#wxjhmbiuvy .gt_indent_5 {
   text-indent: 25px;
+}
+
+#wxjhmbiuvy .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wxjhmbiuvy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
-    
     <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Authors">Authors</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Journal">Journal</th>

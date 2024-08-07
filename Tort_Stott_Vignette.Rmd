@@ -23,6 +23,8 @@ library(popdemo)
 #devtools::install_github("iainmstott/popdemo/Dev/popdemoDev", ref = "development")
 
 #library(popdemoDev)
+
+library(popbio)
 ```
 
 
