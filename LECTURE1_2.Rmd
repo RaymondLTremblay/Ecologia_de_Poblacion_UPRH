@@ -86,7 +86,7 @@ Por supuesto, **ensuciarse: getting messy** significa no solo leer y escuchar co
 3. Haga clic derecho en el centro de la pantalla y seleccione **Crear stock** en la ventana emergente. Observe que el nombre es **Stock nuevo** y está seleccionado. Escriba un nombre para lo que es una acumulación. Tenga en cuenta que el **Panel de configuración** a la derecha ahora es para un [Stock]. En el panel de configuración, establezca el **Valor inicial** en 50. ¡Es decir, habrá 50 alces al comienzo de la simulación!
 
 
-4. Seleccione [Flujo] en la esquina superior izquierda de su pantalla en [Conexiones]. Ahora observe que cuando pasa el mouse sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un [Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón **Invertir** en el menú **Conexiones**. Por favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el **Panel de configuración** configure **Flow Rate** = 1.
+4. Seleccione [Flujo] en la esquina superior izquierda de su pantalla en [Conexiones]. Ahora observe que cuando pasa el *mouse* sobre [Stock] aparece una pequeña flecha hacia la derecha. Haga clic en la flecha hacia la derecha, arrastre un par de pulgadas hacia la izquierda de [Stock] y suelte. Así es como se crea un [Flujo] a partir de un [Stock]. Para crear un [Flujo] en un [Stock], haga clic en el botón **Invertir** en el menú **Conexiones**. Por favor hazlo ahora. Puede nombrar el [Flujo] como desee. También en el **Panel de configuración** configure **Flow Rate** = 1.
 
 
 
@@ -103,7 +103,15 @@ Por supuesto, **ensuciarse: getting messy** significa no solo leer y escuchar co
 
 9. Tómese unos minutos para consultar las "Estadísticas" realizadas por otros mediante el enlace "Explorar información" en la parte superior de la página web. Puede buscar en la base de datos de Insights. ¡Podemos (y lo haremos) agregar a esta base de datos como parte de esta clase!
 
+
+****
+
+## Ejercicio con Coqui de Hawaii
+
 **Q**  ¿Pudiese pensar en como adaptar este ejemplo a Coquis?  Aqui un enlace que tiene información basíca sobre [Coqui](https://www.ctahr.hawaii.edu/coqui/life.asp)
+
+
+## Ejercicio con el Atractor de Lorenz
 
 Finalmente, por diversión, aquí hay un video genial del Atractor de Lorenz, ¡que vimos antes!
 

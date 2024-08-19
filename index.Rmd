@@ -61,7 +61,7 @@ Los estudiantes podrán:
 ### Puntación: 
 The course grade will be based on the following components:
 
-```{r include=FALSE}
+```{r}
 library(tidyverse)
 library(kableExtra)
 ```
