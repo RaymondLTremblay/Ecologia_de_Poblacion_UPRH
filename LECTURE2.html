@@ -14,7 +14,7 @@
 
 <title>Preguntas Centrales sobre Ecología de Poblaciones</title>
 
-<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
@@ -695,6 +695,8 @@ un crecimiento lineal ya que el [Flow] agregó una cantidad fija a la
 <p><strong>Q</strong>: ¿Qué tienen en común los siguientes elementos:
 bola de nieve, personas, conejos, fuego, bacterias, pulgas, cuentas de
 ahorro, cáncer?</p>
+<div id="procesos-en-español" class="section level3">
+<h3>Procesos en español</h3>
 <p>Construyamos un modelo que nos ayude a comprender mejor este
 proceso.</p>
 <p>Este modelo agrega una <strong>retroalimentación</strong> usando un
@@ -711,14 +713,7 @@ un pequeño [<span class="math inline">\(=\)</span> Sign]. Si hace clic
 aquí, se abrirá la ventana <strong>Ecuación</strong> donde puede
 establecer valores o ecuaciones. Abra esta ventana para el [Stock],
 ingrese un valor de 1, luego cierre la ventana.</p></li>
-</ol>
-<p>2E. If you mouse over <em>Stock</em> or <em>Flow</em> a small [<span
-class="math inline">\(=\)</span> Sign] will appear. If you click this it
-will open the <strong>Equation</strong> window where you can set values
-or equations. Open this window for the [Stock], enter a value of 1, then
-close the window.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>El valor del [Stock] se puede comunicar al [Flow] con un [Link]
+<li><p>El valor del [Stock] se puede comunicar al [Flow] con un [Link]
 (¡que representa un proceso de retroalimentación!). Para crear un
 [Enlace], haga clic en <strong>Link</strong> en la parte
 <strong>Conexiones</strong> de la barra de herramientas (en la parte
@@ -728,11 +723,43 @@ la parte superior del [Flujo]. Ahora mantenga presionada la tecla Shift
 y haga clic en el medio del [Link] y se creará un pequeño nodo verde en
 el [Link]. Puede seleccionar este nodo y arrastrarlo hacia arriba para
 que el [Link] no esté directamente encima del [Flujo] (ahora puede ver
-el [Link]).</li>
-<li>Open InsightMaker. Create a [Stock] and a [Flow] as you did in the
-previous model (flow should be an input, not an output) and just name
-them <em>Stock</em> and <em>Flow</em> for now.</li>
+el [Link]).</p></li>
+<li><p>Open InsightMaker. Create a [Stock] and a [Flow] as you did in
+the previous model (flow should be an input, not an output) and just
+name them <em>Stock</em> and <em>Flow</em> for now.</p></li>
+<li><p>Por lo general, existe algún tipo de factor que rige la
+<strong>tasa</strong> que [Stock] influye en el [Flow]. Introduzcamos
+una [Variable] llamada <em>Tasa</em>. Para crear una [Variable], haga
+clic con el botón derecho en el lienzo y seleccione
+<strong>Variable</strong> en el menú desplegable. Ahora dibuje un
+[Enlace] desde * Tasa * al [Flujo]. Abra la ventana
+<strong>Ecuación</strong> para <em>Tasa</em> y establézcala en
+0.5.</p></li>
+<li><p>Abra la ventana ** Ecuación ** para el [Flujo] y configúrelo en
+[Stock] multiplicado por [Tasa]. Es decir, la entrada total a la
+[Acción] es igual al valor de la [Acción] multiplicado por el valor de *
+Tasa *.</p></li>
+<li><p>Ahora haga clic en [Ejecutar simulación] y acaba de terminar su
+primer modelo de simulación de bucle de refuerzo. ¿Hace lo que
+esperarías?</p></li>
 </ol>
+<hr />
+</div>
+<div id="english-intructions" class="section level3">
+<h3>English Intructions</h3>
+<p>This model adds a feedback using a [Link] from the [Stock] back into
+the [Flow]. The [Link] communicates the value of the [Stock] to the
+[Flow]. A [Link] only communicates information from one element of the
+model to another, it doesn’t actually change the value of the [Stock]
+(that is what a [Flow] does).</p>
+<p>1E. Open InsightMaker. Create a [Stock] and a [Flow] as you did in
+the previous model (flow should be an input, not an output) and just
+name them Stock and Flow for now.</p>
+<p>2E. If you mouse over <em>Stock</em> or <em>Flow</em> a small [<span
+class="math inline">\(=\)</span> Sign] will appear. If you click this it
+will open the <strong>Equation</strong> window where you can set values
+or equations. Open this window for the [Stock], enter a value of 1, then
+close the window.</p>
 <p>3E. The value of the [Stock] can be communicated to the [Flow] with a
 [Link] (representing a feedback process!). To create a [Link], click
 <strong>Link</strong> in the <strong>Connections</strong> part of the
@@ -742,15 +769,6 @@ on top of the [Flow]. Now hold the Shift Key and click in the middle of
 the [Link] and a little green node will be created on the [Link]. You
 can select this node and drag it up so the [Link] isn’t directly on top
 of the [Flow] (now you can see the [Link]).</p>
-<ol start="4" style="list-style-type: decimal">
-<li>Por lo general, existe algún tipo de factor que rige la
-<strong>tasa</strong> que [Stock] influye en el [Flow]. Introduzcamos
-una [Variable] llamada <em>Tasa</em>. Para crear una [Variable], haga
-clic con el botón derecho en el lienzo y seleccione
-<strong>Variable</strong> en el menú desplegable. Ahora dibuje un
-[Enlace] desde * Tasa * al [Flujo]. Abra la ventana
-<strong>Ecuación</strong> para <em>Tasa</em> y establézcala en 0.5.</li>
-</ol>
 <p>4E. Usually there is some type of factor governing the
 <strong>rate</strong> the [Stock] influences the [Flow]. Let’s introduce
 a [Variable] named <em>Rate</em>. To create a [Variable], right-click on
@@ -758,23 +776,13 @@ the canvas and select <strong>Variable</strong> from the drop-down. Now
 draw a [Link] from <em>Rate</em> to the [Flow]. Open the
 <strong>Equation</strong> window for <em>Rate</em> and set it to
 0.5.</p>
-<ol start="5" style="list-style-type: decimal">
-<li>Abra la ventana ** Ecuación ** para el [Flujo] y configúrelo en
-[Stock] multiplicado por [Tasa]. Es decir, la entrada total a la
-[Acción] es igual al valor de la [Acción] multiplicado por el valor de *
-Tasa *.</li>
-</ol>
 <p>5E. Open the <strong>Equation</strong> window for the [Flow] and set
 it to [Stock] times [Rate]. That is, the total inflow into the [Stock]
 is equal to the value of the [Stock] multiplied by the value of
 <em>Rate</em>.</p>
-<ol start="6" style="list-style-type: decimal">
-<li>Ahora haga clic en [Ejecutar simulación] y acaba de terminar su
-primer modelo de simulación de bucle de refuerzo. ¿Hace lo que
-esperarías?</li>
-</ol>
 <p>6E. Now click [Run Simulation] and you have just finished your first
 reinforcing loop simulation model! Does it do what you would expect?</p>
+<hr />
 <p><strong>Q:</strong> Si [Stock] es una población, por ejemplo,
 conejos, ¿cuál es la interpretación de [Flow]? ¿Cuál es la
 interpretación de <em>Rate</em>? <em>Cambie el nombre de sus variables
@@ -822,6 +830,7 @@ podrías resolverlo analíticamente!)</p>
 href="https://www.youtube.com/watch?v=Kas0tIxDvrghttps://www.youtube.com/watch?v=Kas0tIxDvrg">video</a>
 sobre el crecimiento exponencial, es posible que desee consultar.</p>
 <p><a href="LECTURE3.html">–go to next lecture–</a></p>
+</div>
 </div>
 
 

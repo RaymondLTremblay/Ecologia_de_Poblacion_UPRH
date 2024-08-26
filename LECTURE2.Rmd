@@ -130,34 +130,58 @@ En el ejercicio anterior en clase, la estructura del modelo produjo un crecimien
 
 **Q**: ¿Qué tienen en común los siguientes elementos: bola de nieve, personas, conejos, fuego, bacterias, pulgas, cuentas de ahorro, cáncer?
 
+
+### Procesos en español
+
+
 Construyamos un modelo que nos ayude a comprender mejor este proceso.
 
 Este modelo agrega una **retroalimentación** usando un [Link] del [Stock] de vuelta al [Stock]. El [Link] comunica el valor del [Stock] al [Flujo]. Un [Link] solo comunica información de un elemento del modelo a otro, en realidad no cambia el valor del [Stock] (eso es lo que hace un [Flow]).
-
 
 1. Abra InsightMaker. Cree un [Stock] y un [Flow] como lo hizo en el modelo anterior (el flujo debe ser una entrada, no una salida) y simplemente nómbrelos *Stock* y *Flow* por ahora.
 
 2. Si pasa el mouse sobre *Stock* o *Flow* aparecerá un pequeño [$=$ Sign]. Si hace clic aquí, se abrirá la ventana **Ecuación** donde puede establecer valores o ecuaciones. Abra esta ventana para el [Stock], ingrese un valor de 1, luego cierre la ventana.
 
-2E. If you mouse over *Stock* or *Flow* a small [$=$ Sign] will appear. If you click this it will open the **Equation** window where you can set values or equations. Open this window for the [Stock], enter a value of 1, then close the window.
 
 3. El valor del [Stock] se puede comunicar al [Flow] con un [Link] (¡que representa un proceso de retroalimentación!). Para crear un [Enlace], haga clic en **Link** en la parte **Conexiones** de la barra de herramientas (en la parte superior). Cuando pase el mouse sobre [Stock], haga clic en la flecha azul, arrastre el [Link] al [Flow] y suelte. Ahora tiene un [Enlace] en la parte superior del [Flujo]. Ahora mantenga presionada la tecla Shift y haga clic en el medio del [Link] y se creará un pequeño nodo verde en el [Link]. Puede seleccionar este nodo y arrastrarlo hacia arriba para que el [Link] no esté directamente encima del [Flujo] (ahora puede ver el [Link]).
 1. Open InsightMaker. Create a [Stock] and a [Flow] as you did in the previous model (flow should be an input, not an output) and just name them *Stock* and *Flow* for now.  
 
 
-3E. The value of the [Stock] can be communicated to the [Flow] with a [Link] (representing a feedback process!). To create a [Link], click **Link** in the **Connections** part of the toolbar (at the top). When you mouse over the [Stock] click on the blue arrow, drag the [Link] to the [Flow] and release. You now have a [Link] on top of the [Flow]. Now hold the Shift Key and click in the middle of the [Link] and a little green node will be created on the [Link]. You can select this node and drag it up so the [Link] isn't directly on top of the [Flow] (now you can see the [Link]). 
-
 4. Por lo general, existe algún tipo de factor que rige la **tasa** que [Stock] influye en el [Flow]. Introduzcamos una [Variable] llamada *Tasa*. Para crear una [Variable], haga clic con el botón derecho en el lienzo y seleccione **Variable** en el menú desplegable. Ahora dibuje un [Enlace] desde * Tasa * al [Flujo]. Abra la ventana **Ecuación** para *Tasa* y establézcala en 0.5.
 
-4E. Usually there is some type of factor governing the **rate** the [Stock] influences the [Flow]. Let's introduce a [Variable] named *Rate*. To create a [Variable], right-click on the canvas and select **Variable** from the drop-down. Now draw a [Link] from *Rate* to the [Flow]. Open the **Equation** window for *Rate* and set it to 0.5. 
 
 5. Abra la ventana ** Ecuación ** para el [Flujo] y configúrelo en [Stock] multiplicado por [Tasa]. Es decir, la entrada total a la [Acción] es igual al valor de la [Acción] multiplicado por el valor de * Tasa *.
 
-5E. Open the **Equation** window for the [Flow] and set it to [Stock] times [Rate]. That is, the total inflow into the [Stock] is equal to the value of the [Stock] multiplied by the value of *Rate*.
-
 6. Ahora haga clic en [Ejecutar simulación] y acaba de terminar su primer modelo de simulación de bucle de refuerzo. ¿Hace lo que esperarías?
 
+
+
+***
+
+### English Intructions
+
+This model adds a feedback using a [Link] from the [Stock] back into the [Flow]. The [Link] communicates
+the value of the [Stock] to the [Flow]. A [Link] only communicates information from one element of the model
+to another, it doesn’t actually change the value of the [Stock] (that is what a [Flow] does).
+
+
+1E. Open InsightMaker. Create a [Stock] and a [Flow] as you did in the previous model (flow should be an
+input, not an output) and just name them Stock and Flow for now.
+
+2E. If you mouse over *Stock* or *Flow* a small [$=$ Sign] will appear. If you click this it will open the **Equation** window where you can set values or equations. Open this window for the [Stock], enter a value of 1, then close the window.
+
+
+3E. The value of the [Stock] can be communicated to the [Flow] with a [Link] (representing a feedback process!). To create a [Link], click **Link** in the **Connections** part of the toolbar (at the top). When you mouse over the [Stock] click on the blue arrow, drag the [Link] to the [Flow] and release. You now have a [Link] on top of the [Flow]. Now hold the Shift Key and click in the middle of the [Link] and a little green node will be created on the [Link]. You can select this node and drag it up so the [Link] isn't directly on top of the [Flow] (now you can see the [Link]). 
+
+4E. Usually there is some type of factor governing the **rate** the [Stock] influences the [Flow]. Let's introduce a [Variable] named *Rate*. To create a [Variable], right-click on the canvas and select **Variable** from the drop-down. Now draw a [Link] from *Rate* to the [Flow]. Open the **Equation** window for *Rate* and set it to 0.5. 
+
+5E. Open the **Equation** window for the [Flow] and set it to [Stock] times [Rate]. That is, the total inflow into the [Stock] is equal to the value of the [Stock] multiplied by the value of *Rate*.
+
 6E. Now click [Run Simulation] and you have just finished your first reinforcing loop simulation model! Does it do what you would expect?
+
+
+***
+
 
 **Q:** Si [Stock] es una población, por ejemplo, conejos, ¿cuál es la interpretación de [Flow]? ¿Cuál es la interpretación de *Rate*? *Cambie el nombre de sus variables en consecuencia* y cambie los parámetros para hacer que el modelo sea más realista biológicamente. Ejecute la simulación nuevamente.
 
