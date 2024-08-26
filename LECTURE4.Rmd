@@ -176,7 +176,7 @@ EQUATIONS
 ```
 ***
 
-
+### Instrucciones en Español
 
 ### ¿Cómo podemos hacer esto en InsightMaker?
 
@@ -233,6 +233,7 @@ Abra su modelo InsightMaker para un crecimiento logístico básico con un térmi
 
 ![](figures/IM6.jpg)
 
+### English Instructions
 
 `r colorize("- 1. Load a basic exponential-growth model. Rename the main [Stock] *Box Turtles*. This [Stock] should have two [Flows], one [Flow In] named *Births* and one [Flow Out] named *Deaths*. Both *Births* and *Deaths* should be defined as the product of *turtles* and per-capita rates, respectively called *Births per capita* and *Deaths per capita* (each defined on the canvas as [Variables]). This model should be very familiar!!", "blue")` 
 

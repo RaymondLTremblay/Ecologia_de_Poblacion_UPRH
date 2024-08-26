@@ -74,6 +74,8 @@ Pero, ¿qué tienen que ver las palomas migratorias con el efecto Allee?
 
 ***
 
+### Instrucciones en Español
+
 ## Ejercicio en clase: efecto Allee
 
 En este ejercicio exploraremos las implicaciones de la **dependencia de densidad positiva** en las tasas vitales.
@@ -115,6 +117,9 @@ e. Mortalidad mínima: 0.3
 [here](https://insightmaker.com/insight/70353/Logistic-Growth-1#)):
 
 ![](figures/IM5.jpg)
+
+
+### English Instructions
 
 `r colorize("1. In InsightMaker, load up the logistic model with vital rates -- that is, where $b$ and $d$ are each modeled density-dependent.  It should look something like this, or if you do not already have this, clone it from", "blue")` 
 

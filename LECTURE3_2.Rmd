@@ -87,6 +87,9 @@ https://ucmp.berkeley.edu/history/malthus.html
 
 ***
 
+### Instucciones en español
+
+
 > Ejercicio en clase: límites al crecimiento
 
 Malthus estaba convencido de que el crecimiento de la población humana **sobrepasaría** el límite, es decir, las poblaciones crecerán hasta que se agoten los alimentos. Cual es el resultado? ¡Hambre, sufrimiento, enfermedad! ¡Modelemos esto!
@@ -144,6 +147,8 @@ Para diversión, aquí hay un [Video](https://www.youtube.com/watch?v=QAkW_i0bDp
 ... Otro video [video](https://www.youtube.com/watch?v=U7Z6h-U4CmI) sobre el influyente libro de 1972, "[Limits to Growth](https://www.amazon.com/Limits-Growth-Donella-H-Meadows/dp/193149858X)", lo que hizo el argumento de que el crecimiento no es sostenible: ¡la tierra tiene límites! ¿Te suena familiar este argumento? Curiosamente, el modelo Insightmaker "World3" que algunos de ustedes pueden haber sacado en nuestra primera semana de clase es la base de las terribles predicciones del libro "Limits to Growth".
 
 ***
+
+### English Instuctions 
 
 `r colorize("- Conditional statements are also known as IF-THEN statements. In plain English: *IF some condition is true, THEN do something. ELSE if some other condition is true, THEN do something else. ELSE if none of the previous conditions are true, THEN do something else.*", "blue")`
 
