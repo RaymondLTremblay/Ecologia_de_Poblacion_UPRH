@@ -286,8 +286,15 @@ Construir un documento para someter en MSTeam
 - Puede trabajar en pares o individualmente.  
 
 
-  
-***   
+
+br> 
+ 
+*********
+
+br> 
+********
+br> 
+********
 
 
 
