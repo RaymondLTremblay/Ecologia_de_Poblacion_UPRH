@@ -48,7 +48,7 @@ El crecimiento logístico se puede describir matemáticamente mediante la siguie
 
 $\Delta N = r \cdot N_t \cdot \left ( 1 - \frac{N}{K}  \right )$
 
-Esta es probablemente la *segunda ecología más importante de la ecología de la población* (¡después del crecimiento exponencial básico!).
+Esta es probablemente la *segunda ecuación más importante de la ecología de la población* (¡después del crecimiento exponencial básico!).
 
 Entraremos en más detalles en el laboratorio, pero analicemos un poco esta ecuación.
 
@@ -250,7 +250,7 @@ Abra su modelo InsightMaker para un crecimiento logístico básico con un térmi
 `r colorize("6. Change the settings so that the simulation runs for 100 years.","blue")`  
 
 
-
+****
 
 Haga que el tamaño de su población inicial sea muy pequeño en comparación con la capacidad de carga.
 
