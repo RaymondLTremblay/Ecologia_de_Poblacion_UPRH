@@ -787,9 +787,8 @@ un modelo más realista.</li>
 <ul>
 <li>Puede trabajar en pares o individualmente.</li>
 </ul>
-<p>br&gt;</p>
 <hr />
-<p>br&gt; ******** br&gt; ********</p>
+<div style="page-break-after: always;"></div>
 </div>
 <div id="los-supuestos-del-crecimiento-logistico"
 class="section level2">
@@ -797,25 +796,26 @@ class="section level2">
 <div id="la-capacidad-acerreo-es-constante" class="section level3">
 <h3>La capacidad acerreo es constante:</h3>
 <p>Para lograr is curva en forma de S, o sea una curva logística se
-asume que K es consistente en tiempo. En otra palabra los recursos y su
-interaciones con sus depredadores etc no varia en el tiempo.</p>
+asume que <strong>K es consistente en tiempo</strong>. En otra palabra
+los recursos y su interacciones biótica y abiótica no varia en el
+tiempo.</p>
 </div>
 <div id="la-crecimiento-denso-dependiente-es-lineal"
 class="section level3">
 <h3>La crecimiento denso dependiente es lineal:</h3>
-<p>El modelo logistico asume que cada individuo que se añade a una
+<p>El modelo logístico asume que cada individuo que se añade a una
 población tiene un efecto negativo sobre la razón de crecimiento per
-capita. Esto se observa con la el crecimiento per capita de la población
+cápita. Esto se observa con la el crecimiento per cápita de la población
 <span class="math inline">\(\frac{1}{N}*\frac{dN}{dt}\)</span> donde el
 crecimiento depende del tamaño poblacional y la capacidad de
 acerreo.</p>
 <ul>
-<li>El crecimiento es maximo cuando <span
-class="math inline">\((b-d)=r\)</span> cuando N es cerca de zero,
-despues el crecimiento reduce hasta llegar a zero y entonces llega a
+<li>El crecimiento es máximo cuando <span
+class="math inline">\((b-d)=r\)</span> cuando N es cerca de cero,
+despues el crecimiento reduce hasta llegar a cero y cuando llega a
 K.<br />
 </li>
-<li>Si N es mayor K, la porblación se va a reducir</li>
+<li>Si N es mayor K, la población se va a reducir</li>
 <li>Nota que aunque <span class="math inline">\(b\)</span> y <span
 class="math inline">\(d\)</span> son constantes, el razón de de
 mortandad <span class="math inline">\(b&#39;\)</span> y natalidad <span
@@ -831,7 +831,7 @@ poblacional.</li>
 <h3>Retrasos en tiempo / <em>Time Lag</em></h3>
 <p>El modelo básico asume que cuando individuos se añaden a la
 población, el efecto sobre la razón de crecimiento es inmediato. Pero en
-muchas especies el efecto se puede ser postergado a un momento en el
+muchas especies el efecto puede ser postergado a un momento en el
 futuro.</p>
 <p>Ejemplos:</p>
 <ul>
@@ -852,7 +852,7 @@ class="math display">\[\frac{dN}{dt}=rN_{i}(1-\frac{N_{i-t}}{K})\]</span>
 por consecuencia el efecto sobre el crecimiento esta atrasado por el
 tiempo <span class="math inline">\(t\)</span>, donde la <span
 class="math inline">\(i\)</span> representa el tiempo. El comportamiento
-de los que es una <strong>ecuación differencial de retardo</strong>
+de los que es una <strong>ecuación diferencial de retardo</strong>
 depende de 2 factores.</p>
 <ol style="list-style-type: decimal">
 <li>el tiempo de retardo, <span class="math inline">\(\tau\)</span> (se
@@ -864,19 +864,20 @@ proporcional.</li>
 respuesta <span class="math inline">\(\frac{1}{r}\)</span> o <span
 class="math inline">\(r\tau\)</span> controla para el crecimiento de la
 población.</p>
-<p>Si <span class="math inline">\(r\tau\)</span></p>
+<p>Si <span class="math inline">\(r\tau\)</span> (multiplicación de r
+por <span class="math inline">\(\tau\)</span>) es:</p>
 <ul>
 <li><em>pequeño</em>, <span class="math inline">\((0 &lt; r\tau &lt;
 0.368)\)</span>, la población aumenta de forma gradual a K</li>
 <li><em>mediano</em>, <span class="math inline">\((0.368 &lt; r\tau &lt;
-1.570)\)</span>, la población sobre pasa K, despues va por debajo, y con
+1.570)\)</span>, la población sobre pasa K, después va por debajo, y con
 tiempo con una oscilación amortiguada se estabiliza a K.</li>
 <li><em>grande</em> <span class="math inline">\((r\tau &gt;
 1.570)\)</span>, la población entra en una oscilación continua sin
 llegar (Stable Limit Cycle) a estabilizarse a K.</li>
 </ul>
 <p>Lo importante no son tanto los valores que reconocer que debido a la
-razon de <span class="math inline">\(r\tau\)</span>, la población actua
+razón de <span class="math inline">\(r\tau\)</span>, la población actúa
 de forma muy diferentes.</p>
 </div>
 <div id="gráficos-logistico" class="section level3">
@@ -897,6 +898,8 @@ p + stat_function(fun = scurve, n = n) </code></pre>
 <p>Damped response</p>
 <p>Un buen sitio para conseguir más información es en el siguiente
 enlace.</p>
+<p>Vea esta pagina para ver un ejemplo de crecimiento logístico con
+retraso en tiempo y el</p>
 <p><a
 href="https://hankstevens.github.io/Primer-of-Ecology/DDgrowth.html"
 class="uri">https://hankstevens.github.io/Primer-of-Ecology/DDgrowth.html</a></p>
